@@ -72,3 +72,15 @@ ESP32-WROOM-32E и EBYTE E220-900T22D. Проект ведётся как про
   3.3 V power/inductor/thermal capability, and verified E220 local-power
   arrangement are incomplete. `hardware/` remains empty; `.kicad_pro`,
   `.kicad_sch`, `.kicad_pcb` and production files не создавались.
+- 2026-08-18 — Stage 3.1 blocker-resolution documentation: updated only
+  `docs/requirements.md`, `docs/architecture.md`, `docs/open-questions.md` and
+  `docs/component-decisions.md`. Selected GCT `USB4105-GF-A`, TI
+  `TUSB320LAIRWBR`, `TPS259630DDAR` with 909-Ohm current-set resistor, and
+  EVM-topology TPS62162 passives/TDK 2.2-uH inductor using manufacturer
+  sources. The corrected Type-C design keeps the eFuse/ESP boot rail enabled;
+  TUSB `OUT1/OUT2` are level-divided status inputs to GPIO32/GPIO33, with
+  firmware low-load policy at Default current. Recorded 721.685-mA 3V3 and
+  708.6/738.0-mA `5V_SYS` allocation (5.0/4.75 V). No schematic-level blocker
+  remains for a configurable design; OLED module, RF, mechanics/footprints and
+  prototype power validation remain IMPORTANT before PCB release. No KiCad
+  project, schematic, PCB, footprint or production file was created.

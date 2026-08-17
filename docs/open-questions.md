@@ -140,3 +140,33 @@ Stage 3 environment recheck: package `kicad` is `10.0.5~ubuntu22.04.1`; both
 generic ESP32-WROOM-32, USB-C receptacle, WS2812B and test-point assets, but no
 exact ESP32-WROOM-32E or E220-900T22D asset. `hardware/` contains no KiCad
 project, schematic or PCB file.
+
+## Stage 3.1 — reclassification after component verification
+
+### BLOCKER — none for creating a configurable electrical schematic
+
+OLED is now a defined 3V3/100-mA connector interface rather than a guessed
+breakout; input parts and rated buck passives are selected; E220 decoupling is
+an explicit project choice. No KiCad artifact is authorised by this statement.
+
+### IMPORTANT — resolve before PCB release or prototype sign-off
+
+1. Verify the actual OLED connector order, current, address and module pull-ups.
+   A module exceeding the 100-mA allocation restarts the power review.
+2. Test TUSB320 status into GPIO32/GPIO33 and the firmware policy: eFuse/ESP
+   must boot at Default current, while Wi-Fi TX/E220/LED high-load operation is
+   prohibited until Medium or High is observed. Validate startup, cable drop,
+   inrush and TPS259630 faults on actual 1.5-A and 3-A sources.
+3. Measure ESP32 RF/E220 TX overlap, buck thermal/transient response and E220
+   10-uF/100-nF decoupling. The 85-% efficiency and 100-mA OLED cap are
+   conservative project allocations, not manufacturer guarantees.
+4. Confirm region/EIRP/channel, antenna/SMA/cable/enclosure and EBYTE RF
+   placement guidance before layout.
+5. Before PCB, audit GCT USB4105 layout, E220 mating socket/geometry,
+   WS2812B-V5 land pattern, ESP32 module and all selected passive footprints.
+6. Verify I2C rise time and decide fit/DNP for each 4.7-kOhm pull-up site.
+
+### OPTIONAL
+
+- Select manual serial header versus on-board USB-UART; USB-C stays power-only.
+- Consider E220 load switching, telemetry and additional ESD/environment tests.

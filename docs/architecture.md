@@ -116,5 +116,40 @@ allocation only; the OLED remains `TBD`, and converter thermal/transient margin
 is unverified. Likewise, the protected 5 V rail supplies the correct nominal
 voltages but cannot be considered USB-current compliant yet: the base ideal
 lower bound is already close to 500 mA. The exact USB-C receptacle, advertised
-source-current design target and protection/current-limit device therefore stay
-as schematic blockers.
+ source-current design target and protection/current-limit device therefore stay
+ as schematic blockers.
+
+## Stage 3.1 — controlled input and boot architecture
+
+```text
+USB4105-GF-A (power-only USB-C)
+  CC1/CC2 ── TPD4S311 ── TUSB320LAIRWBR (UFP / internal Rd)
+  VBUS    ── TPD1E10B06 ── VBUS_PRE ── TPS259630DDAR ── 5V_SYS
+                             │                 EN = VBUS_PRE
+                             ├─ TUSB VDD + 1 uF
+                             ├─ 900 kOhm ±1 % -> VBUS_DET
+                             └─ OUT1/OUT2 -> 12k/20k dividers -> GPIO32/GPIO33
+                                                            (Type-C status)
+
+5V_SYS ── E220 VCC + 10 uF/100 nF
+        ── WS2812B-V5 via 5-V SN74AHCT1G125
+        ── TPS62162DSGR (2.2 uH, 10 uF CIN, 22 uF COUT) ── 3V3
+                                                               ├─ ESP32
+                                                               └─ 3V3 OLED port
+                                                                  + I2C 4.7k/DNP
+```
+
+`OUT1/OUT2` are **telemetry inputs**, not a power-enable interlock.  Their TI
+UFP truth table is: unattached `H/H`, Default `H/L`, Medium/1.5-A `L/H`, and
+High/3-A `L/L`.  Since outputs are open drain and TUSB320 runs from pre-switch
+VBUS, pull them to VBUS and divide to ESP32 with 12-kOhm/20-kOhm pairs, making
+5.25 V into 3.28 V.  The eFuse stays enabled for ESP32 boot power. Firmware
+reads status before normal operation: at Default it must remain low-load (no
+Wi-Fi TX, E220 asleep/off, LED dark); Medium or High is required for the
+defined full-load allocation. This is not a USB-PD negotiation guarantee.
+
+The full-load calculation is 721.685 mA at 3V3 and 708.6 mA at `5V_SYS`
+(738.0 mA with 4.75-V converter input) using a conservative 85-% efficiency
+allocation. It has 211 mA margin to the TPS259630 minimum characterised limit
+and 278 mA to TPS62162's rating. The small pre-eFuse controller/divider load is
+additional to raw VBUS and not double-counted in `5V_SYS`.

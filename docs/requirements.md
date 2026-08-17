@@ -264,3 +264,94 @@ Additional Stage 2.1 official sources:
 - [ESP32 Hardware Design Guidelines — schematic checklist, Espressif](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32/schematic-checklist.html): recommends a 3.3 V supply capable of no less than 500 mA.
 - [WS2812B-V5 manufacturer document, WorldSemi](https://www.world-semi.co.kr/_files/ugd/89cd03_1023b0e9d135431aa1e6491bfc318112.pdf) and [WorldSemi WS2812 family catalogue](https://world-semi.com/ws2812-family/): package/pins, 5 V electrical conditions, logic thresholds, 12 mA × 3 family current and the no-filter-capacitor statement.
 - [SN74AHCT1G125 datasheet, TI](https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf): 5 V operating range, `VOH`, `ΔICC`, static `ICC` and 0.1 uF IC bypass recommendation.
+
+## Stage 3.1 — resolved electrical decisions and final allocation
+
+### Decision status
+
+The labels used below deliberately distinguish **manufacturer requirement**,
+**calculated engineering requirement**, **conservative allocation**, and
+**PROJECT DESIGN CHOICE**.  A project choice is not disguised as a data-sheet
+requirement.  Missing breakout-module and PCB land-pattern information is an
+important PCB-release issue, not a reason to guess it or to prevent a
+configurable schematic interface.
+
+### USB-C and 5-V system rail
+
+- **Selected receptacle:** GCT `USB4105-GF-A`.  Its official drawing identifies
+  the four VBUS and GND contacts, CC1/CC2 and the manufacturer recommended PCB
+  layout; VBUS contact rating is 5.00 A.  This is a power-only interface:
+  D+/D- and SBU are intentionally NC.
+- **Selected Type-C controller:** TI `TUSB320LAIRWBR`, configured as UFP with
+  `PORT=GND`, `EN_N=GND`, `ADDR=NC`.  **Manufacturer requirements:** it uses
+  internal Rd, needs a 900-kOhm ±1-% `VBUS_DET` connection to VBUS and 1…10-uF
+  UFP bulk capacitance (1 uF in TI's example).  The earlier discrete 5.1-kOhm
+  Rd concept is superseded; it must not coexist with the controller.
+- **PROJECT DESIGN CHOICE:** the eFuse is enabled whenever valid VBUS is
+  present (`EN` tied to its input), so ESP32 can boot and read Type-C status;
+  do **not** gate the complete ESP supply on `OUT1`.  TI documents UFP GPIO
+  states as `OUT1/OUT2 = H/L` for Default, `L/H` for Medium (1.5 A), `L/L` for
+  High (3 A), and `H/H` when unattached.  Both outputs are open drain.  Pull
+  each output to VBUS and feed ESP32 through a 12-kOhm/20-kOhm divider: 5.25 V
+  becomes 3.28 V.  Assign OUT1 to GPIO32 and OUT2 to GPIO33; neither is a
+  strapping pin.  Firmware must hold E220 asleep/off, keep the LED dark and
+  avoid Wi-Fi TX until those pins are read.  Default current is thus a
+  constrained diagnostic/boot mode, not normal receiver operation.  This is
+  current detection, not USB-PD negotiation.
+- **Selected eFuse:** TI `TPS259630DDAR` and Panasonic `ERA3AEB9090V` (909 Ohm,
+  0.1 %, 0.1 W).  TI characterises that resistor setting as 1.005-A typical and
+  0.949…1.051-A current limit.  `TPS259630` is the selected latch-off protected
+  `5V_SYS` switch.  Its adjustable OVLO is not claimed to be a precision E220
+  5.5-V clamp.  The supported 4.75…5.25-V receptacle input is a **PROJECT
+  DESIGN REQUIREMENT** to be tested with the final source/cable.
+- `TPD1E10B06DPYR` (VBUS) and `TPD4S311DRYR` (CC) remain selected ESD devices;
+  they are not DC voltage regulators or eFuse substitutes.
+
+### Buck, E220 and OLED interface
+
+- **Manufacturer/EVM basis:** TI `TPS62162DSGR` is the selected fixed 3.3-V,
+  1-A buck.  The TPS621x0 EVM validates the 2.2-uH / 10-uF input / 22-uF output
+  topology; it does not make its obsolete EVM inductor a current procurement
+  choice.
+- **Selected parts / manufacturer ratings:** TDK `VLS3012CX-2R2M-1` is 2.2 uH
+  ±20 %, 1.70-A saturation-current rating (30-% inductance drop), 2.55-A
+  temperature-rise rating and 74-mOhm maximum DCR.  Murata
+  `GRM21BR61E106KA73` is 10 uF ±10 %, 25 V X5R 0805 (`CIN`); Murata
+  `GRM21BR61A226ME44` is 22 uF ±20 %, 10 V X5R 0805 (`COUT`).  These are
+  **PROJECT DESIGN CHOICES** backed by manufacturer ratings.  Their exact land
+  patterns are to be taken from manufacturers at PCB stage.
+- **E220:** EBYTE publishes VCC/current but does not prescribe a local capacitor
+  value in the selected manual.  The explicit **PROJECT DESIGN CHOICE** is
+  `GRM188R61A106MAAL` (10 uF, 10 V X5R) plus `GRM188R71C104KA01D` (0.1 uF,
+  16 V X7R) between E220 VCC/GND, positioned locally in later placement.  It
+  needs TX-burst measurement; it is not called an EBYTE requirement.
+- **OLED:** connector contract is now `GND, 3V3, SDA, SCL`, 3.3-V only, with a
+  100-mA **PROJECT DESIGN ALLOCATION**.  SDA/SCL each have a configurable
+  4.7-kOhm, 1-% population site to 3V3: fit it or DNP it after checking the
+  real module's pull-ups.  Calculated two-line-low current is 1.404 mA.
+
+### Power budget
+
+| Item | Value | Classification |
+| --- | ---: | --- |
+| ESP32 3V3 | 500.000 mA | Conservative allocation; Espressif RF table's cited peak is 379 mA while its supply guidance requires at least 500 mA capability. |
+| OLED connector 3V3 | 100.000 mA | PROJECT DESIGN allocation, not an assertion about an unknown breakout. |
+| I2C pulls, both low | 1.404 mA | Calculated: `2 × 3.3 V / 4.7 kOhm`. |
+| 3V3 active subtotal | 601.404 mA | Calculated. |
+| 3V3 design allocation | 721.685 mA | Conservative allocation: active subtotal plus 20 % margin. |
+| E220 5V TX | 110.000 mA | EBYTE manufacturer value. |
+| WS2812B-V5 5V | 36.600 mA | Bounded allocation from documented `3 × 12 mA + 0.6 mA`. |
+| AHCT 5V | 1.510 mA | Conservative TI static plus `ΔICC` allocation. |
+| TUSB320 / status dividers | 0.398 mA | Typical controller plus calculated two `5.25 V / (12 kOhm + 20 kOhm)` divider currents. |
+
+**Calculated engineering check:** `P_3V3 = 3.3 × 0.721685 = 2.382 W`.  The
+85-% converter efficiency used here is a conservative **PROJECT DESIGN
+ALLOCATION**, not a TPS62162 guaranteed efficiency point.  It gives 560.5 mA
+buck input at 5.0 V, or 590.0 mA at 4.75 V.  Thus `5V_SYS` needs 708.6 mA at
+5.0 V (`560.5 + 110 + 36.6 + 1.51`) and 738.0 mA at 4.75 V.  This is below
+TPS259630's 0.949-A minimum characterised limit by at least 211 mA, and the
+3V3 allocation is 278 mA below TPS62162's 1-A rating.  Both margins require
+prototype transient/thermal validation.  An OLED exceeding 100 mA restarts
+this review.
+
+Stage 3.1 primary sources: [USB4105 drawing, GCT](https://gct.co/files/drawings/usb4105.pdf), [USB4105, GCT](https://gct.co/connector/usb4105), [TUSB320LAI, TI](https://www.ti.com/lit/ds/symlink/tusb320lai.pdf), [TPS2596, TI](https://www.ti.com/lit/ds/symlink/tps2596.pdf), [TPS621x0 EVM, TI](https://www.ti.com/lit/ug/slvu483a/slvu483a.pdf), [TDK VLS3012CX-2R2M-1](https://product.tdk.com/en/search/inductor/inductor/automotive-inductor/info?part_no=VLS3012CX-2R2M-1), [Murata GRM21BR61E106KA73](https://search.murata.com/en-US/partdetail?partno=GRM21BR61E106KA73), [Murata GRM21BR61A226ME44](https://search.murata.com/en-US/partdetail?partno=GRM21BR61A226ME44), [Murata GRM188R61A106MAAL](https://search.murata.com/en-US/partdetail?partno=GRM188R61A106MAAL), [Murata GRM188R71C104KA01D](https://search.murata.com/en-US/partdetail?partno=GRM188R71C104KA01D), and [SN74AHCT1G04, TI](https://www.ti.com/lit/ds/symlink/sn74ahct1g04.pdf).

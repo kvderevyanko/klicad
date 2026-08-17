@@ -181,3 +181,30 @@ footprint не выбран на данном этапе.
   500 mA source cannot be shown sufficient.
 
 Sources: [WorldSemi WS2812B-V5](https://www.world-semi.co.kr/_files/ugd/89cd03_1023b0e9d135431aa1e6491bfc318112.pdf), [WorldSemi WS2812 catalogue](https://world-semi.com/ws2812-family/), [ESP32-WROOM-32E datasheet](https://documentation.espressif.com/esp32-wroom-32e_esp32-wroom-32ue_datasheet_en.pdf), [ESP32 Hardware Design Guidelines](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32/schematic-checklist.html), and [SN74AHCT1G125, TI](https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf).
+
+## Stage 3.1 — selected schematic-level parts
+
+| Function | Selected part | Evidence and controlled decision |
+| --- | --- | --- |
+| USB-C receptacle | GCT `USB4105-GF-A` | Official drawing/layout; power-only VBUS/GND/CC use. PCB footprint deferred to official layout audit. |
+| Type-C status | TI `TUSB320LAIRWBR` | UFP internal Rd; VBUS_DET 900 kOhm ±1 %; 1-uF VDD capacitor; open-drain OUT1/OUT2. `PORT=GND`, `EN_N=GND`, `ADDR=NC`. |
+| Status to ESP | 12-kOhm/20-kOhm divider per output | **PROJECT DESIGN CHOICE.** Pull OUT1/OUT2 to VBUS and divide to GPIO32/GPIO33; 5.25 V -> 3.28 V. No high-voltage signal connects directly to ESP32. |
+| eFuse | TI `TPS259630DDAR` + Panasonic `ERA3AEB9090V` | 909 Ohm gives 1.005-A typical / 0.949…1.051-A characterised current limit. `EN=VBUS_PRE` to permit ESP boot at Default Type-C current. |
+| Buck L/C | TPS62162DSGR; TDK `VLS3012CX-2R2M-1`; Murata `GRM21BR61E106KA73` / `GRM21BR61A226ME44` | 2.2 uH; 1.70-A saturation, 2.55-A temperature rise, 74 mOhm max DCR; 10-uF 25-V X5R CIN and 22-uF 10-V X5R COUT. EVM validates values/topology; actual parts are project selections. |
+| E220 local capacitors | Murata `GRM188R61A106MAAL` / `GRM188R71C104KA01D` | 10-uF 10-V X5R + 0.1-uF 16-V X7R **PROJECT DESIGN CHOICE**, not a claimed EBYTE value. |
+| OLED bus | 4.7-kOhm 1-% fit/DNP sites | **PROJECT DESIGN CHOICE:** connector GND/3V3/SDA/SCL, 100-mA allocation; configured after verified module pull-ups. |
+
+The Type-C policy is deliberately two-stage: ESP32 has boot power on any valid
+attach, then firmware reads TI's `OUT1/OUT2` truth table. Default (`H/L`) is
+low-load diagnostic boot only; full concurrent budget requires Medium (`L/H`)
+or High (`L/L`). This avoids a circular design in which ESP cannot boot to read
+the very status that would enable it.
+
+Full-load design allocation is 721.685 mA at 3V3 (500-mA ESP32, 100-mA OLED,
+1.404-mA I2C, then 20-% margin). Its calculated input is 560.5 mA at 5 V using
+85-% efficiency; with 110-mA E220, 36.6-mA WS2812B and 1.51-mA AHCT it is
+708.6 mA at 5 V / 738.0 mA at 4.75 V. This passes the selected 1-A buck and
+0.949-A minimum eFuse-limit check but is awaiting hardware transient/thermal
+validation.
+
+Sources: [GCT USB4105 drawing](https://gct.co/files/drawings/usb4105.pdf), [TUSB320LAI, TI](https://www.ti.com/lit/ds/symlink/tusb320lai.pdf), [TPS2596, TI](https://www.ti.com/lit/ds/symlink/tps2596.pdf), [TPS621x0 EVM, TI](https://www.ti.com/lit/ug/slvu483a/slvu483a.pdf), [TDK VLS3012CX](https://product.tdk.com/en/search/inductor/inductor/automotive-inductor/info?part_no=VLS3012CX-2R2M-1), [Murata GRM21BR61E106KA73](https://search.murata.com/en-US/partdetail?partno=GRM21BR61E106KA73), [Murata GRM21BR61A226ME44](https://search.murata.com/en-US/partdetail?partno=GRM21BR61A226ME44), [E220 manual, EBYTE](https://www.cdebyte.com/pdf-down.aspx?id=3552).
