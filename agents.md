@@ -63,3 +63,12 @@ ESP32-WROOM-32E и EBYTE E220-900T22D. Проект ведётся как про
 - 2026-08-18 — Создан корневой `readme.md` с назначением проекта, текущим
   Stage 2 status, принятыми решениями, структурой каталогов и оставшимися
   блокерами. KiCad-артефакты не создавались.
+- 2026-08-18 — Stage 3 gate review: перечитаны инженерные требования и
+  решения, перепроверены KiCad package `10.0.5~ubuntu22.04.1` / `kicad-cli`
+  `10.0.5`, libraries and available `sch erc` / `pcb drc` commands. Обновлён
+  `docs/open-questions.md` с разделением реальных schematic blockers от
+  footprint/RF-layout вопросов. Схема заблокирована: exact OLED electrical
+  interface/current, USB-C current contract and input-protection chain, final
+  3.3 V power/inductor/thermal capability, and verified E220 local-power
+  arrangement are incomplete. `hardware/` remains empty; `.kicad_pro`,
+  `.kicad_sch`, `.kicad_pcb` and production files не создавались.

@@ -99,3 +99,44 @@
    condition and 0.6 mA working quiescent current but no total maximum supply
    current. The documented 36.6 mA is an allocation, not an absolute maximum;
    re-check the manufacturer document revision before production release.
+
+## Stage 3 gate review — schematic decision
+
+**Decision: do not create `.kicad_pro` or `.kicad_sch` yet.** The following
+are genuine electrical-schematic blockers, not merely deferred footprint or
+layout work:
+
+1. **OLED interface is electrically undefined.** The exact 0.96-inch SSD1306
+   module has no verified manufacturer document for VCC range, maximum current,
+   connector pin order and whether SDA/SCL pull-ups are fitted and to which
+   rail. A generic four-pin connector would guess at least its pin order and
+   pull-up arrangement, while `I_OLED` prevents approval of the 3.3 V budget.
+2. **USB-C input power path is incomplete.** `CC` Rd and the two ESD parts do
+   not select the receptacle, input-current contract, overcurrent/reverse-power
+   protection or a current-limiting component. The known ideal protected-5-V
+   lower bound is already 478.11 mA before OLED and conversion losses, so an
+   unqualified 500 mA source cannot be assumed safe. A final input chain cannot
+   be drawn without these verified components/ratings.
+3. **The 3.3 V rail cannot yet be approved.** `TPS62162DSGR` is a conditional
+   1 A choice, but the actual OLED load, all auxiliary loads, conversion loss,
+   transient requirement and thermal margin are unresolved. Its 2.2 uH
+   inductor is only a reference value: no actual inductor with verified
+   saturation/current rating has been selected. Drawing it as a real final
+   power circuit would therefore imply unverified electrical capability.
+4. **E220 local power implementation needs an explicit verified decision.**
+   The selected E220-900T22D VCC/current/pinout are known, but this project has
+   not yet recorded the manufacturer-required or otherwise verified local
+   decoupling/filtering arrangement at its 5 V connector. Do not substitute a
+   habitual capacitor value for a documented requirement.
+
+The following remain important, but **do not by themselves block a schematic**:
+the regional RF/antenna/enclosure decision, E220 mating-socket footprint,
+USB-C receptacle footprint and WS2812B-V5 land pattern. They block footprint,
+placement or PCB release and must be resolved before those stages.
+
+Stage 3 environment recheck: package `kicad` is `10.0.5~ubuntu22.04.1`; both
+`kicad-cli --version` and `kicad-cli version` report `10.0.5`. CLI help confirms
+`kicad-cli sch erc` and `kicad-cli pcb drc` are available. Local libraries have
+generic ESP32-WROOM-32, USB-C receptacle, WS2812B and test-point assets, but no
+exact ESP32-WROOM-32E or E220-900T22D asset. `hardware/` contains no KiCad
+project, schematic or PCB file.
