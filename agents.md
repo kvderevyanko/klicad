@@ -48,3 +48,18 @@ ESP32-WROOM-32E и EBYTE E220-900T22D. Проект ведётся как про
   Remaining blockers: final antenna/regulatory choice, OLED/WS2812 exact parts,
   connector/mating-socket footprints, USB-C source-current contract and final
   power budget.
+- 2026-08-18 — Stage 2.1 corrective verification: updated
+  `docs/requirements.md`, `docs/architecture.md`, `docs/open-questions.md` and
+  `docs/component-decisions.md`. Selected WorldSemi `WS2812B-V5` only against
+  its manufacturer document; recorded package/pins, 5 V logic basis, no
+  manufacturer-specified DIN resistor or LED filter capacitor, and deliberately
+  left its footprint unassigned. Added an explicit rail budget using the
+  Espressif 379 mA RF peak / 500 mA rail allocation, E220 110 mA, WS allocation
+  36.6 mA, AHCT 1.51 mA and `I_OLED = TBD`. Verified that TPS62162 1 A and
+  passive-Rd USB-C are not yet sufficient claims for the unknown final load. No
+  KiCad schematic, PCB, footprint or production file was created. Remaining
+  blockers: OLED data/current, WS land pattern, USB-C source-current/protection,
+  antenna/regulatory choice, connector footprints and final thermal/power review.
+- 2026-08-18 — Создан корневой `readme.md` с назначением проекта, текущим
+  Stage 2 status, принятыми решениями, структурой каталогов и оставшимися
+  блокерами. KiCad-артефакты не создавались.

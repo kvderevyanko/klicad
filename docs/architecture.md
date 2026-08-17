@@ -93,3 +93,28 @@ resolve the final power budget, USB-C source-current contract, OLED/WS2812
 selection, connector footprints, regional channel/antenna, or mechanics. Those
 remain blockers to a complete schematic; no `.kicad_pro`, schematic or PCB is
 created at this stage.
+
+## Stage 2.1 — verified status LED and rail sufficiency
+
+`WS2812B-V5` is now the selected 5 V status LED, driven through the existing
+5 V `SN74AHCT1G125` level shifter. Its package land pattern is still unassigned,
+so this is an architectural connection only, not a PCB-ready placement.
+
+The following is a lower-bound check, not a claim that the final USB-C input is
+adequate:
+
+```text
+protected 5 V direct loads: E220 TX 110 mA + WS2812B-V5 36.6 mA
+                            + AHCT allocation 1.51 mA = 148.11 mA
+TPS62162 input, ideal lower bound for 3.3 V: 0.66 × (500 mA + I_OLED)
+-----------------------------------------------------------------------
+protected 5 V lower bound: 478.11 mA + 0.66 × I_OLED, before losses
+```
+
+The 1 A TPS62162 output is conditionally sufficient for the 500 mA ESP32 rail
+allocation only; the OLED remains `TBD`, and converter thermal/transient margin
+is unverified. Likewise, the protected 5 V rail supplies the correct nominal
+voltages but cannot be considered USB-current compliant yet: the base ideal
+lower bound is already close to 500 mA. The exact USB-C receptacle, advertised
+source-current design target and protection/current-limit device therefore stay
+as schematic blockers.

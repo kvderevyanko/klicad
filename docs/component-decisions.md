@@ -143,3 +143,41 @@ footprint не выбран на данном этапе.
 - Local standard libraries still offer generic ESP32-WROOM-32, USB-C,
   WS2812/WS2812B and test-point assets, but no exact ESP32-WROOM-32E or
   E220-900T22D entry. Exact assets require manufacturer-source verification.
+
+## Stage 2.1 — WS2812B-V5 and power decision record
+
+### WS2812 status LED
+
+- Selected exact electrical part: `WS2812B-V5` by WorldSemi, top-SMD 5050,
+  four pins `VDD/DOUT/VSS/DIN`, 5.0 × 5.4 × 1.57 mm. It is powered from the
+  protected 5.0 V rail and receives data only from the 5 V
+  `SN74AHCT1G125DBVR` output.
+- The manufacturer document gives `VIH >= 2.7 V`, `VIL <= 0.7 V`, 12 mA per
+  RGB channel condition and 0.6 mA working quiescent current. It does not state
+  a total maximum supply current. The approved budgeting number is therefore
+  36.6 mA (`3 × 12 + 0.6`), labelled a bounded allocation rather than a formal
+  maximum.
+- No DIN series-resistor value is selected: the manufacturer document does not
+  specify one. No LED-local bypass capacitor is selected either: its typical
+  circuit says no filter capacitor is required and specifies no capacitance.
+  The AHCT still requires its manufacturer-recommended local 0.1 uF bypass.
+- Footprint plan: **none assigned**. The generic KiCad WS2812B asset is not
+  approved for this V5 package because no official land pattern comparison has
+  been performed. A verified manufacturer pad layout is needed before placement.
+
+### Updated rail decision
+
+- ESP32 3.3 V design allocation is 500 mA, backed by Espressif's minimum
+  supply-capability guidance; the cited ESP32-WROOM-32E RF table reports a
+  379 mA peak in its highest listed Wi-Fi TX test. OLED is `TBD`, not estimated.
+- The direct 5 V allocation is E220 110 mA + WS2812B-V5 36.6 mA + AHCT 1.51 mA
+  = 148.11 mA. The buck's ideal input lower bound for `500 mA + I_OLED` at 3.3 V
+  from 5 V is `0.66 × (500 mA + I_OLED)`. Thus the known total is at least
+  478.11 mA plus OLED contribution and all real conversion losses.
+- `TPS62162DSGR` (1 A output) remains selected only conditionally: it covers
+  the known ESP32 allocation but has no approved total headroom until OLED,
+  thermal conditions and all 3.3 V auxiliaries are verified. USB-C receptacle,
+  source-current capability and current protection remain unselected because a
+  500 mA source cannot be shown sufficient.
+
+Sources: [WorldSemi WS2812B-V5](https://www.world-semi.co.kr/_files/ugd/89cd03_1023b0e9d135431aa1e6491bfc318112.pdf), [WorldSemi WS2812 catalogue](https://world-semi.com/ws2812-family/), [ESP32-WROOM-32E datasheet](https://documentation.espressif.com/esp32-wroom-32e_esp32-wroom-32ue_datasheet_en.pdf), [ESP32 Hardware Design Guidelines](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32/schematic-checklist.html), and [SN74AHCT1G125, TI](https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf).

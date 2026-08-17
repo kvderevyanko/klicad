@@ -177,3 +177,90 @@ strap level. Никакая замена GPIO не выполняется без
 - [TPS62162 datasheet, TI](https://www.ti.com/lit/ds/symlink/tps62162.pdf): 3.3 V/1 A buck and reference L/C values.
 - [SN74AHCT1G125 datasheet, TI](https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf): 5 V AHCT level shifting and bypass guidance.
 - [USB Type-C specification, USB-IF](https://usb.org/usb-type-cr-cable-and-connector-specification), [TUSB320 datasheet, TI](https://www.ti.com/lit/ds/symlink/tusb320.pdf), [TPD4S311, TI](https://www.ti.com/product/TPD4S311), and [TPD1E10B06, TI](https://www.ti.com/lit/ds/symlink/tpd1e10b06.pdf): sink Rd and selected ESD protection.
+
+## Stage 2.1 — WS2812B selection and bounded power budget
+
+This section supersedes the previous “exact WS2812 unknown” status. It is a
+component-verification record, not permission to create a schematic or a PCB.
+
+### Status LED
+
+- Selected LED: `WS2812B-V5` from WorldSemi. The manufacturer document calls it
+  a four-pin, top-SMD 5050 intelligent RGB LED: `VDD`, `DOUT`, `VSS`, `DIN`.
+  Its package outline is 5.0 × 5.4 × 1.57 mm. The authoritative document is
+  [WS2812B-V5, WorldSemi](https://www.world-semi.co.kr/_files/ugd/89cd03_1023b0e9d135431aa1e6491bfc318112.pdf);
+  the document itself identifies WorldSemi and `world-semi.com`. Procurement
+  must require this exact orderable part/datasheet revision — a marketplace
+  listing merely named “WS2812B” is not equivalent.
+- Rail: protected 5.0 V. The data sheet gives its electrical data at 5 V and
+  lists 3.7…5.3 V under **absolute maximum ratings**, not as a recommended
+  operating range. Therefore this project does not infer a broader allowable
+  rail range from that table; it requires a regulated 5.0 V nominal rail and a
+  revision check before purchase.
+- Logic: `DIN` requires `VIH >= 2.7 V` and `VIL <= 0.7 V`. The existing
+  `SN74AHCT1G125DBVR` at 5 V remains justified: TI guarantees `VOH >= 3.8 V`
+  at 4.5 V supply and -8 mA, which exceeds the LED's 2.7 V input-high minimum.
+  GPIO4 has no direct connection to the LED DIN.
+- Current: WorldSemi states 12 mA in the condition column for each R/G/B LED
+  characteristic and 0.6 mA working quiescent current. It does **not** publish
+  a single total “maximum supply current” number. The only defensible
+  full-white budget allocation from that source is `3 × 12 mA + 0.6 mA =
+  36.6 mA`; it is a bounded design allocation from the documented channel
+  condition, **not** a manufacturer-guaranteed absolute total maximum. Firmware
+  must treat 36.6 mA as the status-LED full-white allocation until a newer
+  manufacturer revision supplies an explicit total limit.
+- Series resistor: the WorldSemi document specifies no DIN series-resistor
+  value. No resistor value or resistor footprint is selected; one must not be
+  invented. It may be evaluated after the exact layout/trace is known as a
+  signal-integrity/EMC decision.
+- Local bypass: the WorldSemi typical application explicitly says the peripheral
+  circuit does not need a filter capacitor. It gives no local-bypass value, so
+  no LED-local capacitor or capacitor footprint is claimed as a manufacturer
+  requirement. This does not remove the separately selected 0.1 uF bypass at
+  the AHCT IC or the regulator output capacitors.
+- Footprint status: **not assigned**. The installed generic KiCad WS2812B
+  footprint has not been verified against this V5 package or a
+  manufacturer-recommended land pattern; the cited document supplies package
+  dimensions but no verified PCB land pattern. A footprint must be verified
+  before the PCB stage; no manual substitute is approved now.
+
+### Explicit power budget — current information only
+
+All rows below can occur concurrently unless firmware/hardware deliberately
+proves otherwise. `TBD` is deliberately not replaced by an estimate.
+
+| Rail | Consumer / condition | Official source value | Budget value used | Status |
+| --- | --- | ---: | ---: | --- |
+| 3.3 V | ESP32-WROOM-32E-N4, Wi-Fi TX 802.11b 20 MHz, 1 Mbps, 19.5 dBm | 379 mA peak (239 mA average), at 3.3 V / 25 °C / 100% TX duty | **500 mA** bounded rail allocation | Espressif's tested peak is 379 mA; 500 mA is the separate Espressif supply-capability recommendation, hence a conservative allocation rather than a claim of measured absolute maximum. |
+| 3.3 V | OLED module | unknown — module/rail/current not selected | `I_OLED = TBD` | No numerical allocation is permitted until the exact module datasheet is selected. |
+| 5.0 V | E220-900T22D TX | 110 mA momentary | **110 mA** | Selected EBYTE module, full-power rail. |
+| 5.0 V | WS2812B-V5, full white | no explicit total maximum; 12 mA per R/G/B condition plus 0.6 mA working quiescent | **36.6 mA** | Bounded allocation, not a guaranteed total-Imax specification. |
+| 5.0 V | SN74AHCT1G125, one input near 3.4 V | 1.5 mA max `ΔICC`; 10 uA max static `ICC` | **1.51 mA** | Conservative static-plus-`ΔICC` data-sheet allocation; dynamic LED-data switching is not separately guaranteed there. |
+| 5.0 V | TPS62162 input for the 3.3 V allocation | no guaranteed conversion-efficiency/current figure selected for this exact operating point | **at least 330 mA ideal**, plus `0.66 × I_OLED` ideal | Energy lower bound only: `(3.3 V / 5.0 V) × (500 mA + I_OLED)`. A real converter draws more because efficiency is below 100%. |
+
+Consequences, stated without an assumed efficiency:
+
+- The known direct 5 V consumers total **148.11 mA**. With only the ESP32
+  500 mA allocation and an ideal converter, the protected-5-V load is already
+  **at least 478.11 mA** (`110 + 36.6 + 1.51 + 330` mA), before OLED current,
+  converter losses, connector/ESD losses and other auxiliaries. The real value
+  is higher.
+- `TPS62162DSGR` is a 1 A, 3.3 V buck. It supports the current known 500 mA
+  ESP32 allocation with a nominal **less than 500 mA** remaining output budget,
+  but it is **not yet demonstrated adequate** for `500 mA + I_OLED + all
+  remaining 3.3 V loads`, transient response and thermal conditions. OLED
+  selection and a regulator/layout thermal review remain required.
+- The 5 V topology meets the selected **voltage** requirements for E220, AHCT
+  and WS2812B-V5. It does **not** yet meet a proven USB-C **source-current**
+  requirement: a passive Rd sink does not negotiate a guaranteed current, and a
+  nominal 500 mA source leaves only 21.89 mA above the ideal lower bound before
+  losses/OLED. Do not release a schematic until the receptacle/source-current
+  contract, protection/fuse strategy and current limit are selected against the
+  final budget.
+
+Additional Stage 2.1 official sources:
+
+- [ESP32-WROOM-32E & ESP32-WROOM-32UE Datasheet v2.1, table 16, Espressif](https://documentation.espressif.com/esp32-wroom-32e_esp32-wroom-32ue_datasheet_en.pdf): 379 mA peak for the cited Wi-Fi TX condition; the measurements are at 3.3 V and 25 °C.
+- [ESP32 Hardware Design Guidelines — schematic checklist, Espressif](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32/schematic-checklist.html): recommends a 3.3 V supply capable of no less than 500 mA.
+- [WS2812B-V5 manufacturer document, WorldSemi](https://www.world-semi.co.kr/_files/ugd/89cd03_1023b0e9d135431aa1e6491bfc318112.pdf) and [WorldSemi WS2812 family catalogue](https://world-semi.com/ws2812-family/): package/pins, 5 V electrical conditions, logic thresholds, 12 mA × 3 family current and the no-filter-capacitor statement.
+- [SN74AHCT1G125 datasheet, TI](https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf): 5 V operating range, `VOH`, `ΔICC`, static `ICC` and 0.1 uF IC bypass recommendation.

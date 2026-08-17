@@ -65,9 +65,10 @@
 
 1. Region, legal channel/maximum transmit power, exact 868/915 MHz antenna and
    final enclosure arrangement for E220-900T22D are unselected.
-2. Exact OLED module and WS2812-compatible LED are unknown; without their
-   official datasheets, connector pinout, ratings and footprints cannot be
-   guessed.
+2. Exact OLED module is unknown; without its official datasheet, connector
+   pinout, ratings and footprint cannot be guessed. `WS2812B-V5` is now
+   electrically selected, but its manufacturer-verified PCB land pattern is
+   still absent.
 3. USB-C receptacle and 2.54 mm E220 mating socket part numbers/footprints are
    not selected. EBYTE's official `Pcb_lib` is available but has not been
    audited; no manual E220 footprint may be substituted.
@@ -75,3 +76,26 @@
    Passive Rd is sink attach only: it neither negotiates PD nor proves that a
    connected source can supply the final load. Decide whether input current
    detection/limiting is required.
+
+## Stage 2.1 — status LED closed; remaining IMPORTANT items
+
+1. **Resolved — status LED electrical identity:** `WS2812B-V5` has a
+   manufacturer document for its four-pin 5050 package, 5 V conditions,
+   `VIH`/`VIL` and current basis. The 5 V AHCT translator is retained. This
+   closes the former “exact WS2812 unknown” electrical blocker.
+2. **IMPORTANT — WS2812B-V5 footprint:** the manufacturer document does not
+   provide a verified land pattern and the installed generic KiCad footprint has
+   not been compared to it. No footprint is assigned. Confirm an exact official
+   land pattern or a manufacturer-approved package drawing before PCB placement.
+3. **BLOCKER — OLED and final 3.3 V budget:** `I_OLED` is explicitly unknown.
+   A 1 A regulator cannot be approved until its module, voltage/pull-ups and
+   current are documented and added to the 500 mA ESP32 allocation.
+4. **BLOCKER — USB-C source-current / input protection:** the known 5 V load
+   has an ideal lower bound of 478.11 mA before OLED and conversion losses.
+   Select the receptacle, guaranteed source-current design target, fuse/eFuse or
+   other overcurrent method, and verify the final value. Passive Rd alone is not
+   a current contract.
+5. **IMPORTANT — LED current interpretation:** WorldSemi gives 12 mA per colour
+   condition and 0.6 mA working quiescent current but no total maximum supply
+   current. The documented 36.6 mA is an allocation, not an absolute maximum;
+   re-check the manufacturer document revision before production release.
