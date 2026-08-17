@@ -115,3 +115,65 @@ strap level. Никакая замена GPIO не выполняется без
 - [ESP32 Hardware Design Guidelines — Schematic Checklist, Espressif](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32/schematic-checklist.html): strapping, reset/boot, GPIO и schematic review requirements.
 - [ESP-IDF GPIO & RTC GPIO, Espressif](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/gpio.html): список strapping pins и ограничения GPIO.
 - [E220-400T22D, официальный каталог EBYTE](https://www.cdebyte.com/products/E220-400T22D/4) и [E220-900T30D, официальный каталог EBYTE](https://www.cdebyte.com/products/E220-900T30D/2): использованы только как подтверждение того, что внутри семейства E220 различаются диапазон, мощность, размеры и исполнение. Их параметры **не применяются** к этому устройству до выбора модели.
+
+## Stage 2 — подтверждённые требования и замены Stage 1
+
+Этот раздел имеет приоритет над исходными открытыми вопросами выше и сохраняет
+историю принятых решений.
+
+### Выбранные модули и GPIO
+
+- MCU: `ESP32-WROOM-32E-N4` — 4 MB Quad-SPI flash, без PSRAM, диапазон
+  -40…85 °C. Это именно non-PSRAM variant: ESP32-WROOM-32E datasheet указывает,
+  что в R2 variants GPIO16 подключён к embedded PSRAM и недоступен.
+- LoRa: внешний `E220-900T22D`, DIP 21 × 36 mm, 2.54 mm pin header, SMA-K
+  antenna interface около 50 ohm, band 850.125…930.125 MHz, rated 22 dBm.
+- `E220 TXD -> GPIO17`, `GPIO16 -> E220 RXD`, `GPIO26 -> M0`,
+  `GPIO27 -> M1`, `E220 AUX -> GPIO25`. Это документированная замена исходной
+  линии GPIO15: GPIO15/MTDO — strapping pin, а GPIO16/17 доступны у выбранного
+  N4 (module pins 27/28); UART signal can be assigned via GPIO Matrix.
+- E220 header: pin 1 M0, 2 M1, 3 RXD, 4 TXD, 5 AUX, 6 VCC, 7 GND. M0/M1 имеют
+  very-weak pull-up и не могут оставаться floating; AUX — status/self-test
+  output, low during self-test.
+
+### Питание, USB-C и уровни
+
+- `E220_VCC = protected 5.0 V`. Official EBYTE electrical table sets 2.7…5.5 V
+  and 3.3 V communication level; its pin-definition table sets 3.0…5.5 V. To
+  avoid relying on the conflicting lower bound, use 5.0 V nominal; full output
+  power is guaranteed at >=5 V and VCC must never exceed 5.5 V. Current table:
+  TX 110 mA momentary, RX 8 mA, sleep 3 µA. The E220 digital lines are 3.3 V,
+  therefore direct ESP32 UART/control logic is intended; 5 V TTL is prohibited.
+- 3.3 V rail: `TPS62162DSGR` fixed 3.3 V synchronous buck (TI), VIN 3…17 V,
+  up to 1 A. Reference values: 2.2 µH inductor, 10 µF ceramic input capacitor,
+  22 µF ceramic X5R/X7R output capacitor; fixed-version FB to AGND and exposed
+  pad to AGND. This meets Espressif's no-less-than-500-mA recommendation but
+  does not replace a final system power budget.
+- USB-C remains sink-only/default 5 V, no PD and no data: use a 5.1 kOhm Rd
+  resistor from each of CC1 and CC2 to GND; `TPD4S311` protects CC pins and
+  `TPD1E10B06` protects VBUS. The latter is a 5.5 V VRWM device and must not be
+  used for any USB-PD voltage. Exact receptacle, source-current contract and
+  overcurrent protection remain unresolved.
+- For a 5 V WS2812, the selected one-way level shifter is
+  `SN74AHCT1G125DBVR` powered by 5 V: GPIO4 -> A, Y -> DIN, OE tied low and
+  0.1 µF VCC bypass placed at the IC. Its VIH(max)=2.0 V at VCC=4.5…5.5 V, so
+  ESP32 3.3 V high is valid. Exact LED still requires its official datasheet.
+
+### BOOT/RESET and programming
+
+- Selected manual baseline: UART0 external 3.3 V TTL programming/debug header,
+  not USB-C data or an onboard USB-UART bridge.
+- EN: 10 kOhm pull-up to 3.3 V, 1 µF to GND, normally-open RESET switch to GND.
+  Espressif specifies EN/CHIP_PU must not float, recommends this RC, and states
+  50 µs minimum stabilisation and reset-low timing.
+- GPIO0: 10 kOhm pull-up to 3.3 V and normally-open BOOT switch to GND; do not
+  add a high-value capacitor. GPIO0=0 with GPIO2=0 selects UART download mode.
+
+### Stage 2 official sources
+
+- [ESP32-WROOM-32E & ESP32-WROOM-32UE Datasheet v2.1, Espressif](https://documentation.espressif.com/esp32-wroom-32e_esp32-wroom-32ue_datasheet_en.pdf): N4/non-PSRAM ordering, GPIO16/17 mapping, strapping and module pin table.
+- [ESP32 Hardware Design Guidelines, Espressif](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32/schematic-checklist.html): 500 mA supply recommendation, EN 10 kOhm/1 µF, GPIO0 and UART guidance.
+- [E220-900T22D product page, EBYTE](https://www.cdebyte.com/products/E220-900T22D/4) and [official E220-xxxTxxx manual, EBYTE](https://www.cdebyte.com/pdf-down.aspx?id=3552): pinout, electrical/current table, dimensions, 2.54 mm DIP and SMA-K/50 ohm interface.
+- [TPS62162 datasheet, TI](https://www.ti.com/lit/ds/symlink/tps62162.pdf): 3.3 V/1 A buck and reference L/C values.
+- [SN74AHCT1G125 datasheet, TI](https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf): 5 V AHCT level shifting and bypass guidance.
+- [USB Type-C specification, USB-IF](https://usb.org/usb-type-cr-cable-and-connector-specification), [TUSB320 datasheet, TI](https://www.ti.com/lit/ds/symlink/tusb320.pdf), [TPD4S311, TI](https://www.ti.com/product/TPD4S311), and [TPD1E10B06, TI](https://www.ti.com/lit/ds/symlink/tpd1e10b06.pdf): sink Rd and selected ESD protection.

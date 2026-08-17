@@ -1,6 +1,6 @@
 # Открытые инженерные вопросы
 
-## BLOCKER — нельзя безопасно проектировать schematic
+## Stage 1 history — BLOCKER (superseded where noted below)
 
 1. **Какова точная модель EBYTE E220?** Нужны complete order code, datasheet
    revision и источник поставки. Без них неизвестны VCC, peak TX current, UART
@@ -18,7 +18,7 @@
    RXD?** Иначе нужно формально утвердить перенос ESP32 TX на GPIO16 либо иной
    проверенный GPIO; менять GPIO молча нельзя.
 
-## IMPORTANT — schematic возможна только после своевременного решения; PCB без этого не начинать
+## Stage 1 history — IMPORTANT
 
 1. Точный ESP32-WROOM-32E order code (N4/N8/N16/R2, temperature grade),
    подтверждённый источник поставки и применяемый datasheet revision.
@@ -48,3 +48,30 @@
    и токовый мониторинг.
 4. 4-layer PCB как вариант, если 2-layer не сможет обеспечить RF keepout,
    return paths, токовые петли и routing без компромиссов.
+
+## Stage 2 — закрытые блокеры
+
+1. **E220 model:** `E220-900T22D` is selected and verified using the official
+   EBYTE product page/manual: pinout, VCC/logic/current, dimensions, 2.54 mm
+   DIP, SMA-K/50 ohm and antenna guidance are now known.
+2. **GPIO15 boot conflict:** resolved by changing the E220 RXD connection to
+   ESP32 GPIO16. This is safe only with the selected `ESP32-WROOM-32E-N4`
+   non-PSRAM module; the previous GPIO15 mapping must not reappear.
+3. **Baseline regulator/boot/level-shift strategy:** TPS62162DSGR,
+   ESP32 EN/GPIO0 manual circuit, and SN74AHCT1G125 are documented in
+   `requirements.md` and `component-decisions.md`.
+
+## Current BLOCKER — do not create the complete schematic yet
+
+1. Region, legal channel/maximum transmit power, exact 868/915 MHz antenna and
+   final enclosure arrangement for E220-900T22D are unselected.
+2. Exact OLED module and WS2812-compatible LED are unknown; without their
+   official datasheets, connector pinout, ratings and footprints cannot be
+   guessed.
+3. USB-C receptacle and 2.54 mm E220 mating socket part numbers/footprints are
+   not selected. EBYTE's official `Pcb_lib` is available but has not been
+   audited; no manual E220 footprint may be substituted.
+4. A final worst-case power budget and USB-C source-current contract are absent.
+   Passive Rd is sink attach only: it neither negotiates PD nor proves that a
+   connected source can supply the final load. Decide whether input current
+   detection/limiting is required.

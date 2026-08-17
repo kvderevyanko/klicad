@@ -67,3 +67,29 @@ placement PCB/DRC. Успешная проверка формата файла �
    routing и DRC.
 6. Отдельно провести engineering/manufacturability review. Производственные
    файлы выпускаются только по отдельному запросу.
+
+## Stage 2 — подтверждённая архитектура
+
+```text
+USB-C receptacle (sink-only/default 5 V; exact connector TBD)
+  |
+  +-- CC1 -> 5.1 kOhm Rd -> GND; CC2 -> 5.1 kOhm Rd -> GND
+  |   +-- TPD4S311 protects CC1/CC2
+  +-- VBUS -> TPD1E10B06 -> protected 5 V
+                           |-- E220-900T22D VCC (5.0 V, 110 mA TX peak)
+                           +-- TPS62162DSGR -> 3.3 V / 1 A
+                               (2.2 µH, 10 µF input, 22 µF output)
+                                  |-- ESP32-WROOM-32E-N4
+                                  |    |-- GPIO17 <- E220 TXD; GPIO16 -> E220 RXD
+                                  |    |-- GPIO26 -> M0; GPIO27 -> M1; GPIO25 <- AUX
+                                  |    |-- GPIO21/22 -> OLED I2C (module TBD)
+                                  |    |-- GPIO4 -> SN74AHCT1G125 (5 V) -> WS2812 DIN
+                                  |    +-- UART0, manual EN/RESET and GPIO0/BOOT
+                                  +-- OLED only after its 3.3 V compatibility is verified
+```
+
+The former conditional `E220_VCC` and GPIO15 risk are resolved. This does not
+resolve the final power budget, USB-C source-current contract, OLED/WS2812
+selection, connector footprints, regional channel/antenna, or mechanics. Those
+remain blockers to a complete schematic; no `.kicad_pro`, schematic or PCB is
+created at this stage.

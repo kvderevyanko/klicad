@@ -88,3 +88,58 @@ footprint не выбран на данном этапе.
   KiCad library before use. No standard EBYTE E220 library entry was found.
 - The installed display footprints are board-specific (for example, Adafruit
   modules), not a verified footprint for the unspecified OLED in this project.
+
+## Stage 2 — confirmed component decisions
+
+### ESP32 and E220 interface
+
+- `ESP32-WROOM-32E-N4` is selected specifically because it has no PSRAM. GPIO16
+  (module pin 27) and GPIO17 (pin 28) are available; variants with R2 PSRAM
+  cannot use GPIO16. Final application mapping is GPIO17<-E220 TXD and
+  GPIO16->E220 RXD; GPIO15 is rejected because it is MTDO strapping.
+- `E220-900T22D` is selected as an external 2.54 mm DIP module. Pin sequence:
+  M0/M1/RXD/TXD/AUX/VCC/GND = 1/2/3/4/5/6/7. It uses 3.3 V communication levels
+  even with 5 V supply, so no level translation is selected on the E220 UART or
+  control lines. M0/M1 are MCU-driven and cannot float.
+- EBYTE provides an official `Pcb_lib`/3D download on its product page. No local
+  standard KiCad E220 library exists, and no E220 footprint has been made or
+  imported. It must first be audited against the manual and selected mating
+  socket.
+- Stage 2 verification of that download: official URL
+  `https://www.cdebyte.com/pdf-down.aspx?id=1717` is a RAR archive containing
+  `E220系列-PcbLib.PcbLib` (Altium PcbLib, timestamp 2022-07-06), not a native
+  KiCad library. It proves EBYTE publishes a source library, but does **not**
+  approve a direct KiCad footprint assignment. Audit exact E220-900T22D
+  geometry/pin 1 against the current manual before any controlled conversion.
+
+### Power and USB-C
+
+- `TPS62162DSGR` selected: 3.3 V fixed output, 3…17 V input, 1 A capability.
+  Required TI reference values: 2.2 µH L, 10 µF ceramic CIN, 22 µF X5R/X7R
+  COUT; fixed FB to AGND and thermal pad to AGND. Exact passives/footprints wait
+  for availability and footprint verification.
+- E220 is fed from protected 5.0 V, not the 3.3 V rail. EBYTE table lists
+  110 mA TX momentary, 8 mA RX and 3 µA sleep; 5 V is chosen because full RF
+  output is guaranteed at >=5 V. Do not exceed 5.5 V.
+- USB-C discrete sink topology selected: CC1/CC2 each receive 5.1 kOhm Rd to
+  GND; `TPD4S311` protects CC and `TPD1E10B06` protects default-5-V VBUS.
+  Receptacle, fuse/eFuse and current contract remain intentionally unselected.
+
+### BOOT/RESET and WS2812 data
+
+- EN uses Espressif's recommended 10 kOhm pull-up plus 1 µF RC and RESET-to-GND
+  button. GPIO0 uses 10 kOhm pull-up and BOOT-to-GND button, with no high-value
+  capacitor. Programming remains external 3.3 V UART0/manual boot.
+- `SN74AHCT1G125DBVR` is selected only for 3.3 V GPIO4 to 5 V WS2812 DIN
+  translation: 5 V VCC, OE low, 0.1 µF local bypass. The exact LED remains a
+  blocker; no WS2812 footprint is assigned.
+
+### KiCad recheck
+
+- KiCad executable and `kicad-cli` are now version `10.0.5`. Both
+  `kicad-cli sch erc` and `kicad-cli pcb drc` are available. In this sandbox set
+  `XDG_CACHE_HOME`, `XDG_CONFIG_HOME` and `XDG_DATA_HOME` under `/tmp` before
+  running the CLI, because the default user locations are read-only.
+- Local standard libraries still offer generic ESP32-WROOM-32, USB-C,
+  WS2812/WS2812B and test-point assets, but no exact ESP32-WROOM-32E or
+  E220-900T22D entry. Exact assets require manufacturer-source verification.
