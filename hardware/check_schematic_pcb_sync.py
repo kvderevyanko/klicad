@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Machine-checkable schematic/PCB assembly and electrical sync gate.
 
-Usage: python3 hardware/check_schematic_pcb_sync.py [--output REPORT.json]
+Usage: python3 hardware/check_schematic_pcb_sync.py [--pcb BOARD.kicad_pcb] [--output REPORT.json]
 The board is read only.  The schematic netlist is exported to a temporary file.
 """
 import argparse
@@ -88,8 +88,8 @@ def symbols():
     return result
 
 
-def board():
-    data, result = sexp(PCB.read_text()), {}
+def board(pcb_path=PCB):
+    data, result = sexp(pcb_path.read_text()), {}
     for fp in forms(data, "footprint"):
         props = prop_map(fp); ref = props.get("Reference")
         if not ref: continue
@@ -119,14 +119,18 @@ def netlist():
 
 def main():
     parser = argparse.ArgumentParser()
+    parser.add_argument("--pcb", type=Path, default=PCB, help="PCB to audit; defaults to active esp32-e220.kicad_pcb")
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
-    sch, pcb, expected = symbols(), board(), netlist()
+    sch, pcb, expected = symbols(), board(args.pcb), netlist()
     non_pcb = {ref: item for ref, item in sch.items() if not item["on_board"] and not ref.startswith("#")}
     assembled = {ref: item for ref, item in sch.items() if item["on_board"] and not ref.startswith("#")}
     result = {
         "gate": "SCHEMATIC-PCB ELECTRICAL PARITY",
-        "contract": {"pcb_net_name": "exact Eeschema root-sheet name, including leading '/'"},
+        "contract": {
+            "pcb": str(args.pcb),
+            "pcb_net_name": "exact Eeschema root-sheet name, including leading '/'",
+        },
         "counts": {"schematic_assembled": len(assembled), "pcb_footprints": len(pcb), "intentional_non_pcb": len(non_pcb)},
         "intentional_non_pcb": {ref: "NO_FOOTPRINT_DNP" for ref in sorted(non_pcb)},
         "unexpected_non_pcb_items": sorted(set(non_pcb) - ALLOWED_NON_PCB_DNP),

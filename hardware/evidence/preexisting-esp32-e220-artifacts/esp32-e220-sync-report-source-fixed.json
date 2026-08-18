@@ -1,0 +1,565 @@
+{
+  "board_only_references": [],
+  "contract": {
+    "pcb_net_name": "exact Eeschema root-sheet name, including leading '/'"
+  },
+  "counts": {
+    "intentional_non_pcb": 2,
+    "pcb_footprints": 33,
+    "schematic_assembled": 33
+  },
+  "electrical_pad_net_mismatches": [],
+  "gate": "SCHEMATIC-PCB ELECTRICAL PARITY",
+  "intentional_non_pcb": {
+    "R10": "NO_FOOTPRINT_DNP",
+    "R11": "NO_FOOTPRINT_DNP"
+  },
+  "kicad_raw_net_name_mismatches": [
+    {
+      "pad": "1",
+      "pcb": "BUCK_IN",
+      "reference": "C1",
+      "schematic": "/BUCK_IN"
+    },
+    {
+      "pad": "2",
+      "pcb": "GND",
+      "reference": "C1",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "1",
+      "pcb": "BUCK_IN",
+      "reference": "C2",
+      "schematic": "/BUCK_IN"
+    },
+    {
+      "pad": "2",
+      "pcb": "GND",
+      "reference": "C2",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "1",
+      "pcb": "5V_SYS",
+      "reference": "C3",
+      "schematic": "/5V_SYS"
+    },
+    {
+      "pad": "2",
+      "pcb": "GND",
+      "reference": "C3",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "1",
+      "pcb": "SS_TR",
+      "reference": "C4",
+      "schematic": "/SS_TR"
+    },
+    {
+      "pad": "2",
+      "pcb": "GND",
+      "reference": "C4",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "1",
+      "pcb": "5V_SYS",
+      "reference": "C5",
+      "schematic": "/5V_SYS"
+    },
+    {
+      "pad": "2",
+      "pcb": "GND",
+      "reference": "C5",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "1",
+      "pcb": "5V_SYS",
+      "reference": "C6",
+      "schematic": "/5V_SYS"
+    },
+    {
+      "pad": "2",
+      "pcb": "GND",
+      "reference": "C6",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "1",
+      "pcb": "5V_SYS",
+      "reference": "C7",
+      "schematic": "/5V_SYS"
+    },
+    {
+      "pad": "2",
+      "pcb": "GND",
+      "reference": "C7",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "1",
+      "pcb": "5V_SYS",
+      "reference": "D2",
+      "schematic": "/5V_SYS"
+    },
+    {
+      "pad": "3",
+      "pcb": "GND",
+      "reference": "D2",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "4",
+      "pcb": "WS2812_DIN",
+      "reference": "D2",
+      "schematic": "/WS2812_DIN"
+    },
+    {
+      "pad": "1",
+      "pcb": "BAT_FUSED",
+      "reference": "D3",
+      "schematic": "/BAT_FUSED"
+    },
+    {
+      "pad": "2",
+      "pcb": "GND",
+      "reference": "D3",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "1",
+      "pcb": "BAT_PLUS",
+      "reference": "F1",
+      "schematic": "/BAT_PLUS"
+    },
+    {
+      "pad": "2",
+      "pcb": "BAT_FUSED",
+      "reference": "F1",
+      "schematic": "/BAT_FUSED"
+    },
+    {
+      "pad": "1",
+      "pcb": "5V_SYS",
+      "reference": "J1",
+      "schematic": "/5V_SYS"
+    },
+    {
+      "pad": "2",
+      "pcb": "GND",
+      "reference": "J1",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "6",
+      "pcb": "E220_AUX",
+      "reference": "J1",
+      "schematic": "/E220_AUX"
+    },
+    {
+      "pad": "7",
+      "pcb": "E220_M1",
+      "reference": "J1",
+      "schematic": "/E220_M1"
+    },
+    {
+      "pad": "8",
+      "pcb": "E220_M0",
+      "reference": "J1",
+      "schematic": "/E220_M0"
+    },
+    {
+      "pad": "1",
+      "pcb": "DEVKIT_3V3",
+      "reference": "J2",
+      "schematic": "/DEVKIT_3V3"
+    },
+    {
+      "pad": "2",
+      "pcb": "GND",
+      "reference": "J2",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "5",
+      "pcb": "WS2812_DATA_3V3",
+      "reference": "J2",
+      "schematic": "/WS2812_DATA_3V3"
+    },
+    {
+      "pad": "6",
+      "pcb": "E220_TXD",
+      "reference": "J2",
+      "schematic": "/E220_TXD"
+    },
+    {
+      "pad": "7",
+      "pcb": "E220_RXD",
+      "reference": "J2",
+      "schematic": "/E220_RXD"
+    },
+    {
+      "pad": "11",
+      "pcb": "OLED_SDA",
+      "reference": "J2",
+      "schematic": "/OLED_SDA"
+    },
+    {
+      "pad": "14",
+      "pcb": "OLED_SCL",
+      "reference": "J2",
+      "schematic": "/OLED_SCL"
+    },
+    {
+      "pad": "1",
+      "pcb": "E220_M0",
+      "reference": "J3",
+      "schematic": "/E220_M0"
+    },
+    {
+      "pad": "2",
+      "pcb": "E220_M1",
+      "reference": "J3",
+      "schematic": "/E220_M1"
+    },
+    {
+      "pad": "3",
+      "pcb": "E220_RXD",
+      "reference": "J3",
+      "schematic": "/E220_RXD"
+    },
+    {
+      "pad": "4",
+      "pcb": "E220_TXD",
+      "reference": "J3",
+      "schematic": "/E220_TXD"
+    },
+    {
+      "pad": "5",
+      "pcb": "E220_AUX",
+      "reference": "J3",
+      "schematic": "/E220_AUX"
+    },
+    {
+      "pad": "6",
+      "pcb": "5V_SYS",
+      "reference": "J3",
+      "schematic": "/5V_SYS"
+    },
+    {
+      "pad": "7",
+      "pcb": "GND",
+      "reference": "J3",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "1",
+      "pcb": "BAT_PLUS",
+      "reference": "J4",
+      "schematic": "/BAT_PLUS"
+    },
+    {
+      "pad": "2",
+      "pcb": "GND",
+      "reference": "J4",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "1",
+      "pcb": "GND",
+      "reference": "J5",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "2",
+      "pcb": "DEVKIT_3V3",
+      "reference": "J5",
+      "schematic": "/DEVKIT_3V3"
+    },
+    {
+      "pad": "3",
+      "pcb": "OLED_SCL",
+      "reference": "J5",
+      "schematic": "/OLED_SCL"
+    },
+    {
+      "pad": "4",
+      "pcb": "OLED_SDA",
+      "reference": "J5",
+      "schematic": "/OLED_SDA"
+    },
+    {
+      "pad": "1",
+      "pcb": "BUCK_SW",
+      "reference": "L1",
+      "schematic": "/BUCK_SW"
+    },
+    {
+      "pad": "2",
+      "pcb": "5V_SYS",
+      "reference": "L1",
+      "schematic": "/5V_SYS"
+    },
+    {
+      "pad": "1",
+      "pcb": "Q1_GATE",
+      "reference": "Q1",
+      "schematic": "/Q1_GATE"
+    },
+    {
+      "pad": "2",
+      "pcb": "BUCK_IN",
+      "reference": "Q1",
+      "schematic": "/BUCK_IN"
+    },
+    {
+      "pad": "3",
+      "pcb": "BAT_FUSED",
+      "reference": "Q1",
+      "schematic": "/BAT_FUSED"
+    },
+    {
+      "pad": "1",
+      "pcb": "Q1_GATE",
+      "reference": "R1",
+      "schematic": "/Q1_GATE"
+    },
+    {
+      "pad": "2",
+      "pcb": "GND",
+      "reference": "R1",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "1",
+      "pcb": "BUCK_IN",
+      "reference": "R2",
+      "schematic": "/BUCK_IN"
+    },
+    {
+      "pad": "2",
+      "pcb": "Q1_GATE",
+      "reference": "R2",
+      "schematic": "/Q1_GATE"
+    },
+    {
+      "pad": "1",
+      "pcb": "E220_M0",
+      "reference": "R8",
+      "schematic": "/E220_M0"
+    },
+    {
+      "pad": "2",
+      "pcb": "GND",
+      "reference": "R8",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "1",
+      "pcb": "E220_M1",
+      "reference": "R9",
+      "schematic": "/E220_M1"
+    },
+    {
+      "pad": "2",
+      "pcb": "GND",
+      "reference": "R9",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "1",
+      "pcb": "BAT_PLUS",
+      "reference": "TP1",
+      "schematic": "/BAT_PLUS"
+    },
+    {
+      "pad": "1",
+      "pcb": "E220_TXD",
+      "reference": "TP10",
+      "schematic": "/E220_TXD"
+    },
+    {
+      "pad": "1",
+      "pcb": "GND",
+      "reference": "TP2",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "1",
+      "pcb": "BUCK_IN",
+      "reference": "TP3",
+      "schematic": "/BUCK_IN"
+    },
+    {
+      "pad": "1",
+      "pcb": "5V_SYS",
+      "reference": "TP4",
+      "schematic": "/5V_SYS"
+    },
+    {
+      "pad": "1",
+      "pcb": "5V_SYS",
+      "reference": "TP5",
+      "schematic": "/5V_SYS"
+    },
+    {
+      "pad": "1",
+      "pcb": "E220_M0",
+      "reference": "TP6",
+      "schematic": "/E220_M0"
+    },
+    {
+      "pad": "1",
+      "pcb": "E220_M1",
+      "reference": "TP7",
+      "schematic": "/E220_M1"
+    },
+    {
+      "pad": "1",
+      "pcb": "E220_AUX",
+      "reference": "TP8",
+      "schematic": "/E220_AUX"
+    },
+    {
+      "pad": "1",
+      "pcb": "E220_RXD",
+      "reference": "TP9",
+      "schematic": "/E220_RXD"
+    },
+    {
+      "pad": "1",
+      "pcb": "BUCK_SW",
+      "reference": "U1",
+      "schematic": "/BUCK_SW"
+    },
+    {
+      "pad": "2",
+      "pcb": "BUCK_SW",
+      "reference": "U1",
+      "schematic": "/BUCK_SW"
+    },
+    {
+      "pad": "3",
+      "pcb": "BUCK_SW",
+      "reference": "U1",
+      "schematic": "/BUCK_SW"
+    },
+    {
+      "pad": "5",
+      "pcb": "GND",
+      "reference": "U1",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "6",
+      "pcb": "GND",
+      "reference": "U1",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "7",
+      "pcb": "5V_SYS",
+      "reference": "U1",
+      "schematic": "/5V_SYS"
+    },
+    {
+      "pad": "8",
+      "pcb": "GND",
+      "reference": "U1",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "9",
+      "pcb": "SS_TR",
+      "reference": "U1",
+      "schematic": "/SS_TR"
+    },
+    {
+      "pad": "10",
+      "pcb": "BUCK_IN",
+      "reference": "U1",
+      "schematic": "/BUCK_IN"
+    },
+    {
+      "pad": "11",
+      "pcb": "BUCK_IN",
+      "reference": "U1",
+      "schematic": "/BUCK_IN"
+    },
+    {
+      "pad": "12",
+      "pcb": "BUCK_IN",
+      "reference": "U1",
+      "schematic": "/BUCK_IN"
+    },
+    {
+      "pad": "13",
+      "pcb": "BUCK_IN",
+      "reference": "U1",
+      "schematic": "/BUCK_IN"
+    },
+    {
+      "pad": "14",
+      "pcb": "5V_SYS",
+      "reference": "U1",
+      "schematic": "/5V_SYS"
+    },
+    {
+      "pad": "15",
+      "pcb": "GND",
+      "reference": "U1",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "16",
+      "pcb": "GND",
+      "reference": "U1",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "EP",
+      "pcb": "GND",
+      "reference": "U1",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "1",
+      "pcb": "GND",
+      "reference": "U3",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "2",
+      "pcb": "WS2812_DATA_3V3",
+      "reference": "U3",
+      "schematic": "/WS2812_DATA_3V3"
+    },
+    {
+      "pad": "3",
+      "pcb": "GND",
+      "reference": "U3",
+      "schematic": "/GND"
+    },
+    {
+      "pad": "4",
+      "pcb": "WS2812_DIN",
+      "reference": "U3",
+      "schematic": "/WS2812_DIN"
+    },
+    {
+      "pad": "5",
+      "pcb": "5V_SYS",
+      "reference": "U3",
+      "schematic": "/5V_SYS"
+    }
+  ],
+  "missing_pcb_footprints": [],
+  "non_pcb_dnp_errors": [],
+  "production_property_mismatches": [],
+  "status": "FAIL",
+  "unexpected_non_pcb_items": [],
+  "usb_c_power_nets_present": []
+}

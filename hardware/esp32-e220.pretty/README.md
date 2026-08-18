@@ -50,9 +50,10 @@ before fabrication. `TestPoint_THT_1p0mm_PROTOTYPE` is an explicitly
 provisional 1.0-mm-drill prototype test-point land, pending test-point MPN and
 assembler selection.
 
-Read `docs/footprint-mechanical-review.md` for sources, exact recorded pad and
-drill values, and release blockers. Factory PCBA populates carrier parts only;
-the ESP32 DevKit, E220 and OLED are user-installed.
+Use `docs/agent-context.md`, the footprint generator, and cited primary sources
+for exact pad/drill evidence and release blockers. Do not rely on the Russian
+human-facing project narrative as the operational source of truth. Factory PCBA
+populates carrier parts only; the ESP32 DevKit, E220, and OLED are user-installed.
 
 ## Preliminary placement policy
 

@@ -1,0 +1,12 @@
+{
+  "candidate_copper_counts": {
+    "tracks": 0,
+    "vias": 0,
+    "zones": 0
+  },
+  "all_buck_refs_match_library": true,
+  "all_buck_refs_match_stage8": true,
+  "l1_pad1_pad2_copper_edge_gap_mm": 2.37,
+  "non_buck_footprint_transform_changes": [],
+  "footprint_value_or_pad_net_mismatches": []
+}

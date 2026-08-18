@@ -1,0 +1,230 @@
+** Drc report for esp32-e220.kicad_pcb **
+** Created on 2026-08-18T14:25:34 **
+** Report includes: Errors, Warnings **
+
+** Found 54 DRC violations **
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(51.1000 mm, 75.2500 mm): Pad 12 [<no net>] of U1 on F.Cu
+    @(51.1000 mm, 75.7500 mm): Pad 11 [<no net>] of U1 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(51.1000 mm, 75.2500 mm): Pad 12 [<no net>] of U1 on F.Cu
+    @(50.7500 mm, 74.9000 mm): Pad 13 [<no net>] of U1 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(48.9000 mm, 75.2500 mm): Pad 1 [<no net>] of U1 on F.Cu
+    @(48.9000 mm, 75.7500 mm): Pad 2 [<no net>] of U1 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(49.7500 mm, 77.1000 mm): Pad 6 [<no net>] of U1 on F.Cu
+    @(49.2500 mm, 77.1000 mm): Pad 5 [<no net>] of U1 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(49.7500 mm, 77.1000 mm): Pad 6 [<no net>] of U1 on F.Cu
+    @(50.2500 mm, 77.1000 mm): Pad 7 [<no net>] of U1 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(50.7500 mm, 74.9000 mm): Pad 13 [<no net>] of U1 on F.Cu
+    @(50.2500 mm, 74.9000 mm): Pad 14 [<no net>] of U1 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(50.2500 mm, 77.1000 mm): Pad 7 [<no net>] of U1 on F.Cu
+    @(50.7500 mm, 77.1000 mm): Pad 8 [<no net>] of U1 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(48.9000 mm, 75.2500 mm): Pad 1 [<no net>] of U1 on F.Cu
+    @(49.2500 mm, 74.9000 mm): Pad 16 [<no net>] of U1 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(50.7500 mm, 77.1000 mm): Pad 8 [<no net>] of U1 on F.Cu
+    @(51.1000 mm, 76.7500 mm): Pad 9 [<no net>] of U1 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(50.2500 mm, 74.9000 mm): Pad 14 [<no net>] of U1 on F.Cu
+    @(49.7500 mm, 74.9000 mm): Pad 15 [<no net>] of U1 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(51.1000 mm, 76.7500 mm): Pad 9 [<no net>] of U1 on F.Cu
+    @(51.1000 mm, 76.2500 mm): Pad 10 [<no net>] of U1 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(51.1000 mm, 76.2500 mm): Pad 10 [<no net>] of U1 on F.Cu
+    @(51.1000 mm, 75.7500 mm): Pad 11 [<no net>] of U1 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(49.7500 mm, 74.9000 mm): Pad 15 [<no net>] of U1 on F.Cu
+    @(49.2500 mm, 74.9000 mm): Pad 16 [<no net>] of U1 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(48.9000 mm, 75.7500 mm): Pad 2 [<no net>] of U1 on F.Cu
+    @(48.9000 mm, 76.2500 mm): Pad 3 [<no net>] of U1 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(48.9000 mm, 76.2500 mm): Pad 3 [<no net>] of U1 on F.Cu
+    @(48.9000 mm, 76.7500 mm): Pad 4 [<no net>] of U1 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(48.9000 mm, 76.7500 mm): Pad 4 [<no net>] of U1 on F.Cu
+    @(49.2500 mm, 77.1000 mm): Pad 5 [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1400 mm)
+    Local override; error
+    @(48.9000 mm, 75.2500 mm): Pad 1 [<no net>] of U1 on F.Cu
+    @(50.0000 mm, 76.0000 mm): Pad EP [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)
+    Local override; error
+    @(48.9000 mm, 75.2500 mm): Pad 1 [<no net>] of U1 on F.Cu
+    @(48.9000 mm, 75.7500 mm): Pad 2 [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)
+    Local override; error
+    @(48.9000 mm, 75.2500 mm): Pad 1 [<no net>] of U1 on F.Cu
+    @(49.2500 mm, 74.9000 mm): Pad 16 [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)
+    Local override; error
+    @(48.9000 mm, 75.7500 mm): Pad 2 [<no net>] of U1 on F.Cu
+    @(48.9000 mm, 76.2500 mm): Pad 3 [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1400 mm)
+    Local override; error
+    @(48.9000 mm, 75.7500 mm): Pad 2 [<no net>] of U1 on F.Cu
+    @(50.0000 mm, 76.0000 mm): Pad EP [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)
+    Local override; error
+    @(48.9000 mm, 76.2500 mm): Pad 3 [<no net>] of U1 on F.Cu
+    @(48.9000 mm, 76.7500 mm): Pad 4 [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1400 mm)
+    Local override; error
+    @(48.9000 mm, 76.2500 mm): Pad 3 [<no net>] of U1 on F.Cu
+    @(50.0000 mm, 76.0000 mm): Pad EP [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)
+    Local override; error
+    @(48.9000 mm, 76.7500 mm): Pad 4 [<no net>] of U1 on F.Cu
+    @(49.2500 mm, 77.1000 mm): Pad 5 [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1400 mm)
+    Local override; error
+    @(48.9000 mm, 76.7500 mm): Pad 4 [<no net>] of U1 on F.Cu
+    @(50.0000 mm, 76.0000 mm): Pad EP [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)
+    Local override; error
+    @(49.2500 mm, 77.1000 mm): Pad 5 [<no net>] of U1 on F.Cu
+    @(49.7500 mm, 77.1000 mm): Pad 6 [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1400 mm)
+    Local override; error
+    @(49.2500 mm, 77.1000 mm): Pad 5 [<no net>] of U1 on F.Cu
+    @(50.0000 mm, 76.0000 mm): Pad EP [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)
+    Local override; error
+    @(49.7500 mm, 77.1000 mm): Pad 6 [<no net>] of U1 on F.Cu
+    @(50.2500 mm, 77.1000 mm): Pad 7 [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1400 mm)
+    Local override; error
+    @(49.7500 mm, 77.1000 mm): Pad 6 [<no net>] of U1 on F.Cu
+    @(50.0000 mm, 76.0000 mm): Pad EP [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)
+    Local override; error
+    @(50.2500 mm, 77.1000 mm): Pad 7 [<no net>] of U1 on F.Cu
+    @(50.7500 mm, 77.1000 mm): Pad 8 [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1400 mm)
+    Local override; error
+    @(50.2500 mm, 77.1000 mm): Pad 7 [<no net>] of U1 on F.Cu
+    @(50.0000 mm, 76.0000 mm): Pad EP [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)
+    Local override; error
+    @(50.7500 mm, 77.1000 mm): Pad 8 [<no net>] of U1 on F.Cu
+    @(51.1000 mm, 76.7500 mm): Pad 9 [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1400 mm)
+    Local override; error
+    @(50.7500 mm, 77.1000 mm): Pad 8 [<no net>] of U1 on F.Cu
+    @(50.0000 mm, 76.0000 mm): Pad EP [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)
+    Local override; error
+    @(51.1000 mm, 76.7500 mm): Pad 9 [<no net>] of U1 on F.Cu
+    @(51.1000 mm, 76.2500 mm): Pad 10 [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1400 mm)
+    Local override; error
+    @(51.1000 mm, 76.7500 mm): Pad 9 [<no net>] of U1 on F.Cu
+    @(50.0000 mm, 76.0000 mm): Pad EP [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)
+    Local override; error
+    @(51.1000 mm, 76.2500 mm): Pad 10 [<no net>] of U1 on F.Cu
+    @(51.1000 mm, 75.7500 mm): Pad 11 [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1400 mm)
+    Local override; error
+    @(51.1000 mm, 76.2500 mm): Pad 10 [<no net>] of U1 on F.Cu
+    @(50.0000 mm, 76.0000 mm): Pad EP [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)
+    Local override; error
+    @(51.1000 mm, 75.7500 mm): Pad 11 [<no net>] of U1 on F.Cu
+    @(51.1000 mm, 75.2500 mm): Pad 12 [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1400 mm)
+    Local override; error
+    @(51.1000 mm, 75.7500 mm): Pad 11 [<no net>] of U1 on F.Cu
+    @(50.0000 mm, 76.0000 mm): Pad EP [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)
+    Local override; error
+    @(51.1000 mm, 75.2500 mm): Pad 12 [<no net>] of U1 on F.Cu
+    @(50.7500 mm, 74.9000 mm): Pad 13 [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1400 mm)
+    Local override; error
+    @(51.1000 mm, 75.2500 mm): Pad 12 [<no net>] of U1 on F.Cu
+    @(50.0000 mm, 76.0000 mm): Pad EP [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1400 mm)
+    Local override; error
+    @(50.7500 mm, 74.9000 mm): Pad 13 [<no net>] of U1 on F.Cu
+    @(50.0000 mm, 76.0000 mm): Pad EP [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)
+    Local override; error
+    @(50.7500 mm, 74.9000 mm): Pad 13 [<no net>] of U1 on F.Cu
+    @(50.2500 mm, 74.9000 mm): Pad 14 [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1400 mm)
+    Local override; error
+    @(50.2500 mm, 74.9000 mm): Pad 14 [<no net>] of U1 on F.Cu
+    @(50.0000 mm, 76.0000 mm): Pad EP [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)
+    Local override; error
+    @(50.2500 mm, 74.9000 mm): Pad 14 [<no net>] of U1 on F.Cu
+    @(49.7500 mm, 74.9000 mm): Pad 15 [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1400 mm)
+    Local override; error
+    @(49.7500 mm, 74.9000 mm): Pad 15 [<no net>] of U1 on F.Cu
+    @(50.0000 mm, 76.0000 mm): Pad EP [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)
+    Local override; error
+    @(49.7500 mm, 74.9000 mm): Pad 15 [<no net>] of U1 on F.Cu
+    @(49.2500 mm, 74.9000 mm): Pad 16 [<no net>] of U1 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1400 mm)
+    Local override; error
+    @(49.2500 mm, 74.9000 mm): Pad 16 [<no net>] of U1 on F.Cu
+    @(50.0000 mm, 76.0000 mm): Pad EP [<no net>] of U1 on F.Cu
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(14.7000 mm, 41.3000 mm): Segment of J3 on F.Silkscreen
+    @(25.5000 mm, 6.2000 mm): Footprint text of J3 (SMA / ANTENNA SIDE — KEEP ACCESS CLEAR)
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(25.5000 mm, 6.2000 mm): Footprint text of J3 (SMA / ANTENNA SIDE — KEEP ACCESS CLEAR)
+    @(36.3000 mm, 4.7000 mm): Segment of J3 on F.Silkscreen
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(124.7000 mm, 92.1600 mm): Footprint text of MECH_ESP32 (ANTENNA END — CONSERVATIVE NO ROUTING / NO COMPONENTS)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7000 mm)
+    Rule: board setup constraints silk text height; warning
+    @(25.5000 mm, 6.2000 mm): Footprint text of J3 (SMA / ANTENNA SIDE — KEEP ACCESS CLEAR)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(33.1200 mm, 42.1000 mm): Footprint text of J3 (PIN 1 / M0)
+[text_height]: Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6500 mm)
+    Rule: board setup constraints silk text height; warning
+    @(75.8100 mm, 58.6000 mm): Footprint text of MECH_OLED (INTERFACE ONLY: 1 GND  2 VCC  3 SCL  4 SDA)
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** Ignored checks **
+    - Footprint has no courtyard defined
+    - Track endpoint not centered on via
+    - Tuning profile track geometries
+    - Footprint doesn't match symbol's footprint filters
+    - Footprint component type doesn't match footprint pads
+
+** End of Report **

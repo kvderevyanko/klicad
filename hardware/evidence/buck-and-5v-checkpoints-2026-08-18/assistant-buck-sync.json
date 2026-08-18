@@ -1,0 +1,25 @@
+{
+  "board_only_references": [],
+  "contract": {
+    "pcb": "hardware/esp32-e220-assistant-buck-candidate.kicad_pcb",
+    "pcb_net_name": "exact Eeschema root-sheet name, including leading '/'"
+  },
+  "counts": {
+    "intentional_non_pcb": 2,
+    "pcb_footprints": 33,
+    "schematic_assembled": 33
+  },
+  "electrical_pad_net_mismatches": [],
+  "gate": "SCHEMATIC-PCB ELECTRICAL PARITY",
+  "intentional_non_pcb": {
+    "R10": "NO_FOOTPRINT_DNP",
+    "R11": "NO_FOOTPRINT_DNP"
+  },
+  "kicad_raw_net_name_mismatches": [],
+  "missing_pcb_footprints": [],
+  "non_pcb_dnp_errors": [],
+  "production_property_mismatches": [],
+  "status": "PASS",
+  "unexpected_non_pcb_items": [],
+  "usb_c_power_nets_present": []
+}

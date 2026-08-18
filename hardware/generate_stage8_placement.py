@@ -113,8 +113,11 @@ def main() -> None:
                 raise RuntimeError(f"{fp.GetReference()}: missing pad {number}")
             pad.SetNet(nets[f"/{net_name}"])
 
-    # POWER CELL: the compact placement follows the TI topology direction.
-    # It is intentionally separated from the radio and ESP antenna-edge regions.
+    # INPUT PROTECTION and the TPS62133 regulator are intentionally treated as
+    # two physical blocks.  J4/F1/D3/Q1 stay near the battery connector; the
+    # upstream Q1->BUCK_IN feed is not itself the regulator high-di/dt loop.
+    # The critical input loop begins at local C1/PVIN/PGND, so the regulator
+    # island is allowed to sit in a quieter/free area of the board.
     j4 = add_footprint(board, "JST_B2B-XH-A_1x02_P2.50mm_THT", "J4", "B2B-XH-A", 35, 76)
     f1 = add_footprint(board, "Littelfuse_1812L200_16_4532Metric", "F1", "1812L200/16", 45, 76)
     # D3 is a BAT_FUSED-to-GND shunt, not a series part.  It is above and
@@ -123,39 +126,43 @@ def main() -> None:
     d3 = add_footprint(board, "Littelfuse_SMBJ10CA_DO214AA", "D3", "SMBJ10CA", 41.9, 70.5, 180)
     q1 = add_footprint(board, "Diodes_DMP3130LQ-7_SOT23", "Q1", "DMP3130LQ-7", 63, 76)
     q1.Reference().SetLayer(pcbnew.F_Fab)
-    # TPS62133RGT at 0 degrees is intentional and follows the *actual* RGT
-    # pad map: SW1/2/3 are the left-side pads 1/2/3, while AVIN/PVIN are the
-    # right-side pads 10/11/12.  Keeping this orientation prevents the old
-    # crossed power-cell placement caused by treating the package as symmetric.
-    u1 = add_footprint(board, "TI_TPS62133RGT_RGT0016C", "U1", "TPS62133RGT", 72, 72)
-    # Input ceramics form a compact non-overlapping pair.  BUCK_IN pads face
-    # PVIN/AVIN; GND pads face the lower PGND/EP side for direct B.Cu stitching.
-    # C1.1 PVIN=(75.300,69.500) to PVIN12=(73.400,71.250): 2.583 mm;
-    # C1.2 GND=(75.300,71.500) to EP=(72.000,72.000): 3.338 mm.
-    c1 = add_footprint(board, "Murata_GRM21_2012Metric", "C1", "GRM21BR61E106KA73", 75.3, 70.5, 270)
-    # C2.1 AVIN=(75.400,73.175) to AVIN10=(73.400,72.250): 2.204 mm;
-    # C2.2 GND=(75.400,74.625) to PGND8=(72.750,73.400): 2.920 mm.
-    c2 = add_footprint(board, "Murata_GRM188_1608Metric", "C2", "GRM188R71C104KA01D", 75.4, 73.9, 270)
+    # Candidate regulator island.  This supersedes the known-bad legacy
+    # placement but is still a *placement candidate*: pcb_routing_planner and
+    # pcb_reviewer must prove copper/return feasibility before it can become an
+    # active routing baseline.  U1 is rotated 180 degrees so PVIN/AVIN face the
+    # incoming BUCK_IN side while SW faces the L1/output side.
+    u1 = add_footprint(board, "TI_TPS62133RGT_RGT0016C", "U1", "TPS62133RGT", 70.0, 56.0, 180)
+    # C1 sits below/left of U1 with BUCK_IN pad 1 exposed to the upstream feed
+    # and GND pad 2 facing the local PGND side.  This avoids the previous
+    # "ground pad between source and destination" corridor failure.
+    c1 = add_footprint(board, "Murata_GRM21_2012Metric", "C1", "GRM21BR61E106KA73", 67.7, 59.225, 0)
+    # C2 is placed directly left of AVIN.  Its GND pad is intended to receive
+    # an immediate local ground-plane/via connection rather than a long trace.
+    c2 = add_footprint(board, "Murata_GRM188_1608Metric", "C2", "GRM188R71C104KA01D", 66.0, 56.0, 180)
     c2.Reference().SetLayer(pcbnew.F_Fab)
-    c4 = add_footprint(board, "Murata_GRM188_1608Metric", "C4", "GRM1885C1H332JA01D", 73.4, 76.0, 90)
-    # L1 is rotated 180 degrees: its marked pad 1 (BUCK_SW) is closest to the
-    # real SW pad side, while pad 2 points to C3/5V_SYS.  L1.1=(67.975,71.750)
-    # is 2.625 mm from SW2=(70.600,71.750); L1.2=(64.625,71.750) to
-    # C3.1=(63.200,71.750) is 1.425 mm.  C3 ground gets a local short return
-    # to the PGND/EP plane during routing; no route is created in this stage.
-    l1 = add_footprint(board, "Coilcraft_XFL4020-222MEB", "L1", "XFL4020-222MEB", 66.3, 71.75, 180)
-    c3 = add_footprint(board, "Murata_GRM21_2012Metric", "C3", "GRM21BR61A226ME44", 62.2, 71.75, 180)
+    # C4 has an independent corridor to SS/TR; its GND pad can drop directly
+    # into the local/common ground plane.
+    c4 = add_footprint(board, "Murata_GRM188_1608Metric", "C4", "GRM1885C1H332JA01D", 67.0, 53.5, 270)
+    # L1 is vertical on the SW/output side and C3 sits below the PGND/VOS side.
+    # Straight-line pad-centre planning metrics are approximately: SW->L1.1
+    # 3.57 mm, L1.2->C3.1 3.12 mm, VOS->C3.1 2.82 mm, and C3.2->nearest PGND
+    # 1.86 mm.  These are planning metrics, not routed lengths or DRC proof.
+    l1 = add_footprint(board, "Coilcraft_XFL4020-222MEB", "L1", "XFL4020-222MEB", 74.85, 56.525, 90)
+    c3 = add_footprint(board, "Murata_GRM21_2012Metric", "C3", "GRM21BR61A226ME44", 70.9, 59.225, 180)
     # Keep the non-switching reverse-polarity gate divider out of both the
     # SW/L1 courtyard and the high-current power loop.
     r1 = add_footprint(board, "Resistor_0603_1608Metric", "R1", "100k 1%", 58.5, 67, 90)
     r2 = add_footprint(board, "Resistor_0603_1608Metric", "R2", "1M 1%", 62.5, 67, 90)
-    add_rect(board, 30, 62, 94, 84, pcbnew.Dwgs_User, 0.25)
-    add_text(board, "COMPACT BUCK POWER CELL: J4→F1→D3/Q1→CIN/U1→L1→COUT", 62, 86.5,
-             pcbnew.Dwgs_User, 0.95)
-    add_text(board, "ACTUAL PAD-SIDE CHECK: PVIN→C1 2.58 mm; AVIN→C2 2.20 mm; C1/C2 GND→EP/PGND 3.34/2.92 mm; SW→L1 2.63 mm", 62, 84.8,
-             pcbnew.Dwgs_User, 0.70)
-    add_text(board, "U1 EP=GND. THERMAL VIAS / SW-COPPER POLICY: LAYOUT REVIEW REQUIRED", 62, 88.2,
-             pcbnew.Dwgs_User, 0.80)
+    add_rect(board, 30, 68, 66, 81, pcbnew.Dwgs_User, 0.25)
+    add_text(board, "INPUT PROTECTION: J4→F1→D3/Q1 — KEEP NEAR BATTERY CONNECTOR", 48, 82.5,
+             pcbnew.Dwgs_User, 0.75)
+    add_rect(board, 63.0, 49.0, 78.5, 63.5, pcbnew.Dwgs_User, 0.25)
+    add_text(board, "TPS62133 BUCK ISLAND CANDIDATE — ROUTING/REVIEW REQUIRED", 70.75, 65.0,
+             pcbnew.Dwgs_User, 0.78)
+    add_text(board, "PLAN: separate protection/feed; SW→L1 ~3.57 mm; L1→C3 ~3.12 mm; VOS→C3 ~2.82 mm", 70.75, 66.4,
+             pcbnew.Dwgs_User, 0.64)
+    add_text(board, "U1 EP=GND. LOCAL GND/THERMAL VIA STRATEGY MUST BE PROVEN BEFORE ROUTING", 70.75, 67.8,
+             pcbnew.Dwgs_User, 0.64)
 
     # Removable radio: SMA side faces the left edge.  The footprint itself
     # contains the common official 400/900 coordinates and guide-only holes.

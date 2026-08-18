@@ -1,0 +1,126 @@
+ERC report (2026-08-18T08:41:09, Encoding UTF8)
+Report includes: Errors, Warnings
+
+***** Sheet /
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(25.40 mm, 154.94 mm): Symbol J4 [Battery_2S_Protected_Input]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(35.56 mm, 175.26 mm): Symbol #FLG01 [PWR_FLAG]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(35.56 mm, 185.42 mm): Symbol #FLG02 [PWR_FLAG]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(35.56 mm, 195.58 mm): Symbol #FLG03 [PWR_FLAG]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(35.56 mm, 204.47 mm): Symbol #FLG04 [PWR_FLAG]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(44.45 mm, 154.94 mm): Symbol F1 [F]
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(64.77 mm, 142.24 mm): Global Label 'OLED_SDA'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(64.77 mm, 149.86 mm): Global Label 'OLED_SCL'
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(64.77 mm, 165.10 mm): Symbol D3 [TVS]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(64.77 mm, 180.34 mm): Symbol R1 [R]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(69.85 mm, 80.01 mm): Symbol J1 [DevKit_Left_1x15]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(69.85 mm, 134.62 mm): Symbol J2 [DevKit_Right_1x15]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(85.09 mm, 154.94 mm): Symbol Q1 [DMP3130LQ_7]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(85.09 mm, 180.34 mm): Symbol R2 [R]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(105.41 mm, 204.47 mm): Symbol C1 [C]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(124.46 mm, 204.47 mm): Symbol C2 [C]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(129.54 mm, 180.34 mm): Symbol U1 [TPS62133RGT]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(144.78 mm, 204.47 mm): Symbol C4 [C]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(175.26 mm, 105.41 mm): Symbol J3 [E220_T22D_400_900]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(175.26 mm, 139.70 mm): Symbol C5 [C]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(185.42 mm, 180.34 mm): Symbol L1 [L]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(185.42 mm, 204.47 mm): Symbol C3 [C]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(195.58 mm, 139.70 mm): Symbol C6 [C]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(214.63 mm, 139.70 mm): Symbol R8 [R]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(219.71 mm, 144.78 mm): Symbol TP1 [TestPoint]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(219.71 mm, 154.94 mm): Symbol TP6 [TestPoint]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(234.95 mm, 139.70 mm): Symbol R9 [R]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(240.03 mm, 144.78 mm): Symbol TP2 [TestPoint]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(240.03 mm, 154.94 mm): Symbol TP7 [TestPoint]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(260.35 mm, 144.78 mm): Symbol TP3 [TestPoint]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(260.35 mm, 154.94 mm): Symbol TP8 [TestPoint]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(275.59 mm, 105.41 mm): Symbol U3 [SN74AHCT1G125DBVR]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(279.40 mm, 144.78 mm): Symbol TP4 [TestPoint]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(279.40 mm, 154.94 mm): Symbol TP9 [TestPoint]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(284.48 mm, 139.70 mm): Symbol C7 [C]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(299.72 mm, 144.78 mm): Symbol TP5 [TestPoint]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(299.72 mm, 154.94 mm): Symbol TP10 [TestPoint]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'Project'
+    ; warning
+    @(325.12 mm, 105.41 mm): Symbol D2 [WS2812B_V5]
+
+ ** ERC messages: 38  Errors 0  Warnings 38
+
+ ** Ignored checks:
+    - Global label only appears once in the schematic
+    - Four connection points are joined together
+    - SPICE model issue
+    - Assigned footprint doesn't match footprint filters

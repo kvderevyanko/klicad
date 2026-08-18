@@ -1,0 +1,752 @@
+{
+  "candidate_copper_counts": {
+    "tracks": 0,
+    "vias": 0,
+    "zones": 0
+  },
+  "buck_refs": {
+    "U1": {
+      "library_footprint": "TI_TPS62133RGT_RGT0016C",
+      "candidate": {
+        "xy_mm": [
+          70.0,
+          56.0
+        ],
+        "orientation_deg": 180.0,
+        "value": "TPS62133RGT",
+        "pads": [
+          {
+            "number": "",
+            "net": "",
+            "local_xy_mm": [
+              0.0,
+              0.0
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              70.0,
+              56.0
+            ],
+            "size_mm": [
+              1.55,
+              1.55
+            ],
+            "copper_bbox_mm": {
+              "x_min": 69.225,
+              "y_min": 55.225,
+              "x_max": 70.775,
+              "y_max": 56.775
+            }
+          },
+          {
+            "number": "1",
+            "net": "/BUCK_SW",
+            "local_xy_mm": [
+              -1.4,
+              -0.75
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              71.4,
+              56.75
+            ],
+            "size_mm": [
+              0.6,
+              0.24
+            ],
+            "copper_bbox_mm": {
+              "x_min": 71.1,
+              "y_min": 56.63,
+              "x_max": 71.7,
+              "y_max": 56.87
+            }
+          },
+          {
+            "number": "2",
+            "net": "/BUCK_SW",
+            "local_xy_mm": [
+              -1.4,
+              -0.25
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              71.4,
+              56.25
+            ],
+            "size_mm": [
+              0.6,
+              0.24
+            ],
+            "copper_bbox_mm": {
+              "x_min": 71.1,
+              "y_min": 56.13,
+              "x_max": 71.7,
+              "y_max": 56.37
+            }
+          },
+          {
+            "number": "3",
+            "net": "/BUCK_SW",
+            "local_xy_mm": [
+              -1.4,
+              0.25
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              71.4,
+              55.75
+            ],
+            "size_mm": [
+              0.6,
+              0.24
+            ],
+            "copper_bbox_mm": {
+              "x_min": 71.1,
+              "y_min": 55.63,
+              "x_max": 71.7,
+              "y_max": 55.87
+            }
+          },
+          {
+            "number": "4",
+            "net": "",
+            "local_xy_mm": [
+              -1.4,
+              0.75
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              71.4,
+              55.25
+            ],
+            "size_mm": [
+              0.6,
+              0.24
+            ],
+            "copper_bbox_mm": {
+              "x_min": 71.1,
+              "y_min": 55.13,
+              "x_max": 71.7,
+              "y_max": 55.37
+            }
+          },
+          {
+            "number": "5",
+            "net": "/GND",
+            "local_xy_mm": [
+              -0.75,
+              1.4
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              70.75,
+              54.6
+            ],
+            "size_mm": [
+              0.24,
+              0.6
+            ],
+            "copper_bbox_mm": {
+              "x_min": 70.63,
+              "y_min": 54.3,
+              "x_max": 70.87,
+              "y_max": 54.9
+            }
+          },
+          {
+            "number": "6",
+            "net": "/GND",
+            "local_xy_mm": [
+              -0.25,
+              1.4
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              70.25,
+              54.6
+            ],
+            "size_mm": [
+              0.24,
+              0.6
+            ],
+            "copper_bbox_mm": {
+              "x_min": 70.13,
+              "y_min": 54.3,
+              "x_max": 70.37,
+              "y_max": 54.9
+            }
+          },
+          {
+            "number": "7",
+            "net": "/5V_SYS",
+            "local_xy_mm": [
+              0.25,
+              1.4
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              69.75,
+              54.6
+            ],
+            "size_mm": [
+              0.24,
+              0.6
+            ],
+            "copper_bbox_mm": {
+              "x_min": 69.63,
+              "y_min": 54.3,
+              "x_max": 69.87,
+              "y_max": 54.9
+            }
+          },
+          {
+            "number": "8",
+            "net": "/GND",
+            "local_xy_mm": [
+              0.75,
+              1.4
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              69.25,
+              54.6
+            ],
+            "size_mm": [
+              0.24,
+              0.6
+            ],
+            "copper_bbox_mm": {
+              "x_min": 69.13,
+              "y_min": 54.3,
+              "x_max": 69.37,
+              "y_max": 54.9
+            }
+          },
+          {
+            "number": "9",
+            "net": "/SS_TR",
+            "local_xy_mm": [
+              1.4,
+              0.75
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              68.6,
+              55.25
+            ],
+            "size_mm": [
+              0.6,
+              0.24
+            ],
+            "copper_bbox_mm": {
+              "x_min": 68.3,
+              "y_min": 55.13,
+              "x_max": 68.9,
+              "y_max": 55.37
+            }
+          },
+          {
+            "number": "10",
+            "net": "/BUCK_IN",
+            "local_xy_mm": [
+              1.4,
+              0.25
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              68.6,
+              55.75
+            ],
+            "size_mm": [
+              0.6,
+              0.24
+            ],
+            "copper_bbox_mm": {
+              "x_min": 68.3,
+              "y_min": 55.63,
+              "x_max": 68.9,
+              "y_max": 55.87
+            }
+          },
+          {
+            "number": "11",
+            "net": "/BUCK_IN",
+            "local_xy_mm": [
+              1.4,
+              -0.25
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              68.6,
+              56.25
+            ],
+            "size_mm": [
+              0.6,
+              0.24
+            ],
+            "copper_bbox_mm": {
+              "x_min": 68.3,
+              "y_min": 56.13,
+              "x_max": 68.9,
+              "y_max": 56.37
+            }
+          },
+          {
+            "number": "12",
+            "net": "/BUCK_IN",
+            "local_xy_mm": [
+              1.4,
+              -0.75
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              68.6,
+              56.75
+            ],
+            "size_mm": [
+              0.6,
+              0.24
+            ],
+            "copper_bbox_mm": {
+              "x_min": 68.3,
+              "y_min": 56.63,
+              "x_max": 68.9,
+              "y_max": 56.87
+            }
+          },
+          {
+            "number": "13",
+            "net": "/BUCK_IN",
+            "local_xy_mm": [
+              0.75,
+              -1.4
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              69.25,
+              57.4
+            ],
+            "size_mm": [
+              0.24,
+              0.6
+            ],
+            "copper_bbox_mm": {
+              "x_min": 69.13,
+              "y_min": 57.1,
+              "x_max": 69.37,
+              "y_max": 57.7
+            }
+          },
+          {
+            "number": "14",
+            "net": "/5V_SYS",
+            "local_xy_mm": [
+              0.25,
+              -1.4
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              69.75,
+              57.4
+            ],
+            "size_mm": [
+              0.24,
+              0.6
+            ],
+            "copper_bbox_mm": {
+              "x_min": 69.63,
+              "y_min": 57.1,
+              "x_max": 69.87,
+              "y_max": 57.7
+            }
+          },
+          {
+            "number": "15",
+            "net": "/GND",
+            "local_xy_mm": [
+              -0.25,
+              -1.4
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              70.25,
+              57.4
+            ],
+            "size_mm": [
+              0.24,
+              0.6
+            ],
+            "copper_bbox_mm": {
+              "x_min": 70.13,
+              "y_min": 57.1,
+              "x_max": 70.37,
+              "y_max": 57.7
+            }
+          },
+          {
+            "number": "16",
+            "net": "/GND",
+            "local_xy_mm": [
+              -0.75,
+              -1.4
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              70.75,
+              57.4
+            ],
+            "size_mm": [
+              0.24,
+              0.6
+            ],
+            "copper_bbox_mm": {
+              "x_min": 70.63,
+              "y_min": 57.1,
+              "x_max": 70.87,
+              "y_max": 57.7
+            }
+          },
+          {
+            "number": "EP",
+            "net": "/GND",
+            "local_xy_mm": [
+              0.0,
+              0.0
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              70.0,
+              56.0
+            ],
+            "size_mm": [
+              1.68,
+              1.68
+            ],
+            "copper_bbox_mm": {
+              "x_min": 69.16,
+              "y_min": 55.16,
+              "x_max": 70.84,
+              "y_max": 56.84
+            }
+          }
+        ]
+      },
+      "matches_library_after_transform": true,
+      "matches_independent_stage8": true,
+      "direct_library_physical_differences": []
+    },
+    "C1": {
+      "library_footprint": "Murata_GRM21_2012Metric",
+      "candidate": {
+        "xy_mm": [
+          67.7,
+          59.225
+        ],
+        "orientation_deg": 0.0,
+        "value": "GRM21BR61E106KA73",
+        "pads": [
+          {
+            "number": "1",
+            "net": "/BUCK_IN",
+            "local_xy_mm": [
+              -1.0,
+              0.0
+            ],
+            "orientation_deg": 0.0,
+            "global_xy_mm": [
+              66.7,
+              59.225
+            ],
+            "size_mm": [
+              1.15,
+              1.4
+            ],
+            "copper_bbox_mm": {
+              "x_min": 66.125,
+              "y_min": 58.525,
+              "x_max": 67.275,
+              "y_max": 59.925
+            }
+          },
+          {
+            "number": "2",
+            "net": "/GND",
+            "local_xy_mm": [
+              1.0,
+              0.0
+            ],
+            "orientation_deg": 0.0,
+            "global_xy_mm": [
+              68.7,
+              59.225
+            ],
+            "size_mm": [
+              1.15,
+              1.4
+            ],
+            "copper_bbox_mm": {
+              "x_min": 68.125,
+              "y_min": 58.525,
+              "x_max": 69.275,
+              "y_max": 59.925
+            }
+          }
+        ]
+      },
+      "matches_library_after_transform": true,
+      "matches_independent_stage8": true,
+      "direct_library_physical_differences": []
+    },
+    "C2": {
+      "library_footprint": "Murata_GRM188_1608Metric",
+      "candidate": {
+        "xy_mm": [
+          66.0,
+          56.0
+        ],
+        "orientation_deg": 180.0,
+        "value": "GRM188R71C104KA01D",
+        "pads": [
+          {
+            "number": "1",
+            "net": "/BUCK_IN",
+            "local_xy_mm": [
+              -0.725,
+              0.0
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              66.725,
+              56.0
+            ],
+            "size_mm": [
+              0.95,
+              1.0
+            ],
+            "copper_bbox_mm": {
+              "x_min": 66.25,
+              "y_min": 55.5,
+              "x_max": 67.2,
+              "y_max": 56.5
+            }
+          },
+          {
+            "number": "2",
+            "net": "/GND",
+            "local_xy_mm": [
+              0.725,
+              0.0
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              65.275,
+              56.0
+            ],
+            "size_mm": [
+              0.95,
+              1.0
+            ],
+            "copper_bbox_mm": {
+              "x_min": 64.8,
+              "y_min": 55.5,
+              "x_max": 65.75,
+              "y_max": 56.5
+            }
+          }
+        ]
+      },
+      "matches_library_after_transform": true,
+      "matches_independent_stage8": true,
+      "direct_library_physical_differences": []
+    },
+    "C3": {
+      "library_footprint": "Murata_GRM21_2012Metric",
+      "candidate": {
+        "xy_mm": [
+          70.9,
+          59.225
+        ],
+        "orientation_deg": 180.0,
+        "value": "GRM21BR61A226ME44",
+        "pads": [
+          {
+            "number": "1",
+            "net": "/5V_SYS",
+            "local_xy_mm": [
+              -1.0,
+              0.0
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              71.9,
+              59.225
+            ],
+            "size_mm": [
+              1.15,
+              1.4
+            ],
+            "copper_bbox_mm": {
+              "x_min": 71.325,
+              "y_min": 58.525,
+              "x_max": 72.475,
+              "y_max": 59.925
+            }
+          },
+          {
+            "number": "2",
+            "net": "/GND",
+            "local_xy_mm": [
+              1.0,
+              0.0
+            ],
+            "orientation_deg": 180.0,
+            "global_xy_mm": [
+              69.9,
+              59.225
+            ],
+            "size_mm": [
+              1.15,
+              1.4
+            ],
+            "copper_bbox_mm": {
+              "x_min": 69.325,
+              "y_min": 58.525,
+              "x_max": 70.475,
+              "y_max": 59.925
+            }
+          }
+        ]
+      },
+      "matches_library_after_transform": true,
+      "matches_independent_stage8": true,
+      "direct_library_physical_differences": []
+    },
+    "C4": {
+      "library_footprint": "Murata_GRM188_1608Metric",
+      "candidate": {
+        "xy_mm": [
+          67.0,
+          53.5
+        ],
+        "orientation_deg": 270.0,
+        "value": "GRM1885C1H332JA01D",
+        "pads": [
+          {
+            "number": "1",
+            "net": "/SS_TR",
+            "local_xy_mm": [
+              -0.725,
+              0.0
+            ],
+            "orientation_deg": 270.0,
+            "global_xy_mm": [
+              67.0,
+              52.775
+            ],
+            "size_mm": [
+              0.95,
+              1.0
+            ],
+            "copper_bbox_mm": {
+              "x_min": 66.5,
+              "y_min": 52.3,
+              "x_max": 67.5,
+              "y_max": 53.25
+            }
+          },
+          {
+            "number": "2",
+            "net": "/GND",
+            "local_xy_mm": [
+              0.725,
+              0.0
+            ],
+            "orientation_deg": 270.0,
+            "global_xy_mm": [
+              67.0,
+              54.225
+            ],
+            "size_mm": [
+              0.95,
+              1.0
+            ],
+            "copper_bbox_mm": {
+              "x_min": 66.5,
+              "y_min": 53.75,
+              "x_max": 67.5,
+              "y_max": 54.7
+            }
+          }
+        ]
+      },
+      "matches_library_after_transform": true,
+      "matches_independent_stage8": true,
+      "direct_library_physical_differences": []
+    },
+    "L1": {
+      "library_footprint": "Coilcraft_XFL4020-222MEB",
+      "candidate": {
+        "xy_mm": [
+          74.85,
+          56.525
+        ],
+        "orientation_deg": 90.0,
+        "value": "XFL4020-222MEB",
+        "pads": [
+          {
+            "number": "1",
+            "net": "/BUCK_SW",
+            "local_xy_mm": [
+              -1.675,
+              0.0
+            ],
+            "orientation_deg": 90.0,
+            "global_xy_mm": [
+              74.85,
+              58.2
+            ],
+            "size_mm": [
+              0.98,
+              3.4
+            ],
+            "copper_bbox_mm": {
+              "x_min": 73.15,
+              "y_min": 57.71,
+              "x_max": 76.55,
+              "y_max": 58.69
+            }
+          },
+          {
+            "number": "2",
+            "net": "/5V_SYS",
+            "local_xy_mm": [
+              1.675,
+              0.0
+            ],
+            "orientation_deg": 90.0,
+            "global_xy_mm": [
+              74.85,
+              54.85
+            ],
+            "size_mm": [
+              0.98,
+              3.4
+            ],
+            "copper_bbox_mm": {
+              "x_min": 73.15,
+              "y_min": 54.36,
+              "x_max": 76.55,
+              "y_max": 55.34
+            }
+          }
+        ]
+      },
+      "matches_library_after_transform": true,
+      "matches_independent_stage8": true,
+      "direct_library_physical_differences": []
+    }
+  },
+  "non_buck_footprint_transform_changes": [],
+  "footprint_value_or_pad_net_mismatches": [],
+  "l1_pad1_pad2_copper_edge_gap_mm": 2.37
+}

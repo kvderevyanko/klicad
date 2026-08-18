@@ -1,0 +1,211 @@
+                  1                                          2                                        3                                         4                                         5                                    6                                         7                         8
+
+    POWER INPUT: EXTERNALLY PROTECTED 2S LI-ION | 6.0 ... 8.4 V | NO CHARGER ON CARRIER PCB
+
+    WARNING: TURN OFF / DISCONNECT BATTERY POWER BEFORE CONNECTING ESP32 DEVKIT USB-C TO A COMPUTER.
+
+    ESP32 DEVKIT, E220 AND OLED ARE USER-INSTALLED MODULES.
+A                                                                                                                                                                                                                                                                                                                 A
+    Inter-block links use net labels. Local wires show the active power, bypass and interface support networks.
+
+
+
+    C. REMOVABLE ESP32 DEVKIT
+    30 PIN / 2x15     |      USB-C + CH340C ON MODULE
+    LEFT HEADER: J1                                      RIGHT HEADER: J2
+
+                                                                                                                       D. E220-T22D UNIVERSAL SOCKET                                                    F. WS2812 STATUS LED
+                                                                                                                       E220-400T22D / E220-900T22D — user-installed module                              GPIO4 -> AHCT buffer -> DIN
+
+                                              1
+                                            5V_SYS                                  1
+                                                                                  DEVKIT_3V3
+                                              2
+                                            GND                                     2
+                                                                                  GND
+B                                                                                                                                                                                                                                                                                                                 B
+                                              3                                     3
+                                              4                                     4
+                                              5                                     5
+                                                                                  WS2812_DATA_3V3
+                                              6
+                                            E220_AUX                                6
+                                                                                  E220_TXD
+                                              7
+                                            E220_M1                                 7
+                                                                                  E220_RXD                                         1
+                                                                                                                                  E220_M0
+                                              8
+                                            E220_M0 J1                              8     J2                                       2
+                                                                                                                                  E220_M1                                                                           1
+                                                                                                                                                                                                                   GND
+                                                                                                                                                                                                                                                             1
+                                                                                                                                                                                                                                                            5V_SYS
+                                              9                                     9                                              3
+                                                                                                                                  E220_RXD                                                                          2
+                                                                                                                                                                                                                   WS2812_DATA_3V3
+                                                                                                                                                                                                                                                             2
+                                             10                                    10                                              4
+                                                                                                                                  E220_TXDJ3                                                                        3
+                                                                                                                                                                                                                   GND    U3                                       D2
+                                                                                                                                                                                                                                                             3
+                                                                                                                                                                                                                                                            GND
+                                             11                                    11
+                                                                                  OLED_SDA                                         5
+                                                                                                                                  E220_AUX                                                                          4
+                                                                                                                                                                                                                   WS2812_DIN
+                                                                                                                                                                                                                                                             4
+                                                                                                                                                                                                                                                            WS2812_DIN
+                                             12                                    12                                              6
+                                                                                                                                  5V_SYS                                                                            5
+                                                                                                                                                                                                                   5V_SYS
+                                             13                                    13                                              7
+                                                                                                                                  GND
+                                             14                                    14
+                                                                                  OLED_SCL
+                                             15                                    15
+
+
+
+    USED: VIN, 3V3, GND | GPIO17/TX2, GPIO16/RX2, GPIO25/26/27, GPIO21/22, GPIO4
+
+
+C   A. BATTERY INPUT / PROTECTION                                                                                                                                                                                                                                                                                 C
+                                                                                                                                   1
+                                                                                                                                  5V_SYS               1
+                                                                                                                                                      5V_SYS         1
+                                                                                                                                                                    E220_M0            1
+                                                                                                                                                                                      E220_M1                              1
+                                                                                                                                                                                                                          5V_SYS
+                                                                                                                                           C5                  C6           R8                R9                                     C7
+                                                                                                                                   2
+                                                                                                                                  GND                  2
+                                                                                                                                                      GND            2
+                                                                                                                                                                    GND                2
+                                                                                                                                                                                      GND                                  2
+                                                                                                                                                                                                                          GND
+
+                                                                             B. 2S -> 5V BUCK                                                                             TP1
+                                                                                                                       J3 support: C5 10uF + C6 100nF at 5V_SYS | R8/R9 10k
+                                                                                                                                                                         BAT_PLUS          TP2
+                                                                                                                                                                             pulldowns at M0/M1
+                                                                                                                                                                                          GND            TP3
+                                                                                                                                                                                                        U3             TP4
+                                                                                                                                                                                                           SN74AHCT1G125DBVR
+                                                                                                                                                                                                        BUCK_IN       5V_SYS          TP5
+                                                                                                                                                                                                                             (OE=GND)5V_SYS
+                                                                                                                                                                                                                                       | C7 100nF local bypass | D2 WS2812B-V5
+                                                                                                                                                                                                                      E. REMOVABLE OLED
+                                                          1
+                                                         Q1_GATE
+      1
+     BAT_PLUS           1
+                       BAT_PLUS                                                                                                                                              TP6               TP7       TP8               TP9            TP10
+      2
+     GND
+             J4
+                        2
+                               F1
+                       BAT_FUSED
+                                                          2
+                                                         BUCK_IN Q1                                                                                                         E220_M0           E220_M1   E220_AUX      0.96"  SSD1306 | 128x64
+                                                                                                                                                                                                                          E220_RXD             | I2C | USER INSTALLED
+                                                                                                                                                                                                                                          E220_TXD
+                                                          3
+                                                         BAT_FUSED
+                                                                                               1
+                                                                                             BUCK_SW
+                                                                                               2
+                                                                                             BUCK_SW
+                                         1
+                                        BAT_FUSED
+                                                D3                                             3
+                                                                                             BUCK_SW
+                                         2
+                                        GND
+                                                                                               4
+                                                                                               5
+                                                                                             GND
+                                                                                                                                                                                                                                                                  1
+                                                                                                                                                                                                                                                                 GND
+                                                                                               6
+                                                                                             GND
+                                                                                                                                                                                                                                                                  2
+                                                                                                                                                                                                                                                                 DEVKIT_3V3
+                    BAT_PLUS                                                                   7
+                                                                                             5V_SYS                                                                                                                                                                      J5
+                                                                                                                                                                                                                                                                  3
+                                                                                                                                                                                                                                                                 OLED_SCL
+                                                                                               8
+                                                                                             GND
+                                         1
+                                        Q1_GATE           1
+                                                         BUCK_IN                                                                             1
+                                                                                                                                            BUCK_SW                                                                                                               4
+                                                                                                                                                                                                                                                                 OLED_SDA
+                                                R1               R2                            9
+                                                                                             SS_TR   U1                                             L1
+                                         2
+                                        GND               2
+                                                         Q1_GATE                                                                             2
+                                                                                                                                            5V_SYS
+                                                                                              10
+                                                                                             BUCK_IN
+                                                                                                                                                                                                                                           1
+                                                                                                                                                                                                                                          OLED_SDA       1
+                                                                                                                                                                                                                                                        OLED_SCL
+D                   GND                                                                       11
+                                                                                             BUCK_IN                                                                                                                                              R10           R11                                               D
+                                                                                                                                                                                                                                           2
+                                                                                                                                                                                                                                          DEVKIT_3V3     2
+                                                                                                                                                                                                                                                        DEVKIT_3V3
+                                                                                              12
+                                                                                             BUCK_IN
+                                                                                              13
+                                                                                             BUCK_IN
+                                                                                              14
+                                                                                             5V_SYS
+                    BUCK_IN                                                                   15
+                                                                                             GND
+                                                                                              16
+                                                                                             GND
+                                                                                              EP
+                                                                                             GND
+                                                                          1
+                                                                         BUCK_IN          1
+                                                                                         BUCK_IN           1
+                                                                                                          SS_TR                              1
+                                                                                                                                            5V_SYS
+                    5V_SYS
+                                                                          2
+                                                                         GND
+                                                                                 C1
+                                                                                          2
+                                                                                         GND
+                                                                                                 C2
+                                                                                                           2
+                                                                                                          GND
+                                                                                                                  C4
+                                                                                                                                             2
+                                                                                                                                            GND
+                                                                                                                                                     C3                                                               J5: 1 GND | 2 DEVKIT_3V3 | 3 GPIO22/SCL | 4 GPIO21/SDA | R10/R11 4.7k DNP
+
+    J4 BAT+ -> F1 2A PPTC -> D3 SMBJ10CA -> Q1 DMP3130LQ-7 -> BUCK_IN
+                                                                 U1 TPS62133RGT: C1 10uF input | C2 100nF AVIN | C4 3.3nF SS | L1 2.2uH | C3 22uF output
+                    DEVKIT_3V3
+
+
+
+
+E                                                                                                                                                                                                                                                                                                                 E
+
+
+
+
+                                                                                                                                                                                                                                               Sheet: /
+                                                                                                                                                                                                                                               File: esp32-e220.kicad_sch
+                                                                                                                                                                                                                                               Title: ESP32 E220 LoRa Receiver — Rev.1 protected 2S battery carrier
+                                                                                                                                                                                                                                               Size: A3           Date:                            Rev:
+                                                                                                                                                                                                                                               KiCad E.D.A. 10.0.5                                 Id: 1/1
+F                 1                                          2                                        3                                         4                                         5                                    6                                         7                         8              F
+

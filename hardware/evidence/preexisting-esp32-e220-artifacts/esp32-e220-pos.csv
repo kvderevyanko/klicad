@@ -1,0 +1,39 @@
+### Footprint positions - created on 2026-08-18T19:46:02 ###
+### Printed by KiCad version 10.0.5-10.0.5~ubuntu22.04.1
+## Unit = inches, Angle = deg.
+## Side : All
+# Ref     Val                                 Package                                                     PosX       PosY       Rot  Side
+C1        GRM21BR61E106KA73                   Murata_GRM21_2012Metric                                   2.9646    -2.7756  -90.0000  top
+C2        GRM188R71C104KA01D                  Murata_GRM188_1608Metric                                  2.9685    -2.9094  -90.0000  top
+C3        GRM21BR61A226ME44                   Murata_GRM21_2012Metric                                   2.4488    -2.8248  180.0000  top
+C4        GRM1885C1H332JA01D                  Murata_GRM188_1608Metric                                  2.8898    -2.9921   90.0000  top
+C5        GRM188R61A106MAAL                   Murata_GRM188_1608Metric                                  0.9449    -1.8898    0.0000  top
+C6        GRM188R71C104KA01D                  Murata_GRM188_1608Metric                                  0.8388    -1.9587    0.0000  top
+C7        GRM188R71C104KA01D                  Murata_GRM188_1608Metric                                  3.3661    -2.1260   90.0000  top
+D2        WS2812B-V5                          WorldSemi_WS2812B-V5_PLACEMENT_CANDIDATE_NOT_RELEASED     3.7992    -2.1260    0.0000  top
+D3        SMBJ10CA                            Littelfuse_SMBJ10CA_DO214AA                               1.6496    -2.7756  180.0000  top
+F1        1812L200/16                         Littelfuse_1812L200_16_4532Metric                         1.7717    -2.9921    0.0000  top
+J1        SSW-115-02-G-S_DEVKIT_LEFT          Samtec_SSW_1x15_P2.54mm_THT                               4.3701    -0.5512    0.0000  top
+J2        SSW-115-02-G-S_DEVKIT_RIGHT         Samtec_SSW_1x15_P2.54mm_THT                               5.3701    -0.5512    0.0000  top
+J3        E220-400T22D_/_E220-900T22D_SOCKET  E220_T22D_Socket_400_900                                  0.1969    -2.0472    0.0000  top
+J4        B2B-XH-A                            JST_B2B-XH-A_1x02_P2.50mm_THT                             1.3780    -2.9921    0.0000  top
+J5        SSW-104-02-G-S                      Samtec_SSW_1x04_P2.54mm_THT                               2.4803    -0.7874    0.0000  top
+L1        XFL4020-222MEB                      Coilcraft_XFL4020-222MEB                                  2.6102    -2.8248  180.0000  top
+Q1        DMP3130LQ-7                         Diodes_DMP3130LQ-7_SOT23                                  2.4803    -2.9921    0.0000  top
+R1        100k_1%                             Resistor_0603_1608Metric                                  2.3031    -2.6378   90.0000  top
+R2        1M_1%                               Resistor_0603_1608Metric                                  2.4606    -2.6378   90.0000  top
+R8        10k_1%                              Resistor_0603_1608Metric                                  1.1811    -2.2835   90.0000  top
+R9        10k_1%                              Resistor_0603_1608Metric                                  1.2992    -2.2835   90.0000  top
+TP1       BAT_PLUS                            TestPoint_THT_1p0mm_PROTOTYPE                             1.8898    -3.4252    0.0000  top
+TP2       GND                                 TestPoint_THT_1p0mm_PROTOTYPE                             2.0866    -3.4252    0.0000  top
+TP3       BUCK_IN                             TestPoint_THT_1p0mm_PROTOTYPE                             2.2835    -3.4252    0.0000  top
+TP4       5V_SYS                              TestPoint_THT_1p0mm_PROTOTYPE                             2.4803    -3.4252    0.0000  top
+TP5       5V_SYS                              TestPoint_THT_1p0mm_PROTOTYPE                             2.6772    -3.4252    0.0000  top
+TP6       E220_M0                             TestPoint_THT_1p0mm_PROTOTYPE                             2.8740    -3.4252    0.0000  top
+TP7       E220_M1                             TestPoint_THT_1p0mm_PROTOTYPE                             3.0709    -3.4252    0.0000  top
+TP8       E220_AUX                            TestPoint_THT_1p0mm_PROTOTYPE                             3.2677    -3.4252    0.0000  top
+TP9       E220_RXD                            TestPoint_THT_1p0mm_PROTOTYPE                             3.4646    -3.4252    0.0000  top
+TP10      E220_TXD                            TestPoint_THT_1p0mm_PROTOTYPE                             3.6614    -3.4252    0.0000  top
+U1        TPS62133RGT                         TI_TPS62133RGT_RGT0016C                                   2.8346    -2.8346    0.0000  top
+U3        SN74AHCT1G125DBVR                   TI_SN74AHCT1G125DBVR_SOT23-5                              3.5039    -2.1260    0.0000  top
+## End

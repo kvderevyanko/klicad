@@ -1,0 +1,769 @@
+** Drc report for esp32-e220.kicad_pcb **
+** Created on 2026-08-18T16:02:48 **
+** Report includes: Errors, Warnings **
+
+** Found 0 DRC violations **
+
+** Found 72 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(64.3500 mm, 77.0000 mm): Pad 2 [BUCK_IN] of Q1 on F.Cu
+    @(62.5000 mm, 67.7250 mm): Pad 1 [BUCK_IN] of R2 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(64.3500 mm, 77.0000 mm): Pad 2 [BUCK_IN] of Q1 on F.Cu
+    @(73.4000 mm, 72.2500 mm): Pad 10 [BUCK_IN] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(64.3500 mm, 77.0000 mm): Pad 2 [BUCK_IN] of Q1 on F.Cu
+    @(58.0000 mm, 87.0000 mm): PTH pad 1 [BUCK_IN] of TP3
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(73.4000 mm, 71.2500 mm): Pad 12 [BUCK_IN] of U1 on F.Cu
+    @(73.4000 mm, 71.7500 mm): Pad 11 [BUCK_IN] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(73.4000 mm, 71.2500 mm): Pad 12 [BUCK_IN] of U1 on F.Cu
+    @(72.7500 mm, 70.6000 mm): Pad 13 [BUCK_IN] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(73.4000 mm, 71.7500 mm): Pad 11 [BUCK_IN] of U1 on F.Cu
+    @(73.4000 mm, 72.2500 mm): Pad 10 [BUCK_IN] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(74.6000 mm, 69.5000 mm): Pad 1 [BUCK_IN] of C1 on F.Cu
+    @(73.4000 mm, 71.2500 mm): Pad 12 [BUCK_IN] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(74.6750 mm, 72.6000 mm): Pad 1 [BUCK_IN] of C2 on F.Cu
+    @(73.4000 mm, 72.2500 mm): Pad 10 [BUCK_IN] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(58.5000 mm, 67.7250 mm): Pad 1 [Q1_GATE] of R1 on F.Cu
+    @(61.6500 mm, 77.0000 mm): Pad 1 [Q1_GATE] of Q1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(62.5000 mm, 66.2750 mm): Pad 2 [Q1_GATE] of R2 on F.Cu
+    @(58.5000 mm, 67.7250 mm): Pad 1 [Q1_GATE] of R1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(42.8620 mm, 76.0000 mm): Pad 1 [BAT_PLUS] of F1 on F.Cu
+    @(35.0000 mm, 76.0000 mm): PTH pad 1 [BAT_PLUS] of J4
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(48.0000 mm, 87.0000 mm): PTH pad 1 [BAT_PLUS] of TP1
+    @(42.8620 mm, 76.0000 mm): Pad 1 [BAT_PLUS] of F1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(7.8800 mm, 53.5000 mm): PTH pad 1 [E220_M0] of J3
+    @(30.0000 mm, 58.7250 mm): Pad 1 [E220_M0] of R8 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(73.0000 mm, 87.0000 mm): PTH pad 1 [E220_M0] of TP6
+    @(30.0000 mm, 58.7250 mm): Pad 1 [E220_M0] of R8 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(73.0000 mm, 87.0000 mm): PTH pad 1 [E220_M0] of TP6
+    @(111.0000 mm, 31.7800 mm): PTH pad 8 [E220_M0] of J1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(22.0300 mm, 49.7500 mm): Pad 2 [GND] of C6 on F.Cu
+    @(24.7250 mm, 48.0000 mm): Pad 2 [GND] of C5 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(22.0300 mm, 49.7500 mm): Pad 2 [GND] of C6 on F.Cu
+    @(23.1200 mm, 53.5000 mm): PTH pad 7 [GND] of J3
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(23.1200 mm, 53.5000 mm): PTH pad 7 [GND] of J3
+    @(30.0000 mm, 57.2750 mm): Pad 2 [GND] of R8 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(30.0000 mm, 57.2750 mm): Pad 2 [GND] of R8 on F.Cu
+    @(33.0000 mm, 57.2750 mm): Pad 2 [GND] of R9 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(33.0000 mm, 57.2750 mm): Pad 2 [GND] of R9 on F.Cu
+    @(37.5000 mm, 76.0000 mm): PTH pad 2 [GND] of J4
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(53.0000 mm, 87.0000 mm): PTH pad 1 [GND] of TP2
+    @(56.1500 mm, 76.0000 mm): Pad 2 [GND] of D3 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(56.1500 mm, 76.0000 mm): Pad 2 [GND] of D3 on F.Cu
+    @(61.2000 mm, 71.7500 mm): Pad 2 [GND] of C3 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(56.1500 mm, 76.0000 mm): Pad 2 [GND] of D3 on F.Cu
+    @(37.5000 mm, 76.0000 mm): PTH pad 2 [GND] of J4
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(58.5000 mm, 66.2750 mm): Pad 2 [GND] of R1 on F.Cu
+    @(61.2000 mm, 71.7500 mm): Pad 2 [GND] of C3 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(63.0000 mm, 20.0000 mm): PTH pad 1 [GND] of J5
+    @(85.5000 mm, 53.2750 mm): Pad 2 [GND] of C7 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(71.2500 mm, 70.6000 mm): Pad 16 [GND] of U1 on F.Cu
+    @(61.2000 mm, 71.7500 mm): Pad 2 [GND] of C3 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(71.2500 mm, 73.4000 mm): Pad 5 [GND] of U1 on F.Cu
+    @(71.7500 mm, 73.4000 mm): Pad 6 [GND] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(71.7500 mm, 70.6000 mm): Pad 15 [GND] of U1 on F.Cu
+    @(71.2500 mm, 70.6000 mm): Pad 16 [GND] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(71.7500 mm, 70.6000 mm): Pad 15 [GND] of U1 on F.Cu
+    @(72.0000 mm, 72.0000 mm): Pad EP [GND] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(71.7500 mm, 73.4000 mm): Pad 6 [GND] of U1 on F.Cu
+    @(72.7500 mm, 73.4000 mm): Pad 8 [GND] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(71.7500 mm, 73.4000 mm): Pad 6 [GND] of U1 on F.Cu
+    @(72.0000 mm, 72.0000 mm): Pad EP [GND] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(72.7500 mm, 73.4000 mm): Pad 8 [GND] of U1 on F.Cu
+    @(73.4000 mm, 75.2750 mm): Pad 2 [GND] of C4 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(76.1250 mm, 72.6000 mm): Pad 2 [GND] of C2 on F.Cu
+    @(76.6000 mm, 69.5000 mm): Pad 2 [GND] of C1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(76.1250 mm, 72.6000 mm): Pad 2 [GND] of C2 on F.Cu
+    @(72.7500 mm, 73.4000 mm): Pad 8 [GND] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(88.0500 mm, 55.0000 mm): Pad 1 [GND] of U3 on F.Cu
+    @(85.5000 mm, 53.2750 mm): Pad 2 [GND] of C7 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(88.0500 mm, 55.0000 mm): Pad 1 [GND] of U3 on F.Cu
+    @(76.6000 mm, 69.5000 mm): Pad 2 [GND] of C1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(89.9500 mm, 55.0000 mm): Pad 3 [GND] of U3 on F.Cu
+    @(88.0500 mm, 55.0000 mm): Pad 1 [GND] of U3 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(98.9500 mm, 55.6000 mm): Pad 3 [GND] of D2 on F.Cu
+    @(89.9500 mm, 55.0000 mm): Pad 3 [GND] of U3 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(111.0000 mm, 16.5400 mm): PTH pad 2 [GND] of J1
+    @(98.9500 mm, 55.6000 mm): Pad 3 [GND] of D2 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(136.4000 mm, 16.5400 mm): PTH pad 2 [GND] of J2
+    @(111.0000 mm, 16.5400 mm): PTH pad 2 [GND] of J1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(18.0400 mm, 53.5000 mm): PTH pad 5 [E220_AUX] of J3
+    @(83.0000 mm, 87.0000 mm): PTH pad 1 [E220_AUX] of TP8
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(83.0000 mm, 87.0000 mm): PTH pad 1 [E220_AUX] of TP8
+    @(111.0000 mm, 26.7000 mm): PTH pad 6 [E220_AUX] of J1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(63.0000 mm, 22.5400 mm): PTH pad 2 [DEVKIT_3V3] of J5
+    @(136.4000 mm, 14.0000 mm): PTH pad 1 [DEVKIT_3V3] of J2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(89.0000 mm, 55.0000 mm): Pad 2 [WS2812_DATA_3V3] of U3 on F.Cu
+    @(136.4000 mm, 24.1600 mm): PTH pad 5 [WS2812_DATA_3V3] of J2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(15.5000 mm, 53.5000 mm): PTH pad 4 [E220_TXD] of J3
+    @(93.0000 mm, 87.0000 mm): PTH pad 1 [E220_TXD] of TP10
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(93.0000 mm, 87.0000 mm): PTH pad 1 [E220_TXD] of TP10
+    @(136.4000 mm, 26.7000 mm): PTH pad 6 [E220_TXD] of J2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(12.9600 mm, 53.5000 mm): PTH pad 3 [E220_RXD] of J3
+    @(88.0000 mm, 87.0000 mm): PTH pad 1 [E220_RXD] of TP9
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(88.0000 mm, 87.0000 mm): PTH pad 1 [E220_RXD] of TP9
+    @(136.4000 mm, 29.2400 mm): PTH pad 7 [E220_RXD] of J2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(63.0000 mm, 27.6200 mm): PTH pad 4 [OLED_SDA] of J5
+    @(136.4000 mm, 39.4000 mm): PTH pad 11 [OLED_SDA] of J2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(63.0000 mm, 25.0800 mm): PTH pad 3 [OLED_SCL] of J5
+    @(136.4000 mm, 47.0200 mm): PTH pad 14 [OLED_SCL] of J2
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(20.5800 mm, 49.7500 mm): Pad 1 [5V_SYS] of C6 on F.Cu
+    @(20.5800 mm, 53.5000 mm): PTH pad 6 [5V_SYS] of J3
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(20.5800 mm, 53.5000 mm): PTH pad 6 [5V_SYS] of J3
+    @(63.2000 mm, 71.7500 mm): Pad 1 [5V_SYS] of C3 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(23.2750 mm, 48.0000 mm): Pad 1 [5V_SYS] of C5 on F.Cu
+    @(20.5800 mm, 49.7500 mm): Pad 1 [5V_SYS] of C6 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(63.0000 mm, 87.0000 mm): PTH pad 1 [5V_SYS] of TP4
+    @(68.0000 mm, 87.0000 mm): PTH pad 1 [5V_SYS] of TP5
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(64.6250 mm, 71.7500 mm): Pad 2 [5V_SYS] of L1 on F.Cu
+    @(63.2000 mm, 71.7500 mm): Pad 1 [5V_SYS] of C3 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(72.2500 mm, 70.6000 mm): Pad 14 [5V_SYS] of U1 on F.Cu
+    @(64.6250 mm, 71.7500 mm): Pad 2 [5V_SYS] of L1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(72.2500 mm, 70.6000 mm): Pad 14 [5V_SYS] of U1 on F.Cu
+    @(85.5000 mm, 54.7250 mm): Pad 1 [5V_SYS] of C7 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(72.2500 mm, 73.4000 mm): Pad 7 [5V_SYS] of U1 on F.Cu
+    @(72.2500 mm, 70.6000 mm): Pad 14 [5V_SYS] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(72.2500 mm, 73.4000 mm): Pad 7 [5V_SYS] of U1 on F.Cu
+    @(68.0000 mm, 87.0000 mm): PTH pad 1 [5V_SYS] of TP5
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(88.5250 mm, 53.0000 mm): Pad 5 [5V_SYS] of U3 on F.Cu
+    @(85.5000 mm, 54.7250 mm): Pad 1 [5V_SYS] of C7 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(94.0500 mm, 52.4000 mm): Pad 1 [5V_SYS] of D2 on F.Cu
+    @(88.5250 mm, 53.0000 mm): Pad 5 [5V_SYS] of U3 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(94.0500 mm, 52.4000 mm): Pad 1 [5V_SYS] of D2 on F.Cu
+    @(111.0000 mm, 14.0000 mm): PTH pad 1 [5V_SYS] of J1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(10.4200 mm, 53.5000 mm): PTH pad 2 [E220_M1] of J3
+    @(33.0000 mm, 58.7250 mm): Pad 1 [E220_M1] of R9 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(78.0000 mm, 87.0000 mm): PTH pad 1 [E220_M1] of TP7
+    @(33.0000 mm, 58.7250 mm): Pad 1 [E220_M1] of R9 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(78.0000 mm, 87.0000 mm): PTH pad 1 [E220_M1] of TP7
+    @(111.0000 mm, 29.2400 mm): PTH pad 7 [E220_M1] of J1
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(89.4750 mm, 53.0000 mm): Pad 4 [WS2812_DIN] of U3 on F.Cu
+    @(94.0500 mm, 55.6000 mm): Pad 4 [WS2812_DIN] of D2 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(67.9750 mm, 71.7500 mm): Pad 1 [BUCK_SW] of L1 on F.Cu
+    @(70.6000 mm, 71.7500 mm): Pad 2 [BUCK_SW] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(70.6000 mm, 71.7500 mm): Pad 2 [BUCK_SW] of U1 on F.Cu
+    @(70.6000 mm, 71.2500 mm): Pad 1 [BUCK_SW] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(70.6000 mm, 72.2500 mm): Pad 3 [BUCK_SW] of U1 on F.Cu
+    @(70.6000 mm, 71.7500 mm): Pad 2 [BUCK_SW] of U1 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(73.4000 mm, 72.7500 mm): Pad 9 [SS_TR] of U1 on F.Cu
+    @(73.4000 mm, 76.7250 mm): Pad 1 [SS_TR] of C4 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(47.1380 mm, 76.0000 mm): Pad 2 [BAT_FUSED] of F1 on F.Cu
+    @(51.8500 mm, 76.0000 mm): Pad 1 [BAT_FUSED] of D3 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(51.8500 mm, 76.0000 mm): Pad 1 [BAT_FUSED] of D3 on F.Cu
+    @(63.0000 mm, 75.0000 mm): Pad 3 [BAT_FUSED] of Q1 on F.Cu
+
+** Found 155 Footprint errors **
+[footprint_symbol_mismatch]: Value (C1) doesn't match symbol value (GRM21BR61E106KA73)
+    Local override; warning
+    @(75.6000 mm, 69.5000 mm): Footprint C1
+[footprint_symbol_mismatch]: Murata_GRM21_2012Metric doesn't match footprint given by symbol ()
+    Local override; warning
+    @(75.6000 mm, 69.5000 mm): Footprint C1
+[net_conflict]: Pad net (BUCK_IN) doesn't match net given by schematic (/BUCK_IN)
+    Local override; warning
+    @(74.6000 mm, 69.5000 mm): Pad 1 [BUCK_IN] of C1 on F.Cu
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(76.6000 mm, 69.5000 mm): Pad 2 [GND] of C1 on F.Cu
+[footprint_symbol_mismatch]: Value (C2) doesn't match symbol value (GRM188R71C104KA01D)
+    Local override; warning
+    @(75.4000 mm, 72.6000 mm): Footprint C2
+[footprint_symbol_mismatch]: Murata_GRM188_1608Metric doesn't match footprint given by symbol ()
+    Local override; warning
+    @(75.4000 mm, 72.6000 mm): Footprint C2
+[net_conflict]: Pad net (BUCK_IN) doesn't match net given by schematic (/BUCK_IN)
+    Local override; warning
+    @(74.6750 mm, 72.6000 mm): Pad 1 [BUCK_IN] of C2 on F.Cu
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(76.1250 mm, 72.6000 mm): Pad 2 [GND] of C2 on F.Cu
+[footprint_symbol_mismatch]: Value (C3) doesn't match symbol value (GRM21BR61A226ME44)
+    Local override; warning
+    @(62.2000 mm, 71.7500 mm): Footprint C3
+[footprint_symbol_mismatch]: Murata_GRM21_2012Metric doesn't match footprint given by symbol ()
+    Local override; warning
+    @(62.2000 mm, 71.7500 mm): Footprint C3
+[net_conflict]: Pad net (5V_SYS) doesn't match net given by schematic (/5V_SYS)
+    Local override; warning
+    @(63.2000 mm, 71.7500 mm): Pad 1 [5V_SYS] of C3 on F.Cu
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(61.2000 mm, 71.7500 mm): Pad 2 [GND] of C3 on F.Cu
+[footprint_symbol_mismatch]: Value (C4) doesn't match symbol value (GRM1885C1H332JA01D)
+    Local override; warning
+    @(73.4000 mm, 76.0000 mm): Footprint C4
+[footprint_symbol_mismatch]: Murata_GRM188_1608Metric doesn't match footprint given by symbol ()
+    Local override; warning
+    @(73.4000 mm, 76.0000 mm): Footprint C4
+[net_conflict]: Pad net (SS_TR) doesn't match net given by schematic (/SS_TR)
+    Local override; warning
+    @(73.4000 mm, 76.7250 mm): Pad 1 [SS_TR] of C4 on F.Cu
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(73.4000 mm, 75.2750 mm): Pad 2 [GND] of C4 on F.Cu
+[footprint_symbol_mismatch]: Value (C5) doesn't match symbol value (GRM188R61A106MAAL)
+    Local override; warning
+    @(24.0000 mm, 48.0000 mm): Footprint C5
+[footprint_symbol_mismatch]: Murata_GRM188_1608Metric doesn't match footprint given by symbol ()
+    Local override; warning
+    @(24.0000 mm, 48.0000 mm): Footprint C5
+[net_conflict]: Pad net (5V_SYS) doesn't match net given by schematic (/5V_SYS)
+    Local override; warning
+    @(23.2750 mm, 48.0000 mm): Pad 1 [5V_SYS] of C5 on F.Cu
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(24.7250 mm, 48.0000 mm): Pad 2 [GND] of C5 on F.Cu
+[footprint_symbol_mismatch]: Value (C6) doesn't match symbol value (GRM188R71C104KA01D)
+    Local override; warning
+    @(21.3050 mm, 49.7500 mm): Footprint C6
+[footprint_symbol_mismatch]: Murata_GRM188_1608Metric doesn't match footprint given by symbol ()
+    Local override; warning
+    @(21.3050 mm, 49.7500 mm): Footprint C6
+[net_conflict]: Pad net (5V_SYS) doesn't match net given by schematic (/5V_SYS)
+    Local override; warning
+    @(20.5800 mm, 49.7500 mm): Pad 1 [5V_SYS] of C6 on F.Cu
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(22.0300 mm, 49.7500 mm): Pad 2 [GND] of C6 on F.Cu
+[footprint_symbol_mismatch]: Value (C7) doesn't match symbol value (GRM188R71C104KA01D)
+    Local override; warning
+    @(85.5000 mm, 54.0000 mm): Footprint C7
+[footprint_symbol_mismatch]: Murata_GRM188_1608Metric doesn't match footprint given by symbol ()
+    Local override; warning
+    @(85.5000 mm, 54.0000 mm): Footprint C7
+[net_conflict]: Pad net (5V_SYS) doesn't match net given by schematic (/5V_SYS)
+    Local override; warning
+    @(85.5000 mm, 54.7250 mm): Pad 1 [5V_SYS] of C7 on F.Cu
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(85.5000 mm, 53.2750 mm): Pad 2 [GND] of C7 on F.Cu
+[footprint_symbol_mismatch]: WorldSemi_WS2812B-V5_PLACEMENT_CANDIDATE_NOT_RELEASED doesn't match footprint given by symbol ()
+    Local override; warning
+    @(96.5000 mm, 54.0000 mm): Footprint D2
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: 'https://www.world-semi.co.kr/_files/ugd/89cd03_1023b0e9d135431aa1e6491bfc318112.pdf')
+    Local override; warning
+    @(96.5000 mm, 54.0000 mm): Footprint D2
+[net_conflict]: Pad net (5V_SYS) doesn't match net given by schematic (/5V_SYS)
+    Local override; warning
+    @(94.0500 mm, 52.4000 mm): Pad 1 [5V_SYS] of D2 on F.Cu
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(98.9500 mm, 55.6000 mm): Pad 3 [GND] of D2 on F.Cu
+[net_conflict]: Pad net (WS2812_DIN) doesn't match net given by schematic (/WS2812_DIN)
+    Local override; warning
+    @(94.0500 mm, 55.6000 mm): Pad 4 [WS2812_DIN] of D2 on F.Cu
+[footprint_symbol_mismatch]: Value (D3) doesn't match symbol value (SMBJ10CA)
+    Local override; warning
+    @(54.0000 mm, 76.0000 mm): Footprint D3
+[footprint_symbol_mismatch]: Littelfuse_SMBJ10CA_DO214AA doesn't match footprint given by symbol ()
+    Local override; warning
+    @(54.0000 mm, 76.0000 mm): Footprint D3
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: 'https://www.littelfuse.com/products/overvoltage-protection/tvs-diodes/surface-mount/smbj/smbj10ca')
+    Local override; warning
+    @(54.0000 mm, 76.0000 mm): Footprint D3
+[net_conflict]: Pad net (BAT_FUSED) doesn't match net given by schematic (/BAT_FUSED)
+    Local override; warning
+    @(51.8500 mm, 76.0000 mm): Pad 1 [BAT_FUSED] of D3 on F.Cu
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(56.1500 mm, 76.0000 mm): Pad 2 [GND] of D3 on F.Cu
+[footprint_symbol_mismatch]: Value (F1) doesn't match symbol value (1812L200/16)
+    Local override; warning
+    @(45.0000 mm, 76.0000 mm): Footprint F1
+[footprint_symbol_mismatch]: Littelfuse_1812L200_16_4532Metric doesn't match footprint given by symbol ()
+    Local override; warning
+    @(45.0000 mm, 76.0000 mm): Footprint F1
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: 'https://www.littelfuse.com/~/media/electronics/datasheets/resettable_ptcs/littelfuse_ptc_1812l_datasheet.pdf.pdf')
+    Local override; warning
+    @(45.0000 mm, 76.0000 mm): Footprint F1
+[net_conflict]: Pad net (BAT_PLUS) doesn't match net given by schematic (/BAT_PLUS)
+    Local override; warning
+    @(42.8620 mm, 76.0000 mm): Pad 1 [BAT_PLUS] of F1 on F.Cu
+[net_conflict]: Pad net (BAT_FUSED) doesn't match net given by schematic (/BAT_FUSED)
+    Local override; warning
+    @(47.1380 mm, 76.0000 mm): Pad 2 [BAT_FUSED] of F1 on F.Cu
+[footprint_symbol_mismatch]: Value (J1) doesn't match symbol value (SSW-115-02-G-S DEVKIT LEFT)
+    Local override; warning
+    @(111.0000 mm, 14.0000 mm): Footprint J1
+[footprint_symbol_mismatch]: Samtec_SSW_1x15_P2.54mm_THT doesn't match footprint given by symbol ()
+    Local override; warning
+    @(111.0000 mm, 14.0000 mm): Footprint J1
+[net_conflict]: Pad net (5V_SYS) doesn't match net given by schematic (/5V_SYS)
+    Local override; warning
+    @(111.0000 mm, 14.0000 mm): PTH pad 1 [5V_SYS] of J1
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(111.0000 mm, 16.5400 mm): PTH pad 2 [GND] of J1
+[net_conflict]: Pad net (E220_AUX) doesn't match net given by schematic (/E220_AUX)
+    Local override; warning
+    @(111.0000 mm, 26.7000 mm): PTH pad 6 [E220_AUX] of J1
+[net_conflict]: Pad net (E220_M1) doesn't match net given by schematic (/E220_M1)
+    Local override; warning
+    @(111.0000 mm, 29.2400 mm): PTH pad 7 [E220_M1] of J1
+[net_conflict]: Pad net (E220_M0) doesn't match net given by schematic (/E220_M0)
+    Local override; warning
+    @(111.0000 mm, 31.7800 mm): PTH pad 8 [E220_M0] of J1
+[footprint_symbol_mismatch]: Value (J2) doesn't match symbol value (SSW-115-02-G-S DEVKIT RIGHT)
+    Local override; warning
+    @(136.4000 mm, 14.0000 mm): Footprint J2
+[footprint_symbol_mismatch]: Samtec_SSW_1x15_P2.54mm_THT doesn't match footprint given by symbol ()
+    Local override; warning
+    @(136.4000 mm, 14.0000 mm): Footprint J2
+[net_conflict]: Pad net (DEVKIT_3V3) doesn't match net given by schematic (/DEVKIT_3V3)
+    Local override; warning
+    @(136.4000 mm, 14.0000 mm): PTH pad 1 [DEVKIT_3V3] of J2
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(136.4000 mm, 16.5400 mm): PTH pad 2 [GND] of J2
+[net_conflict]: Pad net (WS2812_DATA_3V3) doesn't match net given by schematic (/WS2812_DATA_3V3)
+    Local override; warning
+    @(136.4000 mm, 24.1600 mm): PTH pad 5 [WS2812_DATA_3V3] of J2
+[net_conflict]: Pad net (E220_TXD) doesn't match net given by schematic (/E220_TXD)
+    Local override; warning
+    @(136.4000 mm, 26.7000 mm): PTH pad 6 [E220_TXD] of J2
+[net_conflict]: Pad net (E220_RXD) doesn't match net given by schematic (/E220_RXD)
+    Local override; warning
+    @(136.4000 mm, 29.2400 mm): PTH pad 7 [E220_RXD] of J2
+[net_conflict]: Pad net (OLED_SDA) doesn't match net given by schematic (/OLED_SDA)
+    Local override; warning
+    @(136.4000 mm, 39.4000 mm): PTH pad 11 [OLED_SDA] of J2
+[net_conflict]: Pad net (OLED_SCL) doesn't match net given by schematic (/OLED_SCL)
+    Local override; warning
+    @(136.4000 mm, 47.0200 mm): PTH pad 14 [OLED_SCL] of J2
+[footprint_symbol_mismatch]: Value (J3) doesn't match symbol value (E220-400T22D / E220-900T22D SOCKET)
+    Local override; warning
+    @(5.0000 mm, 52.0000 mm): Footprint J3
+[footprint_symbol_mismatch]: E220_T22D_Socket_400_900 doesn't match footprint given by symbol ()
+    Local override; warning
+    @(5.0000 mm, 52.0000 mm): Footprint J3
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: 'https://www.cdebyte.com/pdf-down.aspx?id=4221')
+    Local override; warning
+    @(5.0000 mm, 52.0000 mm): Footprint J3
+[net_conflict]: Pad net (E220_M0) doesn't match net given by schematic (/E220_M0)
+    Local override; warning
+    @(7.8800 mm, 53.5000 mm): PTH pad 1 [E220_M0] of J3
+[net_conflict]: Pad net (E220_M1) doesn't match net given by schematic (/E220_M1)
+    Local override; warning
+    @(10.4200 mm, 53.5000 mm): PTH pad 2 [E220_M1] of J3
+[net_conflict]: Pad net (E220_RXD) doesn't match net given by schematic (/E220_RXD)
+    Local override; warning
+    @(12.9600 mm, 53.5000 mm): PTH pad 3 [E220_RXD] of J3
+[net_conflict]: Pad net (E220_TXD) doesn't match net given by schematic (/E220_TXD)
+    Local override; warning
+    @(15.5000 mm, 53.5000 mm): PTH pad 4 [E220_TXD] of J3
+[net_conflict]: Pad net (E220_AUX) doesn't match net given by schematic (/E220_AUX)
+    Local override; warning
+    @(18.0400 mm, 53.5000 mm): PTH pad 5 [E220_AUX] of J3
+[net_conflict]: Pad net (5V_SYS) doesn't match net given by schematic (/5V_SYS)
+    Local override; warning
+    @(20.5800 mm, 53.5000 mm): PTH pad 6 [5V_SYS] of J3
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(23.1200 mm, 53.5000 mm): PTH pad 7 [GND] of J3
+[footprint_symbol_mismatch]: Value (J4) doesn't match symbol value (B2B-XH-A)
+    Local override; warning
+    @(35.0000 mm, 76.0000 mm): Footprint J4
+[footprint_symbol_mismatch]: JST_B2B-XH-A_1x02_P2.50mm_THT doesn't match footprint given by symbol ()
+    Local override; warning
+    @(35.0000 mm, 76.0000 mm): Footprint J4
+[net_conflict]: Pad net (BAT_PLUS) doesn't match net given by schematic (/BAT_PLUS)
+    Local override; warning
+    @(35.0000 mm, 76.0000 mm): PTH pad 1 [BAT_PLUS] of J4
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(37.5000 mm, 76.0000 mm): PTH pad 2 [GND] of J4
+[footprint_symbol_mismatch]: Value (J5) doesn't match symbol value (SSW-104-02-G-S)
+    Local override; warning
+    @(63.0000 mm, 20.0000 mm): Footprint J5
+[footprint_symbol_mismatch]: Samtec_SSW_1x04_P2.54mm_THT doesn't match footprint given by symbol ()
+    Local override; warning
+    @(63.0000 mm, 20.0000 mm): Footprint J5
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(63.0000 mm, 20.0000 mm): PTH pad 1 [GND] of J5
+[net_conflict]: Pad net (DEVKIT_3V3) doesn't match net given by schematic (/DEVKIT_3V3)
+    Local override; warning
+    @(63.0000 mm, 22.5400 mm): PTH pad 2 [DEVKIT_3V3] of J5
+[net_conflict]: Pad net (OLED_SCL) doesn't match net given by schematic (/OLED_SCL)
+    Local override; warning
+    @(63.0000 mm, 25.0800 mm): PTH pad 3 [OLED_SCL] of J5
+[net_conflict]: Pad net (OLED_SDA) doesn't match net given by schematic (/OLED_SDA)
+    Local override; warning
+    @(63.0000 mm, 27.6200 mm): PTH pad 4 [OLED_SDA] of J5
+[footprint_symbol_mismatch]: Value (L1) doesn't match symbol value (XFL4020-222MEB)
+    Local override; warning
+    @(66.3000 mm, 71.7500 mm): Footprint L1
+[footprint_symbol_mismatch]: Coilcraft_XFL4020-222MEB doesn't match footprint given by symbol ()
+    Local override; warning
+    @(66.3000 mm, 71.7500 mm): Footprint L1
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: 'https://www.coilcraft.com/getmedia/50632d43-da1e-4cdb-8ab4-3029cab51df3/xfl4020.pdf')
+    Local override; warning
+    @(66.3000 mm, 71.7500 mm): Footprint L1
+[net_conflict]: Pad net (BUCK_SW) doesn't match net given by schematic (/BUCK_SW)
+    Local override; warning
+    @(67.9750 mm, 71.7500 mm): Pad 1 [BUCK_SW] of L1 on F.Cu
+[net_conflict]: Pad net (5V_SYS) doesn't match net given by schematic (/5V_SYS)
+    Local override; warning
+    @(64.6250 mm, 71.7500 mm): Pad 2 [5V_SYS] of L1 on F.Cu
+[footprint_symbol_mismatch]: Value (Q1) doesn't match symbol value (DMP3130LQ-7)
+    Local override; warning
+    @(63.0000 mm, 76.0000 mm): Footprint Q1
+[footprint_symbol_mismatch]: Diodes_DMP3130LQ-7_SOT23 doesn't match footprint given by symbol ()
+    Local override; warning
+    @(63.0000 mm, 76.0000 mm): Footprint Q1
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: 'https://www.diodes.com/_files/datasheets/DMP3130LQ.pdf')
+    Local override; warning
+    @(63.0000 mm, 76.0000 mm): Footprint Q1
+[net_conflict]: Pad net (Q1_GATE) doesn't match net given by schematic (/Q1_GATE)
+    Local override; warning
+    @(61.6500 mm, 77.0000 mm): Pad 1 [Q1_GATE] of Q1 on F.Cu
+[net_conflict]: Pad net (BUCK_IN) doesn't match net given by schematic (/BUCK_IN)
+    Local override; warning
+    @(64.3500 mm, 77.0000 mm): Pad 2 [BUCK_IN] of Q1 on F.Cu
+[net_conflict]: Pad net (BAT_FUSED) doesn't match net given by schematic (/BAT_FUSED)
+    Local override; warning
+    @(63.0000 mm, 75.0000 mm): Pad 3 [BAT_FUSED] of Q1 on F.Cu
+[footprint_symbol_mismatch]: Value (R1) doesn't match symbol value (100k 1%)
+    Local override; warning
+    @(58.5000 mm, 67.0000 mm): Footprint R1
+[footprint_symbol_mismatch]: Resistor_0603_1608Metric doesn't match footprint given by symbol ()
+    Local override; warning
+    @(58.5000 mm, 67.0000 mm): Footprint R1
+[net_conflict]: Pad net (Q1_GATE) doesn't match net given by schematic (/Q1_GATE)
+    Local override; warning
+    @(58.5000 mm, 67.7250 mm): Pad 1 [Q1_GATE] of R1 on F.Cu
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(58.5000 mm, 66.2750 mm): Pad 2 [GND] of R1 on F.Cu
+[footprint_symbol_mismatch]: Value (R2) doesn't match symbol value (1M 1%)
+    Local override; warning
+    @(62.5000 mm, 67.0000 mm): Footprint R2
+[footprint_symbol_mismatch]: Resistor_0603_1608Metric doesn't match footprint given by symbol ()
+    Local override; warning
+    @(62.5000 mm, 67.0000 mm): Footprint R2
+[net_conflict]: Pad net (BUCK_IN) doesn't match net given by schematic (/BUCK_IN)
+    Local override; warning
+    @(62.5000 mm, 67.7250 mm): Pad 1 [BUCK_IN] of R2 on F.Cu
+[net_conflict]: Pad net (Q1_GATE) doesn't match net given by schematic (/Q1_GATE)
+    Local override; warning
+    @(62.5000 mm, 66.2750 mm): Pad 2 [Q1_GATE] of R2 on F.Cu
+[footprint_symbol_mismatch]: Value (R8) doesn't match symbol value (10k 1%)
+    Local override; warning
+    @(30.0000 mm, 58.0000 mm): Footprint R8
+[footprint_symbol_mismatch]: Resistor_0603_1608Metric doesn't match footprint given by symbol ()
+    Local override; warning
+    @(30.0000 mm, 58.0000 mm): Footprint R8
+[net_conflict]: Pad net (E220_M0) doesn't match net given by schematic (/E220_M0)
+    Local override; warning
+    @(30.0000 mm, 58.7250 mm): Pad 1 [E220_M0] of R8 on F.Cu
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(30.0000 mm, 57.2750 mm): Pad 2 [GND] of R8 on F.Cu
+[footprint_symbol_mismatch]: Value (R9) doesn't match symbol value (10k 1%)
+    Local override; warning
+    @(33.0000 mm, 58.0000 mm): Footprint R9
+[footprint_symbol_mismatch]: Resistor_0603_1608Metric doesn't match footprint given by symbol ()
+    Local override; warning
+    @(33.0000 mm, 58.0000 mm): Footprint R9
+[net_conflict]: Pad net (E220_M1) doesn't match net given by schematic (/E220_M1)
+    Local override; warning
+    @(33.0000 mm, 58.7250 mm): Pad 1 [E220_M1] of R9 on F.Cu
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(33.0000 mm, 57.2750 mm): Pad 2 [GND] of R9 on F.Cu
+[missing_footprint]: Missing footprint R10 (DNP 4.7k 1% OLED SDA pull-up to 3V3)
+    Local override; warning
+[missing_footprint]: Missing footprint R11 (DNP 4.7k 1% OLED SCL pull-up to 3V3)
+    Local override; warning
+[footprint_symbol_mismatch]: TestPoint_THT_1p0mm_PROTOTYPE doesn't match footprint given by symbol ()
+    Local override; warning
+    @(48.0000 mm, 87.0000 mm): Footprint TP1
+[net_conflict]: Pad net (BAT_PLUS) doesn't match net given by schematic (/BAT_PLUS)
+    Local override; warning
+    @(48.0000 mm, 87.0000 mm): PTH pad 1 [BAT_PLUS] of TP1
+[footprint_symbol_mismatch]: TestPoint_THT_1p0mm_PROTOTYPE doesn't match footprint given by symbol ()
+    Local override; warning
+    @(53.0000 mm, 87.0000 mm): Footprint TP2
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(53.0000 mm, 87.0000 mm): PTH pad 1 [GND] of TP2
+[footprint_symbol_mismatch]: TestPoint_THT_1p0mm_PROTOTYPE doesn't match footprint given by symbol ()
+    Local override; warning
+    @(58.0000 mm, 87.0000 mm): Footprint TP3
+[net_conflict]: Pad net (BUCK_IN) doesn't match net given by schematic (/BUCK_IN)
+    Local override; warning
+    @(58.0000 mm, 87.0000 mm): PTH pad 1 [BUCK_IN] of TP3
+[footprint_symbol_mismatch]: TestPoint_THT_1p0mm_PROTOTYPE doesn't match footprint given by symbol ()
+    Local override; warning
+    @(63.0000 mm, 87.0000 mm): Footprint TP4
+[net_conflict]: Pad net (5V_SYS) doesn't match net given by schematic (/5V_SYS)
+    Local override; warning
+    @(63.0000 mm, 87.0000 mm): PTH pad 1 [5V_SYS] of TP4
+[footprint_symbol_mismatch]: Value (TP5) doesn't match symbol value (5V_SYS)
+    Local override; warning
+    @(68.0000 mm, 87.0000 mm): Footprint TP5
+[footprint_symbol_mismatch]: TestPoint_THT_1p0mm_PROTOTYPE doesn't match footprint given by symbol ()
+    Local override; warning
+    @(68.0000 mm, 87.0000 mm): Footprint TP5
+[net_conflict]: Pad net (5V_SYS) doesn't match net given by schematic (/5V_SYS)
+    Local override; warning
+    @(68.0000 mm, 87.0000 mm): PTH pad 1 [5V_SYS] of TP5
+[footprint_symbol_mismatch]: TestPoint_THT_1p0mm_PROTOTYPE doesn't match footprint given by symbol ()
+    Local override; warning
+    @(73.0000 mm, 87.0000 mm): Footprint TP6
+[net_conflict]: Pad net (E220_M0) doesn't match net given by schematic (/E220_M0)
+    Local override; warning
+    @(73.0000 mm, 87.0000 mm): PTH pad 1 [E220_M0] of TP6
+[footprint_symbol_mismatch]: TestPoint_THT_1p0mm_PROTOTYPE doesn't match footprint given by symbol ()
+    Local override; warning
+    @(78.0000 mm, 87.0000 mm): Footprint TP7
+[net_conflict]: Pad net (E220_M1) doesn't match net given by schematic (/E220_M1)
+    Local override; warning
+    @(78.0000 mm, 87.0000 mm): PTH pad 1 [E220_M1] of TP7
+[footprint_symbol_mismatch]: TestPoint_THT_1p0mm_PROTOTYPE doesn't match footprint given by symbol ()
+    Local override; warning
+    @(83.0000 mm, 87.0000 mm): Footprint TP8
+[net_conflict]: Pad net (E220_AUX) doesn't match net given by schematic (/E220_AUX)
+    Local override; warning
+    @(83.0000 mm, 87.0000 mm): PTH pad 1 [E220_AUX] of TP8
+[footprint_symbol_mismatch]: TestPoint_THT_1p0mm_PROTOTYPE doesn't match footprint given by symbol ()
+    Local override; warning
+    @(88.0000 mm, 87.0000 mm): Footprint TP9
+[net_conflict]: Pad net (E220_RXD) doesn't match net given by schematic (/E220_RXD)
+    Local override; warning
+    @(88.0000 mm, 87.0000 mm): PTH pad 1 [E220_RXD] of TP9
+[footprint_symbol_mismatch]: TestPoint_THT_1p0mm_PROTOTYPE doesn't match footprint given by symbol ()
+    Local override; warning
+    @(93.0000 mm, 87.0000 mm): Footprint TP10
+[net_conflict]: Pad net (E220_TXD) doesn't match net given by schematic (/E220_TXD)
+    Local override; warning
+    @(93.0000 mm, 87.0000 mm): PTH pad 1 [E220_TXD] of TP10
+[footprint_symbol_mismatch]: Value (U1) doesn't match symbol value (TPS62133RGT)
+    Local override; warning
+    @(72.0000 mm, 72.0000 mm): Footprint U1
+[footprint_symbol_mismatch]: TI_TPS62133RGT_RGT0016C doesn't match footprint given by symbol ()
+    Local override; warning
+    @(72.0000 mm, 72.0000 mm): Footprint U1
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: 'https://www.ti.com/lit/ds/symlink/tps62133.pdf')
+    Local override; warning
+    @(72.0000 mm, 72.0000 mm): Footprint U1
+[net_conflict]: Pad net (BUCK_SW) doesn't match net given by schematic (/BUCK_SW)
+    Local override; warning
+    @(70.6000 mm, 71.2500 mm): Pad 1 [BUCK_SW] of U1 on F.Cu
+[net_conflict]: Pad net (BUCK_SW) doesn't match net given by schematic (/BUCK_SW)
+    Local override; warning
+    @(70.6000 mm, 71.7500 mm): Pad 2 [BUCK_SW] of U1 on F.Cu
+[net_conflict]: Pad net (BUCK_SW) doesn't match net given by schematic (/BUCK_SW)
+    Local override; warning
+    @(70.6000 mm, 72.2500 mm): Pad 3 [BUCK_SW] of U1 on F.Cu
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(71.2500 mm, 73.4000 mm): Pad 5 [GND] of U1 on F.Cu
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(71.7500 mm, 73.4000 mm): Pad 6 [GND] of U1 on F.Cu
+[net_conflict]: Pad net (5V_SYS) doesn't match net given by schematic (/5V_SYS)
+    Local override; warning
+    @(72.2500 mm, 73.4000 mm): Pad 7 [5V_SYS] of U1 on F.Cu
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(72.7500 mm, 73.4000 mm): Pad 8 [GND] of U1 on F.Cu
+[net_conflict]: Pad net (SS_TR) doesn't match net given by schematic (/SS_TR)
+    Local override; warning
+    @(73.4000 mm, 72.7500 mm): Pad 9 [SS_TR] of U1 on F.Cu
+[net_conflict]: Pad net (BUCK_IN) doesn't match net given by schematic (/BUCK_IN)
+    Local override; warning
+    @(73.4000 mm, 72.2500 mm): Pad 10 [BUCK_IN] of U1 on F.Cu
+[net_conflict]: Pad net (BUCK_IN) doesn't match net given by schematic (/BUCK_IN)
+    Local override; warning
+    @(73.4000 mm, 71.7500 mm): Pad 11 [BUCK_IN] of U1 on F.Cu
+[net_conflict]: Pad net (BUCK_IN) doesn't match net given by schematic (/BUCK_IN)
+    Local override; warning
+    @(73.4000 mm, 71.2500 mm): Pad 12 [BUCK_IN] of U1 on F.Cu
+[net_conflict]: Pad net (BUCK_IN) doesn't match net given by schematic (/BUCK_IN)
+    Local override; warning
+    @(72.7500 mm, 70.6000 mm): Pad 13 [BUCK_IN] of U1 on F.Cu
+[net_conflict]: Pad net (5V_SYS) doesn't match net given by schematic (/5V_SYS)
+    Local override; warning
+    @(72.2500 mm, 70.6000 mm): Pad 14 [5V_SYS] of U1 on F.Cu
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(71.7500 mm, 70.6000 mm): Pad 15 [GND] of U1 on F.Cu
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(71.2500 mm, 70.6000 mm): Pad 16 [GND] of U1 on F.Cu
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(72.0000 mm, 72.0000 mm): Pad EP [GND] of U1 on F.Cu
+[footprint_symbol_mismatch]: TI_SN74AHCT1G125DBVR_SOT23-5 doesn't match footprint given by symbol ()
+    Local override; warning
+    @(89.0000 mm, 54.0000 mm): Footprint U3
+[footprint_symbol_field_mismatch]: Field 'Datasheet' differs (PCB: '', Schematic: 'https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf')
+    Local override; warning
+    @(89.0000 mm, 54.0000 mm): Footprint U3
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(88.0500 mm, 55.0000 mm): Pad 1 [GND] of U3 on F.Cu
+[net_conflict]: Pad net (WS2812_DATA_3V3) doesn't match net given by schematic (/WS2812_DATA_3V3)
+    Local override; warning
+    @(89.0000 mm, 55.0000 mm): Pad 2 [WS2812_DATA_3V3] of U3 on F.Cu
+[net_conflict]: Pad net (GND) doesn't match net given by schematic (/GND)
+    Local override; warning
+    @(89.9500 mm, 55.0000 mm): Pad 3 [GND] of U3 on F.Cu
+[net_conflict]: Pad net (WS2812_DIN) doesn't match net given by schematic (/WS2812_DIN)
+    Local override; warning
+    @(89.4750 mm, 53.0000 mm): Pad 4 [WS2812_DIN] of U3 on F.Cu
+[net_conflict]: Pad net (5V_SYS) doesn't match net given by schematic (/5V_SYS)
+    Local override; warning
+    @(88.5250 mm, 53.0000 mm): Pad 5 [5V_SYS] of U3 on F.Cu
+
+** Ignored checks **
+    - Footprint has no courtyard defined
+    - Track endpoint not centered on via
+    - Tuning profile track geometries
+    - Footprint doesn't match symbol's footprint filters
+    - Footprint component type doesn't match footprint pads
+
+** End of Report **
