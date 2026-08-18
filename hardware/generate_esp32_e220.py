@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Generate the Stage 5 native KiCad schematic from verified connection data.
+"""Generate the native KiCad 10 schematic and its review-oriented layout.
 
-The S-expression layout is derived from KiCad's installed Arduino_Nano template
-(KiCad 10 reads and rewrites it natively).  Run this script, then open/save the
-result in eeschema before releasing the schematic for review.
+The electrical source of truth and the presentation are deliberately kept in
+this one generator.  The sheet is a functional review drawing, not a netlist
+dump: short local wires show each support circuit, while named labels bridge
+the independent blocks.
 """
 from pathlib import Path
 from uuid import uuid4
@@ -80,8 +81,11 @@ def instance(libid, ref, value, x, y, pins, datasheet="", dnp=False):
     x, y = s(x), s(y)
     lines = [f'''  (symbol (lib_id "{libid}") (at {x} {y} 0) (unit 1)
     (in_bom yes) (on_board yes)
-    (uuid {u()})''', prop("Reference", ref, 0, x, y - 22, False),
-             prop("Value", value, 1, x, y + 22, False),
+    (uuid {u()})''', prop("Reference", ref, 0, x + 5.08, y - 1.27, ref.startswith("#")),
+             # Exact MPN/value metadata remains in the editable schematic, but
+             # is hidden here to avoid long procurement strings obscuring pins.
+             # Each functional block carries concise visible ref/value captions.
+             prop("Value", value, 1, x + 5.08, y + 1.27, True),
              prop("Footprint", "", 2, x, y, True), prop("Datasheet", datasheet, 3, x, y, True)]
     if dnp:
         lines.append(prop("DNP", "YES", 4, x, y, True))
@@ -96,8 +100,8 @@ def testpoint_instance(ref, value, x, y):
     return f'''  (symbol (lib_id "Project:TestPoint") (at {x} {y} 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid {u()})
-{prop("Reference", ref, 0, x, y - 4.0, False)}
-{prop("Value", value, 1, x, y + 4.0, False)}
+{prop("Reference", ref, 0, x + 3.0, y - 2.0, False)}
+{prop("Value", value, 1, x + 3.0, y + 2.0, True)}
 {prop("Footprint", "", 2, x, y, True)}
 {prop("Datasheet", "~", 3, x, y, True)}
     (pin "1" (uuid {u()}))
@@ -125,11 +129,22 @@ def no_connect(x, y):
     x, y = s(x), s(y)
     return f'''  (no_connect (at {x} {y}) (uuid {u()}))'''
 
-def note(text, x, y):
+def note(text, x, y, size=1.5):
+    text = text.replace('"', '\\"')
     return f'''  (text "{text}" (at {x} {y} 0)
-    (effects (font (size 1.5 1.5)) (justify left bottom))
+    (effects (font (size {size} {size})) (justify left bottom))
     (uuid {u()})
   )'''
+
+def wire(*points):
+    """A local, visible connection.  Inter-block connectivity remains labels."""
+    return "\n".join(f'''  (wire (pts (xy {s(x1)} {s(y1)}) (xy {s(x2)} {s(y2)}))
+    (stroke (width 0) (type solid) (color 0 0 0 0))
+    (uuid {u()})
+  )''' for (x1, y1), (x2, y2) in zip(points, points[1:]))
+
+def heading(text, x, y):
+    return note(text, x, y, 2.0)
 
 def pin_pos(center_x, center_y, pin_count, pin_number):
     """Return the exact left-side pin endpoint used by libsym().
@@ -207,8 +222,8 @@ libs = [
 items = []
 # Rev.1 active carrier: externally protected 2S pack only; USB-C input and
 # pre-gate Type-C circuitry are intentionally absent from generated content.
-items += [instance("Project:DevKit_Left_1x15", "J1", "DEVKIT_LEFT (USB-C toward antenna)", 70, 80, left),
-          instance("Project:DevKit_Right_1x15", "J2", "DEVKIT_RIGHT (USB-C toward antenna)", 70, 135, right),
+items += [instance("Project:DevKit_Left_1x15", "J1", "DEVKIT_LEFT (USB-C toward antenna)", 70, 100, left),
+          instance("Project:DevKit_Right_1x15", "J2", "DEVKIT_RIGHT (USB-C toward antenna)", 115, 100, right),
           instance("Project:E220_T22D_400_900", "J3", "E220-T22D SOCKET — FIT 400T22D OR 900T22D", 175, 105, e220,
                    "https://www.cdebyte.com/pdf-down.aspx?id=4221"),
           instance("Project:OLED_SSD1306_I2C_1x4", "J5", "OLED 0.96 SSD1306 128x64 I2C — FEMALE 1x4 SOCKET", 330, 175, oled_i2c),
@@ -232,16 +247,16 @@ items += [instance("Project:DevKit_Left_1x15", "J1", "DEVKIT_LEFT (USB-C toward 
           instance("Project:PWR_FLAG", "#FLG03", "PWR_FLAG", 35, 195, [("1", "pwr")]),
           instance("Project:PWR_FLAG", "#FLG04", "PWR_FLAG", 35, 205, [("1", "pwr")]),
           instance("Project:PWR_FLAG", "#FLG05", "PWR_FLAG", 35, 215, [("1", "pwr")]),
-          testpoint_instance("TP1", "BAT_PLUS", 220, 145),
-          testpoint_instance("TP2", "GND", 240, 145),
-          testpoint_instance("TP3", "BUCK_IN", 260, 145),
-          testpoint_instance("TP4", "5V_SYS", 280, 145),
-          testpoint_instance("TP5", "E220_VCC", 300, 145),
-          testpoint_instance("TP6", "E220_M0", 220, 155),
-          testpoint_instance("TP7", "E220_M1", 240, 155),
-          testpoint_instance("TP8", "E220_AUX", 260, 155),
-          testpoint_instance("TP9", "E220_RXD", 280, 155),
-          testpoint_instance("TP10", "E220_TXD", 300, 155)]
+          testpoint_instance("TP1", "BAT_PLUS", 25, 230),
+          testpoint_instance("TP2", "GND", 45, 230),
+          testpoint_instance("TP3", "BUCK_IN", 65, 230),
+          testpoint_instance("TP4", "5V_SYS", 85, 230),
+          testpoint_instance("TP5", "E220_VCC", 105, 230),
+          testpoint_instance("TP6", "E220_M0", 25, 240),
+          testpoint_instance("TP7", "E220_M1", 45, 240),
+          testpoint_instance("TP8", "E220_AUX", 65, 240),
+          testpoint_instance("TP9", "E220_RXD", 85, 240),
+          testpoint_instance("TP10", "E220_TXD", 105, 240)]
 
 parts = [
     ("Project:R","R1","100k 1% (Q1 gate pull-down)",65,180,r2),
@@ -263,14 +278,14 @@ for a,b,c,d,e,f in parts:
 
 # Verified DevKit/E220/LED signals retained from Stage 5.
 for n, net in [(1,"5V_SYS"),(2,"GND"),(6,"E220_AUX"),(7,"E220_M1"),(8,"E220_M0")]:
-    items.append(pin_label(70,80,len(left),n,net))
-for n in set(range(1,16)) - {1,2,6,7,8}: items.append(pin_no_connect(70,80,len(left),n))
+    items.append(pin_label(70,100,len(left),n,net))
+for n in set(range(1,16)) - {1,2,6,7,8}: items.append(pin_no_connect(70,100,len(left),n))
 for n, net in [(1,"DEVKIT_3V3"),(2,"GND"),(5,"WS2812_DATA_3V3"),(6,"E220_TXD"),(7,"E220_RXD")]:
-    items.append(pin_label(70,135,len(right),n,net))
+    items.append(pin_label(115,100,len(right),n,net))
 # One-sheet I2C nets: local labels intentionally connect DevKit, socket and
 # optional pull-up sites without creating a global-label/local-label ERC mix.
-items += [label("OLED_SDA", *pin_pos(70,135,len(right),11)), label("OLED_SCL", *pin_pos(70,135,len(right),14))]
-for n in set(range(1,16)) - {2,5,6,7,11,14}: items.append(pin_no_connect(70,135,len(right),n))
+items += [label("OLED_SDA", *pin_pos(115,100,len(right),11)), label("OLED_SCL", *pin_pos(115,100,len(right),14))]
+for n in set(range(1,16)) - {1,2,5,6,7,11,14}: items.append(pin_no_connect(115,100,len(right),n))
 for n, net in [(1,"E220_M0"),(2,"E220_M1"),(3,"E220_RXD"),(4,"E220_TXD"),(5,"E220_AUX"),(6,"5V_SYS"),(7,"GND")]:
     items.append(pin_label(175,105,len(e220),n,net))
 for n, net in [(1,"GND"),(2,"DEVKIT_3V3"),(3,"OLED_SCL"),(4,"OLED_SDA")]:
@@ -298,8 +313,8 @@ for n, net in [(1,"GND"),(2,"WS2812_DATA_3V3"),(3,"GND"),(4,"WS2812_DIN"),(5,"5V
 for n, net in [(1,"5V_SYS"),(3,"GND"),(4,"WS2812_DIN")]: items.append(pin_label(325,105,len(ws2812),n,net))
 items.append(pin_no_connect(325,105,len(ws2812),2))
 
-for ref, x, y, net in [("TP1",220,145,"BAT_PLUS"),("TP2",240,145,"GND"),("TP3",260,145,"BUCK_IN"),("TP4",280,145,"5V_SYS"),("TP5",300,145,"5V_SYS"),
-                       ("TP6",220,155,"E220_M0"),("TP7",240,155,"E220_M1"),("TP8",260,155,"E220_AUX"),("TP9",280,155,"E220_RXD"),("TP10",300,155,"E220_TXD")]: items.append(label(net,x,y))
+for ref, x, y, net in [("TP1",25,230,"BAT_PLUS"),("TP2",45,230,"GND"),("TP3",65,230,"BUCK_IN"),("TP4",85,230,"5V_SYS"),("TP5",105,230,"5V_SYS"),
+                       ("TP6",25,240,"E220_M0"),("TP7",45,240,"E220_M1"),("TP8",65,240,"E220_AUX"),("TP9",85,240,"E220_RXD"),("TP10",105,240,"E220_TXD")]: items.append(label(net,x,y))
 
 # ERC source markers: external protected battery/return plus the explicitly
 # declared protected BUCK_IN and U1-generated 5V_SYS domains.
@@ -311,21 +326,67 @@ for x,y,a,b in [(65,180,"Q1_GATE","GND"),(85,180,"BUCK_IN","Q1_GATE"),(105,205,"
                 (300,185,"OLED_SDA","DEVKIT_3V3"),(320,185,"OLED_SCL","DEVKIT_3V3")]: items += [pin_label(x,y,2,1,a),pin_label(x,y,2,2,b)]
 
 items += [
-    note("Rev.1 active input: externally protected 2S 18650 pack + external BMS only. J4 is BAT+/BAT- 6.0...8.4V; no midpoint, charger or USB-C input.",18,20),
-    note("BAT+ -> F1 1812L200/16 -> BAT_FUSED -> Q1 DMP3130LQ-7 reverse-polarity MOSFET -> BUCK_IN -> U1 TPS62133RGT -> 5V_SYS.",18,26),
-    note("D3 SMBJ10CA is a bidirectional input transient clamp at BAT_FUSED. No on-board charger/BMS is duplicated; no main-board switch is fitted in Rev.1.",18,32),
-    note("Rev.1 policy: disconnect battery or turn its external BMS output off before connecting the removable DevKit USB-C to a computer for programming.",18,38),
-    note("TPS62133: PVIN/AVIN/EN=BUCK_IN, SW1-3 -> L1 2.2uH -> 5V_SYS, VOS/FSW=5V_SYS, FB/DEF/grounds/EP=GND, SS/TR=C4 to GND; PG NC.",18,44),
-    note("J3 is universal E220-T22D: fit one E220-400T22D OR E220-900T22D. M0/M1 10k pulldowns. J5 is removable SSD1306 0.96 I2C, 1 GND/2 3V3/3 SCL/4 SDA.",18,50),
-    note("GPIO4 -> SN74AHCT1G125DBVR (OE=GND, 5V) -> WS2812B-V5 DIN. No PCB footprint/layout work is included.",18,56),
-    note("OLED VCC is DEVKIT_3V3 only. R10/R11 optional DNP 4.7k pull-ups to 3V3; fit only after checking module pull-ups. No 5V OLED power or pull-up.",18,62),
-    note("TP1 BAT_PLUS, TP2 GND, TP3 BUCK_IN, TP4 5V_SYS, TP5 E220_VCC(5V_SYS), TP6 M0, TP7 M1, TP8 AUX, TP9 RXD, TP10 TXD.",18,68),
+    # Functional-block headers deliberately contain the operational information
+    # needed while reviewing the carrier.  Historical decisions live in docs/.
+    heading("A. BATTERY INPUT / PROTECTION", 18, 135),
+    heading("B. 2S -> 5V BUCK", 105, 145),
+    heading("C. REMOVABLE ESP32 DEVKIT", 18, 52),
+    note("30 PIN / 2x15   |   USB-C + CH340C ON MODULE", 18, 57),
+    note("LEFT HEADER: J1                                      RIGHT HEADER: J2", 18, 62),
+    note("USED: VIN, 3V3, GND | GPIO17/TX2, GPIO16/RX2, GPIO25/26/27, GPIO21/22, GPIO4", 18, 126),
+    heading("D. E220-T22D UNIVERSAL SOCKET", 155, 70),
+    note("E220-400T22D / E220-900T22D — user-installed module", 155, 75),
+    heading("F. WS2812 STATUS LED", 260, 70),
+    note("GPIO4 -> AHCT buffer -> DIN", 260, 75),
+    heading("E. REMOVABLE OLED", 310, 150),
+    note("0.96\" SSD1306 | 128x64 | I2C | USER INSTALLED", 310, 155),
+    note("POWER INPUT: EXTERNALLY PROTECTED 2S LI-ION | 6.0 ... 8.4 V | NO CHARGER ON CARRIER PCB", 18, 18, 1.8),
+    note("WARNING: TURN OFF / DISCONNECT BATTERY POWER BEFORE CONNECTING ESP32 DEVKIT USB-C TO A COMPUTER.", 18, 25, 1.8),
+    note("ESP32 DEVKIT, E220 AND OLED ARE USER-INSTALLED MODULES.", 18, 32, 1.8),
+    note("Inter-block links use net labels.  Local wires show the active power, bypass and interface support networks.", 18, 39),
+    note("BAT+ -> F1 -> BAT_FUSED -> Q1 -> BUCK_IN", 18, 210),
+    note("                    |", 18, 214),
+    note("                 D3 TVS", 18, 218),
+    note("                    |", 18, 222),
+    note("                   GND", 18, 226),
+    note("U1 TPS62133RGT: C1 10uF input | C2 100nF AVIN | C4 3.3nF SS | L1 2.2uH | C3 22uF output", 115, 218),
+    note("J5: 1 GND | 2 DEVKIT_3V3 | 3 GPIO22/SCL | 4 GPIO21/SDA | R10/R11 4.7k DNP", 300, 205),
+]
+
+# Local wires: each endpoint already carries the same named net label, so these
+# visual connections cannot alter the electrical source of truth.  They make
+# power flow and local bypass/pull-down relationships inspectable in the PDF.
+items += [
+    # A. J4 -> PPTC -> P-MOS; TVS and Q1 gate support are local.
+    wire((20.32,153.67), (39.37,153.67)),
+    wire((39.37,156.21), (59.69,156.21), (59.69,163.83)),
+    wire((59.69,156.21), (80.01,157.48)),
+    wire((80.01,154.94), (100.33,154.94), (100.33,182.88), (124.46,182.88)),
+    # B. Buck input, AVIN bypass, switch/inductor/output and SS support.
+    wire((100.33,182.88), (100.33,203.20)),
+    wire((124.46,185.42), (119.38,185.42), (119.38,203.20)),
+    wire((124.46,160.02), (180.34,160.02), (180.34,179.07)),
+    wire((124.46,162.56), (180.34,162.56), (180.34,179.07)),
+    wire((124.46,165.10), (180.34,165.10), (180.34,179.07)),
+    wire((180.34,181.61), (180.34,203.20)),
+    wire((124.46,180.34), (139.70,180.34), (139.70,203.20)),
+    # D. E220 VCC bypass and immediately adjacent M0/M1 pull-downs.
+    wire((170.18,110.49), (170.18,138.43)),
+    wire((170.18,110.49), (190.50,110.49), (190.50,138.43)),
+    wire((170.18,97.79), (209.55,97.79), (209.55,138.43)),
+    wire((170.18,100.33), (229.87,100.33), (229.87,138.43)),
+    # E. OLED I2C pins and optional DNP pull-up sites.
+    wire((325.12,176.53), (314.96,176.53), (314.96,184.15)),
+    wire((325.12,179.07), (294.64,179.07), (294.64,184.15)),
+    # F. 3.3-V GPIO4 level buffer, local bypass and WS2812 DIN.
+    wire((270.51,107.95), (300.00,107.95), (300.00,109.22), (320.04,109.22)),
+    wire((270.51,110.49), (279.40,110.49), (279.40,138.43)),
 ]
 
 body = "\n".join(items)
-OUT.write_text(f'''(kicad_sch (version 20210126) (generator eeschema)
+OUT.write_text(f'''(kicad_sch (version 20231120) (generator eeschema)
   (uuid {u()})
-  (paper "A4")
+  (paper "A3")
   (title_block (title "ESP32 E220 LoRa Receiver — Rev.1 protected 2S battery carrier"))
   (lib_symbols
 {chr(10).join(libs)}

@@ -217,3 +217,15 @@ OLED work is prototype validation of the actual module/regulator and the
 Stage 7 audit of its production mounting footprint. The later user-provided
 mechanical drawing resolves `OLED_MOUNT_Y=22.000 mm`; it still needs audit for
 hole diameter, header/body datum, display/flex clearance and notch geometry.
+
+## Stage 8 schematic-to-PCB reference audit
+
+The electrical topology above remains the **APPROVED ELECTRICAL BASELINE**.
+Stage 8 does not change a component value, GPIO, net or topology. The current
+unrouted PCB has one footprint each for all active carrier references and an
+explicit pad/net audit in `hardware/generate_stage8_placement.py`.
+
+`R10` and `R11` are intentionally DNP/no-footprint I2C-pull-up sites. Schematic
+`PWR_FLAG` symbols are ERC annotations only and also intentionally have no PCB
+footprint. No user-installed DevKit, E220 or OLED module appears as a factory
+PCBA component; only their carrier-side headers/sockets are instantiated.

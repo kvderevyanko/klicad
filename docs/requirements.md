@@ -934,3 +934,47 @@ Sources: [SSD1306 product information, Solomon Systech](https://www.solomon-syst
 [SSD1306 controller datasheet](https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf),
 [Adafruit 0.96-in OLED guide](https://learn.adafruit.com/monochrome-oled-breakouts/wiring-128x64-oleds),
 and [Espressif ESP32-DevKitC V4 user guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html).
+
+### Stage 7 mechanical datum update
+
+This physical-data record does not alter the electrical schematic. The latest
+USER-PROVIDED OLED drawing additionally fixes the connector's horizontal
+datum: GND pin centre is X=9.190 mm from the left PCB edge; VCC/SCL/SDA are
+X=11.730/14.270/16.810 mm. Body 26.000 x 26.000 mm and hole spacings
+X=21.740 mm/Y=22.000 mm remain the active values. The only required remaining
+OLED measurements are header-row Y from the top edge and finished hole
+diameter; display/flex/notch clearance is a separate placement/enclosure task.
+
+For the universal E220 socket, the official EBYTE common 400/900-T22D drawing,
+official 900 STEP model and 900 library confirm the shared body, seven-pin row,
+SMA-side envelope and fixing-hole positions. Carrier fixed-hole sites remain
+mechanical guides only, not electrical contacts. No E220 user measurement is
+currently requested; validate selected socket mating on a first article.
+
+### Stage 7.1 preliminary placement requirement
+
+Preliminary mechanical placement is allowed without clone-specific DevKit A/B/C/D/E
+datums. It shall use conservative envelopes of 28 x 51 mm (DevKit), 21 x 36 mm
+(E220) and 26 x 26 mm (OLED), at least 5-mm physical-envelope clearance and
+additional clearance for removal, cables, SMA/tool and standoff access. The
+DevKit antenna end is a carrier-edge, no-components/no-routing placeholder;
+DevKit USB-C and the E220 SMA side must remain externally accessible. This
+authorisation is expressly limited to an un-routed preliminary PCB; it is not
+a production geometry or release approval.
+
+### Stage 8 functional-placement requirement
+
+The electrical baseline remains unchanged. The current KiCad PCB is an
+**unrouted functional-placement board**, generated reproducibly from the
+approved component/reference/pad map. Its 145 x 90-mm outline is a preferred
+comfortable preliminary proposal, not a released target size; 135 x 85 mm is
+the current minimum practical candidate. It retains at least 5 mm between
+removable module physical envelopes, direct DevKit USB-C and E220 SMA access,
+a conservative no-routing DevKit-antenna placeholder, and an OLED 36 x 36-mm
+adjustment reserve around the known 26 x 26-mm module body.
+
+No tracks, vias or zones are authorized by this placement record. OLED-A
+(header-row Y) and OLED-B (finished mounting-hole diameter) remain an OLED
+mechanical/PCB-release blocker only. They must not force relocation of the
+separate power/RF placement regions. The final WS2812B-V5 land pattern remains
+a PCB-release blocker; its visible Stage 8 object is placement-only.

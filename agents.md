@@ -274,3 +274,84 @@ ESP32-WROOM-32E и EBYTE E220-900T22D. Проект ведётся как про
   or routing was created. The newer OLED body 26x26 mm and mount-centre
   spacings X=21.740 mm/Y=22.000 mm are recorded, but hole diameter, header/body
   datum, display/flex clearance and notch geometry remain release blockers.
+- 2026-08-18 — Stage 7 corrective manufacturer-source footprint audit:
+  retained the approved electrical schematic and created only project-local,
+  reproducible footprint/library updates. Added verified JST B2B-XH-A,
+  TPS62133 RGT0016C, Coilcraft XFL4020 and DMP3130LQ patterns plus explicitly
+  classified project-IPC patterns for the Littelfuse/Murata/resistor cases.
+  Updated `docs/footprint-mechanical-review.md`, component decisions and open
+  questions to distinguish FOOTPRINT, MECHANICAL PLACEMENT, LAYOUT THERMAL and
+  PROCUREMENT DFM gates. `kicad-cli fp export svg` parsed/exported all 16
+  generated footprint files under KiCad 10.0.5. No `.kicad_pcb`, board outline,
+  placement, routing or electrical schematic change was made. Samtec's official
+  SSW-S print subsequently confirmed the 2.540-mm pitch/1.040-mm drill; its
+  copper pad remains a documented assembler-confirmation item. Remaining
+  gates: OLED datum/hole drawing, DevKit body and antenna datums, independent
+  900T22D SMA/underside mechanical confirmation, and assembler confirmation of
+  project-IPC lands.
+- 2026-08-18 — Stage 7 reviewer corrective footprint update: unified all
+  generated Samtec-derived DevKit/E220/OLED socket drills at the official
+  SSW-S **1.040 mm** and regenerated the library. Corrected the TPS62133RGT
+  RGT0016C EP stencil from an incorrect 4x0.680-mm pattern to TI's official
+  1.550 x 1.550-mm aperture (~85% coverage). The generator, checked-in mods,
+  README and mechanical review now agree. Verification repeats generator
+  reproducibility and KiCad footprint parsing/export; no electrical or PCB
+  file was changed.
+- 2026-08-18 — Stage 7 module-mechanical source closure: downloaded and
+  audited EBYTE's official E220-900T22D 3D STEP and PcbLib alongside the
+  common E220-400/900T22D manual drawing. Updated only project-local footprint
+  templates and mechanical documentation: common E220 fixed-hole guide sites
+  are now recorded as non-electrical guides, and the OLED template records the
+  newly supplied header X datum (GND=9.190 mm from left edge). No schematic,
+  PCB, board outline, placement or routing was created. Remaining user data is
+  limited to OLED header-row Y/hole diameter and ESP32 clone datums A/B/C/D/E;
+  E220 requires only first-article socket mating verification.
+- 2026-08-18 — Stage 7.1 conservative preliminary placement: user superseded
+  clone-specific DevKit A/B/C/D/E measurements as active blockers. Updated the
+  active mechanical policy to use generous 28x51-mm DevKit, 21x36-mm E220 and
+  26x26-mm OLED envelopes with at least 5-mm inter-module clearance, antenna,
+  USB-C and SMA-access guides. Created reproducible
+  `hardware/generate_stage7_preliminary_pcb.py` and its **un-routed**
+  `hardware/esp32-e220.kicad_pcb` placement study: no net assignments, tracks,
+  vias or zones. It is not a final outline or production board; independent
+  preliminary-placement review is required before any routing.
+- 2026-08-18 — Stage 7.1 mechanical-board hygiene update: corrected the
+  generated TI TPS62133RGT RGT0016C peripheral-pad centres to ±1.400 mm from
+  TI package drawing 4222419/E's 2.800-mm opposite-pad-centre dimension. The
+  0.600-mm radial × 0.240-mm tangential lands now clear TI's 1.680-mm EP;
+  official 1.550-mm stencil aperture remains unchanged. Regenerated the
+  netless preliminary board and KiCad 10 DRC reports zero violations. This is
+  a footprint/mechanical correction only, not an electrical-baseline change;
+  reviewer gate remains required before routing.
+- 2026-08-18 — Stage 8 functional placement: replaced the netless 160x100-mm
+  mechanical-study PCB with reproducible `hardware/generate_stage8_placement.py`
+  and an unrouted, net-assigned 145x90-mm comfortable preliminary outline.
+  Instantiated all active carrier footprints exactly once; R10/R11 and
+  schematic PWR_FLAG items are explicitly DNP/no-footprint. The board has 33
+  footprints, 18 named electrical nets, 0 tracks, 0 vias and 0 zones. KiCad
+  10 DRC reports 0 geometric violations; its 72 unconnected items are expected
+  because routing remains forbidden. Power-cell placement, module access and
+  OLED 36x36-mm conservative reserve are documented. Routing remains gated on
+  the requested independent placement review.
+- 2026-08-18 — Stage 8 corrective placement after reviewer finding: retained
+  the approved electrical baseline and changed only the reproducible
+  `generate_stage8_placement.py` coordinates/orientations. TPS62133 is now
+  placed according to its actual RGT pad sides (PVIN/AVIN right, SW left), with
+  C1/C2 on input, L1 pad 1 facing SW and C3 immediately after L1. C5/C6 moved
+  to the E220 socket pin-row side outside its module body, and D2/U3/C7 plus
+  TP1…TP10 moved outside the DevKit antenna placeholder. Regenerated PCB DRC:
+  0 geometric violations, 0 footprint errors and 72 expected unrouted
+  airwires; no tracks, vias, zones or electrical-topology changes. Independent
+  reviewer re-gate is required before routing.
+- 2026-08-18 — Schematic readability and visual-review export: regenerated
+  `hardware/esp32-e220.kicad_sch` from its reproducible generator only. The
+  A3 KiCad-10 sheet now uses functional A–F block headings, concise current
+  operational warnings, locally visible power/interface support wires and
+  inter-block net labels. The generated schematic now declares format version
+  `20231120`; KiCad 10.0.5 parses it, exports PDF and ERC reports 0 errors / 0
+  warnings. XML netlist comparison against the pre-change schematic found zero
+  net differences and zero normalized component/metadata differences (35
+  components, two DNP parts). Exported the complete schematic PDF and an
+  auto-scaled F.Fab/F.SilkS/Edge.Cuts preliminary-placement PDF. PCB was not
+  edited: 33 footprints, 0 tracks, 0 vias and 0 zones. Routing remains
+  explicitly forbidden pending the next gate.

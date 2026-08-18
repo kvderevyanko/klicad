@@ -1,6 +1,5 @@
 name = "pcb_engineer"
 description = "Senior electronics and PCB design engineer for production-ready KiCad hardware."
-model = "gpt-5.6"
 model_reasoning_effort = "high"
 sandbox_mode = "workspace-write"
 

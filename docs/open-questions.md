@@ -431,3 +431,122 @@ pull-up is fitted.
   enclosure feature.
 - **Optional:** populate R10/R11 only if the actual bus capacitance and module
   pull-up arrangement require them; do not fit them by default.
+
+## Stage 7 corrective classification — footprint/mechanical only
+
+The following are not electrical-schematic blockers and do not authorize a
+schematic topology change.
+
+### FOOTPRINT
+
+1. **OLED:** the known 26.000 x 26.000-mm body and 21.740 x 22.000-mm mounting
+   centre spacing are usable mechanical constraints, but a production mounting
+   pattern still needs the drawing/callouts for hole diameter and all
+   header-to-body/display/flex/notch datums. Do not infer them.
+2. **E220:** common 400/900 electrical socket coordinates are documented.
+   Universal *mechanical* release needs an independent 900T22D CAD/sample
+   confirmation of SMA-K position, thickness, pin projection and fixed-hole /
+   underside geometry.
+
+### MECHANICAL PLACEMENT
+
+1. Measure DevKit header datum to its 28 x 51-mm body, USB-C and antenna. The
+   two 1x15 row geometry is already verified, but it cannot establish the
+   carrier edge or copper antenna keepout.
+2. Define board/enclosure, battery-harness bend/strain relief, module vertical
+   removal clearances and prototype test-point access.
+
+### LAYOUT THERMAL / EMI
+
+1. Implement TPS62133 EP solder/thermal-via policy and TI's compact input and
+   switch loops during placement/routing; validate with the contracted PCBA
+   process.
+2. Keep Coilcraft L1 / buck SW and battery-transient loop away from the ESP32
+   and E220 antenna regions.
+
+### PROCUREMENT DFM
+
+1. Samtec's official SSW single-row print now verifies the 2.540-mm / 1.040-mm
+   hole pattern for SSW-115/107/104-02-G-S. The remaining item is assembler
+   confirmation of the documented 1.70-mm project copper annular ring; Samtec
+   does not state a copper-pad diameter in that print.
+2. Have the selected assembler confirm the explicitly-project-IPC lands for
+   `1812L200/16`, `SMBJ10CA`, Murata GRM21/GRM188 and unselected 0603 resistor
+   MPNs. This is a pad/process release gate, not permission to change values.
+
+## Stage 7 module-mechanical disposition — current
+
+### FOOTPRINT BLOCKER
+
+1. **OLED only:** provide **OLED-A**, top PCB edge to 1x4 header-row centreline,
+   and **OLED-B**, finished mounting-hole diameter. The 26.000 x 26.000-mm
+   body, X=21.740/Y=22.000-mm mount spacing, 2.540-mm pitch and GND/VCC/SCL/SDA
+   X positions (9.190/11.730/14.270/16.810 mm from left) are already fixed.
+
+### MECHANICAL PLACEMENT BLOCKER
+
+1. Define board/enclosure, battery-harness bend/strain relief, module vertical
+   removal clearances and prototype test-point access.
+
+### PROTOTYPE / PROCUREMENT DFM NOTE
+
+1. **E220:** no user measurement is requested. Official EBYTE common manual,
+   E220-900T22D 3D STEP and library establish the common 400/900 geometry.
+   Check the selected Samtec socket's insertion depth against a received module
+   before PCBA release. Treat EBYTE holes 8…10 as non-electrical mechanical
+   guides unless a later retention decision requires carrier features.
+2. Retain the existing assembler confirmation and TPS62133 thermal/EMI layout
+   constraints from the preceding Stage 7 classification.
+
+## Stage 7.1 — active conservative preliminary-placement policy
+
+The earlier A/B/C/D/E ESP32 clone request is **superseded as an active
+blocker**. It is retained above only as historical refinement information.
+Preliminary mechanical placement is now authorised with these constraints:
+
+- DevKit envelope 28 x 51 mm, E220 envelope 21 x 36 mm and OLED envelope
+  26 x 26 mm;
+- at least 5 mm between removable module physical envelopes, with additional
+  clearance for insertion/removal, USB cable, SMA/tool and screw/standoff use;
+- ESP32 antenna end at a carrier edge with conservative no-components/no-routing
+  placeholder; ESP32 USB-C remains directly accessible;
+- E220 SMA side faces a board/enclosure access edge;
+- **no routing** until the reviewer accepts the preliminary placement.
+
+OLED-A (header-row Y) and OLED-B (hole diameter) remain a **production OLED
+mounting-pattern** blocker, not a blocker to an un-routed preliminary envelope.
+
+## Stage 8 — active placement / release classification
+
+### OLED MECHANICAL / PCB RELEASE BLOCKER
+
+1. Supply **OLED-A** (top PCB edge to 1x4 header-row centreline Y) and
+   **OLED-B** (finished mounting-hole diameter). The 26.000 x 26.000-mm body,
+   X=21.740/Y=22.000-mm mount spacing and header pin-X dimensions are already
+   fixed and must not be requested again.
+2. Confirm display-glass/flex/notch clearance before the final OLED mounting
+   and enclosure release. A 36 x 36-mm conservative placement reserve exists,
+   so this is not a power/RF placement or unrelated-routing blocker.
+
+### PCB RELEASE / FOOTPRINT BLOCKER
+
+1. Audit/approve a manufacturer land pattern for `WS2812B-V5`; the current
+   visible PCB object is a placement candidate only and must not be fabricated
+   as a released footprint.
+
+### LAYOUT / THERMAL BLOCKER
+
+1. Before routing release, approve TPS62133 EP-to-GND thermal-via policy,
+   PVIN/PGND and SW/L1/COUT loop implementation, high-current copper width,
+   and antenna/RF keepouts. These are routing-stage constraints, not schematic
+   changes.
+
+### PROTOTYPE VALIDATION / ENCLOSURE VALIDATION
+
+1. Verify selected Samtec `SSW-107-02-G-S` mating depth with an E220 sample;
+   no new user measurement is requested from the E220 module.
+2. Verify the DevKit USB-C, E220 SMA and battery-harness access in the eventual
+   enclosure. No enclosure is defined, so this is a PCB-release/enclosure item,
+   not a routing blocker.
+3. Confirm assembler capability for project-IPC passives and the 1.70-mm
+   Samtec annular-ring choice before PCBA release.
