@@ -578,6 +578,23 @@ for `E220-400/900T22D`.  The two official product pages specify the same
 carrier interface is consequently the common seven-pin electrical interface
 below, not a claim of a final PCB socket or footprint.
 
+### Official mechanical-source compatibility finding
+
+The manufacturer manual's single Section 3.3 drawing is explicitly titled
+**“E220-400/900T22D Mechanical Dimensions and Pin Definitions”**.  It is the
+primary-source basis that the two specified T22D variants use the same module
+coordinate system: 36.0 × 21.0 mm body, seven numbered electrical pads
+1…7 at 2.54-mm pitch, and three fixing holes numbered 8…10 (ten pads/holes in
+the drawing).  The drawing also specifies 1.50 × 2.00-mm top/bottom pad land
+dimensions with a 0.90-mm hole, plus drawing tolerances X.X ±0.20 mm and X.XX
+±0.05 mm.
+
+This establishes common **source geometry** for the two module variants; it
+does not select a carrier mating method or approve a KiCad footprint.  A later
+PCB stage must make a controlled, reproducible conversion/audit of the current
+official drawing, including pin-1 orientation, drill/plating assumptions,
+courtyard and the chosen socket versus direct-module assembly.
+
 | Carrier net / DevKit signal | E220-T22D pin | Verified function and direction |
 | --- | ---: | --- |
 | `E220_M0` / GPIO25 | 1 | M0 input to module |
@@ -658,3 +675,258 @@ VIN current and its on-board regulator temperature on the prototype.
   history.  They are not active carrier requirements.
 
 Sources: [E220-T Series User Manual, EBYTE (official download)](https://www.cdebyte.com/pdf-down.aspx?id=4221), [E220-400T22D official product page, EBYTE](https://www.cdebyte.com/products/E220-400T22D/4), [E220-900T22D official product page, EBYTE](https://www.cdebyte.com/products/E220-900T22D/4), [TPS2596 datasheet, TI](https://www.ti.com/lit/ds/symlink/tps2596.pdf), and [TUSB320LAI datasheet, TI](https://www.ti.com/lit/ds/symlink/tusb320lai.pdf).
+
+### Stage 5 second-gate correction — external-port protection
+
+The earlier selected `TPD1E10B06DPYR` VBUS ESD diode is implemented on
+`VBUS_PRE` before TPS259630: official pin 1 is I/O and pin 2 is GND.
+
+`TPD4S311DRYR` cannot be implemented under the currently approved pre-gate
+power architecture, so it is not an active populated CC protection component.
+Its official operating VPWR range is 2.7…4.5 V, it requires 0.3…1 uF at VPWR,
+and VBIAS requires 0.1 uF rated at least 35 V.  At Type-C Default the eFuse
+deliberately keeps `5V_SYS` and DevKit 3V3 absent; raw VBUS is 5 V and
+`TUSB_VDD` has no controlled ≤4.5-V upper bound.  Connecting any of these
+rails to VPWR would violate a stated condition or create a circular gate.  A
+verified pre-gate auxiliary 2.7…4.5-V supply with a back-power analysis, or a
+different verified CC short-to-VBUS protection solution, is now required
+before the CC portion of the input path is releasable.
+
+Sources: [TPD1E10B06, TI](https://www.ti.com/lit/ds/symlink/tpd1e10b06.pdf), [TPD4S311, TI](https://www.ti.com/lit/ds/symlink/tpd4s311.pdf), and [TPD2S300, TI](https://www.ti.com/lit/ds/symlink/tpd2s300.pdf).
+
+### Stage 5 third-gate correction — active pre-gate 3.3-V CC-protection rail
+
+The preceding statement that the CC protection rail was unresolved is retained
+as history and is **superseded** by the approved, now-instantiated pre-gate
+domain:
+
+```text
+VBUS_PRE ── U4 TLV70433DBVR ── PRE_GATE_3V3
+                                  ├─ U1 TUSB320LAIRWBR VDD + C2
+                                  ├─ U5 TPD4S311YBFR VPWR + C10
+                                  └─ R2 OUT1 pull-up and R4 TPS259630 EN pull-up
+```
+
+`TLV70433DBVR` is a fixed 3.3-V, 150-mA LDO with 2.5…24-V operating input.
+TI requires at least 0.1 uF from IN to GND and at least 1 uF nominal from OUT
+to GND (with effective capacitance >0.47 uF).  The selected project parts are
+`C8` and `C9`, each Murata `GRM188R71A105KA61D` (1 uF, ±10 %, 10 V, X7R);
+they are dedicated local IN/OUT capacitors, rather than a claim that a remote
+eFuse capacitor satisfies LDO placement. `C10` uses the same verified MPN as
+the required 0.3…1-uF `TPD4S311` VPWR bypass.  `C11` is Murata
+`GRM188R71H104KA93D`, 0.1 uF, ±10 %, 50 V, X7R, meeting TI's VBIAS 0.1-uF and
+at-least-35-V requirement.  U4 pin 1=GND, 2=VBUS_PRE, 3=PRE_GATE_3V3 and
+4/5=NC; U4 has no EN pin.  The former VBUS_PRE -> `MMSD4148T1G` ->
+`TUSB_VDD` branch is removed as obsolete.
+
+`PRE_GATE_3V3` is deliberately independent of `5V_SYS`: it comes up from raw
+VBUS at Type-C Default current so the UFP can evaluate CC, while the eFuse
+continues to keep `5V_SYS` off until a Medium or High advertisement. No OUT1
+or TPS EN pull-up is tied to raw VBUS, so the former high-voltage-pull-up and
+back-drive concern is removed. `R1=900 kOhm` remains the verified
+`VBUS_PRE`-to-`VBUS_DET` path.
+
+`TPD4S311YBFR` is now the active CC/SBU protector. Its exact ball wiring is:
+J4 CC1 -> `C_CC1` -> U5 A2 and U5 B2/RPD_G1; J4 CC2 -> `C_CC2` -> U5 A3 and
+U5 B3/RPD_G2; U5 D3/CC1 -> TUSB320 pin 1; U5 D4/CC2 -> TUSB320 pin 2. TI
+explicitly directs RPD_G1/G2 to their connector-side C_CC pins when dead-battery
+resistors are required. Therefore no permanent external 5.1-kOhm Rd is fitted.
+U5 C1/C2/C3 are GND, C4/VPWR is PRE_GATE_3V3, A4/VBIAS is C11-to-GND; unused
+SBU connector/system balls and FLT are explicitly NC. This retains dead-battery
+Rd before U4 has risen, then powers U5 and TUSB320 from the same controlled
+pre-gate rail; prototype testing must confirm attach/detach timing with the
+chosen Type-C source population.
+
+### Pre-eFuse current allocation, revised
+
+| Raw VBUS / PRE_GATE_3V3 load | Current | Basis |
+| --- | ---: | --- |
+| U5 `TPD4S311` VPWR | 135 uA max | TI electrical characteristics at VPWR=4.5 V. |
+| U1 `TUSB320LAI` UFP | 70 uA typical | TI gives 70 uA in unattached and active UFP modes but no maximum in the cited table. |
+| U4 `TLV704` ground current | 4.5 uA max | TI new-device value at 100-mA load; actual load here is far lower. |
+| OUT1/Q1/EN network | 70.3 uA maximum calculated | At OUT1 low: 3.3 V / 47 kOhm = 70.2 uA through R2 plus 0.1-uA max TPS EN leakage. Default/released OUT1 instead uses about (3.3-0.7)/(47k+47k)=27.7 uA base current plus 10.0 uA through R4. |
+| **Calculated identified total** | **279.8 uA** | Includes a typical-only TUSB term; not a guaranteed maximum. |
+| **PRE_GATE raw-VBUS allocation** | **0.500 mA** | **PROJECT DESIGN ALLOCATION** to bound the absent TUSB maximum and start-up tolerance; prototype-validate. |
+
+The 0.500-mA allocation is below U4's 150-mA rating; linear dissipation at
+5 V input is at most about (5-3.3) V × 0.5 mA = 0.85 mW for this allocation.
+It supersedes the old 0.250-mA pre-eFuse allocation. The raw-USB design
+allocation is consequently **778.232 mA** (=777.732 mA protected rail +
+0.500 mA pre-gate), leaving **721.768 mA** to the 1.5-A Medium/High policy.
+At Default current only the pre-gate allocation is intentionally enabled;
+`5V_SYS` remains off.
+
+Sources: [TLV704 datasheet, TI](https://www.ti.com/lit/ds/symlink/tlv704.pdf),
+[TPD4S311 datasheet, TI](https://www.ti.com/lit/ds/symlink/tpd4s311.pdf),
+[TUSB320LAI datasheet, TI](https://www.ti.com/lit/ds/symlink/tusb320lai.pdf),
+[TPS2596 datasheet, TI](https://www.ti.com/lit/ds/symlink/tps2596.pdf),
+[Murata GRM188R71A105KA61D](https://search.murata.com/en-US/partdetail?partno=GRM188R71A105KA61D),
+and [Murata GRM188R71H104KA93D](https://www.murata.com/en-us/products/productdetail?partno=GRM188R71H104KA93%23).
+
+## Rev.1 active power architecture — externally protected 2S battery
+
+All preceding active USB-C, Type-C CC, pre-gate and TPS259630 decisions are
+**superseded history**. Rev.1 accepts only `BAT+`/`BAT-` from an externally
+protected 2S 18650 pack with its BMS outside the carrier. Normal carrier input
+is 6.0…8.4 V (8.4 V fully charged). There is no cell midpoint, charger,
+charging connector or on-carrier BMS function.
+
+`J4` is a generic two-pin schematic interface labelled **PROTECTED 2S LI-ION
+INPUT ONLY 6…8.4 V**. The active chain is `BAT+ -> F1 -> BAT_FUSED -> Q1 ->
+BUCK_IN -> U1 -> 5V_SYS`; `BAT-` is GND. Before connecting the removable
+DevKit's USB-C to a computer, the battery must be disconnected or its external
+BMS output turned off. No simultaneous-power path is claimed.
+
+### Selected active components
+
+- `U1`: TI `TPS62133RGT`, fixed 5.0-V, 3-A synchronous buck, 3…17-V operating
+  input and 100-% duty-cycle capability. At the 6.0-V low input and 1.5-A
+  output-design check, TI's 100-% duty formula with high-side RDS(on) maximum
+  170 mOhm (VIN >=6 V) and L1 maximum DCR 23.5 mOhm gives 0.290 V drop and
+  0.710 V nominal input headroom to the 5-V set point. This is a calculated
+  engineering check, not a replacement for output-tolerance/thermal prototype
+  validation.
+- `L1`: Coilcraft `XFL4020-222MEB`, 2.2 uH; official data list 23.5-mOhm
+  maximum DCR, 3.1-A/3.5-A/3.7-A saturation values at 10/20/30-% drop and
+  6.0-A 20-C-rise current. It is also the inductance used in TI's recommended
+  external-component table.
+- `C1`: Murata `GRM21BR61E106KA73`, 10 uF, 25 V, X5R, BUCK_IN-to-GND. `C2`:
+  `GRM188R71C104KA01D`, 0.1 uF, 16 V, X7R, AVIN-to-GND. TI recommends 10 uF
+  input and requires a 0.1-uF AVIN-to-AGND capacitor. `C3`:
+  `GRM21BR61A226ME44`, 22 uF, 10 V, X5R, 5V_SYS-to-GND; TI recommends 22 uF
+  X5R/X7R output with the selected 2.2-uH filter. `C4`:
+  `GRM1885C1H332JA01D`, 3.3 nF, 50 V C0G, SS/TR-to-GND, following TI's typical
+  application soft-start value.
+- `F1`: Littelfuse `1812L200/16`, PPTC, 2.0-A hold, 3.5-A trip, 16-V maximum
+  voltage. This protects carrier wiring/faults only; it does not replace the
+  external BMS. Ambient derating and trip time require prototype verification.
+- `Q1`: Diodes Inc. `DMP3130LQ-7`, P-channel SOT-23, 30-V VDS, ±12-V VGS,
+  95-mOhm maximum RDS(on) at VGS=-4.5 V. Its official pins are 1=G, 2=S,
+  3=D. **Corrected official reverse-polarity orientation:** D3=`BAT_FUSED`,
+  S2=`BUCK_IN`, so the intrinsic body diode precharges `BAT_FUSED` to
+  `BUCK_IN` only under correct polarity. `R1=100 kOhm` is gate-to-GND and
+  `R2=1 MOhm` is **source (`BUCK_IN`)-to-gate**. These are PROJECT DESIGN
+  CHOICES: at 6.0 V VGS is about -5.45 V; at 8.4 V about -7.64 V, both below
+  the ±12-V gate limit. A reverse pack leaves the body diode reverse-biased and
+  Q1 off instead of feeding `BUCK_IN`.
+- `D3`: Littelfuse `SMBJ10CA`, bidirectional 10-V-standoff TVS from BAT_FUSED
+  to GND. It is a **PROJECT DESIGN CHOICE** for battery-lead plug/unplug
+  transients, not BMS duplication; its nominal standoff exceeds 8.4 V and the
+  series' 17-V clamp specification is below U1's 20-V absolute maximum. Keep
+  its high-current layout/thermal verification for PCB/prototype stage.
+
+U1 exact connections: PVIN11/12, AVIN10 and EN13=`BUCK_IN`; SW1/2/3=`BUCK_SW`
+to L1 then `5V_SYS`; VOS14 and FSW7=`5V_SYS`; fixed-output FB5 and DEF8=GND;
+AGND6, PGND15/16 and exposed pad=GND; SS/TR9=C4-to-GND; PG4=NC. `FSW=5V_SYS`
+selects TI's lower-frequency mode and is within the pin's 7-V maximum.
+
+### Revised power budget
+
+| 5V_SYS full-operation load | Current | Classification |
+| --- | ---: | --- |
+| DevKit VIN | 500.000 mA | PROJECT DESIGN ALLOCATION; prototype validate onboard regulator. |
+| E220-T22D 22-dBm TX | 110.000 mA | EBYTE maximum instantaneous emission current. |
+| WS2812B-V5 | 36.600 mA | Existing bounded PROJECT DESIGN ALLOCATION. |
+| SN74AHCT1G125 | 1.510 mA | Existing conservative PROJECT DESIGN ALLOCATION. |
+| Subtotal | 648.110 mA | Calculated. |
+| 20-% margin | 129.622 mA | PROJECT DESIGN ALLOCATION. |
+| **5V_SYS allocation** | **777.732 mA** | Calculated. |
+
+For conservative input planning use **85-% PROJECT DESIGN EFFICIENCY** (not a
+guaranteed TI efficiency at every component/temperature condition). `Pout` is
+3.88866 W, `Pin`=4.57489 W and converter-loss allocation is 0.68623 W. The
+calculated battery input current is 0.5446 A at 8.4 V, 0.6182 A at 7.4 V and
+0.7625 A at 6.0 V. At the requested 1.5-A 5-V capability check, 7.5 W / 85%
+=8.8235 W and 1.4706 A from a 6-V pack: below F1's 2-A 20-C hold rating, but
+not a substitute for temperature derating. Q1's 95-mOhm maximum loss is about
+0.055 W at the allocated 0.7625-A low-battery input and 0.206 W at the 1.5-A
+capability input check; F1's 70-mOhm maximum initial-resistance losses are
+about 0.041 W and 0.151 W respectively.
+
+Sources: [TPS62133, TI](https://www.ti.com/lit/ds/symlink/tps62133.pdf),
+[Coilcraft XFL4020](https://www.coilcraft.com/getmedia/50632d43-da1e-4cdb-8ab4-3029cab51df3/xfl4020.pdf),
+[Littelfuse 1812L](https://www.littelfuse.com/~/media/electronics/datasheets/resettable_ptcs/littelfuse_ptc_1812l_datasheet.pdf.pdf),
+[DMP3130LQ, Diodes Inc.](https://www.diodes.com/_files/datasheets/DMP3130LQ.pdf),
+and [SMBJ10CA, Littelfuse](https://www.littelfuse.com/products/overvoltage-protection/tvs-diodes/surface-mount/smbj/smbj10ca).
+
+## APPROVED ELECTRICAL BASELINE — Rev.1 battery carrier
+
+The active Rev.1 electrical baseline is frozen: an externally protected 2S
+18650 pack/BMS provides `BAT+`/`BAT-` at 6.0...8.4 V; the carrier uses
+`1812L200/16`, `SMBJ10CA`, `DMP3130LQ-7`, TI `TPS62133RGT`,
+`XFL4020-222MEB`, and the named C1...C4 support capacitors to make `5V_SYS`.
+The removable DevKit, the universal E220-T22D socket, and the WS2812/AHCT
+path remain part of that baseline. Do not alter this baseline without a new,
+documented electrical finding or a new user decision.
+
+## Rev.1 active removable OLED
+
+`J5` is an electrically defined, user-installed 0.96-in 128x64 SSD1306 I2C
+module interface. The carrier side is a **female 1x4 mating socket**, with no
+footprint selected at this stage. The user/seller-provided physical order is:
+
+| J5 pin | Net / function |
+| --- | --- |
+| 1 | GND |
+| 2 | `DEVKIT_3V3` / VCC |
+| 3 | `OLED_SCL` / DevKit GPIO22 |
+| 4 | `OLED_SDA` / DevKit GPIO21 |
+
+VCC and any I2C pull-up must be 3.3 V only: raw SSD1306 logic supply `VDD`
+is specified as 1.65...3.3 V by Solomon Systech. A common manufacturer
+breakout reference (Adafruit's 0.96-in SSD1306 board) likewise specifies 3.3-V
+power and logic and reports about 20 mA average at 3.3 V. This supports the
+3.3-V interface decision, but is **not** claimed to be a datasheet for the
+unknown user-installed module and is not an official maximum-current rating.
+5-V OLED VCC and 5-V I2C pull-ups are prohibited in Rev.1.
+
+`R10` (SDA) and `R11` (SCL) are each 4.7 kOhm, 1 %, from the bus to
+`DEVKIT_3V3`, marked `DNP=YES` and not fitted by default. Common I2C OLED
+breakouts can have installed pull-ups; with a module pull-up `R_MODULE`, a
+fitted carrier site would produce `R_EFFECTIVE = 4.7k || R_MODULE`. For the
+illustrative equal 4.7-kOhm case this is 2.35 kOhm and one asserted-low line
+draws 1.40 mA at 3.3 V. Populate R10/R11 only after inspecting or measuring
+the installed module's pull-ups and bus rise time; the default DNP state
+avoids an unreviewed parallel pull-up. This is a **PROJECT DESIGN CHOICE**,
+not an SSD1306 requirement.
+
+The exact generic DevKit CH340C-board 3.3-V regulator and its current rating
+are not documented by the user-supplied DevKit identity. The Espressif
+DevKitC documentation confirms a 3.3-V header rail but cannot validate this
+other board's regulator. Therefore OLED load is a separate **100-mA PROJECT
+DESIGN ALLOCATION** outside the existing 500-mA DevKit VIN allocation, not a
+manufacturer rating. Prototype must measure DevKit regulator voltage and
+temperature with OLED active; a module exceeding 100 mA or a regulator thermal
+issue reopens the power review.
+
+### Updated Rev.1 5-V and battery budget
+
+| `5V_SYS` full-operation load | Current | Basis |
+| --- | ---: | --- |
+| DevKit VIN | 500.000 mA | Existing conservative PROJECT DESIGN ALLOCATION. |
+| OLED via DevKit 3.3-V regulator | 100.000 mA | Separate conservative PROJECT DESIGN ALLOCATION; no regulator efficiency is assumed. |
+| E220-T22D TX | 110.000 mA | EBYTE maximum instantaneous emission current. |
+| WS2812B-V5 | 36.600 mA | Existing bounded PROJECT DESIGN ALLOCATION. |
+| SN74AHCT1G125 | 1.510 mA | Existing conservative allocation. |
+| **Subtotal** | **748.110 mA** | Calculated. |
+| 20-% margin | 149.622 mA | PROJECT DESIGN ALLOCATION. |
+| **Total `5V_SYS` allocation** | **897.732 mA** | Calculated. |
+
+At 5.0 V this is `Pout = 4.488660 W`. Retaining the prior 85-% conservative
+PROJECT DESIGN efficiency gives `Pin = 5.280776 W`, buck-loss allocation
+0.792116 W and calculated battery current 0.6287 A at 8.4 V, 0.7136 A at
+7.4 V and 0.8801 A at 6.0 V. These values remain below the 1.5-A `5V_SYS`
+capability check and F1's 2-A 20-C hold rating, subject to the already-required
+thermal/derating tests. They do not claim an efficiency or regulator rating
+not present in the cited datasheets.
+
+Mechanical information is **USER/SELLER-PROVIDED**, not a verified footprint:
+module body 25.2 x 26 mm; 1x4 2.54-mm header; four mounting holes diameter
+2 mm; X spacing 21 mm; `OLED_MOUNT_Y=TBD / USER MEASUREMENT REQUIRED`.
+It is a PCB-stage mechanical blocker only. No OLED footprint, mounting pattern,
+placement or routing is approved by this document.
+
+Sources: [SSD1306 product information, Solomon Systech](https://www.solomon-systech.com/en/product/ssd1306/),
+[SSD1306 controller datasheet](https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf),
+[Adafruit 0.96-in OLED guide](https://learn.adafruit.com/monochrome-oled-breakouts/wiring-128x64-oleds),
+and [Espressif ESP32-DevKitC V4 user guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html).

@@ -163,3 +163,104 @@ ESP32-WROOM-32E и EBYTE E220-900T22D. Проект ведётся как про
   PCB blockers remain final socket/footprint/mechanics, band-specific
   antenna/regulatory selection, LED/display mechanics, and prototype power/RF
   validation.
+- 2026-08-18 — Stage 5 gate 1 mechanical-source audit: re-read the active
+  documents, generator and schematic; no PCB/layout/footprint was created.
+  Rechecked the two official EBYTE product downloads and the common manual
+  Section 3.3 drawing titled `E220-400/900T22D Mechanical Dimensions and Pin
+  Definitions`. It establishes common source geometry: 36.0 × 21.0 mm,
+  seven 2.54-mm-pitch electrical pads, fixing holes 8…10, 1.50 × 2.00-mm pad
+  lands and 0.90-mm holes. The 400T22D download names its 10-pad pattern and
+  the 900T22D-linked PcbLib contains the common 400T22D pattern, but neither
+  is treated as an approved KiCad footprint. Generator/symbol-table metadata
+  is now Stage 5; schematic review and active docs record the finding. The
+  universal socket, R8/R9, C5/C6, OLED NC/DNP, removable DevKit-only boundary
+  and fail-safe Type-C gate remain in force. Final exact ERC rerun reports
+  0 errors and the two already documented intentional `isolated_pin_label`
+  warnings for signal-only OLED reservations; no ERC exclusion was added.
+- 2026-08-18 — Stage 5 gate-review correction: fixed the reproducible KiCad
+  generator's sheet-Y/pin-row transformation, regenerated
+  `hardware/esp32-e220.kicad_sch` and project-local symbols, and manually
+  audited every custom-symbol pin/net connection. The audit also exposed and
+  corrected two real generic-symbol mistakes: D1 `MMSD4148T1G` now has
+  A2=`VBUS_PRE` / K1=`TUSB_VDD`, and Q1 `MMBT3904LT1G` now has B1=`QBASE`,
+  E2=GND, C3=`EFUSE_EN`, per onsemi. The exact 18-contact `USB4105-GF-A`
+  electrical representation and GPIO4 -> `SN74AHCT1G125DBVR` ->
+  `WS2812B-V5` block (with C7) are now present. KiCad 10.0.5 reads and exports
+  the regenerated schematic (`kicad-cli sch export pdf` exit 0). Exact
+  `kicad-cli sch erc --exit-code-violations` reports 0 errors and two visible,
+  documented OLED signal-reservation warnings (therefore process exit 5);
+  neither warning is excluded. Updated `docs/schematic-review.md`,
+  `docs/component-decisions.md` and `docs/open-questions.md`. No PCB/layout
+  artifact was created; remaining work is the existing PCB/prototype/RF
+  blocker list and reviewer re-review.
+- 2026-08-18 — Stage 5 second-gate correction: added only validated schematic
+  content: D3 `TPD1E10B06DPYR` VBUS ESD (I/O1=`VBUS_PRE`, GND2), explicit
+  TPS259630 `EP` thermal-pad-to-GND pin, and the active TP1…TP7 measurement
+  nets (5V_SYS, E220 VCC, M0, M1, AUX, RXD, TXD). Re-generated the project
+  symbols/schematic from `generate_esp32_e220.py`, manually audited affected
+  endpoints and exported with KiCad 10.0.5 (PDF exit 0). ERC reports 0 errors
+  and the same two documented OLED-reservation warnings; exact
+  `--exit-code-violations` exit is 5. Re-read TI's official TPD4S311 and
+  evaluated TPD2S300: both require a 2.7…4.5-V auxiliary VPWR domain, which
+  cannot be supplied by raw 5 V, `5V_SYS`/DevKit 3V3 while gated off at Default,
+  or unbounded diode-fed TUSB_VDD. `TPD4S311` is consequently not instantiated;
+  this is a documented real schematic blocker pending an approved pre-gate
+  auxiliary rail or different verified CC protection architecture. Updated
+  requirements, architecture, decisions, open questions and schematic review.
+  No PCB, layout, footprint or mechanical work was created.
+- 2026-08-18 — Stage 5 third-gate correction: the approved pre-gate solution
+  is implemented reproducibly in `hardware/generate_esp32_e220.py` and its
+  regenerated KiCad schematic. U4 `TLV70433DBVR` now converts `VBUS_PRE` to
+  `PRE_GATE_3V3`, with dedicated C8/C9 1-uF `GRM188R71A105KA61D` capacitors;
+  it powers U1 TUSB320 VDD, U5 `TPD4S311YBFR` VPWR (C10 1 uF) and the R2/R4
+  OUT1/eFuse-enable pull-ups. U5 is connected at its official DSBGA ball IDs:
+  C_CC1/C_CC2 from J4; RPD_G1/RPD_G2 tied to those connector-side nodes for
+  dead-battery Rd; protected CC1/CC2 to TUSB; VBIAS C11 0.1-uF/50-V X7R to
+  GND; unused SBU/FLT NC. The obsolete MMSD4148-fed TUSB_VDD path was removed.
+  Calculated gate checks at 3.3 V: OUT1-low sink 70.2 uA; default released
+  OUT1 base drive about 27.7 uA and Q1 holds EN low; TPS EN pull-up is valid.
+  Revised pre-eFuse allocation is 0.500 mA (project allocation; identified
+  sum 279.8 uA) and raw total allocation 778.232 mA. KiCad 10.0.5 PDF export
+  succeeds; ERC is 0 errors with the same two visible OLED-reservation
+  warnings (exact `--exit-code-violations` exit 5). Updated all four active
+  documents plus `docs/schematic-review.md`; no PCB, footprint, layout or
+  routing work was created. Remaining checks are prototype/PCB-stage, not a
+  CC schematic blocker.
+- 2026-08-18 — Rev.1 battery-architecture update: superseded the active
+  USB-C/CC/pre-gate/TPS259630 path in the reproducible generator and
+  regenerated schematic. The active input is J4 external protected 2S pack
+  only (`BAT+`/GND, 6.0...8.4 V): `BAT+ -> 1812L200/16 PPTC -> SMBJ10CA
+  transient node -> DMP3130LQ-7 P-MOS reverse-polarity stage -> BUCK_IN ->
+  TPS62133RGT -> 5V_SYS`. U1 uses its exact official pin functions, L1
+  XFL4020-222MEB, 10-uF/25-V input, 0.1-uF AVIN, 22-uF output and 3.3-nF
+  soft-start components. E220, DevKit, WS/AHCT and OLED signal reservation
+  remain. Added TP1 BAT+, TP2 GND, TP3 BUCK_IN, TP4 5V_SYS, TP5 E220 VCC and
+  five E220 control/UART points. The 5V allocation remains 777.732 mA;
+  calculated 85-%-efficiency battery currents are 0.5446/0.6182/0.7625 A at
+  8.4/7.4/6.0 V. KiCad PDF export succeeds; exact ERC has 0 errors and the
+  two existing visible OLED warnings (exit 5 with `--exit-code-violations`).
+  Updated all five engineering documents. No PCB, footprint assignment,
+  placement or routing work was created; connector/thermal/EMI/prototype
+  checks remain for the next gated review.
+- 2026-08-18 — Rev.1 reviewer correction: corrected a real P-MOS
+  reverse-battery orientation fault in the reproducible generator and all
+  active review/decision documents. For DMP3130LQ-7 official pins 1=G, 2=S,
+  3=D, Q1 is now D3=`BAT_FUSED`, S2=`BUCK_IN`, and R2 is `BUCK_IN`-to-gate.
+  This makes the intrinsic diode face BAT_FUSED -> BUCK_IN for correct-polarity
+  precharge and reverse-bias under a reversed pack. The VGS calculation and
+  power-loss allocations are unchanged because source is the regulated input
+  node in normal conduction. Schematic regeneration, PDF read and ERC are
+  repeated before re-review; no PCB work is performed.
+- 2026-08-18 — Rev.1 OLED activation: froze the existing protected-2S battery
+  input and `TPS62133RGT`/`1812L200/16`/`DMP3130LQ-7`/`SMBJ10CA`/
+  `XFL4020-222MEB` electrical baseline. Replaced the old signal-only OLED
+  reservation with J5 removable female 1x4: 1=GND, 2=DevKit 3V3,
+  3=GPIO22/SCL and 4=GPIO21/SDA. Added default-DNP R10/R11 4.7-kOhm 3.3-V
+  pull-up sites, with no 5-V OLED supply/pull-up. Added a separate conservative
+  100-mA OLED allocation outside the 500-mA DevKit allocation: `5V_SYS`
+  subtotal 748.110 mA, 897.732 mA with 20-% margin, and 0.6287/0.7136/0.8801-A
+  battery current at 8.4/7.4/6.0 V using the established 85-% methodology.
+  Regenerated schematic, PDF export and exact ERC pass with 0 violations.
+  Updated all five engineering documents. No PCB, footprint, placement,
+  routing or Gerber work was created; OLED mechanics remain a PCB-stage
+  measurement blocker and DevKit-regulator capability a prototype check.

@@ -322,11 +322,127 @@ allocation is pre-eFuse and separate: raw USB allocation is 777.982 mA, with
 TPS259630 limit by 171.268 mA, subject to cable, burst and thermal prototype
 testing.
 
-Mechanical compatibility is intentionally not asserted: EBYTE's official
-manual/product pages establish common T22D electrical pinout and 21 × 36 mm
-module size, but no final carrier socket, pin-header footprint, mounting-hole
-pattern or courtyard is selected.  The EBYTE-provided PCB library is not a
-KiCad footprint approval.  The module's SMA-K demands a band-specific antenna
-and is a PCB/RF-release matter, not an electrical-schematic blocker.
+The EBYTE manual's common `E220-400/900T22D` mechanical drawing establishes
+one source coordinate system for both module choices: 36.0 × 21.0 mm body,
+seven 2.54-mm-pitch electrical pads and fixing holes 8…10; it publishes
+1.50 × 2.00-mm pads with 0.90-mm holes.  This is evidence for a common module
+envelope, not a final carrier implementation.  No socket, pin-header
+footprint, mounting-hole pattern, courtyard or KiCad conversion is selected;
+the EBYTE-provided PCB library remains a source asset rather than a KiCad
+footprint approval.  The module's SMA-K demands a band-specific antenna and is
+a PCB/RF-release matter, not an electrical-schematic blocker.
 
 Sources: [E220-T Series User Manual, EBYTE](https://www.cdebyte.com/pdf-down.aspx?id=4221), [E220-400T22D, EBYTE](https://www.cdebyte.com/products/E220-400T22D/4), [E220-900T22D, EBYTE](https://www.cdebyte.com/products/E220-900T22D/4), [TPS2596, TI](https://www.ti.com/lit/ds/symlink/tps2596.pdf), and [TUSB320LAI, TI](https://www.ti.com/lit/ds/symlink/tusb320lai.pdf).
+
+### Stage 5 second-gate correction — CC protection boundary
+
+The actual schematic has `TPD1E10B06DPYR` from `VBUS_PRE` to GND before the
+eFuse.  It does **not** instantiate `TPD4S311DRYR`: that IC's 2.7…4.5-V VPWR
+domain must be valid before it can pass CC to TUSB320, whereas the current
+gate makes `5V_SYS`/DevKit 3V3 unavailable at Default current.  Raw VBUS and
+the diode-fed TUSB rail are not approved VPWR substitutes.  Thus the
+architecture still lacks a releasable CC short-to-VBUS/ESD path and must not
+advance to PCB.  A separate pre-gate 2.7…4.5-V auxiliary supply or a new,
+officially verified CC-protection architecture is a required decision.
+
+Source: [TPD4S311, TI](https://www.ti.com/lit/ds/symlink/tpd4s311.pdf).
+
+### Stage 5 third-gate correction — active architecture
+
+The earlier unresolved-CC statement is historical. The implemented active
+power/control boundary is now:
+
+```text
+USB4105 J4
+  VBUS contacts -> VBUS_PRE -> D3 TPD1E10B06 -> U2 TPS259630 IN
+                                  |                         |
+                                  +-> U4 TLV70433 -> PRE_GATE_3V3       -> 5V_SYS
+                                      |       |       |                    |
+                                      |       |       +-> R2/R4 fail-safe  +-> DevKit VIN,
+                                      |       +-> U1 TUSB320 VDD              E220, LED
+                                      +-> U5 TPD4S311 VPWR
+
+  CC1 -> U5 C_CC1 + RPD_G1 -> U5 CC1 -> U1 CC1
+  CC2 -> U5 C_CC2 + RPD_G2 -> U5 CC2 -> U1 CC2
+```
+
+U4 has `C8` 1-uF IN and `C9` 1-uF OUT capacitors. PRE_GATE_3V3 also has U1's
+`C2` 0.1-uF local VDD bypass and U5's separate `C10` 1-uF VPWR bypass; U5
+VBIAS has `C11` 0.1-uF/50-V to GND. The exact selected parts and required
+ratings are recorded in `requirements.md` and `component-decisions.md`.
+
+At detach, U4 output absent, reset or Type-C Default, U1 OUT1 releases. R2
+then biases Q1 on and holds U2 EN low. At Medium/High U1 pulls OUT1 low, Q1
+turns off, and R4 raises U2 EN. At the actual 3.3-V pre-gate voltage R2's
+worst OUT1 sink is 70.2 uA; default Q1 base current is approximately 27.7 uA
+and its 330-kOhm collector load is 10.0 uA. Thus the logic remains fail-safe
+and needs no raw-VBUS pull-up or ESP firmware decision. TPS259630's EN rising
+threshold is 1.22 V maximum and its EN leakage is ±0.1 uA maximum, so the
+3.3-V R4 pull-up is valid; its low EN is actively sunk by Q1.
+
+The Type-C dead-battery path is intentionally provided by U5's internal RPD
+function: `RPD_G1` is shorted to connector-side `C_CC1`, and `RPD_G2` to
+connector-side `C_CC2`, exactly as TI directs. The external 5.1-kOhm Rd
+topology is superseded and absent. SBU and FLT are not used in this power-only
+carrier; they are NC, while all connector D+/D- contacts remain NC and do not
+connect to the DevKit.
+
+This correction does not alter the approved mutual-exclusive USB policy:
+disconnect the main-board USB-C whenever the removable DevKit's USB-C is used
+for programming. It removes the obsolete diode-fed `TUSB_VDD`, but does not
+constitute a proof of reverse-power behaviour under prohibited simultaneous
+USB connection; retain that as a prototype policy check.
+
+Sources: [TLV704, TI](https://www.ti.com/lit/ds/symlink/tlv704.pdf),
+[TPD4S311, TI](https://www.ti.com/lit/ds/symlink/tpd4s311.pdf),
+[TUSB320LAI, TI](https://www.ti.com/lit/ds/symlink/tusb320lai.pdf), and
+[TPS2596, TI](https://www.ti.com/lit/ds/symlink/tps2596.pdf).
+
+## Rev.1 active architecture — protected 2S battery input
+
+The preceding Type-C and pre-gate architecture is superseded history. The
+carrier now contains neither USB-C input nor CC/TUSB/eFuse path:
+
+```text
+external protected 2S pack + external BMS (6.0...8.4 V)
+  BAT+ -> F1 PPTC -> BAT_FUSED -> Q1 P-MOS reverse protection -> BUCK_IN
+                                                           |                 |
+                                                           D3 TVS            U1 TPS62133 -> 5V_SYS
+  BAT- ---------------------------------------------------- GND                   |-> DevKit VIN / E220 / LED
+```
+
+Q1 is explicitly oriented `D=BAT_FUSED`, `S=BUCK_IN`, not the reverse. Its
+intrinsic diode therefore provides correct-polarity precharge from battery to
+the load side; a reversed battery is diode-blocked and has non-negative VGS.
+
+This is a load-only battery interface: no BMS signal, cell midpoint, charging
+or charge connector exists. U1's fixed 5-V output uses L1=2.2 uH,
+10-uF BUCK_IN, 0.1-uF AVIN, 22-uF output and 3.3-nF soft-start capacitance as
+recorded in `requirements.md`. The carrier has no dedicated on-board power
+switch in Rev.1; battery disconnection/external BMS-off is the programming
+safety policy. All DevKit/E220/WS2812 GPIO and OLED-reservation connections
+remain unchanged.
+
+## Rev.1 active OLED connection (supersedes signal-only reservation)
+
+The earlier OLED signal-only/NC-DNP supply decision is superseded. The active
+schematic connection is deliberately simple and 3.3-V-only:
+
+```text
+DevKit header right pin 1 / DEVKIT_3V3  ---> J5 pin 2 VCC
+DevKit GPIO22 / OLED_SCL                ---> J5 pin 3 SCL
+DevKit GPIO21 / OLED_SDA                ---> J5 pin 4 SDA
+GND                                      ---> J5 pin 1 GND
+
+R11: OLED_SCL -> DEVKIT_3V3, 4.7k 1%, DNP
+R10: OLED_SDA -> DEVKIT_3V3, 4.7k 1%, DNP
+```
+
+`J5` is a removable female 1x4 socket; its header sequence is user/seller
+provided. `DEVKIT_3V3` does not power any 5-V carrier load. The 100-mA OLED
+allocation is counted separately from the existing 500-mA DevKit VIN
+allocation, conservatively as an additional 100 mA at `5V_SYS` with no
+assumed onboard-regulator efficiency. The 748.110-mA pre-margin `5V_SYS`
+subtotal becomes 897.732 mA with 20-% margin; 85-%-efficiency input currents
+are 0.6287/0.7136/0.8801 A at 8.4/7.4/6.0 V. The Rev.1 battery baseline is
+otherwise frozen.

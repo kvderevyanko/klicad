@@ -295,7 +295,7 @@ remain superseded history and shall not be restored to the carrier schematic.
 | --- | --- | --- |
 | Radio population | One removable EBYTE `E220-400T22D` **or** `E220-900T22D` | EBYTE documents one common 400/900-T22D pin-definition section; both pages say UART, 22 dBm, SMA-K and 21 × 36 mm.  The 400-MHz and 900-MHz variants are RF alternatives, not a single antenna choice. |
 | Electrical radio interface | Pins 1…7 = M0, M1, RXD, TXD, AUX, VCC, GND; 3.3-V UART/control and `5V_SYS` VCC | Direct connection only to DevKit 3.3-V GPIOs.  Use the manual's 3.3-V communication specification rather than treating the product-page 3.3/5-V I/O wording as a 5-V interface guarantee. |
-| Radio socket / footprint | **Unselected** | The official EBYTE download/library is evidence of a source asset, not approval for a KiCad footprint or an exact mating connector.  Select after official mechanical/pin-1/mating-socket audit at PCB stage. |
+| Radio socket / footprint | **Unselected** | EBYTE Section 3.3 is a common `E220-400/900T22D` source drawing: 36 × 21 mm, seven 2.54-mm-pitch electrical pads plus holes 8…10, 1.50 × 2.00-mm pads / 0.90-mm holes. This confirms common source coordinates, but the official Altium PcbLib/download is not approval for a KiCad footprint or an exact mating connector. Select only after controlled mechanical/pin-1/mating-socket audit at PCB stage. |
 | M0/M1 reset mode | External 10-kOhm pull-down per line to GND | **PROJECT DESIGN CHOICE.** It forces documented `M1/M0=00` while GPIOs reset.  The EBYTE manual requires non-floating inputs but specifies no external resistor value. Prototype-verify GPIO high drive and mode transition. |
 | E220 local bypass | `GRM188R61A106MAAL` 10 uF/10 V/X5R + `GRM188R71C104KA01D` 0.1 uF/16 V/X7R at VCC/GND | **PROJECT DESIGN CHOICE**, not claimed as an EBYTE-mandated value. Place locally after socket/mounting selection. |
 | DevKit supply | `5V_SYS` to verified left-header pin 1 / VIN | 500 mA at 5 V is a conservative **PROJECT DESIGN ALLOCATION**, derived from the prior Espressif supply-capability basis; it is not a DevKit manufacturer current rating. Measure current and on-board-regulator thermal performance. |
@@ -303,3 +303,110 @@ remain superseded history and shall not be restored to the carrier schematic.
 | 5-V budget / Type-C policy | `5V_SYS` allocation 777.732 mA including 20 % margin; enable remains only at Type-C Medium/High | 648.110-mA pre-margin subtotal: DevKit 500 + E220 110 + WS 36.6 + AHCT 1.51 mA.  0.25-mA TUSB/enable allocation is pre-eFuse, giving 777.982 mA raw USB allocation and 722.018 mA to the 1.5-A policy.  Prototype validates cable/bursts/thermal. |
 
 Official sources: [E220-T Series User Manual, EBYTE](https://www.cdebyte.com/pdf-down.aspx?id=4221), [E220-400T22D, EBYTE](https://www.cdebyte.com/products/E220-400T22D/4), [E220-900T22D, EBYTE](https://www.cdebyte.com/products/E220-900T22D/4), [TPS2596, TI](https://www.ti.com/lit/ds/symlink/tps2596.pdf), and [TUSB320LAI, TI](https://www.ti.com/lit/ds/symlink/tusb320lai.pdf).
+
+### Stage 5 gate-review implementation correction
+
+The review of the generated KiCad file confirms the selected `USB4105-GF-A`
+is represented by its complete official electrical contact set, rather than a
+four-pin abstraction: all four VBUS contacts, four signal GND contacts, both
+shell contacts, CC1/CC2, both D+ and both D- contacts, and both SBU contacts.
+Only VBUS/GND/CC join active circuitry; D+/D- remain paired local NC nets and
+SBU is NC.
+
+The actual schematic now also instantiates the active status path selected in
+Stage 2.1: `SN74AHCT1G125DBVR` (OE=GND, 5-V VCC, 100-nF local C7) drives a
+`WS2812B-V5` DIN from GPIO4.  This does not select a WS2812 footprint.
+
+Two physical pin-order checks were material to the fail-safe gate and are
+frozen in the project symbols: onsemi `MMSD4148T1G` is pin 1 cathode / pin 2
+anode, so D1 is `VBUS_PRE` (A2) to `TUSB_VDD` (K1); onsemi
+`MMBT3904LT1G` is pin 1 base / pin 2 emitter / pin 3 collector, so Q1 is
+`QBASE`/GND/`EFUSE_EN`.  These replace the prior generic-symbol assumptions;
+no package footprint is selected by this pin-order correction.
+
+The non-BOM PWR_FLAG markers on `VBUS_PRE`, `TUSB_VDD`, and GND are explicit
+KiCad ERC source-boundary annotations.  They do not represent components or
+change the approved electrical topology.
+
+Sources: [USB4105 drawing, GCT](https://gct.co/files/drawings/usb4105.pdf), [SN74AHCT1G125, TI](https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf), [WS2812B-V5, WorldSemi](https://www.world-semi.co.kr/_files/ugd/89cd03_1023b0e9d135431aa1e6491bfc318112.pdf), [MMSD4148T1G, onsemi](https://www.onsemi.com/pdf/datasheet/mmsd4148t1-d.pdf), and [MMBT3904LT1G, onsemi](https://www.onsemi.com/pdf/datasheet/mmbt3904lt1-d.pdf).
+
+### Stage 5 second-gate ESD / thermal-pad correction
+
+- `TPD1E10B06DPYR` is now instantiated as D3 on raw `VBUS_PRE`: TI pin 1 is
+  the protected I/O and pin 2 is GND.  It is a VBUS ESD diode, not a source or
+  regulator.
+- TPS259630's actual non-numbered exposed thermal pad is represented by the
+  explicit schematic pin `EP`, connected to GND.  This is a **footprint
+  mapping requirement**: a later verified DDA SOIC-EP footprint must map its
+  exposed pad to `EP`/GND; it must not leave that pad electrically absent.
+- The active test-point plan is now schematic-level: TP1 `5V_SYS`, TP2 named
+  E220_VCC on `5V_SYS`, TP3 M0, TP4 M1, TP5 AUX, TP6 E220 RXD and TP7 E220
+  TXD.  Test-point part numbers, land patterns and placements are still not
+  selected.
+- The prior `TPD4S311DRYR` CC decision is **on hold, not implemented**.  Its
+  official 2.7…4.5-V `VPWR`, 0.3…1-uF VPWR bypass and 0.1-uF ≥35-V VBIAS
+  capacitor cannot be powered safely by raw 5 V, `5V_SYS`, DevKit 3V3 or the
+  non-bounded diode-fed `TUSB_VDD` in the active Default-current gate.  TI
+  `TPD2S300` was evaluated as a possible replacement but has the same
+  2.7…4.5-V VPWR requirement; no supplyless verified 24-V short-to-VBUS CC
+  protector was selected.  Do not replace it silently with a 5.5-V passive ESD
+  array, because that does not establish the required 24-V isolation.
+
+Sources: [TPD1E10B06, TI](https://www.ti.com/lit/ds/symlink/tpd1e10b06.pdf), [TPD4S311, TI](https://www.ti.com/lit/ds/symlink/tpd4s311.pdf), [TPD2S300, TI](https://www.ti.com/lit/ds/symlink/tpd2s300.pdf), and [TPS2596, TI](https://www.ti.com/lit/ds/symlink/tps2596.pdf).
+
+### Stage 5 third-gate decision — approved pre-gate rail and CC protector
+
+| Function | Selected component / implementation | Status and verification basis |
+| --- | --- | --- |
+| Pre-gate 3.3-V LDO | TI `TLV70433DBVR` (U4), DBV/SOT-23-5: 1=GND, 2=VBUS_PRE IN, 3=PRE_GATE_3V3 OUT, 4/5=NC | **Manufacturer requirement:** 2.5…24-V operating input, 150-mA maximum output; IN cap >=0.1 uF and OUT cap >=1 uF nominal with >0.47-uF effective. No EN pin exists. |
+| U4 local capacitors | C8/C9 Murata `GRM188R71A105KA61D`, 1 uF ±10 %, 10 V X7R | **PROJECT DESIGN CHOICE** of a verified part above the required capacitance/rating. Dedicated local IN/OUT parts; C9 is not replaced by a remote capacitor. |
+| CC/SBU short-to-VBUS + ESD | TI `TPD4S311YBFR` (U5) | **Manufacturer requirement:** VPWR=2.7…4.5 V, C4=PRE_GATE_3V3; 0.3…1 uF bypass. C10 is the selected 1-uF Murata MPN. C1/C2/C3=GND; A4/VBIAS gets 0.1 uF >=35 V. |
+| U5 VBIAS capacitor | C11 Murata `GRM188R71H104KA93D`, 0.1 uF ±10 %, 50 V X7R | Meets TI's 0.1-uF/at-least-35-V requirement. Exact land pattern remains deferred. |
+| CC topology | J4 CC1 -> U5 A2/C_CC1 + B2/RPD_G1; J4 CC2 -> U5 A3/C_CC2 + B3/RPD_G2; U5 D3/D4 -> U1 CC1/CC2 | **Manufacturer requirement:** tie RPD_G1/G2 to C_CC1/C_CC2 when dead-battery resistors are needed. Therefore no discrete permanent 5.1-kOhm Rd is populated. Unused SBU and FLT are NC. |
+| U1 and gate pull-ups | U1 VDD, R2=47 kOhm OUT1 pull-up and R4=330 kOhm TPS EN pull-up are all `PRE_GATE_3V3` | **Approved architecture:** raw VBUS is absent from the OUT1/EN logic. U1 has C2 `GRM188R71C104KA01D` 0.1 uF/16 V/X7R VDD bypass. |
+
+The previous `MMSD4148T1G` diode-fed `TUSB_VDD` and “TPD4S311 on hold”
+decisions are **superseded history** and are not present in the current
+schematic.  The U5 symbol preserves official DSBGA ball IDs rather than
+inventing a numerical pinout; no U5 footprint is assigned or approved.
+
+Sources: [TLV704, TI](https://www.ti.com/lit/ds/symlink/tlv704.pdf),
+[TPD4S311, TI](https://www.ti.com/lit/ds/symlink/tpd4s311.pdf),
+[TUSB320LAI, TI](https://www.ti.com/lit/ds/symlink/tusb320lai.pdf),
+[Murata GRM188R71A105KA61D](https://search.murata.com/en-US/partdetail?partno=GRM188R71A105KA61D),
+and [Murata GRM188R71H104KA93D](https://www.murata.com/en-us/products/productdetail?partno=GRM188R71H104KA93%23).
+
+## Rev.1 active decisions — battery carrier
+
+The USB4105/TUSB320/TPD1E10B06/TPD4S311/TLV704/TPS259630 and all CC/pre-gate
+logic are superseded and removed from the active schematic; retain prior text
+only as design history.
+
+| Block | Active choice | Basis |
+| --- | --- | --- |
+| Input connector | J4 generic 2-pin, “PROTECTED 2S LI-ION INPUT ONLY 6...8.4V” | Required interface only; no unverified physical connector footprint selected. |
+| Buck | TI `TPS62133RGT`, fixed 5 V, 3 A | Official 3…17-V operation, 100-% duty cycle and fixed 5-V variant. Valid at 6-V input by documented drop calculation. |
+| Inductor/filter | `XFL4020-222MEB`, C1=10 uF/25 V, C2=0.1 uF/16 V, C3=22 uF/10 V, C4=3.3 nF/50 V | TI recommended topology/component values; named real components and ratings in requirements. |
+| Overcurrent | Littelfuse `1812L200/16` | 2-A hold / 3.5-A trip / 16-V PPTC; protects carrier only and requires thermal derating test. |
+| Reverse polarity | Diodes `DMP3130LQ-7` + R1=100 kOhm, R2=1 Mohm | 30-V P-MOS; official 1/G,2/S,3/D. **Corrected orientation:** D3=`BAT_FUSED`, S2=`BUCK_IN`, R2=`BUCK_IN`->G. The intrinsic diode then faces BAT_FUSED -> BUCK_IN for correct-polarity precharge and blocks reverse battery. Values produce -5.45…-7.64 V VGS for correct 6.0…8.4-V polarity. |
+| Transient clamp | Littelfuse `SMBJ10CA` from BAT_FUSED to GND | PROJECT DESIGN CHOICE justified by external battery lead transient; bidirectional to avoid an intentional reverse-battery diode short. |
+| Switch | No on-board switch in Rev.1 | Explicit choice: disconnect pack or disable external BMS output for programming; do not infer a charge/power switch. |
+
+## APPROVED ELECTRICAL BASELINE — Rev.1 battery carrier
+
+The external protected 2S/BMS input, `TPS62133RGT` 5-V converter,
+`1812L200/16`, `DMP3130LQ-7`, `SMBJ10CA`, `XFL4020-222MEB` and named C1...C4
+support network are **APPROVED ELECTRICAL BASELINE**. The current DevKit,
+E220 and WS/AHCT choices are included. Do not change these without a new
+documented electrical finding or user-approved scope change.
+
+## Rev.1 OLED connector decision
+
+| Block | Active choice | Basis / limit |
+| --- | --- | --- |
+| OLED interface | J5 removable female 1x4 socket, order 1=GND, 2=VCC, 3=SCL, 4=SDA | User/seller-provided connector order; no footprint or mating part number selected. |
+| Supply | J5 VCC=`DEVKIT_3V3` only | SSD1306 logic VDD is 1.65...3.3 V; common Adafruit 0.96-in breakout uses 3.3-V power/logic. This supports 3.3 V, not an assertion that every generic module is identical. 5 V is prohibited. |
+| I2C nets | GPIO22 -> SCL, GPIO21 -> SDA | User-verified DevKit mapping retained. |
+| Carrier pull-ups | R10 SDA and R11 SCL, each 4.7 kOhm 1 %, to DEVKIT_3V3; `DNP=YES` | PROJECT DESIGN CHOICE. Typical breakout boards may already pull up I2C. Default DNP avoids parallel pulls; if fitted, `R_EFFECTIVE=4.7k||R_MODULE`. |
+| OLED current | 100 mA at 3.3 V / extra 100 mA at `5V_SYS` | Conservative PROJECT DESIGN ALLOCATION, not module max. Adafruit's common-board guide reports about 20 mA average; exact user module and DevKit regulator require prototype validation. |
+| Mechanics | 25.2x26-mm body, 2.54-mm 1x4, four Ø2 holes, X=21 mm; `OLED_MOUNT_Y=TBD / USER MEASUREMENT REQUIRED` | USER/SELLER-PROVIDED only. PCB-stage mechanical blocker; no footprint/layout approved. |

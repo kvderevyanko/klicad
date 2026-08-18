@@ -293,7 +293,9 @@ allocation is used and clearly labelled as such.
 1. **Socket / footprint mechanics.** Select and audit the exact mating socket
    or module mounting method against current official EBYTE mechanical data:
    pin-1 orientation, header pitch, hole pattern, body keepout, courtyard and
-   assembly method.  Do not convert or assign the EBYTE source library blindly.
+   assembly method.  The official common 400/900-T22D drawing now verifies the
+   underlying 36 × 21-mm / 2.54-mm-pitch / ten-pad-and-hole source geometry;
+   do not nevertheless convert or assign the EBYTE source library blindly.
 2. **RF population and legal operating configuration.** Choose one installed
    band module, a matching SMA-K antenna/cable, region, permitted channel plan
    and transmit settings.  The common electrical carrier does not make one
@@ -331,3 +333,99 @@ allocation is used and clearly labelled as such.
   simultaneous DevKit programming and carrier power is a product requirement.
 
 Sources: [E220-T Series User Manual, EBYTE](https://www.cdebyte.com/pdf-down.aspx?id=4221), [E220-400T22D, EBYTE](https://www.cdebyte.com/products/E220-400T22D/4), [E220-900T22D, EBYTE](https://www.cdebyte.com/products/E220-900T22D/4), [TPS2596, TI](https://www.ti.com/lit/ds/symlink/tps2596.pdf), and [TUSB320LAI, TI](https://www.ti.com/lit/ds/symlink/tusb320lai.pdf).
+
+### Stage 5 gate-review status
+
+The regenerated schematic has no ERC errors after correction of its generated
+pin-row coordinates and exact D1/Q1 physical pin orders.  The only remaining
+ERC findings are two visible `isolated_pin_label` warnings for the deliberately
+unpopulated OLED SDA/SCL reservation.  They are not electrical schematic
+blockers and were not excluded.  The PCB-release blockers above are unchanged:
+they include the exact OLED interface, E220/DevKit/USB/WS2812 mechanical
+implementations, band-specific antenna/regulatory choice, and prototype power
+validation.
+
+### Stage 5 second-gate — SCHEMATIC BLOCKER
+
+**CC short-to-VBUS/ESD protection has no approved supply topology.**
+`TPD4S311DRYR` requires 2.7…4.5-V VPWR (with 0.3…1-uF VPWR bypass) and a
+0.1-uF VBIAS capacitor rated at least 35 V.  The currently approved Type-C
+gate intentionally leaves `5V_SYS` and DevKit 3V3 off at Default current; raw
+VBUS is 5 V and diode-fed `TUSB_VDD` is not bounded below 4.5 V.  Therefore it
+cannot be connected without violating the official operating conditions or
+creating a circular CC-detection gate.  TI `TPD2S300` was also checked and
+has the same 2.7…4.5-V VPWR requirement.  Resolve one of:
+
+1. Select and verify a pre-gate 2.7…4.5-V auxiliary supply, including all
+   TPD4S311 required capacitors and no-back-power behaviour; or
+2. Approve another official CC protection architecture that demonstrably meets
+   the required short-to-VBUS and ESD conditions without that rail.
+
+This is a schematic blocker.  No footprint/mechanics/PCB step is authorised
+until it is resolved.
+
+### Stage 5 third-gate disposition — CC protection blocker resolved
+
+**RESOLVED (schematic):** the above CC-protection blocker is superseded by
+U4 `TLV70433DBVR`, which produces `PRE_GATE_3V3` directly from `VBUS_PRE`.
+This rail meets U5 `TPD4S311YBFR` VPWR=2.7…4.5 V and simultaneously powers U1
+`TUSB320LAIRWBR` and the fail-safe OUT1/EN pull-ups. U5 is now instantiated
+with its exact A2/A3/B2/B3/D3/D4 CC mapping and required C10/C11 capacitors.
+The old MMSD4148-fed `TUSB_VDD` is removed.
+
+The prior 0.250-mA raw-side allocation is superseded by a **0.500-mA PROJECT
+DESIGN ALLOCATION**: identified values total 279.8 uA, but U1's cited 70-uA
+UFP current has no maximum in the official table. This allocation is a
+prototype-validation item, not a schematic blocker.
+
+Remaining items are not CC topology blockers:
+
+- **IMPORTANT / prototype:** test attach/detach and current-mode gate timing
+  with representative Type-C sources; verify actual PRE_GATE_3V3 current and
+  prohibited simultaneous DevKit/main-board USB back-power behaviour.
+- **PCB blocker:** verify the exact `TPD4S311YBFR` DSBGA land pattern and
+  assembly capability before assigning a footprint; do not infer it from the
+  schematic symbol.
+- **PCB/prototype:** retain all previously recorded connector, E220, antenna,
+  LED, OLED and mechanical validation items.
+
+Sources: [TLV704, TI](https://www.ti.com/lit/ds/symlink/tlv704.pdf),
+[TPD4S311, TI](https://www.ti.com/lit/ds/symlink/tpd4s311.pdf), and
+[TUSB320LAI, TI](https://www.ti.com/lit/ds/symlink/tusb320lai.pdf).
+
+## Rev.1 disposition — battery power path
+
+**RESOLVED (schematic):** the former CC-protection blocker no longer applies;
+the entire USB-C/CC/pre-gate path is superseded and absent from the active
+schematic. Rev.1 has a defined protected 2S battery to 5-V path.
+
+**IMPORTANT / prototype:** confirm U1 output regulation, thermal rise and
+transient response with the actual pack leads at 6.0 V and full load; validate
+F1 temperature derating/trip behavior, Q1/TVS temperature, pack-BMS response
+and no-backpower compliance with the approved battery-off-before-DevKit-USB
+programming policy.
+
+**PCB blockers:** choose/verify exact J4 physical connector and current rating,
+TPS62133 RGT exposed-pad/land pattern, L1/C1/C3 land patterns and placement,
+TVS heat/current path, F1 derating, and battery wire/strain-relief mechanics.
+These do not block the electrical schematic but block layout/release.
+
+## Rev.1 OLED disposition (current)
+
+The former active OLED signal-only/NC-DNP decision is superseded: J5 is now
+powered from `DEVKIT_3V3`, and its 1=GND/2=VCC/3=SCL/4=SDA order is
+user/seller-provided. The schematic is not blocked by the stated connector
+contract. R10/R11 are 4.7-kOhm 3.3-V DNP sites, so no unreviewed parallel
+pull-up is fitted.
+
+- **IMPORTANT / prototype:** identify the actual module's installed pull-ups,
+  I2C address and peak current; confirm DevKit 3.3-V regulation/thermal rise
+  at the separate 100-mA OLED project allocation. A module above 100 mA
+  restarts the 5-V/battery budget review.
+- **PCB blocker:** the mechanics are only USER/SELLER-PROVIDED: 25.2x26-mm
+  body, 2.54-mm header, four Ø2 holes, X spacing 21 mm, with
+  `OLED_MOUNT_Y=TBD / USER MEASUREMENT REQUIRED`. Measure the Y coordinate,
+  verify hole/connector datum and acquire the exact module before footprint,
+  placement or mounting features.
+- **Optional:** populate R10/R11 only if the actual bus capacitance and module
+  pull-up arrangement require them; do not fit them by default.

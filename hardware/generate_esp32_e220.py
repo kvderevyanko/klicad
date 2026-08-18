@@ -30,31 +30,95 @@ def libsym(libid, ref, value, pins, description):
       (property "ki_description" "{description}" (id 4) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (symbol "{libid.split(':')[-1]}_1_1"
         (rectangle (start -1.27 {height}) (end 2.54 {-height}) (stroke (width 0.254)) (fill (type background)))''']
-    for i, (num, name) in enumerate(pins):
+    for i, pin in enumerate(pins):
+        num, name = pin[0], pin[1]
+        electrical_type = pin[2] if len(pin) > 2 else "passive"
         y = (len(pins) - 1) * 1.27 - i * 2.54
-        lines.append(f'''        (pin passive line (at -5.08 {y} 0) (length 3.81)
+        lines.append(f'''        (pin {electrical_type} line (at -5.08 {y} 0) (length 3.81)
           (name "{name}" (effects (font (size 1.0 1.0))))
           (number "{num}" (effects (font (size 1.0 1.0))))
         )''')
     lines.append("      )\n    )")
     return "\n".join(lines)
 
-def instance(libid, ref, value, x, y, pins, datasheet=""):
+def power_flag_libsym():
+    """Native equivalent of KiCad power:PWR_FLAG for ERC source boundaries."""
+    return '''    (symbol "Project:PWR_FLAG" (power) (pin_numbers hide) (pin_names (offset 0) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "#FLG" (id 0) (at 0 1.905 0) (effects (font (size 1.27 1.27)) hide))
+      (property "Value" "PWR_FLAG" (id 1) (at 0 3.81 0) (effects (font (size 1.27 1.27))))
+      (property "Footprint" "" (id 2) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "Datasheet" "~" (id 3) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "ki_description" "ERC marker: this net is intentionally sourced by the declared upstream power path" (id 4) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (symbol "PWR_FLAG_0_0"
+        (pin power_out line (at 0 0 90) (length 0)
+          (name "pwr" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )'''
+
+def testpoint_libsym():
+    """Exact compact geometry of KiCad's installed Connector:TestPoint."""
+    return '''    (symbol "Project:TestPoint" (pin_numbers hide) (pin_names (offset 0.762) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "TP" (id 0) (at 0 6.858 0) (effects (font (size 1.27 1.27))))
+      (property "Value" "TestPoint" (id 1) (at 0 5.08 0) (effects (font (size 1.27 1.27))))
+      (property "Footprint" "" (id 2) (at 5.08 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "Datasheet" "~" (id 3) (at 5.08 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "ki_description" "Schematic test point; exact physical test-point component deferred" (id 4) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (symbol "TestPoint_0_1"
+        (circle (center 0 3.302) (radius 0.762) (stroke (width 0) (type default) (color 0 0 0 0)) (fill (type none)))
+      )
+      (symbol "TestPoint_1_1"
+        (pin passive line (at 0 0 90) (length 2.54)
+          (name "1" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )'''
+
+def instance(libid, ref, value, x, y, pins, datasheet="", dnp=False):
     x, y = s(x), s(y)
     lines = [f'''  (symbol (lib_id "{libid}") (at {x} {y} 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid {u()})''', prop("Reference", ref, 0, x, y - 22, False),
              prop("Value", value, 1, x, y + 22, False),
              prop("Footprint", "", 2, x, y, True), prop("Datasheet", datasheet, 3, x, y, True)]
-    for n, _ in pins: lines.append(f'    (pin "{n}" (uuid {u()}))')
+    if dnp:
+        lines.append(prop("DNP", "YES", 4, x, y, True))
+    for pin in pins:
+        lines.append(f'    (pin "{pin[0]}" (uuid {u()}))')
     lines.append("  )")
     return "\n".join(lines)
+
+def testpoint_instance(ref, value, x, y):
+    """Compact instance matching the native Connector:TestPoint geometry."""
+    x, y = s(x), s(y)
+    return f'''  (symbol (lib_id "Project:TestPoint") (at {x} {y} 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid {u()})
+{prop("Reference", ref, 0, x, y - 4.0, False)}
+{prop("Value", value, 1, x, y + 4.0, False)}
+{prop("Footprint", "", 2, x, y, True)}
+{prop("Datasheet", "~", 3, x, y, True)}
+    (pin "1" (uuid {u()}))
+  )'''
 
 def label(net, x, y):
     x, y = s(x), s(y)
     return f'''  (label "{net}" (at {x} {y} 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid {u()})
+  )'''
+
+def global_label(net, x, y, shape="bidirectional"):
+    """Template-derived KiCad global label for an intentionally reserved I2C net."""
+    x, y = s(x), s(y)
+    return f'''  (global_label "{net}" (shape {shape}) (at {x} {y} 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid {u()})
+    (property "Intersheet References" "${{INTERSHEET_REFS}}" (id 0) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
   )'''
 
 def no_connect(x, y):
@@ -67,111 +131,202 @@ def note(text, x, y):
     (uuid {u()})
   )'''
 
+def pin_pos(center_x, center_y, pin_count, pin_number):
+    """Return the exact left-side pin endpoint used by libsym().
+
+    The lib-symbol coordinate system is positive upward, while sheet Y grows
+    downward.  Thus the sheet endpoint is the symbol origin minus its local
+    Y coordinate.  Keeping both formulae here prevents a label from being
+    assigned to the mirror-image pin row.
+    """
+    x = s(center_x) - 5.08
+    local_y = (pin_count - 1) * 1.27 - (pin_number - 1) * 2.54
+    y = s(s(center_y) - local_y)
+    return x, y
+
+def pin_label(center_x, center_y, pin_count, pin_number, net):
+    return label(net, *pin_pos(center_x, center_y, pin_count, pin_number))
+
+def pin_no_connect(center_x, center_y, pin_count, pin_number):
+    return no_connect(*pin_pos(center_x, center_y, pin_count, pin_number))
+
 left = [("1","VIN / 5V"),("2","GND"),("3","GPIO13"),("4","GPIO12"),("5","GPIO14"),
         ("6","GPIO27"),("7","GPIO26"),("8","GPIO25"),("9","GPIO33"),("10","GPIO32"),
         ("11","GPIO35"),("12","GPIO34"),("13","GPIO39/VN"),("14","GPIO36/VP"),("15","EN")]
 right = [("1","3V3"),("2","GND"),("3","GPIO15"),("4","GPIO2"),("5","GPIO4"),
          ("6","GPIO16/RX2"),("7","GPIO17/TX2"),("8","GPIO5"),("9","GPIO18"),("10","GPIO19"),
          ("11","GPIO21"),("12","GPIO3/RX0"),("13","GPIO1/TX0"),("14","GPIO22"),("15","GPIO23")]
-e220 = [("1","M0"),("2","M1"),("3","RXD"),("4","TXD"),("5","AUX"),("6","VCC"),("7","GND")]
-usb = [("1","VBUS"),("2","CC1"),("3","CC2"),("4","GND")]
-tusb = [("1","CC1"),("2","CC2"),("3","PORT"),("4","VBUS_DET"),("5","ADDR"),("6","INT_N/OUT3"),
-        ("7","SDA/OUT1"),("8","SCL/OUT2"),("9","ID"),("10","GND"),("11","EN_N"),("12","VDD")]
-tps = [("1","GND"),("2","dVdt"),("3","EN/UVLO"),("4","IN"),("5","OUT"),("6","FLT"),("7","ILM"),("8","OVLO")]
+e220 = [("1","M0","input"),("2","M1","input"),("3","RXD","input"),
+        ("4","TXD","output"),("5","AUX","output"),("6","VCC","power_in"),("7","GND","power_in")]
+oled_i2c = [("1","GND","power_in"),("2","VCC / 3V3","power_in"),
+            ("3","SCL","bidirectional"),("4","SDA","bidirectional")]
+battery = [("1","BAT+","passive"),("2","BAT-","passive")]
+# Exact TPS62133 pin numbers/names from TI Table 6-1.  The exposed thermal
+# pad is explicitly an electrical GND pin for later footprint mapping.
+# SW1/SW2/SW3 are parallel bond wires of one switch node.  They are marked
+# passive in the custom symbol so ERC does not treat parallel physical pads as
+# mutually-conflicting separate power sources.
+tps62133 = [("1","SW","passive"),("2","SW","passive"),("3","SW","passive"),
+            ("4","PG","open_collector"),("5","FB","input"),("6","AGND","power_in"),
+            ("7","FSW","input"),("8","DEF","input"),("9","SS/TR","input"),
+            ("10","AVIN","power_in"),("11","PVIN","power_in"),("12","PVIN","power_in"),
+            ("13","EN","input"),("14","VOS","input"),("15","PGND","power_in"),
+            ("16","PGND","power_in"),("EP","EXPOSED THERMAL PAD","power_in")]
+ahct = [("1","OE","input"),("2","A","input"),("3","GND","power_in"),("4","Y","output"),("5","VCC","power_in")]
+ws2812 = [("1","VDD","power_in"),("2","DOUT","output"),("3","VSS","power_in"),("4","DIN","input")]
+testpoint = [("1","TP","passive")]
 r2 = [("1","1"),("2","2")]
-q1 = [("1","B"),("2","C"),("3","E")]
+inductor = [("1","1","passive"),("2","2","passive")]
+fuse = [("1","1","passive"),("2","2","passive")]
+tvs = [("1","A","passive"),("2","K","passive")]
+# Diodes Inc. DMP3130LQ-7 official SOT-23 top view: 1=G, 2=S, 3=D.
+pmos = [("1","G","input"),("2","S","passive"),("3","D","passive")]
 
 libs = [
     libsym("Project:DevKit_Left_1x15", "J", "DEVKIT_LEFT_1x15", left, "User-verified left DevKit header; USB-C toward antenna"),
     libsym("Project:DevKit_Right_1x15", "J", "DEVKIT_RIGHT_1x15", right, "User-verified right DevKit header; USB-C toward antenna"),
     libsym("Project:E220_T22D_400_900", "J", "E220-T22D 400/900 MHz", e220,
            "EBYTE E220-400T22D / E220-900T22D common verified pin definition"),
-    libsym("Project:USB_C_POWER", "J", "USB-C power input", usb, "Power-only USB-C functional interface; connector PN USB4105-GF-A"),
-    libsym("Project:TUSB320LAIRWBR", "U", "TUSB320LAIRWBR", tusb, "TI TUSB320LAI, 12-pin RWB pin functions"),
-    libsym("Project:TPS259630DDAR", "U", "TPS259630DDAR", tps, "TI TPS259630, 8-pin DDA pin functions"),
+    libsym("Project:OLED_SSD1306_I2C_1x4", "J", "OLED SSD1306 I2C 1x4", oled_i2c,
+           "User-installed 0.96 inch SSD1306 128x64 I2C module; user/seller-provided header order 1 GND, 2 VCC, 3 SCL, 4 SDA"),
+    libsym("Project:Battery_2S_Protected_Input", "J", "PROTECTED 2S LI-ION INPUT", battery,
+           "Carrier input only: externally protected 2S Li-ion pack, 6.0...8.4 V; not a charger or BMS interface"),
+    libsym("Project:TPS62133RGT", "U", "TPS62133RGT", tps62133, "TI fixed 5-V 3-A synchronous buck, RGT VQFN-16 with exposed pad"),
+    libsym("Project:SN74AHCT1G125DBVR", "U", "SN74AHCT1G125DBVR", ahct, "TI 5-V single buffer with 3-state output"),
+    libsym("Project:WS2812B_V5", "D", "WS2812B-V5", ws2812, "WorldSemi 5-V intelligent RGB LED"),
+    testpoint_libsym(),
+    power_flag_libsym(),
     libsym("Project:R", "R", "R", r2, "Passive resistor"),
     libsym("Project:C", "C", "C", r2, "Passive capacitor"),
-    libsym("Project:D", "D", "D", r2, "Diode"),
-    libsym("Project:MMBT3904LT1G", "Q", "MMBT3904LT1G", q1, "onsemi NPN transistor"),
+    libsym("Project:L", "L", "L", inductor, "Power inductor"),
+    libsym("Project:F", "F", "F", fuse, "Resettable fuse"),
+    libsym("Project:TVS", "D", "TVS", tvs, "Bidirectional TVS diode"),
+    libsym("Project:DMP3130LQ_7", "Q", "DMP3130LQ-7", pmos, "Diodes Inc. P-channel reverse-polarity MOSFET"),
 ]
 
 items = []
-# Main modules.  Pin endpoint y values are calculated from the same simple
-# stock-symbol geometry in libsym().
+# Rev.1 active carrier: externally protected 2S pack only; USB-C input and
+# pre-gate Type-C circuitry are intentionally absent from generated content.
 items += [instance("Project:DevKit_Left_1x15", "J1", "DEVKIT_LEFT (USB-C toward antenna)", 70, 80, left),
           instance("Project:DevKit_Right_1x15", "J2", "DEVKIT_RIGHT (USB-C toward antenna)", 70, 135, right),
           instance("Project:E220_T22D_400_900", "J3", "E220-T22D SOCKET — FIT 400T22D OR 900T22D", 175, 105, e220,
                    "https://www.cdebyte.com/pdf-down.aspx?id=4221"),
-          instance("Project:USB_C_POWER", "J4", "USB4105-GF-A", 25, 170, usb,
-                   "https://gct.co/files/drawings/usb4105.pdf"),
-          instance("Project:TUSB320LAIRWBR", "U1", "TUSB320LAIRWBR", 75, 190, tusb,
-                   "https://www.ti.com/lit/ds/symlink/tusb320lai.pdf"),
-          instance("Project:TPS259630DDAR", "U2", "TPS259630DDAR", 150, 190, tps,
-                   "https://www.ti.com/lit/ds/symlink/tps2596.pdf")]
+          instance("Project:OLED_SSD1306_I2C_1x4", "J5", "OLED 0.96 SSD1306 128x64 I2C — FEMALE 1x4 SOCKET", 330, 175, oled_i2c),
+          instance("Project:Battery_2S_Protected_Input", "J4", "PROTECTED 2S LI-ION INPUT ONLY 6...8.4V", 25, 155, battery),
+          instance("Project:TPS62133RGT", "U1", "TPS62133RGT (5V / 3A BUCK)", 130, 180, tps62133,
+                   "https://www.ti.com/lit/ds/symlink/tps62133.pdf"),
+          instance("Project:SN74AHCT1G125DBVR", "U3", "SN74AHCT1G125DBVR", 275, 105, ahct,
+                   "https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf"),
+          instance("Project:WS2812B_V5", "D2", "WS2812B-V5", 325, 105, ws2812,
+                   "https://www.world-semi.co.kr/_files/ugd/89cd03_1023b0e9d135431aa1e6491bfc318112.pdf"),
+          instance("Project:F", "F1", "1812L200/16 (2A hold PPTC)", 45, 155, fuse,
+                   "https://www.littelfuse.com/~/media/electronics/datasheets/resettable_ptcs/littelfuse_ptc_1812l_datasheet.pdf.pdf"),
+          instance("Project:TVS", "D3", "SMBJ10CA (bidirectional TVS)", 65, 165, tvs,
+                   "https://www.littelfuse.com/products/overvoltage-protection/tvs-diodes/surface-mount/smbj/smbj10ca"),
+          instance("Project:DMP3130LQ_7", "Q1", "DMP3130LQ-7 (reverse-polarity)", 85, 155, pmos,
+                   "https://www.diodes.com/_files/datasheets/DMP3130LQ.pdf"),
+          instance("Project:L", "L1", "XFL4020-222MEB 2.2uH", 185, 180, inductor,
+                   "https://www.coilcraft.com/getmedia/50632d43-da1e-4cdb-8ab4-3029cab51df3/xfl4020.pdf"),
+          instance("Project:PWR_FLAG", "#FLG01", "PWR_FLAG", 35, 175, [("1", "pwr")]),
+          instance("Project:PWR_FLAG", "#FLG02", "PWR_FLAG", 35, 185, [("1", "pwr")]),
+          instance("Project:PWR_FLAG", "#FLG03", "PWR_FLAG", 35, 195, [("1", "pwr")]),
+          instance("Project:PWR_FLAG", "#FLG04", "PWR_FLAG", 35, 205, [("1", "pwr")]),
+          instance("Project:PWR_FLAG", "#FLG05", "PWR_FLAG", 35, 215, [("1", "pwr")]),
+          testpoint_instance("TP1", "BAT_PLUS", 220, 145),
+          testpoint_instance("TP2", "GND", 240, 145),
+          testpoint_instance("TP3", "BUCK_IN", 260, 145),
+          testpoint_instance("TP4", "5V_SYS", 280, 145),
+          testpoint_instance("TP5", "E220_VCC", 300, 145),
+          testpoint_instance("TP6", "E220_M0", 220, 155),
+          testpoint_instance("TP7", "E220_M1", 240, 155),
+          testpoint_instance("TP8", "E220_AUX", 260, 155),
+          testpoint_instance("TP9", "E220_RXD", 280, 155),
+          testpoint_instance("TP10", "E220_TXD", 300, 155)]
 
-# Required eFuse support and fail-safe OUT1/Q1/EN network.
 parts = [
-    ("Project:D","D1","MMSD4148T1G",105,230,r2), ("Project:R","R1","900k 1%",75,230,r2),
-    ("Project:R","R2","47k 0.1%",105,245,r2), ("Project:R","R3","47k 0.1%",125,245,r2),
-    ("Project:R","R4","330k 0.1%",145,245,r2), ("Project:MMBT3904LT1G","Q1","MMBT3904LT1G",165,245,q1),
-    ("Project:R","R5","909R 0.1%",175,230,r2), ("Project:R","R6","365k 0.1%",195,230,r2),
-    ("Project:R","R7","100k 0.1%",215,230,r2), ("Project:C","C1","1uF 10V X7R",45,230,r2),
-    ("Project:C","C2","100nF 16V X7R",65,245,r2), ("Project:C","C3","1uF 10V X7R",235,230,r2),
-    ("Project:C","C4","3.3nF 50V C0G",195,245,r2),
+    ("Project:R","R1","100k 1% (Q1 gate pull-down)",65,180,r2),
+    ("Project:R","R2","1M 1% (Q1 gate-source)",85,180,r2),
+    ("Project:C","C1","GRM21BR61E106KA73 10uF 25V X5R (BUCK IN)",105,205,r2),
+    ("Project:C","C2","GRM188R71C104KA01D 100nF 16V X7R (AVIN)",125,205,r2),
+    ("Project:C","C3","GRM21BR61A226ME44 22uF 10V X5R (BUCK OUT)",185,205,r2),
+    ("Project:C","C4","GRM1885C1H332JA01D 3.3nF 50V C0G (SS/TR)",145,205,r2),
     ("Project:C","C5","GRM188R61A106MAAL 10uF 10V X5R",175,140,r2),
     ("Project:C","C6","GRM188R71C104KA01D 100nF 16V X7R",195,140,r2),
     ("Project:R","R8","10k 1% M0 reset pull-down",215,140,r2),
     ("Project:R","R9","10k 1% M1 reset pull-down",235,140,r2),
+    ("Project:R","R10","DNP 4.7k 1% OLED SDA pull-up to 3V3",300,185,r2),
+    ("Project:R","R11","DNP 4.7k 1% OLED SCL pull-up to 3V3",320,185,r2),
+    ("Project:C","C7","GRM188R71C104KA01D 100nF 16V X7R",285,140,r2),
 ]
-for a,b,c,d,e,f in parts: items.append(instance(a,b,c,d,e,f))
+for a,b,c,d,e,f in parts:
+    items.append(instance(a,b,c,d,e,f,dnp=b in {"R10", "R11"}))
 
-# Only verified, required nets are labelled. Other DevKit pins are deliberately
-# left open rather than tying them together through a fake NC net.
-def py(base_y, count, n): return base_y - (count-1)*1.27 + (n-1)*2.54
+# Verified DevKit/E220/LED signals retained from Stage 5.
 for n, net in [(1,"5V_SYS"),(2,"GND"),(6,"E220_AUX"),(7,"E220_M1"),(8,"E220_M0")]:
-    items.append(label(net, 64.92, py(80,15,n)))
-for n in set(range(1,16)) - {1,2,6,7,8}:
-    items.append(no_connect(64.92, py(80,15,n)))
-for n, net in [(2,"GND"),(6,"E220_TXD"),(7,"E220_RXD"),(11,"OLED_SDA"),(14,"OLED_SCL")]:
-    items.append(label(net, 64.92, py(135,15,n)))
-for n in set(range(1,16)) - {2,6,7,11,14}:
-    items.append(no_connect(64.92, py(135,15,n)))
+    items.append(pin_label(70,80,len(left),n,net))
+for n in set(range(1,16)) - {1,2,6,7,8}: items.append(pin_no_connect(70,80,len(left),n))
+for n, net in [(1,"DEVKIT_3V3"),(2,"GND"),(5,"WS2812_DATA_3V3"),(6,"E220_TXD"),(7,"E220_RXD")]:
+    items.append(pin_label(70,135,len(right),n,net))
+# One-sheet I2C nets: local labels intentionally connect DevKit, socket and
+# optional pull-up sites without creating a global-label/local-label ERC mix.
+items += [label("OLED_SDA", *pin_pos(70,135,len(right),11)), label("OLED_SCL", *pin_pos(70,135,len(right),14))]
+for n in set(range(1,16)) - {2,5,6,7,11,14}: items.append(pin_no_connect(70,135,len(right),n))
 for n, net in [(1,"E220_M0"),(2,"E220_M1"),(3,"E220_RXD"),(4,"E220_TXD"),(5,"E220_AUX"),(6,"5V_SYS"),(7,"GND")]:
-    items.append(label(net, 169.92, py(105,7,n)))
-for n, net in [(1,"VBUS_PRE"),(2,"CC1"),(3,"CC2"),(4,"GND")]:
-    items.append(label(net, 19.92, py(170,4,n)))
-for n, net in [(1,"CC1"),(2,"CC2"),(3,"GND"),(4,"VBUS_DET"),(5,"NC"),(6,"NC"),(7,"OUT1"),(8,"NC"),(9,"NC"),(10,"GND"),(11,"GND"),(12,"TUSB_VDD")]:
-    items.append(label(net, 69.92, py(190,12,n)))
-for n, net in [(1,"GND"),(2,"DVDT"),(3,"EFUSE_EN"),(4,"VBUS_PRE"),(5,"5V_SYS"),(6,"NC"),(7,"ILM"),(8,"OVLO")]:
-    items.append(label(net, 144.92, py(190,8,n)))
+    items.append(pin_label(175,105,len(e220),n,net))
+for n, net in [(1,"GND"),(2,"DEVKIT_3V3"),(3,"OLED_SCL"),(4,"OLED_SDA")]:
+    items.append(pin_label(330,175,len(oled_i2c),n,net))
 
-# Passive net labels in pin order (both ends); visually explicit component values
-# plus named nets make this a reviewable schematic without relying on hidden text.
-for x,y,a,b in [(105,230,"VBUS_PRE","TUSB_VDD"),(75,230,"VBUS_PRE","VBUS_DET"),(105,245,"TUSB_VDD","OUT1"),
-                (125,245,"OUT1","QBASE"),(145,245,"TUSB_VDD","EFUSE_EN"),(175,230,"ILM","GND"),
-                (195,230,"VBUS_PRE","OVLO"),(215,230,"OVLO","GND"),(45,230,"VBUS_PRE","GND"),
-                (65,245,"TUSB_VDD","GND"),(235,230,"5V_SYS","GND"),(195,245,"DVDT","GND"),
-                (175,140,"5V_SYS","GND"),(195,140,"5V_SYS","GND"),
-                (215,140,"E220_M0","GND"),(235,140,"E220_M1","GND")]:
-    items += [label(a,x-5.08,y-1.27), label(b,x-5.08,y+1.27)]
-# Q1: B, C, E.
-items += [label("QBASE",159.92,py(245,3,1)), label("EFUSE_EN",159.92,py(245,3,2)), label("GND",159.92,py(245,3,3))]
+# Battery connector and protection: the P-MOS body diode must precharge from
+# BAT_FUSED (D, pin 3) to BUCK_IN (S, pin 2). Correct polarity then produces
+# negative VGS and enhanced conduction; reversed pack polarity leaves the body
+# diode reverse-biased and VGS non-negative. D3 is across BAT_FUSED/GND.
+items += [pin_label(25,155,len(battery),1,"BAT_PLUS"), pin_label(25,155,len(battery),2,"GND"),
+          pin_label(45,155,len(fuse),1,"BAT_PLUS"), pin_label(45,155,len(fuse),2,"BAT_FUSED"),
+          pin_label(65,165,len(tvs),1,"BAT_FUSED"), pin_label(65,165,len(tvs),2,"GND"),
+          pin_label(85,155,len(pmos),1,"Q1_GATE"), pin_label(85,155,len(pmos),2,"BUCK_IN"), pin_label(85,155,len(pmos),3,"BAT_FUSED")]
+
+# TPS62133 fixed-5-V application per official data sheet. FSW=5V_SYS selects
+# lower frequency; DEF/FB=GND keeps the nominal fixed output. PG is unused.
+for n, net in [(1,"BUCK_SW"),(2,"BUCK_SW"),(3,"BUCK_SW"),(5,"GND"),(6,"GND"),(7,"5V_SYS"),
+               (8,"GND"),(9,"SS_TR"),(10,"BUCK_IN"),(11,"BUCK_IN"),(12,"BUCK_IN"),
+               (13,"BUCK_IN"),(14,"5V_SYS"),(15,"GND"),(16,"GND"),(17,"GND")]:
+    items.append(pin_label(130,180,len(tps62133),n,net))
+items.append(pin_no_connect(130,180,len(tps62133),4))
+items += [pin_label(185,180,len(inductor),1,"BUCK_SW"), pin_label(185,180,len(inductor),2,"5V_SYS")]
+
+for n, net in [(1,"GND"),(2,"WS2812_DATA_3V3"),(3,"GND"),(4,"WS2812_DIN"),(5,"5V_SYS")]: items.append(pin_label(275,105,len(ahct),n,net))
+for n, net in [(1,"5V_SYS"),(3,"GND"),(4,"WS2812_DIN")]: items.append(pin_label(325,105,len(ws2812),n,net))
+items.append(pin_no_connect(325,105,len(ws2812),2))
+
+for ref, x, y, net in [("TP1",220,145,"BAT_PLUS"),("TP2",240,145,"GND"),("TP3",260,145,"BUCK_IN"),("TP4",280,145,"5V_SYS"),("TP5",300,145,"5V_SYS"),
+                       ("TP6",220,155,"E220_M0"),("TP7",240,155,"E220_M1"),("TP8",260,155,"E220_AUX"),("TP9",280,155,"E220_RXD"),("TP10",300,155,"E220_TXD")]: items.append(label(net,x,y))
+
+# ERC source markers: external protected battery/return plus the explicitly
+# declared protected BUCK_IN and U1-generated 5V_SYS domains.
+items += [label("BAT_PLUS",35,175), label("GND",35,185), label("BUCK_IN",35,195), label("5V_SYS",35,205), label("DEVKIT_3V3",35,215)]
+
+for x,y,a,b in [(65,180,"Q1_GATE","GND"),(85,180,"BUCK_IN","Q1_GATE"),(105,205,"BUCK_IN","GND"),(125,205,"BUCK_IN","GND"),
+                (145,205,"SS_TR","GND"),(185,205,"5V_SYS","GND"),(175,140,"5V_SYS","GND"),(195,140,"5V_SYS","GND"),
+                (215,140,"E220_M0","GND"),(235,140,"E220_M1","GND"),(285,140,"5V_SYS","GND"),
+                (300,185,"OLED_SDA","DEVKIT_3V3"),(320,185,"OLED_SCL","DEVKIT_3V3")]: items += [pin_label(x,y,2,1,a),pin_label(x,y,2,2,b)]
 
 items += [
-    note("Stage 5 — main board only. DevKit USB-C programming and main-board USB-C power are mutually exclusive (approved Rev A policy).", 18, 20),
-    note("No bare ESP32, 3V3 buck, EN/BOOT or programming circuit on this PCB. J1/J2 are the verified removable DevKit sockets.", 18, 26),
-    note("J3 is universal E220-T22D interface: fit one E220-400T22D OR E220-900T22D. No socket/footprint is selected.", 18, 32),
-    note("E220 M0/M1 use 10k pull-downs to GND (PROJECT DESIGN CHOICE): reset mode M1/M0=00. AUX is input-only, no pull-down.", 18, 38),
-    note("OLED: GPIO21/SDA and GPIO22/SCL are signal-only reservations; OLED VCC and I2C pull-ups are NC/DNP in Rev A.", 18, 44),
-    note("TUSB320 UFP/GPIO: PORT=GND, ADDR=NC, EN_N=GND. OUT1/Q1 gates TPS259630: Default/detach OFF; Medium/High ON.", 18, 50),
-    note("Pin-level Type-C and eFuse support components are documented with official PNs and values. Footprints intentionally unassigned at schematic stage.", 18, 56),
+    note("Rev.1 active input: externally protected 2S 18650 pack + external BMS only. J4 is BAT+/BAT- 6.0...8.4V; no midpoint, charger or USB-C input.",18,20),
+    note("BAT+ -> F1 1812L200/16 -> BAT_FUSED -> Q1 DMP3130LQ-7 reverse-polarity MOSFET -> BUCK_IN -> U1 TPS62133RGT -> 5V_SYS.",18,26),
+    note("D3 SMBJ10CA is a bidirectional input transient clamp at BAT_FUSED. No on-board charger/BMS is duplicated; no main-board switch is fitted in Rev.1.",18,32),
+    note("Rev.1 policy: disconnect battery or turn its external BMS output off before connecting the removable DevKit USB-C to a computer for programming.",18,38),
+    note("TPS62133: PVIN/AVIN/EN=BUCK_IN, SW1-3 -> L1 2.2uH -> 5V_SYS, VOS/FSW=5V_SYS, FB/DEF/grounds/EP=GND, SS/TR=C4 to GND; PG NC.",18,44),
+    note("J3 is universal E220-T22D: fit one E220-400T22D OR E220-900T22D. M0/M1 10k pulldowns. J5 is removable SSD1306 0.96 I2C, 1 GND/2 3V3/3 SCL/4 SDA.",18,50),
+    note("GPIO4 -> SN74AHCT1G125DBVR (OE=GND, 5V) -> WS2812B-V5 DIN. No PCB footprint/layout work is included.",18,56),
+    note("OLED VCC is DEVKIT_3V3 only. R10/R11 optional DNP 4.7k pull-ups to 3V3; fit only after checking module pull-ups. No 5V OLED power or pull-up.",18,62),
+    note("TP1 BAT_PLUS, TP2 GND, TP3 BUCK_IN, TP4 5V_SYS, TP5 E220_VCC(5V_SYS), TP6 M0, TP7 M1, TP8 AUX, TP9 RXD, TP10 TXD.",18,68),
 ]
 
 body = "\n".join(items)
 OUT.write_text(f'''(kicad_sch (version 20210126) (generator eeschema)
   (uuid {u()})
   (paper "A4")
-  (title_block (title "ESP32 E220 LoRa Receiver — Stage 5 modular carrier"))
+  (title_block (title "ESP32 E220 LoRa Receiver — Rev.1 protected 2S battery carrier"))
   (lib_symbols
 {chr(10).join(libs)}
   )
@@ -183,7 +338,7 @@ OUT.write_text(f'''(kicad_sch (version 20210126) (generator eeschema)
 SYMLIB.write_text("(kicad_symbol_lib (version 20231120) (generator kicad_symbol_editor)\n" + "\n".join(libs) + "\n)\n")
 TABLE.write_text('''(sym_lib_table
   (version 7)
-  (lib (name "Project")(type "KiCad")(uri "${KIPRJMOD}/esp32-e220.kicad_sym")(options "")(descr "Stage 4 verified project symbols"))
+  (lib (name "Project")(type "KiCad")(uri "${KIPRJMOD}/esp32-e220.kicad_sym")(options "")(descr "Stage 5 modular-carrier project symbols"))
 )
 ''')
 print(OUT)
