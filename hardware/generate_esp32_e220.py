@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the Stage 4 native KiCad schematic from verified connection data.
+"""Generate the Stage 5 native KiCad schematic from verified connection data.
 
 The S-expression layout is derived from KiCad's installed Arduino_Nano template
 (KiCad 10 reads and rewrites it natively).  Run this script, then open/save the
@@ -13,7 +13,7 @@ SYMLIB = Path(__file__).with_name("esp32-e220.kicad_sym")
 TABLE = Path(__file__).with_name("sym-lib-table")
 
 def u(): return str(uuid4())
-def s(v): return round(v / 0.635) * 0.635
+def s(v): return round(v / 1.27) * 1.27
 def prop(name, value, ident, x, y, hide=False):
     h = " hide" if hide else ""
     return f'''    (property "{name}" "{value}" (id {ident}) (at {x} {y} 0)\n      (effects (font (size 1.27 1.27)){h})\n    )'''
@@ -84,7 +84,8 @@ q1 = [("1","B"),("2","C"),("3","E")]
 libs = [
     libsym("Project:DevKit_Left_1x15", "J", "DEVKIT_LEFT_1x15", left, "User-verified left DevKit header; USB-C toward antenna"),
     libsym("Project:DevKit_Right_1x15", "J", "DEVKIT_RIGHT_1x15", right, "User-verified right DevKit header; USB-C toward antenna"),
-    libsym("Project:E220_900T22D", "J", "E220-900T22D", e220, "EBYTE E220-900T22D, official pin definition"),
+    libsym("Project:E220_T22D_400_900", "J", "E220-T22D 400/900 MHz", e220,
+           "EBYTE E220-400T22D / E220-900T22D common verified pin definition"),
     libsym("Project:USB_C_POWER", "J", "USB-C power input", usb, "Power-only USB-C functional interface; connector PN USB4105-GF-A"),
     libsym("Project:TUSB320LAIRWBR", "U", "TUSB320LAIRWBR", tusb, "TI TUSB320LAI, 12-pin RWB pin functions"),
     libsym("Project:TPS259630DDAR", "U", "TPS259630DDAR", tps, "TI TPS259630, 8-pin DDA pin functions"),
@@ -99,7 +100,7 @@ items = []
 # stock-symbol geometry in libsym().
 items += [instance("Project:DevKit_Left_1x15", "J1", "DEVKIT_LEFT (USB-C toward antenna)", 70, 80, left),
           instance("Project:DevKit_Right_1x15", "J2", "DEVKIT_RIGHT (USB-C toward antenna)", 70, 135, right),
-          instance("Project:E220_900T22D", "J3", "E220-900T22D", 175, 105, e220,
+          instance("Project:E220_T22D_400_900", "J3", "E220-T22D SOCKET — FIT 400T22D OR 900T22D", 175, 105, e220,
                    "https://www.cdebyte.com/pdf-down.aspx?id=4221"),
           instance("Project:USB_C_POWER", "J4", "USB4105-GF-A", 25, 170, usb,
                    "https://gct.co/files/drawings/usb4105.pdf"),
@@ -116,8 +117,11 @@ parts = [
     ("Project:R","R5","909R 0.1%",175,230,r2), ("Project:R","R6","365k 0.1%",195,230,r2),
     ("Project:R","R7","100k 0.1%",215,230,r2), ("Project:C","C1","1uF 10V X7R",45,230,r2),
     ("Project:C","C2","100nF 16V X7R",65,245,r2), ("Project:C","C3","1uF 10V X7R",235,230,r2),
-    ("Project:C","C4","3.3nF 50V C0G",195,245,r2), ("Project:C","C5","10uF 10V X5R",175,140,r2),
-    ("Project:C","C6","100nF 16V X7R",195,140,r2),
+    ("Project:C","C4","3.3nF 50V C0G",195,245,r2),
+    ("Project:C","C5","GRM188R61A106MAAL 10uF 10V X5R",175,140,r2),
+    ("Project:C","C6","GRM188R71C104KA01D 100nF 16V X7R",195,140,r2),
+    ("Project:R","R8","10k 1% M0 reset pull-down",215,140,r2),
+    ("Project:R","R9","10k 1% M1 reset pull-down",235,140,r2),
 ]
 for a,b,c,d,e,f in parts: items.append(instance(a,b,c,d,e,f))
 
@@ -128,9 +132,9 @@ for n, net in [(1,"5V_SYS"),(2,"GND"),(6,"E220_AUX"),(7,"E220_M1"),(8,"E220_M0")
     items.append(label(net, 64.92, py(80,15,n)))
 for n in set(range(1,16)) - {1,2,6,7,8}:
     items.append(no_connect(64.92, py(80,15,n)))
-for n, net in [(2,"GND"),(6,"E220_TXD"),(7,"E220_RXD")]:
+for n, net in [(2,"GND"),(6,"E220_TXD"),(7,"E220_RXD"),(11,"OLED_SDA"),(14,"OLED_SCL")]:
     items.append(label(net, 64.92, py(135,15,n)))
-for n in set(range(1,16)) - {2,6,7}:
+for n in set(range(1,16)) - {2,6,7,11,14}:
     items.append(no_connect(64.92, py(135,15,n)))
 for n, net in [(1,"E220_M0"),(2,"E220_M1"),(3,"E220_RXD"),(4,"E220_TXD"),(5,"E220_AUX"),(6,"5V_SYS"),(7,"GND")]:
     items.append(label(net, 169.92, py(105,7,n)))
@@ -147,24 +151,27 @@ for x,y,a,b in [(105,230,"VBUS_PRE","TUSB_VDD"),(75,230,"VBUS_PRE","VBUS_DET"),(
                 (125,245,"OUT1","QBASE"),(145,245,"TUSB_VDD","EFUSE_EN"),(175,230,"ILM","GND"),
                 (195,230,"VBUS_PRE","OVLO"),(215,230,"OVLO","GND"),(45,230,"VBUS_PRE","GND"),
                 (65,245,"TUSB_VDD","GND"),(235,230,"5V_SYS","GND"),(195,245,"DVDT","GND"),
-                (175,140,"5V_SYS","GND"),(195,140,"5V_SYS","GND")]:
+                (175,140,"5V_SYS","GND"),(195,140,"5V_SYS","GND"),
+                (215,140,"E220_M0","GND"),(235,140,"E220_M1","GND")]:
     items += [label(a,x-5.08,y-1.27), label(b,x-5.08,y+1.27)]
 # Q1: B, C, E.
 items += [label("QBASE",159.92,py(245,3,1)), label("EFUSE_EN",159.92,py(245,3,2)), label("GND",159.92,py(245,3,3))]
 
 items += [
-    note("Stage 4 — main board only. DevKit USB-C programming and main-board USB-C power are mutually exclusive (approved Rev A policy).", 18, 20),
+    note("Stage 5 — main board only. DevKit USB-C programming and main-board USB-C power are mutually exclusive (approved Rev A policy).", 18, 20),
     note("No bare ESP32, 3V3 buck, EN/BOOT or programming circuit on this PCB. J1/J2 are the verified removable DevKit sockets.", 18, 26),
-    note("E220: firmware drives M0/M1; no unverified external pull resistor. AUX is input-only, no pull-down.", 18, 32),
-    note("TUSB320 UFP/GPIO: PORT=GND, ADDR=NC, EN_N=GND. OUT1/Q1 gates TPS259630: Default/detach OFF; Medium/High ON.", 18, 38),
-    note("Pin-level Type-C and eFuse support components are documented with their official PNs and values. Footprints intentionally unassigned at schematic stage.", 18, 44),
+    note("J3 is universal E220-T22D interface: fit one E220-400T22D OR E220-900T22D. No socket/footprint is selected.", 18, 32),
+    note("E220 M0/M1 use 10k pull-downs to GND (PROJECT DESIGN CHOICE): reset mode M1/M0=00. AUX is input-only, no pull-down.", 18, 38),
+    note("OLED: GPIO21/SDA and GPIO22/SCL are signal-only reservations; OLED VCC and I2C pull-ups are NC/DNP in Rev A.", 18, 44),
+    note("TUSB320 UFP/GPIO: PORT=GND, ADDR=NC, EN_N=GND. OUT1/Q1 gates TPS259630: Default/detach OFF; Medium/High ON.", 18, 50),
+    note("Pin-level Type-C and eFuse support components are documented with official PNs and values. Footprints intentionally unassigned at schematic stage.", 18, 56),
 ]
 
 body = "\n".join(items)
 OUT.write_text(f'''(kicad_sch (version 20210126) (generator eeschema)
   (uuid {u()})
   (paper "A4")
-  (title_block (title "ESP32 E220 LoRa Receiver — Stage 4"))
+  (title_block (title "ESP32 E220 LoRa Receiver — Stage 5 modular carrier"))
   (lib_symbols
 {chr(10).join(libs)}
   )

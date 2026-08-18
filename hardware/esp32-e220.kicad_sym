@@ -139,13 +139,13 @@
         )
       )
     )
-    (symbol "Project:E220_900T22D" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+    (symbol "Project:E220_T22D_400_900" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
       (property "Reference" "J" (id 0) (at 0 13.97 0) (effects (font (size 1.27 1.27))))
-      (property "Value" "E220-900T22D" (id 1) (at 0 -13.97 0) (effects (font (size 1.27 1.27))))
+      (property "Value" "E220-T22D 400/900 MHz" (id 1) (at 0 -13.97 0) (effects (font (size 1.27 1.27))))
       (property "Footprint" "" (id 2) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Datasheet" "" (id 3) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
-      (property "ki_description" "EBYTE E220-900T22D, official pin definition" (id 4) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
-      (symbol "E220_900T22D_1_1"
+      (property "ki_description" "EBYTE E220-400T22D / E220-900T22D common verified pin definition" (id 4) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (symbol "E220_T22D_400_900_1_1"
         (rectangle (start -1.27 12.700000000000001) (end 2.54 -12.700000000000001) (stroke (width 0.254)) (fill (type background)))
         (pin passive line (at -5.08 7.62 0) (length 3.81)
           (name "M0" (effects (font (size 1.0 1.0))))

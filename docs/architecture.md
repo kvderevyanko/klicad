@@ -260,3 +260,73 @@ powered main board (or a powered-down main-board USB-C input) before using the
 DevKit USB-C connector.
 
 Sources: [E220-T Series User Manual, EBYTE](https://www.cdebyte.com/pdf-down.aspx?id=4221) and [ESP32-DevKitC V4 User Guide, Espressif](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html).
+
+### Stage 4.1 — schematic authorisation
+
+The user has supplied the verified pin-by-pin two-header mapping and approved
+the mutually-exclusive two-USB Rev A policy.  The former Stage 4 physical
+header/backfeed blockers are closed.  The main-board schematic therefore uses
+two distinct 1×15 socket symbols, with USB-C facing the antenna at pin 1 for
+both headers:
+
+- left 1 `VIN` = `5V_SYS`; left 2 = GND; left 6/7/8 = GPIO27/26/25;
+- right 2 = GND; right 6/7 = GPIO16/RX2 and GPIO17/TX2;
+- E220 connects GPIO17→RXD(3), GPIO16←TXD(4), GPIO25→M0(1), GPIO26→M1(2),
+  GPIO27←AUX(5), `5V_SYS`→VCC(6) and GND→GND(7).
+
+The approved USB policy is an explicit text constraint on the schematic: the
+main-board USB-C must be disconnected before the DevKit programming USB-C is
+attached.  It deliberately does not claim electrical source OR-ing.
+
+## Stage 5 — active modular E220-T22D carrier architecture
+
+This is the active architecture for the next carrier revision.  It supersedes
+the single `E220-900T22D` population assumption and all preceding bare-ESP32 /
+main-board-3V3-buck blocks.  It accepts exactly one `E220-400T22D` or
+`E220-900T22D` installed module through their common verified electrical
+interface; changing module does not authorise reuse of a 400-MHz antenna at
+900 MHz, or vice versa.
+
+```text
+Main USB-C -> protection / TUSB320 OUT1 gate / TPS259630 -> 5V_SYS
+                                                        |
+                                                        +--> DevKit VIN (left-1)
+                                                        |     +--> DevKit-local ESP32 / 3V3 / USB-C / CH340C
+                                                        |
+                                                        +--> E220-T22D-compatible module VCC (pin 6)
+                                                        |     +--> 10 uF || 0.1 uF local VCC decoupling
+                                                        |
+                                                        +--> WS2812B-V5 + 5-V AHCT buffer
+
+DevKit GPIO17/TX2 -> E220 RXD (3)       GPIO16/RX2 <- E220 TXD (4)
+DevKit GPIO25 -> E220 M0 (1) -- 10 kOhm -> GND
+DevKit GPIO26 -> E220 M1 (2) -- 10 kOhm -> GND
+DevKit GPIO27 <- E220 AUX (5)           GND ----------- E220 GND (7)
+
+DevKit GPIO21/GPIO22 -> optional OLED I2C signals only; VCC NC/DNP in Rev A
+```
+
+The 10-kOhm M0/M1 pull-downs are an explicit **PROJECT DESIGN CHOICE** to hold
+the documented `M1/M0=00` transmission mode while DevKit GPIOs are reset.  The
+EBYTE manual requires that inputs do not float but does not prescribe an
+external resistor value.  The pull-downs are therefore not presented as EBYTE
+requirements and their interaction with the actual DevKit's start-up state is
+a prototype check.
+
+The active 5-V design allocation is 777.732 mA: 500 mA DevKit project
+allocation + 110 mA worst T22D emission + 36.6 mA WS2812 allocation + 1.51 mA
+AHCT allocation, then 20 % margin.  No OLED current is included: its VCC is
+not supplied from DevKit 3V3 in Rev A.  The 0.25-mA Type-C/TUSB enable circuit
+allocation is pre-eFuse and separate: raw USB allocation is 777.982 mA, with
+722.018 mA to the 1.5-A source policy.  This passes the 0.949-A minimum
+TPS259630 limit by 171.268 mA, subject to cable, burst and thermal prototype
+testing.
+
+Mechanical compatibility is intentionally not asserted: EBYTE's official
+manual/product pages establish common T22D electrical pinout and 21 × 36 mm
+module size, but no final carrier socket, pin-header footprint, mounting-hole
+pattern or courtyard is selected.  The EBYTE-provided PCB library is not a
+KiCad footprint approval.  The module's SMA-K demands a band-specific antenna
+and is a PCB/RF-release matter, not an electrical-schematic blocker.
+
+Sources: [E220-T Series User Manual, EBYTE](https://www.cdebyte.com/pdf-down.aspx?id=4221), [E220-400T22D, EBYTE](https://www.cdebyte.com/products/E220-400T22D/4), [E220-900T22D, EBYTE](https://www.cdebyte.com/products/E220-900T22D/4), [TPS2596, TI](https://www.ti.com/lit/ds/symlink/tps2596.pdf), and [TUSB320LAI, TI](https://www.ti.com/lit/ds/symlink/tusb320lai.pdf).

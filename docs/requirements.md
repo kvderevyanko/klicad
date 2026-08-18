@@ -540,3 +540,121 @@ five E220 signals to the wrong physical pin, and the two-USB power relationship
 cannot be verified.  Do not create a schematic or a PCB before this is closed.
 
 Sources: [E220-T Series User Manual, EBYTE (official download)](https://www.cdebyte.com/pdf-down.aspx?id=4221), [E220-900T22D product page, EBYTE](https://www.cdebyte.com/products/E220-900T22D/4), [ESP32-DevKitC V4 User Guide, Espressif](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html), and [ESP32-WROOM-32E datasheet, Espressif](https://documentation.espressif.com/esp32-wroom-32e_esp32-wroom-32ue_datasheet_en.pdf).
+
+### Stage 4.1 — verified DevKit header and approved USB policy
+
+The previously open physical-header and two-USB questions are resolved by the
+user-provided verified mapping below.  It is the source of truth for
+`hardware/esp32-e220.kicad_sch`.
+
+| Header / orientation: USB-C toward antenna | Pin 1…15 |
+| --- | --- |
+| **LEFT** | VIN, GND, GPIO13, GPIO12, GPIO14, GPIO27, GPIO26, GPIO25, GPIO33, GPIO32, GPIO35, GPIO34, GPIO39/VN, GPIO36/VP, EN |
+| **RIGHT** | 3V3, GND, GPIO15, GPIO2, GPIO4, GPIO16/RX2, GPIO17/TX2, GPIO5, GPIO18, GPIO19, GPIO21, GPIO3/RX0, GPIO1/TX0, GPIO22, GPIO23 |
+
+Therefore: left-1 receives `5V_SYS`; left-2/right-2 are GND; left-6 is
+`E220_AUX`, left-7 `E220_M1`, left-8 `E220_M0`; right-6 is `E220_TXD` and
+right-7 `E220_RXD`.  GPIO15 is explicitly not used by E220.
+
+**Approved Rev A safety policy:** the main-board USB-C power inlet and the
+DevKit USB-C programming port are mutually exclusive.  Disconnect the
+main-board USB-C before connecting the DevKit to a programming host; no mux,
+ideal diode or simultaneous-power claim is part of Rev A.
+
+## Stage 5 — active modular E220-T22D carrier requirements
+
+This section supersedes the single-radio `E220-900T22D` choice for the active
+carrier design.  It preserves the earlier records as history.  The carrier
+shall accept **one** installed EBYTE `E220-400T22D` **or** `E220-900T22D`; it
+does not make the two radios, their antennas, or their legal radio settings
+interchangeable in the field.
+
+### Verified common module interface
+
+EBYTE's common E220-T series manual has one pin-definition/mechanical section
+for `E220-400/900T22D`.  The two official product pages specify the same
+22-dBm UART/SMA-K form factor and 21 × 36 mm body; the radio bands differ:
+400T22D is 410.125–493.125 MHz and 900T22D is 850.125–930.125 MHz.  The active
+carrier interface is consequently the common seven-pin electrical interface
+below, not a claim of a final PCB socket or footprint.
+
+| Carrier net / DevKit signal | E220-T22D pin | Verified function and direction |
+| --- | ---: | --- |
+| `E220_M0` / GPIO25 | 1 | M0 input to module |
+| `E220_M1` / GPIO26 | 2 | M1 input to module |
+| `E220_RXD` / GPIO17 / UART2 TX | 3 | RXD input to module |
+| `E220_TXD` / GPIO16 / UART2 RX | 4 | TXD output from module |
+| `E220_AUX` / GPIO27 | 5 | AUX output from module |
+| `5V_SYS` | 6 | VCC |
+| GND | 7 | GND |
+
+The EBYTE manual specifies a **3.3-V UART communication interface** for this
+pin set, including 3.3-V RXD input and TXD output.  The carrier therefore uses
+only the DevKit's 3.3-V GPIO signalling; it does not infer 5-V-safe I/O from
+the product-page marketing summary.  AUX remains an input at GPIO27 with no
+external pull-down or external load.  The user-verified DevKit header mapping
+remains the source of truth: GPIO27/26/25 are left header pins 6/7/8 and
+GPIO16/17 are right header pins 6/7.
+
+### Deterministic radio mode at reset
+
+For both candidates the official mode table is identical: `M1/M0 = 00`
+transmission, `01` WOR transmit, `10` WOR receive, and `11` sleep/configure.
+EBYTE says M0/M1 have very weak internal pull-ups and must not float.
+
+**PROJECT DESIGN CHOICE:** fit one external **10 kOhm pull-down** from each of
+`E220_M0` and `E220_M1` to GND.  This yields mode `00` whenever the DevKit
+GPIOs are high-impedance during reset and does not rely on EBYTE's weak
+pull-ups.  EBYTE does not prescribe this value; 10 kOhm is explicitly a
+project choice, not a manufacturer requirement.  Firmware must drive both
+signals deliberately before any requested mode transition.  Each GPIO sources
+0.33 mA when driven high; verify that condition on the actual populated DevKit
+during prototype bring-up.
+
+### Power, decoupling and current budget
+
+Both EBYTE product variants are 22-dBm products; the official manual gives
+2.6–5.5 V supply operation for the T22 family, 90–110 mA instantaneous
+emission current, about 8 mA receive current and about 3 uA sleep current.
+`5V_SYS` is the **PROJECT DESIGN CHOICE** carrier supply, within that range.
+At the module interface fit the previously selected, explicitly non-EBYTE
+mandated, local decoupling: Murata `GRM188R61A106MAAL` (10 uF, 10 V X5R) in
+parallel with `GRM188R71C104KA01D` (0.1 uF, 16 V X7R), located at VCC/GND in
+the later PCB placement.
+
+| `5V_SYS` load, simultaneous full-operation case | Current | Basis |
+| --- | ---: | --- |
+| Removable DevKit VIN | 500.000 mA | **PROJECT DESIGN ALLOCATION**, conservatively derived from the prior Espressif 500-mA supply-capability basis; it is **not** a DevKit manufacturer rating. |
+| Either installed E220-T22D in 22-dBm TX | 110.000 mA | EBYTE maximum instantaneous emission-current table. |
+| `WS2812B-V5` | 36.600 mA | Existing bounded project allocation: `3 × 12 mA + 0.6 mA`; not a manufacturer total-maximum claim. |
+| `SN74AHCT1G125` | 1.510 mA | Existing conservative project allocation. |
+| **Protected-rail subtotal** | **648.110 mA** | Calculated. |
+| 20 % engineering margin | 129.622 mA | Conservative **PROJECT DESIGN ALLOCATION**. |
+| **`5V_SYS` design allocation** | **777.732 mA** | Calculated. |
+
+`TPS259630` with the selected 909-Ohm current-limit resistor has a
+0.949-A minimum characterised limit, so this allocation leaves **171.268 mA**
+to that minimum limit.  It is also below the hardware policy's Type-C
+Medium/High advertised-current threshold of 1.5 A.  The TUSB320 plus enable
+network remains on the raw pre-eFuse side: its conservative 0.25-mA allocation
+is not a `5V_SYS` load and is not double-counted.  The resulting conservative
+raw-USB allocation is **777.982 mA** (`777.732 + 0.250`), leaving **722.018
+mA** to the 1.5-A advertised-current policy.  These are allocation checks, not
+proof of transient, cable-drop or thermal performance; measure actual DevKit
+VIN current and its on-board regulator temperature on the prototype.
+
+### OLED, RF and superseded blocks
+
+- The carrier retains only optional I2C signal positions GPIO21/SDA and
+  GPIO22/SCL.  **Rev A does not source OLED VCC from the DevKit 3V3 rail** and
+  no OLED current is included in the active budget.  Leave OLED VCC and I2C
+  pull-up population as NC/DNP until the exact display module and the DevKit
+  regulator margin are verified.
+- The module itself provides its SMA-K antenna connection.  Select a
+  band-appropriate antenna and applicable regional radio parameters for the
+  installed 400- or 900-MHz module; no common RF antenna is claimed.
+- The former main-board `TPS62162` 3.3-V buck, bare ESP32 footprint,
+  EN/BOOT circuitry and main-board ESP programming circuit remain superseded
+  history.  They are not active carrier requirements.
+
+Sources: [E220-T Series User Manual, EBYTE (official download)](https://www.cdebyte.com/pdf-down.aspx?id=4221), [E220-400T22D official product page, EBYTE](https://www.cdebyte.com/products/E220-400T22D/4), [E220-900T22D official product page, EBYTE](https://www.cdebyte.com/products/E220-900T22D/4), [TPS2596 datasheet, TI](https://www.ti.com/lit/ds/symlink/tps2596.pdf), and [TUSB320LAI datasheet, TI](https://www.ti.com/lit/ds/symlink/tusb320lai.pdf).

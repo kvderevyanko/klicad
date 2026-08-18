@@ -271,3 +271,35 @@ only as primary-source evidence that a board's power-source combinations and
 header map are specific to that board.
 
 Sources: [E220-T Series User Manual, EBYTE](https://www.cdebyte.com/pdf-down.aspx?id=4221), [E220-900T22D product page, EBYTE](https://www.cdebyte.com/products/E220-900T22D/4), and [ESP32-DevKitC V4 User Guide, Espressif](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html).
+
+### Stage 4.1 — DevKit interface frozen for schematic
+
+The user-provided, verified source fixes the socket interface: two 1×15
+headers, each pin 1 at the USB-C/antenna end.  The left header order is `VIN,
+GND, 13, 12, 14, 27, 26, 25, 33, 32, 35, 34, 39/VN, 36/VP, EN`; the right order
+is `3V3, GND, 15, 2, 4, 16/RX2, 17/TX2, 5, 18, 19, 21, 3/RX0, 1/TX0, 22, 23`.
+
+This authorises project-local symbols for the two headers only; it does not
+select their mating footprint.  `5V_SYS` connects only to left pin 1 (VIN),
+and E220 uses left 6/7/8 and right 6/7 as documented.  The approved Rev A
+programming constraint is operational mutual exclusion of the two USB-C ports,
+not a new electrical component or source-selection circuit.
+
+## Stage 5 — active modular carrier decision record
+
+This section supersedes the active single `E220-900T22D` population decision.
+The earlier bare-ESP32, main-board `TPS62162`, EN/BOOT and programmer circuits
+remain superseded history and shall not be restored to the carrier schematic.
+
+| Function | Active decision | Verification / remaining decision |
+| --- | --- | --- |
+| Radio population | One removable EBYTE `E220-400T22D` **or** `E220-900T22D` | EBYTE documents one common 400/900-T22D pin-definition section; both pages say UART, 22 dBm, SMA-K and 21 × 36 mm.  The 400-MHz and 900-MHz variants are RF alternatives, not a single antenna choice. |
+| Electrical radio interface | Pins 1…7 = M0, M1, RXD, TXD, AUX, VCC, GND; 3.3-V UART/control and `5V_SYS` VCC | Direct connection only to DevKit 3.3-V GPIOs.  Use the manual's 3.3-V communication specification rather than treating the product-page 3.3/5-V I/O wording as a 5-V interface guarantee. |
+| Radio socket / footprint | **Unselected** | The official EBYTE download/library is evidence of a source asset, not approval for a KiCad footprint or an exact mating connector.  Select after official mechanical/pin-1/mating-socket audit at PCB stage. |
+| M0/M1 reset mode | External 10-kOhm pull-down per line to GND | **PROJECT DESIGN CHOICE.** It forces documented `M1/M0=00` while GPIOs reset.  The EBYTE manual requires non-floating inputs but specifies no external resistor value. Prototype-verify GPIO high drive and mode transition. |
+| E220 local bypass | `GRM188R61A106MAAL` 10 uF/10 V/X5R + `GRM188R71C104KA01D` 0.1 uF/16 V/X7R at VCC/GND | **PROJECT DESIGN CHOICE**, not claimed as an EBYTE-mandated value. Place locally after socket/mounting selection. |
+| DevKit supply | `5V_SYS` to verified left-header pin 1 / VIN | 500 mA at 5 V is a conservative **PROJECT DESIGN ALLOCATION**, derived from the prior Espressif supply-capability basis; it is not a DevKit manufacturer current rating. Measure current and on-board-regulator thermal performance. |
+| OLED | GPIO21/22 signal reservation only; VCC and pull-ups NC/DNP in Rev A | Exact display and its supply/current are unresolved.  Do not budget it or feed it from DevKit 3V3 until module and regulator margin are verified. |
+| 5-V budget / Type-C policy | `5V_SYS` allocation 777.732 mA including 20 % margin; enable remains only at Type-C Medium/High | 648.110-mA pre-margin subtotal: DevKit 500 + E220 110 + WS 36.6 + AHCT 1.51 mA.  0.25-mA TUSB/enable allocation is pre-eFuse, giving 777.982 mA raw USB allocation and 722.018 mA to the 1.5-A policy.  Prototype validates cable/bursts/thermal. |
+
+Official sources: [E220-T Series User Manual, EBYTE](https://www.cdebyte.com/pdf-down.aspx?id=4221), [E220-400T22D, EBYTE](https://www.cdebyte.com/products/E220-400T22D/4), [E220-900T22D, EBYTE](https://www.cdebyte.com/products/E220-900T22D/4), [TPS2596, TI](https://www.ti.com/lit/ds/symlink/tps2596.pdf), and [TUSB320LAI, TI](https://www.ti.com/lit/ds/symlink/tusb320lai.pdf).

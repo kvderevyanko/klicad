@@ -252,3 +252,82 @@ M0/M1 weak pull-ups/non-floating constraint, and AUX output handling.  This
 does not resolve the physical DevKit header positions.
 
 Sources: [E220-T Series User Manual, EBYTE](https://www.cdebyte.com/pdf-down.aspx?id=4221), [E220-900T22D, EBYTE](https://www.cdebyte.com/products/E220-900T22D/4), and [ESP32-DevKitC V4 User Guide, Espressif](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html).
+
+## Stage 4.1 — blocker resolution
+
+### BLOCKER — none for the Stage 4 schematic
+
+The user verified the exact left/right 1×15 maps, orientation (USB-C toward
+antenna), and all required signal positions.  The Rev A mutual-exclusion rule
+for main-board USB-C power versus DevKit USB-C programming is also approved.
+These supersede the Stage 4 blocker entries above.
+
+### IMPORTANT — before PCB release or normal field operation
+
+1. Enforce the approved mutual-exclusive USB procedure in assembly/user
+   documentation and silkscreen; it is not a hardware power mux.
+2. Verify the selected actual DevKit's 5-V current and thermal behaviour in
+   the full `5V_SYS` power budget and prototype test.
+3. Retain the existing RF/antenna, OLED, WS2812, footprint, Type-C transient
+   and eFuse-startup validation items.  They are not schematic blockers.
+
+## Stage 5 — modular E220-T22D carrier gate
+
+The user-verified DevKit mapping remains authoritative.  The active radio
+population is one EBYTE `E220-400T22D` or `E220-900T22D`; their documented
+common T22D electrical interface is now the carrier interface.  This section
+supersedes the earlier single-900T22D-only and no-external-M0/M1-bias records.
+
+### SCHEMATIC BLOCKER — none
+
+The active electrical design is sufficiently defined for a controlled
+schematic update: common T22D pin functions, 3.3-V UART/control levels,
+`5V_SYS` VCC, explicit 10-kOhm M0/M1 pull-down project choice, DevKit header
+mapping, Type-C gate and a bounded 5-V allocation are recorded.  A final PCB
+footprint, RF antenna selection or a manufacturer current rating for the
+removable DevKit is not a schematic blocker when the documented 500-mA design
+allocation is used and clearly labelled as such.
+
+### PCB RELEASE BLOCKERS
+
+1. **Socket / footprint mechanics.** Select and audit the exact mating socket
+   or module mounting method against current official EBYTE mechanical data:
+   pin-1 orientation, header pitch, hole pattern, body keepout, courtyard and
+   assembly method.  Do not convert or assign the EBYTE source library blindly.
+2. **RF population and legal operating configuration.** Choose one installed
+   band module, a matching SMA-K antenna/cable, region, permitted channel plan
+   and transmit settings.  The common electrical carrier does not make one
+   antenna or radio configuration valid for both 400- and 900-MHz modules.
+3. **Unverified display/LED mechanics.** OLED power remains NC/DNP; before its
+   addition choose the exact module, its supply/pull-ups/current and connector.
+   Audit the WS2812B-V5 land pattern before PCB placement.
+4. **Carrier mechanics.** Define DevKit socket footprint, standoffs/retention,
+   board outline and service markings, including the mutual-exclusive USB-C
+   warning.
+
+### PROTOTYPE VALIDATION REQUIRED
+
+1. Measure the actual selected DevKit VIN current and its on-board 3.3-V
+   regulator temperature.  The 500-mA VIN entry is a conservative **PROJECT
+   DESIGN ALLOCATION** based on previous Espressif guidance, not a DevKit
+   manufacturer rating.
+2. At worst cable/source voltage and radio emission bursts, verify `5V_SYS`
+   voltage, TPS259630 start-up/current-limit/thermal behaviour and Type-C
+   attach transitions.  The 777.732-mA allocation leaves 171.268 mA to the
+   eFuse's 0.949-A minimum characterised limit; it is not a transient proof.
+3. Verify reset/start-up behaviour of GPIO25/GPIO26 with 10-kOhm external
+   pull-downs and confirm that firmware establishes the intended E220 mode
+   before radio use.  Verify UART/AUX timing on the actual module.
+4. Verify the Rev A operational rule: main-board USB-C disconnected before
+   DevKit programming USB-C connection.  This is not an OR-ing circuit.
+
+### OPTIONAL IMPROVEMENTS
+
+- Add a documented module-presence indication or labelled radio-band option
+  once the exact socket is selected.
+- Add controlled test points for `5V_SYS`, E220 VCC, M0, M1, AUX and UART
+  signals after placement/RF review.
+- Consider a later revision with a verified power-path controller if
+  simultaneous DevKit programming and carrier power is a product requirement.
+
+Sources: [E220-T Series User Manual, EBYTE](https://www.cdebyte.com/pdf-down.aspx?id=4221), [E220-400T22D, EBYTE](https://www.cdebyte.com/products/E220-400T22D/4), [E220-900T22D, EBYTE](https://www.cdebyte.com/products/E220-900T22D/4), [TPS2596, TI](https://www.ti.com/lit/ds/symlink/tps2596.pdf), and [TUSB320LAI, TI](https://www.ti.com/lit/ds/symlink/tusb320lai.pdf).

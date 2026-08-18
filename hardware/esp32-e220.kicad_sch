@@ -1,4689 +1,1205 @@
-(kicad_sch
-	(version 20260306)
-	(generator "eeschema")
-	(generator_version "10.0")
-	(uuid "f1bd43af-018b-4bfe-b9e7-41ec4cb29335")
-	(paper "A4")
-	(title_block
-		(title "ESP32 E220 LoRa Receiver — Stage 4")
-	)
-	(lib_symbols
-		(symbol "Project:C"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "C"
-				(at 0 13.97 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "C"
-				(at 0 -13.97 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Passive capacitor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "C_1_1"
-				(rectangle
-					(start -1.27 12.7)
-					(end 2.54 -12.7)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin passive line
-					(at -5.08 1.27 0)
-					(length 3.81)
-					(name "1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -1.27 0)
-					(length 3.81)
-					(name "2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Project:D"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "D"
-				(at 0 13.97 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "D"
-				(at 0 -13.97 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Diode"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "D_1_1"
-				(rectangle
-					(start -1.27 12.7)
-					(end 2.54 -12.7)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin passive line
-					(at -5.08 1.27 0)
-					(length 3.81)
-					(name "1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -1.27 0)
-					(length 3.81)
-					(name "2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Project:DevKit_Left_1x15"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J"
-				(at 0 24.13 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "DEVKIT_LEFT_1x15"
-				(at 0 -24.13 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "User-verified left DevKit header; USB-C toward antenna"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "DevKit_Left_1x15_1_1"
-				(rectangle
-					(start -1.27 22.86)
-					(end 2.54 -22.86)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin passive line
-					(at -5.08 17.78 0)
-					(length 3.81)
-					(name "VIN_/_5V"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 15.24 0)
-					(length 3.81)
-					(name "GND"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 12.7 0)
-					(length 3.81)
-					(name "GPIO13"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 10.16 0)
-					(length 3.81)
-					(name "GPIO12"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 7.62 0)
-					(length 3.81)
-					(name "GPIO14"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 5.08 0)
-					(length 3.81)
-					(name "GPIO27"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 2.54 0)
-					(length 3.81)
-					(name "GPIO26"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "GPIO25"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "GPIO33"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -5.08 0)
-					(length 3.81)
-					(name "GPIO32"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -7.62 0)
-					(length 3.81)
-					(name "GPIO35"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "11"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -10.16 0)
-					(length 3.81)
-					(name "GPIO34"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -12.7 0)
-					(length 3.81)
-					(name "GPIO39/VN"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "13"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -15.24 0)
-					(length 3.81)
-					(name "GPIO36/VP"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "14"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -17.78 0)
-					(length 3.81)
-					(name "EN"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "15"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Project:DevKit_Right_1x15"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J"
-				(at 0 24.13 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "DEVKIT_RIGHT_1x15"
-				(at 0 -24.13 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "User-verified right DevKit header; USB-C toward antenna"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "DevKit_Right_1x15_1_1"
-				(rectangle
-					(start -1.27 22.86)
-					(end 2.54 -22.86)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin passive line
-					(at -5.08 17.78 0)
-					(length 3.81)
-					(name "3V3"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 15.24 0)
-					(length 3.81)
-					(name "GND"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 12.7 0)
-					(length 3.81)
-					(name "GPIO15"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 10.16 0)
-					(length 3.81)
-					(name "GPIO2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 7.62 0)
-					(length 3.81)
-					(name "GPIO4"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 5.08 0)
-					(length 3.81)
-					(name "GPIO16/RX2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 2.54 0)
-					(length 3.81)
-					(name "GPIO17/TX2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "GPIO5"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "GPIO18"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -5.08 0)
-					(length 3.81)
-					(name "GPIO19"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -7.62 0)
-					(length 3.81)
-					(name "GPIO21"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "11"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -10.16 0)
-					(length 3.81)
-					(name "GPIO3/RX0"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -12.7 0)
-					(length 3.81)
-					(name "GPIO1/TX0"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "13"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -15.24 0)
-					(length 3.81)
-					(name "GPIO22"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "14"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -17.78 0)
-					(length 3.81)
-					(name "GPIO23"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "15"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Project:E220_900T22D"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J"
-				(at 0 13.97 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "E220-900T22D"
-				(at 0 -13.97 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "EBYTE E220-900T22D, official pin definition"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "E220_900T22D_1_1"
-				(rectangle
-					(start -1.27 12.7)
-					(end 2.54 -12.7)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin passive line
-					(at -5.08 7.62 0)
-					(length 3.81)
-					(name "M0"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 5.08 0)
-					(length 3.81)
-					(name "M1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 2.54 0)
-					(length 3.81)
-					(name "RXD"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "TXD"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "AUX"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -5.08 0)
-					(length 3.81)
-					(name "VCC"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -7.62 0)
-					(length 3.81)
-					(name "GND"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Project:MMBT3904LT1G"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "Q"
-				(at 0 13.97 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "MMBT3904LT1G"
-				(at 0 -13.97 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "onsemi NPN transistor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "MMBT3904LT1G_1_1"
-				(rectangle
-					(start -1.27 12.7)
-					(end 2.54 -12.7)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin passive line
-					(at -5.08 2.54 0)
-					(length 3.81)
-					(name "B"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "C"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "E"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Project:R"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "R"
-				(at 0 13.97 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "R"
-				(at 0 -13.97 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Passive resistor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "R_1_1"
-				(rectangle
-					(start -1.27 12.7)
-					(end 2.54 -12.7)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin passive line
-					(at -5.08 1.27 0)
-					(length 3.81)
-					(name "1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -1.27 0)
-					(length 3.81)
-					(name "2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Project:TPS259630DDAR"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U"
-				(at 0 15.24 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TPS259630DDAR"
-				(at 0 -15.24 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "TI TPS259630, 8-pin DDA pin functions"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "TPS259630DDAR_1_1"
-				(rectangle
-					(start -1.27 13.97)
-					(end 2.54 -13.97)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin passive line
-					(at -5.08 8.89 0)
-					(length 3.81)
-					(name "GND"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 6.35 0)
-					(length 3.81)
-					(name "dVdt"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 3.81 0)
-					(length 3.81)
-					(name "EN/UVLO"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 1.27 0)
-					(length 3.81)
-					(name "IN"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -1.27 0)
-					(length 3.81)
-					(name "OUT"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -3.81 0)
-					(length 3.81)
-					(name "FLT"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -6.35 0)
-					(length 3.81)
-					(name "ILM"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -8.89 0)
-					(length 3.81)
-					(name "OVLO"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Project:TUSB320LAIRWBR"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U"
-				(at 0 20.32 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TUSB320LAIRWBR"
-				(at 0 -20.32 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "TI TUSB320LAI, 12-pin RWB pin functions"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "TUSB320LAIRWBR_1_1"
-				(rectangle
-					(start -1.27 19.05)
-					(end 2.54 -19.05)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin passive line
-					(at -5.08 13.97 0)
-					(length 3.81)
-					(name "CC1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 11.43 0)
-					(length 3.81)
-					(name "CC2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 8.89 0)
-					(length 3.81)
-					(name "PORT"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 6.35 0)
-					(length 3.81)
-					(name "VBUS_DET"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 3.81 0)
-					(length 3.81)
-					(name "ADDR"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 1.27 0)
-					(length 3.81)
-					(name "INT_N/OUT3"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -1.27 0)
-					(length 3.81)
-					(name "SDA/OUT1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -3.81 0)
-					(length 3.81)
-					(name "SCL/OUT2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -6.35 0)
-					(length 3.81)
-					(name "ID"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -8.89 0)
-					(length 3.81)
-					(name "GND"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -11.43 0)
-					(length 3.81)
-					(name "EN_N"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "11"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -13.97 0)
-					(length 3.81)
-					(name "VDD"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Project:USB_C_POWER"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J"
-				(at 0 13.97 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "USB-C power input"
-				(at 0 -13.97 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Power-only USB-C functional interface; connector PN USB4105-GF-A"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "USB_C_POWER_1_1"
-				(rectangle
-					(start -1.27 12.7)
-					(end 2.54 -12.7)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin passive line
-					(at -5.08 3.81 0)
-					(length 3.81)
-					(name "VBUS"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 1.27 0)
-					(length 3.81)
-					(name "CC1"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -1.27 0)
-					(length 3.81)
-					(name "CC2"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -3.81 0)
-					(length 3.81)
-					(name "GND"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1 1)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-	)
-	(text "Pin-level Type-C and eFuse support components are documented with their official PNs and values. Footprints intentionally unassigned at schematic stage."
-		(exclude_from_sim no)
-		(at 18 44 0)
-		(effects
-			(font
-				(size 1.5 1.5)
-			)
-			(justify left bottom)
-		)
-		(uuid "5e93496b-4dac-4e46-8bc4-f27d68d50fcc")
-	)
-	(text "No bare ESP32, 3V3 buck, EN/BOOT or programming circuit on this PCB. J1/J2 are the verified removable DevKit sockets."
-		(exclude_from_sim no)
-		(at 18 26 0)
-		(effects
-			(font
-				(size 1.5 1.5)
-			)
-			(justify left bottom)
-		)
-		(uuid "6d95859c-542f-4ca7-a3ea-46e60f7567aa")
-	)
-	(text "E220: firmware drives M0/M1; no unverified external pull resistor. AUX is input-only, no pull-down."
-		(exclude_from_sim no)
-		(at 18 32 0)
-		(effects
-			(font
-				(size 1.5 1.5)
-			)
-			(justify left bottom)
-		)
-		(uuid "a6d84b1f-0e13-4ca4-a807-ee0568471737")
-	)
-	(text "Stage 4 — main board only. DevKit USB-C programming and main-board USB-C power are mutually exclusive (approved Rev A policy)."
-		(exclude_from_sim no)
-		(at 18 20 0)
-		(effects
-			(font
-				(size 1.5 1.5)
-			)
-			(justify left bottom)
-		)
-		(uuid "b0ebf94f-f5d1-4c49-8ea3-f1572222dd14")
-	)
-	(text "TUSB320 UFP/GPIO: PORT=GND, ADDR=NC, EN_N=GND. OUT1/Q1 gates TPS259630: Default/detach OFF; Medium/High ON."
-		(exclude_from_sim no)
-		(at 18 38 0)
-		(effects
-			(font
-				(size 1.5 1.5)
-			)
-			(justify left bottom)
-		)
-		(uuid "f94a4672-39c7-4bc7-b7fc-00f2043ee44f")
-	)
-	(no_connect
-		(at 64.77 142.875)
-		(uuid "3074f0fa-f073-4013-8564-cd540feb1f1a")
-	)
-	(no_connect
-		(at 64.77 140.335)
-		(uuid "6ef7bd73-13ab-4e55-bb07-d0f883c0c888")
-	)
-	(no_connect
-		(at 64.77 150.495)
-		(uuid "6f592e3b-f4c5-4560-838d-86c5ae50e70b")
-	)
-	(no_connect
-		(at 64.77 147.955)
-		(uuid "819204cb-f1ce-4a97-a85e-a8e19076e98e")
-	)
-	(no_connect
-		(at 64.77 82.55)
-		(uuid "83092766-ec2a-48cf-8ad5-f8704965e0b9")
-	)
-	(no_connect
-		(at 64.77 125.095)
-		(uuid "84c41f69-f82e-47a6-848d-4f666d2b84ed")
-	)
-	(no_connect
-		(at 64.77 72.39)
-		(uuid "909dd64b-a3c0-4487-aafa-e568da502a71")
-	)
-	(no_connect
-		(at 64.77 97.79)
-		(uuid "a0cdbc83-28af-424d-a950-c296281a54e7")
-	)
-	(no_connect
-		(at 64.77 153.035)
-		(uuid "a1a166ca-3a48-4c07-92e8-295282a39676")
-	)
-	(no_connect
-		(at 64.77 122.555)
-		(uuid "ae94d541-eafd-4307-bf8c-ca19accb5607")
-	)
-	(no_connect
-		(at 64.77 95.25)
-		(uuid "b13a619c-bdf6-4a56-acf9-b6e50f837a73")
-	)
-	(no_connect
-		(at 64.77 85.09)
-		(uuid "bd5fad7b-70f0-4105-8fde-59f66f86bd6e")
-	)
-	(no_connect
-		(at 64.77 145.415)
-		(uuid "be3e25b0-9f7c-40b1-bc16-13086e761c57")
-	)
-	(no_connect
-		(at 64.77 135.255)
-		(uuid "c5d77333-f0f8-4709-8f85-268523db1fc1")
-	)
-	(no_connect
-		(at 64.77 137.795)
-		(uuid "db85130e-f2f3-413e-bc2a-112b4abebbb7")
-	)
-	(no_connect
-		(at 64.77 67.31)
-		(uuid "df1e8006-0ad9-4bb8-9365-aa1e0de49b4e")
-	)
-	(no_connect
-		(at 64.77 90.17)
-		(uuid "df94e9a9-6ce8-43c7-9089-ee7f038ee1d1")
-	)
-	(no_connect
-		(at 64.77 92.71)
-		(uuid "e7c53f54-5512-4447-94d6-a21bd2b5069c")
-	)
-	(no_connect
-		(at 64.77 69.85)
-		(uuid "e879c6e2-bed6-4c46-a8e9-127b0b61768c")
-	)
-	(no_connect
-		(at 64.77 87.63)
-		(uuid "ea60b920-bbf7-4e18-883b-ceae3ac526f5")
-	)
-	(no_connect
-		(at 64.77 117.475)
-		(uuid "ec15d65a-9474-4ec2-886a-fc21314598ce")
-	)
-	(no_connect
-		(at 64.77 127.635)
-		(uuid "ffc8b158-af43-4bd2-a73a-76fe30ee8a8e")
-	)
-	(label "E220_TXD"
-		(at 64.77 130.175 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "011bf114-ea7f-4670-8b9b-23ab1f287bb5")
-	)
-	(label "E220_M1"
-		(at 64.77 77.47 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "0d325e9b-5926-40e1-a4e2-9fccd061b619")
-	)
-	(label "E220_M0"
-		(at 170.18 97.155 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "0d95650a-ec4e-4c5d-96c3-a4ddbada141a")
-	)
-	(label "DVDT"
-		(at 189.865 243.84 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "135fc301-d85f-47b8-8bde-86c2e266f68f")
-	)
-	(label "E220_M0"
-		(at 64.77 80.01 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1c0a260f-89f2-4911-abfb-8f1c2b5218c4")
-	)
-	(label "GND"
-		(at 64.77 120.015 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1ddd1ef9-9782-46f0-bcdf-d49de8785923")
-	)
-	(label "NC"
-		(at 69.85 196.215 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "20687f1b-8ee8-4af1-b016-d15c25a5144d")
-	)
-	(label "GND"
-		(at 170.18 231.14 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "232279fb-91ac-4304-93cb-192f553fa5af")
-	)
-	(label "GND"
-		(at 189.865 140.97 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "23e3cfe2-75b3-4394-b919-221867e47a4d")
-	)
-	(label "TUSB_VDD"
-		(at 59.69 243.84 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "2576345c-3634-479e-a317-0f14a2c39fe0")
-	)
-	(label "GND"
-		(at 170.18 112.395 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "26b80c17-8c6d-4710-aa5b-256a37a2da34")
-	)
-	(label "5V_SYS"
-		(at 64.77 62.23 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "2a6bff5d-17e8-40d9-90e4-5714f59f615d")
-	)
-	(label "GND"
-		(at 64.77 64.77 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "2def5a30-7e81-4ff1-a7fb-d1ca4b5ff719")
-	)
-	(label "ILM"
-		(at 170.18 228.6 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3c0beed8-275c-4f75-a6b1-16a895aeae0f")
-	)
-	(label "DVDT"
-		(at 144.78 183.515 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3fa08c07-e52b-4f47-b37c-fe5ed00c991f")
-	)
-	(label "EFUSE_EN"
-		(at 160.02 245.11 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "42858902-5c12-4911-a5b0-ed7b2b7fcddd")
-	)
-	(label "VBUS_PRE"
-		(at 99.695 228.6 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "46668168-aae9-4240-b303-48986c1f5f85")
-	)
-	(label "VBUS_PRE"
-		(at 19.685 166.37 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4720f890-909d-430a-a9a8-17bfc41b1e4d")
-	)
-	(label "E220_RXD"
-		(at 170.18 102.235 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4a54e74f-ee71-4bec-8d87-cac7541d863d")
-	)
-	(label "CC1"
-		(at 69.85 175.895 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4b7da493-2f42-4e40-a5e6-cd9aa1cfea1d")
-	)
-	(label "GND"
-		(at 210.185 231.14 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4baf431b-638a-45a8-9df4-d7ad5c0c758a")
-	)
-	(label "VBUS_DET"
-		(at 69.85 231.14 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4e382fc0-77a6-46c1-8bef-88fe0e7c5f97")
-	)
-	(label "EFUSE_EN"
-		(at 139.7 246.38 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4f0a611c-8ef6-4e36-8d2b-54c8df10615d")
-	)
-	(label "NC"
-		(at 69.85 188.595 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "57614ef1-3c9e-4361-b418-f581f57a099f")
-	)
-	(label "GND"
-		(at 229.87 231.14 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "5830ce72-9153-4c07-908e-b61e4b01133d")
-	)
-	(label "OVLO"
-		(at 189.865 231.14 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "5bf52491-508e-4a48-aea8-8e542ae62c96")
-	)
-	(label "VBUS_PRE"
-		(at 40.005 228.6 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "5dcf9125-69e0-492a-8b78-484b99224e9d")
-	)
-	(label "OUT1"
-		(at 120.015 243.84 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "5e687234-59a4-4683-b890-db5b8897f464")
-	)
-	(label "GND"
-		(at 59.69 246.38 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "65622b54-46b5-462d-b700-438a50b60743")
-	)
-	(label "E220_AUX"
-		(at 170.18 107.315 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "70863f30-1299-4370-90fd-f324893d0fac")
-	)
-	(label "VBUS_PRE"
-		(at 69.85 228.6 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "73f77590-7619-4a04-b19c-03e2f0481b5a")
-	)
-	(label "5V_SYS"
-		(at 229.87 228.6 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "754bb7fc-94c2-4a67-82fa-a96f8101ba5e")
-	)
-	(label "GND"
-		(at 144.78 180.975 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "79216066-26a5-46a5-8201-7509c2542b84")
-	)
-	(label "E220_M1"
-		(at 170.18 99.695 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "8119d1ae-6b92-48c5-87c3-1570b3ac6de1")
-	)
-	(label "CC2"
-		(at 19.685 171.45 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "88109de6-af58-4173-9c5a-80c8790fc382")
-	)
-	(label "OUT1"
-		(at 99.695 246.38 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "894f178c-d83b-4dd8-9488-9c0e5bd15fd7")
-	)
-	(label "5V_SYS"
-		(at 144.78 191.135 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "8db040c5-8d3d-4ff2-b650-c3643ab1ba82")
-	)
-	(label "5V_SYS"
-		(at 170.18 109.855 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9065a37e-6dad-4b6f-9988-380819e00f09")
-	)
-	(label "E220_AUX"
-		(at 64.77 74.93 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "927b4e03-ddf7-413e-a00b-3e96e24ac85a")
-	)
-	(label "GND"
-		(at 69.85 198.755 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "95ffc23b-e536-44ec-86ae-87cdf4c2f51e")
-	)
-	(label "VBUS_DET"
-		(at 69.85 183.515 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9cecffd3-587f-4047-9412-bbf8db8e603d")
-	)
-	(label "TUSB_VDD"
-		(at 99.695 231.14 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9eec8f57-2b08-4a66-8604-f57620c4ab5e")
-	)
-	(label "NC"
-		(at 144.78 193.675 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a2ec3850-2e52-468e-83d2-e6cc70bf6e5a")
-	)
-	(label "GND"
-		(at 19.685 173.99 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a38896de-5005-4405-80fe-29433044b250")
-	)
-	(label "GND"
-		(at 40.005 231.14 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a538d1fe-83b8-4838-be6e-c363472eecfa")
-	)
-	(label "EFUSE_EN"
-		(at 144.78 186.055 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a7d340d0-fe06-447f-9d85-f1c30b875f51")
-	)
-	(label "TUSB_VDD"
-		(at 69.85 203.835 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "ad469381-7bcd-406f-954b-6f7cc291dde6")
-	)
-	(label "NC"
-		(at 69.85 186.055 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b09e2ca2-4701-470d-97ec-582adc03cfa6")
-	)
-	(label "VBUS_PRE"
-		(at 189.865 228.6 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b17aae71-f935-491e-82de-9679b35a8e5a")
-	)
-	(label "E220_TXD"
-		(at 170.18 104.775 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b9753e96-0d82-4fc4-be4f-23fc4ea87129")
-	)
-	(label "ILM"
-		(at 144.78 196.215 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "bbfd2bd2-4f91-41ad-8098-29a36a23e32b")
-	)
-	(label "CC2"
-		(at 69.85 178.435 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "bc2c25d6-5fca-478f-915e-90026e188717")
-	)
-	(label "OUT1"
-		(at 69.85 191.135 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "be66f33e-b0be-450f-8a0d-bce50a319169")
-	)
-	(label "GND"
-		(at 160.02 247.65 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c00ad460-74e1-4197-a690-d0116d280475")
-	)
-	(label "CC1"
-		(at 19.685 168.91 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c039bf15-9c4b-464c-a7ad-b150a28d4492")
-	)
-	(label "TUSB_VDD"
-		(at 139.7 243.84 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c090c4ae-0d2c-4c6f-b822-88f74e398760")
-	)
-	(label "VBUS_PRE"
-		(at 144.78 188.595 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c7d1dd5a-fb22-40c4-8d0b-7e99abb10c17")
-	)
-	(label "GND"
-		(at 69.85 180.975 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "ccdb76db-ef8d-474d-893b-3ad986086881")
-	)
-	(label "QBASE"
-		(at 160.02 242.57 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "cfca2ae9-0f4c-4077-acdb-a48a99824e0c")
-	)
-	(label "5V_SYS"
-		(at 189.865 138.43 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d46ba9a4-5ed0-4a5c-806a-bde10a0ac235")
-	)
-	(label "OVLO"
-		(at 144.78 198.755 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d5302c6c-9e80-4ba9-88f4-7383caaf64ff")
-	)
-	(label "E220_RXD"
-		(at 64.77 132.715 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "db58afa0-c4a5-40c8-ba17-11c374c711a4")
-	)
-	(label "QBASE"
-		(at 120.015 246.38 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "de962f64-a4d3-41b5-9465-6da45578a342")
-	)
-	(label "GND"
-		(at 69.85 201.295 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "e12a29b2-c110-4578-b34e-c0306b0adaf3")
-	)
-	(label "5V_SYS"
-		(at 170.18 138.43 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "e60fe92f-441c-4b1e-9a2f-643b83d9d2a5")
-	)
-	(label "TUSB_VDD"
-		(at 99.695 243.84 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "e8deb95c-800f-4706-ba58-7dc64ca71524")
-	)
-	(label "GND"
-		(at 189.865 246.38 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "e8f6581e-59fa-46bf-bf33-ec237aeecdf4")
-	)
-	(label "NC"
-		(at 69.85 193.675 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "ef6f012e-aaf3-441f-a9ba-d2cef3401e63")
-	)
-	(label "OVLO"
-		(at 210.185 228.6 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "f0432a4c-f569-4dbc-8c41-92e4f2d4cc15")
-	)
-	(label "GND"
-		(at 170.18 140.97 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "f133acd9-8169-4353-bf6b-f2b919044a39")
-	)
-	(symbol
-		(lib_id "Project:TPS259630DDAR")
-		(at 149.86 189.865 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "0d6c4813-fe0c-4db1-a957-a2d0559c6510")
-		(property "Reference" "U2"
-			(at 149.86 167.865 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TPS259630DDAR"
-			(at 149.86 211.865 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 149.86 189.865 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tps2596.pdf"
-			(at 149.86 189.865 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 149.86 189.865 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b26abcdb-1456-4d13-8271-52cbd94ea0ac")
-		)
-		(pin "2"
-			(uuid "1a56529d-a53c-4d68-bb16-edcee9f504b6")
-		)
-		(pin "3"
-			(uuid "a62f5010-8654-4af8-84b2-63239b9b7083")
-		)
-		(pin "4"
-			(uuid "a8feee7f-ff69-4c22-99b0-74c908084a6c")
-		)
-		(pin "5"
-			(uuid "4d7e48a3-9f05-4ccc-83df-5771e6d739e0")
-		)
-		(pin "6"
-			(uuid "f1e85b35-89e8-47d9-a810-1e53fe80e041")
-		)
-		(pin "7"
-			(uuid "18a6a5fa-b607-4694-bc50-6e97455782a7")
-		)
-		(pin "8"
-			(uuid "cb9b81f1-f132-45eb-ad24-b751ac2f640c")
-		)
-		(instances
-			(project "esp32-e220"
-				(path "/f1bd43af-018b-4bfe-b9e7-41ec4cb29335"
-					(reference "U2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Project:C")
-		(at 175.26 139.7 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "21ed46f7-7d6a-4c8d-8b2b-07fa92124bfb")
-		(property "Reference" "C5"
-			(at 175.26 117.7 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10uF 10V X5R"
-			(at 175.26 161.7 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 175.26 139.7 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 175.26 139.7 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 175.26 139.7 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ec12e235-aabd-4d9c-9769-afd1f39824a9")
-		)
-		(pin "2"
-			(uuid "6d9ce602-acb7-4b3d-b0dc-45c9762f7f08")
-		)
-		(instances
-			(project "esp32-e220"
-				(path "/f1bd43af-018b-4bfe-b9e7-41ec4cb29335"
-					(reference "C5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Project:C")
-		(at 194.945 245.11 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "2246f2eb-7774-4cc8-aa1a-73a97b6584d0")
-		(property "Reference" "C4"
-			(at 194.945 223.11 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "3.3nF 50V C0G"
-			(at 194.945 267.11 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 194.945 245.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 194.945 245.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 194.945 245.11 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d288eeeb-c1d8-40a1-9b20-13c8ccb056e7")
-		)
-		(pin "2"
-			(uuid "9e8cd94c-e071-4323-b569-2916cc885027")
-		)
-		(instances
-			(project "esp32-e220"
-				(path "/f1bd43af-018b-4bfe-b9e7-41ec4cb29335"
-					(reference "C4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Project:DevKit_Left_1x15")
-		(at 69.85 80.01 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "321e73b1-eb8c-400e-a364-3bc07010cd06")
-		(property "Reference" "J1"
-			(at 69.85 58.01 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "DEVKIT_LEFT (USB-C toward antenna)"
-			(at 69.85 102.01 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 69.85 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 69.85 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 69.85 80.01 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "bc673697-33ce-432d-a35e-3c65e7eb3dce")
-		)
-		(pin "2"
-			(uuid "e36bcfe8-514d-417a-8b34-50fba919fa72")
-		)
-		(pin "3"
-			(uuid "1b95a714-f39a-41cf-b70e-b9c953009a42")
-		)
-		(pin "4"
-			(uuid "1c19ad7b-aac3-4e7f-95d4-da9e2756c10c")
-		)
-		(pin "5"
-			(uuid "1e7ca860-928f-4158-92ab-effb8dda14d0")
-		)
-		(pin "6"
-			(uuid "01edff8e-83dc-4207-8517-fb43e4b3d480")
-		)
-		(pin "7"
-			(uuid "09c4f7ef-79bb-44a7-a507-e778b632f929")
-		)
-		(pin "8"
-			(uuid "57894abe-5547-473b-9f94-ae67b06287e9")
-		)
-		(pin "9"
-			(uuid "f5178987-b68e-4ef0-a17c-68b6b102f9d8")
-		)
-		(pin "10"
-			(uuid "ac067764-b323-434c-bce5-e432ef77a551")
-		)
-		(pin "11"
-			(uuid "7ab3d72d-a584-4820-94f1-d65d7975d12b")
-		)
-		(pin "12"
-			(uuid "ffd6c0d5-ac7c-4cc4-ab26-ddd0298513ec")
-		)
-		(pin "13"
-			(uuid "affbdb83-2294-4152-bd33-843e69f62674")
-		)
-		(pin "14"
-			(uuid "b7c0a2b2-7e27-415c-89c3-c08b9d28108c")
-		)
-		(pin "15"
-			(uuid "cf4f86d5-1b01-4931-a099-e67a5044c6fe")
-		)
-		(instances
-			(project "esp32-e220"
-				(path "/f1bd43af-018b-4bfe-b9e7-41ec4cb29335"
-					(reference "J1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Project:R")
-		(at 215.265 229.87 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "43f6ee86-fb60-46c6-93bc-813dd5aa623a")
-		(property "Reference" "R7"
-			(at 215.265 207.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100k 0.1%"
-			(at 215.265 251.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 215.265 229.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 215.265 229.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 215.265 229.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "9618b347-a26f-4fd4-8e4a-ffbbcda3c622")
-		)
-		(pin "2"
-			(uuid "ae7f6716-50a5-4f7f-adaa-b6f17fcd73f4")
-		)
-		(instances
-			(project "esp32-e220"
-				(path "/f1bd43af-018b-4bfe-b9e7-41ec4cb29335"
-					(reference "R7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Project:R")
-		(at 125.095 245.11 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "4b256782-140e-4e99-ac07-b984b9088d40")
-		(property "Reference" "R3"
-			(at 125.095 223.11 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "47k 0.1%"
-			(at 125.095 267.11 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 125.095 245.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 125.095 245.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 125.095 245.11 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "dfcf3c62-c859-4dbc-9819-4878793230ff")
-		)
-		(pin "2"
-			(uuid "00364e57-2292-45cf-ab19-a030d0e8c097")
-		)
-		(instances
-			(project "esp32-e220"
-				(path "/f1bd43af-018b-4bfe-b9e7-41ec4cb29335"
-					(reference "R3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Project:R")
-		(at 175.26 229.87 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5c901fef-5794-47cd-9b0a-6613acfbb42e")
-		(property "Reference" "R5"
-			(at 175.26 207.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "909R 0.1%"
-			(at 175.26 251.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 175.26 229.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 175.26 229.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 175.26 229.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8d71d80f-02d5-46f9-94eb-71beaec2f022")
-		)
-		(pin "2"
-			(uuid "95c8fd3d-1be9-4690-9d97-9a57ec8b5b6b")
-		)
-		(instances
-			(project "esp32-e220"
-				(path "/f1bd43af-018b-4bfe-b9e7-41ec4cb29335"
-					(reference "R5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Project:MMBT3904LT1G")
-		(at 165.1 245.11 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "69815d1a-d0f9-4fc3-8da4-5b03b3195b63")
-		(property "Reference" "Q1"
-			(at 165.1 223.11 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "MMBT3904LT1G"
-			(at 165.1 267.11 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 165.1 245.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 165.1 245.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 165.1 245.11 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "07e207da-47d4-48c3-a0f7-734fb74cc4a1")
-		)
-		(pin "2"
-			(uuid "e389a277-3ef4-4fb6-a968-e13b1c9952df")
-		)
-		(pin "3"
-			(uuid "08254a58-3ffa-4cbe-b7b0-796d419c0fde")
-		)
-		(instances
-			(project "esp32-e220"
-				(path "/f1bd43af-018b-4bfe-b9e7-41ec4cb29335"
-					(reference "Q1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Project:R")
-		(at 74.93 229.87 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "73997651-d83c-4d3a-be1d-cf5576722928")
-		(property "Reference" "R1"
-			(at 74.93 207.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "900k 1%"
-			(at 74.93 251.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 74.93 229.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 74.93 229.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 74.93 229.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ff7b4f01-f1b6-4138-a698-be0a24fc37b4")
-		)
-		(pin "2"
-			(uuid "79cdf849-e4c9-4c85-9e17-cd579340e899")
-		)
-		(instances
-			(project "esp32-e220"
-				(path "/f1bd43af-018b-4bfe-b9e7-41ec4cb29335"
-					(reference "R1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Project:USB_C_POWER")
-		(at 24.765 170.18 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "786709f0-f0f4-45d5-ab81-eace5789524a")
-		(property "Reference" "J4"
-			(at 24.765 148.18 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "USB4105-GF-A"
-			(at 24.765 192.18 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 24.765 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://gct.co/files/drawings/usb4105.pdf"
-			(at 24.765 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 24.765 170.18 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "99c398f6-c2fe-4a49-ad72-cd36735e351f")
-		)
-		(pin "2"
-			(uuid "ecbc37b2-4648-4319-a6d6-833b0fa411fd")
-		)
-		(pin "3"
-			(uuid "ddf16c56-f857-4313-b1ae-206542b5f0f0")
-		)
-		(pin "4"
-			(uuid "cfe4b39d-f7f9-4ba4-80a1-63ebd79104ec")
-		)
-		(instances
-			(project "esp32-e220"
-				(path "/f1bd43af-018b-4bfe-b9e7-41ec4cb29335"
-					(reference "J4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Project:C")
-		(at 45.085 229.87 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "7f9b3f29-1ea9-4b8f-b96c-eed04ab386e2")
-		(property "Reference" "C1"
-			(at 45.085 207.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1uF 10V X7R"
-			(at 45.085 251.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 45.085 229.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 45.085 229.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 45.085 229.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8e705dfb-9fc2-485b-9f75-14fcae69bf14")
-		)
-		(pin "2"
-			(uuid "ac155e28-9a7f-47ba-bcad-ef1a53087991")
-		)
-		(instances
-			(project "esp32-e220"
-				(path "/f1bd43af-018b-4bfe-b9e7-41ec4cb29335"
-					(reference "C1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Project:R")
-		(at 194.945 229.87 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "7f9f2c36-60fa-44ed-a840-52974866b640")
-		(property "Reference" "R6"
-			(at 194.945 207.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "365k 0.1%"
-			(at 194.945 251.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 194.945 229.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 194.945 229.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 194.945 229.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "2494a770-91a3-41a3-9f6c-7824643310e8")
-		)
-		(pin "2"
-			(uuid "d88bf82f-84db-4d4f-9fd2-7d20eb2203d2")
-		)
-		(instances
-			(project "esp32-e220"
-				(path "/f1bd43af-018b-4bfe-b9e7-41ec4cb29335"
-					(reference "R6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Project:C")
-		(at 194.945 139.7 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "8267cac4-371c-4ce3-b0ce-e493d87819f5")
-		(property "Reference" "C6"
-			(at 194.945 117.7 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100nF 16V X7R"
-			(at 194.945 161.7 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 194.945 139.7 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 194.945 139.7 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 194.945 139.7 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "000ab741-ce2e-41b9-90ce-27109daad393")
-		)
-		(pin "2"
-			(uuid "32662f02-9fa7-48c9-856f-6539342d3e91")
-		)
-		(instances
-			(project "esp32-e220"
-				(path "/f1bd43af-018b-4bfe-b9e7-41ec4cb29335"
-					(reference "C6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Project:D")
-		(at 104.775 229.87 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "9ee77b90-1709-4ea9-93eb-26f2c81fe7f1")
-		(property "Reference" "D1"
-			(at 104.775 207.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "MMSD4148T1G"
-			(at 104.775 251.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 104.775 229.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 104.775 229.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 104.775 229.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d407212d-3673-41e9-9550-95138fdc04e6")
-		)
-		(pin "2"
-			(uuid "93a27f3f-f139-40a8-bdac-d05120e48061")
-		)
-		(instances
-			(project "esp32-e220"
-				(path "/f1bd43af-018b-4bfe-b9e7-41ec4cb29335"
-					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Project:C")
-		(at 234.95 229.87 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a2dbdbb9-cf9a-4573-af28-aa2e85fdd86c")
-		(property "Reference" "C3"
-			(at 234.95 207.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1uF 10V X7R"
-			(at 234.95 251.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 234.95 229.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 234.95 229.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 234.95 229.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "2174cbef-bfb1-4562-bb5d-a9e2127e3c4c")
-		)
-		(pin "2"
-			(uuid "98dd1d1a-1a38-4739-bbcc-55383f771282")
-		)
-		(instances
-			(project "esp32-e220"
-				(path "/f1bd43af-018b-4bfe-b9e7-41ec4cb29335"
-					(reference "C3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Project:TUSB320LAIRWBR")
-		(at 74.93 189.865 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "aed6fe03-eb98-4e80-8ee2-ddf3a4d70edd")
-		(property "Reference" "U1"
-			(at 74.93 167.865 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TUSB320LAIRWBR"
-			(at 74.93 211.865 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 74.93 189.865 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tusb320lai.pdf"
-			(at 74.93 189.865 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 74.93 189.865 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3c876dc5-090e-4858-9bb1-b61361899273")
-		)
-		(pin "2"
-			(uuid "4e9f49ad-90b0-445d-9458-88a910c81972")
-		)
-		(pin "3"
-			(uuid "bac168ca-1569-41fc-adc4-a5657eb50378")
-		)
-		(pin "4"
-			(uuid "7ced693b-dfe1-4ac8-9d17-7168b152a100")
-		)
-		(pin "5"
-			(uuid "b45873e3-fac2-4e8f-93c8-777a33bd018c")
-		)
-		(pin "6"
-			(uuid "36928e74-734a-4acf-a9ca-05bad149b110")
-		)
-		(pin "7"
-			(uuid "adc9c62f-e41f-422c-a47e-06a40a9345f2")
-		)
-		(pin "8"
-			(uuid "dc591e81-e8d6-4ef0-bfec-6fdcf0f98574")
-		)
-		(pin "9"
-			(uuid "1ea6477f-eda1-40a7-a9ff-82eea24ade32")
-		)
-		(pin "10"
-			(uuid "362d4af8-76da-48ef-8fce-1351910a1c1d")
-		)
-		(pin "11"
-			(uuid "dccec632-8793-4d60-a5dc-76251cf18ba2")
-		)
-		(pin "12"
-			(uuid "0646753d-a1fe-4326-9733-d3c0663323a6")
-		)
-		(instances
-			(project "esp32-e220"
-				(path "/f1bd43af-018b-4bfe-b9e7-41ec4cb29335"
-					(reference "U1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Project:R")
-		(at 144.78 245.11 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "cc683be6-31b6-4108-aef3-6e895b7eff16")
-		(property "Reference" "R4"
-			(at 144.78 223.11 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "330k 0.1%"
-			(at 144.78 267.11 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 144.78 245.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 144.78 245.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 144.78 245.11 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b846f332-de0b-4966-be14-50e9dd547834")
-		)
-		(pin "2"
-			(uuid "07d37a64-5caa-43fd-9988-cf56ea9f59f9")
-		)
-		(instances
-			(project "esp32-e220"
-				(path "/f1bd43af-018b-4bfe-b9e7-41ec4cb29335"
-					(reference "R4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Project:E220_900T22D")
-		(at 175.26 104.775 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e678d609-a739-48da-9649-b44ec8025119")
-		(property "Reference" "J3"
-			(at 175.26 82.775 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "E220-900T22D"
-			(at 175.26 126.775 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 175.26 104.775 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.cdebyte.com/pdf-down.aspx?id=4221"
-			(at 175.26 104.775 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 175.26 104.775 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8e506796-22c1-47ca-8e85-72b3f2151a7f")
-		)
-		(pin "2"
-			(uuid "46526760-2e0e-4a52-9015-a077036dabed")
-		)
-		(pin "3"
-			(uuid "004edabb-8931-45fa-8488-1d245a87e5c8")
-		)
-		(pin "4"
-			(uuid "f406d4a4-182e-4210-84d7-42f05bc8cb1e")
-		)
-		(pin "5"
-			(uuid "e4a76310-20ee-4bc1-bacb-ed78d3c4f22f")
-		)
-		(pin "6"
-			(uuid "05604ddf-81c4-4abf-ae40-ed9a3dc1dd98")
-		)
-		(pin "7"
-			(uuid "d0a36936-4392-4591-bb87-f533d3b68a18")
-		)
-		(instances
-			(project "esp32-e220"
-				(path "/f1bd43af-018b-4bfe-b9e7-41ec4cb29335"
-					(reference "J3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Project:R")
-		(at 104.775 245.11 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "eaea6ac4-8af9-4c45-9f2e-46dbf62137b6")
-		(property "Reference" "R2"
-			(at 104.775 223.11 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "47k 0.1%"
-			(at 104.775 267.11 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 104.775 245.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 104.775 245.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 104.775 245.11 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "1dbd354d-20a1-4582-9b25-127ee152d33f")
-		)
-		(pin "2"
-			(uuid "84758556-e3f0-4f4e-9c3e-297b2e5cb052")
-		)
-		(instances
-			(project "esp32-e220"
-				(path "/f1bd43af-018b-4bfe-b9e7-41ec4cb29335"
-					(reference "R2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Project:C")
-		(at 64.77 245.11 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "fd08752d-7c9d-4e25-b16c-0b199150dcd5")
-		(property "Reference" "C2"
-			(at 64.77 223.11 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "100nF 16V X7R"
-			(at 64.77 267.11 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 64.77 245.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 64.77 245.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 64.77 245.11 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ae12a2c0-8000-4a50-b997-5bd3f5dac805")
-		)
-		(pin "2"
-			(uuid "45d28426-7dda-4771-bd27-f65914a4fea2")
-		)
-		(instances
-			(project "esp32-e220"
-				(path "/f1bd43af-018b-4bfe-b9e7-41ec4cb29335"
-					(reference "C2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Project:DevKit_Right_1x15")
-		(at 69.85 135.255 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "ffdae19a-8da2-4124-9d3b-20c1e91b21fe")
-		(property "Reference" "J2"
-			(at 69.85 113.255 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "DEVKIT_RIGHT (USB-C toward antenna)"
-			(at 69.85 157.255 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 69.85 135.255 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 69.85 135.255 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 69.85 135.255 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "56e8d7a9-e3f8-4cb5-96d0-c32768feddef")
-		)
-		(pin "2"
-			(uuid "27b14933-465c-4436-97dc-a0cf954b2899")
-		)
-		(pin "3"
-			(uuid "66c0f690-1080-4da2-afa9-e8fd5ae0bdc1")
-		)
-		(pin "4"
-			(uuid "e0462127-f55f-4976-a398-3cce664bc1ad")
-		)
-		(pin "5"
-			(uuid "1d1b2cd0-bcba-407a-9072-516eaf6e98ac")
-		)
-		(pin "6"
-			(uuid "7fd1b254-ad08-44be-976d-cfefbf84bfcc")
-		)
-		(pin "7"
-			(uuid "6cf63c1b-fc64-4543-a390-b681cc3a8189")
-		)
-		(pin "8"
-			(uuid "3a32b8f3-690e-4bfc-a6f3-626a2d2cc080")
-		)
-		(pin "9"
-			(uuid "c75ceeef-fb4a-4d05-b559-19f8f53d3fdc")
-		)
-		(pin "10"
-			(uuid "7465f948-27f0-4454-abb4-d44e61849242")
-		)
-		(pin "11"
-			(uuid "e0608cf7-939c-449b-ac86-97b0ccae2fc1")
-		)
-		(pin "12"
-			(uuid "c1eb2b4d-b5fb-4863-9202-c92a014315a3")
-		)
-		(pin "13"
-			(uuid "09bd7898-d4a8-417e-afc5-09acb27b8110")
-		)
-		(pin "14"
-			(uuid "99e97403-dc0d-4c07-b5f1-74cf7b0c3c2c")
-		)
-		(pin "15"
-			(uuid "9f16d29c-d4f8-43c4-aac2-15d1ee422be9")
-		)
-		(instances
-			(project "esp32-e220"
-				(path "/f1bd43af-018b-4bfe-b9e7-41ec4cb29335"
-					(reference "J2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(sheet_instances
-		(path "/"
-			(page "1")
-		)
-	)
-	(embedded_fonts no)
+(kicad_sch (version 20210126) (generator eeschema)
+  (uuid b8daee96-a694-4ef2-b35a-a4afc37f79d4)
+  (paper "A4")
+  (title_block (title "ESP32 E220 LoRa Receiver — Stage 5 modular carrier"))
+  (lib_symbols
+    (symbol "Project:DevKit_Left_1x15" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "J" (id 0) (at 0 24.13 0) (effects (font (size 1.27 1.27))))
+      (property "Value" "DEVKIT_LEFT_1x15" (id 1) (at 0 -24.13 0) (effects (font (size 1.27 1.27))))
+      (property "Footprint" "" (id 2) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "Datasheet" "" (id 3) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "ki_description" "User-verified left DevKit header; USB-C toward antenna" (id 4) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (symbol "DevKit_Left_1x15_1_1"
+        (rectangle (start -1.27 22.86) (end 2.54 -22.86) (stroke (width 0.254)) (fill (type background)))
+        (pin passive line (at -5.08 17.78 0) (length 3.81)
+          (name "VIN / 5V" (effects (font (size 1.0 1.0))))
+          (number "1" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 15.240000000000002 0) (length 3.81)
+          (name "GND" (effects (font (size 1.0 1.0))))
+          (number "2" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 12.700000000000001 0) (length 3.81)
+          (name "GPIO13" (effects (font (size 1.0 1.0))))
+          (number "3" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 10.16 0) (length 3.81)
+          (name "GPIO12" (effects (font (size 1.0 1.0))))
+          (number "4" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 7.620000000000001 0) (length 3.81)
+          (name "GPIO14" (effects (font (size 1.0 1.0))))
+          (number "5" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 5.080000000000002 0) (length 3.81)
+          (name "GPIO27" (effects (font (size 1.0 1.0))))
+          (number "6" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 2.540000000000001 0) (length 3.81)
+          (name "GPIO26" (effects (font (size 1.0 1.0))))
+          (number "7" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 0.0 0) (length 3.81)
+          (name "GPIO25" (effects (font (size 1.0 1.0))))
+          (number "8" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -2.539999999999999 0) (length 3.81)
+          (name "GPIO33" (effects (font (size 1.0 1.0))))
+          (number "9" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -5.079999999999998 0) (length 3.81)
+          (name "GPIO32" (effects (font (size 1.0 1.0))))
+          (number "10" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -7.619999999999997 0) (length 3.81)
+          (name "GPIO35" (effects (font (size 1.0 1.0))))
+          (number "11" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -10.16 0) (length 3.81)
+          (name "GPIO34" (effects (font (size 1.0 1.0))))
+          (number "12" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -12.7 0) (length 3.81)
+          (name "GPIO39/VN" (effects (font (size 1.0 1.0))))
+          (number "13" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -15.240000000000002 0) (length 3.81)
+          (name "GPIO36/VP" (effects (font (size 1.0 1.0))))
+          (number "14" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -17.78 0) (length 3.81)
+          (name "EN" (effects (font (size 1.0 1.0))))
+          (number "15" (effects (font (size 1.0 1.0))))
+        )
+      )
+    )
+    (symbol "Project:DevKit_Right_1x15" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "J" (id 0) (at 0 24.13 0) (effects (font (size 1.27 1.27))))
+      (property "Value" "DEVKIT_RIGHT_1x15" (id 1) (at 0 -24.13 0) (effects (font (size 1.27 1.27))))
+      (property "Footprint" "" (id 2) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "Datasheet" "" (id 3) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "ki_description" "User-verified right DevKit header; USB-C toward antenna" (id 4) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (symbol "DevKit_Right_1x15_1_1"
+        (rectangle (start -1.27 22.86) (end 2.54 -22.86) (stroke (width 0.254)) (fill (type background)))
+        (pin passive line (at -5.08 17.78 0) (length 3.81)
+          (name "3V3" (effects (font (size 1.0 1.0))))
+          (number "1" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 15.240000000000002 0) (length 3.81)
+          (name "GND" (effects (font (size 1.0 1.0))))
+          (number "2" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 12.700000000000001 0) (length 3.81)
+          (name "GPIO15" (effects (font (size 1.0 1.0))))
+          (number "3" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 10.16 0) (length 3.81)
+          (name "GPIO2" (effects (font (size 1.0 1.0))))
+          (number "4" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 7.620000000000001 0) (length 3.81)
+          (name "GPIO4" (effects (font (size 1.0 1.0))))
+          (number "5" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 5.080000000000002 0) (length 3.81)
+          (name "GPIO16/RX2" (effects (font (size 1.0 1.0))))
+          (number "6" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 2.540000000000001 0) (length 3.81)
+          (name "GPIO17/TX2" (effects (font (size 1.0 1.0))))
+          (number "7" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 0.0 0) (length 3.81)
+          (name "GPIO5" (effects (font (size 1.0 1.0))))
+          (number "8" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -2.539999999999999 0) (length 3.81)
+          (name "GPIO18" (effects (font (size 1.0 1.0))))
+          (number "9" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -5.079999999999998 0) (length 3.81)
+          (name "GPIO19" (effects (font (size 1.0 1.0))))
+          (number "10" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -7.619999999999997 0) (length 3.81)
+          (name "GPIO21" (effects (font (size 1.0 1.0))))
+          (number "11" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -10.16 0) (length 3.81)
+          (name "GPIO3/RX0" (effects (font (size 1.0 1.0))))
+          (number "12" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -12.7 0) (length 3.81)
+          (name "GPIO1/TX0" (effects (font (size 1.0 1.0))))
+          (number "13" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -15.240000000000002 0) (length 3.81)
+          (name "GPIO22" (effects (font (size 1.0 1.0))))
+          (number "14" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -17.78 0) (length 3.81)
+          (name "GPIO23" (effects (font (size 1.0 1.0))))
+          (number "15" (effects (font (size 1.0 1.0))))
+        )
+      )
+    )
+    (symbol "Project:E220_T22D_400_900" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "J" (id 0) (at 0 13.97 0) (effects (font (size 1.27 1.27))))
+      (property "Value" "E220-T22D 400/900 MHz" (id 1) (at 0 -13.97 0) (effects (font (size 1.27 1.27))))
+      (property "Footprint" "" (id 2) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "Datasheet" "" (id 3) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "ki_description" "EBYTE E220-400T22D / E220-900T22D common verified pin definition" (id 4) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (symbol "E220_T22D_400_900_1_1"
+        (rectangle (start -1.27 12.700000000000001) (end 2.54 -12.700000000000001) (stroke (width 0.254)) (fill (type background)))
+        (pin passive line (at -5.08 7.62 0) (length 3.81)
+          (name "M0" (effects (font (size 1.0 1.0))))
+          (number "1" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 5.08 0) (length 3.81)
+          (name "M1" (effects (font (size 1.0 1.0))))
+          (number "2" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 2.54 0) (length 3.81)
+          (name "RXD" (effects (font (size 1.0 1.0))))
+          (number "3" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 0.0 0) (length 3.81)
+          (name "TXD" (effects (font (size 1.0 1.0))))
+          (number "4" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -2.54 0) (length 3.81)
+          (name "AUX" (effects (font (size 1.0 1.0))))
+          (number "5" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -5.079999999999999 0) (length 3.81)
+          (name "VCC" (effects (font (size 1.0 1.0))))
+          (number "6" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -7.62 0) (length 3.81)
+          (name "GND" (effects (font (size 1.0 1.0))))
+          (number "7" (effects (font (size 1.0 1.0))))
+        )
+      )
+    )
+    (symbol "Project:USB_C_POWER" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "J" (id 0) (at 0 13.969999999999999 0) (effects (font (size 1.27 1.27))))
+      (property "Value" "USB-C power input" (id 1) (at 0 -13.969999999999999 0) (effects (font (size 1.27 1.27))))
+      (property "Footprint" "" (id 2) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "Datasheet" "" (id 3) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "ki_description" "Power-only USB-C functional interface; connector PN USB4105-GF-A" (id 4) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (symbol "USB_C_POWER_1_1"
+        (rectangle (start -1.27 12.7) (end 2.54 -12.7) (stroke (width 0.254)) (fill (type background)))
+        (pin passive line (at -5.08 3.81 0) (length 3.81)
+          (name "VBUS" (effects (font (size 1.0 1.0))))
+          (number "1" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 1.27 0) (length 3.81)
+          (name "CC1" (effects (font (size 1.0 1.0))))
+          (number "2" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -1.27 0) (length 3.81)
+          (name "CC2" (effects (font (size 1.0 1.0))))
+          (number "3" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -3.81 0) (length 3.81)
+          (name "GND" (effects (font (size 1.0 1.0))))
+          (number "4" (effects (font (size 1.0 1.0))))
+        )
+      )
+    )
+    (symbol "Project:TUSB320LAIRWBR" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "U" (id 0) (at 0 20.32 0) (effects (font (size 1.27 1.27))))
+      (property "Value" "TUSB320LAIRWBR" (id 1) (at 0 -20.32 0) (effects (font (size 1.27 1.27))))
+      (property "Footprint" "" (id 2) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "Datasheet" "" (id 3) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "ki_description" "TI TUSB320LAI, 12-pin RWB pin functions" (id 4) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (symbol "TUSB320LAIRWBR_1_1"
+        (rectangle (start -1.27 19.05) (end 2.54 -19.05) (stroke (width 0.254)) (fill (type background)))
+        (pin passive line (at -5.08 13.97 0) (length 3.81)
+          (name "CC1" (effects (font (size 1.0 1.0))))
+          (number "1" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 11.43 0) (length 3.81)
+          (name "CC2" (effects (font (size 1.0 1.0))))
+          (number "2" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 8.89 0) (length 3.81)
+          (name "PORT" (effects (font (size 1.0 1.0))))
+          (number "3" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 6.3500000000000005 0) (length 3.81)
+          (name "VBUS_DET" (effects (font (size 1.0 1.0))))
+          (number "4" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 3.8100000000000005 0) (length 3.81)
+          (name "ADDR" (effects (font (size 1.0 1.0))))
+          (number "5" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 1.2700000000000014 0) (length 3.81)
+          (name "INT_N/OUT3" (effects (font (size 1.0 1.0))))
+          (number "6" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -1.2699999999999996 0) (length 3.81)
+          (name "SDA/OUT1" (effects (font (size 1.0 1.0))))
+          (number "7" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -3.8100000000000005 0) (length 3.81)
+          (name "SCL/OUT2" (effects (font (size 1.0 1.0))))
+          (number "8" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -6.35 0) (length 3.81)
+          (name "ID" (effects (font (size 1.0 1.0))))
+          (number "9" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -8.889999999999999 0) (length 3.81)
+          (name "GND" (effects (font (size 1.0 1.0))))
+          (number "10" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -11.429999999999998 0) (length 3.81)
+          (name "EN_N" (effects (font (size 1.0 1.0))))
+          (number "11" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -13.97 0) (length 3.81)
+          (name "VDD" (effects (font (size 1.0 1.0))))
+          (number "12" (effects (font (size 1.0 1.0))))
+        )
+      )
+    )
+    (symbol "Project:TPS259630DDAR" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "U" (id 0) (at 0 15.24 0) (effects (font (size 1.27 1.27))))
+      (property "Value" "TPS259630DDAR" (id 1) (at 0 -15.24 0) (effects (font (size 1.27 1.27))))
+      (property "Footprint" "" (id 2) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "Datasheet" "" (id 3) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "ki_description" "TI TPS259630, 8-pin DDA pin functions" (id 4) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (symbol "TPS259630DDAR_1_1"
+        (rectangle (start -1.27 13.97) (end 2.54 -13.97) (stroke (width 0.254)) (fill (type background)))
+        (pin passive line (at -5.08 8.89 0) (length 3.81)
+          (name "GND" (effects (font (size 1.0 1.0))))
+          (number "1" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 6.3500000000000005 0) (length 3.81)
+          (name "dVdt" (effects (font (size 1.0 1.0))))
+          (number "2" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 3.8100000000000005 0) (length 3.81)
+          (name "EN/UVLO" (effects (font (size 1.0 1.0))))
+          (number "3" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 1.2700000000000005 0) (length 3.81)
+          (name "IN" (effects (font (size 1.0 1.0))))
+          (number "4" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -1.2699999999999996 0) (length 3.81)
+          (name "OUT" (effects (font (size 1.0 1.0))))
+          (number "5" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -3.8099999999999987 0) (length 3.81)
+          (name "FLT" (effects (font (size 1.0 1.0))))
+          (number "6" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -6.35 0) (length 3.81)
+          (name "ILM" (effects (font (size 1.0 1.0))))
+          (number "7" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -8.89 0) (length 3.81)
+          (name "OVLO" (effects (font (size 1.0 1.0))))
+          (number "8" (effects (font (size 1.0 1.0))))
+        )
+      )
+    )
+    (symbol "Project:R" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "R" (id 0) (at 0 13.969999999999999 0) (effects (font (size 1.27 1.27))))
+      (property "Value" "R" (id 1) (at 0 -13.969999999999999 0) (effects (font (size 1.27 1.27))))
+      (property "Footprint" "" (id 2) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "Datasheet" "" (id 3) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "ki_description" "Passive resistor" (id 4) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (symbol "R_1_1"
+        (rectangle (start -1.27 12.7) (end 2.54 -12.7) (stroke (width 0.254)) (fill (type background)))
+        (pin passive line (at -5.08 1.27 0) (length 3.81)
+          (name "1" (effects (font (size 1.0 1.0))))
+          (number "1" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -1.27 0) (length 3.81)
+          (name "2" (effects (font (size 1.0 1.0))))
+          (number "2" (effects (font (size 1.0 1.0))))
+        )
+      )
+    )
+    (symbol "Project:C" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "C" (id 0) (at 0 13.969999999999999 0) (effects (font (size 1.27 1.27))))
+      (property "Value" "C" (id 1) (at 0 -13.969999999999999 0) (effects (font (size 1.27 1.27))))
+      (property "Footprint" "" (id 2) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "Datasheet" "" (id 3) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "ki_description" "Passive capacitor" (id 4) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (symbol "C_1_1"
+        (rectangle (start -1.27 12.7) (end 2.54 -12.7) (stroke (width 0.254)) (fill (type background)))
+        (pin passive line (at -5.08 1.27 0) (length 3.81)
+          (name "1" (effects (font (size 1.0 1.0))))
+          (number "1" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -1.27 0) (length 3.81)
+          (name "2" (effects (font (size 1.0 1.0))))
+          (number "2" (effects (font (size 1.0 1.0))))
+        )
+      )
+    )
+    (symbol "Project:D" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "D" (id 0) (at 0 13.969999999999999 0) (effects (font (size 1.27 1.27))))
+      (property "Value" "D" (id 1) (at 0 -13.969999999999999 0) (effects (font (size 1.27 1.27))))
+      (property "Footprint" "" (id 2) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "Datasheet" "" (id 3) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "ki_description" "Diode" (id 4) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (symbol "D_1_1"
+        (rectangle (start -1.27 12.7) (end 2.54 -12.7) (stroke (width 0.254)) (fill (type background)))
+        (pin passive line (at -5.08 1.27 0) (length 3.81)
+          (name "1" (effects (font (size 1.0 1.0))))
+          (number "1" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -1.27 0) (length 3.81)
+          (name "2" (effects (font (size 1.0 1.0))))
+          (number "2" (effects (font (size 1.0 1.0))))
+        )
+      )
+    )
+    (symbol "Project:MMBT3904LT1G" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "Q" (id 0) (at 0 13.969999999999999 0) (effects (font (size 1.27 1.27))))
+      (property "Value" "MMBT3904LT1G" (id 1) (at 0 -13.969999999999999 0) (effects (font (size 1.27 1.27))))
+      (property "Footprint" "" (id 2) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "Datasheet" "" (id 3) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "ki_description" "onsemi NPN transistor" (id 4) (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (symbol "MMBT3904LT1G_1_1"
+        (rectangle (start -1.27 12.7) (end 2.54 -12.7) (stroke (width 0.254)) (fill (type background)))
+        (pin passive line (at -5.08 2.54 0) (length 3.81)
+          (name "B" (effects (font (size 1.0 1.0))))
+          (number "1" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 0.0 0) (length 3.81)
+          (name "C" (effects (font (size 1.0 1.0))))
+          (number "2" (effects (font (size 1.0 1.0))))
+        )
+        (pin passive line (at -5.08 -2.54 0) (length 3.81)
+          (name "E" (effects (font (size 1.0 1.0))))
+          (number "3" (effects (font (size 1.0 1.0))))
+        )
+      )
+    )
+  )
+  (symbol (lib_id "Project:DevKit_Left_1x15") (at 69.85 80.01 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid dc9261c6-b2b6-4ed8-aa19-6cf3bfc900d3)
+    (property "Reference" "J1" (id 0) (at 69.85 58.010000000000005 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "DEVKIT_LEFT (USB-C toward antenna)" (id 1) (at 69.85 102.01 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 69.85 80.01 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 69.85 80.01 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid b04e5ef5-44a2-4c6c-83db-de275261b718))
+    (pin "2" (uuid 552d17e2-ae65-450a-b4ff-954fafb0c6b9))
+    (pin "3" (uuid 15ae6140-18af-4840-965e-571a7c632aab))
+    (pin "4" (uuid 51b9bc4a-23f2-4d7b-8d20-ac6d40080012))
+    (pin "5" (uuid 3c95333d-111e-43d5-868a-035449fef2e8))
+    (pin "6" (uuid 11b3f71a-73aa-423e-97f3-4967439cf4ee))
+    (pin "7" (uuid f5edba1d-6033-4b27-af6e-fbaaa7e34556))
+    (pin "8" (uuid 3b7d0a77-76bf-4c0f-b10b-9ce46787b427))
+    (pin "9" (uuid 21714e94-0b3a-450b-85d7-f354cd673d3e))
+    (pin "10" (uuid 13eb56d2-07c0-45fa-9244-73fadd0e2a7d))
+    (pin "11" (uuid 52da3dde-f89f-4b72-ac11-1983ce01c995))
+    (pin "12" (uuid 1673c7ac-15fc-416c-a8a8-1ce3dda88d1a))
+    (pin "13" (uuid 6f6702b0-83d2-4464-bd1b-78afa9dded6e))
+    (pin "14" (uuid 6b4b4c59-b1b4-46e7-8ea4-87eb1ee8890e))
+    (pin "15" (uuid b5baa6b0-d1db-4952-a79b-7c7e123c2a18))
+  )
+  (symbol (lib_id "Project:DevKit_Right_1x15") (at 69.85 134.62 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid adbde890-cc72-4e6a-b163-e4b82649e5e0)
+    (property "Reference" "J2" (id 0) (at 69.85 112.62 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "DEVKIT_RIGHT (USB-C toward antenna)" (id 1) (at 69.85 156.62 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 69.85 134.62 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 69.85 134.62 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid b8f259ac-c209-4085-b9e8-2ee76b7dcdee))
+    (pin "2" (uuid d16eb8f3-a39a-4321-89da-1dbc5d72b845))
+    (pin "3" (uuid 089e39b6-11b3-4cc9-b394-a927f300d6ac))
+    (pin "4" (uuid bf51c18f-a0d2-425e-9155-909b39911e05))
+    (pin "5" (uuid 39584eac-cdea-4294-82e2-9870fb1a16a5))
+    (pin "6" (uuid e830d3c8-7fbf-430b-97cf-742bfeb6f800))
+    (pin "7" (uuid 695dae2b-95b8-4720-9fec-a17bfd512329))
+    (pin "8" (uuid d0c8666e-d47f-448f-9419-b6081ddbe86c))
+    (pin "9" (uuid dac17074-3d70-4f84-a079-5a5ed350eb59))
+    (pin "10" (uuid 6e56b80e-e3de-4a0c-9852-f24c35a2ed7b))
+    (pin "11" (uuid 9874c8dc-c4d5-4dbb-aa13-b9273ad38ccf))
+    (pin "12" (uuid fd4b2317-56a9-4cc1-9a3a-fb4d72af35d0))
+    (pin "13" (uuid c126bbe3-ae84-4aad-a8c5-b997f06eb5f8))
+    (pin "14" (uuid 95f9938d-20dd-42ce-8f9c-ff6907de7748))
+    (pin "15" (uuid 36e2606d-29f4-4b61-8f6e-5e0db3615b99))
+  )
+  (symbol (lib_id "Project:E220_T22D_400_900") (at 175.26 105.41 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid 65e4dab9-4f76-4b16-82dc-558f4f3846af)
+    (property "Reference" "J3" (id 0) (at 175.26 83.41 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "E220-T22D SOCKET — FIT 400T22D OR 900T22D" (id 1) (at 175.26 127.41 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 175.26 105.41 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://www.cdebyte.com/pdf-down.aspx?id=4221" (id 3) (at 175.26 105.41 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid d7636042-80f7-42b8-b4f6-3037189ed1c9))
+    (pin "2" (uuid 633f693d-122b-4918-8ac1-6a3aa8ae4947))
+    (pin "3" (uuid 54a81a43-f173-4eed-afbc-43edc82896cd))
+    (pin "4" (uuid 1754be20-1bb3-49a7-aa7c-a3dd4edea94e))
+    (pin "5" (uuid fd6a6e22-38f8-4ad4-9e2e-d2fc65985861))
+    (pin "6" (uuid 00c9c7d9-fdf0-4366-bed5-c1200fee6438))
+    (pin "7" (uuid 602168bd-d157-40c6-9c23-4a780695c323))
+  )
+  (symbol (lib_id "Project:USB_C_POWER") (at 25.4 170.18 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid a95f8589-a5b1-4d84-8323-d2c04f61a290)
+    (property "Reference" "J4" (id 0) (at 25.4 148.18 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "USB4105-GF-A" (id 1) (at 25.4 192.18 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 25.4 170.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://gct.co/files/drawings/usb4105.pdf" (id 3) (at 25.4 170.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 0498d61c-427a-4021-9808-7bb920a6c792))
+    (pin "2" (uuid 2f1ba8c3-247d-4e00-8f84-65d2473f0d02))
+    (pin "3" (uuid b511701e-8762-4b5b-a25f-1bd7c7143229))
+    (pin "4" (uuid b47a0b11-8243-4e63-9aa0-c364c2e34eb0))
+  )
+  (symbol (lib_id "Project:TUSB320LAIRWBR") (at 74.93 190.5 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid 5607e9a6-cd44-4657-9d9d-9c616658994e)
+    (property "Reference" "U1" (id 0) (at 74.93 168.5 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "TUSB320LAIRWBR" (id 1) (at 74.93 212.5 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 74.93 190.5 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://www.ti.com/lit/ds/symlink/tusb320lai.pdf" (id 3) (at 74.93 190.5 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 03c84a8d-9811-4a4a-a17a-3800417b5892))
+    (pin "2" (uuid ff8df07e-8c70-48e7-9057-a24d8583e434))
+    (pin "3" (uuid d134f6e1-5636-4a26-a5f2-51be577c882d))
+    (pin "4" (uuid c4b5f7dc-a52e-4590-b79a-55c745b464d7))
+    (pin "5" (uuid 1866dddc-35b6-4f78-ad7e-f4a80bce7a2f))
+    (pin "6" (uuid f26615c9-321a-43d6-a239-9b8e1281e273))
+    (pin "7" (uuid cd19e2f0-8206-4a2c-b1a0-e5046dc09911))
+    (pin "8" (uuid 7c0b863c-a01a-4c45-917a-b8439044a45a))
+    (pin "9" (uuid 5b054a65-d1f6-4b02-972c-8bc71de86e3c))
+    (pin "10" (uuid 830e4eac-0bef-45ed-abde-fa3c4cef93fb))
+    (pin "11" (uuid 1ca3633d-931d-46eb-9ce8-2c41b3e98547))
+    (pin "12" (uuid 7b0d65c5-da0b-4e87-ab5c-1fd7e70fa5d3))
+  )
+  (symbol (lib_id "Project:TPS259630DDAR") (at 149.86 190.5 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid d0f7240e-c274-4fab-b1c7-0593de9c9d47)
+    (property "Reference" "U2" (id 0) (at 149.86 168.5 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "TPS259630DDAR" (id 1) (at 149.86 212.5 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 149.86 190.5 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://www.ti.com/lit/ds/symlink/tps2596.pdf" (id 3) (at 149.86 190.5 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 76ded28a-f2e1-4179-9ff3-c755ab20fa27))
+    (pin "2" (uuid 0028c3d1-73db-47c5-bbc9-5c9592a89111))
+    (pin "3" (uuid 681ddec0-0830-4249-b177-55e15a2c71b2))
+    (pin "4" (uuid db4e6250-e652-42b7-8518-fe30b837b1e3))
+    (pin "5" (uuid 118f32e2-bd8c-43df-ab12-202cef02bd02))
+    (pin "6" (uuid 5f61e553-22e8-473c-a4d6-5b6aecf232be))
+    (pin "7" (uuid 064dbc00-9ff9-4e8c-bb71-070e6a08dfa9))
+    (pin "8" (uuid d669ace3-53f3-4b3f-af45-efbc1518b1f4))
+  )
+  (symbol (lib_id "Project:D") (at 105.41 229.87 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid 340bd525-9a95-47e8-ba3a-b1ced879c74b)
+    (property "Reference" "D1" (id 0) (at 105.41 207.87 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "MMSD4148T1G" (id 1) (at 105.41 251.87 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 105.41 229.87 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 105.41 229.87 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 523da822-514e-4980-aa9b-035f1ffbfd10))
+    (pin "2" (uuid 7d09935d-eb8e-4d25-9988-1d39a996c0a2))
+  )
+  (symbol (lib_id "Project:R") (at 74.93 229.87 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid ec665d4f-4194-446e-a472-6d741a0e0568)
+    (property "Reference" "R1" (id 0) (at 74.93 207.87 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "900k 1%" (id 1) (at 74.93 251.87 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 74.93 229.87 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 74.93 229.87 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 82f9a084-8d92-4368-bd06-5494c79b301e))
+    (pin "2" (uuid 10f21376-b587-47ad-9c5a-9030de7fd621))
+  )
+  (symbol (lib_id "Project:R") (at 105.41 245.11 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid b1008d50-a4df-4705-807d-d8869ac64d94)
+    (property "Reference" "R2" (id 0) (at 105.41 223.11 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "47k 0.1%" (id 1) (at 105.41 267.11 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 105.41 245.11 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 105.41 245.11 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid d69423b5-5e34-434e-bafd-c59cad9cddff))
+    (pin "2" (uuid 4c1033a8-f0e3-4760-bbd2-3a27e0783b91))
+  )
+  (symbol (lib_id "Project:R") (at 124.46000000000001 245.11 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid 3bbacd98-8073-43cd-9fb1-fdb0912d115f)
+    (property "Reference" "R3" (id 0) (at 124.46000000000001 223.11 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "47k 0.1%" (id 1) (at 124.46000000000001 267.11 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 124.46000000000001 245.11 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 124.46000000000001 245.11 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 35159c98-6b88-43cf-aa9f-224474204feb))
+    (pin "2" (uuid f7dabc97-d1ce-457a-9f51-a9c34bb34e43))
+  )
+  (symbol (lib_id "Project:R") (at 144.78 245.11 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid 2cd36bcf-864d-481c-8c83-b0bf86af6109)
+    (property "Reference" "R4" (id 0) (at 144.78 223.11 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "330k 0.1%" (id 1) (at 144.78 267.11 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 144.78 245.11 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 144.78 245.11 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 97f0770c-1bf7-4435-8722-89b2b30607a7))
+    (pin "2" (uuid a3195a39-ab01-446b-a680-c7cc99903e24))
+  )
+  (symbol (lib_id "Project:MMBT3904LT1G") (at 165.1 245.11 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid 3c708bd8-c822-4b52-9f6e-5bb9ff4ec76a)
+    (property "Reference" "Q1" (id 0) (at 165.1 223.11 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "MMBT3904LT1G" (id 1) (at 165.1 267.11 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 165.1 245.11 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 165.1 245.11 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 256dc2d8-3e2a-495f-a1e5-d4a32cc93e0f))
+    (pin "2" (uuid 4643f1ee-2dc9-430b-8f44-ee2f0b130b46))
+    (pin "3" (uuid a3b4e06f-5fcb-4fe0-b341-4088830377c4))
+  )
+  (symbol (lib_id "Project:R") (at 175.26 229.87 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid a64d8432-35af-4a12-9bf6-c33b06a1c41c)
+    (property "Reference" "R5" (id 0) (at 175.26 207.87 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "909R 0.1%" (id 1) (at 175.26 251.87 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 175.26 229.87 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 175.26 229.87 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid e0951ece-d388-4991-80f3-b70a3f47b47d))
+    (pin "2" (uuid 2fb6ac1b-82c2-49e8-97ec-d667a075e3d4))
+  )
+  (symbol (lib_id "Project:R") (at 195.58 229.87 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid 7bfe6052-a667-42a9-9bfd-87598b746351)
+    (property "Reference" "R6" (id 0) (at 195.58 207.87 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "365k 0.1%" (id 1) (at 195.58 251.87 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 195.58 229.87 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 195.58 229.87 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 53b07af2-7fda-4a41-81b0-683ced1eccb2))
+    (pin "2" (uuid 426840f8-506c-4e0b-880f-fd96cbf281b8))
+  )
+  (symbol (lib_id "Project:R") (at 214.63 229.87 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid 99ec0b39-c4ec-4669-8922-cd83e5f80b43)
+    (property "Reference" "R7" (id 0) (at 214.63 207.87 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "100k 0.1%" (id 1) (at 214.63 251.87 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 214.63 229.87 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 214.63 229.87 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 2beeba10-d449-434d-aa79-383213676330))
+    (pin "2" (uuid a4732807-5bd0-4610-bd48-20c891dc6cee))
+  )
+  (symbol (lib_id "Project:C") (at 44.45 229.87 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid c0279b71-eb9b-42b4-8af9-07676df804d9)
+    (property "Reference" "C1" (id 0) (at 44.45 207.87 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "1uF 10V X7R" (id 1) (at 44.45 251.87 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 44.45 229.87 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 44.45 229.87 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 6be2f4ac-6112-4b33-bb78-39948213d5ae))
+    (pin "2" (uuid a68da337-63f2-4fd5-979b-cfaa23431252))
+  )
+  (symbol (lib_id "Project:C") (at 64.77 245.11 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid 9bbb6e03-eec5-4707-8134-a07e5f0879ae)
+    (property "Reference" "C2" (id 0) (at 64.77 223.11 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "100nF 16V X7R" (id 1) (at 64.77 267.11 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 64.77 245.11 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 64.77 245.11 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 3ca0fe21-6d7e-40f8-810d-66fa486207af))
+    (pin "2" (uuid dcee138d-bebf-4590-83ec-77d5b3da6333))
+  )
+  (symbol (lib_id "Project:C") (at 234.95000000000002 229.87 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid d3a38cc9-1054-4c3e-9df4-c7b979088467)
+    (property "Reference" "C3" (id 0) (at 234.95000000000002 207.87 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "1uF 10V X7R" (id 1) (at 234.95000000000002 251.87 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 234.95000000000002 229.87 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 234.95000000000002 229.87 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 3e8edec1-7c06-4f8a-ac41-5a63a1c4deb7))
+    (pin "2" (uuid 238e1942-fe09-4220-8bd0-aba30b474eb8))
+  )
+  (symbol (lib_id "Project:C") (at 195.58 245.11 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid b1bd3fc4-4acd-4acf-8ab4-d523d842790a)
+    (property "Reference" "C4" (id 0) (at 195.58 223.11 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "3.3nF 50V C0G" (id 1) (at 195.58 267.11 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 195.58 245.11 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 195.58 245.11 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 2c3aa49e-6a9e-479a-afe3-5729f2e8e210))
+    (pin "2" (uuid 8e2a4a84-ad20-4752-9814-94d499d04f06))
+  )
+  (symbol (lib_id "Project:C") (at 175.26 139.7 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid e1d66ef2-41ea-4120-a0ad-acec6e067b2a)
+    (property "Reference" "C5" (id 0) (at 175.26 117.69999999999999 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "GRM188R61A106MAAL 10uF 10V X5R" (id 1) (at 175.26 161.7 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 175.26 139.7 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 175.26 139.7 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 06264e6d-b98d-418b-a2a1-34f03aa4a235))
+    (pin "2" (uuid 14ce91d2-1a83-4b46-9fd8-e10145c1e05d))
+  )
+  (symbol (lib_id "Project:C") (at 195.58 139.7 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid e4fdafe7-a99e-41cd-b82d-f2959864c7bf)
+    (property "Reference" "C6" (id 0) (at 195.58 117.69999999999999 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "GRM188R71C104KA01D 100nF 16V X7R" (id 1) (at 195.58 161.7 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 195.58 139.7 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 195.58 139.7 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 565fa8b0-a4d2-4c29-b380-d1e93730576b))
+    (pin "2" (uuid 8ec9c35c-a7b2-4fcb-8b7f-d6922a8109b2))
+  )
+  (symbol (lib_id "Project:R") (at 214.63 139.7 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid 2816dc14-9c70-400b-bf49-8bdf707e70f5)
+    (property "Reference" "R8" (id 0) (at 214.63 117.69999999999999 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "10k 1% M0 reset pull-down" (id 1) (at 214.63 161.7 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 214.63 139.7 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 214.63 139.7 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 88b18f84-b00b-432d-9df3-f3bda6df1a6c))
+    (pin "2" (uuid d38f2e6d-c3b0-4063-9371-970c9a71369a))
+  )
+  (symbol (lib_id "Project:R") (at 234.95000000000002 139.7 0) (unit 1)
+    (in_bom yes) (on_board yes)
+    (uuid 4cecc227-68ef-4cc6-813e-41daa1b9ce1c)
+    (property "Reference" "R9" (id 0) (at 234.95000000000002 117.69999999999999 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "10k 1% M1 reset pull-down" (id 1) (at 234.95000000000002 161.7 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (id 2) (at 234.95000000000002 139.7 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 234.95000000000002 139.7 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid deaf871e-7581-497b-8580-245726d80016))
+    (pin "2" (uuid 69b93948-4da6-41b1-9f18-7f65813c6e16))
+  )
+  (label "5V_SYS" (at 64.77 62.230000000000004 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid c18e64ba-95e8-40c2-b885-a601a837b736)
+  )
+  (label "GND" (at 64.77 64.77 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid f4502426-8fd7-4a12-86a2-c95e4866ba35)
+  )
+  (label "E220_AUX" (at 64.77 74.93 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 718cf8e2-ff19-4d91-a18c-aebe61639b73)
+  )
+  (label "E220_M1" (at 64.77 77.47 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 9e13b10c-8bfb-4054-8741-2f5a76da7b59)
+  )
+  (label "E220_M0" (at 64.77 80.01 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 42c6fa7f-f88b-42c6-90e3-8dd5c495daa4)
+  )
+  (no_connect (at 64.77 67.31) (uuid da2483c3-11c9-4c3b-b492-4169bb0e55e5))
+  (no_connect (at 64.77 69.85) (uuid f70dd2ea-8b9c-4baf-aa9f-0c3e9c02177d))
+  (no_connect (at 64.77 72.39) (uuid 512b7dfc-51b3-41d4-97b3-0cd28f0f54ae))
+  (no_connect (at 64.77 82.55) (uuid e8e83b21-77b1-48d2-814f-a63e1dc10ac5))
+  (no_connect (at 64.77 85.09) (uuid 1c482b8e-ac20-40d3-a416-518a6a2006ce))
+  (no_connect (at 64.77 87.63) (uuid 798b2484-2eaa-4460-82b5-3b1755e0a87c))
+  (no_connect (at 64.77 90.17) (uuid 2e071300-d54c-4d87-8158-404b6dddec66))
+  (no_connect (at 64.77 92.71000000000001) (uuid b99c1e5a-1da1-4bd9-a74b-536df84b9453))
+  (no_connect (at 64.77 95.25) (uuid cc520877-d485-4057-bf62-00ce1dbec8a8))
+  (no_connect (at 64.77 97.79) (uuid 3884fc83-7b9f-4ad1-a630-bccd0dc7c651))
+  (label "GND" (at 64.77 119.38 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 5f437000-6ad9-416e-8a53-2e0842eac949)
+  )
+  (label "E220_TXD" (at 64.77 129.54 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 1bd7d19e-dadc-4d46-80a1-d75da5b77146)
+  )
+  (label "E220_RXD" (at 64.77 132.08 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 2453b393-5742-4dd3-b59d-19f38c766c59)
+  )
+  (label "OLED_SDA" (at 64.77 142.24 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 6ad51f81-4bfb-4d49-aed9-941ea2e9fe39)
+  )
+  (label "OLED_SCL" (at 64.77 149.86 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid d1cad8dc-8abe-4aa5-9dd6-741ef3befbcb)
+  )
+  (no_connect (at 64.77 116.84) (uuid 3520477c-43d2-47ef-922c-fe059c6ca568))
+  (no_connect (at 64.77 121.92) (uuid 07602dbb-82e9-4f17-9a51-d292067ef6e6))
+  (no_connect (at 64.77 124.46000000000001) (uuid 02c96945-0f04-455a-9e05-82a88104a6dd))
+  (no_connect (at 64.77 127.0) (uuid 4ca9606b-a366-429a-a87a-037227348872))
+  (no_connect (at 64.77 134.62) (uuid a775b91d-17b1-47a8-bcaf-99ee1cbf6a9e))
+  (no_connect (at 64.77 137.16) (uuid f5cc2b5f-d4c2-4594-a545-ed8969c53211))
+  (no_connect (at 64.77 139.7) (uuid 873b7f36-55b9-4415-9b42-246faaadc6a6))
+  (no_connect (at 64.77 144.78) (uuid 179c9c11-d560-42c5-a961-1820fd3d7d07))
+  (no_connect (at 64.77 147.32) (uuid a8e98457-eea5-4c09-a337-a85888df904e))
+  (no_connect (at 64.77 152.4) (uuid 4ededb05-458f-461e-a187-47b8a8876cde))
+  (label "E220_M0" (at 170.18 97.79 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 48c19c67-c5a7-467e-8d47-00d750f54288)
+  )
+  (label "E220_M1" (at 170.18 100.33 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid e5828695-7100-4841-a201-ad7af11bb4ad)
+  )
+  (label "E220_RXD" (at 170.18 102.87 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 3c987900-cd72-4b32-98a8-c901d3be9076)
+  )
+  (label "E220_TXD" (at 170.18 105.41 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid f8cbe53d-7366-4366-a6a5-b5614d6f3478)
+  )
+  (label "E220_AUX" (at 170.18 107.95 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 99e0e412-f9c9-4b45-a14f-49a344938c79)
+  )
+  (label "5V_SYS" (at 170.18 110.49 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 5ef74aac-e7ee-40c4-8530-11d2e6900be0)
+  )
+  (label "GND" (at 170.18 113.03 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 379d81c4-1870-4f5b-aa5e-143a942457ec)
+  )
+  (label "VBUS_PRE" (at 20.32 166.37 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 1ed35d55-1132-47be-902a-4e073ba99f19)
+  )
+  (label "CC1" (at 20.32 168.91 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 90192099-18fe-43fe-b6d9-1c6e9e11b158)
+  )
+  (label "CC2" (at 20.32 171.45 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 9ec5c176-8c09-4f64-84a6-47547660db50)
+  )
+  (label "GND" (at 20.32 173.99 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid b59d37ad-03f4-43fc-a1f5-23ac24e29837)
+  )
+  (label "CC1" (at 69.85 176.53 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 8950ce1a-77a1-462b-9b15-6da7b6b06e59)
+  )
+  (label "CC2" (at 69.85 179.07 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 52c11505-ae21-4605-8aa8-4daa528815fb)
+  )
+  (label "GND" (at 69.85 181.61 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid bc835d18-30f5-4ff1-a857-6369c94292da)
+  )
+  (label "VBUS_DET" (at 69.85 184.15 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 1cc26c23-68af-4a47-bc5b-c3893669df0c)
+  )
+  (label "NC" (at 69.85 186.69 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid cba4e56c-1c2d-42f0-a0dc-e8d3ddd3eaa4)
+  )
+  (label "NC" (at 69.85 189.23 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 061b42b3-cc4c-4fd2-91cc-e02e39aa8395)
+  )
+  (label "OUT1" (at 69.85 191.77 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 7066f8c6-f972-4b87-af7f-41a3e136af5d)
+  )
+  (label "NC" (at 69.85 194.31 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 5cdf18b5-45c0-4814-a2dd-a6da894b6bdd)
+  )
+  (label "NC" (at 69.85 196.85 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 75bf844f-0c82-4ac7-8f67-de3155160aed)
+  )
+  (label "GND" (at 69.85 199.39000000000001 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid cfe443e7-a622-477b-9e45-dd43aa739ba9)
+  )
+  (label "GND" (at 69.85 201.93 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid afa0c3f4-3aab-4f81-8635-7c71676ff8db)
+  )
+  (label "TUSB_VDD" (at 69.85 204.47 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid f1f94973-dcb4-48bb-a7a3-7d5a735b3569)
+  )
+  (label "GND" (at 144.78 181.61 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 6030b7d8-d6d5-4239-95e0-a2982bbb6a78)
+  )
+  (label "DVDT" (at 144.78 184.15 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 47dd45dd-adcf-47a0-8c00-b73503a41313)
+  )
+  (label "EFUSE_EN" (at 144.78 186.69 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 0ac5253f-5cf2-4bfc-a796-7890ffc863a4)
+  )
+  (label "VBUS_PRE" (at 144.78 189.23 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid cf2da33b-552b-45be-80d2-6bfc76efb46a)
+  )
+  (label "5V_SYS" (at 144.78 191.77 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 7960ef3c-0914-40b6-8b1a-ace179bbc343)
+  )
+  (label "NC" (at 144.78 194.31 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 9ad3774f-c16c-481f-aca0-10a7b2242c8d)
+  )
+  (label "ILM" (at 144.78 196.85 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 780dbcb2-2ce2-422b-ac4b-dd7db50e5ed8)
+  )
+  (label "OVLO" (at 144.78 199.39000000000001 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 7d961820-be02-4db5-9d18-5daf4dd967c7)
+  )
+  (label "VBUS_PRE" (at 100.33 228.6 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid cd7664fc-1818-45d5-b721-e49a997c11ed)
+  )
+  (label "TUSB_VDD" (at 100.33 231.14000000000001 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid bf65a6bc-2b68-4612-876b-6c066cb16858)
+  )
+  (label "VBUS_PRE" (at 69.85 228.6 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid eec37af9-9b09-42a5-9369-21291cce813b)
+  )
+  (label "VBUS_DET" (at 69.85 231.14000000000001 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid b40986d0-ce6d-4127-8636-7eefd9f247b4)
+  )
+  (label "TUSB_VDD" (at 100.33 243.84 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 22795130-996b-4460-a44b-a4ea9ecc74da)
+  )
+  (label "OUT1" (at 100.33 246.38 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 87db5abb-1d45-4eea-a763-c34b6e512541)
+  )
+  (label "OUT1" (at 119.38 243.84 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid c44d992b-6cdf-4e3d-a234-12326a47a5f2)
+  )
+  (label "QBASE" (at 119.38 246.38 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 81176b16-624c-4ffe-ba0f-5db3283acdf0)
+  )
+  (label "TUSB_VDD" (at 139.7 243.84 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid c81b5d8f-7c82-42d9-b9ea-67f06db9020a)
+  )
+  (label "EFUSE_EN" (at 139.7 246.38 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 2c10520e-00f6-4ec6-b91c-8109c2e6fd7e)
+  )
+  (label "ILM" (at 170.18 228.6 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid c5c7b187-c7d3-4ce9-b452-acc82460e28b)
+  )
+  (label "GND" (at 170.18 231.14000000000001 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid d88e90f6-e67d-4812-a27d-f04759c835a6)
+  )
+  (label "VBUS_PRE" (at 190.5 228.6 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 62d2af16-d04c-4dc4-a989-3fc4d189415f)
+  )
+  (label "OVLO" (at 190.5 231.14000000000001 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid a800fec0-ad94-40f0-a796-fb44715e7b90)
+  )
+  (label "OVLO" (at 209.55 228.6 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 4a1a7a35-b334-4576-a930-5ef35fa188ad)
+  )
+  (label "GND" (at 209.55 231.14000000000001 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 6aad1c5f-c978-4ebc-8b6b-ae8e48693c6d)
+  )
+  (label "VBUS_PRE" (at 39.37 228.6 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid d8252348-f57c-4297-a05d-7264b4725772)
+  )
+  (label "GND" (at 39.37 231.14000000000001 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 66ca9371-cb42-4282-8b95-1ef82a4b1d96)
+  )
+  (label "TUSB_VDD" (at 59.69 243.84 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 474e6079-bcdf-4ea8-9ea5-b445a3cf8ccf)
+  )
+  (label "GND" (at 59.69 246.38 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 9a71a588-00ff-4d36-9410-c6287bd0b46b)
+  )
+  (label "5V_SYS" (at 229.87 228.6 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 1684f0f4-ae1f-4116-b004-8d789cea39c3)
+  )
+  (label "GND" (at 229.87 231.14000000000001 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 2b7eaf0f-57b1-4172-8e32-8f252936b09d)
+  )
+  (label "DVDT" (at 190.5 243.84 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 28d2fea8-2c98-4ee8-91c8-12c583799be3)
+  )
+  (label "GND" (at 190.5 246.38 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 79e815da-cf3b-47e3-becb-0a9dfa97d2d8)
+  )
+  (label "5V_SYS" (at 170.18 138.43 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 230837bb-2db2-4c31-aea1-b22c7ed1bd04)
+  )
+  (label "GND" (at 170.18 140.97 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 88865bd1-e61c-40dd-859d-b504b0e004bb)
+  )
+  (label "5V_SYS" (at 190.5 138.43 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 0b2e8adc-256d-4b74-aa6b-7a31accbc66d)
+  )
+  (label "GND" (at 190.5 140.97 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 276b39b8-1423-4af9-8e5f-9346639983e9)
+  )
+  (label "E220_M0" (at 209.55 138.43 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 5895f35e-15d3-4ba9-b3ba-c6f130540d1d)
+  )
+  (label "GND" (at 209.55 140.97 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid b9e6c9e1-20e7-49c6-83d0-8e265ab1cc12)
+  )
+  (label "E220_M1" (at 229.87 138.43 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 4a8555ef-a8a6-47c8-8e82-e70b940fa0ee)
+  )
+  (label "GND" (at 229.87 140.97 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 61eb9977-3c0f-4fa3-8484-56110344588d)
+  )
+  (label "QBASE" (at 160.02 242.57 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 98066139-2d20-49bc-83b7-ab8cddc023b1)
+  )
+  (label "EFUSE_EN" (at 160.02 245.11 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 012bc2fc-6549-47a3-931d-3df6b01a1800)
+  )
+  (label "GND" (at 160.02 247.65 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 89344762-060b-446c-9948-e458ff115c6e)
+  )
+  (text "Stage 5 — main board only. DevKit USB-C programming and main-board USB-C power are mutually exclusive (approved Rev A policy)." (at 18 20 0)
+    (effects (font (size 1.5 1.5)) (justify left bottom))
+    (uuid 0878baf5-4f78-4e8b-b819-cc8aeb6c0a30)
+  )
+  (text "No bare ESP32, 3V3 buck, EN/BOOT or programming circuit on this PCB. J1/J2 are the verified removable DevKit sockets." (at 18 26 0)
+    (effects (font (size 1.5 1.5)) (justify left bottom))
+    (uuid fa70e90e-9a20-4d0d-b48d-dd3cdfeda0c0)
+  )
+  (text "J3 is universal E220-T22D interface: fit one E220-400T22D OR E220-900T22D. No socket/footprint is selected." (at 18 32 0)
+    (effects (font (size 1.5 1.5)) (justify left bottom))
+    (uuid eeae1547-cec8-49da-b201-a678175dde88)
+  )
+  (text "E220 M0/M1 use 10k pull-downs to GND (PROJECT DESIGN CHOICE): reset mode M1/M0=00. AUX is input-only, no pull-down." (at 18 38 0)
+    (effects (font (size 1.5 1.5)) (justify left bottom))
+    (uuid b820af10-d644-4f58-81c7-0d9c55fe2370)
+  )
+  (text "OLED: GPIO21/SDA and GPIO22/SCL are signal-only reservations; OLED VCC and I2C pull-ups are NC/DNP in Rev A." (at 18 44 0)
+    (effects (font (size 1.5 1.5)) (justify left bottom))
+    (uuid 9e8ff706-fbc2-4f25-a867-34cdb772f3a1)
+  )
+  (text "TUSB320 UFP/GPIO: PORT=GND, ADDR=NC, EN_N=GND. OUT1/Q1 gates TPS259630: Default/detach OFF; Medium/High ON." (at 18 50 0)
+    (effects (font (size 1.5 1.5)) (justify left bottom))
+    (uuid 092c9f5b-06bd-47af-b4bb-bdda05849251)
+  )
+  (text "Pin-level Type-C and eFuse support components are documented with official PNs and values. Footprints intentionally unassigned at schematic stage." (at 18 56 0)
+    (effects (font (size 1.5 1.5)) (justify left bottom))
+    (uuid d10d6b38-54ed-4fc3-abe8-ed2c2191d964)
+  )
+  (sheet_instances (path "/" (page "1")))
+  (symbol_instances)
 )

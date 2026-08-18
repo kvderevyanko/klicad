@@ -124,3 +124,42 @@ ESP32-WROOM-32E и EBYTE E220-900T22D. Проект ведётся как про
   manufacturer/orderable revision, official schematic, numbered header map or
   board-level USB-C/5-V backfeed rule has been supplied. No schematic or PCB
   was created or modified.
+- 2026-08-18 — Stage 4.1 schematic: the user verified both 1×15 DevKit header
+  maps/orientation and approved mutually-exclusive main-board/DevKit USB-C
+  operation for Rev A. Created `hardware/esp32-e220.kicad_pro`,
+  `hardware/esp32-e220.kicad_sch`, project-local `esp32-e220.kicad_sym`,
+  `sym-lib-table`, and reproducible `generate_esp32_e220.py`; updated all four
+  engineering documents and added `docs/schematic-review.md`. The schematic
+  contains the removable DevKit sockets, E220 pin mapping and the documented
+  TUSB320/TPS259630 fail-safe power gate/support network; it does not contain a
+  bare ESP32 or a PCB. `kicad-cli sch erc --exit-code-violations` passed with
+  0 errors and 0 warnings. Remaining work is prototype/power/RF/footprint and
+  later PCB validation, not a schematic blocker.
+- 2026-08-18 — Stage 5 modular-carrier documentation: updated only
+  `docs/requirements.md`, `docs/architecture.md`, `docs/open-questions.md` and
+  `docs/component-decisions.md`; no KiCad artifact was modified. Official
+  EBYTE E220-T documentation/product pages were rechecked for both
+  `E220-400T22D` and `E220-900T22D`: common seven-pin 3.3-V UART/control
+  interface, 2.6–5.5-V T22 supply range, 90–110-mA 22-dBm emission current,
+  common 21×36-mm / SMA-K form, and distinct 400-/900-MHz bands. Active design
+  now accepts either installed radio; 10-kOhm M0/M1 pull-downs and local
+  10-uF/100-nF bypass are explicit project choices. Recalculated protected
+  `5V_SYS`: 648.110 mA subtotal and 777.732 mA with 20-% margin, using an
+  explicitly non-manufacturer 500-mA DevKit allocation; OLED VCC/current is
+  NC/DNP and excluded. Schematic blockers: none. PCB/prototype blockers remain
+  socket/footprint, band-specific RF/antenna/legal settings, DevKit/rail
+  thermal-transient measurement, display/LED mechanics and USB procedure.
+- 2026-08-18 — Stage 5 schematic update: regenerated
+  `hardware/esp32-e220.kicad_sch` reproducibly from
+  `hardware/generate_esp32_e220.py`; project-local symbols were regenerated as
+  part of that process. J3 is now labelled for exactly one EBYTE
+  `E220-400T22D` or `E220-900T22D`, keeps the verified seven-pin / DevKit GPIO
+  mapping, and has R8/R9 10-kOhm M0/M1 pull-downs to GND. C5/C6 now name the
+  chosen Murata 10-uF/100-nF E220 decoupling MPNs. GPIO21/22 are explicitly
+  OLED signal-only; OLED VCC and I2C pull-ups are NC/DNP. TUSB320/TPS259630
+  OUT1/Q1 fail-safe gate was preserved. `kicad-cli sch erc
+  --exit-code-violations` reports 0 errors and two documented intentional
+  single-pin OLED-reservation warnings; no exclusion is used. No PCB created.
+  PCB blockers remain final socket/footprint/mechanics, band-specific
+  antenna/regulatory selection, LED/display mechanics, and prototype power/RF
+  validation.
