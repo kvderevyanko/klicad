@@ -60,39 +60,32 @@ Planning rules:
 
 ## Current physical state
 
-The full-board and subsequent local TPS62133 routing attempts were rejected and must not be reused as routing authority. The active board `hardware/esp32-e220.kicad_pcb` still contains retained/partial historical copper and remains the project state of record until a reviewed replacement transaction is accepted. Recompute actual segment/via/airwire counts from the file before every stage.
+The active board `hardware/esp32-e220.kicad_pcb` is the accepted controlled-routing physical state of record. Its input protection, TPS62133 buck implementation, and post-C3 `5V_SYS` distribution were independently reviewed and accepted as physical checkpoints; this is not a production release or a substitute for the final independent PCB review.
 
-A separate **unrouted placement candidate** now exists at `hardware/esp32-e220-assistant-buck-candidate.kicad_pcb`. It is deliberately generated with 0 tracks, 0 vias, and 0 zones so rejected copper cannot contaminate the feasibility proof. It moves only U1/C1/C2/C3/C4/L1 into free central board area and is **not reviewer-approved**. `hardware/make_assistant_buck_candidate.py` reproduces this candidate without overwriting the active board.
+The active board contains the accepted buck and 5V copper, the bounded B.Cu GND plane, and the local F.Cu buck GND zone. Retain the VOS Kelvin connection at the C3 output node and the FSW configuration connection. The completed power endpoints are ESP32 VIN, E220 VCC with C5/C6 bypass, and U3/C7 power. Only D2.1 remains on the `5V_SYS` deferred list because D2 is `PLACEMENT_CANDIDATE_NOT_RELEASED`; no D2-dependent copper is released.
 
-### Power-block placement policy
+Remaining signal, OLED, UART, GPIO, RF-interface, and test-point connections are unrouted. OLED mechanics remain pending. The active board also intentionally retains the deferred input/test-point airwires `/BAT_PLUS` TP1-to-track and `/BUCK_IN` R2.1-to-track-to-TP3; do not claim that all global electrical airwires are gone and do not repair these outside this scope.
 
-Treat the battery-protection block and the switching-regulator island as two physical blocks:
-
-* protection: J4/F1/D3/Q1/R1/R2 near the battery connector;
-* regulator island: U1/C1/C2/C3/C4/L1 as one compact coupled placement.
-
-The Q1-source-to-C1 `BUCK_IN` route is an upstream DC feed. It must be low impedance and appropriately wide, but it is **not** the TPS62133 local high-di/dt input loop. Do not reject a good regulator-island placement solely because Q1-to-C1 is longer than a few millimetres. The critical local input loop is C1 -> PVIN/internal switch -> PGND/EP -> C1. Likewise, the critical output loop ends locally at L1/C3/PGND; the downstream `5V_SYS` distribution may be longer.
-
-For TPS62133 feasibility proofs, do not force every capacitor GND pad to reach EP through a separate narrow F.Cu track. TI Rev.F section 11 requires AGND/PGND/EP to connect directly to the common system ground plane. A candidate proof may therefore use compact local F.Cu GND copper plus immediate GND vias into a continuous B.Cu plane. The high-di/dt loop area, actual filled copper, return continuity, SW isolation, and VOS separation still require explicit review. A zone/plane must not be used to hide an impossible signal/power corridor.
-
-Do not reduce C1/C2/C3/C4/L1 package sizes merely to preserve legacy power-cell coordinates. First prove or reject a current-package candidate using actual copper on a retained `hardware/evidence/` copy through `pcb_routing_planner`, then obtain `pcb_reviewer` approval. Package/MPN changes require a separate evidence/electrical review.
-
-The current candidate coordinates are documented in `hardware/assistant-buck-candidate.md`. Straight-line pad-centre distances are planning evidence only; they are not route lengths or DRC proof. Native KiCad DRC and the project parity checker are mandatory before adoption.
+Historical candidate facts are retained only as history: `hardware/esp32-e220-assistant-buck-candidate.kicad_pcb` is an unrouted 0-track/0-via/0-zone placement candidate, not routing authority or a reviewer-approved replacement. `hardware/make_assistant_buck_candidate.py` reproduces that separate candidate without overwriting the active board.
 
 ## Deferred items
 
 * OLED mechanical datum/final short connector fanout: pending.
-* D2 WS2812 footprint and D2-dependent routing: pending.
-* Global B.Cu ground plane: not created; it requires a separate reviewed stage.
-* Full-board routing: not authorized by the current local-cell state.
+* D2 WS2812 footprint remains `PLACEMENT_CANDIDATE_NOT_RELEASED`; D2-dependent routing is pending.
+* All non-power signal routing and the final OLED mechanical integration: pending.
+* The active PCB is not a production release.
 
 ## Primary operational files
 
 * `hardware/esp32-e220.kicad_sch` — approved electrical schematic.
-* `hardware/esp32-e220.kicad_pcb` — current partial physical state.
+* `hardware/esp32-e220.kicad_pcb` — active controlled-routing physical state.
 * `hardware/generate_esp32_e220.py` — reproducible schematic source.
-* `hardware/generate_stage7_footprints.py` — footprint-library source.
-* `hardware/generate_stage8_placement.py` — pre-routing placement generator; never run it as a whole-board reset without explicit authorization.
+* `hardware/generate_stage7_footprints.py` — active footprint-library source.
+* `hardware/generate_stage8_placement.py` — pre-routing candidate generator only; requires an explicit non-active `PLACEMENT_OUTPUT` and never overwrites the active board.
+* `hardware/make_assistant_buck_candidate.py` — historical feasibility helper for the separate buck candidate.
+* `hardware/rework_buck_local.py` — obsolete failed experiment; not routing authority.
+* `hardware/route_5v_distribution.py` — accepted completed-stage helper; requires an explicit board path and stops with `STAGE ALREADY APPLIED` before reapplying accepted copper.
+* `hardware/esp32-e220.kicad_pcb` — active routed PCB physical state record.
 * `hardware/check_schematic_pcb_sync.py` — approved machine sync gate.
 * `hardware/esp32-e220-power-routing-report.md` — English detailed routing checkpoint evidence.
 * `hardware/esp32-e220.pretty/README.md` — English footprint-library evidence.

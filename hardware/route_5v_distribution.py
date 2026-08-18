@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Controlled post-C3 5V_SYS distribution transaction for the active PCB.
+"""Controlled post-C3 5V_SYS distribution transaction for a selected PCB.
 
 Each named stage adds only the manually reviewed copper in its routing
 contract.  This script deliberately does not change footprints, netlists,
@@ -14,7 +14,6 @@ from pathlib import Path
 import pcbnew
 
 
-BOARD_PATH = Path("hardware/esp32-e220.kicad_pcb")
 MM = pcbnew.FromMM
 
 
@@ -124,9 +123,85 @@ def stage_e(board: pcbnew.BOARD) -> None:
 STAGES = {"A": stage_a, "B": stage_b, "C": stage_c, "D": stage_d,
           "E": stage_e}
 
+# Exact copper signatures of the accepted five post-C3 checkpoints.  These
+# guard against duplicate geometry if a completed stage is invoked again.
+STAGE_SIGNATURES = {
+    "A": {
+        "tracks": (("/5V_SYS", (73.100, 59.225), (80.000, 64.000), 1.00, pcbnew.B_Cu),
+                   ("/5V_SYS", (80.000, 64.000), (80.000, 54.725), 1.00, pcbnew.F_Cu),
+                   ("/5V_SYS", (80.000, 54.725), (85.500, 54.725), 0.80, pcbnew.F_Cu)),
+        "vias": (("/5V_SYS", (80.000, 64.000), 0.60, 0.30),),
+    },
+    "B": {
+        "tracks": (("/5V_SYS", (80.000, 54.725), (80.000, 43.500), 1.00, pcbnew.F_Cu),
+                   ("/5V_SYS", (80.000, 43.500), (96.000, 43.500), 1.00, pcbnew.F_Cu),
+                   ("/5V_SYS", (96.000, 43.500), (96.000, 14.000), 1.00, pcbnew.F_Cu),
+                   ("/5V_SYS", (96.000, 14.000), (111.000, 14.000), 1.00, pcbnew.F_Cu)),
+        "vias": (),
+    },
+    "C": {
+        "tracks": (("/5V_SYS", (80.000, 43.500), (20.580, 43.500), 1.00, pcbnew.F_Cu),
+                   ("/5V_SYS", (20.580, 43.500), (20.580, 49.750), 0.80, pcbnew.F_Cu),
+                   ("/5V_SYS", (20.580, 49.750), (20.580, 53.500), 0.80, pcbnew.F_Cu),
+                   ("/5V_SYS", (23.275, 43.500), (23.275, 48.000), 0.80, pcbnew.F_Cu),
+                   ("/GND", (22.030, 49.750), (22.030, 51.000), 0.50, pcbnew.F_Cu),
+                   ("/GND", (22.030, 51.000), (23.120, 53.500), 0.50, pcbnew.B_Cu),
+                   ("/GND", (24.725, 48.000), (24.725, 51.000), 0.50, pcbnew.F_Cu),
+                   ("/GND", (24.725, 51.000), (23.120, 53.500), 0.50, pcbnew.B_Cu)),
+        "vias": (("/GND", (22.030, 51.000), 0.60, 0.30),
+                 ("/GND", (24.725, 51.000), 0.60, 0.30)),
+    },
+    "D": {
+        "tracks": (("/5V_SYS", (85.500, 54.725), (87.000, 54.725), 0.50, pcbnew.F_Cu),
+                   ("/5V_SYS", (87.000, 54.725), (87.000, 51.900), 0.50, pcbnew.F_Cu),
+                   ("/5V_SYS", (87.000, 51.900), (88.525, 51.900), 0.50, pcbnew.F_Cu),
+                   ("/5V_SYS", (88.525, 51.900), (88.525, 53.000), 0.50, pcbnew.F_Cu),
+                   ("/GND", (85.500, 53.275), (85.500, 51.900), 0.50, pcbnew.F_Cu),
+                   ("/GND", (88.050, 55.000), (87.200, 56.500), 0.50, pcbnew.F_Cu),
+                   ("/GND", (89.950, 55.000), (91.000, 55.000), 0.50, pcbnew.F_Cu)),
+        "vias": (("/GND", (85.500, 51.900), 0.60, 0.30),
+                 ("/GND", (87.200, 56.500), 0.60, 0.30),
+                 ("/GND", (91.000, 55.000), 0.60, 0.30)),
+    },
+    "E": {
+        "tracks": (("/5V_SYS", (80.000, 64.000), (73.000, 82.000), 0.80, pcbnew.B_Cu),
+                   ("/5V_SYS", (68.000, 82.000), (68.000, 87.000), 0.80, pcbnew.B_Cu),
+                   ("/5V_SYS", (73.000, 82.000), (63.000, 82.000), 0.80, pcbnew.B_Cu),
+                   ("/5V_SYS", (63.000, 82.000), (63.000, 87.000), 0.80, pcbnew.B_Cu)),
+        "vias": (),
+    },
+}
+
 
 def mm_tuple(point: pcbnew.VECTOR2I) -> tuple[float, float]:
     return (round(pcbnew.ToMM(point.x), 3), round(pcbnew.ToMM(point.y), 3))
+
+
+def stage_application_state(board: pcbnew.BOARD, stage: str) -> str:
+    """Return absent, partial, or complete for an exact checkpoint signature."""
+    signature = STAGE_SIGNATURES[stage]
+    tracks = {
+        (item.GetNetname(), mm_tuple(item.GetStart()), mm_tuple(item.GetEnd()),
+         round(pcbnew.ToMM(item.GetWidth()), 3), item.GetLayer())
+        for item in board.GetTracks() if not isinstance(item, pcbnew.PCB_VIA)
+    }
+    vias = {
+        (item.GetNetname(), mm_tuple(item.GetPosition()),
+         round(pcbnew.ToMM(item.GetWidth(pcbnew.F_Cu)), 3),
+         round(pcbnew.ToMM(item.GetDrillValue()), 3),
+         item.TopLayer(), item.BottomLayer())
+        for item in board.GetTracks() if isinstance(item, pcbnew.PCB_VIA)
+    }
+    expected_tracks = set(signature["tracks"])
+    expected_vias = {
+        (net_name, position, diameter, drill, pcbnew.F_Cu, pcbnew.B_Cu)
+        for net_name, position, diameter, drill in signature["vias"]
+    }
+    found = len(expected_tracks & tracks) + len(expected_vias & vias)
+    required = len(expected_tracks) + len(expected_vias)
+    if found == required:
+        return "complete"
+    return "partial" if found else "absent"
 
 
 def rollback_d(board: pcbnew.BOARD) -> None:
@@ -185,9 +260,17 @@ def rollback_e_duplicate(board: pcbnew.BOARD) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--board", type=Path, required=True,
+                        help="explicit target board; active PCB is never selected implicitly")
     parser.add_argument("stage", choices=[*STAGES, "rollback-d", "rollback-e-duplicate", "move-silk"])
     args = parser.parse_args()
-    board = pcbnew.LoadBoard(str(BOARD_PATH))
+    board = pcbnew.LoadBoard(str(args.board))
+    if args.stage in STAGES:
+        state = stage_application_state(board, args.stage)
+        if state == "complete":
+            raise RuntimeError(f"STAGE ALREADY APPLIED: {args.stage} on {args.board}")
+        if state == "partial":
+            raise RuntimeError(f"STAGE PARTIALLY APPLIED: {args.stage} on {args.board}; refusing duplicate copper")
     if args.stage == "rollback-d":
         rollback_d(board)
     elif args.stage == "rollback-e-duplicate":
@@ -197,7 +280,7 @@ def main() -> None:
     else:
         STAGES[args.stage](board)
     pcbnew.ZONE_FILLER(board).Fill(board.Zones())
-    pcbnew.SaveBoard(str(BOARD_PATH), board)
+    pcbnew.SaveBoard(str(args.board), board)
 
 
 if __name__ == "__main__":

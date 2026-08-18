@@ -8,8 +8,8 @@
 	)
 	(paper "A4")
 	(title_block
-		(title "ESP32 + E220 carrier — Rev.1 controlled routing")
-		(comment 1 "POWER + 5V ROUTING REVIEWED / SIGNAL ROUTING INCOMPLETE / NOT FOR PRODUCTION")
+		(title "ESP32 + E220 carrier — Stage 8 functional placement")
+		(comment 1 "UNROUTED / NOT FOR PRODUCTION")
 		(comment 2 "145 x 90 mm preferred comfortable preliminary outline")
 		(comment 3 "All active carrier components instantiated; R10/R11 DNP/no-footprint")
 		(comment 4 "Approved electrical baseline remains schematic-controlled")
@@ -5613,7 +5613,7 @@
 			)
 		)
 	)
-	(gr_text "TPS62133 BUCK CELL — REVIEWED RETAINED CHECKPOINT"
+	(gr_text "U1 EP=GND. THERMAL VIAS / SW-COPPER POLICY: LAYOUT REVIEW REQUIRED"
 		(at 62 88.2 0)
 		(layer "Dwgs.User")
 		(uuid "c55c3605-1ded-41da-a54d-ee20bee12343")
@@ -5701,7 +5701,7 @@
 			)
 		)
 	)
-	(gr_text "REV.1 CONTROLLED ROUTING — POWER + 5V PASSED / SIGNAL ROUTING PENDING"
+	(gr_text "STAGE 8 — FUNCTIONAL PLACEMENT ONLY / NO ROUTING"
 		(at 65 3.5 0)
 		(layer "Dwgs.User")
 		(uuid "381bad8c-a1f1-4621-bd79-81dac168dde6")

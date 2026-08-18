@@ -15,7 +15,24 @@ import pcbnew
 
 ROOT = Path(__file__).resolve().parent
 LIBRARY = ROOT / "esp32-e220.pretty"
-OUTPUT = Path(os.environ.get("PLACEMENT_OUTPUT", ROOT / "esp32-e220.kicad_pcb"))
+ACTIVE_BOARD = (ROOT / "esp32-e220.kicad_pcb").resolve()
+
+
+def placement_output() -> Path:
+    """Return an explicitly selected non-active placement-candidate path."""
+    value = os.environ.get("PLACEMENT_OUTPUT")
+    if not value:
+        raise RuntimeError(
+            "FAIL: PLACEMENT_OUTPUT is required; this generator never selects "
+            "the active PCB by default"
+        )
+    output = Path(value).resolve()
+    if output == ACTIVE_BOARD:
+        raise RuntimeError(
+            "FAIL: PLACEMENT_OUTPUT resolves to hardware/esp32-e220.kicad_pcb; "
+            "refusing to overwrite the active routed PCB"
+        )
+    return output
 
 
 def v(x: float, y: float) -> pcbnew.VECTOR2I:
@@ -73,8 +90,9 @@ def add_footprint(board: pcbnew.BOARD, source_name: str, reference: str,
 
 
 def main() -> None:
+    output = placement_output()
     board = pcbnew.BOARD()
-    board.SetFileName(str(OUTPUT))
+    board.SetFileName(str(output))
     title = board.GetTitleBlock()
     title.SetTitle("ESP32 + E220 carrier — Stage 8 functional placement")
     title.SetComment(0, "UNROUTED / NOT FOR PRODUCTION")
@@ -262,7 +280,7 @@ def main() -> None:
         connect(tps[ref], {"1": net})
 
     board.BuildListOfNets()
-    pcbnew.SaveBoard(str(OUTPUT), board)
+    pcbnew.SaveBoard(str(output), board)
 
 
 if __name__ == "__main__":
