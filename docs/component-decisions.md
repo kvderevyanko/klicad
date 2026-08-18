@@ -404,9 +404,26 @@ documented electrical finding or user-approved scope change.
 
 | Block | Active choice | Basis / limit |
 | --- | --- | --- |
-| OLED interface | J5 removable female 1x4 socket, order 1=GND, 2=VCC, 3=SCL, 4=SDA | User/seller-provided connector order; no footprint or mating part number selected. |
+| OLED interface | J5 removable female 1x4 socket, order 1=GND, 2=VCC, 3=SCL, 4=SDA; preferred carrier socket `SSW-104-02-G-S` | User-provided order. Samtec SSW is a 2.54-mm THT socket family; final supplier availability and actual OLED pin projection remain procurement/mechanical checks. |
 | Supply | J5 VCC=`DEVKIT_3V3` only | SSD1306 logic VDD is 1.65...3.3 V; common Adafruit 0.96-in breakout uses 3.3-V power/logic. This supports 3.3 V, not an assertion that every generic module is identical. 5 V is prohibited. |
 | I2C nets | GPIO22 -> SCL, GPIO21 -> SDA | User-verified DevKit mapping retained. |
 | Carrier pull-ups | R10 SDA and R11 SCL, each 4.7 kOhm 1 %, to DEVKIT_3V3; `DNP=YES` | PROJECT DESIGN CHOICE. Typical breakout boards may already pull up I2C. Default DNP avoids parallel pulls; if fitted, `R_EFFECTIVE=4.7k||R_MODULE`. |
 | OLED current | 100 mA at 3.3 V / extra 100 mA at `5V_SYS` | Conservative PROJECT DESIGN ALLOCATION, not module max. Adafruit's common-board guide reports about 20 mA average; exact user module and DevKit regulator require prototype validation. |
-| Mechanics | 25.2x26-mm body, 2.54-mm 1x4, four Ø2 holes, X=21 mm; `OLED_MOUNT_Y=TBD / USER MEASUREMENT REQUIRED` | USER/SELLER-PROVIDED only. PCB-stage mechanical blocker; no footprint/layout approved. |
+| Mechanics | 26.000x26.000-mm body, 2.540-mm 1x4, mounting-centre spacing X=21.740 mm/Y=22.000 mm | **USER-PROVIDED drawing data.** This supersedes the former 25.2x26/X=21/Y=TBD approximation. Hole diameter, all header/body datums, display/flex clearance and notch/cutout remain unverified; only a non-production mechanical template exists. |
+
+## Stage 7 — selected carrier connectors and mechanical-footprint status
+
+These choices do not change the approved electrical topology. They select
+carrier PCBA connectors and are further detailed in
+`docs/footprint-mechanical-review.md`.
+
+| Carrier function | Preferred exact MPN | Status / limitation |
+| --- | --- | --- |
+| J4 protected 2S input | JST `B2B-XH-A` | 2-pin THT XH header, 2.50-mm pitch, 3-A rating with AWG22. `XHP-2` + `SXH-001T-P0.6` is the matching harness choice. Final wire/strain relief and sourcing remain PCB/procurement work. |
+| J1/J2 DevKit sockets | 2 × Samtec `SSW-115-02-G-S` | 15-position 2.54-mm THT socket. Actual DevKit male-pin projection and body/antenna datum must be measured before placement release. |
+| J3 radio socket | Samtec `SSW-107-02-G-S` | 7-position 2.54-mm THT socket. `Carrier:E220_T22D_Socket_400_900` is a source-geometry-compatible template, not production approval of SMA/fixed-hole/underside mechanics. |
+| J5 OLED socket | Samtec `SSW-104-02-G-S` | 4-position 2.54-mm THT socket. OLED X/Y mounting spacing is now known, but hole diameter/header/body datum and display/notch geometry still prohibit a production mounting footprint. |
+
+The project-local `Carrier` library has reproducible SSW connector and module
+templates. It does not assign them to the frozen schematic during this
+mechanical-audit stage.

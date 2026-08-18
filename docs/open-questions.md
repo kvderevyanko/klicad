@@ -422,10 +422,12 @@ pull-up is fitted.
   I2C address and peak current; confirm DevKit 3.3-V regulation/thermal rise
   at the separate 100-mA OLED project allocation. A module above 100 mA
   restarts the 5-V/battery budget review.
-- **PCB blocker:** the mechanics are only USER/SELLER-PROVIDED: 25.2x26-mm
-  body, 2.54-mm header, four Ø2 holes, X spacing 21 mm, with
-  `OLED_MOUNT_Y=TBD / USER MEASUREMENT REQUIRED`. Measure the Y coordinate,
-  verify hole/connector datum and acquire the exact module before footprint,
-  placement or mounting features.
+- **PCB blocker:** the latest USER-PROVIDED drawing resolves body 26.000x26.000
+  mm and mounting-centre spacing X=21.740 mm/Y=22.000 mm (`OLED_MOUNT_Y`
+  closed). The source drawing is not available in the workspace for audit of
+  hole diameter, actual hole/header datums, display/flex clearance or
+  bottom-notch/cutout geometry. Do not derive those missing values; obtain the
+  drawing/callouts before a production mounting footprint, placement or
+  enclosure feature.
 - **Optional:** populate R10/R11 only if the actual bus capacitance and module
   pull-up arrangement require them; do not fit them by default.

@@ -920,11 +920,15 @@ capability check and F1's 2-A 20-C hold rating, subject to the already-required
 thermal/derating tests. They do not claim an efficiency or regulator rating
 not present in the cited datasheets.
 
-Mechanical information is **USER/SELLER-PROVIDED**, not a verified footprint:
-module body 25.2 x 26 mm; 1x4 2.54-mm header; four mounting holes diameter
-2 mm; X spacing 21 mm; `OLED_MOUNT_Y=TBD / USER MEASUREMENT REQUIRED`.
-It is a PCB-stage mechanical blocker only. No OLED footprint, mounting pattern,
-placement or routing is approved by this document.
+The newest mechanical drawing is **USER-PROVIDED**, not an SSD1306-controller
+manufacturer drawing. It supersedes the prior seller approximation: module PCB
+body is 26.000 x 26.000 mm, the 1x4 header pitch is 2.540 mm and the four
+mounting-centre spacings are X=21.740 mm and Y=22.000 mm.
+`OLED_MOUNT_Y` is resolved. The drawing itself still needs to be attached or
+otherwise made auditable before a release footprint: mounting-hole diameter,
+hole-to-body/header datum, display/glass/flex clearance and bottom notch/cutout
+are not guessed. No production OLED mounting pattern, placement or routing is
+approved by this document.
 
 Sources: [SSD1306 product information, Solomon Systech](https://www.solomon-systech.com/en/product/ssd1306/),
 [SSD1306 controller datasheet](https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf),

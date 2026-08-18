@@ -264,3 +264,13 @@ ESP32-WROOM-32E и EBYTE E220-900T22D. Проект ведётся как про
   Updated all five engineering documents. No PCB, footprint, placement,
   routing or Gerber work was created; OLED mechanics remain a PCB-stage
   measurement blocker and DevKit-regulator capability a prototype check.
+- 2026-08-18 — Stage 7 footprint/mechanical preparation: retained the approved
+  electrical baseline unchanged and added project-local `Carrier` footprint
+  library mapping, reproducible `hardware/generate_stage7_footprints.py`, and
+  `docs/footprint-mechanical-review.md`. Selected JST `B2B-XH-A` battery input
+  and Samtec `SSW-115/107/104-02-G-S` carrier sockets. Generated/CLI-exported
+  SSW socket, DevKit mechanical-template, universal E220 socket-template and
+  OLED pending-datum-template footprints; no `.kicad_pcb`, outline, placement
+  or routing was created. The newer OLED body 26x26 mm and mount-centre
+  spacings X=21.740 mm/Y=22.000 mm are recorded, but hole diameter, header/body
+  datum, display/flex clearance and notch geometry remain release blockers.

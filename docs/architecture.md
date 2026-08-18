@@ -446,3 +446,14 @@ assumed onboard-regulator efficiency. The 748.110-mA pre-margin `5V_SYS`
 subtotal becomes 897.732 mA with 20-% margin; 85-%-efficiency input currents
 are 0.6287/0.7136/0.8801 A at 8.4/7.4/6.0 V. The Rev.1 battery baseline is
 otherwise frozen.
+
+## Stage 7 mechanical interface boundary
+
+The approved electrical connections remain unchanged. Carrier PCBA connector
+selections are JST `B2B-XH-A` for the protected 2S battery input and Samtec
+SSW-115/107/104-02-G-S for the removable DevKit/E220/OLED respectively. The
+mechanical assets are project-local templates described in
+`docs/footprint-mechanical-review.md`; they are not a PCB outline or
+placement. The OLED user drawing resolves a 26.000 x 26.000-mm body and
+X=21.740-mm / Y=22.000-mm mount-centre spacing, while its actual hole diameter
+and component/header/body datums remain mechanical-release blockers.

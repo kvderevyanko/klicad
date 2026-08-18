@@ -214,4 +214,6 @@ kicad-cli sch erc hardware/esp32-e220.kicad_sch --exit-code-violations \
 Thus ERC has 0 errors and 0 warnings; no warning was suppressed or excluded.
 No PCB, footprint assignment, placement or routing was performed. Remaining
 OLED work is prototype validation of the actual module/regulator and the
-PCB-stage user measurement of `OLED_MOUNT_Y`.
+Stage 7 audit of its production mounting footprint. The later user-provided
+mechanical drawing resolves `OLED_MOUNT_Y=22.000 mm`; it still needs audit for
+hole diameter, header/body datum, display/flex clearance and notch geometry.
