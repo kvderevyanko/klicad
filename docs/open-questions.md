@@ -170,3 +170,85 @@ an explicit project choice. No KiCad artifact is authorised by this statement.
 
 - Select manual serial header versus on-board USB-UART; USB-C stays power-only.
 - Consider E220 load switching, telemetry and additional ESD/environment tests.
+
+### Stage 3.1 correction — additional IMPORTANT validation
+
+- Validate TPS259630 soft-start with all actual downstream capacitors and a
+  plugged Type-C cable; calculated 275-mA capacitive inrush includes only the
+  defined 1-uF eFuse COUT, 10-uF buck CIN and 10-uF E220 capacitor.
+- OVLO nominally cuts at 5.58 V but cannot guarantee protection below E220's
+  5.5-V maximum across tolerance.  Confirm the regulated 4.75…5.25-V source
+  constraint in system validation; do not add a second 5V_SYS source because
+  reverse-current blocking is not specified for TPS259630.
+
+## Stage 3.2 — CURRENT BLOCKER: Type-C status and safe boot
+
+1. **TUSB320 output level/power sequence:** the VBUS pull-up/divider
+   architecture back-drives a non-failsafe TUSB GPIO pin above diode-fed VDD.
+   Decide and verify a replacement: 3V3 pull-ups/direct ESP inputs with valid
+   sequencing, or another approved level-safe status interface.
+2. **Default-current electrical policy:** choose hardware. Either require
+   Medium/High current before receiver power is enabled, or provide a verified
+   500-mA-or-less boot rail and hardware-gated high-load rails. The current
+   0.949-A-min eFuse setting cannot make a Default Type-C source safe.
+
+These are electrical-schematic blockers. RF placement, OLED mechanics and
+footprints remain IMPORTANT before PCB but do not stop schematic work here.
+
+## Stage 3.3 — resolved Type-C blockers
+
+The Stage 3.2 blockers are resolved by the hardware OUT1/Q1/EN path recorded
+in `requirements.md` and `architecture.md`. It is fail-safe at VDD absent,
+reset, detach and Default current, and only enables 5V_SYS at Medium/High.
+The former VBUS pull-up/divider/GPIO32/GPIO33 path is forbidden historical
+content. Remaining items are prototype validation (TUSB VDD ramp/diode drop,
+attach behavior, eFuse startup) and all PCB/RF/mechanical IMPORTANT items.
+
+## Stage 4 — current questions after removable-DevKit architecture change
+
+All earlier bare-ESP32, `TPS62162`, EN/BOOT and programming-header questions
+are superseded for the next schematic; they remain history only.
+
+### BLOCKER — do not create a schematic
+
+1. **Exact DevKit identity and header geometry.** Supply the manufacturer,
+   orderable model/revision, official schematic and numbered/oriented 30-pin
+   (2×15) header drawing for the USB-C/CH340C/ESP32-WROOM DevKit.  “30-pin
+   USB-C CH340C” is not enough to define a schematic symbol.  In particular,
+   `5V_SYS`, GPIO16/17/25/26/27 and GND positions must be verified rather than
+   copied from a marketplace-style pinout.
+2. **Two-USB power/backfeed behaviour.** The DevKit official documentation
+   must state whether its USB-C VBUS is directly connected to its 5-V header,
+   whether the header is safe to power while the programming USB-C is attached,
+   and all permitted power-source combinations.  An exact CH340C chip document
+   cannot answer this board-level question.  Pending evidence, Rev A requires
+   physical removal of the DevKit or a powered-down/unplugged main board before
+   the DevKit programming USB-C is connected.
+
+### IMPORTANT — close before release/prototype sign-off
+
+1. Obtain the exact DevKit 5-V input current/current-limit and regulator
+   capability from its manufacturer; replace the superseded bare-module 3.3-V
+   budget with a complete `5V_SYS` budget.
+2. Confirm that the selected DevKit actually contains ESP32-WROOM (not a
+   WROVER variant) and exposes GPIO16, GPIO17, GPIO25, GPIO26 and GPIO27.  The
+   desired UART2 labels are logical firmware assignments, not a substitute for
+   header evidence.
+3. Decide whether normal E220 mode must be present before firmware configures
+   GPIO25/26.  EBYTE documents only very weak internal pull-ups and says M0/M1
+   cannot float; it does not give an external resistor value.  Do not fit
+   invented pulls.  Ask EBYTE for an approved network if boot-time mode must be
+   externally guaranteed.
+4. Retain all existing E220 antenna/regional, OLED connector, WS2812 land
+   pattern, USB-C protection/Type-C gate and `5V_SYS` transient/thermal checks
+   before PCB release.
+
+### Resolved logical E220 interface
+
+The official EBYTE pin table confirms the requested logical mapping:
+GPIO17→RXD(3), GPIO16←TXD(4), GPIO25→M0(1), GPIO26→M1(2), GPIO27←AUX(5),
+`5V_SYS`→VCC(6), GND→GND(7).  It also confirms 3.3-V communication level,
+M0/M1 weak pull-ups/non-floating constraint, and AUX output handling.  This
+does not resolve the physical DevKit header positions.
+
+Sources: [E220-T Series User Manual, EBYTE](https://www.cdebyte.com/pdf-down.aspx?id=4221), [E220-900T22D, EBYTE](https://www.cdebyte.com/products/E220-900T22D/4), and [ESP32-DevKitC V4 User Guide, Espressif](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html).

@@ -84,3 +84,43 @@ ESP32-WROOM-32E и EBYTE E220-900T22D. Проект ведётся как про
   remains for a configurable design; OLED module, RF, mechanics/footprints and
   prototype power validation remain IMPORTANT before PCB release. No KiCad
   project, schematic, PCB, footprint or production file was created.
+- 2026-08-18 — Stage 3.1 narrow eFuse correction: updated only
+  `docs/requirements.md`, `docs/architecture.md`, `docs/component-decisions.md`
+  and `docs/open-questions.md`. Corrected the status-LED buffer reference to
+  selected `SN74AHCT1G125DBVR`; rechecked TI TPS259630 data sheet
+  and TPS2596EVM. Defined actual CIN/COUT, EN/UVLO, OVLO and dVdt parts and
+  explicitly recorded `FLT`/reverse-power constraints. Corrected TUSB320 VDD
+  decoupling to 0.1-uF/16-V/X7R, distinct from the 1-uF UFP VBUS bulk
+  capacitor. No KiCad project, schematic, PCB, footprint or production file
+  was created. Remaining validation: source-voltage constraint, eFuse
+  soft-start/inrush/thermal measurements and all previously listed PCB items.
+- 2026-08-18 — Stage 3.1 TUSB VDD correction: added onsemi `MMSD4148T1G`
+  between VBUS_PRE and TUSB320 VDD, retaining local
+  `GRM188R71C104KA01D` 0.1-uF/16-V/X7R decoupling and separate 1-uF UFP VBUS
+  bulk capacitor. Validate diode-fed VDD across source and temperature range.
+  No KiCad artifact was created.
+- 2026-08-18 — Stage 3.2 final preflight: updated only requirements,
+  architecture, open-questions and component-decisions after rechecking TI
+  TUSB320LAI GPIO/non-failsafe behaviour and TPS259630 current limit. Found two
+  real schematic blockers: VBUS pull-ups on TUSB OUT1/OUT2 can back-drive the
+  diode-fed device, and the 0.949-A-min eFuse cannot bound Default Type-C
+  (500-mA) boot current. No `.kicad_pro`, `.kicad_sch`, `.kicad_sym`, PCB or
+  production file was created. Required next decision: a level-safe TUSB status
+  interface plus a hardware-enforced Default-current/boot policy.
+- 2026-08-18 — Stage 3.3 electrical resolution: documented a TUSB-VDD-domain
+  OUT1/NPN/eFuse-EN hardware gate using 47-kOhm pull-up/base resistors,
+  330-kOhm EN pull-up and MMBT3904LT1G. It holds the receiver off at
+  detach/reset/Default/VDD-absent and enables only at Medium/High advertisement;
+  the former VBUS divider/GPIO32/GPIO33 topology is forbidden. Documentation
+  only in this update: no KiCad schematic/project/PCB artifact was retained.
+- 2026-08-18 — Stage 4 architecture change, documentation only: updated
+  `docs/requirements.md`, `docs/architecture.md`, `docs/open-questions.md` and
+  `docs/component-decisions.md`. The active controller is now a removable
+  30-pin/2×15 USB-C/CH340C ESP32-WROOM DevKit supplied from `5V_SYS`; bare
+  ESP32, 3.3-V MCU buck, EN/BOOT and programming-header design records are
+  superseded history. Rechecked the official EBYTE E220-T manual: confirmed
+  requested logical E220 pin mapping, 3.3-V UART, M0/M1 mode table and AUX
+  constraint. Found a real schematic blocker: no exact DevKit
+  manufacturer/orderable revision, official schematic, numbered header map or
+  board-level USB-C/5-V backfeed rule has been supplied. No schematic or PCB
+  was created or modified.

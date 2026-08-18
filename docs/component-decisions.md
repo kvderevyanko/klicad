@@ -187,9 +187,9 @@ Sources: [WorldSemi WS2812B-V5](https://www.world-semi.co.kr/_files/ugd/89cd03_1
 | Function | Selected part | Evidence and controlled decision |
 | --- | --- | --- |
 | USB-C receptacle | GCT `USB4105-GF-A` | Official drawing/layout; power-only VBUS/GND/CC use. PCB footprint deferred to official layout audit. |
-| Type-C status | TI `TUSB320LAIRWBR` | UFP internal Rd; VBUS_DET 900 kOhm ±1 %; 1-uF VDD capacitor; open-drain OUT1/OUT2. `PORT=GND`, `EN_N=GND`, `ADDR=NC`. |
+| Type-C status | TI `TUSB320LAIRWBR` | UFP internal Rd; VBUS_DET 900 kOhm ±1 %; open-drain OUT1/OUT2. VDD is fed through onsemi `MMSD4148T1G` and uses `GRM188R71C104KA01D` 0.1-uF/16-V/X7R. The separate VBUS bulk requirement is 1…10 uF. `PORT=GND`, `EN_N=GND`, `ADDR=NC`. |
 | Status to ESP | 12-kOhm/20-kOhm divider per output | **PROJECT DESIGN CHOICE.** Pull OUT1/OUT2 to VBUS and divide to GPIO32/GPIO33; 5.25 V -> 3.28 V. No high-voltage signal connects directly to ESP32. |
-| eFuse | TI `TPS259630DDAR` + Panasonic `ERA3AEB9090V` | 909 Ohm gives 1.005-A typical / 0.949…1.051-A characterised current limit. `EN=VBUS_PRE` to permit ESP boot at Default Type-C current. |
+| eFuse | TI `TPS259630DDAR` + Panasonic `ERA3AEB9090V` | 909 Ohm gives 1.005-A typical / 0.949…1.051-A characterised current limit. EN uses 100-kOhm `ERA3AEB104V` from IN (not a direct tie); for below 6 V this is TI-supported and permits ESP boot at Default Type-C current. |
 | Buck L/C | TPS62162DSGR; TDK `VLS3012CX-2R2M-1`; Murata `GRM21BR61E106KA73` / `GRM21BR61A226ME44` | 2.2 uH; 1.70-A saturation, 2.55-A temperature rise, 74 mOhm max DCR; 10-uF 25-V X5R CIN and 22-uF 10-V X5R COUT. EVM validates values/topology; actual parts are project selections. |
 | E220 local capacitors | Murata `GRM188R61A106MAAL` / `GRM188R71C104KA01D` | 10-uF 10-V X5R + 0.1-uF 16-V X7R **PROJECT DESIGN CHOICE**, not a claimed EBYTE value. |
 | OLED bus | 4.7-kOhm 1-% fit/DNP sites | **PROJECT DESIGN CHOICE:** connector GND/3V3/SDA/SCL, 100-mA allocation; configured after verified module pull-ups. |
@@ -207,4 +207,67 @@ Full-load design allocation is 721.685 mA at 3V3 (500-mA ESP32, 100-mA OLED,
 0.949-A minimum eFuse-limit check but is awaiting hardware transient/thermal
 validation.
 
+### Stage 3.1 eFuse support-network correction
+
+| Pin / function | Actual component decision | Status |
+| --- | --- | --- |
+| IN / VBUS bulk | `GRM188R71A105KA61D`, 1 uF ±10 %, 10 V X7R | TI requires at least 0.01 uF locally and recommends >0.1 uF for a remote source; **project choice** 1 uF also lies in UFP's 1…10-uF port-bulk window. |
+| OUT | second `GRM188R71A105KA61D`, 1 uF ±10 %, 10 V X7R | **Project choice** local output bypass; TPS2596 gives no mandatory fixed `COUT`. |
+| EN/UVLO | `ERA3AEB104V`, 100 kOhm ±0.1 %, IN-to-EN | Manufacturer-permitted connection below 6 V; EN must not float. Internal UVLO is retained. |
+| OVLO | `ERA3AEB3653V` 365 kOhm ±0.1 % + `ERA3AEB104V` 100 kOhm ±0.1 % | **Project choice:** 5.58-V nominal cutoff. Required divider prevents a floating OVLO pin, but is not credited as an E220 5.5-V precision clamp. |
+| dVdt | `GRM1885C1H332JA01D`, 3.3 nF ±5 %, 50 V C0G | **Project choice:** TI-controlled slew setting. About 275 mA calculated initial capacitive inrush for the documented 21-uF local output-side capacitance. |
+| FLT / reverse power | FLT NC; no alternate 5V_SYS source | FLT pull-up is unnecessary when unused. TPS259630 reverse-current blocking is not specified; this is a project topology constraint. |
+
+The only selected level shifter is `SN74AHCT1G125DBVR` for WS2812B-V5 DIN. It
+is not used in the Type-C/eFuse path.
+
+## Stage 3.2 — Type-C preflight hold
+
+The status-to-ESP row above is superseded and must not enter a schematic:
+pulling TUSB OUT1/OUT2 to `VBUS_PRE` and then dividing them leaves the TUSB
+pins pulled toward VBUS. This conflicts with TI's non-failsafe-pin warning when
+VDD is off. No replacement values or nets are selected until the sequencing and
+logic-level decision is approved.
+
+The selected TPS259630 / 909-Ohm setting is a 1-A-class rail protector, not
+500-mA Default-Type-C enforcement. A revised hardware boot/source-current
+architecture is required before Type-C/eFuse/ESP32 blocks enter KiCad.
+
+## Stage 3.3 — active Type-C enable decision
+
+| Function | Selected part / net | Engineering result |
+| --- | --- | --- |
+| OUT1 pull-up | `ERA3AEB473V`, 47 kOhm, `TUSB_VDD` only | No VBUS pull-up and no ESP connection. Default/released OUT1 drives Q1 on. |
+| Inverter | onsemi `MMBT3904LT1G`; base through second `ERA3AEB473V` 47 kOhm | Collector sinks eFuse EN when OUT1 is released; emitter GND. |
+| eFuse enable pull-up | `ERA3AEB334V`, 330 kOhm, `TUSB_VDD` to EN/UVLO | VDD absent -> EN low; at 2.75-V min VDD it is above 1.22-V EN-high max. |
+| Current policy | `5V_SYS` is absent at Default | Hardware, not firmware, restricts full receiver operation to Medium/High advertised source current. |
+
+The enable path itself consumes at most 106 uA through OUT1 (Medium/High) and
+about 55 uA in Default. Together with the 70-uA typical TUSB active current,
+the conservative pre-eFuse allocation is 0.25 mA. The former divider and ESP
+GPIO32/GPIO33 parts are forbidden and not fitted.
+
 Sources: [GCT USB4105 drawing](https://gct.co/files/drawings/usb4105.pdf), [TUSB320LAI, TI](https://www.ti.com/lit/ds/symlink/tusb320lai.pdf), [TPS2596, TI](https://www.ti.com/lit/ds/symlink/tps2596.pdf), [TPS621x0 EVM, TI](https://www.ti.com/lit/ug/slvu483a/slvu483a.pdf), [TDK VLS3012CX](https://product.tdk.com/en/search/inductor/inductor/automotive-inductor/info?part_no=VLS3012CX-2R2M-1), [Murata GRM21BR61E106KA73](https://search.murata.com/en-US/partdetail?partno=GRM21BR61E106KA73), [Murata GRM21BR61A226ME44](https://search.murata.com/en-US/partdetail?partno=GRM21BR61A226ME44), [E220 manual, EBYTE](https://www.cdebyte.com/pdf-down.aspx?id=3552).
+
+## Stage 4 — active component boundary: removable DevKit
+
+This record supersedes the earlier selection of a bare ESP32-WROOM-32E-N4,
+`TPS62162DSGR`, bare-module EN/GPIO0 circuitry and external UART0 programming
+header for the next schematic.  They remain historical design records only.
+
+| Function | Active decision | What remains unselected / why |
+| --- | --- | --- |
+| ESP32 controller | A removable USB-C/CH340C ESP32-WROOM DevKit with 30 pins / 2×15 headers, powered from `5V_SYS` at its verified 5-V header input | **BLOCKER:** exact manufacturer/orderable model/revision, official schematic, header numbering/orientation and 5-V current input data.  No generic DevKit symbol or footprint is authorised. |
+| Main-board ESP power/reset/programming | Omitted: no 3.3-V MCU buck, bare ESP32, EN/BOOT circuit or main-board programming header | These functions must be present on the verified DevKit.  The main PCB must not duplicate or drive them. |
+| DevKit programming USB-C | DevKit-local function only | **BLOCKER:** board-level VBUS/header isolation and permitted dual-power state.  Rev A service procedure is removal/power-down before programming, pending documentation. |
+| E220 UART/control | `GPIO17→RXD(3)`, `GPIO16←TXD(4)`, `GPIO25→M0(1)`, `GPIO26→M1(2)`, `GPIO27←AUX(5)` | Electrical EBYTE pin functions are verified; physical header pins and any clone-specific GPIO circuitry are not. |
+| E220 mode bias | No external value selected | EBYTE calls M0/M1 very-weak-pull-up inputs and says they cannot float, but gives no external resistor or mandatory startup network.  Firmware controls them; request EBYTE guidance if a pre-firmware mode is required. |
+| E220 supply | `5V_SYS→VCC(6)`, GND→GND(7); 5.0-V nominal project choice | EBYTE confirms 2.6…5.5-V supply range for 22-dBm products, 3.3-V communications and 90…110-mA TX.  Recalculate the system current budget with the selected DevKit's documented 5-V load. |
+
+The official Espressif ESP32-DevKitC V4 documentation is deliberately **not**
+used as a replacement component choice: it is a Micro-USB / 2×19 official
+board, whereas the requested board is USB-C / CH340C / 2×15.  It is useful
+only as primary-source evidence that a board's power-source combinations and
+header map are specific to that board.
+
+Sources: [E220-T Series User Manual, EBYTE](https://www.cdebyte.com/pdf-down.aspx?id=4221), [E220-900T22D product page, EBYTE](https://www.cdebyte.com/products/E220-900T22D/4), and [ESP32-DevKitC V4 User Guide, Espressif](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html).

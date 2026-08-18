@@ -126,7 +126,7 @@ USB4105-GF-A (power-only USB-C)
   CC1/CC2 ── TPD4S311 ── TUSB320LAIRWBR (UFP / internal Rd)
   VBUS    ── TPD1E10B06 ── VBUS_PRE ── TPS259630DDAR ── 5V_SYS
                              │                 EN = VBUS_PRE
-                             ├─ TUSB VDD + 1 uF
+                             ├─ MMSD4148T1G -> TUSB VDD + 0.1 uF; 1 uF VBUS bulk/CIN
                              ├─ 900 kOhm ±1 % -> VBUS_DET
                              └─ OUT1/OUT2 -> 12k/20k dividers -> GPIO32/GPIO33
                                                             (Type-C status)
@@ -153,3 +153,110 @@ The full-load calculation is 721.685 mA at 3V3 and 708.6 mA at `5V_SYS`
 allocation. It has 211 mA margin to the TPS259630 minimum characterised limit
 and 278 mA to TPS62162's rating. The small pre-eFuse controller/divider load is
 additional to raw VBUS and not double-counted in `5V_SYS`.
+
+### Stage 3.1 eFuse-network correction
+
+`TPS259630DDAR` is not connected with bare control pins.  `CIN` is the selected
+1-uF/10-V/X7R `GRM188R71A105KA61D` at IN and is also the permitted UFP port
+bulk capacitance.  A second part of the same PN is the explicit 1-uF local
+`COUT` at 5V_SYS.  `EN/UVLO` uses a 100-kOhm `ERA3AEB104V` pull-up to IN, as
+TI permits for input below 6 V; `OVLO` uses 365-kOhm `ERA3AEB3653V` from IN and
+100-kOhm `ERA3AEB104V` to GND.  `dVdt` uses 3.3-nF C0G
+`GRM1885C1H332JA01D`, providing controlled rather than fastest turn-on.
+
+The nominal OVLO calculation is 5.58 V.  It cannot be represented as a
+precision 5.5-V E220 clamp because TI's OVLO threshold tolerance and divider
+tolerance produce a wider range; normal safety remains the declared regulated
+4.75…5.25-V input constraint.  `FLT` is intentionally NC (its external pull-up
+is needed only if fault telemetry is used), and no reverse-current blocking is
+claimed: 5V_SYS must have no alternate source. TUSB VDD is fed through
+`MMSD4148T1G` and decoupled by 0.1-uF/16-V/X7R `GRM188R71C104KA01D`; its 1-uF
+requirement belongs to the UFP VBUS port, not the VDD pin. Verify the diode-fed
+2.75…5.0-V VDD range over source and temperature tolerance.
+
+## Stage 3.2 — preflight correction required before schematic
+
+The `OUT1/OUT2 -> VBUS pull-up -> divider` branch above is **invalid** and is
+kept only as decision history. The 12-kOhm resistor is not isolation for the
+TUSB pin: a released open-drain output rises toward `VBUS_PRE`, while TI
+documents OUT[3:1] as non-failsafe when VDD is off. It must not be copied into
+a schematic.
+
+## Stage 3.3 — active fail-safe Type-C enable path
+
+Stage 3.2 is resolved by a VDD-domain inverter, not a VBUS divider and not
+firmware. `TUSB_VDD` is diode-fed from VBUS_PRE and has its local 100-nF
+capacitor. `OUT1` has only a 47-kOhm pull-up to `TUSB_VDD`; it drives an
+`MMBT3904LT1G` base through 47 kOhm. The NPN emitter is GND, collector is eFuse
+EN/UVLO, and EN has a 330-kOhm pull-up to `TUSB_VDD`.
+
+```text
+TUSB_VDD --47k--+-- OUT1 --47k--> Q1 base
+                |                    Q1 emitter -> GND
+                +-- (only TUSB domain)
+TUSB_VDD --330k------------------> TPS259630 EN/UVLO
+                                  ^
+                                  +-- Q1 collector
+```
+
+OUT1 release (unattached/Default/reset) turns Q1 on and forces EN low; OUT1
+low (Medium/High) turns Q1 off and enables eFuse. VDD absent also makes the
+EN pull-up 0 V. This preserves Type-C dead-battery attach, blocks ESP32 and
+all `5V_SYS` load at Default current, and removes the forbidden VBUS divider/
+GPIO32/GPIO33 path.
+
+Likewise, eFuse enable at attach does not make a Default-current source safe:
+the selected 0.949-A-min limit exceeds Type-C Default 500 mA. A fully electrical
+source-current/boot policy is required before the first schematic. Until an
+approved replacement exists, no KiCad netlist or symbol is generated.
+
+## Stage 4 — active architecture: removable USB-C CH340C DevKit
+
+This is the architecture to use for the next schematic once the blocker below
+is resolved.  It supersedes the preceding bare-ESP32, `TPS62162`, EN/BOOT and
+main-board UART0 content; those passages remain decision history only.
+
+```text
+Main-board USB-C / protection / Type-C current gate / eFuse
+                                      |
+                                      +--> 5V_SYS
+                                             |
+                                             +--> E220-900T22D VCC (pin 6)
+                                             |
+                                             +--> 30-pin 2×15 DevKit 5-V header pin [TBD]
+                                                       |
+                                                       +--> DevKit-local 3V3 / ESP32-WROOM
+                                                       +--> DevKit-local EN, BOOT, CH340C,
+                                                            programming USB-C
+
+DevKit GPIO17 / UART2 TX  -----------> E220 RXD  (pin 3)
+DevKit GPIO16 / UART2 RX  <----------- E220 TXD  (pin 4)
+DevKit GPIO25              -----------> E220 M0   (pin 1)
+DevKit GPIO26              -----------> E220 M1   (pin 2)
+DevKit GPIO27              <----------- E220 AUX  (pin 5)
+GND                         ----------- E220 GND  (pin 7)
+```
+
+`M1/M0=00` is EBYTE transmission mode; `01` is WOR send, `10` WOR receive and
+`11` sleep/configuration.  The module's very weak internal pull-ups are
+documented, but no external resistor value is; no arbitrary M0/M1 pulls are in
+the active architecture.  The intended firmware must actively drive GPIO25/26
+to the desired state, then use GPIO27 only as an AUX input.
+
+The physical label `[TBD]` is deliberate.  “30-pin 2×15 USB-C CH340C ESP32
+DevKit” is a class of boards, not an orderable, manufacturer-controlled part.
+The official Espressif ESP32-DevKitC V4 cannot be substituted: it has Micro-USB
+and 2×19 headers.  Its documentation also warns that its own USB input, 5-V
+header input and 3.3-V header input are mutually exclusive.  That warns of the
+same backfeed class but does not establish the behaviour of an unspecified
+USB-C/CH340C clone.
+
+**Schematic blocker:** exact manufacturer part number/revision, official
+schematic and numbered 2×15 header drawing, including the relation of USB-C
+VBUS, 5-V header pin, on-board regulator and CH340C.  Until supplied, do not
+instantiate a DevKit header symbol, 5-V connection, E220 netlist, schematic or
+PCB.  Rev A programming is operationally limited to a DevKit removed from the
+powered main board (or a powered-down main-board USB-C input) before using the
+DevKit USB-C connector.
+
+Sources: [E220-T Series User Manual, EBYTE](https://www.cdebyte.com/pdf-down.aspx?id=4221) and [ESP32-DevKitC V4 User Guide, Espressif](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html).
