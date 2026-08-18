@@ -13,6 +13,51 @@ OUT = Path(__file__).with_name("esp32-e220.kicad_sch")
 SYMLIB = Path(__file__).with_name("esp32-e220.kicad_sym")
 TABLE = Path(__file__).with_name("sym-lib-table")
 
+# Authoritative schematic-to-PCB assembly contract.  Keep this deliberately
+# compact and use the exact project-local footprint identifiers instantiated by
+# generate_stage7_footprints.py.  Human-readable circuit function belongs in
+# notes/descriptions; Value is the approved procurement value/MPN and must
+# therefore match the PCB.
+ASSEMBLY_CONTRACT = {
+    "C1": ("GRM21BR61E106KA73", "Murata_GRM21_2012Metric"),
+    "C2": ("GRM188R71C104KA01D", "Murata_GRM188_1608Metric"),
+    "C3": ("GRM21BR61A226ME44", "Murata_GRM21_2012Metric"),
+    "C4": ("GRM1885C1H332JA01D", "Murata_GRM188_1608Metric"),
+    "C5": ("GRM188R61A106MAAL", "Murata_GRM188_1608Metric"),
+    "C6": ("GRM188R71C104KA01D", "Murata_GRM188_1608Metric"),
+    "C7": ("GRM188R71C104KA01D", "Murata_GRM188_1608Metric"),
+    "D2": ("WS2812B-V5", "WorldSemi_WS2812B-V5_PLACEMENT_CANDIDATE_NOT_RELEASED"),
+    "D3": ("SMBJ10CA", "Littelfuse_SMBJ10CA_DO214AA"),
+    "F1": ("1812L200/16", "Littelfuse_1812L200_16_4532Metric"),
+    "J1": ("SSW-115-02-G-S DEVKIT LEFT", "Samtec_SSW_1x15_P2.54mm_THT"),
+    "J2": ("SSW-115-02-G-S DEVKIT RIGHT", "Samtec_SSW_1x15_P2.54mm_THT"),
+    "J3": ("E220-400T22D / E220-900T22D SOCKET", "E220_T22D_Socket_400_900"),
+    "J4": ("B2B-XH-A", "JST_B2B-XH-A_1x02_P2.50mm_THT"),
+    "J5": ("SSW-104-02-G-S", "Samtec_SSW_1x04_P2.54mm_THT"),
+    "L1": ("XFL4020-222MEB", "Coilcraft_XFL4020-222MEB"),
+    "Q1": ("DMP3130LQ-7", "Diodes_DMP3130LQ-7_SOT23"),
+    "R1": ("100k 1%", "Resistor_0603_1608Metric"),
+    "R2": ("1M 1%", "Resistor_0603_1608Metric"),
+    "R8": ("10k 1%", "Resistor_0603_1608Metric"),
+    "R9": ("10k 1%", "Resistor_0603_1608Metric"),
+    "TP1": ("BAT_PLUS", "TestPoint_THT_1p0mm_PROTOTYPE"),
+    "TP2": ("GND", "TestPoint_THT_1p0mm_PROTOTYPE"),
+    "TP3": ("BUCK_IN", "TestPoint_THT_1p0mm_PROTOTYPE"),
+    "TP4": ("5V_SYS", "TestPoint_THT_1p0mm_PROTOTYPE"),
+    "TP5": ("5V_SYS", "TestPoint_THT_1p0mm_PROTOTYPE"),
+    "TP6": ("E220_M0", "TestPoint_THT_1p0mm_PROTOTYPE"),
+    "TP7": ("E220_M1", "TestPoint_THT_1p0mm_PROTOTYPE"),
+    "TP8": ("E220_AUX", "TestPoint_THT_1p0mm_PROTOTYPE"),
+    "TP9": ("E220_RXD", "TestPoint_THT_1p0mm_PROTOTYPE"),
+    "TP10": ("E220_TXD", "TestPoint_THT_1p0mm_PROTOTYPE"),
+    "U1": ("TPS62133RGT", "TI_TPS62133RGT_RGT0016C"),
+    "U3": ("SN74AHCT1G125DBVR", "TI_SN74AHCT1G125DBVR_SOT23-5"),
+}
+
+# These two optional pull-ups are intentional non-PCB items: they remain DNP
+# schematic options but must never request a PCB footprint.
+NON_PCB_DNP = {"R10", "R11"}
+
 def u(): return str(uuid4())
 def s(v): return round(v / 1.27) * 1.27
 def prop(name, value, ident, x, y, hide=False):
@@ -79,14 +124,20 @@ def testpoint_libsym():
 
 def instance(libid, ref, value, x, y, pins, datasheet="", dnp=False):
     x, y = s(x), s(y)
+    value, footprint = ASSEMBLY_CONTRACT.get(ref, (value, ""))
+    on_board = "no" if dnp else "yes"
     lines = [f'''  (symbol (lib_id "{libid}") (at {x} {y} 0) (unit 1)
-    (in_bom yes) (on_board yes)
+    (in_bom yes) (on_board {on_board})
     (uuid {u()})''', prop("Reference", ref, 0, x + 5.08, y - 1.27, ref.startswith("#")),
              # Exact MPN/value metadata remains in the editable schematic, but
              # is hidden here to avoid long procurement strings obscuring pins.
              # Each functional block carries concise visible ref/value captions.
              prop("Value", value, 1, x + 5.08, y + 1.27, True),
-             prop("Footprint", "", 2, x, y, True), prop("Datasheet", datasheet, 3, x, y, True)]
+             prop("Footprint", footprint, 2, x, y, True),
+             # KiCad parity compares schematic fields literally.  Datasheets
+             # are recorded in project documentation, rather than duplicated
+             # in only one of the two manufacturing artefacts.
+             prop("Datasheet", "", 3, x, y, True)]
     if dnp:
         lines.append(prop("DNP", "YES", 4, x, y, True))
     for pin in pins:
@@ -97,12 +148,13 @@ def instance(libid, ref, value, x, y, pins, datasheet="", dnp=False):
 def testpoint_instance(ref, value, x, y):
     """Compact instance matching the native Connector:TestPoint geometry."""
     x, y = s(x), s(y)
+    value, footprint = ASSEMBLY_CONTRACT[ref]
     return f'''  (symbol (lib_id "Project:TestPoint") (at {x} {y} 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid {u()})
 {prop("Reference", ref, 0, x + 3.0, y - 2.0, False)}
 {prop("Value", value, 1, x + 3.0, y + 2.0, True)}
-{prop("Footprint", "", 2, x, y, True)}
+{prop("Footprint", footprint, 2, x, y, True)}
 {prop("Datasheet", "~", 3, x, y, True)}
     (pin "1" (uuid {u()}))
   )'''

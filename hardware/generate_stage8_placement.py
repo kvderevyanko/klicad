@@ -8,13 +8,14 @@ BOM.  All locations are reproducible and documented in the Stage 8 review.
 """
 
 from pathlib import Path
+import os
 
 import pcbnew
 
 
 ROOT = Path(__file__).resolve().parent
 LIBRARY = ROOT / "esp32-e220.pretty"
-OUTPUT = ROOT / "esp32-e220.kicad_pcb"
+OUTPUT = Path(os.environ.get("PLACEMENT_OUTPUT", ROOT / "esp32-e220.kicad_pcb"))
 
 
 def v(x: float, y: float) -> pcbnew.VECTOR2I:
@@ -94,10 +95,10 @@ def main() -> None:
     # reproducibly makes the pending airwires and later schematic/PCB audit
     # explicit rather than retaining the previous netless mechanical study.
     net_names = [
-        "GND", "BAT_PLUS", "BAT_FUSED", "BUCK_IN", "Q1_GATE", "BUCK_SW",
-        "SS_TR", "5V_SYS", "DEVKIT_3V3", "E220_M0", "E220_M1", "E220_RXD",
-        "E220_TXD", "E220_AUX", "OLED_SDA", "OLED_SCL", "WS2812_DATA_3V3",
-        "WS2812_DIN",
+        "/GND", "/BAT_PLUS", "/BAT_FUSED", "/BUCK_IN", "/Q1_GATE", "/BUCK_SW",
+        "/SS_TR", "/5V_SYS", "/DEVKIT_3V3", "/E220_M0", "/E220_M1", "/E220_RXD",
+        "/E220_TXD", "/E220_AUX", "/OLED_SDA", "/OLED_SCL", "/WS2812_DATA_3V3",
+        "/WS2812_DIN",
     ]
     nets: dict[str, pcbnew.NETINFO_ITEM] = {}
     for name in net_names:
@@ -110,13 +111,16 @@ def main() -> None:
             pad = fp.FindPadByNumber(number)
             if pad is None:
                 raise RuntimeError(f"{fp.GetReference()}: missing pad {number}")
-            pad.SetNet(nets[net_name])
+            pad.SetNet(nets[f"/{net_name}"])
 
     # POWER CELL: the compact placement follows the TI topology direction.
     # It is intentionally separated from the radio and ESP antenna-edge regions.
     j4 = add_footprint(board, "JST_B2B-XH-A_1x02_P2.50mm_THT", "J4", "B2B-XH-A", 35, 76)
     f1 = add_footprint(board, "Littelfuse_1812L200_16_4532Metric", "F1", "1812L200/16", 45, 76)
-    d3 = add_footprint(board, "Littelfuse_SMBJ10CA_DO214AA", "D3", "SMBJ10CA", 54, 76)
+    # D3 is a BAT_FUSED-to-GND shunt, not a series part.  It is above and
+    # beside J4/F1: D3.2 GND=(39.750,70.500) is 5.94 mm from J4.2 GND, while
+    # D3.1 BAT_FUSED=(44.050,70.500) is 6.31 mm from F1.2 BAT_FUSED.
+    d3 = add_footprint(board, "Littelfuse_SMBJ10CA_DO214AA", "D3", "SMBJ10CA", 41.9, 70.5, 180)
     q1 = add_footprint(board, "Diodes_DMP3130LQ-7_SOT23", "Q1", "DMP3130LQ-7", 63, 76)
     q1.Reference().SetLayer(pcbnew.F_Fab)
     # TPS62133RGT at 0 degrees is intentional and follows the *actual* RGT
@@ -124,11 +128,14 @@ def main() -> None:
     # right-side pads 10/11/12.  Keeping this orientation prevents the old
     # crossed power-cell placement caused by treating the package as symmetric.
     u1 = add_footprint(board, "TI_TPS62133RGT_RGT0016C", "U1", "TPS62133RGT", 72, 72)
-    # Input ceramics are on the AVIN/PVIN side.  Their BUCK_IN terminals face
-    # U1: C1.1=(74.600,69.500), nearest PVIN=(73.400,71.250), 2.122 mm;
-    # C2.1=(74.675,72.600), AVIN=(73.400,72.250), 1.322 mm.
-    c1 = add_footprint(board, "Murata_GRM21_2012Metric", "C1", "GRM21BR61E106KA73", 75.6, 69.5)
-    c2 = add_footprint(board, "Murata_GRM188_1608Metric", "C2", "GRM188R71C104KA01D", 75.4, 72.6)
+    # Input ceramics form a compact non-overlapping pair.  BUCK_IN pads face
+    # PVIN/AVIN; GND pads face the lower PGND/EP side for direct B.Cu stitching.
+    # C1.1 PVIN=(75.300,69.500) to PVIN12=(73.400,71.250): 2.583 mm;
+    # C1.2 GND=(75.300,71.500) to EP=(72.000,72.000): 3.338 mm.
+    c1 = add_footprint(board, "Murata_GRM21_2012Metric", "C1", "GRM21BR61E106KA73", 75.3, 70.5, 270)
+    # C2.1 AVIN=(75.400,73.175) to AVIN10=(73.400,72.250): 2.204 mm;
+    # C2.2 GND=(75.400,74.625) to PGND8=(72.750,73.400): 2.920 mm.
+    c2 = add_footprint(board, "Murata_GRM188_1608Metric", "C2", "GRM188R71C104KA01D", 75.4, 73.9, 270)
     c2.Reference().SetLayer(pcbnew.F_Fab)
     c4 = add_footprint(board, "Murata_GRM188_1608Metric", "C4", "GRM1885C1H332JA01D", 73.4, 76.0, 90)
     # L1 is rotated 180 degrees: its marked pad 1 (BUCK_SW) is closest to the
@@ -145,7 +152,7 @@ def main() -> None:
     add_rect(board, 30, 62, 94, 84, pcbnew.Dwgs_User, 0.25)
     add_text(board, "COMPACT BUCK POWER CELL: J4→F1→D3/Q1→CIN/U1→L1→COUT", 62, 86.5,
              pcbnew.Dwgs_User, 0.95)
-    add_text(board, "ACTUAL PAD-SIDE CHECK: PVIN→C1 2.12 mm; AVIN→C2 1.32 mm; SW→L1 2.63 mm; L1→COUT 1.43 mm", 62, 84.8,
+    add_text(board, "ACTUAL PAD-SIDE CHECK: PVIN→C1 2.58 mm; AVIN→C2 2.20 mm; C1/C2 GND→EP/PGND 3.34/2.92 mm; SW→L1 2.63 mm", 62, 84.8,
              pcbnew.Dwgs_User, 0.70)
     add_text(board, "U1 EP=GND. THERMAL VIAS / SW-COPPER POLICY: LAYOUT REVIEW REQUIRED", 62, 88.2,
              pcbnew.Dwgs_User, 0.80)
