@@ -11,6 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 LIBRARY = ROOT / "esp32-e220.pretty"
+FP_TABLE = ROOT / "fp-lib-table"
 
 
 def text(kind: str, value: str, x: float, y: float, layer: str, size: float = 1.0) -> str:
@@ -163,31 +164,6 @@ def sn74ahct1g125() -> str:
     ))
 
 
-def ws2812b_v5_placement_candidate() -> str:
-    """Non-release physical candidate for the electrically selected WS2812B-V5.
-
-    WorldSemi's electrical document establishes package/pin identity but has
-    not supplied a separately auditable recommended PCB land pattern in this
-    project.  This explicit *placement candidate* prevents an invisible part
-    from being omitted while retaining a PCB-release blocker in its name and
-    documentation.  It must not be used for fabrication without a verified
-    land-pattern finding.
-    """
-    return "".join((
-        '(footprint "WorldSemi_WS2812B-V5_PLACEMENT_CANDIDATE_NOT_RELEASED" (version 20240108) (generator "stage8")\n',
-        '  (layer "F.Cu")\n',
-        '  (descr "WorldSemi WS2812B-V5 5.0x5.4-mm, four-pad package. Stage-8 placement candidate only; no manufacturer-approved land-pattern audit yet.")\n',
-        '  (attr smd)\n', text("reference", "D", 0, -3.60, "F.SilkS"), text("value", "WS2812B-V5 — NOT RELEASED", 0, 3.60, "F.Fab", 0.75),
-        rect(-2.50, -2.70, 2.50, 2.70, "F.Fab", 0.10), rect(-3.10, -3.30, 3.10, 3.30, "F.CrtYd", 0.05),
-        line(-2.50, -2.70, -1.25, -2.70, "F.SilkS", 0.30),
-        smd_pad("1", -2.45, -1.60, 1.20, 1.40, "rect"),
-        smd_pad("2", 2.45, -1.60, 1.20, 1.40, "rect"),
-        smd_pad("3", 2.45, 1.60, 1.20, 1.40, "rect"),
-        smd_pad("4", -2.45, 1.60, 1.20, 1.40, "rect"),
-        ')\n',
-    ))
-
-
 def testpoint() -> str:
     return "".join((
         '(footprint "TestPoint_THT_1p0mm_PROTOTYPE" (version 20240108) (generator "stage8")\n',
@@ -245,6 +221,37 @@ def header(name: str, positions: int) -> str:
         line(-1.350, -1.400, -0.350, -1.400, "F.SilkS", 0.35),
     ]
     contents.extend(pad(str(index + 1), 0, index * 2.54, index == 0) for index in range(positions))
+    contents.append(")\n")
+    return "".join(contents)
+
+
+def pin_header(name: str, positions: int) -> str:
+    """Generic 2.54-mm PTH user header/solder-point footprint.
+
+    J6 and J_RGB are DNP interfaces rather than factory-fitted Samtec sockets.
+    The 1.00-mm drill and 1.70-mm copper are explicit project DFM choices for
+    common repairable 2.54-mm square-post headers or direct wire soldering.
+    """
+    last = (positions - 1) * 2.54
+    contents = [
+        f'(footprint "{name}" (version 20240108) (generator "stage7")\n',
+        '  (layer "F.Cu")\n',
+        '  (descr "Generic 2.54-mm vertical PTH header/solder points; 1.00-mm drill and 1.70-mm copper are project DFM choices. User-installed / PCBA DNP.")\n',
+        '  (tags "2.54mm PTH header solder point DNP")\n',
+        '  (attr through_hole)\n',
+        text("reference", "J", 0, -2.50, "F.SilkS"),
+        text("value", name, 0, last + 2.50, "F.Fab", 0.75),
+        rect(-1.27, -1.27, 1.27, last + 1.27, "F.Fab", 0.10),
+        rect(-1.50, -1.50, 1.50, last + 1.50, "F.SilkS", 0.12),
+        rect(-1.85, -1.85, 1.85, last + 1.85, "F.CrtYd", 0.05),
+        line(-1.50, -1.50, -0.35, -1.50, "F.SilkS", 0.35),
+    ]
+    for index in range(positions):
+        shape = "rect" if index == 0 else "oval"
+        contents.append(
+            f'  (pad "{index + 1}" thru_hole {shape} (at 0 {index * 2.54:.3f}) '
+            '(size 1.700 1.700) (drill 1.000) (layers "*.Cu" "*.Mask"))\n'
+        )
     contents.append(")\n")
     return "".join(contents)
 
@@ -362,10 +369,15 @@ def oled_template() -> str:
 
 def main() -> None:
     LIBRARY.mkdir(exist_ok=True)
+    # This managed candidate belonged only to the removed onboard D2.  Delete
+    # it reproducibly so an older generated library cannot silently retain it.
+    (LIBRARY / "WorldSemi_WS2812B-V5_PLACEMENT_CANDIDATE_NOT_RELEASED.kicad_mod").unlink(missing_ok=True)
     footprints = {
         "Samtec_SSW_1x15_P2.54mm_THT.kicad_mod": header("Samtec_SSW_1x15_P2.54mm_THT", 15),
         "Samtec_SSW_1x07_P2.54mm_THT.kicad_mod": header("Samtec_SSW_1x07_P2.54mm_THT", 7),
         "Samtec_SSW_1x04_P2.54mm_THT.kicad_mod": header("Samtec_SSW_1x04_P2.54mm_THT", 4),
+        "PinHeader_1x03_P2.54mm_Vertical.kicad_mod": pin_header("PinHeader_1x03_P2.54mm_Vertical", 3),
+        "PinHeader_1x06_P2.54mm_Vertical.kicad_mod": pin_header("PinHeader_1x06_P2.54mm_Vertical", 6),
         "JST_B2B-XH-A_1x02_P2.50mm_THT.kicad_mod": jst_xh_b2b_xh_a(),
         "ESP32_DevKit_30pin_Socket_2x15_MechanicalTemplate.kicad_mod": esp32_template(),
         "E220_T22D_Socket_400_900.kicad_mod": e220_socket(),
@@ -374,16 +386,20 @@ def main() -> None:
         "Coilcraft_XFL4020-222MEB.kicad_mod": xfl4020(),
         "Diodes_DMP3130LQ-7_SOT23.kicad_mod": dmp3130(),
         "TI_SN74AHCT1G125DBVR_SOT23-5.kicad_mod": sn74ahct1g125(),
-        "WorldSemi_WS2812B-V5_PLACEMENT_CANDIDATE_NOT_RELEASED.kicad_mod": ws2812b_v5_placement_candidate(),
         "TestPoint_THT_1p0mm_PROTOTYPE.kicad_mod": testpoint(),
         "Littelfuse_SMBJ10CA_DO214AA.kicad_mod": smbj10ca(),
         "Littelfuse_1812L200_16_4532Metric.kicad_mod": fuse_1812(),
-        "Murata_GRM21_2012Metric.kicad_mod": passive("Murata_GRM21_2012Metric", "Murata GRM21 2012 metric (0805) capacitor case used by C1/C3; 1.15x1.40 lands on 2.00-mm centres are project IPC nominal.", 2.00, 1.25, 1.15, 1.40, 2.00),
-        "Murata_GRM188_1608Metric.kicad_mod": passive("Murata_GRM188_1608Metric", "Murata GRM188 1608 metric (0603) capacitor case used by C2/C4/C5/C6/C7; 0.95x1.00 lands on 1.45-mm centres are project IPC nominal.", 1.60, 0.80, 0.95, 1.00, 1.45),
-        "Resistor_0603_1608Metric.kicad_mod": passive("Resistor_0603_1608Metric", "0603 (1608 metric) resistor footprint for active unassigned resistor MPNs R1/R2/R8/R9/R10/R11; manufacturer MPN remains procurement DFM TBD.", 1.60, 0.80, 0.95, 1.00, 1.45),
+        "Murata_GRM21_2012Metric.kicad_mod": passive("Murata_GRM21_2012Metric", "Murata GRM21 2012 metric (0805) capacitor case used by C1/C3/C9/C10; 1.15x1.40 lands on 2.00-mm centres are project IPC nominal.", 2.00, 1.25, 1.15, 1.40, 2.00),
+        "Murata_GRM188_1608Metric.kicad_mod": passive("Murata_GRM188_1608Metric", "Murata GRM188 1608 metric (0603) capacitor case used by C2/C4/C5/C6/C7/C8; 0.95x1.00 lands on 1.45-mm centres are project IPC nominal.", 1.60, 0.80, 0.95, 1.00, 1.45),
+        "Resistor_0603_1608Metric.kicad_mod": passive("Resistor_0603_1608Metric", "0603 (1608 metric) resistor footprint used by R1/R2/R3/R4/R8/R9/R10/R11; 0.95x1.00 lands on 1.45-mm centres are project IPC nominal.", 1.60, 0.80, 0.95, 1.00, 1.45),
     }
     for filename, content in footprints.items():
         (LIBRARY / filename).write_text(content, encoding="utf-8")
+    FP_TABLE.write_text('''(fp_lib_table
+  (version 7)
+  (lib (name "Carrier")(type "KiCad")(uri "${KIPRJMOD}/esp32-e220.pretty")(options "")(descr "Reproducible ESP32-E220 carrier footprints"))
+)
+''', encoding="utf-8")
 
 
 if __name__ == "__main__":

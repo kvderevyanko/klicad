@@ -1,0 +1,336 @@
+{
+  "board": "hardware/esp32-e220.kicad_pcb",
+  "checks": [
+    {
+      "evidence": {
+        "board": "hardware/esp32-e220.kicad_pcb"
+      },
+      "name": "BOARD LOAD",
+      "status": "PASS"
+    },
+    {
+      "evidence": {
+        "count": 2,
+        "layers": [
+          [
+            "0",
+            "F.Cu",
+            "signal"
+          ],
+          [
+            "2",
+            "B.Cu",
+            "signal"
+          ]
+        ]
+      },
+      "name": "COPPER LAYERS",
+      "status": "PASS"
+    },
+    {
+      "evidence": {
+        "bbox_mm": [
+          0.0,
+          0.0,
+          145.0,
+          90.0
+        ],
+        "height_mm": 90.0,
+        "tolerance_mm": 0.5,
+        "width_mm": 145.0
+      },
+      "name": "BOARD OUTLINE",
+      "status": "PASS"
+    },
+    {
+      "evidence": {
+        "footprints": 41,
+        "tracks": 96,
+        "vias": 25,
+        "zones": 4
+      },
+      "name": "COUNTS",
+      "status": "PASS"
+    },
+    {
+      "evidence": [
+        {
+          "nets": [
+            "/AUX_3V3",
+            "<no net>"
+          ],
+          "pad": "2",
+          "pads": [
+            {
+              "net": "<no net>",
+              "xy_mm": [
+                121.85,
+                68.0
+              ]
+            },
+            {
+              "net": "/AUX_3V3",
+              "xy_mm": [
+                128.15,
+                68.0
+              ]
+            }
+          ],
+          "reference": "U4"
+        }
+      ],
+      "name": "DUPLICATE PAD NUMBER NET CONSISTENCY",
+      "status": "FAIL"
+    },
+    {
+      "evidence": [
+        {
+          "pad": "2",
+          "reference": "U4",
+          "xy_mm": [
+            121.85,
+            68.0
+          ]
+        }
+      ],
+      "name": "REQUIRED ELECTRICAL PAD NETLESS",
+      "status": "FAIL"
+    },
+    {
+      "evidence": {
+        "antenna_rule_area_name": "ESP32_ANTENNA_EXCLUSION",
+        "approved_boundary_refs": [
+          "J1",
+          "J2"
+        ],
+        "hits": [
+          {
+            "type": "track",
+            "xy_mm": [
+              [
+                116.0,
+                70.3
+              ],
+              [
+                116.0,
+                60.0
+              ]
+            ]
+          },
+          {
+            "type": "track",
+            "xy_mm": [
+              [
+                106.0,
+                64.0
+              ],
+              [
+                106.0,
+                70.3
+              ]
+            ]
+          },
+          {
+            "type": "track",
+            "xy_mm": [
+              [
+                121.85,
+                70.3
+              ],
+              [
+                116.0,
+                70.3
+              ]
+            ]
+          },
+          {
+            "type": "track",
+            "xy_mm": [
+              [
+                106.0,
+                70.3
+              ],
+              [
+                121.85,
+                70.3
+              ]
+            ]
+          },
+          {
+            "type": "track",
+            "xy_mm": [
+              [
+                80.0,
+                64.0
+              ],
+              [
+                106.0,
+                64.0
+              ]
+            ]
+          },
+          {
+            "type": "track",
+            "xy_mm": [
+              [
+                103.0,
+                80.0
+              ],
+              [
+                105.0,
+                78.0
+              ]
+            ]
+          },
+          {
+            "type": "track",
+            "xy_mm": [
+              [
+                105.0,
+                74.04
+              ],
+              [
+                70.0,
+                72.0
+              ]
+            ]
+          },
+          {
+            "type": "via",
+            "xy_mm": [
+              106.0,
+              64.0
+            ]
+          },
+          {
+            "type": "via",
+            "xy_mm": [
+              130.0,
+              70.0
+            ]
+          },
+          {
+            "type": "via",
+            "xy_mm": [
+              125.0,
+              66.0
+            ]
+          },
+          {
+            "type": "via",
+            "xy_mm": [
+              125.0,
+              70.0
+            ]
+          },
+          {
+            "type": "via",
+            "xy_mm": [
+              130.0,
+              66.0
+            ]
+          },
+          {
+            "net": "/AUX_3V3",
+            "type": "zone"
+          },
+          {
+            "net": "/AUX_3V3",
+            "type": "zone"
+          },
+          {
+            "origin_mm": [
+              135.0,
+              68.0
+            ],
+            "reference": "C10",
+            "type": "footprint_or_pad"
+          },
+          {
+            "origin_mm": [
+              105.0,
+              78.0
+            ],
+            "reference": "J8",
+            "type": "footprint_or_pad"
+          },
+          {
+            "origin_mm": [
+              125.0,
+              68.0
+            ],
+            "reference": "U4",
+            "type": "footprint_or_pad"
+          },
+          {
+            "origin_mm": [
+              115.0,
+              60.0
+            ],
+            "reference": "C9",
+            "type": "footprint_or_pad"
+          }
+        ],
+        "rect_mm": {
+          "xmax": 142.7,
+          "xmin": 104.7,
+          "ymax": 90.0,
+          "ymin": 52.0
+        },
+        "rule_area_crosscheck": "NOT_APPLICABLE"
+      },
+      "name": "ESP32 ANTENNA EXCLUSION",
+      "status": "FAIL"
+    },
+    {
+      "evidence": {
+        "near-edge": "native DRC is authoritative in full mode",
+        "pad_outside_outline": 0
+      },
+      "name": "BOARD EDGE",
+      "status": "PASS"
+    },
+    {
+      "evidence": {
+        "comparison": "normalized footprint origin/rotation and pad geometry",
+        "references": [
+          "U1",
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "L1"
+        ]
+      },
+      "name": "PROTECTED CHECKPOINT",
+      "status": "PASS"
+    },
+    {
+      "evidence": {
+        "exit_code": 0,
+        "mismatch_counts": {
+          "board_only_references": 0,
+          "electrical_pad_net_mismatches": 0,
+          "missing_pcb_footprints": 2,
+          "production_property_mismatches": 0
+        }
+      },
+      "name": "SCHEMATIC-PCB PARITY",
+      "status": "FAIL"
+    },
+    {
+      "evidence": {
+        "categories": {},
+        "exit_code": 5,
+        "footprint_errors": 0,
+        "geometric_violations": 0,
+        "unconnected_items": 33,
+        "zone_errors": 0
+      },
+      "name": "NATIVE DRC SUMMARY",
+      "status": "PASS"
+    }
+  ],
+  "mode": "full",
+  "overall_status": "FAIL"
+}

@@ -1,0 +1,12 @@
+{
+  "outline_mm": {"width": 145.0, "height": 90.0, "tolerance": 0.5},
+  "antenna_exclusion_mm": {"xmin": 104.7, "xmax": 142.7, "ymin": 52.0, "ymax": 90.0},
+  "antenna_rule_area_name": "ESP32_ANTENNA_EXCLUSION",
+  "antenna_approved_footprints": ["J1", "J2"],
+  "allowed_netless_pads": {
+    "J1": ["4", "9", "11", "12", "13", "14", "15"],
+    "J2": ["3", "4", "8", "12", "13"],
+    "U1": ["4"]
+  },
+  "protected_footprints": ["U1", "C1", "C2", "C3", "C4", "L1"]
+}

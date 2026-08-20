@@ -1,0 +1,41 @@
+{
+  "board_only_references": [],
+  "contract": {
+    "pcb": "hardware/esp32-e220.kicad_pcb",
+    "pcb_net_name": "exact Eeschema root-sheet name, including leading '/'"
+  },
+  "counts": {
+    "intentional_non_pcb": 2,
+    "pcb_footprints": 41,
+    "schematic_assembled": 43
+  },
+  "electrical_pad_net_mismatches": [],
+  "gate": "SCHEMATIC-PCB ELECTRICAL PARITY",
+  "intentional_non_pcb": {
+    "R10": "NO_FOOTPRINT_DNP",
+    "R11": "NO_FOOTPRINT_DNP"
+  },
+  "kicad_raw_net_name_mismatches": [],
+  "missing_pcb_footprints": [
+    "J6",
+    "J7"
+  ],
+  "non_pcb_dnp_errors": [],
+  "production_property_mismatches": [
+    {
+      "field": "Value",
+      "pcb": "B2PS-VH(LF)(SN)",
+      "reference": "J8",
+      "schematic": "B2B-XH-A"
+    },
+    {
+      "field": "Footprint",
+      "pcb": "Connector_JST:JST_VH_B2PS-VH_1x02_P3.96mm_Horizontal",
+      "reference": "J8",
+      "schematic": "JST_B2B-XH-A_1x02_P2.50mm_THT"
+    }
+  ],
+  "status": "FAIL",
+  "unexpected_non_pcb_items": [],
+  "usb_c_power_nets_present": []
+}

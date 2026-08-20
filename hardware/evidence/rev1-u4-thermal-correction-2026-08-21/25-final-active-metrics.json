@@ -1,0 +1,163 @@
+{
+  "active_sha256": "4f6fba9ed19c3f0290842b62f3ec087d28e3911c7d12f31d2e581aa1c8e26650",
+  "airwires": {
+    "mandatory_rev1_count": 0,
+    "net_sets": [
+      [
+        "/GND"
+      ],
+      [
+        "/GND"
+      ],
+      [
+        "/GND"
+      ],
+      [
+        "/BAT_PLUS"
+      ],
+      [
+        "/BUCK_IN"
+      ],
+      [
+        "/BUCK_IN"
+      ],
+      [
+        "/OLED_SDA"
+      ],
+      [
+        "/OLED_SCL"
+      ]
+    ],
+    "visible_count": 8
+  },
+  "aux_vias_xy_mm": [],
+  "aux_zones": [
+    {
+      "layer": "F.Cu",
+      "name": "",
+      "net": "/AUX_3V3",
+      "outlines_mm": [
+        [
+          [
+            22.0,
+            22.0
+          ],
+          [
+            30.0,
+            22.0
+          ],
+          [
+            30.0,
+            32.0
+          ],
+          [
+            22.0,
+            32.0
+          ]
+        ]
+      ],
+      "priority": 2,
+      "rule_area": false
+    }
+  ],
+  "counts": {
+    "copper_zones": 4,
+    "footprints": 37,
+    "rule_areas": 1,
+    "tracks": 182,
+    "vias": 56
+  },
+  "placements": {
+    "C10": {
+      "footprint": "Carrier:Murata_GRM21_2012Metric",
+      "rotation_deg": 180.0,
+      "xy_mm": [
+        14.4,
+        27.0
+      ]
+    },
+    "C9": {
+      "footprint": "Carrier:Murata_GRM21_2012Metric",
+      "rotation_deg": -90.0,
+      "xy_mm": [
+        17.5,
+        33.0
+      ]
+    },
+    "U4": {
+      "footprint": "Package_TO_SOT_SMD:SOT-223-3_TabPin2",
+      "rotation_deg": 0.0,
+      "xy_mm": [
+        20.65,
+        27.0
+      ]
+    }
+  },
+  "reviewed_sha256": "c492d1254e0ef19c95fe6a38357b1f93a4fc85c93c536a4da94afaf2f2e7e3de",
+  "scope_references": {
+    "D2": false,
+    "J6": true,
+    "J7": false,
+    "J9": true,
+    "TP10": false,
+    "TP6": false,
+    "TP7": false,
+    "TP8": false,
+    "TP9": false
+  },
+  "semantic_match_to_reviewed": {
+    "footprints_and_pads": true,
+    "tracks_and_vias": true,
+    "zone_and_rule_area_outlines": true
+  },
+  "u4_pads": [
+    {
+      "net": "/GND",
+      "number": "1",
+      "size_mm": [
+        2.0,
+        1.5
+      ],
+      "xy_mm": [
+        17.5,
+        24.7
+      ]
+    },
+    {
+      "net": "/AUX_3V3",
+      "number": "2",
+      "size_mm": [
+        2.0,
+        1.5
+      ],
+      "xy_mm": [
+        17.5,
+        27.0
+      ]
+    },
+    {
+      "net": "/AUX_3V3",
+      "number": "2",
+      "size_mm": [
+        2.0,
+        3.8
+      ],
+      "xy_mm": [
+        23.8,
+        27.0
+      ]
+    },
+    {
+      "net": "/5V_SYS",
+      "number": "3",
+      "size_mm": [
+        2.0,
+        1.5
+      ],
+      "xy_mm": [
+        17.5,
+        29.3
+      ]
+    }
+  ]
+}

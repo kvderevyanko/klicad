@@ -7,7 +7,7 @@ dump: short local wires show each support circuit, while named labels bridge
 the independent blocks.
 """
 from pathlib import Path
-from uuid import uuid4
+from uuid import NAMESPACE_URL, uuid5
 
 OUT = Path(__file__).with_name("esp32-e220.kicad_sch")
 SYMLIB = Path(__file__).with_name("esp32-e220.kicad_sym")
@@ -26,7 +26,9 @@ ASSEMBLY_CONTRACT = {
     "C5": ("GRM188R61A106MAAL", "Murata_GRM188_1608Metric"),
     "C6": ("GRM188R71C104KA01D", "Murata_GRM188_1608Metric"),
     "C7": ("GRM188R71C104KA01D", "Murata_GRM188_1608Metric"),
-    "D2": ("WS2812B-V5", "WorldSemi_WS2812B-V5_PLACEMENT_CANDIDATE_NOT_RELEASED"),
+    "C8": ("GRM188R71C104KA01D", "Carrier:Murata_GRM188_1608Metric"),
+    "C9": ("GRM21BR61E106KA73", "Carrier:Murata_GRM21_2012Metric"),
+    "C10": ("GRM21BR61E106KA73", "Carrier:Murata_GRM21_2012Metric"),
     "D3": ("SMBJ10CA", "Littelfuse_SMBJ10CA_DO214AA"),
     "F1": ("1812L200/16", "Littelfuse_1812L200_16_4532Metric"),
     "J1": ("SSW-115-02-G-S DEVKIT LEFT", "Samtec_SSW_1x15_P2.54mm_THT"),
@@ -34,10 +36,16 @@ ASSEMBLY_CONTRACT = {
     "J3": ("E220-400T22D / E220-900T22D SOCKET", "E220_T22D_Socket_400_900"),
     "J4": ("B2B-XH-A", "JST_B2B-XH-A_1x02_P2.50mm_THT"),
     "J5": ("SSW-104-02-G-S", "Samtec_SSW_1x04_P2.54mm_THT"),
+    "J6": ("BUTTONS 1x6 2.54mm DNP", "Carrier:PinHeader_1x06_P2.54mm_Vertical"),
+    "J8": ("B2B-XH-A", "JST_B2B-XH-A_1x02_P2.50mm_THT"),
+    "J9": ("J_RGB / RGB OUT 1x3 2.54mm DNP", "Carrier:PinHeader_1x03_P2.54mm_Vertical"),
+    "JP1": ("TSW-102-07-G-S + SNT-100-BK-G", "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"),
     "L1": ("XFL4020-222MEB", "Coilcraft_XFL4020-222MEB"),
     "Q1": ("DMP3130LQ-7", "Diodes_DMP3130LQ-7_SOT23"),
     "R1": ("100k 1%", "Resistor_0603_1608Metric"),
     "R2": ("1M 1%", "Resistor_0603_1608Metric"),
+    "R3": ("RC0603FR-0710KL", "Carrier:Resistor_0603_1608Metric"),
+    "R4": ("RC0603FR-073K3L", "Carrier:Resistor_0603_1608Metric"),
     "R8": ("10k 1%", "Resistor_0603_1608Metric"),
     "R9": ("10k 1%", "Resistor_0603_1608Metric"),
     "TP1": ("BAT_PLUS", "TestPoint_THT_1p0mm_PROTOTYPE"),
@@ -45,20 +53,22 @@ ASSEMBLY_CONTRACT = {
     "TP3": ("BUCK_IN", "TestPoint_THT_1p0mm_PROTOTYPE"),
     "TP4": ("5V_SYS", "TestPoint_THT_1p0mm_PROTOTYPE"),
     "TP5": ("5V_SYS", "TestPoint_THT_1p0mm_PROTOTYPE"),
-    "TP6": ("E220_M0", "TestPoint_THT_1p0mm_PROTOTYPE"),
-    "TP7": ("E220_M1", "TestPoint_THT_1p0mm_PROTOTYPE"),
-    "TP8": ("E220_AUX", "TestPoint_THT_1p0mm_PROTOTYPE"),
-    "TP9": ("E220_RXD", "TestPoint_THT_1p0mm_PROTOTYPE"),
-    "TP10": ("E220_TXD", "TestPoint_THT_1p0mm_PROTOTYPE"),
     "U1": ("TPS62133RGT", "TI_TPS62133RGT_RGT0016C"),
     "U3": ("SN74AHCT1G125DBVR", "TI_SN74AHCT1G125DBVR_SOT23-5"),
+    "U4": ("TLV1117LV33DCYR", "Package_TO_SOT_SMD:SOT-223-3_TabPin2"),
 }
 
 # These two optional pull-ups are intentional non-PCB items: they remain DNP
 # schematic options but must never request a PCB footprint.
 NON_PCB_DNP = {"R10", "R11"}
 
-def u(): return str(uuid4())
+UUID_COUNTER = 0
+
+def u():
+    """Return a stable UUID so two source-identical generations are byte-identical."""
+    global UUID_COUNTER
+    UUID_COUNTER += 1
+    return str(uuid5(NAMESPACE_URL, f"esp32-e220-schematic-{UUID_COUNTER}"))
 def s(v): return round(v / 1.27) * 1.27
 def prop(name, value, ident, x, y, hide=False):
     h = " hide" if hide else ""
@@ -122,7 +132,7 @@ def testpoint_libsym():
       )
     )'''
 
-def instance(libid, ref, value, x, y, pins, datasheet="", dnp=False):
+def instance(libid, ref, value, x, y, pins, datasheet="", dnp=False, assembly_dnp=False):
     x, y = s(x), s(y)
     value, footprint = ASSEMBLY_CONTRACT.get(ref, (value, ""))
     on_board = "no" if dnp else "yes"
@@ -138,7 +148,7 @@ def instance(libid, ref, value, x, y, pins, datasheet="", dnp=False):
              # are recorded in project documentation, rather than duplicated
              # in only one of the two manufacturing artefacts.
              prop("Datasheet", "", 3, x, y, True)]
-    if dnp:
+    if dnp or assembly_dnp:
         lines.append(prop("DNP", "YES", 4, x, y, True))
     for pin in pins:
         lines.append(f'    (pin "{pin[0]}" (uuid {u()}))')
@@ -228,6 +238,11 @@ e220 = [("1","M0","input"),("2","M1","input"),("3","RXD","input"),
 oled_i2c = [("1","GND","power_in"),("2","VCC / 3V3","power_in"),
             ("3","SCL","bidirectional"),("4","SDA","bidirectional")]
 battery = [("1","BAT+","passive"),("2","BAT-","passive")]
+buttons = [("1","GND"),("2","GPIO13"),("3","GPIO14"),("4","GPIO18"),
+           ("5","GPIO19"),("6","GPIO23")]
+rgb_out = [("1","5V_SYS"),("2","WS2812_DATA_5V"),("3","GND")]
+power_switch = [("1","BAT_FUSED"),("2","BAT_SW")]
+devkit_pwr = [("1","5V_SYS"),("2","DEVKIT_VIN")]
 # Exact TPS62133 pin numbers/names from TI Table 6-1.  The exposed thermal
 # pad is explicitly an electrical GND pin for later footprint mapping.
 # SW1/SW2/SW3 are parallel bond wires of one switch node.  They are marked
@@ -240,7 +255,7 @@ tps62133 = [("1","SW","passive"),("2","SW","passive"),("3","SW","passive"),
             ("13","EN","input"),("14","VOS","input"),("15","PGND","power_in"),
             ("16","PGND","power_in"),("EP","EXPOSED THERMAL PAD","power_in")]
 ahct = [("1","OE","input"),("2","A","input"),("3","GND","power_in"),("4","Y","output"),("5","VCC","power_in")]
-ws2812 = [("1","VDD","power_in"),("2","DOUT","output"),("3","VSS","power_in"),("4","DIN","input")]
+tlv1117lv33 = [("1","GND","power_in"),("2","OUT / TAB","power_out"),("3","IN","power_in")]
 testpoint = [("1","TP","passive")]
 r2 = [("1","1"),("2","2")]
 inductor = [("1","1","passive"),("2","2","passive")]
@@ -258,9 +273,18 @@ libs = [
            "User-installed 0.96 inch SSD1306 128x64 I2C module; user/seller-provided header order 1 GND, 2 VCC, 3 SCL, 4 SDA"),
     libsym("Project:Battery_2S_Protected_Input", "J", "PROTECTED 2S LI-ION INPUT", battery,
            "Carrier input only: externally protected 2S Li-ion pack, 6.0...8.4 V; not a charger or BMS interface"),
+    libsym("Project:BUTTONS_1x6", "J", "BUTTONS 1x6", buttons,
+           "DNP 2.54-mm PTH panel-button interface; active-low contacts to GND only"),
+    libsym("Project:RGB_OUT_1x3", "J", "RGB OUT 1x3", rgb_out,
+           "DNP 2.54-mm PTH output for an external chain of at most three WS2812B-V5 pixels"),
+    libsym("Project:POWER_SW_1x2", "J", "POWER_SW 1x2", power_switch,
+           "External mechanical power-switch harness connector; BAT_FUSED to BAT_SW"),
+    libsym("Project:DEVKIT_PWR_1x2", "JP", "DEVKIT_PWR 1x2", devkit_pwr,
+           "2.54-mm removable jumper: 5V_SYS to DEVKIT_VIN; header PCBA fitted, shunt user-installed"),
     libsym("Project:TPS62133RGT", "U", "TPS62133RGT", tps62133, "TI fixed 5-V 3-A synchronous buck, RGT VQFN-16 with exposed pad"),
     libsym("Project:SN74AHCT1G125DBVR", "U", "SN74AHCT1G125DBVR", ahct, "TI 5-V single buffer with 3-state output"),
-    libsym("Project:WS2812B_V5", "D", "WS2812B-V5", ws2812, "WorldSemi 5-V intelligent RGB LED"),
+    libsym("Project:TLV1117LV33DCY", "U", "TLV1117LV33DCYR", tlv1117lv33,
+           "TI 3.3-V 1-A LDO, DCY SOT-223: pin 2 and tab are regulated OUT"),
     testpoint_libsym(),
     power_flag_libsym(),
     libsym("Project:R", "R", "R", r2, "Passive resistor"),
@@ -279,13 +303,21 @@ items += [instance("Project:DevKit_Left_1x15", "J1", "DEVKIT_LEFT (USB-C toward 
           instance("Project:E220_T22D_400_900", "J3", "E220-T22D SOCKET — FIT 400T22D OR 900T22D", 175, 105, e220,
                    "https://www.cdebyte.com/pdf-down.aspx?id=4221"),
           instance("Project:OLED_SSD1306_I2C_1x4", "J5", "OLED 0.96 SSD1306 128x64 I2C — FEMALE 1x4 SOCKET", 330, 175, oled_i2c),
+          instance("Project:BUTTONS_1x6", "J6", "BUTTONS 1x6 — USER INSTALL / PCBA DNP", 235, 170, buttons,
+                   assembly_dnp=True),
+          instance("Project:RGB_OUT_1x3", "J9", "J_RGB / RGB OUT 1x3 — USER INSTALL / PCBA DNP", 325, 105, rgb_out,
+                   assembly_dnp=True),
+          instance("Project:POWER_SW_1x2", "J8", "POWER_SW — JST XH 2.50mm EXTERNAL SWITCH", 85, 170, power_switch,
+                   "https://www.jst-mfg.com/product/pdf/eng/eXH.pdf"),
+          instance("Project:DEVKIT_PWR_1x2", "JP1", "DEVKIT_PWR — HEADER PCBA FIT / SHUNT USER INSTALL", 85, 70, devkit_pwr,
+                   "https://www.samtec.com/products/tsw-102-07-g-s"),
           instance("Project:Battery_2S_Protected_Input", "J4", "PROTECTED 2S LI-ION INPUT ONLY 6...8.4V", 25, 155, battery),
           instance("Project:TPS62133RGT", "U1", "TPS62133RGT (5V / 3A BUCK)", 130, 180, tps62133,
                    "https://www.ti.com/lit/ds/symlink/tps62133.pdf"),
           instance("Project:SN74AHCT1G125DBVR", "U3", "SN74AHCT1G125DBVR", 275, 105, ahct,
                    "https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf"),
-          instance("Project:WS2812B_V5", "D2", "WS2812B-V5", 325, 105, ws2812,
-                   "https://www.world-semi.co.kr/_files/ugd/89cd03_1023b0e9d135431aa1e6491bfc318112.pdf"),
+          instance("Project:TLV1117LV33DCY", "U4", "TLV1117LV33DCYR (AUX_3V3 / 100mA OLED ALLOCATION)", 265, 255, tlv1117lv33,
+                   "https://www.ti.com/lit/ds/symlink/tlv1117lv.pdf"),
           instance("Project:F", "F1", "1812L200/16 (2A hold PPTC)", 45, 155, fuse,
                    "https://www.littelfuse.com/~/media/electronics/datasheets/resettable_ptcs/littelfuse_ptc_1812l_datasheet.pdf.pdf"),
           instance("Project:TVS", "D3", "SMBJ10CA (bidirectional TVS)", 65, 165, tvs,
@@ -303,16 +335,13 @@ items += [instance("Project:DevKit_Left_1x15", "J1", "DEVKIT_LEFT (USB-C toward 
           testpoint_instance("TP2", "GND", 45, 230),
           testpoint_instance("TP3", "BUCK_IN", 65, 230),
           testpoint_instance("TP4", "5V_SYS", 85, 230),
-          testpoint_instance("TP5", "E220_VCC", 105, 230),
-          testpoint_instance("TP6", "E220_M0", 25, 240),
-          testpoint_instance("TP7", "E220_M1", 45, 240),
-          testpoint_instance("TP8", "E220_AUX", 65, 240),
-          testpoint_instance("TP9", "E220_RXD", 85, 240),
-          testpoint_instance("TP10", "E220_TXD", 105, 240)]
+          testpoint_instance("TP5", "E220_VCC", 105, 230)]
 
 parts = [
     ("Project:R","R1","100k 1% (Q1 gate pull-down)",65,180,r2),
     ("Project:R","R2","1M 1% (Q1 gate-source)",85,180,r2),
+    ("Project:R","R3","RC0603FR-0710KL 10k 1% (BAT_SENSE upper)",80,255,r2),
+    ("Project:R","R4","RC0603FR-073K3L 3.3k 1% (BAT_SENSE lower)",100,255,r2),
     ("Project:C","C1","GRM21BR61E106KA73 10uF 25V X5R (BUCK IN)",105,205,r2),
     ("Project:C","C2","GRM188R71C104KA01D 100nF 16V X7R (AVIN)",125,205,r2),
     ("Project:C","C3","GRM21BR61A226ME44 22uF 10V X5R (BUCK OUT)",185,205,r2),
@@ -321,36 +350,64 @@ parts = [
     ("Project:C","C6","GRM188R71C104KA01D 100nF 16V X7R",195,140,r2),
     ("Project:R","R8","10k 1% M0 reset pull-down",215,140,r2),
     ("Project:R","R9","10k 1% M1 reset pull-down",235,140,r2),
-    ("Project:R","R10","DNP 4.7k 1% OLED SDA pull-up to 3V3",300,185,r2),
-    ("Project:R","R11","DNP 4.7k 1% OLED SCL pull-up to 3V3",320,185,r2),
+    ("Project:R","R10","DNP 4.7k 1% OLED SDA pull-up to AUX_3V3",300,185,r2),
+    ("Project:R","R11","DNP 4.7k 1% OLED SCL pull-up to AUX_3V3",320,185,r2),
     ("Project:C","C7","GRM188R71C104KA01D 100nF 16V X7R",285,140,r2),
+    ("Project:C","C8","GRM188R71C104KA01D 100nF 16V X7R (BAT_SENSE ADC FILTER)",120,255,r2),
+    ("Project:C","C9","GRM21BR61E106KA73 10uF 25V X5R (U4 CIN)",295,255,r2),
+    ("Project:C","C10","GRM21BR61E106KA73 10uF 25V X5R (U4 COUT)",315,255,r2),
 ]
 for a,b,c,d,e,f in parts:
     items.append(instance(a,b,c,d,e,f,dnp=b in {"R10", "R11"}))
 
-# Verified DevKit/E220/LED signals retained from Stage 5.
-for n, net in [(1,"5V_SYS"),(2,"GND"),(6,"E220_AUX"),(7,"E220_M1"),(8,"E220_M0")]:
+# Verified DevKit/E220/LED signals retained from Stage 5 plus authorized Rev.1 expansion.
+for n, net in [(1,"DEVKIT_VIN"),(2,"GND"),(3,"GPIO13"),(5,"GPIO14"),(6,"E220_AUX"),(7,"E220_M1"),(8,"E220_M0"),
+               (10,"BAT_SENSE")]:
     items.append(pin_label(70,100,len(left),n,net))
-for n in set(range(1,16)) - {1,2,6,7,8}: items.append(pin_no_connect(70,100,len(left),n))
-for n, net in [(1,"DEVKIT_3V3"),(2,"GND"),(5,"WS2812_DATA_3V3"),(6,"E220_TXD"),(7,"E220_RXD")]:
+for n in set(range(1,16)) - {1,2,3,5,6,7,8,10}: items.append(pin_no_connect(70,100,len(left),n))
+for n, net in [(1,"DEVKIT_3V3"),(2,"GND"),(5,"WS2812_DATA_3V3"),(6,"E220_TXD"),(7,"E220_RXD"),
+               (9,"GPIO18"),(10,"GPIO19"),(15,"GPIO23")]:
     items.append(pin_label(115,100,len(right),n,net))
 # One-sheet I2C nets: local labels intentionally connect DevKit, socket and
 # optional pull-up sites without creating a global-label/local-label ERC mix.
 items += [label("OLED_SDA", *pin_pos(115,100,len(right),11)), label("OLED_SCL", *pin_pos(115,100,len(right),14))]
-for n in set(range(1,16)) - {1,2,5,6,7,11,14}: items.append(pin_no_connect(115,100,len(right),n))
+for n in set(range(1,16)) - {1,2,5,6,7,9,10,11,14,15}: items.append(pin_no_connect(115,100,len(right),n))
 for n, net in [(1,"E220_M0"),(2,"E220_M1"),(3,"E220_RXD"),(4,"E220_TXD"),(5,"E220_AUX"),(6,"5V_SYS"),(7,"GND")]:
     items.append(pin_label(175,105,len(e220),n,net))
-for n, net in [(1,"GND"),(2,"DEVKIT_3V3"),(3,"OLED_SCL"),(4,"OLED_SDA")]:
+for n, net in [(1,"GND"),(2,"AUX_3V3"),(3,"OLED_SCL"),(4,"OLED_SDA")]:
     items.append(pin_label(330,175,len(oled_i2c),n,net))
 
-# Battery connector and protection: the P-MOS body diode must precharge from
-# BAT_FUSED (D, pin 3) to BUCK_IN (S, pin 2). Correct polarity then produces
+# Battery connector, switch and protection: the P-MOS body diode must precharge from
+# BAT_SW (D, pin 3) to BUCK_IN (S, pin 2). Correct polarity then produces
 # negative VGS and enhanced conduction; reversed pack polarity leaves the body
 # diode reverse-biased and VGS non-negative. D3 is across BAT_FUSED/GND.
 items += [pin_label(25,155,len(battery),1,"BAT_PLUS"), pin_label(25,155,len(battery),2,"GND"),
           pin_label(45,155,len(fuse),1,"BAT_PLUS"), pin_label(45,155,len(fuse),2,"BAT_FUSED"),
           pin_label(65,165,len(tvs),1,"BAT_FUSED"), pin_label(65,165,len(tvs),2,"GND"),
-          pin_label(85,155,len(pmos),1,"Q1_GATE"), pin_label(85,155,len(pmos),2,"BUCK_IN"), pin_label(85,155,len(pmos),3,"BAT_FUSED")]
+          pin_label(85,170,len(power_switch),1,"BAT_FUSED"), pin_label(85,170,len(power_switch),2,"BAT_SW"),
+          pin_label(85,155,len(pmos),1,"Q1_GATE"), pin_label(85,155,len(pmos),2,"BUCK_IN"), pin_label(85,155,len(pmos),3,"BAT_SW")]
+
+# DEVKIT_PWR intentionally creates two separate nets: a removable shunt is the
+# only approved connection from 5V_SYS to the DevKit VIN pad.
+items += [pin_label(85,70,len(devkit_pwr),1,"5V_SYS"), pin_label(85,70,len(devkit_pwr),2,"DEVKIT_VIN")]
+
+# BAT_SENSE is a strictly local divider from BUCK_IN to ADC1 GPIO32.  C8 is the
+# Espressif-recommended 100-nF ADC-input filter capacitor.
+items += [pin_label(80,255,2,1,"BUCK_IN"), pin_label(80,255,2,2,"BAT_SENSE"),
+          pin_label(100,255,2,1,"BAT_SENSE"), pin_label(100,255,2,2,"GND"),
+          pin_label(120,255,2,1,"BAT_SENSE"), pin_label(120,255,2,2,"GND")]
+
+# J6 is not a general GPIO expansion port.  It is a DNP panel-button interface:
+# firmware enables pull-ups and each external normally-open contact shorts one
+# signal to J6.1/GND when pressed.  No external voltage may be applied.
+for n, net in [(1,"GND"),(2,"GPIO13"),(3,"GPIO14"),(4,"GPIO18"),(5,"GPIO19"),(6,"GPIO23")]:
+    items.append(pin_label(235,170,len(buttons),n,net))
+
+# External RGB output only.  WorldSemi's WS2812B-V5 primary data gives VIH >=
+# 2.7 V and does not specify a DIN series resistor/value in its typical
+# application, so no unevidenced resistor is inserted here.
+for n, net in [(1,"5V_SYS"),(2,"WS2812_DATA_5V"),(3,"GND")]:
+    items.append(pin_label(325,105,len(rgb_out),n,net))
 
 # TPS62133 fixed-5-V application per official data sheet. FSW=5V_SYS selects
 # lower frequency; DEF/FB=GND keeps the nominal fixed output. PG is unused.
@@ -361,12 +418,16 @@ for n, net in [(1,"BUCK_SW"),(2,"BUCK_SW"),(3,"BUCK_SW"),(5,"GND"),(6,"GND"),(7,
 items.append(pin_no_connect(130,180,len(tps62133),4))
 items += [pin_label(185,180,len(inductor),1,"BUCK_SW"), pin_label(185,180,len(inductor),2,"5V_SYS")]
 
-for n, net in [(1,"GND"),(2,"WS2812_DATA_3V3"),(3,"GND"),(4,"WS2812_DIN"),(5,"5V_SYS")]: items.append(pin_label(275,105,len(ahct),n,net))
-for n, net in [(1,"5V_SYS"),(3,"GND"),(4,"WS2812_DIN")]: items.append(pin_label(325,105,len(ws2812),n,net))
-items.append(pin_no_connect(325,105,len(ws2812),2))
+for n, net in [(1,"GND"),(2,"WS2812_DATA_3V3"),(3,"GND"),(4,"WS2812_DATA_5V"),(5,"5V_SYS")]: items.append(pin_label(275,105,len(ahct),n,net))
 
-for ref, x, y, net in [("TP1",25,230,"BAT_PLUS"),("TP2",45,230,"GND"),("TP3",65,230,"BUCK_IN"),("TP4",85,230,"5V_SYS"),("TP5",105,230,"5V_SYS"),
-                       ("TP6",25,240,"E220_M0"),("TP7",45,240,"E220_M1"),("TP8",65,240,"E220_AUX"),("TP9",85,240,"E220_RXD"),("TP10",105,240,"E220_TXD")]: items.append(label(net,x,y))
+# U4 is the only authorized source of AUX_3V3.  The DCY tab is electrically
+# identical to pin 2 and is therefore explicitly represented as AUX_3V3.
+items += [pin_label(265,255,len(tlv1117lv33),1,"GND"), pin_label(265,255,len(tlv1117lv33),2,"AUX_3V3"),
+          pin_label(265,255,len(tlv1117lv33),3,"5V_SYS"),
+          pin_label(295,255,2,1,"5V_SYS"), pin_label(295,255,2,2,"GND"),
+          pin_label(315,255,2,1,"AUX_3V3"), pin_label(315,255,2,2,"GND")]
+
+for ref, x, y, net in [("TP1",25,230,"BAT_PLUS"),("TP2",45,230,"GND"),("TP3",65,230,"BUCK_IN"),("TP4",85,230,"5V_SYS"),("TP5",105,230,"5V_SYS")]: items.append(label(net,x,y))
 
 # ERC source markers: external protected battery/return plus the explicitly
 # declared protected BUCK_IN and U1-generated 5V_SYS domains.
@@ -375,44 +436,58 @@ items += [label("BAT_PLUS",35,175), label("GND",35,185), label("BUCK_IN",35,195)
 for x,y,a,b in [(65,180,"Q1_GATE","GND"),(85,180,"BUCK_IN","Q1_GATE"),(105,205,"BUCK_IN","GND"),(125,205,"BUCK_IN","GND"),
                 (145,205,"SS_TR","GND"),(185,205,"5V_SYS","GND"),(175,140,"5V_SYS","GND"),(195,140,"5V_SYS","GND"),
                 (215,140,"E220_M0","GND"),(235,140,"E220_M1","GND"),(285,140,"5V_SYS","GND"),
-                (300,185,"OLED_SDA","DEVKIT_3V3"),(320,185,"OLED_SCL","DEVKIT_3V3")]: items += [pin_label(x,y,2,1,a),pin_label(x,y,2,2,b)]
+                (300,185,"OLED_SDA","AUX_3V3"),(320,185,"OLED_SCL","AUX_3V3")]: items += [pin_label(x,y,2,1,a),pin_label(x,y,2,2,b)]
 
 items += [
     # Functional-block headers deliberately contain the operational information
     # needed while reviewing the carrier.  Historical decisions live in docs/.
     heading("A. BATTERY INPUT / PROTECTION", 18, 135),
     heading("B. 2S -> 5V BUCK", 105, 145),
+    heading("H. AUX_3V3 LDO", 250, 242),
+    note("U4 TLV1117LV33DCYR: 5V_SYS -> 3.3V AUX_3V3 | C9/C10 10uF X5R close to U4 | DCY tab = OUT", 250, 247),
+    note("AUX_3V3 ALLOCATION: OLED/J5 ONLY, 100mA. J6 HAS NO POWER PIN. DEVKIT_3V3 IS NOT FOR EXTERNAL ACCESSORIES.", 155, 270),
+    note("5V_SYS ALLOCATION: 985.692mA WITH 20% MARGIN; J_RGB POLICY MAXIMUM 3 x WS2812B-V5 (109.800mA ALLOCATION).", 155, 275),
+    note("NORMAL: POWER_SW ON + JP1 CLOSED. USB SERVICE: POWER_SW OFF + JP1 OPEN WHEN ISOLATION IS DESIRED. GPIO IS NOT AUTOMATICALLY/COMPLETELY ISOLATED.", 155, 280),
+    note("J6 BUTTONS: ACTIVE-LOW CONTACTS TO GND ONLY; ENABLE FIRMWARE PULL-UPS; NO EXTERNAL VOLTAGE / NO GENERAL GPIO USE.", 155, 285),
+    note("U4 THERMAL POLICY @ 100.1mA 5V_SYS ALLOCATION: PAD1=GND; PAD2 LEAD+TAB=AUX_3V3; PAD3=5V_SYS. USE ORDINARY PROPORTIONATE LOCAL F.Cu ON OUT/TAB; B.Cu AUX_3V3 ISLAND / THERMAL-VIA ARRAY ONLY IF ANALYSIS REQUIRES.", 155, 290),
+    heading("A1. BATTERY SENSE (GPIO32 / ADC1_CH4)", 62, 242),
+    note("BUCK_IN -> R3 10k 1% -> BAT_SENSE -> R4 3.3k 1% -> GND | C8 100nF BAT_SENSE-to-GND", 62, 247),
     heading("C. REMOVABLE ESP32 DEVKIT", 18, 52),
     note("30 PIN / 2x15   |   USB-C + CH340C ON MODULE", 18, 57),
     note("LEFT HEADER: J1                                      RIGHT HEADER: J2", 18, 62),
-    note("USED: VIN, 3V3, GND | GPIO17/TX2, GPIO16/RX2, GPIO25/26/27, GPIO21/22, GPIO4", 18, 126),
+    note("USED: VIN via JP1, 3V3, GND | GPIO17/TX2, GPIO16/RX2, GPIO25/26/27, GPIO21/22, GPIO4, GPIO13/14/18/19/23/32", 18, 126),
     heading("D. E220-T22D UNIVERSAL SOCKET", 155, 70),
     note("E220-400T22D / E220-900T22D — user-installed module", 155, 75),
-    heading("F. WS2812 STATUS LED", 260, 70),
-    note("GPIO4 -> AHCT buffer -> DIN", 260, 75),
+    heading("F. EXTERNAL WS2812 OUTPUT", 260, 70),
+    note("GPIO4 -> U3 AHCT -> J_RGB.2 | J_RGB: 1 5V_SYS, 2 DATA, 3 GND | MAX 3 PIXELS", 260, 75),
     heading("E. REMOVABLE OLED", 310, 150),
     note("0.96\" SSD1306 | 128x64 | I2C | USER INSTALLED", 310, 155),
     note("POWER INPUT: EXTERNALLY PROTECTED 2S LI-ION | 6.0 ... 8.4 V | NO CHARGER ON CARRIER PCB", 18, 18, 1.8),
     note("WARNING: TURN OFF / DISCONNECT BATTERY POWER BEFORE CONNECTING ESP32 DEVKIT USB-C TO A COMPUTER.", 18, 25, 1.8),
-    note("ESP32 DEVKIT, E220 AND OLED ARE USER-INSTALLED MODULES.", 18, 32, 1.8),
+    note("ESP32 DEVKIT, E220, OLED, BUTTON PANEL AND RGB CHAIN ARE USER-INSTALLED.", 18, 32, 1.8),
     note("Inter-block links use net labels.  Local wires show the active power, bypass and interface support networks.", 18, 39),
-    note("BAT+ -> F1 -> BAT_FUSED -> Q1 -> BUCK_IN", 18, 210),
+    heading("G. BUTTON PANEL", 215, 145),
+    note("J6 BUTTONS: 1 GND 2 GPIO13 3 GPIO14 4 GPIO18 5 GPIO19 6 GPIO23", 215, 150),
+    note("J6: USER INSTALL / PCBA DNP; NORMALLY-OPEN ACTIVE-LOW CONTACTS TO GND ONLY; NOT A GENERAL-PURPOSE HEADER.", 215, 155),
+    note("NO DISPLAY-AUX HEADER, SIGNAL TEST POINTS, OR ONBOARD RGB PIXEL IN THIS REVISION.", 215, 160),
+    note("JP1 DEVKIT_PWR: 5V_SYS -> JP1.1 -> removable shunt -> JP1.2 -> DEVKIT_VIN -> J1.1", 18, 205),
+    note("BAT+ -> F1 -> BAT_FUSED -> J8.1 -> EXTERNAL MECHANICAL SWITCH -> J8.2 -> BAT_SW -> Q1.3 -> BUCK_IN", 18, 210),
     note("                    |", 18, 214),
     note("                 D3 TVS", 18, 218),
     note("                    |", 18, 222),
     note("                   GND", 18, 226),
     note("U1 TPS62133RGT: C1 10uF input | C2 100nF AVIN | C4 3.3nF SS | L1 2.2uH | C3 22uF output", 115, 218),
-    note("J5: 1 GND | 2 DEVKIT_3V3 | 3 GPIO22/SCL | 4 GPIO21/SDA | R10/R11 4.7k DNP", 300, 205),
+    note("J5: 1 GND | 2 AUX_3V3 | 3 GPIO22/SCL | 4 GPIO21/SDA | R10/R11 4.7k DNP to AUX_3V3", 300, 205),
 ]
 
 # Local wires: each endpoint already carries the same named net label, so these
 # visual connections cannot alter the electrical source of truth.  They make
 # power flow and local bypass/pull-down relationships inspectable in the PDF.
 items += [
-    # A. J4 -> PPTC -> P-MOS; TVS and Q1 gate support are local.
+    # A. J4 -> PPTC -> external switch -> P-MOS; TVS and Q1 gate support are local.
     wire((20.32,153.67), (39.37,153.67)),
     wire((39.37,156.21), (59.69,156.21), (59.69,163.83)),
-    wire((59.69,156.21), (80.01,157.48)),
+    wire((59.69,156.21), (80.01,168.91)),
     wire((80.01,154.94), (100.33,154.94), (100.33,182.88), (124.46,182.88)),
     # B. Buck input, AVIN bypass, switch/inductor/output and SS support.
     wire((100.33,182.88), (100.33,203.20)),
@@ -430,8 +505,8 @@ items += [
     # E. OLED I2C pins and optional DNP pull-up sites.
     wire((325.12,176.53), (314.96,176.53), (314.96,184.15)),
     wire((325.12,179.07), (294.64,179.07), (294.64,184.15)),
-    # F. 3.3-V GPIO4 level buffer, local bypass and WS2812 DIN.
-    wire((270.51,107.95), (300.00,107.95), (300.00,109.22), (320.04,109.22)),
+    # F. 3.3-V GPIO4 level buffer and local bypass.  J_RGB connectivity uses
+    # exact labels because the external-chain connector is a separate block.
     wire((270.51,110.49), (279.40,110.49), (279.40,138.43)),
 ]
 

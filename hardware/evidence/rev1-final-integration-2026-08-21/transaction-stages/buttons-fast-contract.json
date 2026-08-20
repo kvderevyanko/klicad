@@ -1,0 +1,120 @@
+{
+  "board": "hardware/evidence/rev1-final-integration-2026-08-21/transaction-stages/buttons.kicad_pcb",
+  "checks": [
+    {
+      "evidence": {
+        "board": "hardware/evidence/rev1-final-integration-2026-08-21/transaction-stages/buttons.kicad_pcb"
+      },
+      "name": "BOARD LOAD",
+      "status": "PASS"
+    },
+    {
+      "evidence": {
+        "count": 2,
+        "layers": [
+          [
+            "0",
+            "F.Cu",
+            "signal"
+          ],
+          [
+            "2",
+            "B.Cu",
+            "signal"
+          ]
+        ]
+      },
+      "name": "COPPER LAYERS",
+      "status": "PASS"
+    },
+    {
+      "evidence": {
+        "bbox_mm": [
+          0.0,
+          0.0,
+          145.0,
+          90.0
+        ],
+        "height_mm": 90.0,
+        "tolerance_mm": 0.5,
+        "width_mm": 145.0
+      },
+      "name": "BOARD OUTLINE",
+      "status": "PASS"
+    },
+    {
+      "evidence": {
+        "footprints": 37,
+        "tracks": 160,
+        "vias": 56,
+        "zones": 5
+      },
+      "name": "COUNTS",
+      "status": "PASS"
+    },
+    {
+      "evidence": "all duplicate copper-pad numbers have one canonical net",
+      "name": "DUPLICATE PAD NUMBER NET CONSISTENCY",
+      "status": "PASS"
+    },
+    {
+      "evidence": "no unexpected netless copper pads",
+      "name": "REQUIRED ELECTRICAL PAD NETLESS",
+      "status": "PASS"
+    },
+    {
+      "evidence": {
+        "antenna_rule_area_name": "ESP32_ANTENNA_EXCLUSION",
+        "approved_boundary_refs": [
+          "J1",
+          "J2"
+        ],
+        "hits": [],
+        "rect_mm": {
+          "xmax": 142.7,
+          "xmin": 104.7,
+          "ymax": 90.0,
+          "ymin": 52.0
+        },
+        "rule_area_crosscheck": "PASS"
+      },
+      "name": "ESP32 ANTENNA EXCLUSION",
+      "status": "PASS"
+    },
+    {
+      "evidence": {
+        "near-edge": "native DRC is authoritative in full mode",
+        "pad_outside_outline": 0
+      },
+      "name": "BOARD EDGE",
+      "status": "PASS"
+    },
+    {
+      "evidence": {
+        "comparison": "normalized footprint origin/rotation and pad geometry",
+        "references": [
+          "U1",
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "L1"
+        ]
+      },
+      "name": "PROTECTED CHECKPOINT",
+      "status": "PASS"
+    },
+    {
+      "evidence": "--fast",
+      "name": "SCHEMATIC-PCB PARITY",
+      "status": "NOT_APPLICABLE"
+    },
+    {
+      "evidence": "--fast",
+      "name": "NATIVE DRC SUMMARY",
+      "status": "NOT_APPLICABLE"
+    }
+  ],
+  "mode": "fast",
+  "overall_status": "PASS"
+}

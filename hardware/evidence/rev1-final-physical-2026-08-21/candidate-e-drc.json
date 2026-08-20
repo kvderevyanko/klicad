@@ -1,0 +1,422 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-08-21T00:23:47",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.5",
+    "schematic_parity": [],
+    "source": "esp32-e220-rev1-final-physical-candidate.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [/GND] on F.Cu, length 3.0000 mm",
+                    "pos": {
+                        "x": 24.725,
+                        "y": 48.0
+                    },
+                    "uuid": "e8cc6a10-a52d-45af-ab91-1b0ba4ded004"
+                },
+                {
+                    "description": "Track [/GND] on F.Cu, length 3.5000 mm",
+                    "pos": {
+                        "x": 17.5,
+                        "y": 34.0
+                    },
+                    "uuid": "86d79570-552e-4879-b251-3f4395dfbaa3"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Zone [/GND] on F.Cu, priority 0",
+                    "pos": {
+                        "x": 64.0,
+                        "y": 52.0
+                    },
+                    "uuid": "dfb51e4c-e86d-4bc2-86a0-24b548017a74"
+                },
+                {
+                    "description": "Zone [/GND] on F.Cu, priority 0",
+                    "pos": {
+                        "x": 64.0,
+                        "y": 52.0
+                    },
+                    "uuid": "dfb51e4c-e86d-4bc2-86a0-24b548017a74"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/GND] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 16.54
+                    },
+                    "uuid": "df61ecf5-5f78-4864-9b9f-55c4264a5199"
+                },
+                {
+                    "description": "Track [/GND] on F.Cu, length 5.2088 mm",
+                    "pos": {
+                        "x": 106.0,
+                        "y": 18.0
+                    },
+                    "uuid": "f50f3416-dee2-4788-bcfb-6306aadb44fd"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/BAT_PLUS] of TP1",
+                    "pos": {
+                        "x": 48.0,
+                        "y": 87.0
+                    },
+                    "uuid": "e7f056ef-d265-4124-8b8d-a8cc8cb14b6c"
+                },
+                {
+                    "description": "Track [/BAT_PLUS] on F.Cu, length 7.8620 mm",
+                    "pos": {
+                        "x": 35.0,
+                        "y": 78.5
+                    },
+                    "uuid": "d6f11b0f-dde0-46c7-a409-4dbaaff09603"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/BUCK_IN] of TP3",
+                    "pos": {
+                        "x": 58.0,
+                        "y": 87.0
+                    },
+                    "uuid": "f0ca8cb9-b5ef-4e34-a3eb-24c9ae72f949"
+                },
+                {
+                    "description": "Track [/BUCK_IN] on F.Cu, length 1.1500 mm",
+                    "pos": {
+                        "x": 64.349999,
+                        "y": 77.0
+                    },
+                    "uuid": "a4eef94c-3eb6-420b-8595-5f49d55bb7bb"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [/BUCK_IN] on F.Cu, length 9.5000 mm",
+                    "pos": {
+                        "x": 65.5,
+                        "y": 70.0
+                    },
+                    "uuid": "27c0af39-7f90-478e-9c15-35d40d1fe18a"
+                },
+                {
+                    "description": "Pad 1 [/BUCK_IN] of R2 on F.Cu",
+                    "pos": {
+                        "x": 62.5,
+                        "y": 67.725
+                    },
+                    "uuid": "838ea4e0-2837-4d58-89b4-e5fdf840d4ed"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 4 [/OLED_SDA] of J5",
+                    "pos": {
+                        "x": 63.0,
+                        "y": 27.62
+                    },
+                    "uuid": "56eeaf3b-7780-45ba-b83b-64e12478bc8b"
+                },
+                {
+                    "description": "PTH pad 11 [/OLED_SDA] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 39.4
+                    },
+                    "uuid": "6ec43f58-38b8-4f02-b43f-39049843d9d0"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/OLED_SCL] of J5",
+                    "pos": {
+                        "x": 63.0,
+                        "y": 25.08
+                    },
+                    "uuid": "0156dc64-6a7b-41e8-b1e3-d2cdd7ac8380"
+                },
+                {
+                    "description": "PTH pad 14 [/OLED_SCL] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 47.02
+                    },
+                    "uuid": "e033fe2b-d122-4e2f-9199-f61f7f503a7c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Track [/BAT_SENSE] on F.Cu, length 7.2750 mm",
+                    "pos": {
+                        "x": 86.725,
+                        "y": 66.0
+                    },
+                    "uuid": "d8d6aa23-748b-4891-acfd-11a96facf226"
+                },
+                {
+                    "description": "Pad 2 [/GND] of R4 on F.Cu",
+                    "pos": {
+                        "x": 90.725,
+                        "y": 66.0
+                    },
+                    "uuid": "a2e2f0aa-73fd-4544-8996-5b4e3416bcfa"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Track [/E220_AUX] on B.Cu, length 15.3000 mm",
+                    "pos": {
+                        "x": 100.5,
+                        "y": 42.0
+                    },
+                    "uuid": "4d63baae-3b3a-47f8-a990-9e309d8ab023"
+                },
+                {
+                    "description": "PTH pad 5 [/GPIO19] of J6",
+                    "pos": {
+                        "x": 101.0,
+                        "y": 28.16
+                    },
+                    "uuid": "26a49e0e-3fbb-4390-bfa3-f1726002c634"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Track [/E220_AUX] on B.Cu, length 15.3000 mm",
+                    "pos": {
+                        "x": 100.5,
+                        "y": 42.0
+                    },
+                    "uuid": "4d63baae-3b3a-47f8-a990-9e309d8ab023"
+                },
+                {
+                    "description": "PTH pad 6 [/GPIO23] of J6",
+                    "pos": {
+                        "x": 101.0,
+                        "y": 30.7
+                    },
+                    "uuid": "00568647-4ede-4784-bf69-e09bd4842afa"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/GND] on F.Cu, length 3.0000 mm",
+                    "pos": {
+                        "x": 90.725,
+                        "y": 66.0
+                    },
+                    "uuid": "15a68986-0214-4d5d-a2c7-a25aff18b157"
+                },
+                {
+                    "description": "Track [/BAT_SENSE] on F.Cu, length 7.2750 mm",
+                    "pos": {
+                        "x": 86.725,
+                        "y": 66.0
+                    },
+                    "uuid": "d8d6aa23-748b-4891-acfd-11a96facf226"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0711 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 4 [<no net>] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 21.62
+                    },
+                    "uuid": "129c4cf7-dc73-477a-90fd-ae5165716516"
+                },
+                {
+                    "description": "Track [/WS2812_DATA_3V3] on F.Cu, length 15.5392 mm",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 24.16
+                    },
+                    "uuid": "89039976-691e-4a28-aa81-ee00db398cef"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets /GPIO19 and /E220_AUX)",
+            "items": [
+                {
+                    "description": "PTH pad 5 [/GPIO19] of J6",
+                    "pos": {
+                        "x": 101.0,
+                        "y": 28.16
+                    },
+                    "uuid": "26a49e0e-3fbb-4390-bfa3-f1726002c634"
+                },
+                {
+                    "description": "Track [/E220_AUX] on B.Cu, length 15.3000 mm",
+                    "pos": {
+                        "x": 100.5,
+                        "y": 42.0
+                    },
+                    "uuid": "4d63baae-3b3a-47f8-a990-9e309d8ab023"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets /GND and /BAT_SENSE)",
+            "items": [
+                {
+                    "description": "Pad 2 [/GND] of R4 on F.Cu",
+                    "pos": {
+                        "x": 90.725,
+                        "y": 66.0
+                    },
+                    "uuid": "a2e2f0aa-73fd-4544-8996-5b4e3416bcfa"
+                },
+                {
+                    "description": "Track [/BAT_SENSE] on F.Cu, length 7.2750 mm",
+                    "pos": {
+                        "x": 86.725,
+                        "y": 66.0
+                    },
+                    "uuid": "d8d6aa23-748b-4891-acfd-11a96facf226"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/GPIO19] on B.Cu, length 6.9299 mm",
+                    "pos": {
+                        "x": 101.0,
+                        "y": 28.16
+                    },
+                    "uuid": "9f416228-b908-428e-80a3-444f1eec7857"
+                },
+                {
+                    "description": "Track [/E220_AUX] on B.Cu, length 10.5000 mm",
+                    "pos": {
+                        "x": 100.5,
+                        "y": 26.7
+                    },
+                    "uuid": "bf3abe1a-0e48-44ed-ad15-73da9bef104c"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [/E220_M1] on F.Cu, length 1.2750 mm",
+                    "pos": {
+                        "x": 44.0,
+                        "y": 39.9
+                    },
+                    "uuid": "65e72da6-9d78-4985-b79b-f2f9ad7342f1"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        }
+    ]
+}

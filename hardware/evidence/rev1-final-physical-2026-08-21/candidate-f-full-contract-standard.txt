@@ -1,0 +1,12 @@
+BOARD LOAD: PASS — {"board": "hardware/evidence/rev1-final-physical-2026-08-21/esp32-e220-rev1-final-candidate.kicad_pcb"}
+COPPER LAYERS: PASS — {"count": 2, "layers": [["0", "F.Cu", "signal"], ["2", "B.Cu", "signal"]]}
+BOARD OUTLINE: PASS — {"bbox_mm": [0.0, 0.0, 145.0, 90.0], "height_mm": 90.0, "tolerance_mm": 0.5, "width_mm": 145.0}
+COUNTS: PASS — {"footprints": 37, "tracks": 180, "vias": 60, "zones": 5}
+DUPLICATE PAD NUMBER NET CONSISTENCY: PASS — "all duplicate copper-pad numbers have one canonical net"
+REQUIRED ELECTRICAL PAD NETLESS: PASS — "no unexpected netless copper pads"
+ESP32 ANTENNA EXCLUSION: PASS — {"antenna_rule_area_name": "ESP32_ANTENNA_EXCLUSION", "approved_boundary_refs": ["J1", "J2"], "hits": [], "rect_mm": {"xmax": 142.7, "xmin": 104.7, "ymax": 90.0, "ymin": 52.0}, "rule_area_crosscheck": "PASS"}
+BOARD EDGE: PASS — {"near-edge": "native DRC is authoritative in full mode", "pad_outside_outline": 0}
+PROTECTED CHECKPOINT: PASS — {"comparison": "normalized footprint origin/rotation and pad geometry", "references": ["U1", "C1", "C2", "C3", "C4", "L1"]}
+SCHEMATIC-PCB PARITY: PASS — {"exit_code": 0, "mismatch_counts": {"board_only_references": 0, "electrical_pad_net_mismatches": 0, "missing_pcb_footprints": 0, "production_property_mismatches": 0}}
+NATIVE DRC SUMMARY: PASS — {"categories": {}, "exit_code": 5, "footprint_errors": 0, "geometric_violations": 0, "unconnected_items": 8, "zone_errors": 0}
+OVERALL: PASS

@@ -1,0 +1,3779 @@
+(export
+	(version "E")
+	(design
+		(source "/home/kirill/codex/kicad/hardware/esp32-e220.kicad_sch")
+		(date "2026-08-21T01:00:31")
+		(tool "Eeschema 10.0.5-10.0.5~ubuntu22.04.1")
+		(sheet
+			(number "1")
+			(name "/")
+			(tstamps "/")
+			(title_block
+				(title "ESP32 E220 LoRa Receiver — Rev.1 protected 2S battery carrier")
+				(company)
+				(rev)
+				(date)
+				(source "esp32-e220.kicad_sch")
+				(comment
+					(number "1")
+					(value "")
+				)
+				(comment
+					(number "2")
+					(value "")
+				)
+				(comment
+					(number "3")
+					(value "")
+				)
+				(comment
+					(number "4")
+					(value "")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
+				)
+			)
+		)
+	)
+	(components
+		(comp
+			(ref "C1")
+			(value "GRM21BR61E106KA73")
+			(footprint "Murata_GRM21_2012Metric")
+			(fields
+				(field
+					(name "Footprint") "Murata_GRM21_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "C")
+				(description "Passive capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "3ae9244f-4f78-5926-bea3-674f95806443")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C2")
+			(value "GRM188R71C104KA01D")
+			(footprint "Murata_GRM188_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Murata_GRM188_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "C")
+				(description "Passive capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "bda46cd7-d1ee-5fa6-b6f3-2919357f0ff0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C3")
+			(value "GRM21BR61A226ME44")
+			(footprint "Murata_GRM21_2012Metric")
+			(fields
+				(field
+					(name "Footprint") "Murata_GRM21_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "C")
+				(description "Passive capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "25ae29de-2012-504c-99f8-7644ebe52fe8")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C4")
+			(value "GRM1885C1H332JA01D")
+			(footprint "Murata_GRM188_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Murata_GRM188_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "C")
+				(description "Passive capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "3085a4ed-8c41-5f61-8882-502580e6bc35")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C5")
+			(value "GRM188R61A106MAAL")
+			(footprint "Murata_GRM188_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Murata_GRM188_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "C")
+				(description "Passive capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "589ad209-2a76-53a0-bcd2-9caa3fc9213d")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C6")
+			(value "GRM188R71C104KA01D")
+			(footprint "Murata_GRM188_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Murata_GRM188_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "C")
+				(description "Passive capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "5907d75e-bc16-544a-985a-406e17da6cea")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C7")
+			(value "GRM188R71C104KA01D")
+			(footprint "Murata_GRM188_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Murata_GRM188_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "C")
+				(description "Passive capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "1f1fb862-0855-5ff2-aac9-07217aafbafc")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C8")
+			(value "GRM188R71C104KA01D")
+			(footprint "Carrier:Murata_GRM188_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Carrier:Murata_GRM188_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "C")
+				(description "Passive capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "bf7d7da2-d171-5c94-8ca0-bbdce0249969")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C9")
+			(value "GRM21BR61E106KA73")
+			(footprint "Carrier:Murata_GRM21_2012Metric")
+			(fields
+				(field
+					(name "Footprint") "Carrier:Murata_GRM21_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "C")
+				(description "Passive capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "0cc06a71-dbe8-5464-81a5-c869df6a05c7")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C10")
+			(value "GRM21BR61E106KA73")
+			(footprint "Carrier:Murata_GRM21_2012Metric")
+			(fields
+				(field
+					(name "Footprint") "Carrier:Murata_GRM21_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "C")
+				(description "Passive capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "e00713ba-dece-5c3a-a2c1-15a41b1ae074")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D3")
+			(value "SMBJ10CA")
+			(footprint "Littelfuse_SMBJ10CA_DO214AA")
+			(fields
+				(field
+					(name "Footprint") "Littelfuse_SMBJ10CA_DO214AA")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "TVS")
+				(description "Bidirectional TVS diode")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "efe32e34-cf9e-5b10-acdb-d20646020bd7")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "F1")
+			(value "1812L200/16")
+			(footprint "Littelfuse_1812L200_16_4532Metric")
+			(fields
+				(field
+					(name "Footprint") "Littelfuse_1812L200_16_4532Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "F")
+				(description "Resettable fuse")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "307232ee-c4bb-53e2-a0d1-7525adc77357")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J1")
+			(value "SSW-115-02-G-S DEVKIT LEFT")
+			(footprint "Samtec_SSW_1x15_P2.54mm_THT")
+			(fields
+				(field
+					(name "Footprint") "Samtec_SSW_1x15_P2.54mm_THT")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "DevKit_Left_1x15")
+				(description "User-verified left DevKit header; USB-C toward antenna")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "c598f01c-21dd-5c69-a8db-4d47fe01da6f")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "15")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J2")
+			(value "SSW-115-02-G-S DEVKIT RIGHT")
+			(footprint "Samtec_SSW_1x15_P2.54mm_THT")
+			(fields
+				(field
+					(name "Footprint") "Samtec_SSW_1x15_P2.54mm_THT")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "DevKit_Right_1x15")
+				(description "User-verified right DevKit header; USB-C toward antenna")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "62f81fc0-0836-57bf-a239-b8969f9f7abf")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "15")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J3")
+			(value "E220-400T22D / E220-900T22D SOCKET")
+			(footprint "E220_T22D_Socket_400_900")
+			(fields
+				(field
+					(name "Footprint") "E220_T22D_Socket_400_900")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "E220_T22D_400_900")
+				(description "EBYTE E220-400T22D / E220-900T22D common verified pin definition")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "9958c22b-620d-55db-9b0c-4de23a1a45ea")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J4")
+			(value "B2B-XH-A")
+			(footprint "JST_B2B-XH-A_1x02_P2.50mm_THT")
+			(fields
+				(field
+					(name "Footprint") "JST_B2B-XH-A_1x02_P2.50mm_THT")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "Battery_2S_Protected_Input")
+				(description "Carrier input only: externally protected 2S Li-ion pack, 6.0...8.4 V; not a charger or BMS interface")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "ce89f7b3-b475-55e9-8c00-0c0677a90f63")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J5")
+			(value "SSW-104-02-G-S")
+			(footprint "Samtec_SSW_1x04_P2.54mm_THT")
+			(fields
+				(field
+					(name "Footprint") "Samtec_SSW_1x04_P2.54mm_THT")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "OLED_SSD1306_I2C_1x4")
+				(description "User-installed 0.96 inch SSD1306 128x64 I2C module; user/seller-provided header order 1 GND, 2 VCC, 3 SCL, 4 SDA")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "2cb20051-a6b0-535e-b331-d74198353f09")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J6")
+			(value "BUTTONS 1x6 2.54mm DNP")
+			(footprint "Carrier:PinHeader_1x06_P2.54mm_Vertical")
+			(fields
+				(field
+					(name "DNP") "YES")
+				(field
+					(name "Footprint") "Carrier:PinHeader_1x06_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "BUTTONS_1x6")
+				(description "DNP 2.54-mm PTH panel-button interface; active-low contacts to GND only")
+			)
+			(property
+				(name "DNP")
+				(value "YES")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "7ab3b0d9-df72-5cae-969e-5f812ea410f2")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J8")
+			(value "B2B-XH-A")
+			(footprint "JST_B2B-XH-A_1x02_P2.50mm_THT")
+			(fields
+				(field
+					(name "Footprint") "JST_B2B-XH-A_1x02_P2.50mm_THT")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "POWER_SW_1x2")
+				(description "External mechanical power-switch harness connector; BAT_FUSED to BAT_SW")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "e7c24be6-90ab-5ab7-a8a8-5fc6b97671c1")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J9")
+			(value "J_RGB / RGB OUT 1x3 2.54mm DNP")
+			(footprint "Carrier:PinHeader_1x03_P2.54mm_Vertical")
+			(fields
+				(field
+					(name "DNP") "YES")
+				(field
+					(name "Footprint") "Carrier:PinHeader_1x03_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "RGB_OUT_1x3")
+				(description "DNP 2.54-mm PTH output for an external chain of at most three WS2812B-V5 pixels")
+			)
+			(property
+				(name "DNP")
+				(value "YES")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "e6140cf1-729c-5a33-9014-6c384da55443")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "JP1")
+			(value "TSW-102-07-G-S + SNT-100-BK-G")
+			(footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "DEVKIT_PWR_1x2")
+				(description "2.54-mm removable jumper: 5V_SYS to DEVKIT_VIN; header PCBA fitted, shunt user-installed")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "6294f8d7-70c4-5b58-87a5-ae93c94154ba")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "L1")
+			(value "XFL4020-222MEB")
+			(footprint "Coilcraft_XFL4020-222MEB")
+			(fields
+				(field
+					(name "Footprint") "Coilcraft_XFL4020-222MEB")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "L")
+				(description "Power inductor")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "fd53c04e-73b0-554e-83e0-3d6edfd053d4")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "Q1")
+			(value "DMP3130LQ-7")
+			(footprint "Diodes_DMP3130LQ-7_SOT23")
+			(fields
+				(field
+					(name "Footprint") "Diodes_DMP3130LQ-7_SOT23")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "DMP3130LQ_7")
+				(description "Diodes Inc. P-channel reverse-polarity MOSFET")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "1f736e37-584f-54d9-9fa7-3fa5bc239c01")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R1")
+			(value "100k 1%")
+			(footprint "Resistor_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Resistor_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "R")
+				(description "Passive resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "0424d975-7108-5d1b-b09f-cc71ce81f7b6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R2")
+			(value "1M 1%")
+			(footprint "Resistor_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Resistor_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "R")
+				(description "Passive resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "2d9e19f6-582c-5bdc-b684-1504d03efd90")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R3")
+			(value "RC0603FR-0710KL")
+			(footprint "Carrier:Resistor_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Carrier:Resistor_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "R")
+				(description "Passive resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "1303398e-9a71-5218-bef0-3f737b1b1522")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R4")
+			(value "RC0603FR-073K3L")
+			(footprint "Carrier:Resistor_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Carrier:Resistor_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "R")
+				(description "Passive resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "301e3643-7e56-5e88-b598-fae9b2ee76f0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R8")
+			(value "10k 1%")
+			(footprint "Resistor_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Resistor_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "R")
+				(description "Passive resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "6ada6029-b3b3-50e2-85fc-0eb38e3bf2f7")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R9")
+			(value "10k 1%")
+			(footprint "Resistor_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Resistor_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "R")
+				(description "Passive resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "97f7d33c-e0ac-5a00-b1ae-3c0b335246c4")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "TP1")
+			(value "BAT_PLUS")
+			(footprint "TestPoint_THT_1p0mm_PROTOTYPE")
+			(fields
+				(field
+					(name "Footprint") "TestPoint_THT_1p0mm_PROTOTYPE")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "TestPoint")
+				(description "Schematic test point; exact physical test-point component deferred")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "ab1af999-3c6a-57cf-a66a-fbd5ae3188fb")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "TP2")
+			(value "GND")
+			(footprint "TestPoint_THT_1p0mm_PROTOTYPE")
+			(fields
+				(field
+					(name "Footprint") "TestPoint_THT_1p0mm_PROTOTYPE")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "TestPoint")
+				(description "Schematic test point; exact physical test-point component deferred")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "6ddcae70-c5b7-5ad3-8a13-ad2fd825b4bb")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "TP3")
+			(value "BUCK_IN")
+			(footprint "TestPoint_THT_1p0mm_PROTOTYPE")
+			(fields
+				(field
+					(name "Footprint") "TestPoint_THT_1p0mm_PROTOTYPE")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "TestPoint")
+				(description "Schematic test point; exact physical test-point component deferred")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "8953f37d-520c-54ae-9f5c-e5576237e685")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "TP4")
+			(value "5V_SYS")
+			(footprint "TestPoint_THT_1p0mm_PROTOTYPE")
+			(fields
+				(field
+					(name "Footprint") "TestPoint_THT_1p0mm_PROTOTYPE")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "TestPoint")
+				(description "Schematic test point; exact physical test-point component deferred")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "d70bfc5f-ca00-5b04-98b6-46f67e847461")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "TP5")
+			(value "5V_SYS")
+			(footprint "TestPoint_THT_1p0mm_PROTOTYPE")
+			(fields
+				(field
+					(name "Footprint") "TestPoint_THT_1p0mm_PROTOTYPE")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "TestPoint")
+				(description "Schematic test point; exact physical test-point component deferred")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "da4ccf71-90b8-5b46-be71-57612fad7f4c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U1")
+			(value "TPS62133RGT")
+			(footprint "TI_TPS62133RGT_RGT0016C")
+			(fields
+				(field
+					(name "Footprint") "TI_TPS62133RGT_RGT0016C")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "TPS62133RGT")
+				(description "TI fixed 5-V 3-A synchronous buck, RGT VQFN-16 with exposed pad")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "8b59f916-aad5-5e5c-9b78-561e5e9ea676")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "16")
+						)
+						(pin
+							(num "EP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U3")
+			(value "SN74AHCT1G125DBVR")
+			(footprint "TI_SN74AHCT1G125DBVR_SOT23-5")
+			(fields
+				(field
+					(name "Footprint") "TI_SN74AHCT1G125DBVR_SOT23-5")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "SN74AHCT1G125DBVR")
+				(description "TI 5-V single buffer with 3-state output")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "86500d51-6aa0-5c78-bc84-f683e5e7b479")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U4")
+			(value "TLV1117LV33DCYR")
+			(footprint "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
+			(fields
+				(field
+					(name "Footprint") "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Project")
+				(part "TLV1117LV33DCY")
+				(description "TI 3.3-V 1-A LDO, DCY SOT-223: pin 2 and tab are regulated OUT")
+			)
+			(property
+				(name "Sheetname")
+				(value "esp32-e220")
+			)
+			(property
+				(name "Sheetfile")
+				(value "esp32-e220.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "ff618945-09e2-5557-8553-86cb9f42bbc8")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+					)
+				)
+			)
+		)
+	)
+	(groups)
+	(variants)
+	(libparts
+		(libpart
+			(lib "Project")
+			(part "BUTTONS_1x6")
+			(description "DNP 2.54-mm PTH panel-button interface; active-low contacts to GND only")
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "BUTTONS 1x6")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "DNP 2.54-mm PTH panel-button interface; active-low contacts to GND only")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GPIO13")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "GPIO14")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "GPIO18")
+					(type "passive")
+				)
+				(pin
+					(num "5")
+					(name "GPIO19")
+					(type "passive")
+				)
+				(pin
+					(num "6")
+					(name "GPIO23")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Project")
+			(part "Battery_2S_Protected_Input")
+			(description "Carrier input only: externally protected 2S Li-ion pack, 6.0...8.4 V; not a charger or BMS interface")
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "PROTECTED 2S LI-ION INPUT")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Carrier input only: externally protected 2S Li-ion pack, 6.0...8.4 V; not a charger or BMS interface")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "BAT+")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "BAT-")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Project")
+			(part "C")
+			(description "Passive capacitor")
+			(fields
+				(field
+					(name "Reference") "C")
+				(field
+					(name "Value") "C")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Passive capacitor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Project")
+			(part "DEVKIT_PWR_1x2")
+			(description "2.54-mm removable jumper: 5V_SYS to DEVKIT_VIN; header PCBA fitted, shunt user-installed")
+			(fields
+				(field
+					(name "Reference") "JP")
+				(field
+					(name "Value") "DEVKIT_PWR 1x2")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "2.54-mm removable jumper: 5V_SYS to DEVKIT_VIN; header PCBA fitted, shunt user-installed")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "5V_SYS")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "DEVKIT_VIN")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Project")
+			(part "DMP3130LQ_7")
+			(description "Diodes Inc. P-channel reverse-polarity MOSFET")
+			(fields
+				(field
+					(name "Reference") "Q")
+				(field
+					(name "Value") "DMP3130LQ-7")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Diodes Inc. P-channel reverse-polarity MOSFET")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "G")
+					(type "input")
+				)
+				(pin
+					(num "2")
+					(name "S")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "D")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Project")
+			(part "DevKit_Left_1x15")
+			(description "User-verified left DevKit header; USB-C toward antenna")
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "DEVKIT_LEFT_1x15")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "User-verified left DevKit header; USB-C toward antenna")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VIN_/_5V")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "GPIO13")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "GPIO12")
+					(type "passive")
+				)
+				(pin
+					(num "5")
+					(name "GPIO14")
+					(type "passive")
+				)
+				(pin
+					(num "6")
+					(name "GPIO27")
+					(type "passive")
+				)
+				(pin
+					(num "7")
+					(name "GPIO26")
+					(type "passive")
+				)
+				(pin
+					(num "8")
+					(name "GPIO25")
+					(type "passive")
+				)
+				(pin
+					(num "9")
+					(name "GPIO33")
+					(type "passive")
+				)
+				(pin
+					(num "10")
+					(name "GPIO32")
+					(type "passive")
+				)
+				(pin
+					(num "11")
+					(name "GPIO35")
+					(type "passive")
+				)
+				(pin
+					(num "12")
+					(name "GPIO34")
+					(type "passive")
+				)
+				(pin
+					(num "13")
+					(name "GPIO39/VN")
+					(type "passive")
+				)
+				(pin
+					(num "14")
+					(name "GPIO36/VP")
+					(type "passive")
+				)
+				(pin
+					(num "15")
+					(name "EN")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Project")
+			(part "DevKit_Right_1x15")
+			(description "User-verified right DevKit header; USB-C toward antenna")
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "DEVKIT_RIGHT_1x15")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "User-verified right DevKit header; USB-C toward antenna")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "3V3")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "GPIO15")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "GPIO2")
+					(type "passive")
+				)
+				(pin
+					(num "5")
+					(name "GPIO4")
+					(type "passive")
+				)
+				(pin
+					(num "6")
+					(name "GPIO16/RX2")
+					(type "passive")
+				)
+				(pin
+					(num "7")
+					(name "GPIO17/TX2")
+					(type "passive")
+				)
+				(pin
+					(num "8")
+					(name "GPIO5")
+					(type "passive")
+				)
+				(pin
+					(num "9")
+					(name "GPIO18")
+					(type "passive")
+				)
+				(pin
+					(num "10")
+					(name "GPIO19")
+					(type "passive")
+				)
+				(pin
+					(num "11")
+					(name "GPIO21")
+					(type "passive")
+				)
+				(pin
+					(num "12")
+					(name "GPIO3/RX0")
+					(type "passive")
+				)
+				(pin
+					(num "13")
+					(name "GPIO1/TX0")
+					(type "passive")
+				)
+				(pin
+					(num "14")
+					(name "GPIO22")
+					(type "passive")
+				)
+				(pin
+					(num "15")
+					(name "GPIO23")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Project")
+			(part "E220_T22D_400_900")
+			(description "EBYTE E220-400T22D / E220-900T22D common verified pin definition")
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "E220-T22D 400/900 MHz")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "EBYTE E220-400T22D / E220-900T22D common verified pin definition")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "M0")
+					(type "input")
+				)
+				(pin
+					(num "2")
+					(name "M1")
+					(type "input")
+				)
+				(pin
+					(num "3")
+					(name "RXD")
+					(type "input")
+				)
+				(pin
+					(num "4")
+					(name "TXD")
+					(type "output")
+				)
+				(pin
+					(num "5")
+					(name "AUX")
+					(type "output")
+				)
+				(pin
+					(num "6")
+					(name "VCC")
+					(type "power_in")
+				)
+				(pin
+					(num "7")
+					(name "GND")
+					(type "power_in")
+				)
+			)
+		)
+		(libpart
+			(lib "Project")
+			(part "F")
+			(description "Resettable fuse")
+			(fields
+				(field
+					(name "Reference") "F")
+				(field
+					(name "Value") "F")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resettable fuse")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Project")
+			(part "L")
+			(description "Power inductor")
+			(fields
+				(field
+					(name "Reference") "L")
+				(field
+					(name "Value") "L")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Power inductor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Project")
+			(part "OLED_SSD1306_I2C_1x4")
+			(description "User-installed 0.96 inch SSD1306 128x64 I2C module; user/seller-provided header order 1 GND, 2 VCC, 3 SCL, 4 SDA")
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "OLED SSD1306 I2C 1x4")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "User-installed 0.96 inch SSD1306 128x64 I2C module; user/seller-provided header order 1 GND, 2 VCC, 3 SCL, 4 SDA")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "2")
+					(name "VCC_/_3V3")
+					(type "power_in")
+				)
+				(pin
+					(num "3")
+					(name "SCL")
+					(type "bidirectional")
+				)
+				(pin
+					(num "4")
+					(name "SDA")
+					(type "bidirectional")
+				)
+			)
+		)
+		(libpart
+			(lib "Project")
+			(part "POWER_SW_1x2")
+			(description "External mechanical power-switch harness connector; BAT_FUSED to BAT_SW")
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "POWER_SW 1x2")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "External mechanical power-switch harness connector; BAT_FUSED to BAT_SW")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "BAT_FUSED")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "BAT_SW")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Project")
+			(part "R")
+			(description "Passive resistor")
+			(fields
+				(field
+					(name "Reference") "R")
+				(field
+					(name "Value") "R")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Passive resistor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Project")
+			(part "RGB_OUT_1x3")
+			(description "DNP 2.54-mm PTH output for an external chain of at most three WS2812B-V5 pixels")
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "RGB OUT 1x3")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "DNP 2.54-mm PTH output for an external chain of at most three WS2812B-V5 pixels")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "5V_SYS")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "WS2812_DATA_5V")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "GND")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Project")
+			(part "SN74AHCT1G125DBVR")
+			(description "TI 5-V single buffer with 3-state output")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "SN74AHCT1G125DBVR")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "TI 5-V single buffer with 3-state output")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "OE")
+					(type "input")
+				)
+				(pin
+					(num "2")
+					(name "A")
+					(type "input")
+				)
+				(pin
+					(num "3")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "4")
+					(name "Y")
+					(type "output")
+				)
+				(pin
+					(num "5")
+					(name "VCC")
+					(type "power_in")
+				)
+			)
+		)
+		(libpart
+			(lib "Project")
+			(part "TLV1117LV33DCY")
+			(description "TI 3.3-V 1-A LDO, DCY SOT-223: pin 2 and tab are regulated OUT")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "TLV1117LV33DCYR")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "TI 3.3-V 1-A LDO, DCY SOT-223: pin 2 and tab are regulated OUT")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "2")
+					(name "OUT_/_TAB")
+					(type "power_out")
+				)
+				(pin
+					(num "3")
+					(name "IN")
+					(type "power_in")
+				)
+			)
+		)
+		(libpart
+			(lib "Project")
+			(part "TPS62133RGT")
+			(description "TI fixed 5-V 3-A synchronous buck, RGT VQFN-16 with exposed pad")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "TPS62133RGT")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "TI fixed 5-V 3-A synchronous buck, RGT VQFN-16 with exposed pad")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "SW")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "SW")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "SW")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "PG")
+					(type "open_collector")
+				)
+				(pin
+					(num "5")
+					(name "FB")
+					(type "input")
+				)
+				(pin
+					(num "6")
+					(name "AGND")
+					(type "power_in")
+				)
+				(pin
+					(num "7")
+					(name "FSW")
+					(type "input")
+				)
+				(pin
+					(num "8")
+					(name "DEF")
+					(type "input")
+				)
+				(pin
+					(num "9")
+					(name "SS/TR")
+					(type "input")
+				)
+				(pin
+					(num "10")
+					(name "AVIN")
+					(type "power_in")
+				)
+				(pin
+					(num "11")
+					(name "PVIN")
+					(type "power_in")
+				)
+				(pin
+					(num "12")
+					(name "PVIN")
+					(type "power_in")
+				)
+				(pin
+					(num "13")
+					(name "EN")
+					(type "input")
+				)
+				(pin
+					(num "14")
+					(name "VOS")
+					(type "input")
+				)
+				(pin
+					(num "15")
+					(name "PGND")
+					(type "power_in")
+				)
+				(pin
+					(num "16")
+					(name "PGND")
+					(type "power_in")
+				)
+				(pin
+					(num "EP")
+					(name "EXPOSED_THERMAL_PAD")
+					(type "power_in")
+				)
+			)
+		)
+		(libpart
+			(lib "Project")
+			(part "TVS")
+			(description "Bidirectional TVS diode")
+			(fields
+				(field
+					(name "Reference") "D")
+				(field
+					(name "Value") "TVS")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Bidirectional TVS diode")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "A")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "K")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Project")
+			(part "TestPoint")
+			(description "Schematic test point; exact physical test-point component deferred")
+			(fields
+				(field
+					(name "Reference") "TP")
+				(field
+					(name "Value") "TestPoint")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Schematic test point; exact physical test-point component deferred")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "passive")
+				)
+			)
+		)
+	)
+	(libraries
+		(library
+			(logical "Project")
+			(uri "${KIPRJMOD}/esp32-e220.kicad_sym")
+		)
+	)
+	(nets
+		(net
+			(code "1")
+			(name "/5V_SYS")
+			(class "Default")
+			(node
+				(ref "C3")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C5")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C6")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C7")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C9")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J3")
+				(pin "6")
+				(pinfunction "VCC_6")
+				(pintype "power_in")
+			)
+			(node
+				(ref "J9")
+				(pin "1")
+				(pinfunction "5V_SYS_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "JP1")
+				(pin "1")
+				(pinfunction "5V_SYS_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "L1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "TP4")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "TP5")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "14")
+				(pinfunction "VOS_14")
+				(pintype "input")
+			)
+			(node
+				(ref "U1")
+				(pin "7")
+				(pinfunction "FSW_7")
+				(pintype "input")
+			)
+			(node
+				(ref "U3")
+				(pin "5")
+				(pinfunction "VCC_5")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U4")
+				(pin "3")
+				(pinfunction "IN_3")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "2")
+			(name "/AUX_3V3")
+			(class "Default")
+			(node
+				(ref "C10")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J5")
+				(pin "2")
+				(pinfunction "VCC_/_3V3_2")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U4")
+				(pin "2")
+				(pinfunction "OUT_/_TAB_2")
+				(pintype "power_out")
+			)
+		)
+		(net
+			(code "3")
+			(name "/BAT_FUSED")
+			(class "Default")
+			(node
+				(ref "D3")
+				(pin "1")
+				(pinfunction "A_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "F1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J8")
+				(pin "1")
+				(pinfunction "BAT_FUSED_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "4")
+			(name "/BAT_PLUS")
+			(class "Default")
+			(node
+				(ref "F1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J4")
+				(pin "1")
+				(pinfunction "BAT+_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "TP1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "5")
+			(name "/BAT_SENSE")
+			(class "Default")
+			(node
+				(ref "C8")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "10")
+				(pinfunction "GPIO32_10")
+				(pintype "passive")
+			)
+			(node
+				(ref "R3")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R4")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "6")
+			(name "/BAT_SW")
+			(class "Default")
+			(node
+				(ref "J8")
+				(pin "2")
+				(pinfunction "BAT_SW_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q1")
+				(pin "3")
+				(pinfunction "D_3")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "7")
+			(name "/BUCK_IN")
+			(class "Default")
+			(node
+				(ref "C1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C2")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q1")
+				(pin "2")
+				(pinfunction "S_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R2")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R3")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "TP3")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "10")
+				(pinfunction "AVIN_10")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "11")
+				(pinfunction "PVIN_11")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "12")
+				(pinfunction "PVIN_12")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "13")
+				(pinfunction "EN_13")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "8")
+			(name "/BUCK_SW")
+			(class "Default")
+			(node
+				(ref "L1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "1")
+				(pinfunction "SW_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "2")
+				(pinfunction "SW_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "3")
+				(pinfunction "SW_3")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "9")
+			(name "/DEVKIT_3V3")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "10")
+			(name "/DEVKIT_VIN")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "1")
+				(pinfunction "VIN_/_5V_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "JP1")
+				(pin "2")
+				(pinfunction "DEVKIT_VIN_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "11")
+			(name "/E220_AUX")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "6")
+				(pinfunction "GPIO27_6")
+				(pintype "passive")
+			)
+			(node
+				(ref "J3")
+				(pin "5")
+				(pinfunction "AUX_5")
+				(pintype "output")
+			)
+		)
+		(net
+			(code "12")
+			(name "/E220_M0")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "8")
+				(pinfunction "GPIO25_8")
+				(pintype "passive")
+			)
+			(node
+				(ref "J3")
+				(pin "1")
+				(pinfunction "M0_1")
+				(pintype "input")
+			)
+			(node
+				(ref "R8")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "13")
+			(name "/E220_M1")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "7")
+				(pinfunction "GPIO26_7")
+				(pintype "passive")
+			)
+			(node
+				(ref "J3")
+				(pin "2")
+				(pinfunction "M1_2")
+				(pintype "input")
+			)
+			(node
+				(ref "R9")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "14")
+			(name "/E220_RXD")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "7")
+				(pinfunction "GPIO17/TX2_7")
+				(pintype "passive")
+			)
+			(node
+				(ref "J3")
+				(pin "3")
+				(pinfunction "RXD_3")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "15")
+			(name "/E220_TXD")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "6")
+				(pinfunction "GPIO16/RX2_6")
+				(pintype "passive")
+			)
+			(node
+				(ref "J3")
+				(pin "4")
+				(pinfunction "TXD_4")
+				(pintype "output")
+			)
+		)
+		(net
+			(code "16")
+			(name "/GND")
+			(class "Default")
+			(node
+				(ref "C1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C10")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C2")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C3")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C4")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C5")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C6")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C7")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C8")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C9")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "D3")
+				(pin "2")
+				(pinfunction "K_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J2")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J3")
+				(pin "7")
+				(pinfunction "GND_7")
+				(pintype "power_in")
+			)
+			(node
+				(ref "J4")
+				(pin "2")
+				(pinfunction "BAT-_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J5")
+				(pin "1")
+				(pinfunction "GND_1")
+				(pintype "power_in")
+			)
+			(node
+				(ref "J6")
+				(pin "1")
+				(pinfunction "GND_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J9")
+				(pin "3")
+				(pinfunction "GND_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "R1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R4")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R8")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R9")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "TP2")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "15")
+				(pinfunction "PGND_15")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "16")
+				(pinfunction "PGND_16")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "5")
+				(pinfunction "FB_5")
+				(pintype "input")
+			)
+			(node
+				(ref "U1")
+				(pin "6")
+				(pinfunction "AGND_6")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U1")
+				(pin "8")
+				(pinfunction "DEF_8")
+				(pintype "input")
+			)
+			(node
+				(ref "U1")
+				(pin "EP")
+				(pinfunction "EXPOSED_THERMAL_PAD_EP")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U3")
+				(pin "1")
+				(pinfunction "OE_1")
+				(pintype "input")
+			)
+			(node
+				(ref "U3")
+				(pin "3")
+				(pinfunction "GND_3")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U4")
+				(pin "1")
+				(pinfunction "GND_1")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "17")
+			(name "/GPIO13")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "3")
+				(pinfunction "GPIO13_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "J6")
+				(pin "2")
+				(pinfunction "GPIO13_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "18")
+			(name "/GPIO14")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "5")
+				(pinfunction "GPIO14_5")
+				(pintype "passive")
+			)
+			(node
+				(ref "J6")
+				(pin "3")
+				(pinfunction "GPIO14_3")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "19")
+			(name "/GPIO18")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "9")
+				(pinfunction "GPIO18_9")
+				(pintype "passive")
+			)
+			(node
+				(ref "J6")
+				(pin "4")
+				(pinfunction "GPIO18_4")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "20")
+			(name "/GPIO19")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "10")
+				(pinfunction "GPIO19_10")
+				(pintype "passive")
+			)
+			(node
+				(ref "J6")
+				(pin "5")
+				(pinfunction "GPIO19_5")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "21")
+			(name "/GPIO23")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "15")
+				(pinfunction "GPIO23_15")
+				(pintype "passive")
+			)
+			(node
+				(ref "J6")
+				(pin "6")
+				(pinfunction "GPIO23_6")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "22")
+			(name "/OLED_SCL")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "14")
+				(pinfunction "GPIO22_14")
+				(pintype "passive")
+			)
+			(node
+				(ref "J5")
+				(pin "3")
+				(pinfunction "SCL_3")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "23")
+			(name "/OLED_SDA")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "11")
+				(pinfunction "GPIO21_11")
+				(pintype "passive")
+			)
+			(node
+				(ref "J5")
+				(pin "4")
+				(pinfunction "SDA_4")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "24")
+			(name "/Q1_GATE")
+			(class "Default")
+			(node
+				(ref "Q1")
+				(pin "1")
+				(pinfunction "G_1")
+				(pintype "input")
+			)
+			(node
+				(ref "R1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R2")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "25")
+			(name "/SS_TR")
+			(class "Default")
+			(node
+				(ref "C4")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "9")
+				(pinfunction "SS/TR_9")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "26")
+			(name "/WS2812_DATA_3V3")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "5")
+				(pinfunction "GPIO4_5")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "27")
+			(name "/WS2812_DATA_5V")
+			(class "Default")
+			(node
+				(ref "J9")
+				(pin "2")
+				(pinfunction "WS2812_DATA_5V_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "4")
+				(pinfunction "Y_4")
+				(pintype "output")
+			)
+		)
+		(net
+			(code "28")
+			(name "unconnected-(J1-EN-Pad15)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "15")
+				(pinfunction "EN_15")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "29")
+			(name "unconnected-(J1-GPIO12-Pad4)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "4")
+				(pinfunction "GPIO12_4")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "30")
+			(name "unconnected-(J1-GPIO33-Pad9)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "9")
+				(pinfunction "GPIO33_9")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "31")
+			(name "unconnected-(J1-GPIO34-Pad12)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "12")
+				(pinfunction "GPIO34_12")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "32")
+			(name "unconnected-(J1-GPIO35-Pad11)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "11")
+				(pinfunction "GPIO35_11")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "33")
+			(name "unconnected-(J1-GPIO36{slash}VP-Pad14)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "14")
+				(pinfunction "GPIO36/VP_14")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "34")
+			(name "unconnected-(J1-GPIO39{slash}VN-Pad13)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "13")
+				(pinfunction "GPIO39/VN_13")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "35")
+			(name "unconnected-(J2-GPIO1{slash}TX0-Pad13)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "13")
+				(pinfunction "GPIO1/TX0_13")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "36")
+			(name "unconnected-(J2-GPIO2-Pad4)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "4")
+				(pinfunction "GPIO2_4")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "37")
+			(name "unconnected-(J2-GPIO3{slash}RX0-Pad12)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "12")
+				(pinfunction "GPIO3/RX0_12")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "38")
+			(name "unconnected-(J2-GPIO5-Pad8)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "8")
+				(pinfunction "GPIO5_8")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "39")
+			(name "unconnected-(J2-GPIO15-Pad3)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "3")
+				(pinfunction "GPIO15_3")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "40")
+			(name "unconnected-(U1-PG-Pad4)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "4")
+				(pinfunction "PG_4")
+				(pintype "open_collector+no_connect")
+			)
+		)
+	)
+)

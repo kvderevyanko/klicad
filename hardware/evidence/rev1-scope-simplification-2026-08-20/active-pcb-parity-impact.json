@@ -1,0 +1,62 @@
+{
+  "board_only_references": [
+    "D2",
+    "TP10",
+    "TP6",
+    "TP7",
+    "TP8",
+    "TP9"
+  ],
+  "contract": {
+    "pcb": "hardware/esp32-e220.kicad_pcb",
+    "pcb_net_name": "exact Eeschema root-sheet name, including leading '/'"
+  },
+  "counts": {
+    "intentional_non_pcb": 2,
+    "pcb_footprints": 41,
+    "schematic_assembled": 37
+  },
+  "electrical_pad_net_mismatches": [
+    {
+      "pad": "4",
+      "pcb": "/WS2812_DIN",
+      "reference": "U3",
+      "schematic": "/WS2812_DATA_5V"
+    }
+  ],
+  "gate": "SCHEMATIC-PCB ELECTRICAL PARITY",
+  "intentional_non_pcb": {
+    "R10": "NO_FOOTPRINT_DNP",
+    "R11": "NO_FOOTPRINT_DNP"
+  },
+  "kicad_raw_net_name_mismatches": [
+    {
+      "pad": "4",
+      "pcb": "/WS2812_DIN",
+      "reference": "U3",
+      "schematic": "/WS2812_DATA_5V"
+    }
+  ],
+  "missing_pcb_footprints": [
+    "J6",
+    "J9"
+  ],
+  "non_pcb_dnp_errors": [],
+  "production_property_mismatches": [
+    {
+      "field": "Value",
+      "pcb": "B2PS-VH(LF)(SN)",
+      "reference": "J8",
+      "schematic": "B2B-XH-A"
+    },
+    {
+      "field": "Footprint",
+      "pcb": "Connector_JST:JST_VH_B2PS-VH_1x02_P3.96mm_Horizontal",
+      "reference": "J8",
+      "schematic": "JST_B2B-XH-A_1x02_P2.50mm_THT"
+    }
+  ],
+  "status": "FAIL",
+  "unexpected_non_pcb_items": [],
+  "usb_c_power_nets_present": []
+}

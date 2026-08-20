@@ -1,0 +1,2358 @@
+E220-xxxTxxx Product Specification Sheet
+
+    AT commands 20/30dBm LoRa wireless module
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                                                             E220-xxxTxxx Series User Manual
+
+                                                                                    目录
+Disclaimer and Copyright Notice .........................................................................................................错误！未定义书签。
+1.Product Overview ................................................................................................................................................................5
+     1.1 Product Introduction .................................................................................................................................................5
+     1.2 Features and Functions .............................................................................................................................................5
+     1.3 Application Scenarios ...............................................................................................................................................6
+2.Specifications ...................................................................................................................................................................... 6
+     2.1 Comparison of E220-T Series Products ................................................................................................................... 6
+     2.2 Basic parameters .......................................................................................................................................................7
+     2.2.1Basic parameters .....................................................................................................................................................7
+3.Mechanical dimensions and pin definitions ........................................................................................................................ 9
+     3.1 E220-400/900T22S Mechanical Dimensions and Pin Definitions ...........................................................................9
+     3.2 E220-400/900T30S Mechanical Dimensions and Pin Definitions .........................................................................11
+     3.3 E220-400/900T22D Mechanical Dimensions and Pin Definitions ........................................................................13
+     3.3 E220-400/900T30D Mechanical Dimensions and Pin Definitions ........................................................................14
+4.Recommended Connection Diagram .................................................................................................................................15
+5.Functional Details ..............................................................................................................................................................17
+     5.1 Working Mode ........................................................................................................................................................17
+     5.1.1Transmission mode used , mode 0 (M1, M0 pins set to 0,0). .............................................................................. 17
+     5.1.2WOR mode is used , mode 1 & mode 2 (M1, M0 pins are set to 0, 1 ; M1, M0 pins are set to 1 , 0 ). ...............21
+     5.1.3Hibernation configuration mode is used , mode 3 (M1, M0 pins are set to 1, 1). ................................................22
+     5.2 AUX Timing​ .......................................................................................................................................................24
+     5.2.1 Power-on start indication .....................................................................................................................................24
+     5.2.2 Serial Port Data Output Indicator ........................................................................................................................24
+          5.2.3 Wireless Transmission Indicator​ ............................................................................................................. 25
+     5.2.4Switch mode ......................................................................................................................................................... 27
+     5.2.4 Precautions​ ...................................................................................................................................................... 27
+     5.3 Serial port firmware upgrade ..................................................................................................................................29
+     5.3.1 Upgrade the host computer quickly .....................................................................................................................29
+6.Register Read/Write Control ............................................................................................................................................. 30
+     6.1 HEX Command Format ..........................................................................................................................................30
+     6.2 Register Function Overview ...................................................................................................................................31
+     6.3E220-400/900Txxx Register Description ................................................................................................................31
+     6.4 Register factory default parameters ........................................................................................................................35
+7. AT Commands .................................................................................................................................................................. 36
+     7.1 General instructions ................................................................................................................................................36
+     7.1.1 AT+RESET soft reboot ........................................................................................................................................36
+     7.1.2 AT+DEFAULT restores factory settings ..............................................................................................................36
+     7.1.3 Use AT+DEVTYPE to query product model ...................................................................................................... 37
+     7.1.4 Use AT+FWCODE to query software version .................................................................................................... 37
+     7.1.5 Enable AT+SWITCH software switching of working mode ...............................................................................37
+     7.1.6 AT+MODE Software Switching for Operating Mode .........................................................................................38
+     7.1.7 AT+UAUX Wireless AUX Indicator Enable .......................................................................................................38
+     7.1.8 AT+ADDR Communication Address (Match Filtering) ..................................................................................... 39
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                                                                                 2
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                                                                  E220-T Series User Manual
+
+       7.1.9 AT+CHANNEL Communication Channel (Carrier Frequency) ......................................................................... 39
+       7.1.10 AT+KEY Communication Password (Data Encryption) ...................................................................................40
+       7.1.11 AT+UART Serial Port Baud Rate and Checksum ............................................................................................. 40
+       7.1.13 AT+URXT Serial Port Frame Drop Conditions ................................................................................................ 41
+       7.1.14 AT+RATE Wireless Transmit/Receive Rate ......................................................................................................42
+       7.1.15 AT+TRANS Wireless Transmission Method (Pass-through/Fixed Point) ........................................................ 42
+       7.1.16 AT+LBT Listen Before Activation Enable (Avoidance) ................................................................................... 43
+       7.1.17 AT+LBR Listen Before Send Judgment Condition ...........................................................................................43
+       7.1.18 AT+WTIME Over-the-Air Wake-up Cycle ....................................................................................................... 44
+       7.1.19 AT+ERSSI Ambient Signal Strength .................................................................................................................44
+       7.1.20 AT+DRSSI Received Data Packet Signal Strength ...........................................................................................45
+       7.1. 21 AT+POWER Power Levels .............................................................................................................................. 45
+       7.2 Signaling testing (certification) .............................................................................................................................. 46
+       7.2.1 Test Instruction Declaration ................................................................................................................................ 46
+       7.2.2 Test Command List ..............................................................................................................................................46
+8.Hardware Design ...............................................................................................................................................................46
+9.Frequently Asked Questions ..............................................................................................................................................47
+       9.1 Transmission distance is not ideal .......................................................................................................................... 47
+       9.2 Module is easily damaged ...................................................................................................................................... 48
+       9.3 The bit error rate is too high. ..................................................................................................................................48
+       9.4 Antenna Selection ...................................................................................................................................................48
+10.Welding Operation Instructions .......................................................................................................................................49
+       10.1 Reflow soldering temperature .............................................................................................................................. 49
+       10.2 Reflow Soldering Profile ......................................................................................................................................49
+11.Related Models ................................................................................................................................................................50
+12. Antenna Guide ................................................................................................................................................................50
+       12.1 Antenna Recommendation ................................................................................................................................... 50
+13.Bulk Packaging Methods ................................................................................................................................................ 52
+13.1 E220-400/900T22S Bulk Packaging Method ...............................................................................................................52
+       13.2 E220-400/900T30S Bulk Packaging Method .......................................................................................................53
+       13.3 E220-400/900TxxD Bulk Packaging Method ......................................................................................................53
+Revision History ...................................................................................................................................................................54
+About Us .............................................................................................................................................................................. 54
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                                                                                  3
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                             E220-T Series User Manual
+
+
+
+
+                                       Disclaimer and Copyright Notice
+
+       The information contained herein, including the URLs for reference, is subject to change withou
+t prior notice. This document is provided "as is" without any warranties, including but not limited to
+warranties of merchantability, fitness for a particular purpose, and non-infringement, as well as any
+warranties implied by proposals, specifications, or samples mentioned elsewhere. The company shall
+not be liable for any claims, including liabilities arising from the use of information in this document
+that may infringe upon any patent rights. No intellectual property license, either express or implied, i
+s granted herein by estoppel or otherwise.
+
+       All test data stated in this document are obtained by Ebyte Laboratory, and actual results may v
+ary slightly.
+
+       All trade names, trademarks and registered trademarks mentioned herein are the property of thei
+r respective owners.
+
+       This product is strictly prohibited from being used in military applications and life safety-relate
+d scenarios. The user shall bear full responsibility for any unauthorized use.
+
+       Chengdu Ebyte Electronic Technology Co., Ltd. reserves the right of final interpretation.
+
+      Notice :
+
+     The content of this manual may be modified due to product version upgrades or other reasons. Chengdu Ebyte Electronic Technol
+ogy Co., Ltd. reserves the right to revise the contents of this manual without prior notice. This manual is intended solely for operationa
+l guidance. While every effort has been made to ensure the accuracy of the information herein, the company does not warrant that the c
+ontent is entirely error-free. All statements, information and recommendations contained in this manual shall not constitute any express
+or implied warranties whatsoever.
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                                   4
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                  E220-T Series User Manual
+
+
+
+1.Product Overview
+
+
+1.1 Product Introduction
+
+E220- T series modules are a new generation of LoRa wireless modules. This series of UART modules is developed
+based on SEMTECH high-performance RF chips , has multiple transmission modes, operates in the 400 MHz and 900
+MHz bands , features LoRa spread spectrum technology, TTL level output, and is compatible with 3.3V I/O port voltage.
+E220- T series modules adopt the latest generation of LoRa spread spectrum technology . LoRa™ direct sequence spread
+spectrum technology offers advantages such as longer communication distance, strong anti-interference capabilities, and
+extremely high security. Its maximum transmit power reaches 30dBm, and it features a PA power amplifier and an LNA
+low-noise amplifier, thereby improving communication stability and extending communication distance. Industrial-grade
+standards ensure its stability and consistency. Currently in stable mass production, it is widely used in industries such as
+metering, IoT upgrades, and smart homes .
+The following diagram shows eight modules with different power, frequency bands, and packages. It is only an
+appearance illustration . For detailed parameters , please refer to the E220-T series product selection comparison
+in section 2.1 .
+
+
+
+
+1.2 Features and Functions
+
+     It adopts a new generation of LoRa spread spectrum modulation technology, which has a longer communication
+      distance and stronger anti-interference ability;
+     Supports multiple frequency bands: 433 / 868/915MHz (customizable) ;
+     Supports serial port firmware upgrades , making maintenance more convenient;
+     It supports both HEX and AT command systems , allowing users to choose flexibly .
+     It supports users setting their own communication keys, which cannot be read, greatly improving the confidentiality
+      of user data;
+     Supports RSSI signal strength indication function for evaluating signal quality;
+     It supports over-the-air wake-up, which is an ultra-low power consumption function suitable for battery-powered
+      applications.
+     Supports fixed-point transmission and broadcast transmission;
+     The air transmission rate is adjustable in multiple levels;
+     The parameters are saved after power failure, and the module will work according to the set parameters after power
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                     5
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                            E220-T Series User Manual
+
+      is restored;
+     Built-in watchdog timer automatically resets and resumes operation in case of an accident;
+
+
+
+
+1.3 Application Scenarios
+
+     Home security alarm and remote keyless entry;
+     Smart home and industrial sensors, etc.;
+     Wireless alarm security system;
+     Building automation solutions;
+     Wireless industrial-grade remote control;
+     Healthcare products;
+     Advanced Meter Reading Architecture (AMI) .
+
+
+
+2.Specifications
+
+
+2.1 Comparison of E220-T Series Products
+
+                                     Carrier           Transmit                                       Product
+                  Product                                                    Test distance Packagin                  Antenna         type
+Category                             frequency         power             ②                            dimensions
+                  Model                                                      ③ km         g                          ④
+                                     ① Hz              dBm                                            (mm)
+
+                  E220-400T22                                                             surface                    IPEX -1 / Stamp
+                                     410～493M          twenty two            5                        16*26
+                  S                                                                       mount                      Hole
+
+                  E220-400T22                                                             direct
+433MHz                               410～493M          twenty two            5                        21*36          SMA-K
+                  D                                                                       plug
+band module
+                  E220-400T30                                                             surface                    IPEX -1 / Stamp
+                                     410～493M          30                    10                       40.5*25
+                  S                                                                       mount                      Hole
+
+                  E220-400T30                                                             direct
+                                     410～493M          30                    10                       43*24          SMA-K
+                  D                                                                       plug
+
+                  E220-900T22                                                             surface                    IPEX -1 / Stamp
+868/915MHz                           850～930M          twenty two            5                        16*26
+                  S                                                                       mount                      Hole
+Frequency
+                  E220-900T22                                                             direct
+band module                          850～930M          twenty two            5                        21*36          SMA-K
+                  D                                                                       plug
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                                 6
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                            E220-T Series User Manual
+
+
+                                     Carrier           Transmit                                       Product
+                  Product                                                    Test distance Packagin                  Antenna         type
+Category                             frequency         power             ②                            dimensions
+                  Model                                                      ③ km         g                          ④
+                                     ① Hz              dBm                                            (mm)
+
+                  E220-900T30                                                             surface                    IPEX -1 / Stamp
+                                     850～930 M 30                            10                       40.5*25
+                  S                                                                       mount                      Hole
+
+                  E220-900T30                                                             direct
+                                     850～930 M 30                            10                       43*24          SMA-K
+                  D                                                                       plug
+Note:
+    (1)Carrier frequency : Frequency band range can be customized by the user;
+                               ①
+
+
+
+    (2)Transmit power          : 22dBm=158mW/30dBm=1000mW, error range ±1dBm, power is adjustable in multiple levels.
+                           ②
+
+
+
+         For details of power levels, please see Chapters 6 and 7 of this document .
+    (3)Test distance : Clear and open, airspeed 2.4kbps, antenna height 2 meters (for reference only, actual measurement
+                       ③
+
+
+
+         is recommended);
+    (4)Antenna type : Equivalent impedance approximately 50Ω;
+                       ④
+
+
+
+    (5)Modules in the same frequency band can communicate with each other.
+
+
+2.2 Basic parameters
+
+     The E220-T series 22dBm low-power modules are: E220-400T22D, E220-400T22S, E220-900T22D, and
+      E220-900T22S.
+     The E220-T series 30dBm high-power modules are: E220-400T30D, E220-400T30S, E220-900T30D, and
+      E220-900T30S.
+
+
+2.2.1Basic parameters
+
+Conditions: Tc=25℃, VCC=5.0V, 433MHz/868MHz/915MHz
+parameter        describe
+
+Modulatio
+                 Next-generation LoRa modulation technology
+n method
+
+Interface        1.27mm stamp hole / 2.54mm pin header insert ; the stamp hole is a patch module, and the pin header is a
+method           through-hole module.
+
+Communic
+ation            UART serial port (3.3V)
+interface
+
+                 200 bytes is the maximum capacity per packet . Packets exceeding this limit will be automatically split
+launch
+                 into smaller packets . This capacity can be adjusted via a host computer or command. For detailed
+length
+                 instructions, please refer to Chapter 6 of this document.
+
+Packaging
+                 Surface mount /plug-in
+method
+
+Cache            400 Btye
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                                 7
+Chengdu Ebyte Electronic Technology Co., Ltd.                                              E220-T Series User Manual
+
+
+parameter        describe
+
+capacity
+
+Work environment
+
+Operating
+temperatur       -40℃～+85℃, industrial grade standard
+e
+
+Operating
+                 10-90%RH
+humidity
+
+Storage
+temperatur       -40℃～+125℃
+e
+
+RF parameters
+
+                 22dBm = 158mW, power adjustable in multiple levels. See Chapters 6 and 7 of this document for
+Transmit         details.
+power            30dBm = 1000mW, power adjustable in multiple levels. See Chapters 6 and 7 of this document for
+                 details.
+
+Operating        410 MHz ~ 493 MHz, frequency band customization supported
+frequency
+                 850MHz～930MHz, frequency band customization supported
+band
+
+Receiver         -126dBm, airspeed 2.4kbps@SF11, suitable for E220-T series 22dBm low-power modules
+sensitivity      - 1 31 dBm, airspeed 2.4 kbps @ SF11, suitable for E220-T series 30 dBm high-power modules
+
+                 2.4–62.5 Kbps, with multi-level adjustable air speeds; see Chapters 6 and 7 of this document for
+air speed
+                 details.
+
+Blocking
+                 10dBm
+power
+
+Electrical parameters
+
+Power            Output power can be guaranteed for modules with a voltage range of 2.6 to 5.5V and a 30dBm output
+supply           voltage of ≥5V. Output power can be guaranteed for modules with a voltage range of ≥3.3V. Modules
+voltage          exceeding 5.5V will be permanently burned out.
+
+Communic
+                 3.3 V
+ation level
+
+                 90～110mA, instantaneous power consumption @22dBm, suitable for E220-T series 22dBm low power
+Emission         modules
+current          460～620mA, instantaneous power consumption @30dBm, suitable for E220-T series 30dBm high power
+                 modules
+
+Received         ≈8mA, suitable for E220-T series 22dBm small power modules
+current          ≈13mA, suitable for E220-T series 30dBm high-power modules
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                 8
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                            E220-T Series User Manual
+
+
+parameter        describe
+
+Dormant
+                 ≈3uA
+current
+
+
+
+
+3.Mechanical dimensions and pin definitions
+
+
+3.1 E220-400/900T22S Mechanical Dimensions and Pin Definitions
+
+
+
+
+Pin number        Pin Name         Pin direction           Pin Applications
+                                                           Module reset pin. Low level triggers reset, and the pull-low time needs
+                                                           to be greater than 100us;
+1                 RESET            enter
+                                                           It is strongly recommended that users connect to a microcontroller to
+                                                           reset and restore operation in case of an accident.
+2                 GND              -                       Module ground wire
+3                 NC               -                       Unsupported foot (please keep it suspended in the air)
+4                 NC               -                       Unsupported foot (please keep it suspended in the air)
+5                 NC               -                       Unsupported foot (please keep it suspended in the air)
+6                 NC               -                       Unattended pins (programming pins; it is recommended to bring them
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                               9
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                            E220-T Series User Manual
+
+
+Pin number        Pin Name         Pin direction           Pin Applications
+                                                           out if possible for easier future maintenance or firmware customization).
+                                                           Unattended pins (programming pins; it is recommended to bring them
+7                 NC               -
+                                                           out if possible for easier future maintenance or firmware customization).
+8                 GND              -                       Module ground wire
+11                GND              -                       Module ground wire
+12                ANT              -                       antenna
+13                GND              -                       Module ground wire
+14                GND              -                       Module ground wire
+15                GND              -                       Module ground wire
+16                GND              -                       Module ground wire
+19                GND              -                       Module ground wire
+                                   Input         (very     In conjunction with M1, it determines the module's four operating
+20                M0
+                                   weak pull-up)           modes (cannot be left floating).
+                                   Input         (very     In conjunction with M0, it determines the module's four operating
+twenty one        M1
+                                   weak pull-up)           modes (cannot be left floating).
+twenty two        RXD              enter                   3.3V serial port input, connected to the external TXD output pin;
+twenty
+                  TXD              Output                  3.3V serial port output, connected to the external RXD input pin;
+three
+                                                           Indicates the module's working status (can be left floating).
+                                                           During normal operation, a low level on this pin indicates a busy state,
+                                                           and a high level indicates an idle state.
+                                                           It is not recommended to use this pin to drive external devices or pull
+twenty four       AUX              Output
+                                                           down this pin. Otherwise, if the module detects that the AUX pin is
+                                                           continuously pulled low by an external source during power-up, it may
+                                                           be forced into upgrade mode and fail to work properly. For details,
+                                                           please see the explanation in Chapter 5 .
+25                VCC              -                       Module power supply (please refer to the electrical parameters section)
+26                GND              -                       Module ground wire
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                               10
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                            E220-T Series User Manual
+
+
+
+3.2 E220-400/900T30S Mechanical Dimensions and Pin Definitions
+
+
+
+
+Pin
+                Pin Name         Pin direction             Pin Applications
+number
+1               GND              enter                     Module ground wire
+2               VCC              enter                     Module power supply (please refer to the electrical parameters section)
+                                                           Indicates the module's working status (can be left floating).
+                                                           During normal operation, a low level on this pin indicates a busy state,
+                                                           and a high level indicates an idle state.
+                                                           It is not recommended to use this pin to drive external devices or pull
+3               AUX              Output
+                                                           down this pin. Otherwise, if the module detects that the AUX pin is
+                                                           continuously pulled low by an external source during power-up, it may
+                                                           be forced into upgrade mode and fail to work properly. For details,
+                                                           please see the explanation in Chapter 5 .
+4               TXD              Output                    3.3V serial port output, connected to the external RXD input pin;
+5               RXD              enter                     3.3V serial input, connected to the external TXD output pin;
+                                 Input (very weak          In conjunction with M0, it determines the module's four operating
+6               M1
+                                 pull-up)                  modes (cannot be left floating ).
+7               M0               Input (very weak          In conjunction with M1, it determines the module's four operating
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                               11
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                            E220-T Series User Manual
+
+
+Pin
+                Pin Name         Pin direction             Pin Applications
+number
+                                 pull-up)                  modes (cannot be left floating ).
+                                                           Antenna interface (high-frequency signal output, 50 ohm characteristic
+11              ANT              Output
+                                                           impedance)
+12              GND              -                         Fixed
+13              GND              -                         Fixed
+14              GND              -                         Fixed
+                                                           Unattended pins (programming pins; it is recommended to bring them
+18              NC
+                                                           out if possible for easier future maintenance or firmware customization).
+                                                           Unattended pins (programming pins; it is recommended to bring them
+19              NC
+                                                           out if possible for easier future maintenance or firmware customization).
+20              NC                                         Unsupported foot (please keep it suspended in the air)
+twenty
+                NC                                         Unsupported foot (please keep it suspended in the air)
+one
+                                                           Module reset pin. A low-level signal triggers the reset, and the pull-low
+twenty                                                     time must be greater than 100µs.
+                RESET            enter
+two                                                        It is strongly recommended that users connect to a microcontroller to
+                                                           reset and restore operation in case of an accident.
+twenty
+                GND              -                         Fixed
+three
+twenty
+                NC                                         Unsupported foot (please keep it suspended in the air)
+four
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                               12
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                            E220-T Series User Manual
+
+
+
+3.3 E220-400/900T22D Mechanical Dimensions and Pin Definitions
+
+
+
+
+Pin number        Pin Name         Pin direction           Pin Applications
+                                   Input         (very     In conjunction with M1, it determines the module's four operating
+1                 M0
+                                   weak pull-up)           modes (cannot be left floating).
+                                   Input         (very     In conjunction with M0, it determines the module's four operating
+2                 M1
+                                   weak pull-up)           modes (cannot be left floating).
+3                 RXD              enter                   3.3V serial port input, connected to the external TXD output pin;
+4                 TXD              Output                  3.3V serial port output, connected to the external RXD input pin;
+                                                           Indicates the module's working status (can be left floating).
+                                                           During normal operation, a low level on this pin indicates a busy state,
+                                                           and a high level indicates an idle state.
+                                                           It is not recommended to use this pin to drive external devices or pull
+5                 AUX              Output
+                                                           down this pin. Otherwise, if the module detects that the AUX pin is
+                                                           continuously pulled low by an external source during power-up, it may
+                                                           be forced into upgrade mode and fail to work properly. For details,
+                                                           please see the explanation in Chapter 5 .
+6                 VCC              enter                   Module power supply (please refer to the electrical parameters section)
+7                 GND              enter                   Module ground wire
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                               13
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                            E220-T Series User Manual
+
+
+Pin number        Pin Name         Pin direction           Pin Applications
+8                 Fixing hole      -                       Fixing hole
+9                 Fixing hole      -                       Fixing hole
+10                Fixing hole      -                       Fixing hole
+
+
+3.3 E220-400/900T30D Mechanical Dimensions and Pin Definitions
+
+
+
+
+Pin
+                Pin Name         Pin direction             Pin Applications
+number
+                                 Input (very weak          In conjunction with M1, it determines the module's four operating
+1               M0
+                                 pull-up)                  modes (cannot be left floating).
+                                 Input (very weak          In conjunction with M0, it determines the module's four operating
+2               M1
+                                 pull-up)                  modes (cannot be left floating).
+3               RXD              enter                     3.3V serial port input, connected to the external TXD output pin;
+4               TXD              Output                    3.3V serial port output, connected to the external RXD input pin;
+                                                           Indicates the module's working status (can be left floating).
+                                                           During normal operation, a low level on this pin indicates a busy state,
+5               AUX              Output
+                                                           and a high level indicates an idle state.
+                                                           It is not recommended to use this pin to drive external devices or pull
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                               14
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                           E220-T Series User Manual
+
+
+Pin
+                Pin Name         Pin direction             Pin Applications
+number
+                                                           down this pin. Otherwise, if the module detects that the AUX pin is
+                                                           continuously pulled low by an external source during power-up, it may
+                                                           be forced into upgrade mode and fail to work properly. For details,
+                                                           please see the explanation in Chapter 5 .
+6               VCC              enter                     Module power supply (please refer to the electrical parameters section)
+7               GND              enter                     Module ground wire
+                Fixing
+8                                -                         Fixing hole
+                hole
+                Fixing
+9                                -                         Fixing hole
+                hole
+                Fixing
+10                               -                         Fixing hole
+                hole
+                Fixing
+11                               -                         Fixing hole
+                hole
+
+
+
+
+4.Recommended Connection Diagram
+
+
+
+
+Serial
+             Precautions
+Number
+             The module has a 3.3V serial port and I/O pins. If the user is using a 5V microcontroller, level conversion
+1
+             needs to be considered.
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                              15
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                     E220-T Series User Manual
+
+
+Serial
+             Precautions
+Number
+             It is strongly recommended to connect the RESET pin to avoid unexpected malfunctions or other special
+2
+             situations.
+             If you are considering adding an external switch to the module's VCC, please consider the leakage current of
+3
+             the external microcontroller's serial port; otherwise, the module will not be able to be turned off.
+             It is not recommended to use the AUX pin to drive external components, such as LEDs or relays, as they will
+4
+             not function if continuously pulled low by an external source during power-on.
+             (Optional) For surface mount modules, consider bringing out the module's programming pins for easier
+5
+             future maintenance or firmware customization.
+             (Optional) Consider bringing out an additional interface for the module's serial port to facilitate future
+6
+             maintenance (can be upgraded online with PC tools).
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                        16
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                      E220-T Series User Manual
+
+
+
+5.Functional Details
+
+     In this chapter, pin M1M0 is described as having a 0 indicating a low level and a 1 indicating a high level.
+     If you are using software to switch modes, please refer to Chapter 7, AT+MODE command.
+
+
+5.1 Working Mode
+
+The module has four operating modes, which are set by pins M1 and M0 , as detailed in the table below:
+Pattern (0-3)                 M1        M0        Mode Introduction                                     Remark
+                                                  Serial port enabled, wireless enabled, transparent
+0 Transmission Mode           0         0                                                               —
+                                                  transmission.
+1     WOR        Sending                                                                                Supports   over-the-air
+                              0         1         WOR sends data, WOR receives data
+Mode                                                                                                    wake-up
+2    WOR        receiving
+                              1         0         WOR send closed, WOR receive data                     —
+mode
+3. Sleep Mode                 1         1         Configurable parameters                               —
+
+
+
+
+5.1.1Transmission mode used , mode 0 (M1, M0 pins set to 0,0).
+
+5.1.1.1 Quick Use of Transparent Transmission
+
+What you send is what you get; you can communicate with each other using a serial port assistant (factory default
+parameters are all the same, and the transmission method is transparent transmission). An example is shown below:
+
+
+
+
+                              Figure 1. Schematic diagram of bidirectional transmission and reception
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                         17
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                    E220-T Series User Manual
+
+
+
+
+5.1.1.2 Fixed-point transmission for quick use (specifying the destination address and channel)
+
+Data is sent and received using a fixed data format: target address + target channel + data , which effectively avoids some
+interference.
+
+
+
+
+                                        Figure 2 Schematic diagram of fixed-point transmission
+Operating steps:
+Step 1: Modify the module parameters via the host computer: Modify the module address and channel in configuration
+mode (M1, M0 pins set to 1, 1), change the transparent transmission mode to fixed-point transmission, and finally write
+the parameters to complete the modification.
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                       18
+Chengdu Ebyte Electronic Technology Co., Ltd.                                               E220-T Series User Manual
+
+
+
+
+                                                      Figure 3 Host computer interface
+
+
+
+
+Step 2: Change the module's working mode to normal mode: Edit the parameters of module A to 000304AABBCC and
+send them to module B. Similarly, module B sends data as 000102AABBCC. (In fixed-point mode, the data transmission
+format is: target address + target channel + data).
+
+
+
+
+                                                  Figure 4 Data transmission diagram
+
+5.1.1.3 Quick Use of Broadcast
+
+    Set the address of module A to 0xFFFF and the channel to 0x04 . When module A is used as the transmitter (in the
+         same mode, either transparent transmission or fixed-point transmission ), all receiving modules under channel
+         0x04 can receive the data, achieving the purpose of broadcasting.
+    Set the address of module A to 0xFFFF and the channel to 0x04. When module A acts as a receiver, it can receive all
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                  19
+Chengdu Ebyte Electronic Technology Co., Ltd.                                               E220-T Series User Manual
+
+         data under channel 0x04, achieving the purpose of monitoring.
+
+
+
+
+                             Figure 5. Schematic diagram of fixed-point broadcast transmission
+
+
+
+
+Operating steps:
+Step 1: Modify the module parameters via the host computer: In configuration mode (M1, M0 pins set to 1, 1), modify
+the module address and channel, change the transparent transmission mode to fixed-point transmission, and finally write
+the parameters to complete the modification.
+
+
+
+
+                                                Figure 6 upper computer interface diagram
+Step 2: Change the module's working mode to normal mode: Edit the parameters of module A to FFFF04AABBCC and
+send them to module B. Similarly, module B sends data as FFFF02AABBCC. (In fixed-point broadcast mode, the data
+transmission format is: broadcast address + target channel + data).
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                  20
+Chengdu Ebyte Electronic Technology Co., Ltd.                                           E220-T Series User Manual
+
+
+
+
+                                                  Figure 7 Data transmission diagram
+
+
+
+
+5.1.2WOR mode is used , mode 1 & mode 2 (M1, M0 pins are set to 0, 1 ; M1,
+
+M0 pins are set to 1 , 0 ).
+
+5.1.2.1 Quick Use of Transparent Transmission
+
+Operating steps:
+Step 1: Modify the mode using the M1 and M0 pins. Setting the pins of module A to 0 or 1 enables WOR transmit mode,
+and setting the pins of module B to 1 or 0 enables WOR receive mode.
+Step 2: After the module's working mode is changed to WOR mode: the WOR receiver module sends data to the WOR
+receiver module, but the WOR receiver module cannot send data to the sender.
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                              21
+Chengdu Ebyte Electronic Technology Co., Ltd.                                            E220-T Series User Manual
+
+
+
+
+                                                    Figure 8 Data transmission diagram
+
+
+
+
+5.1.3Hibernation configuration mode is used , mode 3 (M1, M0 pins are set to 1,
+
+1).
+
+5.1.3.1 Quick Use of Configuration Tools
+
+The module configuration interface shown below is displayed on the host computer. Users can switch to command mode
+via M0 and M1 to quickly configure and retrieve parameters on the host computer.
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                               22
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                E220-T Series User Manual
+
+
+
+
+                                            Figure 9 upper computer interface
+    In the host computer configuration, the module address, frequency channel, and key are all displayed in decimal
+format; for the value range of each parameter, please refer to the specific parameters for different product models in the
+registers in section 6.3.
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                   23
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                     E220-T Series User Manual
+
+
+
+5.2 AUX Timing​
+
+5.2.1 Power-on start indication
+
+Conditions: Tc = 25°C, VCC = 5 V
+
+Para
+            describe                                                                               Typical value        unit
+meter
+
+            The entire startup process after the module's VCC is powered on takes a certain
+T1                                                                                                 16                   ms
+            amount of time (entering the working mode, which is then operable by the user).
+
+            After the module's VCC is powered on, the AUX input will first pull low for a
+            delay. It does not immediately indicate a busy state (low level) because the
+            internal microcontroller also needs a certain startup time.
+
+
+T2          Note: At the beginning of T2, the AUX pin is in an internal pull-up input state. If    5                    ms
+            it is detected to be pulled low externally for more than 1 second (e.g., by an
+            external pull-down resistor or shorted to GND), it will be forced into upgrade
+            state and unable to send or receive wireless data and configuration commands
+            normally. For more details, please refer to the firmware upgrade section.
+
+
+        1           2         3          4          5          6         7   8    9        10          11      12       13
+VCC
+
+                                                               T1
+
+
+AUX
+
+                              T2
+
+
+
+                                                Figure 10 Power-on timing diagram
+
+
+5.2.2 Serial Port Data Output Indicator
+
+Conditions: Tc = 25°C, VCC = 5 V
+
+Para
+            describe                                                                               Typical value        unit
+meter
+
+            After the module has finished receiving air data packets, the AUX signal goes
+            low to indicate the microcontroller's readiness time to the external user. It can
+T1                                                                                                 3                    ms
+            also be used as a wake-up signal, suitable for some low-battery power
+            applications.
+
+            The module outputs the time interval between two consecutive packets of air            0
+T2                                                                                                                      ms
+            data.                                                                                  or
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                         24
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                           E220-T Series User Manual
+
+
+Para
+            describe                                                                                        Typical value         unit
+meter
+
+                                                                                                            Tx
+            The first scenario: The sending end is transmitting data in a super-packet loop,                (Single      packet
+            and the air speed is much greater than the receiving end's serial port speed. In this           in-flight time)
+            case, the serial port output data of the receiving end module will exhibit a
+            packet-merging effect (T2=0), and the length of a single serial port output data
+            can exceed the user-set packet length. This is suitable for applications where
+            Modbus reads multiple registers from the slave device and responds.
+
+
+            The second scenario: The sending end is transmitting data in a multi-packet loop,
+            but both the air speed and the serial port baud rate are slow (e.g., air speed 2.4
+            Mbps, serial port 9600 Mbps by default). In this case, the air transmission time is
+            relatively long, so the receiving end will output data packets in segments at
+            intervals.
+
+
+       1         2        3          4          5      6         7       8        9   10          11   12           13     14     15
+AUX
+
+
+
+
+TXD                           0x01       0x02              n                               0x01                 n
+
+                     T1                                                      T2
+
+
+
+
+                                           Figure 11 Serial port data output timing diagram
+
+
+
+5.2.3 Wireless Transmission Indicator​
+Tc = 25°C, VCC = 5 V
+
+para
+            describe                                                                                        Typical value         unit
+meter
+
+            The internal buffer capacity of the module's serial port (maximum data length
+            that can be transmitted at one time). When the data to be transmitted in the buffer
+n                                                                                                           400                   Byte
+            exceeds the user-defined packet length ( default 200 bytes ), it will be
+            automatically split into packets for wireless transmission.
+
+            The AUX indicator displays the delay time when the module's serial port receives
+            data. The module only starts indicating a busy state (pulled low) after the first
+T1                                                                                                          1                     ms
+            byte of the serial data packet is recognized and received. Therefore, the delay
+            time is related to the serial port baud rate (default 9600bps).
+
+            Module cache idle state AUX indicator delay (high) time                                         3
+
+T2                                                                                                                                ms
+            In the first scenario: if the data length transmitted by the user to the module is              or
+            less than the packet length ( default 200 bytes ), then T2 is the serial port
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                                   25
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                        E220-T Series User Manual
+
+
+para
+             describe                                                                                 Typical value        unit
+meter
+
+             reception time frame break delay, with a default frame break time of 3 bytes             Tx
+             ( related to the serial port baud rate , default 9600 ). As soon as the frame break      (Airborne
+             countdown ends, the AUX pin is immediately pulled high to indicate that the              transmission
+             buffer is idle, and the over-the-air transmission process is triggered at the same       time)
+             time (under default conditions, AUX will not indicate the wireless transmission
+             busy process; for more settings, please refer to the AT+UAUX command ).
+
+
+             The second scenario: When the data length sent to the module exceeds the packet
+             length , T2 represents the total over-the-air transmission time ( related to the
+             over-the-air rate ). That is, during serial port reception, once the packet length is
+             reached, the over-the-air transmission process is immediately triggered (LoRa
+             over-the-air transmission is relatively time-consuming). Subsequent packet
+             transmissions are repeated multiple times ( related to the data length ) until all
+             data in the receive buffer has been sent, at which point the AUX pin is pulled
+             high to indicate that the buffer is empty.
+
+
+         1          2          3          4          5         6          7       8   9        10       11        12       13
+RXD                     0x01       0x02       0x03                  n-1       n
+
+
+
+AUX
+
+                         T1                                                               T2
+
+
+
+                                          Figure 12 Wireless Transmission Timing Diagram
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                            26
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                          E220-T Series User Manual
+
+
+
+5.2.4Switch mode
+
+When the module switches between all modes, the AUX input will indicate a busy state, as shown in the table below:
+Original working mode                        Switch mode                     T1 switching time (ms)
+
+                                             WOR Sending Mode                9～11
+
+Transmission mode                            WOR receiving mode              9～11
+
+                                             hibernation mode                9～11
+
+                                             Transmission mode               9～11
+
+WOR Sending Mode                             WOR receiving mode              9～11
+
+                                             hibernation mode                9～11
+
+                                             Transmission mode               9～11
+
+WOR receiving mode                           WOR Sending Mode                9～11
+
+                                             hibernation mode                9～11
+
+                                             Transmission mode               9～11
+
+hibernation mode                             WOR Sending Mode                9～11
+
+                                             WOR receiving mode              9～11
+
+
+
+        1          2          3          4          5          6         7      8       9       10         11      12        13
+M0
+
+
+
+
+M1
+
+
+
+
+AUX
+
+                         T1                                         T1                                T1
+
+
+
+
+                                              Figure 13 Mode switching timing diagram
+
+
+
+
+5.2.4 Precautions​
+
+Seri
+al
+Nu          AUX Precautions
+mbe
+r
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                             27
+Chengdu Ebyte Electronic Technology Co., Ltd.                                              E220-T Series User Manual
+
+
+Seri
+al
+Nu        AUX Precautions
+mbe
+r
+
+          When the AUX output is low, it indicates that the module is busy, and no working mode detection will be
+1
+          performed at this time .
+
+2         If AUX remains high, the mode switch will take effect immediately.
+
+          When a user moves from mode 3 ( configuration mode) to another mode or during a reset, the module will reset
+3
+          the user parameters, during which the AUX output will be low.
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                 28
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                E220-T Series User Manual
+
+
+
+
+5.3 Serial port firmware upgrade
+
+    If the customer needs to upgrade the firmware, they need to find the corresponding BIN file provided by the official
+website and then use the host computer provided by the official website to upgrade the firmware. Under normal
+circumstances, users do not need to upgrade the firmware and should not use the "AT+IAP" command .
+    The necessary pins for the upgrade must be brought out (M1, M0, AUX, TXD, RXD, VCC, GND). Then, send the
+"AT+IAP" command in configuration mode to enter the upgrade mode. If you need to exit the IAP upgrade mode, you
+need to keep the power on and wait for 60 seconds. The program will exit automatically. Otherwise, even if you restart, it
+will enter the upgrade mode indefinitely.
+    After entering upgrade mode, the baud rate will automatically switch to 115200 until it automatically exits, during
+which time logs will be output.
+
+
+
+
+5.3.1 Upgrade the host computer quickly
+
+    Enter configuration mode by changing M0 and M1 (Note: the baud rate in configuration mode is 9600); open the
+configuration host computer and select the firmware upgrade tab.
+    To configure the host computer, open the official website, select Serial Port → Open Serial Port → Read
+Parameters → Select Firmware Upgrade → Click Open File and select the firmware to be upgraded → Click
+Download.
+
+
+
+
+                                              Figure 14 Firmware upgrade interface
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                   29
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                        E220-T Series User Manual
+
+
+
+6.Register Read/Write Control
+
+
+6.1 HEX Command Format
+
+Configuration mode (Mode 3 : M1=1, M0= 1 ), the supported command list is as follows ( when setting, the serial port
+only supports 9600, 8N1 format ):
+Serial
+             Instruction format           Detailed description
+Number
+                                          Instruction: C0 + starting address + length + parameters
+                                          Response: C1 + starting address + length + parameters
+
+
+                                          Example 1: Configure channel as 0x09
+                                          Instruction start address length parameter
+                                          send: C0      04 01 09
+1            Set registers
+                                          return: C1      04 01 09
+
+
+                                          Example 2: Simultaneously configure module address (0x1234), serial port (9600
+                                          8N1), and airspeed (2.4K).
+                                          Send: C0 00 03 12 34 62
+                                          Return: C1 00 03 12 34 62
+                                          Instruction: C1 + starting address + length
+                                          Response: C1 + starting address + length + parameters
+
+
+                                          Example 1: Reading the channel
+                                          Instruction start address length parameter
+2            Read registers               send: C1      04 01 09
+                                          return: C1      04 01 09
+
+
+                                          Example 2: Simultaneously read module address, serial port, and airspeed.
+                                          Send: C1 00 03
+                                          Return: C1 00 03 12 34 62
+                                          Instruction: C2 + starting address + length + parameters
+                                          Response: C1 + starting address + length + parameters
+
+
+                                          Example 1: Configure channel as 0x09
+                                          Instruction start address length parameter
+             Set           temporary
+3                                         send: C2      04 01 09
+             register
+                                          return: C1      04 01 09
+
+
+                                          Example 2: Simultaneously configure module address (0x1234), serial port (9600
+                                          8N1), and airspeed (2.4K).
+                                          Send: C2 00 03 12 34 62
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                           30
+      Chengdu Ebyte Electronic Technology Co., Ltd.                                                             E220-T Series User Manual
+
+
+         Serial
+                      Instruction format        Detailed description
+         Number
+                                                Return: C1 00 03 12 34 62
+                                                Format error response
+         4            Formatting error
+                                                FF FF FF
+
+
+
+
+      6.2 Register Function Overview
+
+                                    Bit
+      address         name
+                                    bit 7        bit6                bit5            bit4            bit3      bit2       bit1       bit0
+      00h             ADDH          Communication address [15:8]
+      01h             ADDL          Communication address [7:0]
+      02h                           Serial port baud rate [2:0]                      Serial             port   Wireless transmission rate
+                      REG0                                                           verification      type    [2:0]
+                                                                                     [1:0]
+      03h                           Serial port packet length        Environmental   reserve         reserve   Soft       Wireless
+                      REG1          [1:0]                            RSSI                                      cutting    transmission
+                                                                                                               mode       power [1:0]
+      04h             REG2          Channel control [7:0]
+      05h                           Data         Transmission        reserve         Listen          reserve   Airborne    wake-up      cycle
+                      REG3          RSSI         method                              first, then               [2:0]
+                                                                                     speak
+      06h             CRYPT_H       Wireless data encryption key [15:8]
+      07h             CRYPT_        Wireless data encryption key [7:0]
+                      L
+
+            For register software architecture design, please refer to the E220-xxxTBL-SC series sample code (available in the
+             download section of the relevant page), see e220_demo.h for details.
+
+
+      6.3E220-400/900Txxx Register Description
+
+                  Readi
+Serial            ng and
+                             name         describe                                                  Remark
+Number            writin
+                  g
+                  Readi                                                                             The high and low bytes of the module
+00H                          ADDH         ADDH (default 0)
+                  ng/Wr                                                                             address;
+
+
+      Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                                31
+      Chengdu Ebyte Electronic Technology Co., Ltd.                                                                 E220-T Series User Manual
+
+
+               iting                                                                               Note: When the module address is equal to
+                                                                                                   FFFF, it can be used as a broadcast and
+               Readi
+                                                                                                   listening address; that is, the module will not
+01H            ng/Wr       ADDL         ADDL (default 0)
+                                                                                                   perform address filtering in this case.
+               iting
+                                                                  UART serial       port   speed
+                                        7        6       5
+                                                                  (bps)
+                                                                  The serial port baud rate is
+                                        0        0       0
+                                                                  1200.
+                                                                                                   Two modules that communicate with each
+                                                                  The serial port baud rate is
+                                        0        0       1                                         other can have different serial port baud rates
+                                                                  2400.
+                                                                                                   and different verification methods.
+                                                                  The serial port baud rate is
+                                        0        1       0                                         When      sending         large   data        packets    in
+                                                                  4800.
+                                                                                                   succession, users need to consider the data
+                                                                  The serial port baud rate is
+                                        0        1       1                                         blocking caused by the same baud rate,
+                                                                  9600 (default).
+                                                                                                   which may even result in data loss.
+                                                                  The serial port baud rate is
+                                        1        0       0                                         It is generally recommended that both
+                                                                  19200.
+                                                                                                   communicating parties use the same baud
+                                                                  The serial port baud rate is
+                                        1        0       1                                         rate.
+                                                                  38400.
+                                                                  The serial port baud rate is
+               Readi                    1        1       0
+                                                                  57600.
+02H            ng/Wr        EG0
+                                                                  The serial port baud rate is
+               iting                    1        1       1
+                                                                  115200
+                                        4        3       Serial port check bit
+                                        0        0       8N1 (default)
+                                                                                                   The     serial     port     modes        of     the     two
+                                        0        1       8O1
+                                                                                                   communicating parties can be different;
+                                        1        0       8E1
+                                        1        1       8N1 (equivalent to 00)
+                                        2        1       0        Wireless air speed (bps)
+                                        0        0       0        Air speed 2.4k
+                                        0        0       1        Air speed 2.4k                   The air speeds of both communicating
+                                        0        1       0        Air speed 2.4k (default)         parties must be the same;
+                                        0        1       1        Air speed 4.8k                   The higher the air speed, the lower the
+                                        1        0       0        Air speed 9.6k                   latency and the shorter the transmission
+                                        1        0       1        Air speed 19.2k                  distance.
+                                        1        1       0        Air speed 38.4k
+                                        1        1       1        Air speed 62.5k
+                                        7        6       Subcontracting settings                   When the data sent by the user is less than
+                                        0        0       200 bytes ( default)                      the packet length, the serial port output of the
+               Readi                    0        1       128 bytes                                 receiving end will be a continuous output
+03H
+               ng/Wr       REG1         1        0       64 bytes                                  without interruption.
+               iting                                                                               If the data sent by the user exceeds the
+                                        1        1       32 bytes                                  packet length, the receiving end's serial port
+                                                                                                   will output the data in packets.
+
+
+      Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                                         32
+  Chengdu Ebyte Electronic Technology Co., Ltd.                                                           E220-T Series User Manual
+
+
+
+
+                                    5        RSSI Ambient Noise Enable                       Once enabled , the C0 C1 C2 C3 instruction
+                                    0        Disabled (default)                              can be sent to read registers in either transmit
+                                                                                             mode or WOR send mode;
+                                                                                             Register 0x00: Current ambient noise RSSI;
+                                                                                             Register 0X01: RSSI of the last received data
+                                                                                             (current channel noise is: dBm = -(256 -
+                                                                                             RSSI));
+                                    1        Enable                                          Instruction format: C0 C1 C2 C3 + starting
+                                                                                             address + read length;
+                                                                                             Return value: C1 + address + read length +
+                                                                                             valid value; e.g., sending C0 C1 C2 C3 00 01
+                                                                                             Returns to C1 00 01 RSSI (addresses can
+                                                                                             only start from 00).
+                                    4        3        reserve                                If you use our host computer configuration
+                                    2        Software mode switching                         parameters, this bit will be automatically
+                                    0        Disabled (default)                              disabled. If you do not want to use the M0
+                                                                                             and M1 pins to switch operating modes, you
+                                                                                             can enable this function and use specific
+                                                                                             serial port commands to switch modes.
+                                                                                             Format: C0 C1 C2 C3 02 + Working Mode
+                                                                                             Send C0 C1 C2 C3 02 00 to switch to
+                                                                                             transparent transmission mode.
+                                                                                             Send C0 C1 C2 C3 02 01 to switch to WOR
+                                                                                             send mode.
+                                    1        Enable
+                                                                                             Send C0 C1 C2 C3 02 02 to switch to WOR
+                                                                                             receive mode.
+                                                                                             Send C0 C1 C2 C3 02 03 to switch to sleep
+                                                                                             mode.
+                                                                                             Return: C1 C2 C3 02 + Working Mode
+                                                                                             Note: Even after enabling this feature, the
+                                                                                             hibernation mode (configuration) still only
+                                                                                             supports a serial port baud rate of 9600.
+                                                      Transmit power
+                                                      E220-400T22S         E220-400T30S
+                                    1        0        E220-400T22D         E220-400T30D
+                                                                                             The relationship between power and current
+                                                      E220-900T22S         E220-900T30S
+                                                                                             is non-linear; the power supply efficiency is
+                                                      E220-900T22D         E220-900T30D
+                                                                                             highest at maximum power.
+                                                      22            dBm    30          dBm
+                                    0        0                                               The current does not decrease proportionally
+                                                      (default)            (default)
+                                                                                             as the power decreases.
+                                    0        1        17 dBm               2 7dBm
+                                    1        0        13 dBm               24 dBm
+                                    1        1        10 dBm               21 dBm
+04H        Readi       REG2         Channel control (CH )                                    of the 400 MHz band = 410.125 + CH * 1M
+
+
+  Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                              33
+      Chengdu Ebyte Electronic Technology Co., Ltd.                                                        E220-T Series User Manual
+
+
+               ng/Wr                    0-83 represent a total of 84 channels ( applicable   of the 900 MHz band = 850.125 + CH * 1M
+               iting                    to the 400 GHz band ).
+                                        0-80 represent a total of 81 channels ( applicable
+                                        to the 900 GHz band ).
+                                        7        Enable RSSI bytes (packet RSSI)             Once enabled, the module receives wireless
+                                        0        Disabled (default)                          data, outputs it via the serial port TXD, and
+                                        1        Enable                                      then follows it with an RSSI strength byte.
+                                        6        Transmission method                         During    point-to-point      transmission,    the
+                                        0        Transparent transmission (default)          module identifies the first three bytes of the
+                                                                                             serial port data as: address high + address
+                                        1        Fixed-point transmission                    low + channel, and uses them as the wireless
+                                                                                             transmission target.
+
+
+                                        5        Reserved
+
+
+                                        4        LBT Enable                                  Once enabled, it will listen for data before
+                                        0        Disabled (default)                          wireless data transmission, which can avoid
+               Readi                                                                         interference to some extent, but may cause
+05H            ng/Wr       REG3                                                              data delay.
+               iting
+                                        1        Enable
+                                                                                             The maximum dwell time for LBT is 2
+                                                                                             seconds; it will be forcibly activated once the
+                                                                                             two-second duration is reached.
+                                        3        Reserved
+                                        2        1        0      WOR cycle                   Only applicable to Mode 1;
+                                        0        0        0      500ms                       The period T = (1 + WOR) * 500ms, with a
+                                        0        0        1      1000ms                      maximum of 4000ms and a minimum of
+                                        0        1        0      1500ms                      500ms;
+                                        0        1        1      2000ms                      The longer the WOR monitoring interval, the
+                                        1        0        0      2500ms                      lower the average power consumption, but
+                                        1        0        1      3000ms                      the greater the data latency.
+                                        1        1        0      3500ms                      Both the sender and receiver must agree (this
+                                        1        1        1      4000ms                      is very important).
+                           CRYPT                                                             Write-only, read returns 0;
+06H            Write                    High byte of the key (default 0)
+                           _H                                                                Used for encryption to prevent over-the-air
+                                                                                             wireless data from being intercepted by
+                                                                                             similar modules;
+                           CRYPT
+07H            Write                    Low byte of the key (default 0)                      The module will use these two bytes as a
+                           _L
+                                                                                             calculation factor to transform and encrypt
+                                                                                             the airborne wireless signal.
+                                                                                             Product information ( 1 byte)
+                                                                                             Note: Please refer to section 7.1 for a more
+08H            read        Version      Product information ( 1 byte)
+                                                                                             convenient way to search for the command
+                                                                                             AT+DEVTYPE=?
+
+
+      Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                           34
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                       E220-T Series User Manual
+
+
+
+6.4 Register factory default parameters
+
+
+                           400MHz band module factory default parameter values: C0 00 09 00 00 62 00 17 03 00 00
+model
+                           900MHz band module factory default parameter values: C0 00 09 00 00 62 00 12 03 00 00
+                                                                                                   Serial   port   Transmit
+Module model               frequency             address         Channel   air speed   baud rate
+                                                                                                   format          power
+E220-400T22S
+                           433.125MHz            0x0000          0x17      2.4kbps     9600        8N1             22dbm
+E220-400T22D
+E220-400T30S
+                           433.125MHz            0x0000          0x17      2.4kbps     9600        8N1             30dbm
+E220-400T30D
+E220-900T22S
+                           868.125MHz            0x0000          0x12      2.4kbps     9600        8N1             22 dBm
+E22 0 -900T 22 D
+E22 0 -900T30 S
+                           868.125MHz            0x0000          0x12      2.4kbps     9600        8N1             30 dBm
+E22 0 -900T30D
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                          35
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                   E220-T Series User Manual
+
+
+
+7. AT Commands
+
+    Parameter configuration or querying using AT commands must be done in configuration mode (the serial port in
+      configuration mode is forcibly fixed to 9600 8N1);
+    In software versions (7463-0-14) and earlier, a newline character is not required at the end of AT commands entered
+      by the user.
+    Software versions (7463-0-15) and later automatically recognize the carriage return and line feed character at the end
+      of user AT commands, and will still recognize them even if a carriage return and line feed character is not added.
+    An AT command recognition or execution error will result in the response " =ERR ".
+    When the input parameters exceed the range, they will be restricted. Please do not allow the parameters to exceed the
+      range to avoid unforeseen situations.
+
+
+
+
+7.1 General instructions
+
+7.1.1 AT+RESET soft reboot
+
+Instruction
+                  AT+RESET
+format
+Execution         Send: AT+RESET
+Example           Response: =OK
+                  Software version (7463-0-15) and earlier will not respond = OK
+Feature           The "OK" response is only added in software versions (7463-0-16) and later.
+Description       The actual reset process will only begin after an OK response (=OK). Please wait approximately 30ms
+                  before proceeding to the next step.
+
+
+
+
+7.1.2 AT+DEFAULT restores factory settings
+
+Instruction
+                  AT+DEFAULT
+format
+Execution         Send: AT+DEFAULT
+Example           Response: =OK
+Feature           After the response (=OK), in addition to parameter restoration, a restart process will be executed. Please
+Description       wait approximately 30ms before proceeding to the next step.
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                      36
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                   E220-T Series User Manual
+
+
+
+7.1.3 Use AT+DEVTYPE to query product model
+
+Instruction        AT+DEVTYPE=?
+format
+Execution          Send: AT+DEVTYPE=?
+Example            Response: DEVTYPE=E22 0 -400T 30S
+                   Product Series: E220
+Feature
+                   Operating frequency band: 400 (400/900)
+Description
+                   Maximum power: 30 (22/30/33)
+
+
+
+
+7.1.4 Use AT+FWCODE to query software version
+
+Instruction        AT+FWCODE=?
+format
+Execution          Send: AT+FWCODE=?
+Example            Response: FWCODE=74 6 3-0- 17
+                   Major version number: 7463
+Feature
+                   Branch number: 0
+Description
+                   Minor version number: 17 (incrementing from 10)
+
+
+
+
+7.1.5 Enable AT+SWITCH software switching of working mode
+
+Instruction       AT+SWITCH=<on_off>
+format
+Setup             Send: AT+SWITCH=0
+Example           Response: =OK
+Query             Send: AT+SWITCH=?
+Example           Response: AT+SWITCH=0
+                  <on_off> : Switch
+Parameter
+                  0. Off (default)
+Description
+                  1. Turn on
+                  The factory default setting is off; use the M0M1 pin to switch the operating mode (hard-switching).
+                  After activation, the M0M1 pin remains usable; hard switching/soft switching is determined by the last
+Feature           trigger.
+Description       After enabling, restart the system for it to take effect.
+                  Once enabled, you can use AT+MODE to specify the working mode (soft cut), and the working mode
+                  number will be saved immediately after each soft cut.
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                      37
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                    E220-T Series User Manual
+
+
+                  After startup, software versions (7463-0-14) and earlier will use the M0M1 hardware mode as the initial
+                  operating mode after a power outage and restart.
+                  After startup, software versions (7463-0-15) and later will use the last soft-slice save mode number as the
+                  initial working mode after a power outage and restart.
+                  After being shut down, the system will use the M0M1 hardware mode as its initial operating mode upon
+                  power failure and restart.
+
+
+
+
+7.1.6 AT+MODE Software Switching for Operating Mode
+
+Instruction       AT+MODE=<mode>
+format
+Setup             Send: AT+MODE=0
+Example           Response: AT+MODE=0
+Query             Send: AT+MODE=?
+Example           Response: AT+MODE=0
+                  <mode> : Working mode number
+                  0 Transmission Mode
+Parameter
+                  1. Wake-up call mode (WOR Tx)
+Description
+                  2. Wake-up over the air receiver mode (WOR Rx)
+                  3. Hibernation and Configuration Modes
+                  It can only be used after enabling via AT+SWITCH.
+                  Can be used in any working mode
+Feature
+                  The actual mode switch will only begin after the user responds (=OK). Please wait approximately 15ms
+Description
+                  before proceeding to the next step.
+                  Please read the AT+SWITCH feature description.
+
+
+
+
+7.1.7 AT+UAUX Wireless AUX Indicator Enable
+
+Instruction       AT+UAUX=<on_off>
+format
+Setup             Send: AT+UAUX=0
+Example           Response: =OK
+Query             Send: AT+UAUX=?
+Example           Response: AT+UAUX=0
+                  <on_off> : Switch
+Parameter
+                  0. Off (default)
+Description
+                  1. Turn on
+                  Software version (7463-0-14) and earlier versions do not support this command, and by default, AUX
+Feature
+                  will indicate the wireless transmission process (lower during transmission).
+Description
+                  Software versions (7463-0-15) and later have AUX enabled by default, which does not indicate the
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                       38
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                                             E220-T Series User Manual
+
+
+                  wireless transmission process (to help some users transmit data packets faster). To ensure compatibility
+                  with previous versions' AUX timings, please enable AUX.
+
+
+
+
+7.1.8 AT+ADDR Communication Address (Match Filtering)
+
+Instruction        AT+ADDR=<address>
+format
+Setup              Send: AT+ADDR=0
+Example            Response: =OK
+Query              Send: AT+ADDR=?
+Example            Response: AT+ADDR=0
+Parameter          <address> : Communication address 0 - 65535
+Description
+                   Default address 0
+                   The address is not a radio frequency characteristic; it is merely an identifier carried within the data
+Feature            packet to help the receiving software logic determine whether to perform match filtering.
+Description        The broadcast address is 65535. As a receiver, it can receive data from any address on the same channel
+                   (without filtering). As a sender, the data packets it sends carry the broadcast address, so the recipient will
+                   not filter them (broadcast data).
+
+
+
+
+7.1.9 AT+CHANNEL Communication Channel (Carrier Frequency)
+
+Instruction        AT+CHANNEL=<ch>
+format
+Setup              Send: AT+CHANNEL=0
+Example            Response: =OK
+Query              Send: AT+CHANNEL=?
+Example            Response: AT+CHANNEL=0
+                   <ch> : Communication channel 0 - 83                                                <ch> : Communication channel 0 - 80
+Parameter
+                   E22 0-400T 22D , E22 0-400T 22D​                   ​       ​       ​       ​       E22 0-9 00T 22D , E22 0-9 00T 22D​     ​   ​   ​   ​
+Description
+                   E220-400T30D , E220-400T30S​               ​   ​       ​       ​       ​       ​   E22 0 - 90 0T30D , E22 0 - 9 00T30 S
+                   Products on different frequency bands have different channel ranges; please pay attention to the
+Feature            differences.
+Description        actual carrier frequency corresponding to the 400 MHz band channel = 410.125 MHz + ch * 1MHz​
+                   actual carrier frequency corresponding to the 900 GHz band channel = 850.125 MHz + ch * 1MHz​
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                                                       39
+Chengdu Ebyte Electronic Technology Co., Ltd.                                               E220-T Series User Manual
+
+
+
+7.1.10 AT+KEY Communication Password (Data Encryption)
+
+Instruction        AT+KEY=<key>
+format
+Setup              Send: AT+KEY=0
+Example            Response: =OK
+Parameter          <key>: Encryption/decryption password 0 - 65535
+Description
+                   Default 0
+Feature            Unable to query (password cannot be read)
+Description        Modules with inconsistent passwords cannot communicate (they cannot decode the correct data packets,
+                   fail verification, and are discarded).
+
+
+
+
+7.1.11 AT+UART Serial Port Baud Rate and Checksum
+
+Instruction       AT+UART=<baud>,<parity>
+format
+Setup             Send: AT+UART=3,0
+Example           Response: =OK
+Query             Send: AT+UART=?
+Example           Response: AT+UART=3,0
+                  <baud> : Serial port baud rate
+                  0 1200bps
+                  1 2400bps
+Parameter
+                  2 4800bps
+Description
+                  3 9600bps (default)
+                  4 19200bps
+                  5 38400bps
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                  40
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                        E220-T Series User Manual
+
+
+                  6 57600bps
+                  7 115200bps
+
+
+                  <parity> : Serial port verification type
+                  0 No validation None (default)
+                  1 Odd parity
+                  2 Even parity
+Feature           In configuration mode (M0M1 Mode 3), force fix 9600 8N1.
+Description       The change will take effect after switching working modes.
+
+
+
+7.1.12 AT+PACKET Serial Port Packet Length
+Instruction        AT+PACKET=<len>
+format
+Setup              Send: AT+PACKET=0
+Example            Response: =OK
+Query              Send: AT+PACKET=?
+Example            Response: AT+PACKET=0
+                   <len> : Serial port data packet length
+                   0 200 bytes (default)
+Parameter
+                   1 128 bytes
+Description
+                   2 64 bytes
+                   3 32 bytes
+                   If the user-input data is less than the set length during serial port reception, it will be processed according
+                   to the timeout and frame-breaking method, and then packaged and transmitted wirelessly.
+                   During serial port reception, when the user-input data reaches the set length, it will be immediately
+Feature
+                   packaged and wirelessly transmitted.
+Description
+                   Data exceeding the set length will continue to accumulate in the serial port buffer. After wireless
+                   transmission is complete, it will be split into packets according to the set length and transmitted in a
+                   cyclical manner.
+
+
+
+
+7.1.13 AT+URXT Serial Port Frame Drop Conditions
+
+Instruction        AT+URXT=<byte>
+format
+Setup              Send: AT+URXT=3
+Example            Response: =OK
+Query              Send: AT+URXT=?
+Example            Response: AT+URXT=3
+Parameter          <byte> : byte time 1 - 255
+Description
+Feature            By default, serial port timeout frame interruption is handled based on 3-byte intervals.
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                           41
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                     E220-T Series User Manual
+
+
+Description        The time (per byte) varies at different baud rates. At a baud rate of 9600, it's approximately 1 millisecond
+                   per byte; at a baud rate of 115200, it's approximately 100 microseconds per byte.
+                   When some customers input data from their external microcontrollers via serial ports to the module, the
+                   data is discontinuous (e.g., due to RTOS task interruption). This exceeds the module's set byte time
+                   window, resulting in frame fragmentation and manifesting as segmented data packets at the receiving
+                   end.
+
+
+
+
+7.1.14 AT+RATE Wireless Transmit/Receive Rate
+
+Instruction        AT+RATE=<rate>
+format
+Setup              Send: AT+RATE=2
+Example            Response: =OK
+Query              Send: AT+UART=?
+Example            Response: AT+UART=2
+                   <rate> : air speed
+                   0 2.4Kbps
+                   1 2.4Kbps
+                   2 2.4Kbps (default)
+Parameter
+                   3 4.8Kbps
+Description
+                   4 9.6Kbps
+                   5 19.2Kbps
+                   6 38.4Kbps
+                   7 62.5Kbps
+Feature            The higher the air speed, the lower the communication latency (shorter transmission time), but the worse
+Description        the receiving sensitivity (shorter communication distance).
+
+
+
+
+7.1.15 AT+TRANS Wireless Transmission Method (Pass-through/Fixed Point)
+
+Instruction        AT+TRANS=<mode>
+format
+Setup              Send: AT+TRANS=0
+Example            Response: =OK
+Query              Send: AT+TRANS=?
+Example            Response: AT+TRANS=0
+                   <mode> : Transmission mode
+Parameter
+                   0 Transparent transmission (default)
+Description
+                   1. Fixed-point transmission
+Feature            Point-to-point transmission processes the first three bytes of user input data specially. The first and
+Description        second bytes are identified as the target communication address, and the third byte is identified as the
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                        42
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                      E220-T Series User Manual
+
+
+                   target communication channel (automatic channel switching).
+                   After the fixed-point transmission completes the data transmission, it automatically switches back to the
+                   original channel.
+
+
+
+
+7.1.16 AT+LBT Listen Before Activation Enable (Avoidance)
+
+Instruction        AT+LBT=<on_off>
+format
+Setup              Send: AT+LBT=0
+Example            Response: =OK
+Query              Send: AT+LBT=?
+Example            Response: AT+LBT=0
+                   <on_off> : Switch
+Parameter
+                   0. Off (default)
+Description
+                   1. Turn on
+                   When the LBT (Listen Before Talk) function is enabled, it will check whether the ambient signal
+                   strength is lower than a set threshold before each wireless data transmission. If the condition is met
+Feature
+                   within the timeout period, wireless transmission will actually start. If the condition is still not met after
+Description
+                   the maximum timeout period, wireless transmission will be forcibly started.
+                   For specific LBT settings, please refer to the AT+LBR command.
+
+
+
+
+7.1.17 AT+LBR Listen Before Send Judgment Condition
+
+Instruction       AT+LBR=<rssi>,<timeout>
+format
+Setup             Send: AT+LBR=-55,2000
+Example           Response: =OK
+Query             Send: AT+LBR=?
+Example           Response: AT+LBR=-55,2000
+Parameter         <rssi> : Signal strength threshold (dBm) 0 - (-128)
+Description       <timeout> : Maximum timeout (milliseconds) 0 - 65535
+Feature           Software versions (7463-0-14) and earlier do not support this command, but the default parameters are
+Description       the same, fixed at -55dBm and 2000ms.
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                         43
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                  E220-T Series User Manual
+
+
+
+7.1.18 AT+WTIME Over-the-Air Wake-up Cycle
+
+Instruction       AT+WTIME=<timeout>
+format
+Setup             Send: AT+WTIME=3
+Example           Response: =OK
+Query             Send: AT+WTIME=?
+Example           Response: AT+WTIME=3
+                  <timeout> : Sleep time
+                  0 500ms
+                  1 1000ms
+                  2 1500ms
+Parameter
+                  3 2000ms (default)
+Description
+                  4 2500ms
+                  5 3000ms
+                  6 3500ms
+                  7 4000ms
+                  The longer the receiver's sleep time during over-the-air wake-up, the lower the average power
+Feature           consumption, but the greater the communication latency.
+Description       Software versions (7463-0-11) and earlier do not support this instruction. Please use the HEX instruction
+                  to set the register instead.
+
+
+
+
+7.1.19 AT+ERSSI Ambient Signal Strength
+
+Instruction       AT+ERSSI=<on_off>
+format
+Setup             Send: AT+ERSSI=0
+Example           Response: =OK
+Query             Send: AT+ERSSI=?
+Example           Response: AT+ERSSI=0
+                  <on_off> : Switch
+Parameter
+                  0. Off (default)
+Description
+                  1. Turn on
+Feature           RSSI Ambient Noise Enable " section in the register description description chapter and use hexadecimal
+Description       instructions to read the data.
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                     44
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                               E220-T Series User Manual
+
+
+
+
+7.1.20 AT+DRSSI Received Data Packet Signal Strength
+
+Instruction       AT+DRSSI= <on_off>
+format
+Setup             Send: AT+DRSSI=0
+Example           Response: =OK
+Query             Send: AT+ERSSI=?
+Example           Response: AT+ERSSI=0
+                  <on_off> : Switch
+Parameter
+                  0. Off (default)
+Description
+                  1. Turn on
+                  When enabled, signal strength data (1 byte, hexadecimal, signed number) will be appended to the end of
+                  the received data packet.
+                  Conversion example: Assuming the additional signal strength data is 0xC4 (-60dBm), the hexadecimal
+Feature
+                  value 0xC4 is 196 in decimal.
+Description
+                  RSSI = -(256 - 196) = -60
+                  If the distance between the sender and receiver is too short or the sender's power is too high, the received
+                  signal strength may be 0 (upper limit), please directly convert it to 0dBm.
+
+
+
+
+7.1. 21 AT+POWER Power Levels
+
+Instructio       AT+POWER = <Power>
+n format
+
+Setup            Send: AT+POWER=0
+Example          Response: AT+POWER=0
+
+Query            Send: AT+POWER=?
+Example          Response: AT+POWER=0
+
+Paramete         <Power> : Power                                               <Power> : Power
+r                E22 0-400T30S , E22 0-4 00T30D , E22 0-9                      E22 0-400T 22S , E22 0-400T 22D , E22 0-900T
+Descripti        00T30D , E22 0-900T30S​           ​   ​   ​   ​   ​   ​   ​   22D ,​   ​   ​   ​   ​   ​
+on                                                                             E22 0 - 9 00T 22S
+
+
+
+                 0 30dBm (default)
+                 1 27dBm                                                       0 22dBm (default)
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                                  45
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                      E220-T Series User Manual
+
+
+                 2 24dBm                                                 1 17dBm
+                 3 21dBm                                                 2 14dBm
+                                                                         3 10dBm
+
+Feature          -
+Descripti
+on
+
+
+
+
+7.2 Signaling testing (certification)
+
+7.2.1 Test Instruction Declaration
+
+The AT command testing section is intended for use only as an aid in product certification (e.g., CE, FCC certification)
+and should not be used for other purposes.
+E-Best assumes no liability for any damages arising from failure to comply with relevant operating or design
+specifications. E-Best endeavors to ensure the completeness, accuracy, and timeliness of features under development, but
+does not exclude the possibility of errors or omissions in such features. Unless otherwise agreed, no implied or statutory
+warranties are made regarding the use of features under development. To the maximum extent permitted by applicable
+law, E-Best shall not be liable for any damages suffered as a result of using features under development, whether or not
+such damages were foreseeable.
+
+
+7.2.2 Test Command List
+
+Detailed instructions and documentation can be obtained through Ebitech's sales channels.
+AT commands                   Function Summary
+AT+FPOWER                     Fine-tuning of transmit power
+AT+XCAP                       Crystal oscillator calibration
+                              LoRa modulation parameters modification (SF spreading factor, BW transmit bandwidth, CR
+AT+ULORAM
+                              coding rate)
+AT+OPTIMIZE                   Low-rate optimization options
+AT+UFREQ                      Carrier frequency adjustment (starting frequency, channel spacing)
+AT+SWAVE                      Fixed-frequency continuous single-carrier transmission
+AT+MWAVE                      Fixed-frequency continuous modulation wave transmission
+AT+TFHSS                      Frequency hopping modulated wave transmission
+AT+DUTYTX                     Fixed-frequency continuous single-carrier/modulated wave duty cycle transmission
+
+
+
+8.Hardware Design
+
+     It is recommended to use a DC regulated power supply to power this module, with the power supply ripple
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                         46
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                      E220-T Series User Manual
+
+      coefficient as small as possible, and the module must be reliably grounded;
+     Please ensure the correct connection of the positive and negative power terminals. Reversing the connection may
+      cause permanent damage to the module.
+     Please check the power supply and ensure it is within the recommended voltage range. Exceeding the maximum
+      value will cause permanent damage to the module.
+     Please check the power supply stability; the voltage should not fluctuate significantly or frequently.
+     When designing power supply circuits for modules, it is often recommended to retain a margin of more than 30% to
+      ensure long-term stable operation of the entire unit.
+     The module should be kept as far away as possible from power supplies, transformers, high-frequency traces, and
+      other parts with high electromagnetic interference.
+     High-frequency digital traces, high-frequency analog traces, and power traces must avoid the area under the module.
+      If it is absolutely necessary to run under the module, assuming the module is soldered on the Top Layer, lay ground
+      copper on the Top Layer of the module contact area (all copper and well grounded), and run the traces close to the
+      digital part of the module on the Bottom Layer.
+     Assuming the module is soldered or placed in the Top Layer, it is also wrong to arbitrarily route traces in the
+      Bottom Layer or other layers, as this will affect the module's stray emissions and receiver sensitivity to varying
+      degrees.
+     If there are devices around the module that cause significant electromagnetic interference, it will greatly affect the
+      module's performance. Depending on the intensity of the interference, it is recommended to keep them away from
+      the module. If possible, appropriate isolation and shielding can be implemented.
+     If there are traces around the module that cause significant electromagnetic interference (high-frequency digital,
+      high-frequency analog, power supply traces), it will greatly affect the module's performance. Depending on the
+      intensity of the interference, it is recommended to keep them away from the module. If possible, appropriate
+      isolation and shielding can be implemented.
+     The antenna mounting structure has a significant impact on module performance; it is essential to ensure that the
+      antenna is exposed and preferably vertically upward.
+     When the module is installed inside the housing, a high-quality antenna extension cable can be used to extend the
+      antenna to the outside of the housing.
+     Antennas should never be installed inside a metal casing, as this will greatly reduce the transmission distance.
+
+
+
+
+9.Frequently Asked Questions
+
+
+9.1 Transmission distance is not ideal
+
+     When there are obstacles in line-of-sight communication, the communication distance will be reduced accordingly;
+     Temperature, humidity, and co-channel interference can all lead to increased packet loss rates in communications.
+     The ground absorbs and reflects radio waves, and the test results are poor when the ground is close to the ground.
+     Seawater has a strong ability to absorb radio waves, so testing results are poor at the seaside.
+     If there are metal objects near the antenna, or if it is placed inside a metal casing, the signal attenuation will be very
+      severe.
+     Power register settings are incorrect; air speed is set too high (the higher the air speed, the shorter the distance).
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                         47
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                     E220-T Series User Manual
+
+     At room temperature, the power supply voltage is lower than the recommended value; the lower the voltage, the
+      lower the power output.
+     The antenna may be poorly matched with the module or have quality issues.
+
+
+
+
+9.2 Module is easily damaged
+
+     Please check the power supply and ensure it is within the recommended voltage range. Exceeding the maximum
+      value will cause permanent damage to the module.
+     Please check the power supply stability; the voltage should not fluctuate significantly or frequently.
+     Please ensure anti-static operation during installation and use, as high-frequency devices are sensitive to
+      electrostatic discharge.
+     Please ensure that the humidity is not too high during installation and use, as some components are
+      humidity-sensitive.
+     Unless there are special requirements, it is not recommended to use it at excessively high or low temperatures.
+
+
+9.3 The bit error rate is too high.
+
+     If there is interference from a co-channel signal nearby, move away from the source of interference or change the
+      frequency or channel to avoid the interference.
+     An inadequate power supply can also cause garbled characters, so it is essential to ensure the reliability of the power
+      supply.
+     Poor quality or excessive length of extension lines or feeders can also lead to a high bit error rate.
+
+
+9.4 Antenna Selection
+
+
+
+
+Both the IPEX interface and the stamp hole interface are enabled simultaneously; either the IPEX interface or the stamp
+hole interface can be selected arbitrarily.
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                        48
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                            E220-T Series User Manual
+
+
+
+10.Welding Operation Instructions
+
+
+10.1 Reflow soldering temperature
+
+Reflow soldering profile characteristics                         Lead-based assembly                Lead-free assembly
+                             Minimum           temperature
+                                                                 100℃                               150℃
+                             ( Tsmin )
+Preheating/Insulation        Maximum temperature (T
+                                                                 150℃                               200℃
+                             <sub>smax</sub> )
+
+                             Time (T smin ~ T smin )             60-120 seconds                     60-120 seconds
+
+Temperature rise slope ( TL ~ Tp )                               3℃/second, maximum value           3℃/second, maximum value
+Liquid phase temperature ( TL )                                  183℃                               217℃
+T L above the holding time                                       60~ 90 seconds                     60~ 90 seconds
+                                                                 Users must not exceed the          Users must not exceed the
+                                                                 temperature specified on the       temperature specified on the
+Package peak temperature Tp
+                                                                 product's "humidity sensitivity"   product's "humidity sensitivity"
+                                                                 label.                             label.
+Tp ) within 5 ° C of the specified grading
+                                                                 20 seconds                         30 seconds
+temperature (Tc) is shown in the figure below.
+Cooling slope ( Tp ~ TL )                                        6℃/second, maximum value           6℃/second, maximum value
+Time from room temperature to peak temperature                   6 minutes, the longest             8 minutes, the longest
+* The peak temperature (Tp) tolerance of the temperature profile is defined as the user's upper limit.
+
+
+10.2 Reflow Soldering Profile
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                               49
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                                  E220-T Series User Manual
+
+
+
+11.Related Models
+
+                                                                                                       Product
+                       carrier               Transmit power        Test distance                                            Communication
+Product Model                                                                           Packaging      dimensions
+                       frequency Hz          dBm                   (km)                                                     interface
+                                                                                                       (mm)
+E22-400M22S            433/470M              twenty two            7                    patch          14*20                SPI
+E22-400M30S            433/470M              30                    12                   patch          24*38.5              SPI
+E22-900M22S            868/915M              twenty two            7                    patch          14*20                SPI
+E22-900M30S            868/915M              30                    12                   patch          24*38.5              SPI
+
+
+
+12. Antenna Guide
+
+
+12.1 Antenna Recommendation
+
+Antennas play a crucial role in communication, and inferior antennas can often have a significant impact on
+communication systems. Therefore, our company recommends certain antennas that are high-performing and reasonably
+priced and compatible with our wireless modules.
+                                         Frequency interfac                        Height       Feeder
+Product Model             type                                      Gain (dBi)                                  Features
+                                         band (Hz) e                               (mm)         (cm)
+                          Glue     rod                                                                          Ultra-short             straight
+TX433-JZG-6                              433M           SMA-J       2.5            62           -
+                          antenna                                                                               omnidirectional antenna
+                          Glue     rod                                                                          Bending a rubber rod,
+TX433-JW-5                               433M           SMA-J       2.0            50           -
+                          antenna                                                                               omnidirectional antenna
+                          Glue     rod                                                                          Bending a rubber rod,
+TX433-JWG-7                              433M           SMA-J       2.5            75           -
+                          antenna                                                                               omnidirectional antenna
+                          Glue     rod                                                                          Bendable       rubber      rod,
+TX433-JK-11                              433M           SMA-J       2.5            110          -
+                          antenna                                                                               omnidirectional antenna
+                          Suction
+                                                                                                                Miniature      suction      cup
+TX433-XPL-100             Cup            433M           SMA-J       3.5            185          100
+                                                                                                                antenna, cost-effective
+                          Antenna
+                          Suction
+                                                                                                                Neutral       suction       cup
+TX433-XP-200              Cup            433M           SMA-J       4.0            190          200
+                                                                                                                antenna, low loss
+                          Antenna
+                          Suction
+                                                                                                                Large       suction         cup
+TX433-XPH-300             Cup            433M           SMA-J       6.0            965          300
+                                                                                                                antenna, high gain
+                          Antenna
+                          Glue     rod                                                                          Ultra-short             straight
+TX490-JZ-5                               470/490M SMA-J             2.0            50           -
+                          antenna                                                                               omnidirectional antenna
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                                       50
+Chengdu Ebyte Electronic Technology Co., Ltd.                                                      E220-T Series User Manual
+
+
+                                         Frequency interfac                      Height   Feeder
+Product Model             type                                      Gain (dBi)                      Features
+                                         band (Hz) e                             (mm)     (cm)
+                          Suction
+                                                                                                    Miniature     suction      cup
+TX490-XPL-100             Cup            470/490M SMA-J             3.5          120      100
+                                                                                                    antenna, cost-effective
+                          Antenna
+                          Glue     rod                                                              Bendable      rubber       rod,
+TX868-JKS-IPX20                          868M           IPEX-1 3.0               197      200
+                          antenna                                                                   omnidirectional antenna
+                          Glue     rod                                                              Bendable      rubber       rod,
+TX868-JZLW-15                            868M           IPEX-1 3.0               165      150
+                          antenna                                                                   omnidirectional antenna
+                          Suction
+                                                                                                    Miniature     suction      cup
+TX868-XPL-100             Cup            868M           SMA-J       3.5          290      100
+                                                                                                    antenna, cost-effective
+                          Antenna
+                          Glue     rod                                                              Bendable      rubber       rod,
+TX868-JKD-20                             868M           SMA-J       3.0          170      -
+                          antenna                                                                   omnidirectional antenna
+                          Glue     rod                                                              Bendable      rubber       rod,
+TX915-JKS-IPX20                          915M           IPEX-1 3.0               197      200
+                          antenna                                                                   omnidirectional antenna
+                          Glue     rod                                                              Bendable      rubber       rod,
+TX915-JZLW-15                            915M           IPEX-1 3.0               155      150
+                          antenna                                                                   omnidirectional antenna
+                          Glue     rod                                                              Bendable      rubber       rod,
+TX915-JKD-20                             915M           SMA-J       3.5​         200      -
+                          antenna                                                                   omnidirectional antenna
+                          Suction
+                                                                                                    Miniature     suction      cup
+TX915-XPL-100             Cup            915M           SMA-J       3.5          260      100
+                                                                                                    antenna, cost-effective
+                          Antenna
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                                          51
+Chengdu Ebyte Electronic Technology Co., Ltd.                            E220-T Series User Manual
+
+
+
+13.Bulk Packaging Methods
+
+
+13.1 E220-400/900T22S Bulk Packaging Method
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                               52
+Chengdu Ebyte Electronic Technology Co., Ltd.                            E220-T Series User Manual
+
+
+
+13.2 E220-400/900T30S Bulk Packaging Method
+
+
+
+
+13.3 E220-400/900TxxD Bulk Packaging Method
+
+
+
+
+Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                               53
+      Chengdu Ebyte Electronic Technology Co., Ltd.                                          E220-T Series User Manual
+
+
+
+      Revision History
+
+Version               Revision Date               Revision Notes                                      maintainer
+                      2024-12-25 ​      ​   ​
+1.0                                               Initial version                                     Hao
+                      ​   ​   ​
+1.1                   2025-02-21                  Error command correction                            Hao
+1.2                   2025-06-10                  Content correction                                  Hao
+1.3                   2025-06-26                  Content correction                                  Hao
+1.4                   2025-8-6                    Content correction                                  Hao
+1.5                   2025-10-24                  Content integration                                 Hao
+1.6                   2026-5-29                   Content correction                                  Hao
+
+
+
+      About Us
+
+
+
+      Sales Hotline: 4000-330-990
+      Technical Support: support@cdebyte.com Official Website: www.ebyte.com
+      Company Address: Building B5, No. 199, West District Avenue, High-tech West Zone, Chengdu, Sichuan Province
+
+
+
+
+      Copyright © 2012–2025 , Chengdu Ebyte Electronic Technology Co. , Ltd.                                             54
+

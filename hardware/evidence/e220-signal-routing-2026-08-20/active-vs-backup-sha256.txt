@@ -1,0 +1,2 @@
+d87c0ff900c9ce113c4c36b5a2785a65848077673e34804a8e9166cec2a6b76c  hardware/esp32-e220.kicad_pcb
+d87c0ff900c9ce113c4c36b5a2785a65848077673e34804a8e9166cec2a6b76c  hardware/esp32-e220-pre-e220-signal-routing.kicad_pcb

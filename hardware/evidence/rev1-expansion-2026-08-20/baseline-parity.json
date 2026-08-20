@@ -1,0 +1,74 @@
+{
+  "board_only_references": [],
+  "contract": {
+    "pcb": "hardware/esp32-e220.kicad_pcb",
+    "pcb_net_name": "exact Eeschema root-sheet name, including leading '/'"
+  },
+  "counts": {
+    "intentional_non_pcb": 2,
+    "pcb_footprints": 33,
+    "schematic_assembled": 43
+  },
+  "electrical_pad_net_mismatches": [
+    {
+      "pad": "1",
+      "pcb": "/5V_SYS",
+      "reference": "J1",
+      "schematic": "/DEVKIT_VIN"
+    },
+    {
+      "pad": "2",
+      "pcb": "/DEVKIT_3V3",
+      "reference": "J5",
+      "schematic": "/AUX_3V3"
+    },
+    {
+      "pad": "3",
+      "pcb": "/BAT_FUSED",
+      "reference": "Q1",
+      "schematic": "/BAT_SW"
+    }
+  ],
+  "gate": "SCHEMATIC-PCB ELECTRICAL PARITY",
+  "intentional_non_pcb": {
+    "R10": "NO_FOOTPRINT_DNP",
+    "R11": "NO_FOOTPRINT_DNP"
+  },
+  "kicad_raw_net_name_mismatches": [
+    {
+      "pad": "1",
+      "pcb": "/5V_SYS",
+      "reference": "J1",
+      "schematic": "/DEVKIT_VIN"
+    },
+    {
+      "pad": "2",
+      "pcb": "/DEVKIT_3V3",
+      "reference": "J5",
+      "schematic": "/AUX_3V3"
+    },
+    {
+      "pad": "3",
+      "pcb": "/BAT_FUSED",
+      "reference": "Q1",
+      "schematic": "/BAT_SW"
+    }
+  ],
+  "missing_pcb_footprints": [
+    "C10",
+    "C8",
+    "C9",
+    "J6",
+    "J7",
+    "J8",
+    "JP1",
+    "R3",
+    "R4",
+    "U4"
+  ],
+  "non_pcb_dnp_errors": [],
+  "production_property_mismatches": [],
+  "status": "FAIL",
+  "unexpected_non_pcb_items": [],
+  "usb_c_power_nets_present": []
+}

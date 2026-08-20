@@ -1,0 +1,2030 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-08-20T10:21:48",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.5",
+    "schematic_parity": [],
+    "source": "esp32-e220.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [/GND] of R8 on F.Cu",
+                    "pos": {
+                        "x": 30.0,
+                        "y": 57.275
+                    },
+                    "uuid": "e89eea9c-41e2-4d56-9420-b53f87284d8d"
+                },
+                {
+                    "description": "PTH pad 7 [/GND] of J3",
+                    "pos": {
+                        "x": 23.12,
+                        "y": 53.5
+                    },
+                    "uuid": "7b3f3b20-a39f-4717-869a-c4e0d5bd29d9"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [/GND] of R9 on F.Cu",
+                    "pos": {
+                        "x": 33.0,
+                        "y": 57.275
+                    },
+                    "uuid": "b21c14a9-f8ad-4e09-aebf-1a77aa2c6c9a"
+                },
+                {
+                    "description": "Pad 2 [/GND] of R8 on F.Cu",
+                    "pos": {
+                        "x": 30.0,
+                        "y": 57.275
+                    },
+                    "uuid": "e89eea9c-41e2-4d56-9420-b53f87284d8d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [/GND] of R9 on F.Cu",
+                    "pos": {
+                        "x": 33.0,
+                        "y": 57.275
+                    },
+                    "uuid": "b21c14a9-f8ad-4e09-aebf-1a77aa2c6c9a"
+                },
+                {
+                    "description": "Track [/GND] on F.Cu, length 1.7500 mm",
+                    "pos": {
+                        "x": 39.75,
+                        "y": 70.5
+                    },
+                    "uuid": "c2830d47-5a4d-45d2-9d35-8c7d10e75110"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/GND] of J5",
+                    "pos": {
+                        "x": 63.0,
+                        "y": 20.0
+                    },
+                    "uuid": "66dad3c5-8398-42fb-ade5-503124c538ad"
+                },
+                {
+                    "description": "PTH pad 1 [/GND] of J6",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 20.0
+                    },
+                    "uuid": "0dc9f0ba-d87b-49d9-952d-e38d72debdcb"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Zone [/GND] on F.Cu, priority 0",
+                    "pos": {
+                        "x": 64.0,
+                        "y": 52.0
+                    },
+                    "uuid": "dfb51e4c-e86d-4bc2-86a0-24b548017a74"
+                },
+                {
+                    "description": "Zone [/GND] on F.Cu, priority 0",
+                    "pos": {
+                        "x": 64.0,
+                        "y": 52.0
+                    },
+                    "uuid": "dfb51e4c-e86d-4bc2-86a0-24b548017a74"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/GND] of J6",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 20.0
+                    },
+                    "uuid": "0dc9f0ba-d87b-49d9-952d-e38d72debdcb"
+                },
+                {
+                    "description": "PTH pad 3 [/GND] of J6",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 22.54
+                    },
+                    "uuid": "7b63012e-661b-46b0-a4b7-f0171fad5465"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/GND] of J6",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 22.54
+                    },
+                    "uuid": "7b63012e-661b-46b0-a4b7-f0171fad5465"
+                },
+                {
+                    "description": "PTH pad 5 [/GND] of J6",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 25.08
+                    },
+                    "uuid": "832c47db-4ecd-4bfb-b5b8-4f8cca417afb"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 5 [/GND] of J6",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 25.08
+                    },
+                    "uuid": "832c47db-4ecd-4bfb-b5b8-4f8cca417afb"
+                },
+                {
+                    "description": "PTH pad 7 [/GND] of J6",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 27.62
+                    },
+                    "uuid": "8a6b7b24-d2af-411e-ae83-c08d9c7d9db4"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/GND] of J7",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 38.0
+                    },
+                    "uuid": "74bcde2b-7d70-4cbc-bc20-ab3621d673c3"
+                },
+                {
+                    "description": "PTH pad 7 [/GND] of J6",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 27.62
+                    },
+                    "uuid": "8a6b7b24-d2af-411e-ae83-c08d9c7d9db4"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 11 [/GND] of J7",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 50.7
+                    },
+                    "uuid": "9a059058-1ca6-4cbe-be5a-c4d1cf4698e7"
+                },
+                {
+                    "description": "PTH pad 1 [/GND] of J7",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 38.0
+                    },
+                    "uuid": "74bcde2b-7d70-4cbc-bc20-ab3621d673c3"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 3 [/GND] of D2 on F.Cu",
+                    "pos": {
+                        "x": 98.95,
+                        "y": 55.6
+                    },
+                    "uuid": "dc357e42-b6b8-4afa-a262-e6ab95fc2def"
+                },
+                {
+                    "description": "Via [/GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 91.0,
+                        "y": 55.0
+                    },
+                    "uuid": "8e6ef69f-0087-4fc2-8c1c-d489c6e903d5"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 3 [/GND] of D2 on F.Cu",
+                    "pos": {
+                        "x": 98.95,
+                        "y": 55.6
+                    },
+                    "uuid": "dc357e42-b6b8-4afa-a262-e6ab95fc2def"
+                },
+                {
+                    "description": "Pad 2 [/GND] of C9 on F.Cu",
+                    "pos": {
+                        "x": 114.0,
+                        "y": 60.0
+                    },
+                    "uuid": "6ecea3a4-c977-47ba-ac0c-f771ba028bc1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/GND] of J1",
+                    "pos": {
+                        "x": 111.0,
+                        "y": 16.54
+                    },
+                    "uuid": "3d5faeda-7769-43bc-ba00-231f6daf7860"
+                },
+                {
+                    "description": "PTH pad 1 [/GND] of J6",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 20.0
+                    },
+                    "uuid": "0dc9f0ba-d87b-49d9-952d-e38d72debdcb"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [/GND] of C9 on F.Cu",
+                    "pos": {
+                        "x": 114.0,
+                        "y": 60.0
+                    },
+                    "uuid": "6ecea3a4-c977-47ba-ac0c-f771ba028bc1"
+                },
+                {
+                    "description": "Pad 1 [/GND] of U4 on F.Cu",
+                    "pos": {
+                        "x": 121.85,
+                        "y": 65.7
+                    },
+                    "uuid": "b1f87f9b-f8eb-431d-bbce-6d3547275224"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [/GND] of C10 on F.Cu",
+                    "pos": {
+                        "x": 136.0,
+                        "y": 68.0
+                    },
+                    "uuid": "4ad73bfd-42df-469e-86fd-15c729d48013"
+                },
+                {
+                    "description": "Pad 1 [/GND] of U4 on F.Cu",
+                    "pos": {
+                        "x": 121.85,
+                        "y": 65.7
+                    },
+                    "uuid": "b1f87f9b-f8eb-431d-bbce-6d3547275224"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/GND] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 16.54
+                    },
+                    "uuid": "df61ecf5-5f78-4864-9b9f-55c4264a5199"
+                },
+                {
+                    "description": "PTH pad 2 [/GND] of J1",
+                    "pos": {
+                        "x": 111.0,
+                        "y": 16.54
+                    },
+                    "uuid": "3d5faeda-7769-43bc-ba00-231f6daf7860"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/AUX_3V3] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 38.0
+                    },
+                    "uuid": "5bf0ba4c-4047-4e75-8e6b-e299d8dce5d1"
+                },
+                {
+                    "description": "PTH pad 9 [/AUX_3V3] of J6",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 30.16
+                    },
+                    "uuid": "d57d124e-5e86-4abf-b078-909b0953b87c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/AUX_3V3] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 38.0
+                    },
+                    "uuid": "5bf0ba4c-4047-4e75-8e6b-e299d8dce5d1"
+                },
+                {
+                    "description": "PTH pad 12 [/AUX_3V3] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 50.7
+                    },
+                    "uuid": "a56e3cdd-47b1-4257-9f50-962b32e40e1a"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 12 [/AUX_3V3] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 50.7
+                    },
+                    "uuid": "a56e3cdd-47b1-4257-9f50-962b32e40e1a"
+                },
+                {
+                    "description": "Zone [/AUX_3V3] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 114.0,
+                        "y": 57.0
+                    },
+                    "uuid": "5e73422f-5e91-4766-bef8-9b54ec2781bb"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 4 [/OLED_SDA] of J5",
+                    "pos": {
+                        "x": 63.0,
+                        "y": 27.62
+                    },
+                    "uuid": "56eeaf3b-7780-45ba-b83b-64e12478bc8b"
+                },
+                {
+                    "description": "PTH pad 3 [/OLED_SDA] of J7",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 40.54
+                    },
+                    "uuid": "f3125b48-1575-4ecc-9057-0c63980d467e"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/OLED_SDA] of J7",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 40.54
+                    },
+                    "uuid": "f3125b48-1575-4ecc-9057-0c63980d467e"
+                },
+                {
+                    "description": "PTH pad 11 [/OLED_SDA] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 39.4
+                    },
+                    "uuid": "6ec43f58-38b8-4f02-b43f-39049843d9d0"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/OLED_SCL] of J5",
+                    "pos": {
+                        "x": 63.0,
+                        "y": 25.08
+                    },
+                    "uuid": "0156dc64-6a7b-41e8-b1e3-d2cdd7ac8380"
+                },
+                {
+                    "description": "PTH pad 4 [/OLED_SCL] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 40.54
+                    },
+                    "uuid": "42e855b0-03ce-4532-b68a-a5310c099f07"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 4 [/OLED_SCL] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 40.54
+                    },
+                    "uuid": "42e855b0-03ce-4532-b68a-a5310c099f07"
+                },
+                {
+                    "description": "PTH pad 14 [/OLED_SCL] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 47.02
+                    },
+                    "uuid": "e033fe2b-d122-4e2f-9199-f61f7f503a7c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 5 [/GPIO18] of J7",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 43.08
+                    },
+                    "uuid": "47081756-28dd-4e9a-9afc-58eaf15dfba7"
+                },
+                {
+                    "description": "PTH pad 6 [/GPIO18] of J6",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 25.08
+                    },
+                    "uuid": "e6770ba9-80a0-4534-a4f0-1d4dbcf7e1c8"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 10 [/GPIO23] of J6",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 30.16
+                    },
+                    "uuid": "e291ce66-dc50-44d4-8c6f-81882c51076f"
+                },
+                {
+                    "description": "PTH pad 6 [/GPIO23] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 43.08
+                    },
+                    "uuid": "4c5fc915-489c-48a4-a7ec-a2a7828b7e4c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 7 [/GPIO19] of J7",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 45.62
+                    },
+                    "uuid": "0e476db5-1989-4ae5-8c55-cd1d01f8ae36"
+                },
+                {
+                    "description": "PTH pad 8 [/GPIO19] of J6",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 27.62
+                    },
+                    "uuid": "6a67004d-10a8-4668-81d4-0057b1ae93ae"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/GPIO13] of J6",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 20.0
+                    },
+                    "uuid": "3b497e7a-e282-43cb-abd1-b9daf02a6921"
+                },
+                {
+                    "description": "PTH pad 8 [/GPIO13] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 45.62
+                    },
+                    "uuid": "ad4be0a8-2917-4d63-a699-b1fd30bd82ad"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 9 [/GPIO14] of J7",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 48.16
+                    },
+                    "uuid": "81608e04-2ed7-460c-bc16-ef5718e56de9"
+                },
+                {
+                    "description": "PTH pad 4 [/GPIO14] of J6",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 22.54
+                    },
+                    "uuid": "16dc8d03-e0a1-43ad-99c6-5aa8ccff9766"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [/5V_SYS] of D2 on F.Cu",
+                    "pos": {
+                        "x": 94.05,
+                        "y": 52.4
+                    },
+                    "uuid": "c4a9dbff-2e6b-43e3-a576-fb46813160ac"
+                },
+                {
+                    "description": "Track [/5V_SYS] on F.Cu, length 1.5250 mm",
+                    "pos": {
+                        "x": 87.0,
+                        "y": 51.9
+                    },
+                    "uuid": "485ba891-16a1-4f1c-a82a-596e989aa434"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [/WS2812_DATA_3V3] of U3 on F.Cu",
+                    "pos": {
+                        "x": 89.0,
+                        "y": 55.0
+                    },
+                    "uuid": "daf7cb31-93d7-44e7-a8c3-58a0a37de761"
+                },
+                {
+                    "description": "PTH pad 5 [/WS2812_DATA_3V3] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 24.16
+                    },
+                    "uuid": "56b5e526-feca-45ba-ba98-777d4596acac"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 4 [/WS2812_DIN] of U3 on F.Cu",
+                    "pos": {
+                        "x": 89.475,
+                        "y": 53.0
+                    },
+                    "uuid": "88859a84-77d6-4f39-b4d3-aebaeb03c39b"
+                },
+                {
+                    "description": "Pad 4 [/WS2812_DIN] of D2 on F.Cu",
+                    "pos": {
+                        "x": 94.05,
+                        "y": 55.6
+                    },
+                    "uuid": "0ac88f03-4e44-485a-817e-2490d4d6dc1f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [/BAT_SENSE] on F.Cu, length 2.5500 mm",
+                    "pos": {
+                        "x": 86.725,
+                        "y": 66.0
+                    },
+                    "uuid": "9536f2e7-a4c5-4e96-874d-9ccad46b8b4d"
+                },
+                {
+                    "description": "PTH pad 10 [/BAT_SENSE] of J1",
+                    "pos": {
+                        "x": 111.0,
+                        "y": 36.86
+                    },
+                    "uuid": "63ddae55-0033-4532-b01e-527a69ee271c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/E220_M0] of J3",
+                    "pos": {
+                        "x": 7.88,
+                        "y": 53.5
+                    },
+                    "uuid": "f4854b04-4e91-4ebd-9096-dbea11a871db"
+                },
+                {
+                    "description": "Pad 1 [/E220_M0] of R8 on F.Cu",
+                    "pos": {
+                        "x": 30.0,
+                        "y": 58.725
+                    },
+                    "uuid": "9925fbb7-c291-455c-ab76-fddaceb6e46f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/E220_M0] of TP6",
+                    "pos": {
+                        "x": 73.0,
+                        "y": 87.0
+                    },
+                    "uuid": "d58d678a-6cb9-482f-a5bd-2a7278ec1044"
+                },
+                {
+                    "description": "Pad 1 [/E220_M0] of R8 on F.Cu",
+                    "pos": {
+                        "x": 30.0,
+                        "y": 58.725
+                    },
+                    "uuid": "9925fbb7-c291-455c-ab76-fddaceb6e46f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/E220_M0] of TP6",
+                    "pos": {
+                        "x": 73.0,
+                        "y": 87.0
+                    },
+                    "uuid": "d58d678a-6cb9-482f-a5bd-2a7278ec1044"
+                },
+                {
+                    "description": "PTH pad 8 [/E220_M0] of J1",
+                    "pos": {
+                        "x": 111.0,
+                        "y": 31.78
+                    },
+                    "uuid": "8d8c5fe8-38de-46e7-82ca-5100de8dd4d2"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/E220_M1] of J3",
+                    "pos": {
+                        "x": 10.42,
+                        "y": 53.5
+                    },
+                    "uuid": "2b84dc52-ca6a-4a3e-877f-5b9920d653cc"
+                },
+                {
+                    "description": "Pad 1 [/E220_M1] of R9 on F.Cu",
+                    "pos": {
+                        "x": 33.0,
+                        "y": 58.725
+                    },
+                    "uuid": "92e486a6-3ed7-4167-a268-184dd7833131"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/E220_M1] of TP7",
+                    "pos": {
+                        "x": 78.0,
+                        "y": 87.0
+                    },
+                    "uuid": "a13c6fd1-86b4-4b29-9efa-f0b2da7fde9b"
+                },
+                {
+                    "description": "Pad 1 [/E220_M1] of R9 on F.Cu",
+                    "pos": {
+                        "x": 33.0,
+                        "y": 58.725
+                    },
+                    "uuid": "92e486a6-3ed7-4167-a268-184dd7833131"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/E220_M1] of TP7",
+                    "pos": {
+                        "x": 78.0,
+                        "y": 87.0
+                    },
+                    "uuid": "a13c6fd1-86b4-4b29-9efa-f0b2da7fde9b"
+                },
+                {
+                    "description": "PTH pad 7 [/E220_M1] of J1",
+                    "pos": {
+                        "x": 111.0,
+                        "y": 29.24
+                    },
+                    "uuid": "60d33fde-1ac6-4922-99b1-69832cfd92f7"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/E220_RXD] of J3",
+                    "pos": {
+                        "x": 12.96,
+                        "y": 53.5
+                    },
+                    "uuid": "304289e1-3536-40f3-bfd5-5e150467d8cb"
+                },
+                {
+                    "description": "PTH pad 1 [/E220_RXD] of TP9",
+                    "pos": {
+                        "x": 88.0,
+                        "y": 87.0
+                    },
+                    "uuid": "4a384267-ebf7-4d35-b38f-0d5a5baa5fe9"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/E220_RXD] of TP9",
+                    "pos": {
+                        "x": 88.0,
+                        "y": 87.0
+                    },
+                    "uuid": "4a384267-ebf7-4d35-b38f-0d5a5baa5fe9"
+                },
+                {
+                    "description": "PTH pad 7 [/E220_RXD] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 29.24
+                    },
+                    "uuid": "ce570bbd-78a0-4b4a-8b0f-785c7ed06883"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 4 [/E220_TXD] of J3",
+                    "pos": {
+                        "x": 15.5,
+                        "y": 53.5
+                    },
+                    "uuid": "1280cea8-a8c5-46b0-a3a7-32baead0ddcb"
+                },
+                {
+                    "description": "PTH pad 1 [/E220_TXD] of TP10",
+                    "pos": {
+                        "x": 93.0,
+                        "y": 87.0
+                    },
+                    "uuid": "235bc4ef-9c7d-4fe2-b6e2-c166f93f7d2d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/E220_TXD] of TP10",
+                    "pos": {
+                        "x": 93.0,
+                        "y": 87.0
+                    },
+                    "uuid": "235bc4ef-9c7d-4fe2-b6e2-c166f93f7d2d"
+                },
+                {
+                    "description": "PTH pad 6 [/E220_TXD] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 26.7
+                    },
+                    "uuid": "0b0a5b0c-3d6e-4c09-b40f-5981ed513b0e"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 5 [/E220_AUX] of J3",
+                    "pos": {
+                        "x": 18.04,
+                        "y": 53.5
+                    },
+                    "uuid": "f203868d-c54c-4e07-b880-4e5784dda34b"
+                },
+                {
+                    "description": "PTH pad 1 [/E220_AUX] of TP8",
+                    "pos": {
+                        "x": 83.0,
+                        "y": 87.0
+                    },
+                    "uuid": "7d45138a-e9fa-45b6-9d29-d234e70594e8"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/E220_AUX] of TP8",
+                    "pos": {
+                        "x": 83.0,
+                        "y": 87.0
+                    },
+                    "uuid": "7d45138a-e9fa-45b6-9d29-d234e70594e8"
+                },
+                {
+                    "description": "PTH pad 6 [/E220_AUX] of J1",
+                    "pos": {
+                        "x": 111.0,
+                        "y": 26.7
+                    },
+                    "uuid": "34b40076-dc0e-4570-b1d9-2385566d8dfd"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/BAT_PLUS] of TP1",
+                    "pos": {
+                        "x": 48.0,
+                        "y": 87.0
+                    },
+                    "uuid": "e7f056ef-d265-4124-8b8d-a8cc8cb14b6c"
+                },
+                {
+                    "description": "Track [/BAT_PLUS] on F.Cu, length 7.8620 mm",
+                    "pos": {
+                        "x": 35.0,
+                        "y": 78.5
+                    },
+                    "uuid": "d6f11b0f-dde0-46c7-a409-4dbaaff09603"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [/BUCK_IN] of R2 on F.Cu",
+                    "pos": {
+                        "x": 62.5,
+                        "y": 67.725
+                    },
+                    "uuid": "838ea4e0-2837-4d58-89b4-e5fdf840d4ed"
+                },
+                {
+                    "description": "Track [/BUCK_IN] on F.Cu, length 20.0013 mm",
+                    "pos": {
+                        "x": 65.5,
+                        "y": 63.0
+                    },
+                    "uuid": "aa752d2b-3570-47e8-ae33-89e1aa71a9ce"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [/BUCK_IN] on F.Cu, length 1.1500 mm",
+                    "pos": {
+                        "x": 64.349999,
+                        "y": 77.0
+                    },
+                    "uuid": "a4eef94c-3eb6-420b-8595-5f49d55bb7bb"
+                },
+                {
+                    "description": "PTH pad 1 [/BUCK_IN] of TP3",
+                    "pos": {
+                        "x": 58.0,
+                        "y": 87.0
+                    },
+                    "uuid": "f0ca8cb9-b5ef-4e34-a3eb-24c9ae72f949"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/DEVKIT_3V3] of J5",
+                    "pos": {
+                        "x": 63.0,
+                        "y": 22.54
+                    },
+                    "uuid": "c24356d8-6169-49e8-b1a8-3e66b24cd7be"
+                },
+                {
+                    "description": "PTH pad 1 [/DEVKIT_3V3] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 14.0
+                    },
+                    "uuid": "ab9ba1a7-847a-43bd-8c78-be80858b1027"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Track [/5V_SYS] on F.Cu, length 16.0000 mm",
+                    "pos": {
+                        "x": 80.0,
+                        "y": 43.5
+                    },
+                    "uuid": "da91b01a-2c45-4255-9dae-c90d4f7810e1"
+                },
+                {
+                    "description": "PTH pad 5 [/GPIO18] of J7",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 43.08
+                    },
+                    "uuid": "47081756-28dd-4e9a-9afc-58eaf15dfba7"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad 7 [/GPIO19] of J7",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 45.62
+                    },
+                    "uuid": "0e476db5-1989-4ae5-8c55-cd1d01f8ae36"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Track [/5V_SYS] on F.Cu, length 16.0000 mm",
+                    "pos": {
+                        "x": 80.0,
+                        "y": 43.5
+                    },
+                    "uuid": "da91b01a-2c45-4255-9dae-c90d4f7810e1"
+                },
+                {
+                    "description": "PTH pad 6 [/GPIO23] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 43.08
+                    },
+                    "uuid": "4c5fc915-489c-48a4-a7ec-a2a7828b7e4c"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad 8 [/GPIO13] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 45.62
+                    },
+                    "uuid": "ad4be0a8-2917-4d63-a699-b1fd30bd82ad"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad 9 [/GPIO14] of J7",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 48.16
+                    },
+                    "uuid": "81608e04-2ed7-460c-bc16-ef5718e56de9"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad 10 [/GPIO33] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 48.16
+                    },
+                    "uuid": "a54cd15b-1116-4ff9-bd72-51fb1742050d"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad 12 [/AUX_3V3] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 50.7
+                    },
+                    "uuid": "a56e3cdd-47b1-4257-9f50-962b32e40e1a"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint J7",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 38.0
+                    },
+                    "uuid": "07fc7d75-ee71-4fb1-9eb3-94cd9ead0efc"
+                },
+                {
+                    "description": "Footprint U3",
+                    "pos": {
+                        "x": 89.0,
+                        "y": 54.0
+                    },
+                    "uuid": "1215d2a7-58fd-44e1-95f8-f235ad9dfa58"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint J3",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 52.0
+                    },
+                    "uuid": "210b10e3-75a0-476a-90e4-ca47fa9854b7"
+                },
+                {
+                    "description": "Footprint SR1",
+                    "pos": {
+                        "x": 27.0,
+                        "y": 84.0
+                    },
+                    "uuid": "7b0d7ad0-aabd-4abd-a3d7-098100f7652f"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "NPTH inside courtyard",
+            "items": [
+                {
+                    "description": "NPTH pad of SR1",
+                    "pos": {
+                        "x": 27.0,
+                        "y": 84.0
+                    },
+                    "uuid": "70e0d351-b30c-46b2-a03f-90e0e8498dd7"
+                },
+                {
+                    "description": "Footprint J3",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 52.0
+                    },
+                    "uuid": "210b10e3-75a0-476a-90e4-ca47fa9854b7"
+                }
+            ],
+            "severity": "error",
+            "type": "npth_inside_courtyard"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1851 mm)",
+            "items": [
+                {
+                    "description": "Track [/5V_SYS] on F.Cu, length 1.5250 mm",
+                    "pos": {
+                        "x": 87.0,
+                        "y": 51.9
+                    },
+                    "uuid": "485ba891-16a1-4f1c-a82a-596e989aa434"
+                },
+                {
+                    "description": "PTH pad 12 [/AUX_3V3] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 50.7
+                    },
+                    "uuid": "a56e3cdd-47b1-4257-9f50-962b32e40e1a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets /GPIO18 and /5V_SYS)",
+            "items": [
+                {
+                    "description": "PTH pad 5 [/GPIO18] of J7",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 43.08
+                    },
+                    "uuid": "47081756-28dd-4e9a-9afc-58eaf15dfba7"
+                },
+                {
+                    "description": "Track [/5V_SYS] on F.Cu, length 16.0000 mm",
+                    "pos": {
+                        "x": 80.0,
+                        "y": 43.5
+                    },
+                    "uuid": "da91b01a-2c45-4255-9dae-c90d4f7810e1"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1851 mm)",
+            "items": [
+                {
+                    "description": "Track [/5V_SYS] on F.Cu, length 2.8250 mm",
+                    "pos": {
+                        "x": 87.0,
+                        "y": 54.725
+                    },
+                    "uuid": "541322fb-61ee-4c8d-a374-4d6e9154bd15"
+                },
+                {
+                    "description": "PTH pad 12 [/AUX_3V3] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 50.7
+                    },
+                    "uuid": "a56e3cdd-47b1-4257-9f50-962b32e40e1a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of SR2",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 84.0
+                    },
+                    "uuid": "d8beb419-c2be-409a-88a8-4716653e2a25"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 7 [/GPIO19] of J7",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 45.62
+                    },
+                    "uuid": "0e476db5-1989-4ae5-8c55-cd1d01f8ae36"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 7 [/GPIO19] of J7",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 45.62
+                    },
+                    "uuid": "0e476db5-1989-4ae5-8c55-cd1d01f8ae36"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 8 [/GPIO13] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 45.62
+                    },
+                    "uuid": "ad4be0a8-2917-4d63-a699-b1fd30bd82ad"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 8 [/GPIO13] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 45.62
+                    },
+                    "uuid": "ad4be0a8-2917-4d63-a699-b1fd30bd82ad"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 9 [/GPIO14] of J7",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 48.16
+                    },
+                    "uuid": "81608e04-2ed7-460c-bc16-ef5718e56de9"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 9 [/GPIO14] of J7",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 48.16
+                    },
+                    "uuid": "81608e04-2ed7-460c-bc16-ef5718e56de9"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 10 [/GPIO33] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 48.16
+                    },
+                    "uuid": "a54cd15b-1116-4ff9-bd72-51fb1742050d"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 10 [/GPIO33] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 48.16
+                    },
+                    "uuid": "a54cd15b-1116-4ff9-bd72-51fb1742050d"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 12 [/AUX_3V3] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 50.7
+                    },
+                    "uuid": "a56e3cdd-47b1-4257-9f50-962b32e40e1a"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 12 [/AUX_3V3] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 50.7
+                    },
+                    "uuid": "a56e3cdd-47b1-4257-9f50-962b32e40e1a"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "PCB text 'USER GPIO\n3V3 ONLY\n200mA MAX SHARED\n1G 2G13 3G 4G14 5G\n6G18 7G 8G19 9AUX 10G23' on F.Silkscreen",
+                    "pos": {
+                        "x": 91.5,
+                        "y": 25.0
+                    },
+                    "uuid": "08c152e4-18cb-407a-a881-8832bad86c99"
+                },
+                {
+                    "description": "Segment of J6 on F.Silkscreen",
+                    "pos": {
+                        "x": 87.87,
+                        "y": 18.67
+                    },
+                    "uuid": "8d8c215d-7086-4b2c-9334-fded3feac42c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "PCB text 'USER GPIO\n3V3 ONLY\n200mA MAX SHARED\n1G 2G13 3G 4G14 5G\n6G18 7G 8G19 9AUX 10G23' on F.Silkscreen",
+                    "pos": {
+                        "x": 91.5,
+                        "y": 25.0
+                    },
+                    "uuid": "08c152e4-18cb-407a-a881-8832bad86c99"
+                },
+                {
+                    "description": "PCB text 'DEVKIT PWR\nREMOVE FOR USB ISOLATION' on F.Silkscreen",
+                    "pos": {
+                        "x": 99.0,
+                        "y": 24.0
+                    },
+                    "uuid": "2a3a8f10-b201-4801-aa21-5f6ee8fe1f48"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of J7 on F.Silkscreen",
+                    "pos": {
+                        "x": 87.87,
+                        "y": 36.67
+                    },
+                    "uuid": "bfd268fa-195b-49dd-b121-cb4f0e37daa9"
+                },
+                {
+                    "description": "PCB text 'DISPLAY AUX\n3V3 ONLY\n1G 2AUX 3SDA 4SCL\n5G18 6G23 7G19 8G13\n9G14 10G33 11G 12AUX' on F.Silkscreen",
+                    "pos": {
+                        "x": 91.5,
+                        "y": 44.0
+                    },
+                    "uuid": "eeeab6ac-5454-4a4e-8787-fb19bb7e39c0"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of U3 on F.Silkscreen",
+                    "pos": {
+                        "x": 87.5,
+                        "y": 52.15
+                    },
+                    "uuid": "a9e5320f-9a62-42d1-aca8-247df2c82f21"
+                },
+                {
+                    "description": "Segment of J7 on F.Silkscreen",
+                    "pos": {
+                        "x": 82.67,
+                        "y": 52.03
+                    },
+                    "uuid": "edb151c8-bfe9-4acb-b1b3-e8a008cd9434"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of U3 on F.Silkscreen",
+                    "pos": {
+                        "x": 87.5,
+                        "y": 52.15
+                    },
+                    "uuid": "a9e5320f-9a62-42d1-aca8-247df2c82f21"
+                },
+                {
+                    "description": "Segment of J7 on F.Silkscreen",
+                    "pos": {
+                        "x": 87.87,
+                        "y": 36.67
+                    },
+                    "uuid": "bfd268fa-195b-49dd-b121-cb4f0e37daa9"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of SR1",
+                    "pos": {
+                        "x": 27.0,
+                        "y": 81.8
+                    },
+                    "uuid": "92da55d0-5fb2-4f94-b84b-9f87fbeffc46"
+                },
+                {
+                    "description": "Segment of J3 on F.Silkscreen",
+                    "pos": {
+                        "x": 26.3,
+                        "y": 51.7
+                    },
+                    "uuid": "b03be3e9-17a7-4278-afa0-cb9d5e40fd10"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PCB text 'USER GPIO\n3V3 ONLY\n200mA MAX SHARED\n1G 2G13 3G 4G14 5G\n6G18 7G 8G19 9AUX 10G23' on F.Silkscreen",
+                    "pos": {
+                        "x": 91.5,
+                        "y": 25.0
+                    },
+                    "uuid": "08c152e4-18cb-407a-a881-8832bad86c99"
+                },
+                {
+                    "description": "PTH pad 6 [/GPIO18] of J6",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 25.08
+                    },
+                    "uuid": "e6770ba9-80a0-4534-a4f0-1d4dbcf7e1c8"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PCB text 'USER GPIO\n3V3 ONLY\n200mA MAX SHARED\n1G 2G13 3G 4G14 5G\n6G18 7G 8G19 9AUX 10G23' on F.Silkscreen",
+                    "pos": {
+                        "x": 91.5,
+                        "y": 25.0
+                    },
+                    "uuid": "08c152e4-18cb-407a-a881-8832bad86c99"
+                },
+                {
+                    "description": "PTH pad 7 [/GND] of J6",
+                    "pos": {
+                        "x": 84.0,
+                        "y": 27.62
+                    },
+                    "uuid": "8a6b7b24-d2af-411e-ae83-c08d9c7d9db4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PCB text 'USER GPIO\n3V3 ONLY\n200mA MAX SHARED\n1G 2G13 3G 4G14 5G\n6G18 7G 8G19 9AUX 10G23' on F.Silkscreen",
+                    "pos": {
+                        "x": 91.5,
+                        "y": 25.0
+                    },
+                    "uuid": "08c152e4-18cb-407a-a881-8832bad86c99"
+                },
+                {
+                    "description": "PTH pad 8 [/GPIO19] of J6",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 27.62
+                    },
+                    "uuid": "6a67004d-10a8-4668-81d4-0057b1ae93ae"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PCB text 'DISPLAY AUX\n3V3 ONLY\n1G 2AUX 3SDA 4SCL\n5G18 6G23 7G19 8G13\n9G14 10G33 11G 12AUX' on F.Silkscreen",
+                    "pos": {
+                        "x": 91.5,
+                        "y": 44.0
+                    },
+                    "uuid": "eeeab6ac-5454-4a4e-8787-fb19bb7e39c0"
+                },
+                {
+                    "description": "PTH pad 6 [/GPIO23] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 43.08
+                    },
+                    "uuid": "4c5fc915-489c-48a4-a7ec-a2a7828b7e4c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PCB text 'DISPLAY AUX\n3V3 ONLY\n1G 2AUX 3SDA 4SCL\n5G18 6G23 7G19 8G13\n9G14 10G33 11G 12AUX' on F.Silkscreen",
+                    "pos": {
+                        "x": 91.5,
+                        "y": 44.0
+                    },
+                    "uuid": "eeeab6ac-5454-4a4e-8787-fb19bb7e39c0"
+                },
+                {
+                    "description": "PTH pad 8 [/GPIO13] of J7",
+                    "pos": {
+                        "x": 86.54,
+                        "y": 45.62
+                    },
+                    "uuid": "ad4be0a8-2917-4d63-a699-b1fd30bd82ad"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of J3 on F.Silkscreen",
+                    "pos": {
+                        "x": 26.3,
+                        "y": 51.7
+                    },
+                    "uuid": "b03be3e9-17a7-4278-afa0-cb9d5e40fd10"
+                },
+                {
+                    "description": "NPTH pad of SR1",
+                    "pos": {
+                        "x": 27.0,
+                        "y": 84.0
+                    },
+                    "uuid": "70e0d351-b30c-46b2-a03f-90e0e8498dd7"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6500 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'USER GPIO\n3V3 ONLY\n200mA MAX SHARED\n1G 2G13 3G 4G14 5G\n6G18 7G 8G19 9AUX 10G23' on F.Silkscreen",
+                    "pos": {
+                        "x": 91.5,
+                        "y": 25.0
+                    },
+                    "uuid": "08c152e4-18cb-407a-a881-8832bad86c99"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6500 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'DISPLAY AUX\n3V3 ONLY\n1G 2AUX 3SDA 4SCL\n5G18 6G23 7G19 8G13\n9G14 10G33 11G 12AUX' on F.Silkscreen",
+                    "pos": {
+                        "x": 91.5,
+                        "y": 44.0
+                    },
+                    "uuid": "eeeab6ac-5454-4a4e-8787-fb19bb7e39c0"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7000 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'DEVKIT PWR\nREMOVE FOR USB ISOLATION' on F.Silkscreen",
+                    "pos": {
+                        "x": 99.0,
+                        "y": 24.0
+                    },
+                    "uuid": "2a3a8f10-b201-4801-aa21-5f6ee8fe1f48"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'POWER SW\nPIN 1 = BAT_FUSED' on F.Silkscreen",
+                    "pos": {
+                        "x": 56.0,
+                        "y": 62.0
+                    },
+                    "uuid": "e87b1f81-2e99-49ce-a414-0936cf89c1a4"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        }
+    ]
+}

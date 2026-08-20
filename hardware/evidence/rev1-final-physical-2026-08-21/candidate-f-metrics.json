@@ -1,0 +1,352 @@
+{
+  "J8_endpoint_route_length_mm": 14.055,
+  "antenna_rule_area_bounds_mm": [
+    104.7,
+    52.0,
+    142.7,
+    90.0
+  ],
+  "board": "/home/kirill/codex/kicad/hardware/evidence/rev1-final-physical-2026-08-21/esp32-e220-rev1-final-candidate.kicad_pcb",
+  "counts": {
+    "footprints": 37,
+    "tracks": 180,
+    "vias": 60,
+    "zones_including_rule_areas": 6
+  },
+  "fixed_modules": {
+    "J1": {
+      "baseline": {
+        "rotation_deg": 0.0,
+        "xy_mm": [
+          111.0,
+          14.0
+        ]
+      },
+      "candidate": {
+        "rotation_deg": 0.0,
+        "xy_mm": [
+          111.0,
+          14.0
+        ]
+      },
+      "unchanged": true
+    },
+    "J2": {
+      "baseline": {
+        "rotation_deg": 0.0,
+        "xy_mm": [
+          136.4,
+          14.0
+        ]
+      },
+      "candidate": {
+        "rotation_deg": 0.0,
+        "xy_mm": [
+          136.4,
+          14.0
+        ]
+      },
+      "unchanged": true
+    },
+    "J3": {
+      "baseline": {
+        "rotation_deg": 0.0,
+        "xy_mm": [
+          5.0,
+          52.0
+        ]
+      },
+      "candidate": {
+        "rotation_deg": 0.0,
+        "xy_mm": [
+          5.0,
+          52.0
+        ]
+      },
+      "unchanged": true
+    },
+    "J5": {
+      "baseline": {
+        "rotation_deg": 0.0,
+        "xy_mm": [
+          63.0,
+          20.0
+        ]
+      },
+      "candidate": {
+        "rotation_deg": 0.0,
+        "xy_mm": [
+          63.0,
+          20.0
+        ]
+      },
+      "unchanged": true
+    }
+  },
+  "placements": {
+    "C10": {
+      "rotation_deg": 180.0,
+      "xy_mm": [
+        14.4,
+        27.0
+      ]
+    },
+    "C8": {
+      "rotation_deg": 0.0,
+      "xy_mm": [
+        88.0,
+        69.0
+      ]
+    },
+    "C9": {
+      "rotation_deg": -90.0,
+      "xy_mm": [
+        17.5,
+        33.0
+      ]
+    },
+    "J6": {
+      "rotation_deg": 0.0,
+      "xy_mm": [
+        94.0,
+        18.0
+      ]
+    },
+    "J8": {
+      "rotation_deg": 0.0,
+      "xy_mm": [
+        51.0,
+        76.0
+      ]
+    },
+    "J9": {
+      "rotation_deg": 0.0,
+      "xy_mm": [
+        100.0,
+        54.0
+      ]
+    },
+    "JP1": {
+      "rotation_deg": 90.0,
+      "xy_mm": [
+        96.0,
+        14.0
+      ]
+    },
+    "R3": {
+      "rotation_deg": 0.0,
+      "xy_mm": [
+        86.0,
+        66.0
+      ]
+    },
+    "R4": {
+      "rotation_deg": 0.0,
+      "xy_mm": [
+        90.0,
+        66.0
+      ]
+    },
+    "R8": {
+      "rotation_deg": 0.0,
+      "xy_mm": [
+        40.0,
+        35.0
+      ]
+    },
+    "R9": {
+      "rotation_deg": 0.0,
+      "xy_mm": [
+        46.0,
+        35.0
+      ]
+    },
+    "U4": {
+      "rotation_deg": 0.0,
+      "xy_mm": [
+        20.65,
+        27.0
+      ]
+    }
+  },
+  "route_metrics": {
+    "5V_SYS": {
+      "track_length_mm": 255.14,
+      "track_segments": 34,
+      "vias": 4
+    },
+    "AUX_3V3": {
+      "track_length_mm": 27.6,
+      "track_segments": 2,
+      "vias": 4
+    },
+    "BAT_FUSED": {
+      "track_length_mm": 12.45,
+      "track_segments": 4,
+      "vias": 0
+    },
+    "BAT_SENSE": {
+      "track_length_mm": 72.787,
+      "track_segments": 8,
+      "vias": 1
+    },
+    "BAT_SW": {
+      "track_length_mm": 10.193,
+      "track_segments": 3,
+      "vias": 0
+    },
+    "DEVKIT_VIN": {
+      "track_length_mm": 12.46,
+      "track_segments": 1,
+      "vias": 0
+    },
+    "E220_AUX": {
+      "track_length_mm": 112.837,
+      "track_segments": 6,
+      "vias": 4
+    },
+    "E220_M0": {
+      "track_length_mm": 119.496,
+      "track_segments": 7,
+      "vias": 4
+    },
+    "E220_M1": {
+      "track_length_mm": 122.104,
+      "track_segments": 8,
+      "vias": 6
+    },
+    "E220_RXD": {
+      "track_length_mm": 138.36,
+      "track_segments": 9,
+      "vias": 4
+    },
+    "E220_TXD": {
+      "track_length_mm": 139.021,
+      "track_segments": 9,
+      "vias": 4
+    },
+    "GND": {
+      "track_length_mm": 58.898,
+      "track_segments": 22,
+      "vias": 18
+    },
+    "GPIO13": {
+      "track_length_mm": 17.209,
+      "track_segments": 3,
+      "vias": 1
+    },
+    "GPIO14": {
+      "track_length_mm": 17.115,
+      "track_segments": 3,
+      "vias": 1
+    },
+    "GPIO18": {
+      "track_length_mm": 47.906,
+      "track_segments": 4,
+      "vias": 1
+    },
+    "GPIO19": {
+      "track_length_mm": 48.006,
+      "track_segments": 4,
+      "vias": 1
+    },
+    "GPIO23": {
+      "track_length_mm": 53.175,
+      "track_segments": 7,
+      "vias": 3
+    },
+    "WS2812_DATA_3V3": {
+      "track_length_mm": 108.548,
+      "track_segments": 7,
+      "vias": 2
+    },
+    "WS2812_DATA_5V": {
+      "track_length_mm": 12.717,
+      "track_segments": 3,
+      "vias": 0
+    }
+  },
+  "sha256": "798f6ca518353dd3545c263ce9b608a74e19fcfd6e6b44d35e9b98741473637b",
+  "thermal_contract": {
+    "AUX_3V3_B_Cu_bounds_mm": [
+      17.5,
+      16.0,
+      37.5,
+      38.0
+    ],
+    "AUX_3V3_F_Cu_bounds_mm": [
+      17.5,
+      16.0,
+      37.5,
+      38.0
+    ],
+    "AUX_3V3_vias_xy_mm": [
+      [
+        25.3,
+        24.8
+      ],
+      [
+        25.3,
+        29.2
+      ],
+      [
+        26.5,
+        26.0
+      ],
+      [
+        26.5,
+        28.0
+      ]
+    ]
+  },
+  "u4_physical_pads": [
+    {
+      "net": "/GND",
+      "number": "1",
+      "size_mm": [
+        2.0,
+        1.5
+      ],
+      "xy_mm": [
+        17.5,
+        24.7
+      ]
+    },
+    {
+      "net": "/AUX_3V3",
+      "number": "2",
+      "size_mm": [
+        2.0,
+        1.5
+      ],
+      "xy_mm": [
+        17.5,
+        27.0
+      ]
+    },
+    {
+      "net": "/AUX_3V3",
+      "number": "2",
+      "size_mm": [
+        2.0,
+        3.8
+      ],
+      "xy_mm": [
+        23.8,
+        27.0
+      ]
+    },
+    {
+      "net": "/5V_SYS",
+      "number": "3",
+      "size_mm": [
+        2.0,
+        1.5
+      ],
+      "xy_mm": [
+        17.5,
+        29.3
+      ]
+    }
+  ]
+}

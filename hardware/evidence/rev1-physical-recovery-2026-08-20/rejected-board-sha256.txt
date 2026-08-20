@@ -1,0 +1,1 @@
+bf502dfde6ebb1f05d5d8f95fa77dc6f3d484fd9ddcdb47d3511c4b82b5f5036  hardware/esp32-e220-rev1-partial-rejected.kicad_pcb

@@ -1,0 +1,1246 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-08-21T00:44:42",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.5",
+    "schematic_parity": [],
+    "source": "e220.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [/GND] on F.Cu, length 1.4000 mm",
+                    "pos": {
+                        "x": 13.4,
+                        "y": 27.0
+                    },
+                    "uuid": "b5570641-0036-4b64-830a-2afd9ed106ce"
+                },
+                {
+                    "description": "Track [/GND] on F.Cu, length 3.5000 mm",
+                    "pos": {
+                        "x": 17.5,
+                        "y": 34.0
+                    },
+                    "uuid": "548f54b8-1e18-4d4d-9359-8eb2836c40db"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Via [/GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 15.5,
+                        "y": 24.7
+                    },
+                    "uuid": "7accb669-d74d-4937-8521-8368b62579ff"
+                },
+                {
+                    "description": "Track [/GND] on F.Cu, length 1.4000 mm",
+                    "pos": {
+                        "x": 13.4,
+                        "y": 27.0
+                    },
+                    "uuid": "b5570641-0036-4b64-830a-2afd9ed106ce"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [/GND] on F.Cu, length 3.5000 mm",
+                    "pos": {
+                        "x": 17.5,
+                        "y": 34.0
+                    },
+                    "uuid": "548f54b8-1e18-4d4d-9359-8eb2836c40db"
+                },
+                {
+                    "description": "Track [/GND] on F.Cu, length 3.0000 mm",
+                    "pos": {
+                        "x": 24.725,
+                        "y": 48.0
+                    },
+                    "uuid": "e8cc6a10-a52d-45af-ab91-1b0ba4ded004"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [/GND] on B.Cu, length 2.7273 mm",
+                    "pos": {
+                        "x": 22.03,
+                        "y": 51.0
+                    },
+                    "uuid": "6979ee65-6110-44d0-8566-6f66748304b7"
+                },
+                {
+                    "description": "Track [/GND] on F.Cu, length 1.7500 mm",
+                    "pos": {
+                        "x": 39.75,
+                        "y": 70.5
+                    },
+                    "uuid": "c2830d47-5a4d-45d2-9d35-8c7d10e75110"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [/GND] on F.Cu, length 3.0000 mm",
+                    "pos": {
+                        "x": 24.725,
+                        "y": 48.0
+                    },
+                    "uuid": "e8cc6a10-a52d-45af-ab91-1b0ba4ded004"
+                },
+                {
+                    "description": "Track [/GND] on F.Cu, length 0.7750 mm",
+                    "pos": {
+                        "x": 40.725,
+                        "y": 35.0
+                    },
+                    "uuid": "699e7268-9b7e-45e7-bd67-e09a4f7c3444"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Via [/GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 41.5,
+                        "y": 35.0
+                    },
+                    "uuid": "7c3cf330-8743-4675-858f-9eaddbd0217c"
+                },
+                {
+                    "description": "Pad 2 [/GND] of R9 on F.Cu",
+                    "pos": {
+                        "x": 46.725,
+                        "y": 35.0
+                    },
+                    "uuid": "b21c14a9-f8ad-4e09-aebf-1a77aa2c6c9a"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [/GND] on F.Cu, length 0.7750 mm",
+                    "pos": {
+                        "x": 46.725,
+                        "y": 35.0
+                    },
+                    "uuid": "46ef3c38-2b6b-4cdb-a337-af8bf4d46fc8"
+                },
+                {
+                    "description": "PTH pad 1 [/GND] of J5",
+                    "pos": {
+                        "x": 63.0,
+                        "y": 20.0
+                    },
+                    "uuid": "66dad3c5-8398-42fb-ade5-503124c538ad"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Zone [/GND] on F.Cu, priority 0",
+                    "pos": {
+                        "x": 64.0,
+                        "y": 52.0
+                    },
+                    "uuid": "dfb51e4c-e86d-4bc2-86a0-24b548017a74"
+                },
+                {
+                    "description": "Zone [/GND] on F.Cu, priority 0",
+                    "pos": {
+                        "x": 64.0,
+                        "y": 52.0
+                    },
+                    "uuid": "dfb51e4c-e86d-4bc2-86a0-24b548017a74"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [/GND] of C8 on F.Cu",
+                    "pos": {
+                        "x": 88.725,
+                        "y": 69.0
+                    },
+                    "uuid": "e47ba3ec-3e83-4d73-b0bc-9aa7ccc18859"
+                },
+                {
+                    "description": "Pad 2 [/GND] of R4 on F.Cu",
+                    "pos": {
+                        "x": 90.725,
+                        "y": 66.0
+                    },
+                    "uuid": "93cbf2f8-46aa-44a2-ac7d-64ec30d4d6c5"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/GND] of J6",
+                    "pos": {
+                        "x": 94.0,
+                        "y": 18.0
+                    },
+                    "uuid": "cfdab5c2-ba27-4d5d-a4b2-17784435b535"
+                },
+                {
+                    "description": "PTH pad 1 [/GND] of J5",
+                    "pos": {
+                        "x": 63.0,
+                        "y": 20.0
+                    },
+                    "uuid": "66dad3c5-8398-42fb-ade5-503124c538ad"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Via [/GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 97.0,
+                        "y": 59.08
+                    },
+                    "uuid": "581db7a0-8a90-4bcb-8c7b-f2c39bdc2c6a"
+                },
+                {
+                    "description": "Pad 2 [/GND] of R4 on F.Cu",
+                    "pos": {
+                        "x": 90.725,
+                        "y": 66.0
+                    },
+                    "uuid": "93cbf2f8-46aa-44a2-ac7d-64ec30d4d6c5"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/GND] of J1",
+                    "pos": {
+                        "x": 111.0,
+                        "y": 16.54
+                    },
+                    "uuid": "3d5faeda-7769-43bc-ba00-231f6daf7860"
+                },
+                {
+                    "description": "PTH pad 1 [/GND] of J6",
+                    "pos": {
+                        "x": 94.0,
+                        "y": 18.0
+                    },
+                    "uuid": "cfdab5c2-ba27-4d5d-a4b2-17784435b535"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/GND] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 16.54
+                    },
+                    "uuid": "df61ecf5-5f78-4864-9b9f-55c4264a5199"
+                },
+                {
+                    "description": "PTH pad 2 [/GND] of J1",
+                    "pos": {
+                        "x": 111.0,
+                        "y": 16.54
+                    },
+                    "uuid": "3d5faeda-7769-43bc-ba00-231f6daf7860"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [/BAT_SENSE] of R3 on F.Cu",
+                    "pos": {
+                        "x": 86.725,
+                        "y": 66.0
+                    },
+                    "uuid": "6405ee20-83ea-4175-a085-3a2d382504dc"
+                },
+                {
+                    "description": "Pad 1 [/BAT_SENSE] of C8 on F.Cu",
+                    "pos": {
+                        "x": 87.275,
+                        "y": 69.0
+                    },
+                    "uuid": "f792d825-0e9e-412b-9a5d-86c68cdc2477"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [/BAT_SENSE] of R4 on F.Cu",
+                    "pos": {
+                        "x": 89.275,
+                        "y": 66.0
+                    },
+                    "uuid": "fdd3b0bd-124a-4467-973d-bfbcb132481a"
+                },
+                {
+                    "description": "Pad 2 [/BAT_SENSE] of R3 on F.Cu",
+                    "pos": {
+                        "x": 86.725,
+                        "y": 66.0
+                    },
+                    "uuid": "6405ee20-83ea-4175-a085-3a2d382504dc"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [/BAT_SENSE] of R4 on F.Cu",
+                    "pos": {
+                        "x": 89.275,
+                        "y": 66.0
+                    },
+                    "uuid": "fdd3b0bd-124a-4467-973d-bfbcb132481a"
+                },
+                {
+                    "description": "PTH pad 10 [/BAT_SENSE] of J1",
+                    "pos": {
+                        "x": 111.0,
+                        "y": 36.86
+                    },
+                    "uuid": "63ddae55-0033-4532-b01e-527a69ee271c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [/WS2812_DATA_3V3] of U3 on F.Cu",
+                    "pos": {
+                        "x": 89.0,
+                        "y": 55.0
+                    },
+                    "uuid": "daf7cb31-93d7-44e7-a8c3-58a0a37de761"
+                },
+                {
+                    "description": "PTH pad 5 [/WS2812_DATA_3V3] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 24.16
+                    },
+                    "uuid": "56b5e526-feca-45ba-ba98-777d4596acac"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/BAT_PLUS] of TP1",
+                    "pos": {
+                        "x": 48.0,
+                        "y": 87.0
+                    },
+                    "uuid": "e7f056ef-d265-4124-8b8d-a8cc8cb14b6c"
+                },
+                {
+                    "description": "Track [/BAT_PLUS] on F.Cu, length 7.8620 mm",
+                    "pos": {
+                        "x": 35.0,
+                        "y": 78.5
+                    },
+                    "uuid": "d6f11b0f-dde0-46c7-a409-4dbaaff09603"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [/AUX_3V3] on F.Cu, length 2.1000 mm",
+                    "pos": {
+                        "x": 15.4,
+                        "y": 27.0
+                    },
+                    "uuid": "aa521058-ef43-4a33-b7d2-a9bf07af1b9c"
+                },
+                {
+                    "description": "Pad 2 [/AUX_3V3] of U4 on F.Cu",
+                    "pos": {
+                        "x": 23.8,
+                        "y": 27.0
+                    },
+                    "uuid": "41788ff8-9ee6-42d5-b81e-c49579e932bb"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Via [/AUX_3V3] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 25.3,
+                        "y": 24.8
+                    },
+                    "uuid": "bc50876d-01ee-4f63-8717-9672d7cac50d"
+                },
+                {
+                    "description": "Via [/AUX_3V3] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 26.5,
+                        "y": 26.0
+                    },
+                    "uuid": "924a604f-5a4d-4d61-abea-aa58275fc0f1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Via [/AUX_3V3] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 25.3,
+                        "y": 29.2
+                    },
+                    "uuid": "460925c6-901b-41e8-a0da-382aed0a3c66"
+                },
+                {
+                    "description": "Via [/AUX_3V3] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 26.5,
+                        "y": 28.0
+                    },
+                    "uuid": "562d0b40-ea97-4c1b-9ef8-17952f287f7f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Via [/AUX_3V3] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 25.3,
+                        "y": 29.2
+                    },
+                    "uuid": "460925c6-901b-41e8-a0da-382aed0a3c66"
+                },
+                {
+                    "description": "Pad 2 [/AUX_3V3] of U4 on F.Cu",
+                    "pos": {
+                        "x": 23.8,
+                        "y": 27.0
+                    },
+                    "uuid": "41788ff8-9ee6-42d5-b81e-c49579e932bb"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Via [/AUX_3V3] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 26.5,
+                        "y": 26.0
+                    },
+                    "uuid": "924a604f-5a4d-4d61-abea-aa58275fc0f1"
+                },
+                {
+                    "description": "Via [/AUX_3V3] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 26.5,
+                        "y": 28.0
+                    },
+                    "uuid": "562d0b40-ea97-4c1b-9ef8-17952f287f7f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Via [/AUX_3V3] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 26.5,
+                        "y": 26.0
+                    },
+                    "uuid": "924a604f-5a4d-4d61-abea-aa58275fc0f1"
+                },
+                {
+                    "description": "Track [/AUX_3V3] on F.Cu, length 25.5000 mm",
+                    "pos": {
+                        "x": 37.5,
+                        "y": 22.54
+                    },
+                    "uuid": "aacd8d69-9d06-463e-8730-82d219dc3574"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/GPIO13] of J6",
+                    "pos": {
+                        "x": 94.0,
+                        "y": 20.54
+                    },
+                    "uuid": "614a2b14-ed4f-4618-86de-3b5382f5eb01"
+                },
+                {
+                    "description": "PTH pad 3 [/GPIO13] of J1",
+                    "pos": {
+                        "x": 111.0,
+                        "y": 19.08
+                    },
+                    "uuid": "eb82825c-e480-4055-b9f6-76bf35208e7d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/GPIO14] of J6",
+                    "pos": {
+                        "x": 94.0,
+                        "y": 23.08
+                    },
+                    "uuid": "bf72e34d-cd70-4da4-a71c-5a7afc3763ac"
+                },
+                {
+                    "description": "PTH pad 5 [/GPIO14] of J1",
+                    "pos": {
+                        "x": 111.0,
+                        "y": 24.16
+                    },
+                    "uuid": "7b485003-06d7-47e3-8157-961e83cb982d"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [/BUCK_IN] of R2 on F.Cu",
+                    "pos": {
+                        "x": 62.5,
+                        "y": 67.725
+                    },
+                    "uuid": "838ea4e0-2837-4d58-89b4-e5fdf840d4ed"
+                },
+                {
+                    "description": "Track [/BUCK_IN] on F.Cu, length 2.1426 mm",
+                    "pos": {
+                        "x": 65.5,
+                        "y": 61.0
+                    },
+                    "uuid": "94f09bd0-c686-4a5e-af8e-45005334253c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [/BUCK_IN] on F.Cu, length 1.1500 mm",
+                    "pos": {
+                        "x": 64.349999,
+                        "y": 77.0
+                    },
+                    "uuid": "a4eef94c-3eb6-420b-8595-5f49d55bb7bb"
+                },
+                {
+                    "description": "PTH pad 1 [/BUCK_IN] of TP3",
+                    "pos": {
+                        "x": 58.0,
+                        "y": 87.0
+                    },
+                    "uuid": "f0ca8cb9-b5ef-4e34-a3eb-24c9ae72f949"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [/BUCK_IN] on F.Cu, length 1.0000 mm",
+                    "pos": {
+                        "x": 69.25,
+                        "y": 57.4
+                    },
+                    "uuid": "5f8d71ac-d22a-4b52-b1e2-766801958885"
+                },
+                {
+                    "description": "Pad 1 [/BUCK_IN] of R3 on F.Cu",
+                    "pos": {
+                        "x": 85.275,
+                        "y": 66.0
+                    },
+                    "uuid": "f5329cc1-815d-4dfb-ae2a-1a8b9a5a1b10"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 4 [/GPIO18] of J6",
+                    "pos": {
+                        "x": 94.0,
+                        "y": 25.62
+                    },
+                    "uuid": "2c77b24f-6928-4e4a-b4c1-75e5564253c1"
+                },
+                {
+                    "description": "PTH pad 9 [/GPIO18] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 34.32
+                    },
+                    "uuid": "53d4b0c5-eb33-4727-8d87-c43c16bf04b4"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 5 [/GPIO19] of J6",
+                    "pos": {
+                        "x": 94.0,
+                        "y": 28.16
+                    },
+                    "uuid": "36eb2968-fcbe-41b4-add1-40338c8b9252"
+                },
+                {
+                    "description": "PTH pad 10 [/GPIO19] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 36.86
+                    },
+                    "uuid": "097032ac-35fa-49e0-b47e-48a3bf2a15d8"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 4 [/OLED_SDA] of J5",
+                    "pos": {
+                        "x": 63.0,
+                        "y": 27.62
+                    },
+                    "uuid": "56eeaf3b-7780-45ba-b83b-64e12478bc8b"
+                },
+                {
+                    "description": "PTH pad 11 [/OLED_SDA] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 39.4
+                    },
+                    "uuid": "6ec43f58-38b8-4f02-b43f-39049843d9d0"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/OLED_SCL] of J5",
+                    "pos": {
+                        "x": 63.0,
+                        "y": 25.08
+                    },
+                    "uuid": "0156dc64-6a7b-41e8-b1e3-d2cdd7ac8380"
+                },
+                {
+                    "description": "PTH pad 14 [/OLED_SCL] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 47.02
+                    },
+                    "uuid": "e033fe2b-d122-4e2f-9199-f61f7f503a7c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 6 [/GPIO23] of J6",
+                    "pos": {
+                        "x": 94.0,
+                        "y": 30.7
+                    },
+                    "uuid": "abd586d7-4bfc-4574-98ab-0be20a23f498"
+                },
+                {
+                    "description": "PTH pad 15 [/GPIO23] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 49.56
+                    },
+                    "uuid": "87be8fc2-3684-4741-8bb8-431e1f3fe898"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/5V_SYS] of J9",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 54.0
+                    },
+                    "uuid": "ec4726e4-41b7-4d47-9f08-96ba5317806c"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/BAT_FUSED] of J8",
+                    "pos": {
+                        "x": 51.0,
+                        "y": 76.0
+                    },
+                    "uuid": "a17af622-aff4-4213-8631-a7c87eab9604"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/BAT_SW] of J8",
+                    "pos": {
+                        "x": 53.5,
+                        "y": 76.0
+                    },
+                    "uuid": "e6035a25-278d-4a75-9b40-47c72e560d1f"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/WS2812_DATA_5V] of J9",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 56.54
+                    },
+                    "uuid": "05d0bb3e-f558-41fa-aae8-c461dcfd0f65"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/BAT_FUSED] of J8",
+                    "pos": {
+                        "x": 51.0,
+                        "y": 76.0
+                    },
+                    "uuid": "a17af622-aff4-4213-8631-a7c87eab9604"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/BAT_FUSED] of J8",
+                    "pos": {
+                        "x": 51.0,
+                        "y": 76.0
+                    },
+                    "uuid": "a17af622-aff4-4213-8631-a7c87eab9604"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/BAT_SW] of J8",
+                    "pos": {
+                        "x": 53.5,
+                        "y": 76.0
+                    },
+                    "uuid": "e6035a25-278d-4a75-9b40-47c72e560d1f"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/BAT_SW] of J8",
+                    "pos": {
+                        "x": 53.5,
+                        "y": 76.0
+                    },
+                    "uuid": "e6035a25-278d-4a75-9b40-47c72e560d1f"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/5V_SYS] of J9",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 54.0
+                    },
+                    "uuid": "ec4726e4-41b7-4d47-9f08-96ba5317806c"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/5V_SYS] of J9",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 54.0
+                    },
+                    "uuid": "ec4726e4-41b7-4d47-9f08-96ba5317806c"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/WS2812_DATA_5V] of J9",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 56.54
+                    },
+                    "uuid": "05d0bb3e-f558-41fa-aae8-c461dcfd0f65"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/WS2812_DATA_5V] of J9",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 56.54
+                    },
+                    "uuid": "05d0bb3e-f558-41fa-aae8-c461dcfd0f65"
+                },
+                {
+                    "description": "Zone [/GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 42.0,
+                        "y": 46.0
+                    },
+                    "uuid": "34eb6069-1a86-41ca-a113-a5bdd5a2c5c6"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [/GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 14.0,
+                        "y": 34.0
+                    },
+                    "uuid": "56b1cbb1-8d31-4e1e-bfda-c7d6b7fa04b3"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [/GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 15.5,
+                        "y": 24.7
+                    },
+                    "uuid": "7accb669-d74d-4937-8521-8368b62579ff"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [/GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 41.5,
+                        "y": 35.0
+                    },
+                    "uuid": "7c3cf330-8743-4675-858f-9eaddbd0217c"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [/GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 12.0,
+                        "y": 27.0
+                    },
+                    "uuid": "b09a59eb-3f6a-4873-b16b-b45f56058175"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [/GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 47.5,
+                        "y": 35.0
+                    },
+                    "uuid": "d28593f1-bbd7-4221-aa02-e21664f2cc13"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [/AUX_3V3] on F.Cu, length 25.5000 mm",
+                    "pos": {
+                        "x": 37.5,
+                        "y": 22.54
+                    },
+                    "uuid": "aacd8d69-9d06-463e-8730-82d219dc3574"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [/AUX_3V3] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 25.3,
+                        "y": 29.2
+                    },
+                    "uuid": "460925c6-901b-41e8-a0da-382aed0a3c66"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [/AUX_3V3] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 26.5,
+                        "y": 28.0
+                    },
+                    "uuid": "562d0b40-ea97-4c1b-9ef8-17952f287f7f"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [/AUX_3V3] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 26.5,
+                        "y": 26.0
+                    },
+                    "uuid": "924a604f-5a4d-4d61-abea-aa58275fc0f1"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [/AUX_3V3] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 25.3,
+                        "y": 24.8
+                    },
+                    "uuid": "bc50876d-01ee-4f63-8717-9672d7cac50d"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        }
+    ]
+}
