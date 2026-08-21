@@ -1,0 +1,473 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-08-21T04:37:52",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.5",
+    "schematic_parity": [],
+    "source": "10-silkscreen-candidate-a.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'GND/-' on F.Silkscreen",
+                    "pos": {
+                        "x": 38.0,
+                        "y": 79.8
+                    },
+                    "uuid": "34b144e9-df7d-4e18-b589-4875dd3b18d5"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7000 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'OPEN FOR USB' on F.Silkscreen",
+                    "pos": {
+                        "x": 97.0,
+                        "y": 10.7
+                    },
+                    "uuid": "b8e1b972-600e-4b15-ad5f-bfbbb6e1125f"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'G' on F.Silkscreen",
+                    "pos": {
+                        "x": 66.4,
+                        "y": 20.0
+                    },
+                    "uuid": "93d9e8df-a010-4c1e-abd0-e93d2a007dcc"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7000 mm)",
+            "items": [
+                {
+                    "description": "PCB text '3V3' on F.Silkscreen",
+                    "pos": {
+                        "x": 66.7,
+                        "y": 22.54
+                    },
+                    "uuid": "1261545b-ae48-4395-b607-2aa63408f780"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7000 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'SCL' on F.Silkscreen",
+                    "pos": {
+                        "x": 66.7,
+                        "y": 25.08
+                    },
+                    "uuid": "fb179af9-ca88-45c6-a253-a30cb0d3780c"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7000 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'SDA' on F.Silkscreen",
+                    "pos": {
+                        "x": 66.7,
+                        "y": 27.62
+                    },
+                    "uuid": "1b701a7c-7474-4229-b825-cad4fdb22343"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'G' on F.Silkscreen",
+                    "pos": {
+                        "x": 97.2,
+                        "y": 18.0
+                    },
+                    "uuid": "09b2f041-2eb3-48f2-83aa-0abf99f324cb"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)",
+            "items": [
+                {
+                    "description": "PCB text '1' on F.Silkscreen",
+                    "pos": {
+                        "x": 97.2,
+                        "y": 20.54
+                    },
+                    "uuid": "d7b2795a-b7cc-4216-b544-bfca41b79af0"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)",
+            "items": [
+                {
+                    "description": "PCB text '2' on F.Silkscreen",
+                    "pos": {
+                        "x": 97.2,
+                        "y": 23.08
+                    },
+                    "uuid": "0c8df1b0-17ca-40d3-9b7d-71be666bd606"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)",
+            "items": [
+                {
+                    "description": "PCB text '3' on F.Silkscreen",
+                    "pos": {
+                        "x": 97.2,
+                        "y": 25.62
+                    },
+                    "uuid": "84766564-35d4-4a04-baa7-21520275d95a"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)",
+            "items": [
+                {
+                    "description": "PCB text '4' on F.Silkscreen",
+                    "pos": {
+                        "x": 97.2,
+                        "y": 28.16
+                    },
+                    "uuid": "99afb9a6-b87e-4ff7-babb-57a7806e6395"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)",
+            "items": [
+                {
+                    "description": "PCB text '5' on F.Silkscreen",
+                    "pos": {
+                        "x": 97.2,
+                        "y": 30.7
+                    },
+                    "uuid": "d5624f95-3346-43d2-99b5-70c0b2337f7c"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7000 mm)",
+            "items": [
+                {
+                    "description": "PCB text '5V' on F.Silkscreen",
+                    "pos": {
+                        "x": 103.1,
+                        "y": 54.0
+                    },
+                    "uuid": "40e04373-b632-4a7f-bd8b-4affc329ce30"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'D' on F.Silkscreen",
+                    "pos": {
+                        "x": 103.1,
+                        "y": 56.54
+                    },
+                    "uuid": "237f9e96-1bb8-4377-89b2-947e1e06ffad"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7500 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'G' on F.Silkscreen",
+                    "pos": {
+                        "x": 103.1,
+                        "y": 59.08
+                    },
+                    "uuid": "a64aba5f-ef2c-4a5f-8a82-8f35feded1ed"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7000 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'MAX 3' on F.Silkscreen",
+                    "pos": {
+                        "x": 105.3,
+                        "y": 60.4
+                    },
+                    "uuid": "60ff564a-6c6f-4777-ae6e-ef23854b195f"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7000 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'BAT+' on F.Silkscreen",
+                    "pos": {
+                        "x": 48.0,
+                        "y": 89.0
+                    },
+                    "uuid": "2629e5ac-79d3-4257-9bc2-131ce2f7c827"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7000 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'GND' on F.Silkscreen",
+                    "pos": {
+                        "x": 53.0,
+                        "y": 89.0
+                    },
+                    "uuid": "89466d6e-b451-4e23-a79a-1b260a5cdae1"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7000 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'BUCK' on F.Silkscreen",
+                    "pos": {
+                        "x": 58.0,
+                        "y": 89.0
+                    },
+                    "uuid": "cd6313ec-a7e3-4f73-8749-6e77f9af1f92"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7000 mm)",
+            "items": [
+                {
+                    "description": "PCB text '5V' on F.Silkscreen",
+                    "pos": {
+                        "x": 63.0,
+                        "y": 89.0
+                    },
+                    "uuid": "0f1a80e8-b273-4cfe-a1d4-66ad5f81ae68"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7000 mm)",
+            "items": [
+                {
+                    "description": "PCB text '5V' on F.Silkscreen",
+                    "pos": {
+                        "x": 68.0,
+                        "y": 89.0
+                    },
+                    "uuid": "7097c89d-f2fe-4ac6-9fdd-ecdb40e7e16c"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7000 mm)",
+            "items": [
+                {
+                    "description": "PCB text '400/900: MATCH ANT' on F.Silkscreen",
+                    "pos": {
+                        "x": 15.5,
+                        "y": 85.0
+                    },
+                    "uuid": "53c6e122-4fb6-439a-a7c4-571e2fede937"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Carrier'",
+            "items": [
+                {
+                    "description": "Footprint J9",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 54.0
+                    },
+                    "uuid": "4a360355-6357-485a-ac02-0e4815c24626"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Carrier'",
+            "items": [
+                {
+                    "description": "Footprint C9",
+                    "pos": {
+                        "x": 17.5,
+                        "y": 33.0
+                    },
+                    "uuid": "56a5e96a-c095-43ff-9ae2-394b10c786ed"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Carrier'",
+            "items": [
+                {
+                    "description": "Footprint C10",
+                    "pos": {
+                        "x": 14.4,
+                        "y": 27.0
+                    },
+                    "uuid": "b56c2d1f-537b-40e1-ad45-452b9c051c22"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Carrier'",
+            "items": [
+                {
+                    "description": "Footprint R4",
+                    "pos": {
+                        "x": 90.0,
+                        "y": 66.0
+                    },
+                    "uuid": "c2290e18-690e-4a9b-82d8-939e2b5ae69e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Carrier'",
+            "items": [
+                {
+                    "description": "Footprint C8",
+                    "pos": {
+                        "x": 88.0,
+                        "y": 69.0
+                    },
+                    "uuid": "dab86919-dfdb-48c8-91a4-351d78c723df"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Carrier'",
+            "items": [
+                {
+                    "description": "Footprint R3",
+                    "pos": {
+                        "x": 86.0,
+                        "y": 66.0
+                    },
+                    "uuid": "e243c146-e406-42f5-933d-442950fd309a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Carrier'",
+            "items": [
+                {
+                    "description": "Footprint J6",
+                    "pos": {
+                        "x": 94.0,
+                        "y": 18.0
+                    },
+                    "uuid": "f87cad3d-f2ec-44f9-bfcb-536bdbf2d49e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        }
+    ]
+}

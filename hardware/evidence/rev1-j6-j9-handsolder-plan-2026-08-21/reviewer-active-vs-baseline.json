@@ -1,0 +1,17 @@
+{
+  "after_fingerprint_sha256": "63adf5a8ed29d64a6c96aa8e718f03d27dbe7188703aac6e029d9e90df28a7c6",
+  "before_fingerprint_sha256": "c198408aeb11dde289e13ef7642e74010d07972324f3f3f1fffbb77c3ae2c761",
+  "comparison_scope": "footprint XY/rotation and pads; segment/via UUID and geometry; zones with boundaries/fills; Edge.Cuts",
+  "copper_geometry_changes": null,
+  "electrical_connectivity_changes": null,
+  "field_equality": {
+    "board_outline_edge_cuts": true,
+    "counts": false,
+    "footprints": true,
+    "segments": false,
+    "vias": true,
+    "zones": false
+  },
+  "placement_changes": null,
+  "status": "FAIL"
+}

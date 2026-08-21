@@ -1,0 +1,107 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-08-21T02:33:42",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.5",
+    "schematic_parity": [],
+    "source": "02-candidate.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0750 mm)",
+            "items": [
+                {
+                    "description": "Via [/GPIO18] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 115.0,
+                        "y": 20.35
+                    },
+                    "uuid": "0a666bf9-c255-4f1e-99c9-a6f1008c6102"
+                },
+                {
+                    "description": "Track [/OLED_SDA] on F.Cu, length 7.0000 mm",
+                    "pos": {
+                        "x": 114.5,
+                        "y": 16.0
+                    },
+                    "uuid": "35ce3417-fc7f-41ba-a5e6-b8639989e1ac"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1503 mm)",
+            "items": [
+                {
+                    "description": "Track [/GPIO19] on F.Cu, length 19.6698 mm",
+                    "pos": {
+                        "x": 115.0,
+                        "y": 22.89
+                    },
+                    "uuid": "3c506eb8-6f7d-4ec3-afdf-0ce3a12a07aa"
+                },
+                {
+                    "description": "Track [/OLED_SDA] on F.Cu, length 23.8170 mm",
+                    "pos": {
+                        "x": 114.5,
+                        "y": 23.0
+                    },
+                    "uuid": "ea4e6891-da26-4691-a39f-1950f46b49ec"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0750 mm)",
+            "items": [
+                {
+                    "description": "Track [/OLED_SDA] on F.Cu, length 7.0000 mm",
+                    "pos": {
+                        "x": 114.5,
+                        "y": 16.0
+                    },
+                    "uuid": "35ce3417-fc7f-41ba-a5e6-b8639989e1ac"
+                },
+                {
+                    "description": "Via [/GPIO19] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 115.0,
+                        "y": 22.89
+                    },
+                    "uuid": "5ed88633-bb12-4a69-adaa-de68375a0aec"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        }
+    ]
+}

@@ -1,0 +1,132 @@
+{
+  "B_Cu_GND_zone_count": 2,
+  "B_Cu_filled_outline_island_flags": [
+    false,
+    false,
+    false,
+    false
+  ],
+  "J6_J9_pad_nets": {
+    "J6": [
+      "/GND",
+      "/GPIO13",
+      "/GPIO14",
+      "/GPIO18",
+      "/GPIO19",
+      "/GPIO23"
+    ],
+    "J9": [
+      "/5V_SYS",
+      "/WS2812_DATA_5V",
+      "/GND"
+    ]
+  },
+  "explicit_tracks": [
+    {
+      "end_mm": [
+        97.0,
+        59.08
+      ],
+      "layer": "B.Cu",
+      "length_mm": 3.0,
+      "net": "/GND",
+      "start_mm": [
+        100.0,
+        59.08
+      ],
+      "width_mm": 0.8
+    },
+    {
+      "end_mm": [
+        97.0,
+        18.0
+      ],
+      "layer": "B.Cu",
+      "length_mm": 3.0,
+      "net": "/GND",
+      "start_mm": [
+        94.0,
+        18.0
+      ],
+      "width_mm": 0.8
+    }
+  ],
+  "no_isolated_B_Cu_GND_fill": true,
+  "pad_global_connectivity": {
+    "J6.1": {
+      "connected_global_B_Cu_GND_zone_bboxes_mm": [
+        [
+          6.0,
+          10.0,
+          98.4,
+          41.5
+        ],
+        [
+          42.0,
+          46.0,
+          61.0,
+          43.0
+        ]
+      ],
+      "connected_item_count": 84,
+      "net": "/GND",
+      "position_mm": [
+        94.0,
+        18.0
+      ]
+    },
+    "J9.3": {
+      "connected_global_B_Cu_GND_zone_bboxes_mm": [
+        [
+          6.0,
+          10.0,
+          98.4,
+          41.5
+        ],
+        [
+          42.0,
+          46.0,
+          61.0,
+          43.0
+        ]
+      ],
+      "connected_item_count": 84,
+      "net": "/GND",
+      "position_mm": [
+        100.0,
+        59.08
+      ]
+    }
+  },
+  "rule_areas": {
+    "J6_HANDSOLDER_CLEARANCE": {
+      "bbox_mm": [
+        91.75,
+        15.75,
+        4.5,
+        17.2
+      ],
+      "copperpour_not_allowed": true,
+      "footprints_allowed": true,
+      "layer": "B.Cu",
+      "pads_allowed": true,
+      "tracks_allowed": true,
+      "vias_allowed": true
+    },
+    "J9_HANDSOLDER_CLEARANCE": {
+      "bbox_mm": [
+        97.75,
+        51.75,
+        5.25,
+        9.58
+      ],
+      "copperpour_not_allowed": true,
+      "footprints_allowed": true,
+      "layer": "B.Cu",
+      "pads_allowed": true,
+      "tracks_allowed": true,
+      "vias_allowed": true
+    }
+  },
+  "status": "PASS"
+}

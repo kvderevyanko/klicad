@@ -1,0 +1,58 @@
+{
+  "added_footprint_references": [
+    "H1",
+    "H2",
+    "H3"
+  ],
+  "added_rule_areas": [
+    "H1_M3_COPPER_KEEPOUT",
+    "H2_M3_COPPER_KEEPOUT",
+    "H3_M3_COPPER_KEEPOUT",
+    "J5_HANDSOLDER_CLEARANCE"
+  ],
+  "added_segments": [
+    [
+      "segment",
+      [
+        "start",
+        "63",
+        "20"
+      ],
+      [
+        "end",
+        "60",
+        "20"
+      ],
+      [
+        "width",
+        "0.8"
+      ],
+      [
+        "layer",
+        "B.Cu"
+      ],
+      [
+        "net",
+        "/GND"
+      ],
+      [
+        "uuid",
+        "9ec519fd-b8cc-4a32-ba7a-80a8559a7909"
+      ]
+    ]
+  ],
+  "existing_footprints_unchanged": true,
+  "filled_polygon_differences_ignored": "authorized consequences of four new rule areas",
+  "ordinary_and_existing_rule_area_definitions_unchanged": true,
+  "removed_segments": [],
+  "removed_zone_definitions": 0,
+  "status": "PASS",
+  "unchanged_board_items": {
+    "gr_arc": true,
+    "gr_line": true,
+    "gr_poly": true,
+    "gr_rect": true,
+    "gr_text": true,
+    "via": true
+  }
+}

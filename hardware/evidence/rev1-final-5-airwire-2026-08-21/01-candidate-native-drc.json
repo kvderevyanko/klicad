@@ -1,0 +1,107 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-08-21T02:31:53",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.5",
+    "schematic_parity": [],
+    "source": "01-candidate.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Track [/OLED_SDA] on F.Cu, length 4.3012 mm",
+                    "pos": {
+                        "x": 111.5,
+                        "y": 12.5
+                    },
+                    "uuid": "2ff68fb8-092c-4a5e-b482-e37b620c942c"
+                },
+                {
+                    "description": "PTH pad 1 [/DEVKIT_VIN] of J1",
+                    "pos": {
+                        "x": 111.0,
+                        "y": 14.0
+                    },
+                    "uuid": "856b7a00-337c-494d-9afb-3dbc9a08b71c"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Items shorting two nets (nets /OLED_SDA and /DEVKIT_VIN)",
+            "items": [
+                {
+                    "description": "Track [/OLED_SDA] on F.Cu, length 4.3012 mm",
+                    "pos": {
+                        "x": 111.5,
+                        "y": 12.5
+                    },
+                    "uuid": "2ff68fb8-092c-4a5e-b482-e37b620c942c"
+                },
+                {
+                    "description": "PTH pad 1 [/DEVKIT_VIN] of J1",
+                    "pos": {
+                        "x": 111.0,
+                        "y": 14.0
+                    },
+                    "uuid": "856b7a00-337c-494d-9afb-3dbc9a08b71c"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1119 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/5V_SYS] of JP1",
+                    "pos": {
+                        "x": 96.0,
+                        "y": 14.0
+                    },
+                    "uuid": "40bb62d9-e1ba-4fda-9c0c-d12c1d21fb97"
+                },
+                {
+                    "description": "Track [/OLED_SDA] on F.Cu, length 36.2990 mm",
+                    "pos": {
+                        "x": 63.0,
+                        "y": 27.62
+                    },
+                    "uuid": "68f7f67f-cee6-4d64-8399-80043463619c"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        }
+    ]
+}

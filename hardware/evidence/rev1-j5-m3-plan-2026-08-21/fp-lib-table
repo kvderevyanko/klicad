@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Carrier")(type "KiCad")(uri "${KIPRJMOD}/../../esp32-e220.pretty")(options "")(descr "Released project-local Carrier footprints"))
+  (lib (name "PlanCarrier")(type "KiCad")(uri "${KIPRJMOD}")(options "")(descr "Read-only J5/M3 plan-candidate footprint"))
+)

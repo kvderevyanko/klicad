@@ -1,0 +1,161 @@
+{
+  "checks": {
+    "Edge_Cuts_identical": true,
+    "U3_origin_rotation_unchanged": true,
+    "all_non_U3_footprints_identical": true,
+    "all_vias_identical": true,
+    "only_expected_U3_local_segments_changed": true,
+    "zone_boundaries_nets_rules_identical": true
+  },
+  "non_U3_footprints_changed": [],
+  "segment_changes": [
+    {
+      "after": {
+        "end": [
+          89.0,
+          54.75
+        ],
+        "layer": "F.Cu",
+        "net": "/WS2812_DATA_3V3",
+        "start": [
+          89.0,
+          58.0
+        ],
+        "width": 0.25
+      },
+      "before": {
+        "end": [
+          89.0,
+          55.0
+        ],
+        "layer": "F.Cu",
+        "net": "/WS2812_DATA_3V3",
+        "start": [
+          89.0,
+          58.0
+        ],
+        "width": 0.25
+      },
+      "uuid": "02e750f7-1ae2-44c5-9fc4-c55c2823b1e9"
+    },
+    {
+      "after": {
+        "end": [
+          94.0,
+          51.5
+        ],
+        "layer": "F.Cu",
+        "net": "/WS2812_DATA_5V",
+        "start": [
+          89.475,
+          53.25
+        ],
+        "width": 0.25
+      },
+      "before": {
+        "end": [
+          94.0,
+          51.5
+        ],
+        "layer": "F.Cu",
+        "net": "/WS2812_DATA_5V",
+        "start": [
+          89.475,
+          53.0
+        ],
+        "width": 0.25
+      },
+      "uuid": "32e0895c-bc20-429f-9684-018e7fcc24bb"
+    },
+    {
+      "after": {
+        "end": [
+          91.0,
+          55.0
+        ],
+        "layer": "F.Cu",
+        "net": "/GND",
+        "start": [
+          89.95,
+          54.75
+        ],
+        "width": 0.5
+      },
+      "before": {
+        "end": [
+          91.0,
+          55.0
+        ],
+        "layer": "F.Cu",
+        "net": "/GND",
+        "start": [
+          89.95,
+          55.0
+        ],
+        "width": 0.5
+      },
+      "uuid": "6308e9af-e3b4-4509-b16a-d1588a1cc74b"
+    },
+    {
+      "after": {
+        "end": [
+          87.2,
+          56.5
+        ],
+        "layer": "F.Cu",
+        "net": "/GND",
+        "start": [
+          88.05,
+          54.75
+        ],
+        "width": 0.5
+      },
+      "before": {
+        "end": [
+          87.2,
+          56.5
+        ],
+        "layer": "F.Cu",
+        "net": "/GND",
+        "start": [
+          88.05,
+          55.0
+        ],
+        "width": 0.5
+      },
+      "uuid": "8b5ac9dc-4208-4f80-99be-6912b8d39d52"
+    },
+    {
+      "after": {
+        "end": [
+          88.525,
+          53.25
+        ],
+        "layer": "F.Cu",
+        "net": "/5V_SYS",
+        "start": [
+          88.525,
+          51.9
+        ],
+        "width": 0.5
+      },
+      "before": {
+        "end": [
+          88.525,
+          53.0
+        ],
+        "layer": "F.Cu",
+        "net": "/5V_SYS",
+        "start": [
+          88.525,
+          51.9
+        ],
+        "width": 0.5
+      },
+      "uuid": "da2890d9-c14e-428c-9a65-9024952b7af6"
+    }
+  ],
+  "status": "PASS",
+  "summary": "Only U3 footprint geometry and the five 0.25-mm local pad-endpoint shifts differ.",
+  "unexpected_segment_changes": []
+}

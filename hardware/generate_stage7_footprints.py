@@ -141,25 +141,30 @@ def dmp3130() -> str:
 
 
 def sn74ahct1g125() -> str:
-    """TI DBV SOT-23-5 placement candidate.
+    """Released TI DBV0005A SOT-23-5 manufacturer land pattern.
 
-    The package and pin orientation are controlled here so that the functional
-    placement board has a real carrier-side component.  Its copper is still
-    explicitly subject to the project MPN-specific PCBA/land-pattern audit
-    before board release; this script must not make that audit disappear.
+    Source: TI SN74AHCT1G125 data sheet SCLS378P, Rev. P, and package drawing
+    DBV0005A 4214839/K, August 2024.  The 0.60 x 1.10-mm land pattern uses
+    TI's example 0.125-mm stencil apertures and an NSMD mask expansion that is
+    within the drawing's stated maximum surround.
     """
     return "".join((
-        '(footprint "TI_SN74AHCT1G125DBVR_SOT23-5" (version 20240108) (generator "stage8")\n',
+        '(footprint "TI_SN74AHCT1G125DBVR_SOT23-5" (version 20240108) (generator "rev1-u3-dbv-release")\n',
         '  (layer "F.Cu")\n',
-        '  (descr "TI SN74AHCT1G125DBVR, DBV SOT-23-5. Stage-8 functional-placement footprint; final MPN-specific copper/assembly audit remains a PCB-release DFM item.")\n',
+        '  (descr "TI SN74AHCT1G125DBVR, DBV0005A SOT-23-5 released land pattern; TI drawing 4214839/K, 08/2024.")\n',
         '  (attr smd)\n', text("reference", "U", 0, -2.35, "F.SilkS"), text("value", "SN74AHCT1G125DBVR", 0, 2.35, "F.Fab", 0.75),
-        rect(-1.50, -1.45, 1.50, 1.45, "F.Fab", 0.10), rect(-2.05, -2.00, 2.05, 2.00, "F.CrtYd", 0.05),
-        line(-1.50, -1.85, -0.75, -1.85, "F.SilkS", 0.30),
-        smd_pad("1", -0.95, 1.00, 0.60, 0.80, "rect"),
-        smd_pad("2", 0.00, 1.00, 0.60, 0.80, "rect"),
-        smd_pad("3", 0.95, 1.00, 0.60, 0.80, "rect"),
-        smd_pad("4", 0.475, -1.00, 0.60, 0.80, "rect"),
-        smd_pad("5", -0.475, -1.00, 0.60, 0.80, "rect"),
+        line(-1.500, -0.875, 1.500, -0.875, "F.Fab", 0.100),
+        line(1.500, -0.875, 1.500, 0.875, "F.Fab", 0.100),
+        line(1.500, 0.875, -1.000, 0.875, "F.Fab", 0.100),
+        line(-1.000, 0.875, -1.500, 0.375, "F.Fab", 0.100),
+        line(-1.500, 0.375, -1.500, -0.875, "F.Fab", 0.100),
+        rect(-1.750, -1.800, 1.750, 1.800, "F.CrtYd", 0.050),
+        '  (fp_circle (center -1.550 1.500) (end -1.400 1.500) (stroke (width 0.150) (type default)) (fill none) (layer "F.SilkS"))\n',
+        '  (pad "1" smd roundrect (at -0.950 0.750) (size 0.600 1.100) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.166667) (solder_mask_margin 0.050))\n',
+        '  (pad "2" smd roundrect (at 0.000 0.750) (size 0.600 1.100) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.166667) (solder_mask_margin 0.050))\n',
+        '  (pad "3" smd roundrect (at 0.950 0.750) (size 0.600 1.100) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.166667) (solder_mask_margin 0.050))\n',
+        '  (pad "4" smd roundrect (at 0.475 -0.750) (size 0.600 1.100) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.166667) (solder_mask_margin 0.050))\n',
+        '  (pad "5" smd roundrect (at -0.475 -0.750) (size 0.600 1.100) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.166667) (solder_mask_margin 0.050))\n',
         ')\n',
     ))
 
@@ -367,6 +372,28 @@ def oled_template() -> str:
     return "".join(contents)
 
 
+def mounting_hole_m3_npth() -> str:
+    """Rev.1 enclosure mounting hole: 3.20-mm NPTH, no copper pad.
+
+    The separate layout-level 8.00-mm F.Cu/B.Cu keepout is intentionally not
+    embedded in the footprint so it is machine-visible as a named rule area.
+    """
+    return "".join((
+        '(footprint "MountingHole_M3_NPTH_REV1" (version 20240108) (generator "rev1-final-mechanical-serviceability")\n',
+        '  (layer "F.Cu")\n',
+        '  (descr "Rev.1 mechanical mounting hole: 3.20 mm NPTH, M3, 8.00 mm screw-head courtyard")\n',
+        '  (attr through_hole exclude_from_pos_files exclude_from_bom)\n',
+        text("reference", "H", 0, -5.000, "F.SilkS"),
+        '  (fp_text value "M3 NPTH" (at 0 5.000) (layer "F.Fab") hide\n'
+        '    (effects (font (size 1.000 1.000) (thickness 0.150))))\n',
+        '  (fp_circle (center 0 0) (end 4.000 0) (stroke (width 0.150) (type default)) (fill none) (layer "F.SilkS"))\n',
+        '  (fp_circle (center 0 0) (end 1.600 0) (stroke (width 0.100) (type default)) (fill none) (layer "F.Fab"))\n',
+        '  (fp_circle (center 0 0) (end 4.000 0) (stroke (width 0.050) (type default)) (fill none) (layer "F.CrtYd"))\n',
+        '  (pad "" np_thru_hole circle (at 0 0) (size 3.200 3.200) (drill 3.200) (layers "*.Cu" "*.Mask"))\n',
+        ')\n',
+    ))
+
+
 def main() -> None:
     LIBRARY.mkdir(exist_ok=True)
     # This managed candidate belonged only to the removed onboard D2.  Delete
@@ -382,6 +409,7 @@ def main() -> None:
         "ESP32_DevKit_30pin_Socket_2x15_MechanicalTemplate.kicad_mod": esp32_template(),
         "E220_T22D_Socket_400_900.kicad_mod": e220_socket(),
         "OLED_0p96_4pin_MechanicalTemplate_PENDING_DATUM.kicad_mod": oled_template(),
+        "MountingHole_M3_NPTH_REV1.kicad_mod": mounting_hole_m3_npth(),
         "TI_TPS62133RGT_RGT0016C.kicad_mod": tps62133(),
         "Coilcraft_XFL4020-222MEB.kicad_mod": xfl4020(),
         "Diodes_DMP3130LQ-7_SOT23.kicad_mod": dmp3130(),

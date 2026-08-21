@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Carrier")(type "KiCad")(uri "${KIPRJMOD}/../../esp32-e220.pretty")(options "")(descr "Authoritative project-local carrier footprints"))
+)

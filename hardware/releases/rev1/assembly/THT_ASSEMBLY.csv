@@ -1,0 +1,8 @@
+Reference,Manufacturer,MPN,Side,Orientation / pin-1 note,Functional description
+J1,Samtec,SSW-115-02-G-S,Top,ESP32 left socket; follow silkscreen,"ESP32 carrier socket, not module"
+J2,Samtec,SSW-115-02-G-S,Top,ESP32 right socket; follow silkscreen,"ESP32 carrier socket, not module"
+J3,Samtec,SSW-107-02-G-S,Top,E220 socket; PIN 1 / M0 silkscreen,"E220 carrier socket, not E220 module"
+J4,JST,B2B-XH-A,Top,"1=BAT+, 2=GND",Through-hole PCBA part
+J5,Samtec,SSW-104-02-G-S,Top,"1=GND, 2=AUX_3V3, 3=SCL, 4=SDA","OLED carrier socket, not OLED module"
+J8,JST,B2B-XH-A,Top,external POWER SW,Through-hole PCBA part
+JP1,Samtec,TSW-102-07-G-S,Top,DEVKIT PWR header; shunt supplied separately,2-pin header only

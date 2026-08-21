@@ -1,0 +1,18 @@
+{
+  "board": "hardware/esp32-e220.kicad_pcb",
+  "reference": "hardware/evidence/rev1-u3-dbv-release-2026-08-21/00-active-baseline.kicad_pcb",
+  "mode": "full",
+  "overall_status": "PASS",
+  "counts": {"footprints": 37, "tracks": 200, "vias": 58, "zones": 4},
+  "copper_layers": 2,
+  "outline_mm": [145.0, 90.0],
+  "protected_checkpoint": "PASS",
+  "antenna_exclusion": "PASS",
+  "schematic_pcb_parity": "PASS",
+  "native_drc": {
+    "geometric_violations": 0,
+    "footprint_errors": 0,
+    "zone_errors": 0,
+    "unconnected_items": 0
+  }
+}

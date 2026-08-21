@@ -1,0 +1,129 @@
+{
+  "counts": {
+    "copper_zones": 4,
+    "footprints": 37,
+    "rule_areas": 1,
+    "tracks": 185,
+    "vias": 58
+  },
+  "invariance": {
+    "added_tracks": 0,
+    "added_vias": 2,
+    "baseline_copper_items": 241,
+    "changed_baseline_copper_uuids": [],
+    "changed_footprints_or_pads": [],
+    "changed_zone_or_rule_area_outlines": [],
+    "missing_baseline_copper_uuids": []
+  },
+  "native_drc": {
+    "categories": [],
+    "unconnected_items": 4,
+    "violations": 0
+  },
+  "route_metrics": {
+    "/GND": {
+      "layers": [],
+      "length_mm": 0.0,
+      "segments": [],
+      "track_segments": 0,
+      "via_coordinates": [
+        [
+          70.5,
+          53.0
+        ],
+        [
+          68.7,
+          54.0
+        ]
+      ],
+      "via_geometry_mm": [
+        [
+          0.6,
+          0.3
+        ]
+      ],
+      "vias": 2,
+      "widths_mm": []
+    }
+  },
+  "sha256": {
+    "baseline": "aec6bac3ae6710390cb5eba7477a1036d531b02adafb1cbea38091fd7987ef13",
+    "candidate": "df17681958f72c9f53a19605287685febc8b2a047bf8495f3fd07e49773138ec"
+  },
+  "u1_ground_proof": {
+    "all_six_u1_pads_share_f_cu_island_with_both_vias": true,
+    "b_cu_main_plane_membership": {
+      "U1.15": [
+        0
+      ],
+      "U1.16": [
+        0
+      ],
+      "U1.5": [
+        0
+      ],
+      "U1.6": [
+        0
+      ],
+      "U1.8": [
+        0
+      ],
+      "U1.EP": [
+        0
+      ],
+      "VIA_GND_U1_A": [
+        0
+      ],
+      "VIA_GND_U1_B": [
+        0
+      ]
+    },
+    "both_vias_overlap_main_b_cu_gnd_polygon": true,
+    "f_cu_filled_island_membership": {
+      "U1.15": [
+        2
+      ],
+      "U1.16": [
+        2
+      ],
+      "U1.5": [
+        2
+      ],
+      "U1.6": [
+        2
+      ],
+      "U1.8": [
+        2
+      ],
+      "U1.EP": [
+        2
+      ],
+      "VIA_GND_U1_A": [
+        2
+      ],
+      "VIA_GND_U1_B": [
+        2
+      ]
+    },
+    "known_global_gnd_pads_in_same_b_cu_polygon": [
+      "C1.2",
+      "C2.2",
+      "C3.2",
+      "C4.2",
+      "C7.2",
+      "C8.2",
+      "J9.3",
+      "R1.2",
+      "R4.2",
+      "TP2.1",
+      "U1.15",
+      "U1.16",
+      "U1.5",
+      "U1.6",
+      "U1.8",
+      "U1.EP",
+      "U3.1",
+      "U3.3"
+    ]
+  }
+}

@@ -123,9 +123,12 @@ def parse_board(path: Path) -> dict[str, Any]:
         fp_at = at(fp); pads = []
         for pad in forms(fp, "pad"):
             local = at(pad); net = first(pad, "net")
+            drill = first(pad, "drill"); size = first(pad, "size")
             pads.append({
                 "number": value(pad, 1), "type": value(pad, 2), "net": net_name(net),
                 "copper": is_copper_pad(pad), "xy": absolute_point(fp_at, local), "local": local,
+                "drill_mm": [fvalue(drill, 1), fvalue(drill, 2, fvalue(drill, 1))],
+                "size_mm": [fvalue(size, 1), fvalue(size, 2)],
             })
         footprints.append({"ref": prop_map(fp).get("Reference", ""), "name": value(fp, 1), "at": fp_at, "pads": pads})
     def segment_points(item: list[Any]) -> list[tuple[float, float]]:
@@ -170,6 +173,56 @@ def parse_board(path: Path) -> dict[str, Any]:
 
 def result(name: str, status: str, evidence: Any) -> dict[str, Any]:
     return {"name": name, "status": status, "evidence": evidence}
+
+
+def check_counts(data: dict[str, Any], cfg: dict[str, Any]) -> dict[str, Any]:
+    actual = {
+        "footprints": len(data["footprints"]),
+        "tracks": len(data["tracks"]),
+        "vias": len(data["vias"]),
+        "zones": len(data["zones"]),
+        "rule_areas": len(data["rule_areas"]),
+    }
+    expected = cfg.get("expected_counts")
+    if expected is None:
+        return result("COUNTS", INC, {"actual": actual, "error": "expected_counts missing"})
+    return result("COUNTS", PASS if actual == expected else FAIL, {"actual": actual, "expected": expected})
+
+
+def check_mounting_holes(data: dict[str, Any], cfg: dict[str, Any]) -> dict[str, Any]:
+    expected = cfg.get("mounting_holes", {})
+    tolerance = float(cfg.get("mounting_hole_tolerance_mm", 0.001))
+    by_ref = {footprint["ref"]: footprint for footprint in data["footprints"]}
+    failures, evidence = [], {}
+    for ref, target in sorted(expected.items()):
+        footprint = by_ref.get(ref)
+        if footprint is None:
+            failures.append(f"{ref} missing")
+            continue
+        pads = footprint["pads"]
+        pad = pads[0] if len(pads) == 1 else None
+        expected_xy = (float(target["x"]), float(target["y"]))
+        evidence[ref] = {
+            "footprint": footprint["name"], "origin_mm": footprint["at"],
+            "pad_count": len(pads), "pad": pad,
+        }
+        if footprint["name"] != "Carrier:MountingHole_M3_NPTH_REV1":
+            failures.append(f"{ref} footprint identity mismatch")
+        if abs(footprint["at"][0] - expected_xy[0]) > tolerance or abs(footprint["at"][1] - expected_xy[1]) > tolerance:
+            failures.append(f"{ref} coordinate mismatch")
+        if pad is None or pad["type"] != "np_thru_hole" or pad["copper"] or pad["net"]:
+            failures.append(f"{ref} must contain one netless NPTH pad with no copper pad")
+        elif (
+            any(abs(value - float(target["drill"])) > tolerance for value in pad["drill_mm"])
+            or any(abs(value - float(target["drill"])) > tolerance for value in pad["size_mm"])
+        ):
+            failures.append(f"{ref} 3.20-mm drill/size mismatch")
+    actual_refs = sorted(ref for ref in by_ref if ref.startswith("H"))
+    if actual_refs != sorted(expected):
+        failures.append(f"mechanical reference set mismatch: {actual_refs}")
+    return result("M3 NPTH MOUNTING HOLES", FAIL if failures else PASS,
+                  {"expected_count": len(expected), "actual_refs": actual_refs,
+                   "tolerance_mm": tolerance, "holes": evidence, "failures": failures})
 
 
 def in_rect(point: tuple[float, float], rect: dict[str, float]) -> bool:
@@ -329,7 +382,7 @@ def main() -> int:
         checks.append(result("BOARD LOAD", FAIL, {"board": str(args.board), "error": str(exc)}))
         payload = {"board": str(args.board), "mode": "fast" if args.fast else "full", "checks": checks, "overall_status": FAIL}
         print(json.dumps(payload, indent=2, sort_keys=True) if args.json else "BOARD LOAD: FAIL\n" + str(exc)); return 1
-    checks.extend([result("COPPER LAYERS", PASS if len(data["copper_layers"]) == 2 else FAIL, {"count": len(data["copper_layers"]), "layers": data["copper_layers"]}), check_outline(data, cfg), result("COUNTS", PASS, {"footprints": len(data["footprints"]), "tracks": len(data["tracks"]), "vias": len(data["vias"]), "zones": len(data["zones"])}), check_duplicate_pads(data), check_netless(data, cfg), check_antenna(data, cfg), check_edge(data), check_protected(data, args.reference, cfg)])
+    checks.extend([result("COPPER LAYERS", PASS if len(data["copper_layers"]) == 2 else FAIL, {"count": len(data["copper_layers"]), "layers": data["copper_layers"]}), check_outline(data, cfg), check_counts(data, cfg), check_mounting_holes(data, cfg), check_duplicate_pads(data), check_netless(data, cfg), check_antenna(data, cfg), check_edge(data), check_protected(data, args.reference, cfg)])
     if args.fast:
         checks.extend([result("SCHEMATIC-PCB PARITY", NA, "--fast"), result("NATIVE DRC SUMMARY", NA, "--fast")])
     else:

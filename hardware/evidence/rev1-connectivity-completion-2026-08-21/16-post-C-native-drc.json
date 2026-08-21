@@ -1,0 +1,153 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-08-21T02:01:42",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.5",
+    "schematic_parity": [],
+    "source": "esp32-e220.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [/GND] on F.Cu, length 3.5000 mm",
+                    "pos": {
+                        "x": 17.5,
+                        "y": 34.0
+                    },
+                    "uuid": "ec0ee8c8-2c69-4ab0-94aa-ba0d9fd3832e"
+                },
+                {
+                    "description": "Track [/GND] on F.Cu, length 3.0000 mm",
+                    "pos": {
+                        "x": 24.725,
+                        "y": 48.0
+                    },
+                    "uuid": "e8cc6a10-a52d-45af-ab91-1b0ba4ded004"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Zone [/GND] on F.Cu, priority 0",
+                    "pos": {
+                        "x": 64.0,
+                        "y": 52.0
+                    },
+                    "uuid": "dfb51e4c-e86d-4bc2-86a0-24b548017a74"
+                },
+                {
+                    "description": "Zone [/GND] on F.Cu, priority 0",
+                    "pos": {
+                        "x": 64.0,
+                        "y": 52.0
+                    },
+                    "uuid": "dfb51e4c-e86d-4bc2-86a0-24b548017a74"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [/GND] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 16.54
+                    },
+                    "uuid": "df61ecf5-5f78-4864-9b9f-55c4264a5199"
+                },
+                {
+                    "description": "Track [/GND] on B.Cu, length 7.1506 mm",
+                    "pos": {
+                        "x": 104.0,
+                        "y": 18.0
+                    },
+                    "uuid": "ac61525d-9e61-43c4-8340-4074b6567165"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 4 [/OLED_SDA] of J5",
+                    "pos": {
+                        "x": 63.0,
+                        "y": 27.62
+                    },
+                    "uuid": "56eeaf3b-7780-45ba-b83b-64e12478bc8b"
+                },
+                {
+                    "description": "PTH pad 11 [/OLED_SDA] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 39.4
+                    },
+                    "uuid": "6ec43f58-38b8-4f02-b43f-39049843d9d0"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 3 [/OLED_SCL] of J5",
+                    "pos": {
+                        "x": 63.0,
+                        "y": 25.08
+                    },
+                    "uuid": "0156dc64-6a7b-41e8-b1e3-d2cdd7ac8380"
+                },
+                {
+                    "description": "PTH pad 14 [/OLED_SCL] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 47.02
+                    },
+                    "uuid": "e033fe2b-d122-4e2f-9199-f61f7f503a7c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": []
+}

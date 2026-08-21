@@ -1,0 +1,110 @@
+{
+  "added_rule_areas": [
+    "J6_HANDSOLDER_CLEARANCE",
+    "J9_HANDSOLDER_CLEARANCE"
+  ],
+  "added_segments": [
+    [
+      "segment",
+      [
+        "start",
+        "100",
+        "59.08"
+      ],
+      [
+        "end",
+        "97",
+        "59.08"
+      ],
+      [
+        "width",
+        "0.8"
+      ],
+      [
+        "layer",
+        "B.Cu"
+      ],
+      [
+        "net",
+        "/GND"
+      ],
+      [
+        "uuid",
+        "38270829-7b60-4fa8-9509-9f2e25e5c337"
+      ]
+    ],
+    [
+      "segment",
+      [
+        "start",
+        "94",
+        "18"
+      ],
+      [
+        "end",
+        "97",
+        "18"
+      ],
+      [
+        "width",
+        "0.8"
+      ],
+      [
+        "layer",
+        "B.Cu"
+      ],
+      [
+        "net",
+        "/GND"
+      ],
+      [
+        "uuid",
+        "461c76e3-3e5d-4c90-a13d-b7298cb066e4"
+      ]
+    ]
+  ],
+  "filled_polygon_differences_ignored": "authorized consequences of the two new pour exclusions",
+  "ordinary_zone_definitions_unchanged": true,
+  "removed_segments": [
+    [
+      "segment",
+      [
+        "start",
+        "94",
+        "18"
+      ],
+      [
+        "end",
+        "104",
+        "18"
+      ],
+      [
+        "width",
+        "0.25"
+      ],
+      [
+        "layer",
+        "B.Cu"
+      ],
+      [
+        "net",
+        "/GND"
+      ],
+      [
+        "uuid",
+        "e9e75539-bbea-47a1-8cfb-41000d4e3f19"
+      ]
+    ]
+  ],
+  "removed_zone_definitions": 0,
+  "status": "PASS",
+  "unchanged": {
+    "footprint": true,
+    "gr_arc": true,
+    "gr_line": true,
+    "gr_poly": true,
+    "gr_rect": true,
+    "gr_text": true,
+    "via": true
+  }
+}

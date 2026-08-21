@@ -1,0 +1,240 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-08-21T07:31:55",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.5",
+    "schematic_parity": [],
+    "source": "10-j5-m3-candidate.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Items not allowed",
+            "items": [
+                {
+                    "description": "Track [/WS2812_DATA_3V3] on B.Cu, length 15.0000 mm",
+                    "pos": {
+                        "x": 105.0,
+                        "y": 10.0
+                    },
+                    "uuid": "536ef04e-10e8-4f04-a7f0-d7b69ffb49f9"
+                }
+            ],
+            "severity": "error",
+            "type": "items_not_allowed"
+        },
+        {
+            "description": "Items not allowed",
+            "items": [
+                {
+                    "description": "Track [/OLED_SCL] on F.Cu, length 15.0000 mm",
+                    "pos": {
+                        "x": 97.0,
+                        "y": 10.9
+                    },
+                    "uuid": "b2653d52-e493-4372-b638-202a590b797b"
+                }
+            ],
+            "severity": "error",
+            "type": "items_not_allowed"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "PCB text 'OPEN FOR USB' on F.Silkscreen",
+                    "pos": {
+                        "x": 97.0,
+                        "y": 10.7
+                    },
+                    "uuid": "b8e1b972-600e-4b15-ad5f-bfbbb6e1125f"
+                },
+                {
+                    "description": "Circle of H2 on F.Silkscreen",
+                    "pos": {
+                        "x": 101.0,
+                        "y": 7.0
+                    },
+                    "uuid": "c7f4140b-5757-4b5c-9d65-f949a3d4f56d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Carrier'",
+            "items": [
+                {
+                    "description": "Footprint H2",
+                    "pos": {
+                        "x": 101.0,
+                        "y": 7.0
+                    },
+                    "uuid": "2c03450c-e184-44ba-8c15-541360738ed5"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Carrier'",
+            "items": [
+                {
+                    "description": "Footprint J9",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 54.0
+                    },
+                    "uuid": "4a360355-6357-485a-ac02-0e4815c24626"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Carrier'",
+            "items": [
+                {
+                    "description": "Footprint C9",
+                    "pos": {
+                        "x": 17.5,
+                        "y": 33.0
+                    },
+                    "uuid": "56a5e96a-c095-43ff-9ae2-394b10c786ed"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Carrier'",
+            "items": [
+                {
+                    "description": "Footprint H1",
+                    "pos": {
+                        "x": 7.0,
+                        "y": 7.0
+                    },
+                    "uuid": "87674c84-ce37-49a7-a2cd-820f9a96213f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Carrier'",
+            "items": [
+                {
+                    "description": "Footprint C10",
+                    "pos": {
+                        "x": 14.4,
+                        "y": 27.0
+                    },
+                    "uuid": "b56c2d1f-537b-40e1-ad45-452b9c051c22"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Carrier'",
+            "items": [
+                {
+                    "description": "Footprint R4",
+                    "pos": {
+                        "x": 90.0,
+                        "y": 66.0
+                    },
+                    "uuid": "c2290e18-690e-4a9b-82d8-939e2b5ae69e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Carrier'",
+            "items": [
+                {
+                    "description": "Footprint C8",
+                    "pos": {
+                        "x": 88.0,
+                        "y": 69.0
+                    },
+                    "uuid": "dab86919-dfdb-48c8-91a4-351d78c723df"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Carrier'",
+            "items": [
+                {
+                    "description": "Footprint R3",
+                    "pos": {
+                        "x": 86.0,
+                        "y": 66.0
+                    },
+                    "uuid": "e243c146-e406-42f5-933d-442950fd309a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Carrier'",
+            "items": [
+                {
+                    "description": "Footprint H3",
+                    "pos": {
+                        "x": 96.0,
+                        "y": 83.0
+                    },
+                    "uuid": "f139410c-a26e-418f-bd9d-25d640d6482a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Carrier'",
+            "items": [
+                {
+                    "description": "Footprint J6",
+                    "pos": {
+                        "x": 94.0,
+                        "y": 18.0
+                    },
+                    "uuid": "f87cad3d-f2ec-44f9-bfcb-536bdbf2d49e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        }
+    ]
+}

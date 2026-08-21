@@ -1,0 +1,15 @@
+Script started on 2026-08-21 04:43:43+07:00 [<not executed on terminal>]
+BOARD LOAD: PASS — {"board": "/home/kirill/codex/kicad/hardware/esp32-e220.kicad_pcb"}
+COPPER LAYERS: PASS — {"count": 2, "layers": [["0", "F.Cu", "signal"], ["2", "B.Cu", "signal"]]}
+BOARD OUTLINE: PASS — {"bbox_mm": [0.0, 0.0, 145.0, 90.0], "height_mm": 90.0, "tolerance_mm": 0.5, "width_mm": 145.0}
+COUNTS: PASS — {"footprints": 37, "tracks": 200, "vias": 58, "zones": 4}
+DUPLICATE PAD NUMBER NET CONSISTENCY: PASS — "all duplicate copper-pad numbers have one canonical net"
+REQUIRED ELECTRICAL PAD NETLESS: PASS — "no unexpected netless copper pads"
+ESP32 ANTENNA EXCLUSION: PASS — {"antenna_rule_area_name": "ESP32_ANTENNA_EXCLUSION", "approved_boundary_refs": ["J1", "J2"], "hits": [], "rect_mm": {"xmax": 142.7, "xmin": 104.7, "ymax": 90.0, "ymin": 52.0}, "rule_area_crosscheck": "PASS"}
+BOARD EDGE: PASS — {"near-edge": "native DRC is authoritative in full mode", "pad_outside_outline": 0}
+PROTECTED CHECKPOINT: PASS — {"comparison": "normalized footprint origin/rotation and pad geometry", "references": ["U1", "C1", "C2", "C3", "C4", "L1"]}
+SCHEMATIC-PCB PARITY: NOT_APPLICABLE — "--fast"
+NATIVE DRC SUMMARY: NOT_APPLICABLE — "--fast"
+OVERALL: PASS
+
+Script done on 2026-08-21 04:43:43+07:00 [COMMAND_EXIT_CODE="0"]

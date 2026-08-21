@@ -46,13 +46,21 @@ project-local audited footprints. The TPS62133 EP footprint is distinct from
 the later thermal-via / EMI placement rules: it uses TI RGT0016C's 1.680-mm
 EP copper with a 1.550-mm (~85%) official stencil aperture.
 
-`TI_SN74AHCT1G125DBVR_SOT23-5` is a functional placement footprint for the
-on-board 5-V level shifter, still subject to final MPN-specific PCBA audit.
+`TI_SN74AHCT1G125DBVR_SOT23-5` is the released TI DBV0005A manufacturer land
+pattern for `SN74AHCT1G125DBVR`, controlled by data sheet SCLS378P Rev. P and
+package drawing 4214839/K (August 2024). It uses 0.60 x 1.10-mm lands on the
+official 0.95-mm pitch / 1.50-mm row-centre geometry, TI paste apertures, and
+0.05-mm NSMD mask expansion.
 The onboard WS2812/D2 footprint candidate is removed; J9 carries only power,
 ground, and the U3-buffered data output for an external maximum-three-pixel
 chain. `TestPoint_THT_1p0mm_PROTOTYPE` is retained only for TP1...TP5 as an
 explicitly provisional 1.0-mm-drill prototype test-point land, pending
 test-point MPN and assembler selection.
+
+`MountingHole_M3_NPTH_REV1` is the released Rev.1 enclosure mounting feature:
+one 3.20-mm non-plated hole with no electrical pad or procurement item. The
+three H1/H2/H3 instances each have a separate named 8.00-mm F.Cu/B.Cu copper
+keepout at board level.
 
 Use `docs/agent-context.md`, the footprint generator, and cited primary sources
 for exact pad/drill evidence and release blockers. Do not rely on the Russian

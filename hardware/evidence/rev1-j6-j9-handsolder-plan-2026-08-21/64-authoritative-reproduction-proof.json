@@ -1,0 +1,14 @@
+{
+  "comparison": "all physical geometry and filled zones; UUID identity ignored",
+  "field_equality": {
+    "footprint": true,
+    "gr_arc": true,
+    "gr_line": true,
+    "gr_poly": true,
+    "gr_rect": true,
+    "segment": true,
+    "via": true,
+    "zone": true
+  },
+  "status": "PASS"
+}

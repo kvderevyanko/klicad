@@ -1,0 +1,31 @@
+{
+  "bom_groups": 25,
+  "bom_pcba_refs": 30,
+  "cpl_smd_refs": 23,
+  "drills": {
+    "npth": 3,
+    "pth": 119
+  },
+  "errors": [],
+  "gate": "REV1 GENERATED PACKAGE SELF-AUDIT",
+  "gerber_layers": [
+    "esp32-e220-B_Cu.gbl",
+    "esp32-e220-B_Mask.gbs",
+    "esp32-e220-Edge_Cuts.gm1",
+    "esp32-e220-F_Cu.gtl",
+    "esp32-e220-F_Mask.gts",
+    "esp32-e220-F_Silkscreen.gto"
+  ],
+  "outline_mm": [
+    145,
+    90
+  ],
+  "source": {
+    "metadata_sha256": "806393fc7e9b32da32d34c3adb6357ec87d1d0236a449df42e610f37361dd639",
+    "pcb_sha256": "dd4d77d521adc1fd744d10b6e05f4a27169e30d988f70a3b9e50236608fda0e4",
+    "schematic_sha256": "8ade3ec2f6a90f39763b8dd5570fcfe1709e34482d2f83a886886c73e5a4dacc"
+  },
+  "status": "PASS",
+  "tht_refs": 7,
+  "timestamp_utc": "2026-08-21T02:44:38+00:00"
+}

@@ -1,0 +1,1 @@
+0ed5189dcfb6a21822b05246acee0257cd03415e07cdea919861375e0d5d6c70  hardware/esp32-e220.kicad_pcb

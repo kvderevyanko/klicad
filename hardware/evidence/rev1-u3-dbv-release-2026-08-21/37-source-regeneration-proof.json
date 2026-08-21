@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "source": "hardware/generate_stage7_footprints.py",
+  "source_sha256": "8cda545336633c7192460be967fdb720084541658cbe21f60e2719151348ceb6",
+  "generated_footprint": "hardware/esp32-e220.pretty/TI_SN74AHCT1G125DBVR_SOT23-5.kicad_mod",
+  "generated_footprint_sha256": "c9923e3e5a73b0d4da3e774c3c79a09dd6110b87ac6974e6ae2a98bfa79a5a7a",
+  "reviewed_candidate_footprint_sha256": "c9923e3e5a73b0d4da3e774c3c79a09dd6110b87ac6974e6ae2a98bfa79a5a7a",
+  "byte_identical_to_reviewed_candidate": true,
+  "unrelated_generated_footprints_changed": false
+}

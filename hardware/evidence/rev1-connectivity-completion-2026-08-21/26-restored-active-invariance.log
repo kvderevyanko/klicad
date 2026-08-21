@@ -1,0 +1,15 @@
+baseline track/via UUIDs preserved identically: True 238 of 241
+new copper items: 3
+  ('PCB_TRACK', '/BAT_PLUS', 0, (42862000, 78500000), (48000000, 87000000), 1000000)
+  ('PCB_TRACK', '/BUCK_IN', 0, (62500000, 67725000), (65500000, 70000000), 250000)
+  ('PCB_TRACK', '/BUCK_IN', 0, (64349999, 77000000), (58000000, 87000000), 1000000)
+all footprints/pads unchanged: True 37
+zone outlines/net/layers/priorities unchanged: True 5
+vias unchanged: 56 56
+rule areas unchanged: 1 1
+/E220_M0 unchanged: True items 11
+/E220_M1 unchanged: True items 14
+/E220_AUX unchanged: True items 10
+/E220_RXD unchanged: True items 13
+/E220_TXD unchanged: True items 13
+/AUX_3V3 unchanged: True items 4

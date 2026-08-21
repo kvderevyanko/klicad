@@ -15,6 +15,7 @@ SCH = HERE / "esp32-e220.kicad_sch"
 PCB = HERE / "esp32-e220.kicad_pcb"
 USB_C_POWER_NETS = {"USB_VBUS", "USB_C_5V", "VBUS", "CC1", "CC2"}
 ALLOWED_NON_PCB_DNP = {"R10", "R11"}
+ALLOWED_BOARD_ONLY_MECHANICAL = {"H1", "H2", "H3"}
 
 
 def tokenize(text):
@@ -134,13 +135,16 @@ def main():
         "counts": {"schematic_assembled": len(assembled), "pcb_footprints": len(pcb), "intentional_non_pcb": len(non_pcb)},
         "intentional_non_pcb": {ref: "NO_FOOTPRINT_DNP" for ref in sorted(non_pcb)},
         "unexpected_non_pcb_items": sorted(set(non_pcb) - ALLOWED_NON_PCB_DNP),
-        "board_only_references": sorted(set(pcb) - set(assembled)),
+        "mechanical_board_only_references": sorted(set(pcb) & ALLOWED_BOARD_ONLY_MECHANICAL),
+        "board_only_references": sorted(set(pcb) - set(assembled) - ALLOWED_BOARD_ONLY_MECHANICAL),
         "missing_pcb_footprints": sorted(set(assembled) - set(pcb)),
         "production_property_mismatches": [],
         "electrical_pad_net_mismatches": [],
         "kicad_raw_net_name_mismatches": [],
         "usb_c_power_nets_present": [],
     }
+    if set(pcb) & ALLOWED_BOARD_ONLY_MECHANICAL != ALLOWED_BOARD_ONLY_MECHANICAL:
+        result["board_only_references"].append("MECHANICAL_NPTH_SET_MISMATCH")
     for ref in sorted(set(assembled) & set(pcb)):
         sp, bp = assembled[ref]["properties"], pcb[ref]
         for field, actual in (("Value", bp["properties"].get("Value", "")), ("Footprint", bp["footprint"])):
