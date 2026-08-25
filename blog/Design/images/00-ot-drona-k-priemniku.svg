@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="720" viewBox="0 0 1600 720" role="img" aria-labelledby="title desc">
+  <title id="title">Откуда взялась идея платы</title>
+  <desc id="desc">На борту дрона ESP32 и E220 получают данные от полётного контроллера. На земле второй E220 и ESP32 принимают данные и выводят их на OLED, кнопки и подсветку.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f7f5ef}.card{fill:#fff;stroke:#d9d3c7;stroke-width:3}.drone{fill:#d8e9f7}.ground{fill:#def0df}.radio{fill:#d9ddf8}.screen{fill:#eadcf4}.accent{fill:#f5dd9a}.wire{fill:none;stroke:#4f5d6b;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}.rf{fill:none;stroke:#6574c7;stroke-width:8;stroke-dasharray:16 14}.small{font:24px Arial,sans-serif;fill:#43515d}.label{font:700 34px Arial,sans-serif;fill:#1f2b33}.title{font:700 44px Arial,sans-serif;fill:#1f2b33}
+    </style>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="12" markerHeight="12" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#4f5d6b"/></marker>
+    <marker id="arrowrf" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="12" markerHeight="12" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#6574c7"/></marker>
+  </defs>
+  <rect class="bg" width="1600" height="720" rx="34"/>
+  <text x="800" y="70" text-anchor="middle" class="title">Проект изначально был не про плату, а про связь с дроном</text>
+  <text x="800" y="108" text-anchor="middle" class="small">Сначала появился рабочий узел на проводах. Фабричная плата стала следующим шагом.</text>
+
+  <text x="355" y="170" text-anchor="middle" class="label">На борту</text>
+  <text x="1245" y="170" text-anchor="middle" class="label">На земле</text>
+
+  <g transform="translate(80 230)">
+    <rect class="card drone" width="250" height="150" rx="22"/>
+    <text x="125" y="60" text-anchor="middle" class="label">Полётный</text><text x="125" y="101" text-anchor="middle" class="label">контроллер</text>
+  </g>
+  <g transform="translate(410 230)">
+    <rect class="card accent" width="220" height="150" rx="22"/>
+    <text x="110" y="70" text-anchor="middle" class="label">ESP32</text><text x="110" y="108" text-anchor="middle" class="small">бортовой узел</text>
+  </g>
+  <g transform="translate(695 230)">
+    <rect class="card radio" width="210" height="150" rx="22"/>
+    <text x="105" y="70" text-anchor="middle" class="label">E220</text><text x="105" y="108" text-anchor="middle" class="small">радиоканал</text>
+  </g>
+
+  <g transform="translate(1010 230)">
+    <rect class="card radio" width="210" height="150" rx="22"/>
+    <text x="105" y="70" text-anchor="middle" class="label">E220</text><text x="105" y="108" text-anchor="middle" class="small">приёмник</text>
+  </g>
+  <g transform="translate(1290 230)">
+    <rect class="card ground" width="220" height="150" rx="22"/>
+    <text x="110" y="70" text-anchor="middle" class="label">ESP32</text><text x="110" y="108" text-anchor="middle" class="small">наземный узел</text>
+  </g>
+
+  <path class="wire" marker-end="url(#arrow)" d="M330 305 H410"/>
+  <text x="370" y="286" text-anchor="middle" class="small">UART</text>
+  <path class="wire" marker-end="url(#arrow)" d="M630 305 H695"/>
+  <path class="rf" marker-end="url(#arrowrf)" d="M905 305 H1010"/>
+  <text x="957" y="278" text-anchor="middle" class="small">радио</text>
+  <path class="wire" marker-end="url(#arrow)" d="M1220 305 H1290"/>
+
+  <g transform="translate(1050 485)">
+    <rect class="card screen" width="220" height="120" rx="22"/>
+    <text x="110" y="55" text-anchor="middle" class="label">OLED</text><text x="110" y="88" text-anchor="middle" class="small">данные и меню</text>
+  </g>
+  <g transform="translate(1310 485)">
+    <rect class="card" width="210" height="120" rx="22"/>
+    <text x="105" y="55" text-anchor="middle" class="label">Кнопки</text><text x="105" y="88" text-anchor="middle" class="small">управление</text>
+  </g>
+  <g transform="translate(790 485)">
+    <rect class="card accent" width="220" height="120" rx="22"/>
+    <text x="110" y="55" text-anchor="middle" class="label">WS2812</text><text x="110" y="88" text-anchor="middle" class="small">индикация</text>
+  </g>
+  <path class="wire" d="M1400 380 V440 H900 V485"/>
+  <path class="wire" d="M1400 440 H1160 V485"/>
+  <path class="wire" d="M1400 440 V485"/>
+
+  <text x="800" y="675" text-anchor="middle" class="small">Первую версию наземного узла я собрал вручную. Потом захотелось превратить её в воспроизводимую фабричную плату.</text>
+</svg>

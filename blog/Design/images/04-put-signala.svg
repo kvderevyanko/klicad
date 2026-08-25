@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="700" viewBox="0 0 1600 700" role="img" aria-labelledby="title desc">
+  <title id="title">Из чего складывается плата ESP32 и E220</title>
+  <desc id="desc">Внешний аккумулятор через защиту питает плату; центральный модуль ESP32 связывается с радиомодулем, экраном и дополнительными кнопками и подсветкой.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8f6f0; }
+      .card { fill: #ffffff; stroke: #d9d4c7; stroke-width: 3; }
+      .power { fill: #f8d77b; }
+      .brain { fill: #7cc8b1; }
+      .radio { fill: #8eb7e8; }
+      .screen { fill: #c8b2e8; }
+      .extra { fill: #f2b49c; }
+      .wire { fill: none; stroke: #4b5563; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+      .dash { stroke-dasharray: 13 15; }
+      text { font-family: Inter, Arial, sans-serif; fill: #22303b; }
+      .label { font-size: 36px; font-weight: 700; }
+      .note { font-size: 25px; }
+      .tiny { font-size: 20px; fill: #596672; }
+    </style>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#4b5563"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1600" height="700" rx="34"/>
+  <text x="800" y="75" text-anchor="middle" style="font-size:44px;font-weight:700">Что объединяет наша плата</text>
+  <text x="800" y="115" text-anchor="middle" class="note">Она не заменяет готовые модули, а помогает им работать вместе.</text>
+
+  <path class="wire" marker-end="url(#arrow)" d="M 310 310 H 420"/>
+  <path class="wire" marker-end="url(#arrow)" d="M 640 310 H 755"/>
+  <path class="wire" marker-end="url(#arrow)" d="M 990 310 H 1105"/>
+  <path class="wire dash" marker-end="url(#arrow)" d="M 875 420 V 535 H 545"/>
+  <path class="wire dash" marker-end="url(#arrow)" d="M 875 420 V 535 H 1185"/>
+
+  <g transform="translate(70 220)">
+    <rect class="card power" width="240" height="180" rx="24"/>
+    <text x="120" y="73" text-anchor="middle" class="label">Аккумулятор</text>
+    <text x="120" y="112" text-anchor="middle" class="note">внешний,</text>
+    <text x="120" y="143" text-anchor="middle" class="note">с защитой</text>
+  </g>
+  <g transform="translate(420 220)">
+    <rect class="card power" width="220" height="180" rx="24"/>
+    <text x="110" y="73" text-anchor="middle" class="label">Питание</text>
+    <text x="110" y="113" text-anchor="middle" class="note">защита и</text>
+    <text x="110" y="145" text-anchor="middle" class="note">преобразование</text>
+  </g>
+  <g transform="translate(755 190)">
+    <rect class="card brain" width="240" height="240" rx="24"/>
+    <text x="120" y="92" text-anchor="middle" class="label">ESP32</text>
+    <text x="120" y="132" text-anchor="middle" class="note">готовый модуль —</text>
+    <text x="120" y="163" text-anchor="middle" class="note">«мозг» устройства</text>
+  </g>
+  <g transform="translate(1105 220)">
+    <rect class="card radio" width="350" height="180" rx="24"/>
+    <text x="175" y="73" text-anchor="middle" class="label">E220 + антенна</text>
+    <text x="175" y="115" text-anchor="middle" class="note">радиосвязь на расстоянии</text>
+  </g>
+  <g transform="translate(330 510)">
+    <rect class="card extra" width="290" height="130" rx="24"/>
+    <text x="145" y="58" text-anchor="middle" class="label">Кнопки</text>
+    <text x="145" y="96" text-anchor="middle" class="note">по желанию</text>
+  </g>
+  <g transform="translate(1040 510)">
+    <rect class="card screen" width="290" height="130" rx="24"/>
+    <text x="145" y="58" text-anchor="middle" class="label">OLED-экран</text>
+    <text x="145" y="96" text-anchor="middle" class="note">маленький дисплей</text>
+  </g>
+  <text x="800" y="675" text-anchor="middle" class="tiny">Пунктиром показаны необязательные подключения. Подсветку из светодиодов можно добавить отдельным разъёмом.</text>
+</svg>

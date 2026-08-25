@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="520" viewBox="0 0 1600 520" role="img" aria-labelledby="title desc">
+  <title id="title">Эволюция Rev.1</title>
+  <desc id="desc">Путь от ручной сборки через минимальную плату и переусложнение к упрощённой производственной версии.</desc>
+  <defs><style>
+    .bg{fill:#f8f6f0}.line{stroke:#8b949e;stroke-width:8;stroke-linecap:round}.dot{stroke:#fff;stroke-width:5}.a{fill:#76b7b2}.b{fill:#8aaee0}.c{fill:#f0bd6b}.d{fill:#e58b8b}.e{fill:#9dca87}.f{fill:#5c9f75}.title{font:700 44px Arial,sans-serif;fill:#1f2b33}.lab{font:700 25px Arial,sans-serif;fill:#24313a}.txt{font:22px Arial,sans-serif;fill:#4d5b66}
+  </style></defs>
+  <rect class="bg" width="1600" height="520" rx="30"/>
+  <text x="800" y="68" text-anchor="middle" class="title">Как проект дошёл до Rev.1</text>
+  <line x1="150" y1="245" x2="1450" y2="245" class="line"/>
+  <g transform="translate(170 245)"><circle r="32" class="dot a"/><text y="-72" text-anchor="middle" class="lab">Ручная версия</text><text y="65" text-anchor="middle" class="txt">модули + провода</text><text y="94" text-anchor="middle" class="txt">софт уже живёт</text></g>
+  <g transform="translate(420 245)"><circle r="32" class="dot b"/><text y="-72" text-anchor="middle" class="lab">Минимальная плата</text><text y="65" text-anchor="middle" class="txt">питание + сокеты</text><text y="94" text-anchor="middle" class="txt">два слоя</text></g>
+  <g transform="translate(675 245)"><circle r="32" class="dot c"/><text y="-72" text-anchor="middle" class="lab">«А добавим ещё…»</text><text y="65" text-anchor="middle" class="txt">точки, разъёмы, RGB</text><text y="94" text-anchor="middle" class="txt">служебные функции</text></g>
+  <g transform="translate(930 245)"><circle r="32" class="dot d"/><text y="-72" text-anchor="middle" class="lab">Упёрлись в разводку</text><text y="65" text-anchor="middle" class="txt">ошибки, откаты</text><text y="94" text-anchor="middle" class="txt">лишнее мешает</text></g>
+  <g transform="translate(1180 245)"><circle r="32" class="dot e"/><text y="-72" text-anchor="middle" class="lab">Золотая середина</text><text y="65" text-anchor="middle" class="txt">убрали ненужное</text><text y="94" text-anchor="middle" class="txt">оставили сервис</text></g>
+  <g transform="translate(1430 245)"><circle r="32" class="dot f"/><text y="-72" text-anchor="middle" class="lab">Производственный пакет</text><text y="65" text-anchor="middle" class="txt">Gerber + BOM + CPL</text><text y="94" text-anchor="middle" class="txt">запрос на завод</text></g>
+  <text x="800" y="460" text-anchor="middle" class="txt">Главный результат промежуточных ошибок: Rev.1 стала не «максимально функциональной», а достаточно функциональной и реально производимой.</text>
+</svg>
