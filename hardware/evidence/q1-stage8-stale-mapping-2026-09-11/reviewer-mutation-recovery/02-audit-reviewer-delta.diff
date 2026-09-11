@@ -1,0 +1,9 @@
+--- hardware/releases/rev1-q1-footprint-correction-2026-09-11/checksums/package-self-audit.json	2026-09-11 11:50:35.887514837 +0700
++++ hardware/evidence/q1-stage8-stale-mapping-2026-09-11/reviewer-mutation-recovery/package-self-audit.json.from-zip	2026-09-11 12:29:46.429038078 +0700
+@@ -61,5 +61,5 @@
+     "schematic_sha256": "8ade3ec2f6a90f39763b8dd5570fcfe1709e34482d2f83a886886c73e5a4dacc"
+   },
+   "status": "PASS",
+-  "timestamp_utc": "2026-09-11T04:50:35+00:00"
++  "timestamp_utc": "2026-09-11T04:40:17+00:00"
+ }

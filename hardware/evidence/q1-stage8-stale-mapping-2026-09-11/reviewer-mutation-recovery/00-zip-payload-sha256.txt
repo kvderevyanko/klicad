@@ -1,0 +1,3 @@
+43a2ba63deacc4156f32d0db6a324bde31a2722394b38474bcaa6075a2ee5ba5  hardware/evidence/q1-stage8-stale-mapping-2026-09-11/reviewer-mutation-recovery/RELEASE_MANIFEST.md.from-zip
+4e8e55be71d2cc7454fe47326f6137a9372e35c58b19d301e02fa23f0431c104  hardware/evidence/q1-stage8-stale-mapping-2026-09-11/reviewer-mutation-recovery/SHA256SUMS.txt.from-zip
+1c86e2201a259d731852bbbd9c1f05ef9b0350b9e3dd8a0838dcd6e6347e007a  hardware/evidence/q1-stage8-stale-mapping-2026-09-11/reviewer-mutation-recovery/package-self-audit.json.from-zip

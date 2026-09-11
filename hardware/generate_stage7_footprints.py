@@ -132,11 +132,11 @@ def dmp3130() -> str:
     return "".join((
         '(footprint "Diodes_DMP3130LQ-7_SOT23" (version 20240108) (generator "stage7")\n',
         '  (layer "F.Cu")\n',
-        '  (descr "Diodes DMP3130LQ-7 SOT23, DS38728 suggested pad layout: X=0.80, Y=0.90, X1=1.35, Y1=2.90 mm.")\n',
+        '  (descr "Diodes DMP3130LQ-7 SOT23, DS38728 suggested pad layout: 0.80 x 0.90 mm lands; X1=1.35 mm is centreline to outer land edge, giving 0.95-mm lower-pad centre offsets.")\n',
         '  (attr smd)\n', text("reference", "Q", 0, -2.35, "F.SilkS"), text("value", "DMP3130LQ-7", 0, 2.35, "F.Fab"),
-        rect(-1.50, -1.45, 1.50, 1.45, "F.Fab", 0.10), rect(-2.05, -2.00, 2.05, 2.00, "F.CrtYd", 0.05),
+        rect(-0.65, -1.45, 0.65, 1.45, "F.Fab", 0.10), rect(-1.60, -1.70, 1.60, 1.70, "F.CrtYd", 0.05),
         line(-1.50, -1.45, -0.75, -1.45, "F.SilkS", 0.30),
-        smd_pad("1", -1.35, 1.00, 0.80, 0.90, "rect"), smd_pad("2", 1.35, 1.00, 0.80, 0.90, "rect"), smd_pad("3", 0, -1.00, 0.80, 0.90, "rect"), ")\n",
+        smd_pad("1", -0.95, 1.00, 0.80, 0.90, "rect"), smd_pad("2", 0.95, 1.00, 0.80, 0.90, "rect"), smd_pad("3", 0, -1.00, 0.80, 0.90, "rect"), ")\n",
     ))
 
 

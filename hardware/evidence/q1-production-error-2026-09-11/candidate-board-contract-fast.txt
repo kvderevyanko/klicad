@@ -1,0 +1,13 @@
+BOARD LOAD: PASS — {"board": "hardware/evidence/q1-production-error-2026-09-11/esp32-e220-q1-geometry-candidate.kicad_pcb"}
+COPPER LAYERS: PASS — {"count": 2, "layers": [["0", "F.Cu", "signal"], ["2", "B.Cu", "signal"]]}
+BOARD OUTLINE: PASS — {"bbox_mm": [0.0, 0.0, 145.0, 90.0], "height_mm": 90.0, "tolerance_mm": 0.5, "width_mm": 145.0}
+COUNTS: PASS — {"actual": {"footprints": 40, "rule_areas": 7, "tracks": 202, "vias": 58, "zones": 4}, "expected": {"footprints": 40, "rule_areas": 7, "tracks": 202, "vias": 58, "zones": 4}}
+M3 NPTH MOUNTING HOLES: PASS — {"actual_refs": ["H1", "H2", "H3"], "expected_count": 3, "failures": [], "holes": {"H1": {"footprint": "Carrier:MountingHole_M3_NPTH_REV1", "origin_mm": [7.0, 7.0, 0.0], "pad": {"copper": false, "drill_mm": [3.2, 3.2], "local": [0.0, 0.0, 0.0], "net": "", "number": "", "size_mm": [3.2, 3.2], "type": "np_thru_hole", "xy": [7.0, 7.0]}, "pad_count": 1}, "H2": {"footprint": "Carrier:MountingHole_M3_NPTH_REV1", "origin_mm": [80.0, 7.0, 0.0], "pad": {"copper": false, "drill_mm": [3.2, 3.2], "local": [0.0, 0.0, 0.0], "net": "", "number": "", "size_mm": [3.2, 3.2], "type": "np_thru_hole", "xy": [80.0, 7.0]}, "pad_count": 1}, "H3": {"footprint": "Carrier:MountingHole_M3_NPTH_REV1", "origin_mm": [96.0, 83.0, 0.0], "pad": {"copper": false, "drill_mm": [3.2, 3.2], "local": [0.0, 0.0, 0.0], "net": "", "number": "", "size_mm": [3.2, 3.2], "type": "np_thru_hole", "xy": [96.0, 83.0]}, "pad_count": 1}}, "tolerance_mm": 0.001}
+DUPLICATE PAD NUMBER NET CONSISTENCY: PASS — "all duplicate copper-pad numbers have one canonical net"
+REQUIRED ELECTRICAL PAD NETLESS: PASS — "no unexpected netless copper pads"
+ESP32 ANTENNA EXCLUSION: PASS — {"antenna_rule_area_name": "ESP32_ANTENNA_EXCLUSION", "approved_boundary_refs": ["J1", "J2"], "hits": [], "rect_mm": {"xmax": 142.7, "xmin": 104.7, "ymax": 90.0, "ymin": 52.0}, "rule_area_crosscheck": "PASS"}
+BOARD EDGE: PASS — {"near-edge": "native DRC is authoritative in full mode", "pad_outside_outline": 0}
+PROTECTED CHECKPOINT: PASS — {"comparison": "normalized footprint origin/rotation and pad geometry", "references": ["U1", "C1", "C2", "C3", "C4", "L1"]}
+SCHEMATIC-PCB PARITY: NOT_APPLICABLE — "--fast"
+NATIVE DRC SUMMARY: NOT_APPLICABLE — "--fast"
+OVERALL: PASS

@@ -1,0 +1,1 @@
+f73af617de933ccc6f5711d3044aae0209fe0a45801aee45330c778f160da43e  hardware/releases/ESP32-E220-Carrier-Rev1-Q1-Footprint-Correction-2026-09-11.zip

@@ -1,0 +1,1 @@
+a964b65e180fd9867d69eab31656367a13d0e120a503b78c8982a64b08626ebc  hardware/esp32-e220.pretty/Diodes_DMP3130LQ-7_SOT23.kicad_mod

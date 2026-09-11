@@ -1,0 +1,2 @@
+dd4d77d521adc1fd744d10b6e05f4a27169e30d988f70a3b9e50236608fda0e4  hardware/esp32-e220.kicad_pcb
+dd4d77d521adc1fd744d10b6e05f4a27169e30d988f70a3b9e50236608fda0e4  hardware/evidence/q1-production-error-2026-09-11/esp32-e220-q1-prechange-reference.kicad_pcb

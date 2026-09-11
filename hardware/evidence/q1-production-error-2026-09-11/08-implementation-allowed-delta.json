@@ -1,0 +1,113 @@
+{
+  "allowed_board_delta": {
+    "q1": "description, pad-1/pad-2 centres, F.Fab, F.CrtYd",
+    "segment_start_uuids": [
+      "a4eef94c-3eb6-420b-8595-5f49d55bb7bb",
+      "cb24be05-8b8c-4b70-b364-97c90cc107a3",
+      "ce7bd062-9fb6-4c9c-8a39-64542cec1e84"
+    ]
+  },
+  "board": "hardware/esp32-e220.kicad_pcb",
+  "confirmed_q1": {
+    "f_courtyard_bbox_mm": [
+      -1.6,
+      -1.7,
+      1.6,
+      1.7
+    ],
+    "f_fab_bbox_mm": [
+      -0.65,
+      -1.45,
+      0.65,
+      1.45
+    ],
+    "origin_mm": [
+      63.0,
+      76.0,
+      0.0
+    ],
+    "pads": {
+      "1": {
+        "at": [
+          -0.95,
+          1.0,
+          0.0
+        ],
+        "net": "/Q1_GATE",
+        "size": [
+          0.8,
+          0.9
+        ]
+      },
+      "2": {
+        "at": [
+          0.95,
+          1.0,
+          0.0
+        ],
+        "net": "/BUCK_IN",
+        "size": [
+          0.8,
+          0.9
+        ]
+      },
+      "3": {
+        "at": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "net": "/BAT_SW",
+        "size": [
+          0.8,
+          0.9
+        ]
+      }
+    }
+  },
+  "confirmed_tracks": {
+    "a4eef94c-3eb6-420b-8595-5f49d55bb7bb": {
+      "end": [
+        65.5,
+        77.0
+      ],
+      "layer": "F.Cu",
+      "net": "/BUCK_IN",
+      "start": [
+        63.95,
+        77.0
+      ],
+      "width": 1.0
+    },
+    "cb24be05-8b8c-4b70-b364-97c90cc107a3": {
+      "end": [
+        58.0,
+        87.0
+      ],
+      "layer": "F.Cu",
+      "net": "/BUCK_IN",
+      "start": [
+        63.95,
+        77.0
+      ],
+      "width": 1.0
+    },
+    "ce7bd062-9fb6-4c9c-8a39-64542cec1e84": {
+      "end": [
+        61.65,
+        78.5
+      ],
+      "layer": "F.Cu",
+      "net": "/Q1_GATE",
+      "start": [
+        62.05,
+        77.0
+      ],
+      "width": 0.25
+    }
+  },
+  "failures": [],
+  "local_footprint_matches_generator": true,
+  "reference": "hardware/evidence/q1-production-error-2026-09-11/esp32-e220-q1-prechange-reference.kicad_pcb",
+  "status": "PASS"
+}

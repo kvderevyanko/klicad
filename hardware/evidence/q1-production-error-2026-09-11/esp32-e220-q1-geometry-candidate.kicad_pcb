@@ -6021,7 +6021,7 @@
 		(layer "F.Cu")
 		(uuid "f4a8a85e-3b0e-48b1-a008-d83f28c17c45")
 		(at 63 76)
-		(descr "Diodes DMP3130LQ-7 SOT23, DS38728 suggested pad layout: 0.80 x 0.90 mm lands; X1=1.35 mm is centreline to outer land edge, giving 0.95-mm lower-pad centre offsets.")
+		(descr "Diodes DMP3130LQ-7 SOT23, DS38728 suggested pad layout: X=0.80, Y=0.90, X1=1.35, Y1=2.90 mm.")
 		(property "Reference" "Q1"
 			(at 0 -2.35 0)
 			(layer "F.Fab")
@@ -6079,8 +6079,8 @@
 			(uuid "677f8b92-1eba-41d5-b920-4f37478f0a9c")
 		)
 		(fp_line
-			(start -1.6 -1.7)
-			(end 1.6 -1.7)
+			(start -2.05 -2)
+			(end 2.05 -2)
 			(stroke
 				(width 0.05)
 				(type default)
@@ -6089,8 +6089,8 @@
 			(uuid "85b35a64-7b1d-4664-b7eb-ab8e97530e9e")
 		)
 		(fp_line
-			(start -1.6 1.7)
-			(end -1.6 -1.7)
+			(start -2.05 2)
+			(end -2.05 -2)
 			(stroke
 				(width 0.05)
 				(type default)
@@ -6099,8 +6099,8 @@
 			(uuid "85009948-54ce-4d97-b6ac-0f820ec06f7e")
 		)
 		(fp_line
-			(start 1.6 -1.7)
-			(end 1.6 1.7)
+			(start 2.05 -2)
+			(end 2.05 2)
 			(stroke
 				(width 0.05)
 				(type default)
@@ -6109,8 +6109,8 @@
 			(uuid "a57a9349-28c7-4037-b729-462422da990a")
 		)
 		(fp_line
-			(start 1.6 1.7)
-			(end -1.6 1.7)
+			(start 2.05 2)
+			(end -2.05 2)
 			(stroke
 				(width 0.05)
 				(type default)
@@ -6119,8 +6119,8 @@
 			(uuid "d7842a48-d6ad-47c1-a563-c0ba49d9e283")
 		)
 		(fp_line
-			(start -0.65 -1.45)
-			(end 0.65 -1.45)
+			(start -1.5 -1.45)
+			(end 1.5 -1.45)
 			(stroke
 				(width 0.1)
 				(type default)
@@ -6129,8 +6129,8 @@
 			(uuid "e286e025-3c6c-49e6-9a41-cc544c33ee8b")
 		)
 		(fp_line
-			(start -0.65 1.45)
-			(end -0.65 -1.45)
+			(start -1.5 1.45)
+			(end -1.5 -1.45)
 			(stroke
 				(width 0.1)
 				(type default)
@@ -6139,8 +6139,8 @@
 			(uuid "e922d026-8350-4e8e-ab71-53c2d069e013")
 		)
 		(fp_line
-			(start 0.65 -1.45)
-			(end 0.65 1.45)
+			(start 1.5 -1.45)
+			(end 1.5 1.45)
 			(stroke
 				(width 0.1)
 				(type default)
@@ -6149,8 +6149,8 @@
 			(uuid "8e4e97bb-34cb-4143-bf3a-e957ce55cc6c")
 		)
 		(fp_line
-			(start 0.65 1.45)
-			(end -0.65 1.45)
+			(start 1.5 1.45)
+			(end -1.5 1.45)
 			(stroke
 				(width 0.1)
 				(type default)
@@ -9140,7 +9140,7 @@
 		(uuid "986e67d3-bf5d-4a16-9ddb-5d5950d4a3dd")
 	)
 	(segment
-		(start 63.95 77)
+		(start 63.949999 77)
 		(end 65.5 77)
 		(width 1)
 		(layer "F.Cu")
@@ -9180,7 +9180,7 @@
 		(uuid "b831a5e6-0b6b-455b-9ee1-944bdbe0aa88")
 	)
 	(segment
-		(start 63.95 77)
+		(start 63.949999 77)
 		(end 58 87)
 		(width 1)
 		(layer "F.Cu")

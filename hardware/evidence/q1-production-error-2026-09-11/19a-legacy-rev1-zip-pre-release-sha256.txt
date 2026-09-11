@@ -1,0 +1,1 @@
+8b47897b8e0470755d6ed160f0c4b05aab51db2bf729f2cf04410aef0085bcbe  hardware/releases/ESP32-E220-Carrier-Rev1-PCBA.zip

@@ -1,0 +1,12 @@
+{
+  "candidate_checker_exit_code": 0,
+  "candidate_status": "FAIL",
+  "non_q1_mismatch_counts": {
+    "board_only_references": 6,
+    "electrical_pad_net_mismatches": 3,
+    "kicad_raw_net_name_mismatches": 3,
+    "missing_pcb_footprints": 10,
+    "production_property_mismatches": 0
+  },
+  "q1_mapping_mismatches": []
+}

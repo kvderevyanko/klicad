@@ -1,0 +1,38 @@
+{
+  "archive_integrity": {
+    "errors": [],
+    "status": "PASS",
+    "unconnected_items": 0,
+    "violations": 0
+  },
+  "archive_integrity_exit_code": 0,
+  "drc": {
+    "errors": [],
+    "status": null,
+    "unconnected_items": 0,
+    "violations": 2
+  },
+  "drc_exit_code": 5,
+  "erc": {
+    "errors": [],
+    "status": null,
+    "unconnected_items": 0,
+    "violations": 0
+  },
+  "erc_exit_code": 0,
+  "parity": {
+    "errors": [],
+    "status": "PASS",
+    "unconnected_items": 0,
+    "violations": 0
+  },
+  "parity_exit_code": 0,
+  "production_metadata": {
+    "errors": [],
+    "status": "PASS",
+    "unconnected_items": 0,
+    "violations": 0
+  },
+  "production_metadata_exit_code": 0,
+  "zip_sha256_exit_code": 0
+}

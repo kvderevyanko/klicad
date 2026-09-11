@@ -1,0 +1,11 @@
+--- hardware/releases/rev1-q1-footprint-correction-2026-09-11/documentation/RELEASE_MANIFEST.md	2026-09-11 11:50:35.886514831 +0700
++++ hardware/evidence/q1-stage8-stale-mapping-2026-09-11/reviewer-mutation-recovery/RELEASE_MANIFEST.md.from-zip	2026-09-11 12:29:46.427038036 +0700
+@@ -7,7 +7,7 @@
+ - Production metadata SHA-256: 806393fc7e9b32da32d34c3adb6357ec87d1d0236a449df42e610f37361dd639
+ - Q1 project-local footprint SHA-256: a964b65e180fd9867d69eab31656367a13d0e120a503b78c8982a64b08626ebc
+ - KiCad CLI: 10.0.6
+-- Generation/audit UTC: 2026-09-11T04:50:35+00:00
++- Generation/audit UTC: 2026-09-11T04:40:17+00:00
+ - Board: 145 x 90 mm, 2 layers
+ - Q1: Diodes Incorporated `DMP3130LQ-7`, project footprint `Diodes_DMP3130LQ-7_SOT23`
+ - Q1 F.Cu pads: 1=(62.05, 77.00), 2=(63.95, 77.00), 3=(63.00, 75.00) mm; each 0.80 x 0.90 mm

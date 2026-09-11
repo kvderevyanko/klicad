@@ -1,0 +1,30 @@
+board=hardware/esp32-e220.kicad_pcb
+Q1 footprint=Diodes_DMP3130LQ-7_SOT23 position=(63.000, 76.000) rotation=0.000 layer=F.Cu
+Q1 pads:
+  pad=1 net=/Q1_GATE position=(61.650, 77.000) size=(0.800, 0.900) rotation=0.000
+  pad=2 net=/BUCK_IN position=(64.350, 77.000) size=(0.800, 0.900) rotation=0.000
+  pad=3 net=/BAT_SW position=(63.000, 75.000) size=(0.800, 0.900) rotation=0.000
+nearby footprints (reference point within 12 mm):
+  ref=R2 footprint=Resistor_0603_1608Metric position=(62.500, 67.000) rotation=90.000 distance=9.014
+  ref=R1 footprint=Resistor_0603_1608Metric position=(58.500, 67.000) rotation=90.000 distance=10.062
+  ref=TP4 footprint=TestPoint_THT_1p0mm_PROTOTYPE position=(63.000, 87.000) rotation=0.000 distance=11.000
+  ref=J8 footprint=JST_B2B-XH-A_1x02_P2.50mm_THT position=(51.000, 76.000) rotation=0.000 distance=12.000
+copper items with an endpoint/position within 8 mm of Q1:
+  segment net=/BAT_SW layer=F.Cu start=(60.000, 74.000) end=(63.000, 75.000) width=1.000 distance=1.000
+  segment net=/BUCK_IN layer=F.Cu start=(64.350, 77.000) end=(65.500, 77.000) width=1.000 distance=1.680
+  segment net=/BUCK_IN layer=F.Cu start=(64.350, 77.000) end=(58.000, 87.000) width=1.000 distance=1.680
+  segment net=/Q1_GATE layer=F.Cu start=(61.650, 77.000) end=(61.650, 78.500) width=0.250 distance=1.680
+  segment net=/BUCK_IN layer=F.Cu start=(65.500, 77.000) end=(65.500, 61.000) width=1.000 distance=2.693
+  segment net=/Q1_GATE layer=B.Cu start=(61.650, 78.500) end=(56.500, 78.500) width=0.250 distance=2.841
+  via net=/Q1_GATE at=(61.650, 78.500) diameter=0.600 drill=0.300 distance=2.841
+  segment net=/BAT_SW layer=F.Cu start=(56.500, 76.000) end=(60.000, 74.000) width=1.000 distance=3.606
+  segment net=/5V_SYS layer=B.Cu start=(63.000, 82.000) end=(63.000, 87.000) width=0.800 distance=6.000
+  segment net=/5V_SYS layer=B.Cu start=(73.000, 82.000) end=(63.000, 82.000) width=0.800 distance=6.000
+  segment net=/BAT_SW layer=F.Cu start=(53.500, 76.000) end=(56.500, 76.000) width=1.000 distance=6.500
+  segment net=/BUCK_IN layer=F.Cu start=(65.500, 70.000) end=(75.000, 70.000) width=0.250 distance=6.500
+  segment net=/BUCK_IN layer=F.Cu start=(62.500, 67.725) end=(65.500, 70.000) width=0.250 distance=6.500
+  segment net=/Q1_GATE layer=B.Cu start=(56.500, 78.500) end=(56.500, 69.000) width=0.250 distance=6.964
+  segment net=/5V_SYS layer=B.Cu start=(68.000, 82.000) end=(68.000, 87.000) width=0.800 distance=7.810
+zones whose bounding box contains Q1 reference point:
+  net=/GND layers=B.Cu clearance=0.200 min_thickness=0.250
+board min_clearance=0.200

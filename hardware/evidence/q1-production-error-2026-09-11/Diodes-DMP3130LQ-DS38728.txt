@@ -1,0 +1,506 @@
+                                                                                                                                           DMP3130LQ
+                                                                                                P-CHANNEL ENHANCEMENT MODE MOSFET
+
+
+Product Summary                                                                         Features and Benefits
+                                                              ID                            Low On-Resistance
+         V(BR)DSS               RDS(ON) max                                                 Low Gate Threshold Voltage
+                                                         TA = +25°C
+                            77mΩ@ VGS = -10V                -3.5A                           Low Input Capacitance
+          -30V              95mΩ@ VGS = -4.5V               -3.0A                           Fast Switching Speed
+                           150mΩ@ VGS = -2.5V               -2.4A                           Low Input/Output Leakage
+                                                                                            Totally Lead-Free & Fully RoHS Compliant (Notes 1 & 2)
+                                                                                            Halogen and Antimony Free. “Green” Device (Note 3)
+                                                                                            Qualified to AEC-Q101 Standards for High Reliability
+                                                                                            PPAP Capable (Note 4)
+
+
+Description and Applications                                                         Mechanical Data
+This MOSFET has been designed to meet the stringent                                         Case: SOT23
+requirements of Automotive applications. It is qualified to AECQ101,                        Case Material: Molded Plastic, “Green” Molding Compound.
+supported by a PPAP and is ideal for use in:                                                 UL Flammability Classification Rating 94V-0
+                                                                                            Moisture Sensitivity: Level 1 per J-STD-020
+    DC-DC Converters
+                                                                                            Terminals: Finish – Matte Tin Annealed over Copper
+    Power Management Functions                                                              Leadframe. Solderable per MIL-STD-202, Method 208
+    Analog Switch                                                                          Terminal Connections: See Diagram
+                                                                                            Weight: 0.009 grams (Approximate)
+
+
+                                     SOT23
+                                                                                   D
+                                                                                                                            D
+
+
+                                                                   G
+
+                                                                                                                 G                 S
+                                                                                    S
+                                   Top View                             Equivalent Circuit                            Top View
+
+
+Ordering Information (Note 5)
+                    Part Number                                                Case                                                Packaging
+                    DMP3130LQ-7                                               SOT23                                             3000/Tape & Reel
+Notes:      1. No purposely added lead. Fully EU Directive 2002/95/EC (RoHS) & 2011/65/EU (RoHS 2) compliant.
+            2. See http://www.diodes.com/quality/lead_free.html for more information about Diodes Incorporated’s definitions of Halogen- and Antimony-free, "Green"
+               and Lead-free.
+            3. Halogen- and Antimony-free "Green” products are defined as those which contain <900ppm bromine, <900ppm chlorine (<1500ppm total Br + Cl) and
+               <1000ppm antimony compounds.
+            4. Automotive products are AEC-Q101 qualified and are PPAP capable. Refer to http://www.diodes.com/product_compliance_definitions.html
+            5. For packaging details, go to our website at http://www.diodes.com/products/packages.html
+
+
+Marking Information
+
+
+                                                                                     P5S = Product Type Marking Code
+                                                                                     YM or YM = Date Code Marking
+                                                                                     Y or Y = Year (ex: D = 2016)
+                                                                                     M = Month (ex: 9 = September)
+
+
+Date Code Key
+    Year              2016               2017               2018              2019               2020                2021              2022              2023
+   Code                D                  E                  F                 G                  H                    I                 J                K
+    Month            Jan         Feb          Mar         Apr         May         Jun          Jul         Aug         Sep          Oct         Nov          Dec
+    Code              1           2            3           4           5           6            7           8           9            O           N            D
+
+DMP3130LQ                                                                   1 of 6                                                                      March 2016
+Document number: DS38728 Rev. 1 - 2                                     www.diodes.com                                                            © Diodes Incorporated
+                                                                                                                                         DMP3130LQ
+
+Maximum Ratings (@TA = +25°C, unless otherwise specified.)
+                                 Characteristic                                              Symbol                      Value                   Units
+Drain-Source Voltage                                                                          VDSS                        -30                     V
+Gate-Source Voltage                                                                           VGSS                        ±12                     V
+                                                          Steady      TA = +25C                                          -3.5
+                                                                                                 ID                                                  A
+                                                           State      TA = +70C                                          -2.6
+Continuous Drain Current (Note 6) VGS = -4.5V
+                                                                      TA = +25C                                          -4.1
+                                                          t<10s                                  ID                                                  A
+                                                                      TA = +70C                                          -3.2
+Maximum Continuous Body Diode Forward Current (Note 6)                                           IS                       -1.6                       A
+Pulsed Drain Current (10μs pulse, duty cycle = 1%)                                              IDM                       -20                        A
+
+
+
+Thermal Characteristics
+                                    Characteristic                                              Symbol                   Value                   Units
+                                                                           TA = +25°C                                     0.7
+Total Power Dissipation (Note 6)                                                                      PD                                             W
+                                                                           TA = +70°C                                     0.4
+                                                                           Steady State                                   184
+Thermal Resistance, Junction to Ambient (Note 6)                                                  RJA                                           °C/W
+                                                                              t<10s                                       115
+                                                                           TA = +25°C                                     1.3
+Total Power Dissipation (Note 7)                                                                      PD                                             W
+                                                                           TA = +70°C                                     0.8
+                                                                           Steady State                                    94
+Thermal Resistance, Junction to Ambient (Note 7)                                                  RJA
+                                                                              t<10s                                        61                    °C/W
+Thermal Resistance, Junction to Case                                                             RJC                      25
+Operating and Storage Temperature Range                                                         TJ, TSTG              -55 to +150                    °C
+
+
+
+Electrical Characteristics (@TA = +25°C, unless otherwise specified.)
+                 Characteristic                            Symbol        Min       Typ        Max          Unit                     Test Condition
+OFF CHARACTERISTICS (Note 8)
+Drain-Source Breakdown Voltage                              BVDSS        -30                              V       VGS = 0V, ID = -250μA
+Zero Gate Voltage Drain Current                              IDSS                            -1          μA       VDS = -30V, VGS = 0V
+Gate-Body Leakage                                            IGSS                           ±100         nA       VGS = ±12V, VDS = 0V
+ON CHARACTERISTICS (Note 8)
+Gate Threshold Voltage                                     VGS(TH)       -0.6                 -1.3         V       VDS = VGS, ID = -250μA
+                                                                                   59          77                  VGS = -10V, ID = -4.2A
+Static Drain-Source On-Resistance                          RDS(ON)                73          95         mΩ       VGS = -4.5V, ID = -4A
+                                                                                 115         150                  VGS = -2.5V, ID = -3A
+Forward Transconductance                                     gfs                    8                     S       VDS = -5V, ID = -4A
+Source-Drain Diode Forward Voltage                           VSD                  -0.8       -1.25         V       VGS = 0V, IS = -3.0A
+DYNAMIC CHARACTERISTICS (Note 9)
+Input Capacitance                                            Ciss                 432         864         pF
+                                                                                                                    VDS = -15V, VGS = 0V
+Output Capacitance                                           Coss                  87         174         pF
+                                                                                                                    f = 1.0MHz
+Reverse Transfer Capacitance                                 Crss                  62         124         pF
+Gate Resistance                                              RG                  4.04                  Ω        VDS = 0V, VGS = 0V, f = 1.0MHz
+SWITCHING CHARACTERISTICS (Note 9)
+                                                                                  5.9       11.8                  VDS = -15V, VGS = -4.5V, ID = -4.0A
+Total Gate Charge                                             QG
+                                                                                  12         24                   VDS = -15V, VGS = -10V, ID = -4.0A
+                                                                                                           nC
+Gate-Source Charge                                            QGS                 1.0        2.0
+                                                                                                                    VDS = -15V, VGS = -4.5V, ID = -4.0A
+Gate-Drain Charge                                             QGD                 3.1        6.2
+Turn-On Delay Time                                           tD(ON)               4.6        9.2
+Rise Time                                                      tR                 6.5       13.0                  VDS = -15V, VGS = -10V,
+                                                                                                            ns
+Turn-Off Delay Time                                         tD(OFF)              27.8       55.6                  ID = -1A, RG = 6.0Ω
+Fall Time                                                      tF                15.0       30.0
+ Notes:    6. Device mounted on FR-4 PC board, with minimum recommended pad layout, single sided.
+           7. Device mounted on FR-4 substrate PC board, 2oz copper, with thermal vias to bottom layer 1inch square copper plate.
+           8. Short duration pulse test used to minimize self-heating effect.
+           9. Guaranteed by design. Not subject to production testing
+
+
+
+
+ DMP3130LQ                                                                2 of 6                                                                     March 2016
+ Document number: DS38728 Rev. 1 - 2                                  www.diodes.com                                                          © Diodes Incorporated
+                                                                                                                                                                                                                                       DMP3130LQ
+
+                                                          12                               -VGS = 10V                                                                               8
+                                                                                       -VGS = 4.5V
+                                                                                                                                                                                                VDS = -5.0V
+                                                          10                        -VGS = 4.0V
+
+                                                                                  -VGS = 3.5V
+                                 -ID, DRAIN CURRENT (A)
+
+
+
+                                                                                                                                                                                    6
+
+
+
+
+                                                                                                                                                           -ID, DRAIN CURRENT (A)
+                                                                                -VGS = 3.0V
+                                                          8
+                                                                             -VGS = 2.5V
+
+                                                                                                        -VGS = 2.0V
+                                                          6                                                                                                                         4
+
+
+                                                          4
+                                                                                                                                                                                    2                     TA = 150C
+                                                                                                                                                                                                                            TA = 85C
+                                                          2
+                                                                                                                                                                                                    TA = 125C            TA = 25C
+                                                                                                        -VGS = 1.5V
+                                                                                                                                                                                                                       TA = -55C
+                                                          0                                                                                                                         0
+                                                               0            1          2         3         4          5                                                                 0         0.5     1.0      1.5     2.0      2.5                 3.0
+                                                                          -VDS, DRAIN -SOURCE VOLTAGE(V)                                                                                         -VGS, GATE-SOURCE VOLTAGE (V)
+                                                                           Fig. 1 Typical Output Characteristics                                                                                 Fig. 2 Typical Transfer Characteristics
+
+
+                                                    0.14                                                                                                                      0.20
+
+
+
+                                                                                                                                  RDS(ON), DRAIN-SOURCE ON-RESISTANCE()
+       R DS(ON),DRAIN-SOURCE ON-RESISTANCE()
+
+
+
+
+                                                                                                                                                                                                VGS = -4.5V
+                                                    0.12
+                                                                                                                                                                              0.16
+                                                    0.10
+                                                                                                                                                                                                                                          TA = 150C
+
+                                                                                                                                                                              0.12
+                                                    0.08
+                                                                                                                                                                                                                                           TA = 125C
+
+                                                                                                                                                                                                                                           TA = 85 C
+                                                    0.06                                                                                                                      0.08
+                                                                                                                                                                                                                                           TA = 25C
+
+                                                    0.04
+                                                                                                                                                                                                                                           TA = -55C
+                                                                                                                                                                              0.04
+                                                    0.02
+
+                                                              0                                                                                                                     0
+                                                                   0          2         4        6         8          10                                                                    0        2       4        6       8      10                   12
+                                                                             -ID, DRAIN SOURCE CURRENT (A)                                                                                          -ID, DRAIN SOURCE CURRENT (A)
+                                                                             Fig. 3 Typical On-Resistance vs.                                                                                         Fig. 4 Typical On-Resistance vs.
+                                                                              Drain Current and Gate Voltage                                                                                           Drain Current and Temperature
+
+
+                                                          1.6                                                                                                              0.20
+                                                                                                                                RDS(ON), DRAIN-SOURCE ON-RESISTANCE ()
+    ON-RESISTANCE (Normalized)
+
+
+
+
+                                                          1.4                                                                                                              0.16
+      RDS(ON), DRAIN-SOURCE
+
+
+
+
+                                                                                                                                                                                                                             -VGS = 2.5V
+                                                                                                                                                                                                                             -ID = 3.0 A
+
+                                                          1.2                                                                                                              0.12
+
+
+
+                                                                                                                                                                                                                                      -VGS = 4.5V
+                                                          1.0                                                                                                              0.08
+                                                                                                                                                                                                                                      -ID = 5A
+
+
+
+
+                                                          0.8                                                                                                              0.04
+
+
+
+                                                          0.6                                                                                                                       0
+                                                             -50           -25    0   25    50     75 100 125 150                                                                    -50        -25    0   25     50     75 100 125 150
+                                                                             TJ, JUNCTION TEMPERATURE (C)                                                                                        TJ, JUNCTION TEMPERATURE (C)
+                                                                       Fig. 5 On-Resistance Variation with Temperature                                                                      Fig. 6 On-Resistance Variation with Temperature
+
+DMP3130LQ                                                                                                                 3 of 6                                                                                                                        March 2016
+Document number: DS38728 Rev. 1 - 2                                                                                   www.diodes.com                                                                                                          © Diodes Incorporated
+                                                                                                                                                                                                                                 DMP3130LQ
+
+                                                                  1.6                                                                                                                      12
+                             VGS(TH), GATE THRESHOLD VOLTAGE(V)
+
+                                                                                                                                                                                           10
+
+
+
+
+                                                                                                                                                  -IS, SOURCE CURRENT (A)
+                                                                  1.2
+                                                                                                                                                                                           8
+
+
+                                                                  0.8                                                                                                                      6
+
+
+                                                                                                                                                                                           4
+                                                                  0.4
+                                                                                                                                                                                           2
+
+
+                                                                    0                                                                                                                      0
+                                                                    -50     -25   0    25    50     75 100 125 150                                                                          0       0.2     0.4   0.6    0.8     1      1.2     1.4
+                                                                              TA, AMBIENT TEMPERATURE (°C)                                                                                           -VSD, SOURCE-DRAIN VOLTAGE (V)
+                                                                    Fig. 7 Gate Threshold Variation vs. Ambient Temperature                                                                         Fig. 8 Diode Forward Voltage vs. Current
+
+
+                           10,000                                                                                                                                                          10
+                                                                                                                    f = 1MHz
+     CT, JUNCTION CAPACITANCE (pF)
+
+
+
+
+                                                                                                                                                            VGS, GATE-SOURCE VOLTAGE (V)    8
+
+                                          1,000
+                                                                                                                 Ciss                                                                       6
+
+
+
+                                                                                                                                                                                            4
+                                                                  100
+                                                                                                                  Coss
+                                                                                                                                                                                            2
+                                                                                                       Crss
+
+
+
+                                                                  10                                                                                                                        0
+                                                                    0          5         10      15         20           25           30                                                        0          5         10          15             20
+                                                                              -VDS, DRAIN-SOURCE VOLTAGE (V)                                                                                           Qg, TOTAL GATE CHARGE (nC)
+                                                                               Fig. 9 Typical Junction Capacitance                                                                                    Fig. 10 Gate-Charge Characteristics
+
+
+                                                                  100
+
+
+                                                                                                                         P W = 10µs
+                                                                                   RDS(ON)
+                         )A 10                                                     Limited
+                -ID, DRAIN CURRENT (A)
+
+
+
+
+                          (
+                          T
+                          N
+                          E
+                          R
+                          R
+                          U
+                          C    1                                                  DC
+                          N
+                          I
+                          A                                                        PW = 10s
+                          R                                                           PW = 1s
+                          D                                                             PW = 100ms
+                          ,D
+                                                                                            PW = 10ms
+                          -I 0.1                                        TJ(max) = 150°C          PW = 1ms
+                                                               TA = 25°C                          PW = 100µs
+                                                               VGS = -8V
+                                                               Single Pulse
+                                                          0.01 DUT on 1 * MRP Board
+                                                                    0.1                 1             10                          100
+                                                                             -VDS , DRAIN-SOURCE VOLTAGE (V)
+                                                                               Fig. 11 SOA, Safe Operation Area
+
+DMP3130LQ                                                                                                                                 4 of 6                                                                                               March 2016
+Document number: DS38728 Rev. 1 - 2                                                                                                   www.diodes.com                                                                                   © Diodes Incorporated
+                                                                                                                                                                               DMP3130LQ
+                                                          1    D = 0.9
+
+
+
+
+                  r(t), TRANSIENT THERMAL RESISTANCE
+                                                               D = 0.7
+                                                               D = 0.5
+
+                                                               D = 0.3
+
+
+                                                         0.1
+                                                               D = 0.1
+
+
+                                                               D = 0.05
+
+
+                                                               D = 0.02
+                                                        0.01
+                                                               D = 0.01
+
+                                                                                                                                                        RJA(t)=r(t) * RJA
+                                                               D = 0.005                                                                                RJA
+                                                                                                                                                        R     = 176°C/W
+                                                                                                                                                          JA =176°C/W
+                                                                                                                                                        Duty Cycle, D=t1/ t2
+                                                               Single Pulse
+                                                       0.001
+                                                         0.00001              0.0001       0.001             0.01        0.1         1             10          100             1,000
+                                                                                                         t1, PULSE DURATION TIMES (sec)
+                                                                                                        Fig. 12 Transient Thermal Resistance
+
+
+
+Package Outline Dimensions
+Please see http://www.diodes.com/package-outlines.html for the latest version.
+
+                                                                                                                     SOT23
+
+                                                                                                    All 7°
+                                                               H
+                                                                                                                    GAUGE PLANE                           SOT23
+                                                                                                                        0.25                   Dim      Min   Max    Typ
+                                                                                       J                                                        A      0.37   0.51   0.40
+    K1    K
+                                                                                                                                                B      1.20   1.40   1.30
+                                                                                                                                                C      2.30   2.50   2.40
+                                                                                                                           a
+                                                                                                                                                D      0.89   1.03 0.915
+                                                               A                       M
+                                                                                                                                                F      0.45   0.60 0.535
+                                                                                                L                              L1               G      1.78   2.05   1.83
+                                                                                                                                                H      2.80   3.00   2.90
+                                                                                                                                                 J     0.013 0.10    0.05
+                                                                                                                                                K      0.890 1.00 0.975
+      C       B                                                                                                                                K1      0.903 1.10 1.025
+                                                                                                                                                L      0.45   0.61   0.55
+                                                                                                                                                L1     0.25   0.55   0.40
+                                                                                                                                                M      0.085 0.150 0.110
+                                                                    D                                                                            a       0°    8°     --
+                                                               G
+                                                                                                                                                  All Dimensions in mm
+                           F
+
+
+
+
+Suggested Pad Layout
+Please see http://www.diodes.com/package-outlines.html for the latest version.
+
+                                                                                                                     SOT23
+
+
+                                                                           Y                                                              Dimensions       Value (in mm)
+                                                                                                                                              C                 2.0
+                                                                                                                                              X                 0.8
+                                                                                                             C
+                                                                                                                                              X1               1.35
+                                                          Y1
+                                                                                                                                              Y                 0.9
+                                                                                                                                              Y1                2.9
+
+
+
+
+                                                                          X                X1
+
+DMP3130LQ                                                                                                            5 of 6                                                                  March 2016
+Document number: DS38728 Rev. 1 - 2                                                                              www.diodes.com                                                        © Diodes Incorporated
+                                                                                                                            DMP3130LQ
+
+                                                              IMPORTANT NOTICE
+
+DIODES INCORPORATED MAKES NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, WITH REGARDS TO THIS DOCUMENT,
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+(AND THEIR EQUIVALENTS UNDER THE LAWS OF ANY JURISDICTION).
+
+Diodes Incorporated and its subsidiaries reserve the right to make modifications, enhancements, improvements, corrections or other changes
+without further notice to this document and any product described herein. Diodes Incorporated does not assume any liability arising out of the
+application or use of this document or any product described herein; neither does Diodes Incorporated convey any license under its patent or
+trademark rights, nor the rights of others. Any Customer or user of this document or products described herein in such applications shall assume
+all risks of such use and will agree to hold Diodes Incorporated and all the companies whose products are represented on Diodes Incorporated
+website, harmless against all damages.
+
+Diodes Incorporated does not warrant or accept any liability whatsoever in respect of any products purchased through unauthorized sales channel.
+Should Customers purchase or use Diodes Incorporated products for any unintended or unauthorized application, Customers shall indemnify and
+hold Diodes Incorporated and its representatives harmless against all claims, damages, expenses, and attorney fees arising out of, directly or
+indirectly, any claim of personal injury or death associated with such unintended or unauthorized application.
+
+Products described herein may be covered by one or more United States, international or foreign patents pending. Product names and markings
+noted herein may also be covered by one or more United States, international or foreign trademarks.
+
+This document is written in English but may be translated into multiple languages for reference. Only the English version of this document is the
+final and determinative format released by Diodes Incorporated.
+
+                                                                 LIFE SUPPORT
+
+Diodes Incorporated products are specifically not authorized for use as critical components in life support devices or systems without the express
+written approval of the Chief Executive Officer of Diodes Incorporated. As used herein:
+
+A. Life support devices or systems are devices or systems which:
+
+          1. are intended to implant into the body, or
+
+          2. support or sustain life and whose failure to perform when properly used in accordance with instructions for use provided in the
+             labeling can be reasonably expected to result in significant injury to the user.
+
+B. A critical component is any component in a life support device or system whose failure to perform can be reasonably expected to cause the
+   failure of the life support device or to affect its safety or effectiveness.
+
+Customers represent that they have all necessary expertise in the safety and regulatory ramifications of their life support devices or systems, and
+acknowledge and agree that they are solely responsible for all legal, regulatory and safety-related requirements concerning their products and any
+use of Diodes Incorporated products in such safety-critical, life support devices or systems, notwithstanding any devices- or systems-related
+information or support that may be provided by Diodes Incorporated. Further, Customers must fully indemnify Diodes Incorporated and its
+representatives against any damages arising out of the use of Diodes Incorporated products in such safety-critical, life support devices or systems.
+
+Copyright © 2016, Diodes Incorporated
+
+www.diodes.com
+
+
+
+
+DMP3130LQ                                                           6 of 6                                                              March 2016
+Document number: DS38728 Rev. 1 - 2                             www.diodes.com                                                    © Diodes Incorporated
+

@@ -17,6 +17,12 @@ ROOT = Path(__file__).resolve().parent
 LIBRARY = ROOT / "esp32-e220.pretty"
 ACTIVE_BOARD = (ROOT / "esp32-e220.kicad_pcb").resolve()
 
+# Authoritative Stage-8 Q1 pin assignment.  This must remain aligned with the
+# schematic-controlled reverse-polarity path: BAT_SW -> Q1.3 (D) -> Q1.2 (S)
+# -> BUCK_IN.  The regression test deliberately reads this mapping without
+# importing pcbnew, so a stale historical placement mapping cannot return.
+Q1_PAD_NETS = {"1": "Q1_GATE", "2": "BUCK_IN", "3": "BAT_SW"}
+
 
 def placement_output() -> Path:
     """Return an explicitly selected non-active placement-candidate path."""
@@ -113,7 +119,7 @@ def main() -> None:
     # reproducibly makes the pending airwires and later schematic/PCB audit
     # explicit rather than retaining the previous netless mechanical study.
     net_names = [
-        "/GND", "/BAT_PLUS", "/BAT_FUSED", "/BUCK_IN", "/Q1_GATE", "/BUCK_SW",
+        "/GND", "/BAT_PLUS", "/BAT_FUSED", "/BAT_SW", "/BUCK_IN", "/Q1_GATE", "/BUCK_SW",
         "/SS_TR", "/5V_SYS", "/DEVKIT_3V3", "/E220_M0", "/E220_M1", "/E220_RXD",
         "/E220_TXD", "/E220_AUX", "/OLED_SDA", "/OLED_SCL", "/WS2812_DATA_3V3",
         "/WS2812_DIN",
@@ -125,6 +131,11 @@ def main() -> None:
         nets[name] = net
 
     def connect(fp: pcbnew.FOOTPRINT, assignments: dict[str, str]) -> None:
+        if fp.GetReference() == "Q1" and assignments != Q1_PAD_NETS:
+            raise RuntimeError(
+                "Q1 pad assignment must be Q1.1=Q1_GATE, Q1.2=BUCK_IN, "
+                "Q1.3=BAT_SW"
+            )
         for number, net_name in assignments.items():
             pad = fp.FindPadByNumber(number)
             if pad is None:
@@ -224,14 +235,12 @@ def main() -> None:
     add_text(board, "ANTENNA-EDGE PLACEHOLDER: NO ROUTING / COMPONENTS", 123.7, 66, pcbnew.Dwgs_User, 0.80)
     add_text(board, "USB-C ACCESS CORRIDOR — KEEP DIRECTLY ACCESSIBLE", 123.7, 68, pcbnew.Dwgs_User, 0.80)
 
-    # Status indicator, outside the RF envelopes and near an observable edge.
-    # All status parts remain left of the DevKit antenna placeholder beginning
-    # at X=104.700 mm.  D2 body ends at X=99.000 mm, leaving 5.700 mm.
+    # Status buffer and bypass, outside the RF envelopes and near an observable
+    # edge.  D2 was a removed prototype-only WS2812 candidate; Stage 7 deletes
+    # its managed footprint, so this current generator must not recreate it.
     u3 = add_footprint(board, "TI_SN74AHCT1G125DBVR_SOT23-5", "U3", "SN74AHCT1G125DBVR", 89.0, 54)
     u3.Reference().SetLayer(pcbnew.F_Fab)
     c7 = add_footprint(board, "Murata_GRM188_1608Metric", "C7", "GRM188R71C104KA01D", 85.5, 54, 90)
-    d2 = add_footprint(board, "WorldSemi_WS2812B-V5_PLACEMENT_CANDIDATE_NOT_RELEASED", "D2", "WS2812B-V5", 96.5, 54)
-    add_text(board, "D2 LAND PATTERN = PCB RELEASE BLOCKER; PLACEMENT ONLY", 93, 60.5, pcbnew.Dwgs_User, 0.75)
 
     # Prototype test access is deliberately clear of module body envelopes.
     tps = {}
@@ -252,7 +261,7 @@ def main() -> None:
     connect(j4, {"1": "BAT_PLUS", "2": "GND"})
     connect(f1, {"1": "BAT_PLUS", "2": "BAT_FUSED"})
     connect(d3, {"1": "BAT_FUSED", "2": "GND"})
-    connect(q1, {"1": "Q1_GATE", "2": "BUCK_IN", "3": "BAT_FUSED"})
+    connect(q1, Q1_PAD_NETS)
     connect(r1, {"1": "Q1_GATE", "2": "GND"})
     connect(r2, {"1": "BUCK_IN", "2": "Q1_GATE"})
     connect(u1, {"1": "BUCK_SW", "2": "BUCK_SW", "3": "BUCK_SW", "5": "GND", "6": "GND",
@@ -273,7 +282,6 @@ def main() -> None:
     connect(j5, {"1": "GND", "2": "DEVKIT_3V3", "3": "OLED_SCL", "4": "OLED_SDA"})
     connect(u3, {"1": "GND", "2": "WS2812_DATA_3V3", "3": "GND", "4": "WS2812_DIN", "5": "5V_SYS"})
     connect(c7, {"1": "5V_SYS", "2": "GND"})
-    connect(d2, {"1": "5V_SYS", "3": "GND", "4": "WS2812_DIN"})
     for ref, net in [("TP1", "BAT_PLUS"), ("TP2", "GND"), ("TP3", "BUCK_IN"), ("TP4", "5V_SYS"),
                      ("TP5", "5V_SYS"), ("TP6", "E220_M0"), ("TP7", "E220_M1"), ("TP8", "E220_AUX"),
                      ("TP9", "E220_RXD"), ("TP10", "E220_TXD")]:

@@ -1,0 +1,20 @@
+--- hardware/releases/rev1-q1-footprint-correction-2026-09-11/checksums/SHA256SUMS.txt	2026-09-11 11:50:35.889514848 +0700
++++ hardware/evidence/q1-stage8-stale-mapping-2026-09-11/reviewer-mutation-recovery/SHA256SUMS.txt.from-zip	2026-09-11 12:29:46.431038120 +0700
+@@ -2,7 +2,7 @@
+ 8d04dab20ccbc66ca57085caa3c9edf53ae1ef29002085bab5c95f872d8ba9fe  assembly/CPL_SMD_REV1.csv
+ f3029b11121e584636e6f9786e0a00899632aed54b66fdc254ac674f142f5543  assembly/DNP_USER_MANIFEST.csv
+ c39e1044f22e897b94cd3516ee194e1148b6f4a2cdbd48c8b5c6e3db72eae77c  assembly/THT_ASSEMBLY.csv
+-5ae9284f58e343b94b662bca4e417fdc00552d2d0fb5361995febcb8768d0979  checksums/package-self-audit.json
++1c86e2201a259d731852bbbd9c1f05ef9b0350b9e3dd8a0838dcd6e6347e007a  checksums/package-self-audit.json
+ 19c017542ebd83dd3c98f42a58d690dcd0f65a06785c081e1c8ae2c26e3123c9  diagnostics/B_Cu_preview.pdf
+ d09d4df53d95718ef79ab18a1135f47c01a799fa4c163ed8c6a5647a3053f76e  diagnostics/B_Mask_preview.pdf
+ 0f2216e23c32398a4556bb905bb7ab5913946fd3c4a5bb497078f62b18226285  diagnostics/Drill_Map_NPTH.pdf
+@@ -14,7 +14,7 @@
+ efe0cc11021e137b98753e4c790c77ad7f4ec7671ad544bf56abf1139578063c  documentation/ASSEMBLY_NOTES.md
+ 0b77c8c9a0f2f7d8d6037ea77328fcb29540112fdcbe43fa964489824315ae52  documentation/CPL_ROTATION_NOTES.md
+ ba5c7aaafe498e43512a38df4fb47970b8f116351f2fa4f44a9b5ad5fa02e147  documentation/FAB_NOTES.md
+-9e19cee1fe2eb0d925ad61cb8525b139e973d0324705bcb61d3c1011c60f4af3  documentation/RELEASE_MANIFEST.md
++43a2ba63deacc4156f32d0db6a324bde31a2722394b38474bcaa6075a2ee5ba5  documentation/RELEASE_MANIFEST.md
+ 9d82efaccaa4f7a873d62341580fbc08c1b02add2e3601e669ca00656c13aa1b  documentation/assembly-top.pdf
+ 2c7d3da6c895e41bef9251b605b09284580a2231fd6e7430d949c53614aa0415  documentation/silkscreen-top.pdf
+ da6270e32f7d94b1fc02225d520f81fc23661c30575ba6eb4359494b40f708c3  fabrication/DRILL_REPORT.txt

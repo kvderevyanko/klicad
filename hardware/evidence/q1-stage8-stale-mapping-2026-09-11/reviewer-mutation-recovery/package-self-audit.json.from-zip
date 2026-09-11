@@ -1,0 +1,65 @@
+{
+  "bom_rows": 25,
+  "cpl_rows": 23,
+  "drills": {
+    "npth_excellon_hits": 3,
+    "pth_excellon_hits": 119
+  },
+  "errors": [],
+  "gate": "Q1-CORRECTED GENERATED PACKAGE SELF-AUDIT",
+  "kicad_cli": "10.0.6",
+  "legacy_release_unmodified_vs_head": true,
+  "q1_f_cu_direct": {
+    "1": {
+      "aperture": "30",
+      "aperture_mm": [
+        0.8,
+        0.9
+      ],
+      "net": "Q1_GATE",
+      "pcb_mm": [
+        62.05,
+        77.0
+      ],
+      "x_gerber": 62050000,
+      "y_gerber": -77000000
+    },
+    "2": {
+      "aperture": "30",
+      "aperture_mm": [
+        0.8,
+        0.9
+      ],
+      "net": "BUCK_IN",
+      "pcb_mm": [
+        63.95,
+        77.0
+      ],
+      "x_gerber": 63950000,
+      "y_gerber": -77000000
+    },
+    "3": {
+      "aperture": "30",
+      "aperture_mm": [
+        0.8,
+        0.9
+      ],
+      "net": "BAT_SW",
+      "pcb_mm": [
+        63.0,
+        75.0
+      ],
+      "x_gerber": 63000000,
+      "y_gerber": -75000000
+    }
+  },
+  "release": "rev1-q1-footprint-correction-2026-09-11",
+  "source": {
+    "metadata_sha256": "806393fc7e9b32da32d34c3adb6357ec87d1d0236a449df42e610f37361dd639",
+    "pcb_sha256": "61549b45d4fe336986e76bcc78c5ca5532e67df604d155b140b1fd8a9d1bb109",
+    "q1_footprint_sha256": "a964b65e180fd9867d69eab31656367a13d0e120a503b78c8982a64b08626ebc",
+    "schematic_sha256": "8ade3ec2f6a90f39763b8dd5570fcfe1709e34482d2f83a886886c73e5a4dacc"
+  },
+  "status": "PASS",
+  "timestamp_utc": "2026-09-11T04:40:17+00:00"
+}

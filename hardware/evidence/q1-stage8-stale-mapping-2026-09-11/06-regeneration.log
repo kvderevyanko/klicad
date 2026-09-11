@@ -1,0 +1,11 @@
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+Traceback (most recent call last):
+  File "/home/kirill/codex/kicad/hardware/generate_stage8_placement.py", line 298, in <module>
+    main()
+  File "/home/kirill/codex/kicad/hardware/generate_stage8_placement.py", line 244, in main
+    d2 = add_footprint(board, "WorldSemi_WS2812B-V5_PLACEMENT_CANDIDATE_NOT_RELEASED", "D2", "WS2812B-V5", 96.5, 54)
+  File "/home/kirill/codex/kicad/hardware/generate_stage8_placement.py", line 83, in add_footprint
+    raise RuntimeError(f"Cannot load Carrier:{source_name}")
+RuntimeError: Cannot load Carrier:WorldSemi_WS2812B-V5_PLACEMENT_CANDIDATE_NOT_RELEASED

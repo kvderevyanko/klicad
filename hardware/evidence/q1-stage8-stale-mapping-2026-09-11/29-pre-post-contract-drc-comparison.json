@@ -1,0 +1,36 @@
+{
+  "artifact": "01-pre-full-contract.json",
+  "drc": {
+    "evidence": {
+      "categories": {
+        "lib_footprint_mismatch": 2
+      },
+      "exit_code": 5,
+      "footprint_errors": 2,
+      "geometric_violations": 0,
+      "unconnected_items": 0,
+      "zone_errors": 0
+    },
+    "name": "NATIVE DRC SUMMARY",
+    "status": "FAIL"
+  },
+  "overall_status": "FAIL"
+}
+{
+  "artifact": "22-post-full-contract.json",
+  "drc": {
+    "evidence": {
+      "categories": {
+        "lib_footprint_mismatch": 2
+      },
+      "exit_code": 5,
+      "footprint_errors": 2,
+      "geometric_violations": 0,
+      "unconnected_items": 0,
+      "zone_errors": 0
+    },
+    "name": "NATIVE DRC SUMMARY",
+    "status": "FAIL"
+  },
+  "overall_status": "FAIL"
+}
