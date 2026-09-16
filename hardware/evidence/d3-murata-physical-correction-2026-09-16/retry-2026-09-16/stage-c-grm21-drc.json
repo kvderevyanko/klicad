@@ -1,0 +1,143 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-16T11:58:12",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [
+        {
+            "description": "Footprint attributes don't match symbol: 'Do not populate' settings differ",
+            "items": [
+                {
+                    "description": "Footprint J6",
+                    "pos": {
+                        "x": 94.0,
+                        "y": 18.0
+                    },
+                    "uuid": "f87cad3d-f2ec-44f9-bfcb-536bdbf2d49e"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Missing symbol field 'DNP' in footprint",
+            "items": [
+                {
+                    "description": "Footprint J6",
+                    "pos": {
+                        "x": 94.0,
+                        "y": 18.0
+                    },
+                    "uuid": "f87cad3d-f2ec-44f9-bfcb-536bdbf2d49e"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_field_mismatch"
+        },
+        {
+            "description": "Footprint attributes don't match symbol: 'Do not populate' settings differ",
+            "items": [
+                {
+                    "description": "Footprint J9",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 54.0
+                    },
+                    "uuid": "4a360355-6357-485a-ac02-0e4815c24626"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Missing symbol field 'DNP' in footprint",
+            "items": [
+                {
+                    "description": "Footprint J9",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 54.0
+                    },
+                    "uuid": "4a360355-6357-485a-ac02-0e4815c24626"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_field_mismatch"
+        },
+        {
+            "description": "Extra footprint",
+            "items": [
+                {
+                    "description": "Footprint H3",
+                    "pos": {
+                        "x": 96.0,
+                        "y": 83.0
+                    },
+                    "uuid": "92866050-7b31-40c2-aaca-bf10681a1bd5"
+                }
+            ],
+            "severity": "warning",
+            "type": "extra_footprint"
+        },
+        {
+            "description": "Extra footprint",
+            "items": [
+                {
+                    "description": "Footprint H2",
+                    "pos": {
+                        "x": 80.0,
+                        "y": 7.0
+                    },
+                    "uuid": "d5a217bd-f0b8-4258-85ca-b1ae8c857061"
+                }
+            ],
+            "severity": "warning",
+            "type": "extra_footprint"
+        },
+        {
+            "description": "Extra footprint",
+            "items": [
+                {
+                    "description": "Footprint H1",
+                    "pos": {
+                        "x": 7.0,
+                        "y": 7.0
+                    },
+                    "uuid": "da1e6e7c-7875-4b34-b081-50aa2a7f772c"
+                }
+            ],
+            "severity": "warning",
+            "type": "extra_footprint"
+        }
+    ],
+    "source": "esp32-e220.kicad_pcb",
+    "unconnected_items": [],
+    "violations": []
+}

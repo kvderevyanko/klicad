@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "stage": "grm188",
+  "completed_groups": [
+    "d3",
+    "grm188"
+  ],
+  "placements_rotations_unchanged": true,
+  "tracks_vias_unchanged": true,
+  "zone_outlines_unchanged": true,
+  "failures": []
+}

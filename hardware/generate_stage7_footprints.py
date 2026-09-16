@@ -81,6 +81,55 @@ def passive(name: str, description: str, body_x: float, body_y: float,
     ))
 
 
+def murata_grm188_standard() -> str:
+    """GRM18 +/-0.10-mm group manufacturer Table 2 land geometry."""
+    return passive(
+        "Murata_GRM188_1608Metric",
+        "Murata GRM18 1608 metric C2/C4/C6/C7/C8. Manufacturer Table 2 reflow lands: a=0.75, b=0.70, c=0.70 mm on 1.45-mm centres.",
+        1.60, 0.80, 0.70, 0.70, 1.45,
+    )
+
+
+def murata_grm21_standard() -> str:
+    """GRM21 +/-0.15-mm group manufacturer Table 2 land geometry."""
+    name = "Murata_GRM21_2012Metric"
+    description = (
+        "Murata GRM21 2012 metric C1/C9/C10. Manufacturer Table 2 reflow lands: "
+        "a=0.80, b=1.20, c=1.30 mm on 2.00-mm centres."
+    )
+    return "".join((
+        f'(footprint "{name}" (version 20240108) (generator "stage7")\n',
+        '  (layer "F.Cu")\n',
+        f'  (descr "{description}")\n',
+        '  (attr smd)\n',
+        text("reference", "REF**", 0, -1.625, "F.SilkS"),
+        text("value", name, 0, 1.625, "F.Fab", 0.75),
+        rect(-1.000, -0.625, 1.000, 0.625, "F.Fab", 0.10),
+        rect(-1.650, -1.125, 1.650, 1.125, "F.CrtYd", 0.05),
+        smd_pad("1", -1.000, 0, 1.200, 1.300),
+        smd_pad("2", 1.000, 0, 1.200, 1.300),
+        ")\n",
+    ))
+
+
+def murata_grm188_c5() -> str:
+    """GRM188R61A106MAAL +/-0.15-mm manufacturer Table 2 lands."""
+    return passive(
+        "Murata_GRM188R61A106MAAL_1608Metric",
+        "Murata GRM188R61A106MAAL 1608 metric C5. Manufacturer Table 2 reflow lands: a=0.70, b=0.75, c=0.90 mm on 1.45-mm centres.",
+        1.60, 0.80, 0.75, 0.90, 1.45,
+    )
+
+
+def murata_grm21_c3() -> str:
+    """GRM21BR61A226ME44 +/-0.20-mm manufacturer Table 2 lands."""
+    return passive(
+        "Murata_GRM21BR61A226ME44_2012Metric",
+        "Murata GRM21BR61A226ME44 2012 metric C3. Manufacturer Table 2 reflow lands: a=1.30, b=0.70, c=1.30 mm on 2.00-mm centres.",
+        2.00, 1.25, 0.70, 1.30, 2.00,
+    )
+
+
 def tps62133() -> str:
     """TI RGT0016C example land pattern, not a copied generic VQFN."""
     items = [
@@ -242,9 +291,26 @@ def jst_xh_b2b_xh_a() -> str:
 
 
 def smbj10ca() -> str:
-    # Littelfuse specifies the DO-214AA envelope. The copper lands are the
-    # audited project/IPC pattern and must be validated by the assembler.
-    return passive("Littelfuse_SMBJ10CA_DO214AA", "Littelfuse SMBJ10CA in DO-214AA/SMB, 4.06..4.75 x 3.30..3.94 mm official package envelope; 2.50x2.30 mm lands are project IPC nominal.", 4.60, 4.00, 2.50, 2.30, 4.30)
+    """Littelfuse SMBJ/DO-214AA manufacturer-recommended land pattern.
+
+    Littelfuse SMBJ series drawing Rev. JC defines 2.160 x 2.260 mm lands,
+    a 2.740-mm inner gap, and therefore a 4.900-mm centre pitch.  The F.Fab
+    body uses the midpoint of the official package limits: 4.405 x 3.620 mm.
+    SMBJ10CA is bidirectional, so neither land carries a polarity constraint.
+    """
+    return "".join((
+        '(footprint "Littelfuse_SMBJ10CA_DO214AA" (version 20240108) (generator "stage7")\n',
+        '  (layer "F.Cu")\n',
+        '  (descr "Littelfuse SMBJ10CA bidirectional TVS in DO-214AA/SMB. Manufacturer recommended solder lands: 2.160x2.260 mm, 2.740-mm inner gap, 4.900-mm centre pitch.")\n',
+        '  (attr smd)\n',
+        text("reference", "REF**", 0, -2.810, "F.SilkS"),
+        text("value", "Littelfuse_SMBJ10CA_DO214AA", 0, 2.810, "F.Fab", 0.75),
+        rect(-2.2025, -1.810, 2.2025, 1.810, "F.Fab", 0.10),
+        rect(-3.800, -2.500, 3.800, 2.500, "F.CrtYd", 0.05),
+        smd_pad("1", -2.450, 0, 2.160, 2.260),
+        smd_pad("2", 2.450, 0, 2.160, 2.260),
+        ")\n",
+    ))
 
 
 def fuse_1812() -> str:
@@ -514,8 +580,10 @@ def main() -> None:
         "TestPoint_THT_1p0mm_PROTOTYPE.kicad_mod": testpoint(),
         "Littelfuse_SMBJ10CA_DO214AA.kicad_mod": smbj10ca(),
         "Littelfuse_1812L200_16_4532Metric.kicad_mod": fuse_1812(),
-        "Murata_GRM21_2012Metric.kicad_mod": passive("Murata_GRM21_2012Metric", "Murata GRM21 2012 metric (0805) capacitor case used by C1/C3/C9/C10; 1.15x1.40 lands on 2.00-mm centres are project IPC nominal.", 2.00, 1.25, 1.15, 1.40, 2.00),
-        "Murata_GRM188_1608Metric.kicad_mod": passive("Murata_GRM188_1608Metric", "Murata GRM188 1608 metric (0603) capacitor case used by C2/C4/C5/C6/C7/C8; 0.95x1.00 lands on 1.45-mm centres are project IPC nominal.", 1.60, 0.80, 0.95, 1.00, 1.45),
+        "Murata_GRM21_2012Metric.kicad_mod": murata_grm21_standard(),
+        "Murata_GRM21BR61A226ME44_2012Metric.kicad_mod": murata_grm21_c3(),
+        "Murata_GRM188_1608Metric.kicad_mod": murata_grm188_standard(),
+        "Murata_GRM188R61A106MAAL_1608Metric.kicad_mod": murata_grm188_c5(),
         "Resistor_0603_1608Metric.kicad_mod": passive("Resistor_0603_1608Metric", "0603 (1608 metric) resistor footprint used by R1/R2/R3/R4/R8/R9/R10/R11; 0.95x1.00 lands on 1.45-mm centres are project IPC nominal.", 1.60, 0.80, 0.95, 1.00, 1.45),
     }
     for filename, content in footprints.items():

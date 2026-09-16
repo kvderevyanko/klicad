@@ -1,0 +1,60 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-16T09:54:34",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "esp32-e220.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1755 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [/BUCK_IN] of C1 on F.Cu",
+                    "pos": {
+                        "x": 66.7,
+                        "y": 59.225
+                    },
+                    "uuid": "c13c5844-fe57-419b-aba1-bbf9ef1fd38a"
+                },
+                {
+                    "description": "Zone [/GND] on F.Cu, priority 0",
+                    "pos": {
+                        "x": 64.0,
+                        "y": 52.0
+                    },
+                    "uuid": "dfb51e4c-e86d-4bc2-86a0-24b548017a74"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        }
+    ]
+}
