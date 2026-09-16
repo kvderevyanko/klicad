@@ -1,0 +1,178 @@
+{
+  "board_vias_within_5mm_of_u4_origin": [],
+  "pads": [
+    {
+      "attached_track_endpoints": [
+        {
+          "endpoint": "start",
+          "inside_proposed_copper": true,
+          "mm": [
+            17.5,
+            24.7
+          ],
+          "width_mm": 0.5
+        }
+      ],
+      "current_absolute_centre_mm": [
+        17.5,
+        24.7
+      ],
+      "net": "GND",
+      "pad": "1",
+      "proposed_absolute_centre_mm": [
+        17.75,
+        24.7
+      ],
+      "proposed_copper_size_mm": [
+        2.15,
+        0.95
+      ],
+      "routing_change_required": false
+    },
+    {
+      "attached_track_endpoints": [
+        {
+          "endpoint": "start",
+          "inside_proposed_copper": true,
+          "mm": [
+            17.5,
+            27.0
+          ],
+          "width_mm": 0.8
+        },
+        {
+          "endpoint": "end",
+          "inside_proposed_copper": true,
+          "mm": [
+            17.5,
+            27.0
+          ],
+          "width_mm": 0.8
+        }
+      ],
+      "current_absolute_centre_mm": [
+        17.5,
+        27.0
+      ],
+      "net": "AUX_3V3",
+      "pad": "2 lead",
+      "proposed_absolute_centre_mm": [
+        17.75,
+        27.0
+      ],
+      "proposed_copper_size_mm": [
+        2.15,
+        0.95
+      ],
+      "routing_change_required": false
+    },
+    {
+      "attached_track_endpoints": [
+        {
+          "endpoint": "end",
+          "inside_proposed_copper": true,
+          "mm": [
+            23.8,
+            27.0
+          ],
+          "width_mm": 0.8
+        }
+      ],
+      "current_absolute_centre_mm": [
+        23.8,
+        27.0
+      ],
+      "net": "AUX_3V3",
+      "pad": "2 tab",
+      "proposed_absolute_centre_mm": [
+        23.55,
+        27.0
+      ],
+      "proposed_copper_size_mm": [
+        2.15,
+        3.25
+      ],
+      "routing_change_required": false
+    },
+    {
+      "attached_track_endpoints": [
+        {
+          "endpoint": "end",
+          "inside_proposed_copper": true,
+          "mm": [
+            17.5,
+            29.3
+          ],
+          "width_mm": 0.8
+        }
+      ],
+      "current_absolute_centre_mm": [
+        17.5,
+        29.3
+      ],
+      "net": "5V_SYS",
+      "pad": "3",
+      "proposed_absolute_centre_mm": [
+        17.75,
+        29.3
+      ],
+      "proposed_copper_size_mm": [
+        2.15,
+        0.95
+      ],
+      "routing_change_required": false
+    }
+  ],
+  "scope": "U4 TI 4210278/C candidate endpoint containment",
+  "status": "READ_ONLY_PLAN_DATA",
+  "u4_observed_pads": [
+    {
+      "centre_mm": [
+        17.5,
+        24.7
+      ],
+      "net": "/GND",
+      "number": "1",
+      "size_mm": [
+        2.0,
+        1.5
+      ]
+    },
+    {
+      "centre_mm": [
+        17.5,
+        27.0
+      ],
+      "net": "/AUX_3V3",
+      "number": "2",
+      "size_mm": [
+        2.0,
+        1.5
+      ]
+    },
+    {
+      "centre_mm": [
+        23.8,
+        27.0
+      ],
+      "net": "/AUX_3V3",
+      "number": "2",
+      "size_mm": [
+        2.0,
+        3.8
+      ]
+    },
+    {
+      "centre_mm": [
+        17.5,
+        29.3
+      ],
+      "net": "/5V_SYS",
+      "number": "3",
+      "size_mm": [
+        2.0,
+        1.5
+      ]
+    }
+  ]
+}
