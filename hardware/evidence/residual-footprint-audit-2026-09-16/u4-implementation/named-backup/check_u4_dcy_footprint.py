@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Regression contract for TI TLV1117LV DCY drawing 4210278/C."""
+"""Regression contract for U4's project-local DCY/SOT-223 identity."""
 
 from __future__ import annotations
 
 import argparse
-import copy
 import json
 import sys
 from pathlib import Path
@@ -21,30 +20,34 @@ from check_board_contract import at, first, forms, fvalue, prop_map, sexp, value
 
 NAME = "TI_TLV1117LV33DCYR_DCY_SOT223"
 FULL_ID = f"Carrier:{NAME}"
-DESCRIPTION = (
-    "TI TLV1117LV33DCYR DCY/SOT-223 manufacturer land pattern; "
-    "TI TLV1117LV Rev. C drawing 4210278/C. Pin 2 includes lead and tab."
+OLD_ID = "Package_TO_SOT_SMD:SOT-223-3_TabPin2"
+NEW_DESCRIPTION = (
+    "TI TLV1117LV33DCYR DCY/SOT-223. TI package drawing "
+    "MPDS094A/4202506/B; frozen project IPC land pattern, not a "
+    "TI-recommended land pattern. Pin 2 includes lead and tab."
 )
-TAGS = "TI TLV1117LV33DCYR DCY SOT-223 4210278C"
+OLD_DESCRIPTION = "module CMS SOT223 4 pins"
+NEW_TAGS = "TI TLV1117LV33DCYR DCY SOT-223 project IPC"
+OLD_TAGS = "CMS SOT"
 
 DEFAULT_BOARD = HERE / "esp32-e220.kicad_pcb"
 DEFAULT_SCHEMATIC = HERE / "esp32-e220.kicad_sch"
 DEFAULT_LOCAL = HERE / "esp32-e220.pretty" / f"{NAME}.kicad_mod"
 DEFAULT_REFERENCE = (
-    HERE / "evidence" / "residual-footprint-audit-2026-09-16"
-    / "u4-implementation" / "named-backup" / "esp32-e220.kicad_pcb"
+    HERE / "evidence" / "full-production-audit-2026-09-15"
+    / "u4-library-resolution" / "10-esp32-e220.pre-u4-metadata.kicad_pcb"
 )
 DEFAULT_SCHEMATIC_REFERENCE = (
-    HERE / "evidence" / "residual-footprint-audit-2026-09-16"
-    / "u4-implementation" / "named-backup" / "esp32-e220.kicad_sch"
+    HERE / "evidence" / "full-production-audit-2026-09-15"
+    / "u4-library-resolution" / "10-esp32-e220.pre-u4-metadata.kicad_sch"
 )
 SCHEMATIC_GENERATOR = HERE / "generate_esp32_e220.py"
 
 EXPECTED_PADS = [
-    ("1", (-2.90, -2.30), (2.15, 0.95), (17.75, 24.70), "/GND"),
-    ("2", (-2.90, 0.00), (2.15, 0.95), (17.75, 27.00), "/AUX_3V3"),
-    ("2", (2.90, 0.00), (2.15, 3.25), (23.55, 27.00), "/AUX_3V3"),
-    ("3", (-2.90, 2.30), (2.15, 0.95), (17.75, 29.30), "/5V_SYS"),
+    ("1", (-3.15, -2.30), (2.00, 1.50), (17.50, 24.70), "/GND"),
+    ("2", (-3.15, 0.00), (2.00, 1.50), (17.50, 27.00), "/AUX_3V3"),
+    ("2", (3.15, 0.00), (2.00, 3.80), (23.80, 27.00), "/AUX_3V3"),
+    ("3", (-3.15, 2.30), (2.00, 1.50), (17.50, 29.30), "/5V_SYS"),
 ]
 
 
@@ -82,13 +85,6 @@ def ordered_pads(footprint: list[Any]) -> list[list[Any]]:
     return forms(footprint, "pad")
 
 
-def net_name(pad: list[Any]) -> str:
-    net = first(pad, "net")
-    if net is None:
-        return ""
-    return str(value(net, 1) if len(net) == 2 else value(net, 2))
-
-
 def check_geometry(footprint: list[Any], embedded: bool, failures: list[str]) -> None:
     pads = ordered_pads(footprint)
     if len(pads) != 4:
@@ -109,68 +105,25 @@ def check_geometry(footprint: list[Any], embedded: bool, failures: list[str]) ->
             failures.append(f"U4 pad {number} size {actual_size}, expected {expected_size}")
         if value(pad, 2) != "smd" or value(pad, 3) != "rect":
             failures.append(f"U4 pad {number} is not smd rect")
-        layers = first(pad, "layers")
-        if layers is None or set(layers[1:]) != {"F.Cu", "F.Mask", "F.Paste"}:
-            failures.append(f"U4 pad {number} layers do not provide 1:1 copper/paste/mask")
-        mask = first(pad, "solder_mask_margin")
-        if mask is None or not close(fvalue(mask, 1), 0.05):
-            failures.append(f"U4 pad {number} solder-mask margin is not +0.05 mm")
-        if first(pad, "solder_paste_margin") is not None or first(pad, "solder_paste_margin_ratio") is not None:
-            failures.append(f"U4 pad {number} has an unexpected paste reduction/expansion")
         if embedded:
             absolute = (origin[0] + actual_at[0], origin[1] + actual_at[1])
             if not all(close(actual, target) for actual, target in zip(absolute, expected_absolute)):
                 failures.append(f"U4 pad {number} absolute centre {absolute}, expected {expected_absolute}")
-            if net_name(pad) != expected_net:
-                failures.append(f"U4 pad {number} net {net_name(pad)!r}, expected {expected_net!r}")
+            net = first(pad, "net")
+            actual_net = value(net, 1) if net is not None and len(net) == 2 else value(net, 2)
+            if actual_net != expected_net:
+                failures.append(f"U4 pad {number} net {actual_net!r}, expected {expected_net!r}")
     if line_bbox(footprint, "F.Fab") != (-1.85, -3.35, 1.85, 3.35):
         failures.append(f"U4 F.Fab bbox {line_bbox(footprint, 'F.Fab')}")
     if line_bbox(footprint, "F.CrtYd") != (-4.4, -3.6, 4.4, 3.6):
         failures.append(f"U4 F.CrtYd bbox {line_bbox(footprint, 'F.CrtYd')}")
 
 
-def item_uuid(node: list[Any]) -> str:
-    uuid = first(node, "uuid")
-    return str(value(uuid, 1)) if uuid is not None else ""
-
-
-def normalized_u4_matches_baseline(u4: list[Any], old_u4: list[Any]) -> bool:
-    """Undo only the approved U4 fields; equality rejects every other delta."""
-    normalized = copy.deepcopy(u4)
-    old_pads = {item_uuid(pad): pad for pad in ordered_pads(old_u4)}
-    for key in ("descr", "tags"):
-        current = first(normalized, key)
-        baseline = first(old_u4, key)
-        if current is None or baseline is None:
-            return False
-        current[:] = copy.deepcopy(baseline)
-    for pad in ordered_pads(normalized):
-        old_pad = old_pads.get(item_uuid(pad))
-        if old_pad is None:
-            return False
-        for key in ("at", "size"):
-            current = first(pad, key)
-            baseline = first(old_pad, key)
-            if current is None or baseline is None:
-                return False
-            current[:] = copy.deepcopy(baseline)
-        mask = first(pad, "solder_mask_margin")
-        if mask is None:
-            return False
-        pad.remove(mask)
-    return normalized == old_u4
-
-
-def outside_u4_exact(board: list[Any], reference: list[Any]) -> bool:
-    normalized = copy.deepcopy(board)
-    u4 = find_footprint(normalized, "U4")
-    old_u4 = find_footprint(reference, "U4")
-    normalized[normalized.index(u4)] = copy.deepcopy(old_u4)
-    return normalized == reference
-
-
-def forms_exact(root: list[Any], reference: list[Any], kind: str) -> bool:
-    return forms(root, kind) == forms(reference, kind)
+def pad_uuid_map(footprint: list[Any]) -> dict[tuple[str, tuple[float, ...]], str]:
+    return {
+        (value(pad, 1), at(pad)): value(first(pad, "uuid"), 1)
+        for pad in ordered_pads(footprint)
+    }
 
 
 def main() -> int:
@@ -190,44 +143,39 @@ def main() -> int:
     local = sexp(local_text)
     if value(local, 1) != NAME:
         failures.append(f"local U4 footprint identity {value(local, 1)!r}")
-    if value(first(local, "descr"), 1) != DESCRIPTION or value(first(local, "tags"), 1) != TAGS:
-        failures.append("local U4 TI 4210278/C provenance metadata mismatch")
     check_geometry(local, False, failures)
 
-    board = sexp(args.board.read_text(encoding="utf-8"))
-    reference = sexp(args.reference.read_text(encoding="utf-8"))
+    board_text = args.board.read_text(encoding="utf-8")
+    reference_text = args.reference.read_text(encoding="utf-8")
+    board = sexp(board_text)
+    reference = sexp(reference_text)
     u4 = find_footprint(board, "U4")
     old_u4 = find_footprint(reference, "U4")
     if value(u4, 1) != FULL_ID:
         failures.append(f"embedded U4 identity {value(u4, 1)!r}")
     if at(u4) != (20.65, 27.0, 0.0):
         failures.append(f"embedded U4 origin/rotation {at(u4)}")
-    if value(first(u4, "descr"), 1) != DESCRIPTION or value(first(u4, "tags"), 1) != TAGS:
-        failures.append("embedded U4 TI 4210278/C provenance metadata mismatch")
     check_geometry(u4, True, failures)
+    if value(first(u4, "uuid"), 1) != value(first(old_u4, "uuid"), 1):
+        failures.append("U4 footprint UUID changed")
+    if pad_uuid_map(u4) != pad_uuid_map(old_u4):
+        failures.append("U4 pad UUIDs changed")
 
-    approved_u4_delta_only = normalized_u4_matches_baseline(u4, old_u4)
-    if not approved_u4_delta_only:
-        failures.append("embedded U4 changed outside approved description/tags/pad geometry/mask delta")
-    board_outside_u4_exact = outside_u4_exact(board, reference)
-    if not board_outside_u4_exact:
-        failures.append("active PCB changed outside embedded U4")
-
-    route_delta_zero = forms_exact(board, reference, "segment")
-    via_delta_zero = forms_exact(board, reference, "via")
-    zone_delta_zero = forms_exact(board, reference, "zone")
-    for label, result in (("route", route_delta_zero), ("via", via_delta_zero), ("zone", zone_delta_zero)):
-        if not result:
-            failures.append(f"{label} delta is not zero versus approved baseline")
+    reverted = board_text.replace(FULL_ID, OLD_ID, 1)
+    reverted = reverted.replace(NEW_DESCRIPTION, OLD_DESCRIPTION, 1)
+    reverted = reverted.replace(NEW_TAGS, OLD_TAGS, 1)
+    if reverted != reference_text:
+        failures.append("active board changed outside allowlisted U4 identity/description/tags")
 
     schematic_text = args.schematic.read_text(encoding="utf-8")
     schematic_reference_text = args.schematic_reference.read_text(encoding="utf-8")
-    schematic_connectivity_delta_zero = schematic_text == schematic_reference_text
-    if not schematic_connectivity_delta_zero:
-        failures.append("schematic changed versus approved baseline")
+    if schematic_text.count(FULL_ID) != 1 or OLD_ID in schematic_text:
+        failures.append("active schematic U4 footprint identity is not exact")
+    if schematic_text.replace(FULL_ID, OLD_ID, 1) != schematic_reference_text:
+        failures.append("active schematic changed outside U4 footprint identity")
     expected_mapping = f'    "U4": ("TLV1117LV33DCYR", "{FULL_ID}"),'
     generator_text = SCHEMATIC_GENERATOR.read_text(encoding="utf-8")
-    if generator_text.count(expected_mapping) != 1:
+    if generator_text.count(expected_mapping) != 1 or OLD_ID in generator_text:
         failures.append("schematic generator U4 footprint identity is not exact")
 
     payload = {
@@ -235,8 +183,8 @@ def main() -> int:
         "board": str(args.board),
         "reference": str(args.reference),
         "manufacturer_part": "TLV1117LV33DCYR",
-        "package": "TI DCY / SOT-223",
-        "land_pattern_basis": "TI TLV1117LV Rev. C drawing 4210278/C",
+        "package": "TI DCY / SOT-223, MPDS094A/4202506/B",
+        "land_pattern_basis": "frozen project IPC/KiCad; TI does not publish a recommended land pattern",
         "footprint": FULL_ID,
         "source_local_exact": local_text == generated,
         "expected_origin_rotation": [20.65, 27.0, 0.0],
@@ -246,23 +194,15 @@ def main() -> int:
                 "number": number,
                 "local_centre_mm": list(local_at),
                 "absolute_centre_mm": list(absolute),
-                "copper_and_paste_mm": list(size),
-                "mask_opening_mm": [size[0] + 0.10, size[1] + 0.10],
+                "size_mm": list(size),
                 "net": net,
             }
             for number, local_at, size, absolute, net in EXPECTED_PADS
         ],
-        "solder_mask_margin_mm": 0.05,
-        "paste_scale": "1:1 with copper",
-        "fab_unchanged": line_bbox(u4, "F.Fab") == line_bbox(old_u4, "F.Fab"),
-        "courtyard_unchanged": line_bbox(u4, "F.CrtYd") == line_bbox(old_u4, "F.CrtYd"),
-        "approved_u4_delta_only": approved_u4_delta_only,
-        "outside_u4_pcb_delta_zero": board_outside_u4_exact,
-        "route_delta_zero": route_delta_zero,
-        "via_delta_zero": via_delta_zero,
-        "zone_outline_and_config_delta_zero": zone_delta_zero,
-        "schematic_connectivity_delta_zero": schematic_connectivity_delta_zero,
-        "physical_status": "MANUFACTURER LAND PATTERN PASS",
+        "footprint_uuid_preserved": value(first(u4, "uuid"), 1) == value(first(old_u4, "uuid"), 1),
+        "pad_uuids_preserved": pad_uuid_map(u4) == pad_uuid_map(old_u4),
+        "outside_u4_metadata_delta": reverted != reference_text,
+        "physical_status": "UNVERIFIED manufacturer land pattern; package-drawing compatible",
         "failures": failures,
     }
     print(json.dumps(payload, indent=2, sort_keys=True))

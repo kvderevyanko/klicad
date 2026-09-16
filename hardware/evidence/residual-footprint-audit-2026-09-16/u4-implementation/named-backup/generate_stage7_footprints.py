@@ -219,17 +219,18 @@ def sn74ahct1g125() -> str:
 
 
 def tlv1117lv33_dcy_sot223() -> str:
-    """TI TLV1117LV DCY land pattern, drawing 4210278/C.
+    """Stable project copy of the already-routed U4 DCY/SOT-223 footprint.
 
-    The drawing is included in the TLV1117LV Rev. C (SBVS160C) datasheet and
-    defines copper, preferred NSMD mask treatment, and the 0.125-mm stencil
-    example.  The footprint axes rotate the drawing 90 degrees.
+    TI drawing MPDS094A/4202506/B establishes the DCY body, lead dimensions,
+    2.30-mm lead pitch, and pin/tab numbering, but does not publish a PCB land
+    pattern.  The copper below is therefore the frozen project IPC/KiCad land
+    pattern already present on Rev.1, not a TI-recommended land pattern.
     """
     return "".join((
         '(footprint "TI_TLV1117LV33DCYR_DCY_SOT223" (version 20240108) (generator "stage7")\n',
         '  (layer "F.Cu")\n',
-        '  (descr "TI TLV1117LV33DCYR DCY/SOT-223 manufacturer land pattern; TI TLV1117LV Rev. C drawing 4210278/C. Pin 2 includes lead and tab.")\n',
-        '  (tags "TI TLV1117LV33DCYR DCY SOT-223 4210278C")\n',
+        '  (descr "TI TLV1117LV33DCYR DCY/SOT-223. TI package drawing MPDS094A/4202506/B; frozen project IPC land pattern, not a TI-recommended land pattern. Pin 2 includes lead and tab.")\n',
+        '  (tags "TI TLV1117LV33DCYR DCY SOT-223 project IPC")\n',
         '  (attr smd)\n',
         text("reference", "U", 0, -4.5, "F.SilkS"),
         text("value", "TLV1117LV33DCYR", 0, 4.5, "F.Fab"),
@@ -246,10 +247,10 @@ def tlv1117lv33_dcy_sot223() -> str:
         '  (fp_text user "${REFERENCE}" (at 0 0 90) (layer "F.Fab")\n'
         '    (effects (font (size 0.800 0.800) (thickness 0.120)))\n'
         '  )\n',
-        '  (pad "1" smd rect (at -2.900 -2.300) (size 2.150 0.950) (layers "F.Cu" "F.Paste" "F.Mask") (solder_mask_margin 0.050))\n',
-        '  (pad "2" smd rect (at -2.900 0.000) (size 2.150 0.950) (layers "F.Cu" "F.Paste" "F.Mask") (solder_mask_margin 0.050))\n',
-        '  (pad "2" smd rect (at 2.900 0.000) (size 2.150 3.250) (layers "F.Cu" "F.Paste" "F.Mask") (solder_mask_margin 0.050))\n',
-        '  (pad "3" smd rect (at -2.900 2.300) (size 2.150 0.950) (layers "F.Cu" "F.Paste" "F.Mask") (solder_mask_margin 0.050))\n',
+        smd_pad("1", -3.15, -2.30, 2.00, 1.50, "rect"),
+        smd_pad("2", -3.15, 0.00, 2.00, 1.50, "rect"),
+        smd_pad("2", 3.15, 0.00, 2.00, 3.80, "rect"),
+        smd_pad("3", -3.15, 2.30, 2.00, 1.50, "rect"),
         '  (model "${KICAD6_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-223.wrl"\n'
         '    (offset (xyz 0 0 0))\n'
         '    (scale (xyz 1 1 1))\n'

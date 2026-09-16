@@ -1,0 +1,235 @@
+{
+  "failed_gates": [],
+  "gerber": {
+    "F.Cu": {
+      "failures": [],
+      "lead_pitch_mm": [
+        2.3000000000000007,
+        2.3000000000000007
+      ],
+      "lead_to_tab_row_separation_mm": 5.800000000000001,
+      "path": "/home/kirill/codex/kicad/hardware/evidence/residual-footprint-audit-2026-09-16/u4-implementation/fabrication/gerber/esp32-e220-F_Cu.gtl",
+      "status": "PASS",
+      "u4_flashes": [
+        {
+          "aperture": "D29",
+          "centre_mm": [
+            17.75,
+            -24.7
+          ],
+          "dimensions_mm": [
+            2.15,
+            0.95
+          ]
+        },
+        {
+          "aperture": "D29",
+          "centre_mm": [
+            17.75,
+            -27.0
+          ],
+          "dimensions_mm": [
+            2.15,
+            0.95
+          ]
+        },
+        {
+          "aperture": "D30",
+          "centre_mm": [
+            23.55,
+            -27.0
+          ],
+          "dimensions_mm": [
+            2.15,
+            3.25
+          ]
+        },
+        {
+          "aperture": "D29",
+          "centre_mm": [
+            17.75,
+            -29.3
+          ],
+          "dimensions_mm": [
+            2.15,
+            0.95
+          ]
+        }
+      ]
+    },
+    "F.Mask": {
+      "failures": [],
+      "lead_pitch_mm": [
+        2.3000000000000007,
+        2.3000000000000007
+      ],
+      "lead_to_tab_row_separation_mm": 5.800000000000001,
+      "path": "/home/kirill/codex/kicad/hardware/evidence/residual-footprint-audit-2026-09-16/u4-implementation/fabrication/gerber/esp32-e220-F_Mask.gts",
+      "status": "PASS",
+      "u4_flashes": [
+        {
+          "aperture": "D30",
+          "centre_mm": [
+            17.75,
+            -24.7
+          ],
+          "dimensions_mm": [
+            2.25,
+            1.05
+          ]
+        },
+        {
+          "aperture": "D30",
+          "centre_mm": [
+            17.75,
+            -27.0
+          ],
+          "dimensions_mm": [
+            2.25,
+            1.05
+          ]
+        },
+        {
+          "aperture": "D31",
+          "centre_mm": [
+            23.55,
+            -27.0
+          ],
+          "dimensions_mm": [
+            2.25,
+            3.35
+          ]
+        },
+        {
+          "aperture": "D30",
+          "centre_mm": [
+            17.75,
+            -29.3
+          ],
+          "dimensions_mm": [
+            2.25,
+            1.05
+          ]
+        }
+      ]
+    },
+    "F.Paste": {
+      "failures": [],
+      "lead_pitch_mm": [
+        2.3000000000000007,
+        2.3000000000000007
+      ],
+      "lead_to_tab_row_separation_mm": 5.800000000000001,
+      "path": "/home/kirill/codex/kicad/hardware/evidence/residual-footprint-audit-2026-09-16/u4-implementation/fabrication/gerber/esp32-e220-F_Paste.gtp",
+      "status": "PASS",
+      "u4_flashes": [
+        {
+          "aperture": "D24",
+          "centre_mm": [
+            17.75,
+            -24.7
+          ],
+          "dimensions_mm": [
+            2.15,
+            0.95
+          ]
+        },
+        {
+          "aperture": "D24",
+          "centre_mm": [
+            17.75,
+            -27.0
+          ],
+          "dimensions_mm": [
+            2.15,
+            0.95
+          ]
+        },
+        {
+          "aperture": "D25",
+          "centre_mm": [
+            23.55,
+            -27.0
+          ],
+          "dimensions_mm": [
+            2.15,
+            3.25
+          ]
+        },
+        {
+          "aperture": "D24",
+          "centre_mm": [
+            17.75,
+            -29.3
+          ],
+          "dimensions_mm": [
+            2.15,
+            0.95
+          ]
+        }
+      ]
+    }
+  },
+  "ipc_d_356": {
+    "failures": [],
+    "path": "/home/kirill/codex/kicad/hardware/evidence/residual-footprint-audit-2026-09-16/u4-implementation/fabrication/esp32-e220-U4.ipc356",
+    "quantization_tolerance_mm": 0.0013,
+    "status": "PASS",
+    "u4_records": [
+      {
+        "centre_mm": [
+          17.74952,
+          -24.698960000000003
+        ],
+        "dimensions_mm": [
+          2.1488400000000003,
+          0.94996
+        ],
+        "net": "GND",
+        "pad": "1",
+        "rotation": 0
+      },
+      {
+        "centre_mm": [
+          17.74952,
+          -27.000200000000003
+        ],
+        "dimensions_mm": [
+          2.1488400000000003,
+          0.94996
+        ],
+        "net": "AUX_3V3",
+        "pad": "2",
+        "rotation": 0
+      },
+      {
+        "centre_mm": [
+          23.550880000000003,
+          -27.000200000000003
+        ],
+        "dimensions_mm": [
+          2.1488400000000003,
+          3.2512000000000003
+        ],
+        "net": "AUX_3V3",
+        "pad": "2",
+        "rotation": 0
+      },
+      {
+        "centre_mm": [
+          17.74952,
+          -29.298900000000003
+        ],
+        "dimensions_mm": [
+          2.1488400000000003,
+          0.94996
+        ],
+        "net": "5V_SYS",
+        "pad": "3",
+        "rotation": 0
+      }
+    ],
+    "units": "CUST 0 (0.1 mil integer units)"
+  },
+  "status": "PASS"
+}

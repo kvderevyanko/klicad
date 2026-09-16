@@ -1,0 +1,4 @@
+d472f55d47f2b7192da03944c5af844145e255e0bc464813bbbdbb8dc0ab88f8  hardware/evidence/residual-footprint-audit-2026-09-16/u4-implementation/fabrication/gerber/esp32-e220-F_Cu.gtl
+2f18c4fe61055bc8570be9783e4d2f32f1692d834feec91cc8e43d1240ad8a16  hardware/evidence/residual-footprint-audit-2026-09-16/u4-implementation/fabrication/gerber/esp32-e220-F_Mask.gts
+6a43360e408452382f3adcff049f44b7bcb2225d3300ff38a148253c725c3a4b  hardware/evidence/residual-footprint-audit-2026-09-16/u4-implementation/fabrication/gerber/esp32-e220-F_Paste.gtp
+9c6caad8b4ca7b313d2042b78e0f20004f64a1504fa728dbef38e327bfe570d6  hardware/evidence/residual-footprint-audit-2026-09-16/u4-implementation/fabrication/esp32-e220-U4.ipc356
