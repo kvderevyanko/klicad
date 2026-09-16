@@ -39,7 +39,7 @@ ASSEMBLY_CONTRACT = {
     "J6": ("BUTTONS 1x6 2.54mm DNP", "Carrier:PinHeader_1x06_P2.54mm_Vertical"),
     "J8": ("B2B-XH-A", "JST_B2B-XH-A_1x02_P2.50mm_THT"),
     "J9": ("J_RGB / RGB OUT 1x3 2.54mm DNP", "Carrier:PinHeader_1x03_P2.54mm_Vertical"),
-    "JP1": ("TSW-102-07-G-S + SNT-100-BK-G", "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"),
+    "JP1": ("TSW-102-07-G-S + SNT-100-BK-G", "Carrier:Samtec_TSW-102-07-G-S_1x02_P2.54mm_THT"),
     "L1": ("XFL4020-222MEB", "Coilcraft_XFL4020-222MEB"),
     "Q1": ("DMP3130LQ-7", "Diodes_DMP3130LQ-7_SOT23"),
     "R1": ("100k 1%", "Resistor_0603_1608Metric"),
@@ -55,7 +55,7 @@ ASSEMBLY_CONTRACT = {
     "TP5": ("5V_SYS", "TestPoint_THT_1p0mm_PROTOTYPE"),
     "U1": ("TPS62133RGT", "TI_TPS62133RGT_RGT0016C"),
     "U3": ("SN74AHCT1G125DBVR", "TI_SN74AHCT1G125DBVR_SOT23-5"),
-    "U4": ("TLV1117LV33DCYR", "Package_TO_SOT_SMD:SOT-223-3_TabPin2"),
+    "U4": ("TLV1117LV33DCYR", "Carrier:TI_TLV1117LV33DCYR_DCY_SOT223"),
 }
 
 # These two optional pull-ups are intentional non-PCB items: they remain DNP

@@ -1,0 +1,36 @@
+{
+  "drill_tool": {
+    "diameter_mm": 1.02,
+    "hits_mm": [
+      [
+        96.0,
+        14.0
+      ],
+      [
+        98.54,
+        14.0
+      ]
+    ],
+    "id": "T3"
+  },
+  "failures": [],
+  "gerber_copper_mm": {
+    "pad_size": [
+      1.7,
+      1.7
+    ],
+    "pitch": 2.54
+  },
+  "ipc_d356": {
+    "1": {
+      "drill_in": 0.0402,
+      "net": "/5V_SYS"
+    },
+    "2": {
+      "drill_in": 0.0402,
+      "net": "/DEVKIT_VIN"
+    }
+  },
+  "scope": "diagnostic exports only; not a production release",
+  "status": "PASS"
+}

@@ -1,0 +1,11 @@
+--- hardware/evidence/full-production-audit-2026-09-15/u4-library-resolution/10-generate_esp32_e220.pre-u4.py	2026-09-16 00:58:45.440270003 +0700
++++ hardware/generate_esp32_e220.py	2026-09-16 01:00:16.761496771 +0700
+@@ -55,7 +55,7 @@
+     "TP5": ("5V_SYS", "TestPoint_THT_1p0mm_PROTOTYPE"),
+     "U1": ("TPS62133RGT", "TI_TPS62133RGT_RGT0016C"),
+     "U3": ("SN74AHCT1G125DBVR", "TI_SN74AHCT1G125DBVR_SOT23-5"),
+-    "U4": ("TLV1117LV33DCYR", "Package_TO_SOT_SMD:SOT-223-3_TabPin2"),
++    "U4": ("TLV1117LV33DCYR", "Carrier:TI_TLV1117LV33DCYR_DCY_SOT223"),
+ }
+ 
+ # These two optional pull-ups are intentional non-PCB items: they remain DNP

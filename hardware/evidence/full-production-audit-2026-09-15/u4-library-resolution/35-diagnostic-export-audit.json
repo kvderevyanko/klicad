@@ -1,0 +1,102 @@
+{
+  "failures": [],
+  "gerber_layers": {
+    "F_Cu.gtl": {
+      "equal_after_metadata_normalization": true,
+      "post_sha256": "e900caa1bd9b996d200299a278759713936d341cc90bb9fdf9e72d1f6f4787ca",
+      "pre_sha256": "e900caa1bd9b996d200299a278759713936d341cc90bb9fdf9e72d1f6f4787ca"
+    },
+    "F_Fab.gbr": {
+      "equal_after_metadata_normalization": true,
+      "post_sha256": "459c81a658c9056ea7d649ff95f799b5b0f54b0011b96eaaf0a3a9ed45829cbd",
+      "pre_sha256": "459c81a658c9056ea7d649ff95f799b5b0f54b0011b96eaaf0a3a9ed45829cbd"
+    },
+    "F_Mask.gts": {
+      "equal_after_metadata_normalization": true,
+      "post_sha256": "7a33d34c9b04b9b76ecde0152a9a4acd299bf49c956857cccd064958c788495b",
+      "pre_sha256": "7a33d34c9b04b9b76ecde0152a9a4acd299bf49c956857cccd064958c788495b"
+    },
+    "F_Paste.gtp": {
+      "equal_after_metadata_normalization": true,
+      "post_sha256": "29e16d0b1d549fe9c5d80f80c02b6d7c3263847484f95a408e12ca8b8bc9ea63",
+      "pre_sha256": "29e16d0b1d549fe9c5d80f80c02b6d7c3263847484f95a408e12ca8b8bc9ea63"
+    },
+    "F_Silkscreen.gto": {
+      "equal_after_metadata_normalization": true,
+      "post_sha256": "6edac88b54b684def5ecbf4161d2f03d64e03268a1e4448576e1dbf6ee719e8a",
+      "pre_sha256": "6edac88b54b684def5ecbf4161d2f03d64e03268a1e4448576e1dbf6ee719e8a"
+    }
+  },
+  "ipc_d356_full_file_equal": true,
+  "scope": "diagnostic Gerber and IPC-D-356 equivalence across U4 identity-only transaction",
+  "status": "PASS",
+  "u4_post": [
+    [
+      "/GND",
+      "1",
+      "+006890",
+      "-009724",
+      "0787",
+      "0591"
+    ],
+    [
+      "/AUX_3V3",
+      "2",
+      "+006890",
+      "-010630",
+      "0787",
+      "0591"
+    ],
+    [
+      "/AUX_3V3",
+      "2",
+      "+009370",
+      "-010630",
+      "0787",
+      "1496"
+    ],
+    [
+      "/5V_SYS",
+      "3",
+      "+006890",
+      "-011535",
+      "0787",
+      "0591"
+    ]
+  ],
+  "u4_pre": [
+    [
+      "/GND",
+      "1",
+      "+006890",
+      "-009724",
+      "0787",
+      "0591"
+    ],
+    [
+      "/AUX_3V3",
+      "2",
+      "+006890",
+      "-010630",
+      "0787",
+      "0591"
+    ],
+    [
+      "/AUX_3V3",
+      "2",
+      "+009370",
+      "-010630",
+      "0787",
+      "1496"
+    ],
+    [
+      "/5V_SYS",
+      "3",
+      "+006890",
+      "-011535",
+      "0787",
+      "0591"
+    ]
+  ],
+  "u4_records_units": "IPC-D-356 inch fields (4 decimal places)"
+}

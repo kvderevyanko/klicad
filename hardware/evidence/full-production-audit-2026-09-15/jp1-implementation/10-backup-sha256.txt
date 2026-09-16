@@ -1,0 +1,7 @@
+4f00887a909f7a0c20141a4b240ef83b3b807749e23eada834a48753a2586703  hardware/evidence/full-production-audit-2026-09-15/jp1-implementation/10-Littelfuse_1812L200_16_4532Metric.pre-jp1.kicad_mod
+eadd941ca9dd72a4e2f77b1f75add990facaf9c6ec08cee194cd24dfadfc7b30  hardware/evidence/full-production-audit-2026-09-15/jp1-implementation/10-Samtec_SSW_1x15.pre-jp1.kicad_mod
+2f63828381821ca805033f3636ae06bafa95a82920a5340e76069a7b5233bad3  hardware/evidence/full-production-audit-2026-09-15/jp1-implementation/10-TI_SN74AHCT1G125DBVR_SOT23-5.pre-jp1.kicad_mod
+3430e9a77797166cf4298c2d8b080766a62928f67be258cbda755dbd3824135a  hardware/evidence/full-production-audit-2026-09-15/jp1-implementation/10-esp32-e220.pre-jp1.kicad_pcb
+8ade3ec2f6a90f39763b8dd5570fcfe1709e34482d2f83a886886c73e5a4dacc  hardware/evidence/full-production-audit-2026-09-15/jp1-implementation/10-esp32-e220.pre-jp1.kicad_sch
+942d89b918c9e6a56ecb5bd935bef07a29c2fe695547324474247b0bfcae9482  hardware/evidence/full-production-audit-2026-09-15/jp1-implementation/10-generate_esp32_e220.pre-jp1.py
+b22a4b91a92122d429f3b888cdace77f9132fafcf9594260d82e41e074f6356b  hardware/evidence/full-production-audit-2026-09-15/jp1-implementation/10-generate_stage7_footprints.pre-jp1.py

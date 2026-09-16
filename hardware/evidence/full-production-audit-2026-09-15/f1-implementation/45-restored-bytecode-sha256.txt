@@ -1,0 +1,1 @@
+9b39919eeedca74cdf49c9d7a21003f5bc04423dfa360234b4b0f64064a46c7e  hardware/__pycache__/generate_stage7_footprints.cpython-310.pyc

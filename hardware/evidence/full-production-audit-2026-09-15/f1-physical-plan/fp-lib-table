@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Carrier")(type "KiCad")(uri "/home/kirill/codex/kicad/hardware/esp32-e220.pretty")(options "")(descr "Read-only F1 candidate DRC lookup for the active project-local footprint library"))
+)

@@ -1,0 +1,51 @@
+{
+  "board": "hardware/evidence/full-production-audit-2026-09-15/jp1-implementation/10-esp32-e220.pre-jp1.kicad_pcb",
+  "expected_drill_mm": 1.02,
+  "expected_origin_rotation": [
+    96.0,
+    14.0,
+    90.0
+  ],
+  "expected_pad_absolute_centres_mm": {
+    "1": [
+      96.0,
+      14.0
+    ],
+    "2": [
+      98.54,
+      14.0
+    ]
+  },
+  "expected_pad_local_centres_mm": {
+    "1": [
+      0.0,
+      0.0
+    ],
+    "2": [
+      0.0,
+      2.54
+    ]
+  },
+  "expected_pad_nets": {
+    "1": "/5V_SYS",
+    "2": "/DEVKIT_VIN"
+  },
+  "expected_pad_size_mm": [
+    1.7,
+    1.7
+  ],
+  "expected_pitch_mm": 2.54,
+  "failures": [
+    "embedded JP1 identity 'Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical'",
+    "JP1 pad 1 drill is not 1.020 mm",
+    "JP1 pad 2 drill is not 1.020 mm",
+    "active schematic JP1 footprint metadata is not exact"
+  ],
+  "footprint": "Carrier:Samtec_TSW-102-07-G-S_1x02_P2.54mm_THT",
+  "manufacturer_part": "TSW-102-07-G-S",
+  "outside_jp1_board_delta": false,
+  "pad_uuids_preserved": true,
+  "reference": "/home/kirill/codex/kicad/hardware/evidence/full-production-audit-2026-09-15/jp1-implementation/10-esp32-e220.pre-jp1.kicad_pcb",
+  "source_local_exact": true,
+  "status": "FAIL"
+}

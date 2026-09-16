@@ -1,0 +1,13 @@
+diff --git a/hardware/evidence/full-production-audit-2026-09-15/jp1-implementation/10-generate_esp32_e220.pre-jp1.py b/hardware/generate_esp32_e220.py
+index 5e9e806..e3e9704 100644
+--- a/hardware/evidence/full-production-audit-2026-09-15/jp1-implementation/10-generate_esp32_e220.pre-jp1.py
++++ b/hardware/generate_esp32_e220.py
+@@ -39,7 +39,7 @@ ASSEMBLY_CONTRACT = {
+     "J6": ("BUTTONS 1x6 2.54mm DNP", "Carrier:PinHeader_1x06_P2.54mm_Vertical"),
+     "J8": ("B2B-XH-A", "JST_B2B-XH-A_1x02_P2.50mm_THT"),
+     "J9": ("J_RGB / RGB OUT 1x3 2.54mm DNP", "Carrier:PinHeader_1x03_P2.54mm_Vertical"),
+-    "JP1": ("TSW-102-07-G-S + SNT-100-BK-G", "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"),
++    "JP1": ("TSW-102-07-G-S + SNT-100-BK-G", "Carrier:Samtec_TSW-102-07-G-S_1x02_P2.54mm_THT"),
+     "L1": ("XFL4020-222MEB", "Coilcraft_XFL4020-222MEB"),
+     "Q1": ("DMP3130LQ-7", "Diodes_DMP3130LQ-7_SOT23"),
+     "R1": ("100k 1%", "Resistor_0603_1608Metric"),

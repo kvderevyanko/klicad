@@ -1,0 +1,41 @@
+{
+  "board": "/home/kirill/codex/kicad/hardware/esp32-e220.kicad_pcb",
+  "changed_footprints": [
+    "F1"
+  ],
+  "changed_segments": [
+    "01cb0d3e-c640-4898-bd6d-c3c98dd2c2f1",
+    "5bd83154-5890-4fb2-9b14-a90d9902d6de",
+    "9acd9b87-3c41-4f24-8cf8-e01baf241d9b",
+    "d6f11b0f-dde0-46c7-a409-4dbaaff09603",
+    "e2f6e3bc-4117-4dd9-a338-e4bc7c5826a1",
+    "f617d508-72c6-4f5a-96ac-fdaf00b28a39"
+  ],
+  "expected_origin_mm": [
+    44.25,
+    76.0,
+    0.0
+  ],
+  "expected_pad_centres_local_mm": {
+    "1": [
+      -2.615,
+      0.0
+    ],
+    "2": [
+      2.615,
+      0.0
+    ]
+  },
+  "expected_pad_nets": {
+    "1": "/BAT_PLUS",
+    "2": "/BAT_FUSED"
+  },
+  "expected_pad_size_mm": [
+    1.78,
+    3.15
+  ],
+  "failures": [],
+  "reference": "/home/kirill/codex/kicad/hardware/evidence/full-production-audit-2026-09-15/f1-implementation/10-esp32-e220.pre-f1.kicad_pcb",
+  "source_local_exact": true,
+  "status": "PASS"
+}

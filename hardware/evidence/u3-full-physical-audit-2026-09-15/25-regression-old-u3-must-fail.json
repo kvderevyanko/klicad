@@ -1,0 +1,181 @@
+{
+  "allowed_segment_endpoint_uuids": [
+    "02e750f7-1ae2-44c5-9fc4-c55c2823b1e9",
+    "32e0895c-bc20-429f-9684-018e7fcc24bb",
+    "6308e9af-e3b4-4509-b16a-d1588a1cc74b",
+    "8b5ac9dc-4208-4f80-99be-6912b8d39d52",
+    "da2890d9-c14e-428c-9a65-9024952b7af6"
+  ],
+  "board": "hardware/evidence/u3-full-physical-audit-2026-09-15/10-u3-implementation-backup.kicad_pcb",
+  "confirmed_segment_endpoints": {
+    "02e750f7-1ae2-44c5-9fc4-c55c2823b1e9": {
+      "end": [
+        89.0,
+        55.3
+      ],
+      "layer": "F.Cu",
+      "net": "/WS2812_DATA_3V3",
+      "start": [
+        89.0,
+        58.0
+      ],
+      "width": 0.25
+    },
+    "32e0895c-bc20-429f-9684-018e7fcc24bb": {
+      "end": [
+        94.0,
+        51.5
+      ],
+      "layer": "F.Cu",
+      "net": "/WS2812_DATA_5V",
+      "start": [
+        89.95,
+        52.7
+      ],
+      "width": 0.25
+    },
+    "6308e9af-e3b4-4509-b16a-d1588a1cc74b": {
+      "end": [
+        91.0,
+        55.0
+      ],
+      "layer": "F.Cu",
+      "net": "/GND",
+      "start": [
+        89.95,
+        55.3
+      ],
+      "width": 0.5
+    },
+    "8b5ac9dc-4208-4f80-99be-6912b8d39d52": {
+      "end": [
+        87.2,
+        56.5
+      ],
+      "layer": "F.Cu",
+      "net": "/GND",
+      "start": [
+        88.05,
+        55.3
+      ],
+      "width": 0.5
+    },
+    "da2890d9-c14e-428c-9a65-9024952b7af6": {
+      "end": [
+        88.05,
+        52.7
+      ],
+      "layer": "F.Cu",
+      "net": "/5V_SYS",
+      "start": [
+        88.525,
+        51.9
+      ],
+      "width": 0.5
+    }
+  },
+  "courtyard_bbox_mm": [
+    -1.8,
+    -2.1,
+    1.8,
+    2.1
+  ],
+  "fab_bbox_mm": [
+    -0.8,
+    -1.45,
+    0.8,
+    1.45
+  ],
+  "failures": [
+    "U3 pad 1 centre mismatch: [-0.95, 0.75, 0.0]",
+    "U3 pad 1 is not R0.05 mm",
+    "U3 pad 2 centre mismatch: [0.0, 0.75, 0.0]",
+    "U3 pad 2 is not R0.05 mm",
+    "U3 pad 3 centre mismatch: [0.95, 0.75, 0.0]",
+    "U3 pad 3 is not R0.05 mm",
+    "U3 pad 4 centre mismatch: [0.475, -0.75, 0.0]",
+    "U3 pad 4 is not R0.05 mm",
+    "U3 pad 5 centre mismatch: [-0.475, -0.75, 0.0]",
+    "U3 pad 5 is not R0.05 mm",
+    "U3 F.Fab is not the approved nominal 1.60 x 2.90 mm chamfered body",
+    "U3 F.CrtYd is not the approved 3.60 x 4.20 mm rectangle",
+    "U3 pin-1 silk marker geometry mismatch",
+    "segment 8b5ac9dc-4208-4f80-99be-6912b8d39d52 mismatch: {'start': [88.05, 54.75], 'end': [87.2, 56.5], 'width': 0.5, 'layer': 'F.Cu', 'net': '/GND'}",
+    "segment 02e750f7-1ae2-44c5-9fc4-c55c2823b1e9 mismatch: {'start': [89.0, 58.0], 'end': [89.0, 54.75], 'width': 0.25, 'layer': 'F.Cu', 'net': '/WS2812_DATA_3V3'}",
+    "segment 6308e9af-e3b4-4509-b16a-d1588a1cc74b mismatch: {'start': [89.95, 54.75], 'end': [91.0, 55.0], 'width': 0.5, 'layer': 'F.Cu', 'net': '/GND'}",
+    "segment 32e0895c-bc20-429f-9684-018e7fcc24bb mismatch: {'start': [89.475, 53.25], 'end': [94.0, 51.5], 'width': 0.25, 'layer': 'F.Cu', 'net': '/WS2812_DATA_5V'}",
+    "segment da2890d9-c14e-428c-9a65-9024952b7af6 mismatch: {'start': [88.525, 51.9], 'end': [88.525, 53.25], 'width': 0.5, 'layer': 'F.Cu', 'net': '/5V_SYS'}"
+  ],
+  "generator_matches_library": true,
+  "normalized_board_delta": "PASS",
+  "pads": {
+    "1": {
+      "at": [
+        -0.95,
+        1.3,
+        0.0
+      ],
+      "net": "/GND",
+      "size": [
+        0.6,
+        1.1
+      ]
+    },
+    "2": {
+      "at": [
+        0.0,
+        1.3,
+        0.0
+      ],
+      "net": "/WS2812_DATA_3V3",
+      "size": [
+        0.6,
+        1.1
+      ]
+    },
+    "3": {
+      "at": [
+        0.95,
+        1.3,
+        0.0
+      ],
+      "net": "/GND",
+      "size": [
+        0.6,
+        1.1
+      ]
+    },
+    "4": {
+      "at": [
+        0.95,
+        -1.3,
+        0.0
+      ],
+      "net": "/WS2812_DATA_5V",
+      "size": [
+        0.6,
+        1.1
+      ]
+    },
+    "5": {
+      "at": [
+        -0.95,
+        -1.3,
+        0.0
+      ],
+      "net": "/5V_SYS",
+      "size": [
+        0.6,
+        1.1
+      ]
+    }
+  },
+  "reference": "hardware/evidence/u3-full-physical-audit-2026-09-15/10-u3-implementation-backup.kicad_pcb",
+  "source_drawing": "TI DBV0005A 4214839/K, 08/2024",
+  "status": "FAIL",
+  "u3_origin_mm": [
+    89.0,
+    54.0,
+    0.0
+  ]
+}

@@ -1,0 +1,18 @@
+--- hardware/evidence/full-production-audit-2026-09-15/u4-library-resolution/10-esp32-e220.pre-u4-metadata.kicad_pcb	2026-09-16 00:58:45.436269906 +0700
++++ hardware/esp32-e220.kicad_pcb	2026-09-16 01:00:17.003502673 +0700
+@@ -4506,12 +4506,12 @@
+ 		)
+ 		(embedded_fonts no)
+ 	)
+-	(footprint "Package_TO_SOT_SMD:SOT-223-3_TabPin2"
++	(footprint "Carrier:TI_TLV1117LV33DCYR_DCY_SOT223"
+ 		(layer "F.Cu")
+ 		(uuid "be6611d7-e029-4afc-9594-cac2aa399308")
+ 		(at 20.65 27)
+-		(descr "module CMS SOT223 4 pins")
+-		(tags "CMS SOT")
++		(descr "TI TLV1117LV33DCYR DCY/SOT-223. TI package drawing MPDS094A/4202506/B; frozen project IPC land pattern, not a TI-recommended land pattern. Pin 2 includes lead and tab.")
++		(tags "TI TLV1117LV33DCYR DCY SOT-223 project IPC")
+ 		(property "Reference" "U4"
+ 			(at 0 -4.5 0)
+ 			(layer "F.SilkS")
