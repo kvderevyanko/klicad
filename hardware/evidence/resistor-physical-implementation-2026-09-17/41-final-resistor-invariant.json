@@ -1,0 +1,49 @@
+{
+  "changed_footprints": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R8",
+    "R9"
+  ],
+  "failures": [],
+  "inner_gap_mm": 0.8,
+  "local_identity": "Resistor_0603_1608Metric",
+  "negative_old_geometry": {
+    "fixture_is_exact_0.95x1.00_at_plus_minus_0.725": true,
+    "rejected": true,
+    "rejection_count": 5
+  },
+  "overall_span_mm": 2.6,
+  "pad_centres_local_mm": {
+    "1": [
+      -0.85,
+      0.0
+    ],
+    "2": [
+      0.85,
+      0.0
+    ]
+  },
+  "pad_size_mm": [
+    0.9,
+    0.8
+  ],
+  "pitch_mm": 1.7,
+  "roundrect_rratio": 0.2,
+  "routing_delta": "zero",
+  "schematic_byte_identical": true,
+  "source_local_exact": true,
+  "status": "PASS",
+  "target_refs": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R8",
+    "R9"
+  ],
+  "via_delta": "zero",
+  "zone_rule_area_delta": "zero"
+}

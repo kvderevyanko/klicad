@@ -121,15 +121,6 @@ def murata_grm188_c5() -> str:
     )
 
 
-def yageo_rc0603() -> str:
-    """Yageo RC 0603/1608 Mounting V10 Table 1 reflow lands."""
-    return passive(
-        "Resistor_0603_1608Metric",
-        "0603 (1608 metric) resistor footprint used by R1/R2/R3/R4/R8/R9/R10/R11. Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm on 1.70-mm centres.",
-        1.60, 0.80, 0.90, 0.80, 1.70,
-    )
-
-
 def murata_grm21_c3() -> str:
     """GRM21BR61A226ME44 +/-0.20-mm manufacturer Table 2 lands."""
     return passive(
@@ -592,7 +583,7 @@ def main() -> None:
         "Murata_GRM21BR61A226ME44_2012Metric.kicad_mod": murata_grm21_c3(),
         "Murata_GRM188_1608Metric.kicad_mod": murata_grm188_standard(),
         "Murata_GRM188R61A106MAAL_1608Metric.kicad_mod": murata_grm188_c5(),
-        "Resistor_0603_1608Metric.kicad_mod": yageo_rc0603(),
+        "Resistor_0603_1608Metric.kicad_mod": passive("Resistor_0603_1608Metric", "0603 (1608 metric) resistor footprint used by R1/R2/R3/R4/R8/R9/R10/R11; 0.95x1.00 lands on 1.45-mm centres are project IPC nominal.", 1.60, 0.80, 0.95, 1.00, 1.45),
     }
     for filename, content in footprints.items():
         (LIBRARY / filename).write_text(content, encoding="utf-8")
