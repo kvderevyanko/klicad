@@ -125,7 +125,7 @@ def yageo_rc0603() -> str:
     """Yageo RC 0603/1608 Mounting V10 Table 1 reflow lands."""
     return passive(
         "Resistor_0603_1608Metric",
-        "0603 (1608 metric) resistor footprint used by R1/R2/R3/R4/R8/R9. Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm on 1.70-mm centres.",
+        "0603 (1608 metric) resistor footprint used by R1/R2/R3/R4/R8/R9/R10/R11. Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm on 1.70-mm centres.",
         1.60, 0.80, 0.90, 0.80, 1.70,
     )
 

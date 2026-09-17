@@ -1,0 +1,19 @@
+Approved baseline: ecfb03b79c6a41063ac21f1f7dc79750468a8b3a
+
+Baseline / named-backup SHA-256:
+494d592b2fcc014673364b866639d128eff16c73f2b5363dc282a7afe6314a4d  esp32-e220.pre-closure.kicad_pcb
+b6c08f97f610f334f0018b23ec2a72dbacfde0a7695ef4afdfa56923edad02f6  esp32-e220.pre-closure.kicad_sch
+9c7ffff7d2ee5e07fe8cd709b941e1301ef6b920dd406ca28e69a8e7163f6dae  generate_stage7_footprints.pre-closure.py
+a775397bfeaa49c2504377b5db4764772c5e1ce7bc0637d9d47a833e8dbe4c60  Resistor_0603_1608Metric.pre-closure.kicad_mod
+806393fc7e9b32da32d34c3adb6357ec87d1d0236a449df42e610f37361dd639  production-metadata.pre-closure.json
+
+Final SHA-256:
+ff45f781b00e9a79451786dd18a8eae540c6f738ec26be57046277a478f4321e  hardware/esp32-e220.kicad_pcb
+b6c08f97f610f334f0018b23ec2a72dbacfde0a7695ef4afdfa56923edad02f6  hardware/esp32-e220.kicad_sch
+3894f98ae733c8309516956c1c442961a81b5d719eb42bb127cb693e57063393  hardware/generate_stage7_footprints.py
+952ee5746dd9284df84cbeb1fc9c1cb799130c65dec2f76e22986883e1f28e01  hardware/esp32-e220.pretty/Resistor_0603_1608Metric.kicad_mod
+08b7daa7f83136c921a15e61a8092c8d03b55ed659879429ac435b02e5e7d6ea  hardware/production-metadata.json
+
+The schematic hash is byte-identical. The PCB hash changes only because the six approved
+embedded `descr` strings changed; `20-final-closure-resistor-invariant.json` proves zero
+pad, placement, track, via, zone/rule-area, net, and footprint-identity delta.

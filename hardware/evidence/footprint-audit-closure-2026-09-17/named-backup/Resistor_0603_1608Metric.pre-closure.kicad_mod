@@ -1,6 +1,6 @@
 (footprint "Resistor_0603_1608Metric" (version 20240108) (generator "stage7")
   (layer "F.Cu")
-  (descr "0603 (1608 metric) resistor footprint used by R1/R2/R3/R4/R8/R9. Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm on 1.70-mm centres.")
+  (descr "0603 (1608 metric) resistor footprint used by R1/R2/R3/R4/R8/R9/R10/R11. Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm on 1.70-mm centres.")
   (attr smd)
   (fp_text reference "REF**" (at 0.000 -1.400) (layer "F.SilkS")
     (effects (font (size 1.000 1.000) (thickness 0.15)))

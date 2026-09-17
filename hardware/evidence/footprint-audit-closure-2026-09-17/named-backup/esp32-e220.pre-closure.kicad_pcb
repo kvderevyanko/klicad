@@ -1475,7 +1475,7 @@
 		(layer "F.Cu")
 		(uuid "40b1d1b9-b718-4757-bce7-7453a3554f10")
 		(at 40 35)
-		(descr "0603 (1608 metric) resistor footprint used by R1/R2/R3/R4/R8/R9. Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm on 1.70-mm centres.")
+		(descr "0603 (1608 metric) resistor footprint for active unassigned resistor MPNs R1/R2/R8/R9/R10/R11; manufacturer MPN remains procurement DFM TBD.")
 		(property "Reference" "R8"
 			(at 0 -1.4 0)
 			(layer "F.SilkS")
@@ -3171,7 +3171,7 @@
 		(layer "F.Cu")
 		(uuid "7c3042bd-6fa8-448f-ba3c-5b93dcc16fd5")
 		(at 58.5 67 90)
-		(descr "0603 (1608 metric) resistor footprint used by R1/R2/R3/R4/R8/R9. Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm on 1.70-mm centres.")
+		(descr "0603 (1608 metric) resistor footprint for active unassigned resistor MPNs R1/R2/R8/R9/R10/R11; manufacturer MPN remains procurement DFM TBD.")
 		(property "Reference" "R1"
 			(at 0 -1.4 90)
 			(layer "F.SilkS")
@@ -3404,7 +3404,7 @@
 		(layer "F.Cu")
 		(uuid "84bbdb23-79be-4221-8051-9e72ec7601f6")
 		(at 46 35)
-		(descr "0603 (1608 metric) resistor footprint used by R1/R2/R3/R4/R8/R9. Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm on 1.70-mm centres.")
+		(descr "0603 (1608 metric) resistor footprint for active unassigned resistor MPNs R1/R2/R8/R9/R10/R11; manufacturer MPN remains procurement DFM TBD.")
 		(property "Reference" "R9"
 			(at 0 -1.4 0)
 			(layer "F.SilkS")
@@ -3702,7 +3702,7 @@
 		(layer "F.Cu")
 		(uuid "8cee1831-f9d1-4e3e-9d9e-295bd7183f3b")
 		(at 62.5 67 90)
-		(descr "0603 (1608 metric) resistor footprint used by R1/R2/R3/R4/R8/R9. Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm on 1.70-mm centres.")
+		(descr "0603 (1608 metric) resistor footprint for active unassigned resistor MPNs R1/R2/R8/R9/R10/R11; manufacturer MPN remains procurement DFM TBD.")
 		(property "Reference" "R2"
 			(at 0 -1.4 90)
 			(layer "F.SilkS")
@@ -4748,7 +4748,7 @@
 		(layer "F.Cu")
 		(uuid "c2290e18-690e-4a9b-82d8-939e2b5ae69e")
 		(at 90 66)
-		(descr "0603 (1608 metric) resistor footprint used by R1/R2/R3/R4/R8/R9. Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm on 1.70-mm centres.")
+		(descr "0603 (1608 metric) resistor footprint used by R1/R2/R3/R4/R8/R9/R10/R11; 0.95x1.00 lands on 1.45-mm centres are project IPC nominal.")
 		(property "Reference" "R4"
 			(at 0 -1.4 0)
 			(layer "F.SilkS")
@@ -5391,7 +5391,7 @@
 		(layer "F.Cu")
 		(uuid "e243c146-e406-42f5-933d-442950fd309a")
 		(at 86 66)
-		(descr "0603 (1608 metric) resistor footprint used by R1/R2/R3/R4/R8/R9. Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm on 1.70-mm centres.")
+		(descr "0603 (1608 metric) resistor footprint used by R1/R2/R3/R4/R8/R9/R10/R11; 0.95x1.00 lands on 1.45-mm centres are project IPC nominal.")
 		(property "Reference" "R3"
 			(at 0 -1.4 0)
 			(layer "F.SilkS")

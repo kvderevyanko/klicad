@@ -1,0 +1,14 @@
+{
+  "class_counts": {
+    "DNP_USER": 2,
+    "MANUAL_ACCESSORY": 1,
+    "MECHANICAL_NPTH": 3,
+    "NO_FOOTPRINT_DNP": 2,
+    "PCBA_POPULATE": 30,
+    "PLATED_TEST_HOLE": 5,
+    "USER_INSTALLED_MODULE": 3
+  },
+  "errors": [],
+  "gate": "REV1 PRODUCTION METADATA",
+  "status": "PASS"
+}
