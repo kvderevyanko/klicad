@@ -1,0 +1,168 @@
+{
+  "status": "PASS",
+  "footprints": 40,
+  "position_tolerance_nm": 1,
+  "paste_only_pad_numbers_ignored": true,
+  "checked": {
+    "C1": {
+      "library": "Murata_GRM21_2012Metric",
+      "pads": 2
+    },
+    "C10": {
+      "library": "Murata_GRM21_2012Metric",
+      "pads": 2
+    },
+    "C2": {
+      "library": "Murata_GRM188_1608Metric",
+      "pads": 2
+    },
+    "C3": {
+      "library": "Murata_GRM21BR61A226ME44_2012Metric",
+      "pads": 2
+    },
+    "C4": {
+      "library": "Murata_GRM188_1608Metric",
+      "pads": 2
+    },
+    "C5": {
+      "library": "Murata_GRM188R61A106MAAL_1608Metric",
+      "pads": 2
+    },
+    "C6": {
+      "library": "Murata_GRM188_1608Metric",
+      "pads": 2
+    },
+    "C7": {
+      "library": "Murata_GRM188_1608Metric",
+      "pads": 2
+    },
+    "C8": {
+      "library": "Murata_GRM188_1608Metric",
+      "pads": 2
+    },
+    "C9": {
+      "library": "Murata_GRM21_2012Metric",
+      "pads": 2
+    },
+    "D3": {
+      "library": "Littelfuse_SMBJ10CA_DO214AA",
+      "pads": 2
+    },
+    "F1": {
+      "library": "Littelfuse_1812L200_16_4532Metric",
+      "pads": 2
+    },
+    "H1": {
+      "library": "MountingHole_M3_NPTH_REV1",
+      "pads": 1
+    },
+    "H2": {
+      "library": "MountingHole_M3_NPTH_REV1",
+      "pads": 1
+    },
+    "H3": {
+      "library": "MountingHole_M3_NPTH_REV1",
+      "pads": 1
+    },
+    "J1": {
+      "library": "Samtec_SSW_1x15_P2.54mm_THT",
+      "pads": 15
+    },
+    "J2": {
+      "library": "Samtec_SSW_1x15_P2.54mm_THT",
+      "pads": 15
+    },
+    "J3": {
+      "library": "E220_T22D_Socket_400_900",
+      "pads": 7
+    },
+    "J4": {
+      "library": "JST_B2B-XH-A_1x02_P2.50mm_THT",
+      "pads": 2
+    },
+    "J5": {
+      "library": "Samtec_SSW_1x04_P2.54mm_THT",
+      "pads": 4
+    },
+    "J6": {
+      "library": "PinHeader_1x06_P2.54mm_Vertical",
+      "pads": 6
+    },
+    "J8": {
+      "library": "JST_B2B-XH-A_1x02_P2.50mm_THT",
+      "pads": 2
+    },
+    "J9": {
+      "library": "PinHeader_1x03_P2.54mm_Vertical",
+      "pads": 3
+    },
+    "JP1": {
+      "library": "Samtec_TSW-102-07-G-S_1x02_P2.54mm_THT",
+      "pads": 2
+    },
+    "L1": {
+      "library": "Coilcraft_XGL4020-222MEC",
+      "pads": 2
+    },
+    "Q1": {
+      "library": "Diodes_DMP3130LQ-7_SOT23",
+      "pads": 3
+    },
+    "R1": {
+      "library": "Resistor_0603_1608Metric",
+      "pads": 2
+    },
+    "R2": {
+      "library": "UniRoyal_0603W_Reflow",
+      "pads": 2
+    },
+    "R3": {
+      "library": "Resistor_0603_1608Metric",
+      "pads": 2
+    },
+    "R4": {
+      "library": "Resistor_0603_1608Metric",
+      "pads": 2
+    },
+    "R8": {
+      "library": "Vishay_CRCW0603_Reflow",
+      "pads": 2
+    },
+    "R9": {
+      "library": "Vishay_CRCW0603_Reflow",
+      "pads": 2
+    },
+    "TP1": {
+      "library": "TestPoint_THT_1p0mm_PROTOTYPE",
+      "pads": 1
+    },
+    "TP2": {
+      "library": "TestPoint_THT_1p0mm_PROTOTYPE",
+      "pads": 1
+    },
+    "TP3": {
+      "library": "TestPoint_THT_1p0mm_PROTOTYPE",
+      "pads": 1
+    },
+    "TP4": {
+      "library": "TestPoint_THT_1p0mm_PROTOTYPE",
+      "pads": 1
+    },
+    "TP5": {
+      "library": "TestPoint_THT_1p0mm_PROTOTYPE",
+      "pads": 1
+    },
+    "U1": {
+      "library": "TI_TPS62133RGT_RGT0016C",
+      "pads": 18
+    },
+    "U3": {
+      "library": "TI_SN74AHCT1G125DBVR_SOT23-5",
+      "pads": 5
+    },
+    "U4": {
+      "library": "TI_TLV1117LV33DCYR_DCY_SOT223",
+      "pads": 4
+    }
+  }
+}

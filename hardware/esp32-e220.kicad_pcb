@@ -1471,11 +1471,11 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "Resistor_0603_1608Metric"
+	(footprint "Carrier:Vishay_CRCW0603_Reflow"
 		(layer "F.Cu")
 		(uuid "40b1d1b9-b718-4757-bce7-7453a3554f10")
 		(at 40 35)
-		(descr "0603 (1608 metric) resistor footprint used by R1/R2/R3/R4/R8/R9. Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm on 1.70-mm centres.")
+		(descr "Vishay D/CRCW e3 0603 reflow land pattern, document 20035. G 0.75, Y 0.75, X 1.00, Z 2.25 mm.")
 		(property "Reference" "R8"
 			(at 0 -1.4 0)
 			(layer "F.SilkS")
@@ -1603,16 +1603,16 @@
 			(uuid "be14ef7e-c639-4c5a-aea5-d5c64665911a")
 		)
 		(pad "1" smd roundrect
-			(at -0.85 0)
-			(size 0.9 0.8)
+			(at -0.75 0)
+			(size 0.75 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.2)
 			(net "/E220_M0")
 			(uuid "9925fbb7-c291-455c-ab76-fddaceb6e46f")
 		)
 		(pad "2" smd roundrect
-			(at 0.85 0)
-			(size 0.9 0.8)
+			(at 0.75 0)
+			(size 0.75 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.2)
 			(net "/GND")
@@ -1670,6 +1670,7 @@
 				)
 			)
 		)
+		(property "DNP" "YES" (at 0 0 0) (layer "F.Fab") (hide yes) (uuid "d8b20a9e-7afc-50f8-b81f-b2ebb9740b1b") (effects (font (size 1 1))))
 		(attr through_hole dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3400,11 +3401,11 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "Resistor_0603_1608Metric"
+	(footprint "Carrier:Vishay_CRCW0603_Reflow"
 		(layer "F.Cu")
 		(uuid "84bbdb23-79be-4221-8051-9e72ec7601f6")
 		(at 46 35)
-		(descr "0603 (1608 metric) resistor footprint used by R1/R2/R3/R4/R8/R9. Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm on 1.70-mm centres.")
+		(descr "Vishay D/CRCW e3 0603 reflow land pattern, document 20035. G 0.75, Y 0.75, X 1.00, Z 2.25 mm.")
 		(property "Reference" "R9"
 			(at 0 -1.4 0)
 			(layer "F.SilkS")
@@ -3532,16 +3533,16 @@
 			(uuid "84f0eb4b-d0a7-4b32-92ae-e395bbca3138")
 		)
 		(pad "1" smd roundrect
-			(at -0.85 0)
-			(size 0.9 0.8)
+			(at -0.75 0)
+			(size 0.75 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.2)
 			(net "/E220_M1")
 			(uuid "92e486a6-3ed7-4167-a268-184dd7833131")
 		)
 		(pad "2" smd roundrect
-			(at 0.85 0)
-			(size 0.9 0.8)
+			(at 0.75 0)
+			(size 0.75 1)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.2)
 			(net "/GND")
@@ -3698,11 +3699,11 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "Resistor_0603_1608Metric"
+	(footprint "Carrier:UniRoyal_0603W_Reflow"
 		(layer "F.Cu")
 		(uuid "8cee1831-f9d1-4e3e-9d9e-295bd7183f3b")
 		(at 62.5 67 90)
-		(descr "0603 (1608 metric) resistor footprint used by R1/R2/R3/R4/R8/R9. Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm on 1.70-mm centres.")
+		(descr "UNI-ROYAL 0603W reflow lands, V.3 section 8. A=0.875, B=0.625, C=0.800, D=2.125 mm within the four published ranges.")
 		(property "Reference" "R2"
 			(at 0 -1.4 90)
 			(layer "F.SilkS")
@@ -3830,16 +3831,16 @@
 			(uuid "ed29ef85-f1b6-493a-b2c3-c99a9696a79e")
 		)
 		(pad "1" smd roundrect
-			(at -0.85 0 90)
-			(size 0.9 0.8)
+			(at -0.75 0 90)
+			(size 0.625 0.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.2)
 			(net "/BUCK_IN")
 			(uuid "838ea4e0-2837-4d58-89b4-e5fdf840d4ed")
 		)
 		(pad "2" smd roundrect
-			(at 0.85 0 90)
-			(size 0.9 0.8)
+			(at 0.75 0 90)
+			(size 0.625 0.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.2)
 			(net "/Q1_GATE")
@@ -4893,11 +4894,11 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "Coilcraft_XFL4020-222MEB"
+	(footprint "Carrier:Coilcraft_XGL4020-222MEC"
 		(layer "F.Cu")
 		(uuid "ca77ee4b-f49a-4338-aa36-a6fd966d2067")
 		(at 74.85 56.525 90)
-		(descr "Coilcraft XFL4020-222MEB. Manufacturer recommended land pattern: two 0.98x3.40 mm lands on 3.35-mm centres; dashed mark identifies pin 1/start lead.")
+		(descr "Coilcraft XGL4020-222MEC. Drawing 1529-3: two 0.98 x 3.40 mm lands on 2.37-mm centres. Silk marks the start lead at pad 1.")
 		(property "Reference" "L1"
 			(at 5.525 3.15 90)
 			(layer "F.SilkS")
@@ -4909,7 +4910,7 @@
 				)
 			)
 		)
-		(property "Value" "XFL4020-222MEB"
+		(property "Value" "XGL4020-222MEC"
 			(at 0 2.75 90)
 			(layer "F.Fab")
 			(uuid "f6012871-0e38-4b24-9599-69dcf1489fc6")
@@ -5035,14 +5036,14 @@
 			(uuid "7a02db9e-71ca-40ee-8471-5125b6147e9d")
 		)
 		(pad "1" smd rect
-			(at -1.675 0 90)
+			(at -1.185 0 90)
 			(size 0.98 3.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "/BUCK_SW")
 			(uuid "3e9dd0f5-e474-4d06-8b37-92a2a947c3a1")
 		)
 		(pad "2" smd rect
-			(at 1.675 0 90)
+			(at 1.185 0 90)
 			(size 0.98 3.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "/5V_SYS")
@@ -6214,6 +6215,7 @@
 				)
 			)
 		)
+		(property "DNP" "YES" (at 0 0 0) (layer "F.Fab") (hide yes) (uuid "b9f64364-6c91-5801-8775-666220d2f160") (effects (font (size 1 1))))
 		(attr through_hole dnp)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7627,7 +7629,7 @@
 		(uuid "29895a2e-17ff-40a4-af7b-b0697966a54d")
 	)
 	(segment
-		(start 73.15 54.85)
+		(start 73.5 55.34)
 		(end 72.8 54.85)
 		(width 0.6)
 		(layer "F.Cu")
@@ -9628,7 +9630,7 @@
 	)
 	(segment
 		(start 72.8 57.35)
-		(end 73.15 58.2)
+		(end 73.5 57.71)
 		(width 0.7)
 		(layer "F.Cu")
 		(net "/BUCK_SW")

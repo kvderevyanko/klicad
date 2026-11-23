@@ -40,14 +40,14 @@ ASSEMBLY_CONTRACT = {
     "J8": ("B2B-XH-A", "JST_B2B-XH-A_1x02_P2.50mm_THT"),
     "J9": ("J_RGB / RGB OUT 1x3 2.54mm DNP", "Carrier:PinHeader_1x03_P2.54mm_Vertical"),
     "JP1": ("TSW-102-07-G-S + SNT-100-BK-G", "Carrier:Samtec_TSW-102-07-G-S_1x02_P2.54mm_THT"),
-    "L1": ("XFL4020-222MEB", "Coilcraft_XFL4020-222MEB"),
+    "L1": ("XGL4020-222MEC", "Carrier:Coilcraft_XGL4020-222MEC"),
     "Q1": ("DMP3130LQ-7", "Diodes_DMP3130LQ-7_SOT23"),
     "R1": ("100k 1%", "Resistor_0603_1608Metric"),
-    "R2": ("1M 1%", "Resistor_0603_1608Metric"),
+    "R2": ("1M 1%", "Carrier:UniRoyal_0603W_Reflow"),
     "R3": ("RC0603FR-0710KL", "Carrier:Resistor_0603_1608Metric"),
     "R4": ("RC0603FR-073K3L", "Carrier:Resistor_0603_1608Metric"),
-    "R8": ("10k 1%", "Resistor_0603_1608Metric"),
-    "R9": ("10k 1%", "Resistor_0603_1608Metric"),
+    "R8": ("10k 1%", "Carrier:Vishay_CRCW0603_Reflow"),
+    "R9": ("10k 1%", "Carrier:Vishay_CRCW0603_Reflow"),
     "TP1": ("BAT_PLUS", "TestPoint_THT_1p0mm_PROTOTYPE"),
     "TP2": ("GND", "TestPoint_THT_1p0mm_PROTOTYPE"),
     "TP3": ("BUCK_IN", "TestPoint_THT_1p0mm_PROTOTYPE"),
@@ -136,8 +136,9 @@ def instance(libid, ref, value, x, y, pins, datasheet="", dnp=False, assembly_dn
     x, y = s(x), s(y)
     value, footprint = ASSEMBLY_CONTRACT.get(ref, (value, ""))
     on_board = "no" if dnp else "yes"
+    assembly_flag = " (dnp yes)" if assembly_dnp else ""
     lines = [f'''  (symbol (lib_id "{libid}") (at {x} {y} 0) (unit 1)
-    (in_bom yes) (on_board {on_board})
+    (in_bom yes) (on_board {on_board}){assembly_flag}
     (uuid {u()})''', prop("Reference", ref, 0, x + 5.08, y - 1.27, ref.startswith("#")),
              # Exact MPN/value metadata remains in the editable schematic, but
              # is hidden here to avoid long procurement strings obscuring pins.
@@ -324,8 +325,8 @@ items += [instance("Project:DevKit_Left_1x15", "J1", "DEVKIT_LEFT (USB-C toward 
                    "https://www.littelfuse.com/products/overvoltage-protection/tvs-diodes/surface-mount/smbj/smbj10ca"),
           instance("Project:DMP3130LQ_7", "Q1", "DMP3130LQ-7 (reverse-polarity)", 85, 155, pmos,
                    "https://www.diodes.com/_files/datasheets/DMP3130LQ.pdf"),
-          instance("Project:L", "L1", "XFL4020-222MEB 2.2uH", 185, 180, inductor,
-                   "https://www.coilcraft.com/getmedia/50632d43-da1e-4cdb-8ab4-3029cab51df3/xfl4020.pdf"),
+          instance("Project:L", "L1", "XGL4020-222MEC 2.2uH", 185, 180, inductor,
+                   "https://www.coilcraft.com/getmedia/76c9c081-4945-4c85-9129-9356e1ad6734/xgl4020.pdf"),
           instance("Project:PWR_FLAG", "#FLG01", "PWR_FLAG", 35, 175, [("1", "pwr")]),
           instance("Project:PWR_FLAG", "#FLG02", "PWR_FLAG", 35, 185, [("1", "pwr")]),
           instance("Project:PWR_FLAG", "#FLG03", "PWR_FLAG", 35, 195, [("1", "pwr")]),

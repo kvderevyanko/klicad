@@ -1,0 +1,453 @@
+{
+  "status": "PASS",
+  "changed_footprints": [
+    "L1",
+    "R2",
+    "R8",
+    "R9"
+  ],
+  "changed_endpoints_mm": {
+    "fdb0c9da-4ac0-48ab-8e20-b8d4a9e4f70b": [
+      "end",
+      "73.5",
+      "57.71"
+    ],
+    "390b8209-3bbd-4be0-8326-116a543cd20e": [
+      "start",
+      "73.5",
+      "55.34"
+    ]
+  },
+  "all_other_board_geometry_identical": true,
+  "schematic_netlist_identical_to_baseline": true,
+  "reproduced_stage7_preliminary_and_stage8": true,
+  "tested_footprints": {
+    "L1": {
+      "identity": "Carrier:Coilcraft_XGL4020-222MEC",
+      "pads": {
+        "1": {
+          "type": [
+            "smd",
+            "rect"
+          ],
+          "centre": [
+            -1.185,
+            0.0
+          ],
+          "size": [
+            0.98,
+            3.4
+          ],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ],
+          "roundrect_ratio": 0.0
+        },
+        "2": {
+          "type": [
+            "smd",
+            "rect"
+          ],
+          "centre": [
+            1.185,
+            0.0
+          ],
+          "size": [
+            0.98,
+            3.4
+          ],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ],
+          "roundrect_ratio": 0.0
+        }
+      },
+      "net_mapping": {
+        "1": "/BUCK_SW",
+        "2": "/5V_SYS"
+      }
+    },
+    "Q1": {
+      "identity": "Diodes_DMP3130LQ-7_SOT23",
+      "pads": {
+        "1": {
+          "type": [
+            "smd",
+            "rect"
+          ],
+          "centre": [
+            -0.95,
+            1.0
+          ],
+          "size": [
+            0.8,
+            0.9
+          ],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ],
+          "roundrect_ratio": 0.0
+        },
+        "2": {
+          "type": [
+            "smd",
+            "rect"
+          ],
+          "centre": [
+            0.95,
+            1.0
+          ],
+          "size": [
+            0.8,
+            0.9
+          ],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ],
+          "roundrect_ratio": 0.0
+        },
+        "3": {
+          "type": [
+            "smd",
+            "rect"
+          ],
+          "centre": [
+            0.0,
+            -1.0
+          ],
+          "size": [
+            0.8,
+            0.9
+          ],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ],
+          "roundrect_ratio": 0.0
+        }
+      },
+      "net_mapping": {
+        "1": "/Q1_GATE",
+        "2": "/BUCK_IN",
+        "3": "/BAT_SW"
+      }
+    },
+    "R1": {
+      "identity": "Resistor_0603_1608Metric",
+      "pads": {
+        "1": {
+          "type": [
+            "smd",
+            "roundrect"
+          ],
+          "centre": [
+            -0.85,
+            0.0
+          ],
+          "size": [
+            0.9,
+            0.8
+          ],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ],
+          "roundrect_ratio": 0.2
+        },
+        "2": {
+          "type": [
+            "smd",
+            "roundrect"
+          ],
+          "centre": [
+            0.85,
+            0.0
+          ],
+          "size": [
+            0.9,
+            0.8
+          ],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ],
+          "roundrect_ratio": 0.2
+        }
+      },
+      "net_mapping": {
+        "1": "/Q1_GATE",
+        "2": "/GND"
+      }
+    },
+    "R2": {
+      "identity": "Carrier:UniRoyal_0603W_Reflow",
+      "pads": {
+        "1": {
+          "type": [
+            "smd",
+            "roundrect"
+          ],
+          "centre": [
+            -0.75,
+            0.0
+          ],
+          "size": [
+            0.625,
+            0.8
+          ],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ],
+          "roundrect_ratio": 0.2
+        },
+        "2": {
+          "type": [
+            "smd",
+            "roundrect"
+          ],
+          "centre": [
+            0.75,
+            0.0
+          ],
+          "size": [
+            0.625,
+            0.8
+          ],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ],
+          "roundrect_ratio": 0.2
+        }
+      },
+      "net_mapping": {
+        "1": "/BUCK_IN",
+        "2": "/Q1_GATE"
+      }
+    },
+    "R8": {
+      "identity": "Carrier:Vishay_CRCW0603_Reflow",
+      "pads": {
+        "1": {
+          "type": [
+            "smd",
+            "roundrect"
+          ],
+          "centre": [
+            -0.75,
+            0.0
+          ],
+          "size": [
+            0.75,
+            1.0
+          ],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ],
+          "roundrect_ratio": 0.2
+        },
+        "2": {
+          "type": [
+            "smd",
+            "roundrect"
+          ],
+          "centre": [
+            0.75,
+            0.0
+          ],
+          "size": [
+            0.75,
+            1.0
+          ],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ],
+          "roundrect_ratio": 0.2
+        }
+      },
+      "net_mapping": {
+        "1": "/E220_M0",
+        "2": "/GND"
+      }
+    },
+    "R9": {
+      "identity": "Carrier:Vishay_CRCW0603_Reflow",
+      "pads": {
+        "1": {
+          "type": [
+            "smd",
+            "roundrect"
+          ],
+          "centre": [
+            -0.75,
+            0.0
+          ],
+          "size": [
+            0.75,
+            1.0
+          ],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ],
+          "roundrect_ratio": 0.2
+        },
+        "2": {
+          "type": [
+            "smd",
+            "roundrect"
+          ],
+          "centre": [
+            0.75,
+            0.0
+          ],
+          "size": [
+            0.75,
+            1.0
+          ],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ],
+          "roundrect_ratio": 0.2
+        }
+      },
+      "net_mapping": {
+        "1": "/E220_M1",
+        "2": "/GND"
+      }
+    },
+    "U3": {
+      "identity": "TI_SN74AHCT1G125DBVR_SOT23-5",
+      "pads": {
+        "1": {
+          "type": [
+            "smd",
+            "roundrect"
+          ],
+          "centre": [
+            -0.95,
+            1.3
+          ],
+          "size": [
+            0.6,
+            1.1
+          ],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ],
+          "roundrect_ratio": 0.083333
+        },
+        "2": {
+          "type": [
+            "smd",
+            "roundrect"
+          ],
+          "centre": [
+            0.0,
+            1.3
+          ],
+          "size": [
+            0.6,
+            1.1
+          ],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ],
+          "roundrect_ratio": 0.083333
+        },
+        "3": {
+          "type": [
+            "smd",
+            "roundrect"
+          ],
+          "centre": [
+            0.95,
+            1.3
+          ],
+          "size": [
+            0.6,
+            1.1
+          ],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ],
+          "roundrect_ratio": 0.083333
+        },
+        "4": {
+          "type": [
+            "smd",
+            "roundrect"
+          ],
+          "centre": [
+            0.95,
+            -1.3
+          ],
+          "size": [
+            0.6,
+            1.1
+          ],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ],
+          "roundrect_ratio": 0.083333
+        },
+        "5": {
+          "type": [
+            "smd",
+            "roundrect"
+          ],
+          "centre": [
+            -0.95,
+            -1.3
+          ],
+          "size": [
+            0.6,
+            1.1
+          ],
+          "layers": [
+            "F.Cu",
+            "F.Mask",
+            "F.Paste"
+          ],
+          "roundrect_ratio": 0.083333
+        }
+      },
+      "net_mapping": {
+        "1": "/GND",
+        "2": "/WS2812_DATA_3V3",
+        "3": "/GND",
+        "4": "/WS2812_DATA_5V",
+        "5": "/5V_SYS"
+      }
+    }
+  }
+}

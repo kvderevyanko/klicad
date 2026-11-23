@@ -130,6 +130,22 @@ def yageo_rc0603() -> str:
     )
 
 
+def uni_royal_0603w() -> str:
+    return passive(
+        "UniRoyal_0603W_Reflow",
+        "UNI-ROYAL 0603W reflow lands, V.3 section 8. A=0.875, B=0.625, C=0.800, D=2.125 mm within the four published ranges.",
+        1.60, 0.80, 0.625, 0.80, 1.50,
+    )
+
+
+def vishay_crcw0603() -> str:
+    return passive(
+        "Vishay_CRCW0603_Reflow",
+        "Vishay D/CRCW e3 0603 reflow land pattern, document 20035. G 0.75, Y 0.75, X 1.00, Z 2.25 mm.",
+        1.60, 0.80, 0.750, 1.00, 1.50,
+    )
+
+
 def murata_grm21_c3() -> str:
     """GRM21BR61A226ME44 +/-0.20-mm manufacturer Table 2 lands."""
     return passive(
@@ -174,15 +190,15 @@ def tps62133() -> str:
     return "".join(items)
 
 
-def xfl4020() -> str:
+def xgl4020() -> str:
     return "".join((
-        '(footprint "Coilcraft_XFL4020-222MEB" (version 20240108) (generator "stage7")\n',
+        '(footprint "Coilcraft_XGL4020-222MEC" (version 20240108) (generator "stage7")\n',
         '  (layer "F.Cu")\n',
-        '  (descr "Coilcraft XFL4020-222MEB. Manufacturer recommended land pattern: two 0.98x3.40 mm lands on 3.35-mm centres; dashed mark identifies pin 1/start lead.")\n',
-        '  (attr smd)\n', text("reference", "L", 0, -2.75, "F.SilkS"), text("value", "XFL4020-222MEB", 0, 2.75, "F.Fab"),
+        '  (descr "Coilcraft XGL4020-222MEC. Drawing 1529-3: two 0.98 x 3.40 mm lands on 2.37-mm centres. Silk marks the start lead at pad 1.")\n',
+        '  (attr smd)\n', text("reference", "L", 0, -2.75, "F.SilkS"), text("value", "XGL4020-222MEC", 0, 2.75, "F.Fab"),
         rect(-2.0, -2.0, 2.0, 2.0, "F.Fab", 0.10), rect(-2.55, -2.25, 2.55, 2.25, "F.CrtYd", 0.05),
         line(-2.0, -2.0, -1.25, -2.0, "F.SilkS", 0.30),
-        smd_pad("1", -1.675, 0, 0.980, 3.400, "rect"), smd_pad("2", 1.675, 0, 0.980, 3.400, "rect"), ")\n",
+        smd_pad("1", -1.185, 0, 0.980, 3.400, "rect"), smd_pad("2", 1.185, 0, 0.980, 3.400, "rect"), ")\n",
     ))
 
 
@@ -568,6 +584,8 @@ def main() -> None:
     # This managed candidate belonged only to the removed onboard D2.  Delete
     # it reproducibly so an older generated library cannot silently retain it.
     (LIBRARY / "WorldSemi_WS2812B-V5_PLACEMENT_CANDIDATE_NOT_RELEASED.kicad_mod").unlink(missing_ok=True)
+    # Remove the obsolete land pattern with incorrectly spaced centres.
+    (LIBRARY / "Coilcraft_XFL4020-222MEB.kicad_mod").unlink(missing_ok=True)
     footprints = {
         "Samtec_SSW_1x15_P2.54mm_THT.kicad_mod": header("Samtec_SSW_1x15_P2.54mm_THT", 15),
         "Samtec_SSW_1x07_P2.54mm_THT.kicad_mod": header("Samtec_SSW_1x07_P2.54mm_THT", 7),
@@ -581,7 +599,7 @@ def main() -> None:
         "OLED_0p96_4pin_MechanicalTemplate_PENDING_DATUM.kicad_mod": oled_template(),
         "MountingHole_M3_NPTH_REV1.kicad_mod": mounting_hole_m3_npth(),
         "TI_TPS62133RGT_RGT0016C.kicad_mod": tps62133(),
-        "Coilcraft_XFL4020-222MEB.kicad_mod": xfl4020(),
+        "Coilcraft_XGL4020-222MEC.kicad_mod": xgl4020(),
         "Diodes_DMP3130LQ-7_SOT23.kicad_mod": dmp3130(),
         "TI_SN74AHCT1G125DBVR_SOT23-5.kicad_mod": sn74ahct1g125(),
         "TI_TLV1117LV33DCYR_DCY_SOT223.kicad_mod": tlv1117lv33_dcy_sot223(),
@@ -593,6 +611,8 @@ def main() -> None:
         "Murata_GRM188_1608Metric.kicad_mod": murata_grm188_standard(),
         "Murata_GRM188R61A106MAAL_1608Metric.kicad_mod": murata_grm188_c5(),
         "Resistor_0603_1608Metric.kicad_mod": yageo_rc0603(),
+        "Vishay_CRCW0603_Reflow.kicad_mod": vishay_crcw0603(),
+        "UniRoyal_0603W_Reflow.kicad_mod": uni_royal_0603w(),
     }
     for filename, content in footprints.items():
         (LIBRARY / filename).write_text(content, encoding="utf-8")

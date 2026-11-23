@@ -1,0 +1,13 @@
+{
+  "scope": "R2",
+  "changed_footprints": [
+    "R2"
+  ],
+  "changed_zone_fills": [],
+  "changed_route_endpoints": 0,
+  "contract": "PASS",
+  "native_drc": 0,
+  "unconnected": 0,
+  "native_parity_baseline": 20,
+  "erc": 0
+}

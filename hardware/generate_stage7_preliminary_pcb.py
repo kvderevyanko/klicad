@@ -86,7 +86,7 @@ def main() -> None:
     add_footprint(board, "Littelfuse_SMBJ10CA_DO214AA", "D3", 35, 82)
     add_footprint(board, "Diodes_DMP3130LQ-7_SOT23", "Q1", 43, 82)
     add_footprint(board, "TI_TPS62133RGT_RGT0016C", "U1", 50, 76)
-    add_footprint(board, "Coilcraft_XFL4020-222MEB", "L1", 60, 76)
+    add_footprint(board, "Coilcraft_XGL4020-222MEC", "L1", 60, 76)
     add_footprint(board, "Murata_GRM21_2012Metric", "C1", 43, 72)
     add_footprint(board, "Murata_GRM188_1608Metric", "C2", 46, 70)
     add_footprint(board, "Murata_GRM21_2012Metric", "C3", 66, 76)

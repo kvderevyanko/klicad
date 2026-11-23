@@ -15,8 +15,17 @@ EXPECTED = {
     "PLATED_TEST_HOLE": {"TP1","TP2","TP3","TP4","TP5"},
     "NO_FOOTPRINT_DNP": {"R10","R11"},
     "MECHANICAL_NPTH": {"H1","H2","H3"},
+    "USER_INSTALLED_MODULE": {"ESP32_DEVKIT", "E220_T22D", "OLED_0P96"},
+    "MANUAL_ACCESSORY": {"JP1_SHUNT"},
 }
-SOCKET_MPN = {"J1":"SSW-115-02-G-S","J2":"SSW-115-02-G-S","J3":"SSW-107-02-G-S","J5":"SSW-104-02-G-S"}
+ORDER_MPN = {
+    "J1": "SSW-115-02-G-S", "J2": "SSW-115-02-G-S", "J3": "SSW-107-02-G-S",
+    "J4": "B2B-XH-A", "J5": "SSW-104-02-G-S", "J8": "B2B-XH-A", "JP1": "TSW-102-07-G-S",
+    "L1": "XGL4020-222MEC", "Q1": "DMP3130LQ-7",
+    "R1": "RC0603FR-07100KL", "R2": "0603WAF1004T5E",
+    "R8": "CRCW060310K0FKEA", "R9": "CRCW060310K0FKEA",
+    "U1": "TPS62133RGTR", "U3": "SN74AHCT1G125DBVR", "U4": "TLV1117LV33DCYR",
+}
 
 def main():
     parser = argparse.ArgumentParser()
@@ -34,9 +43,10 @@ def main():
         errors.append("assembly classification does not exactly match approved Rev.1 reference sets")
     if board_refs != (EXPECTED["PCBA_POPULATE"] | EXPECTED["DNP_USER"] | EXPECTED["PLATED_TEST_HOLE"] | EXPECTED["MECHANICAL_NPTH"]):
         errors.append("PCB references do not exactly match production metadata")
-    for ref, mpn in SOCKET_MPN.items():
-        if classes["PCBA_POPULATE"].get(ref, {}).get("mpn") != mpn:
-            errors.append(f"{ref} socket MPN mismatch")
+    for ref, mpn in ORDER_MPN.items():
+        item = classes["PCBA_POPULATE"].get(ref, {})
+        if item.get("mpn") != mpn or item.get("procurement_policy", "EXACT_MPN") != "EXACT_MPN":
+            errors.append(f"{ref} must specify exact order MPN {mpn}")
     for ref in EXPECTED["PCBA_POPULATE"]:
         item = classes["PCBA_POPULATE"][ref]
         if not item.get("mpn") and item.get("procurement_policy") != "APPROVED_GENERIC":

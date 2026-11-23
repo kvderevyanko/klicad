@@ -173,15 +173,15 @@ def main() -> None:
     # into the local/common ground plane.
     c4 = add_footprint(board, "Murata_GRM188_1608Metric", "C4", "GRM1885C1H332JA01D", 67.0, 53.5, 270)
     # L1 is vertical on the SW/output side and C3 sits below the PGND/VOS side.
-    # Straight-line pad-centre planning metrics are approximately: SW->L1.1
-    # 3.57 mm, L1.2->C3.1 3.12 mm, VOS->C3.1 2.82 mm, and C3.2->nearest PGND
-    # 1.86 mm.  These are planning metrics, not routed lengths or DRC proof.
-    l1 = add_footprint(board, "Coilcraft_XFL4020-222MEB", "L1", "XFL4020-222MEB", 74.85, 56.525, 90)
+    # Coilcraft drawing 1529-3 specifies a 2.37-mm land pitch.
+    l1 = add_footprint(board, "Coilcraft_XGL4020-222MEC", "L1", "XGL4020-222MEC", 74.85, 56.525, 90)
+    l1.SetFPID(pcbnew.LIB_ID("Carrier", "Coilcraft_XGL4020-222MEC"))
     c3 = add_footprint(board, "Murata_GRM21BR61A226ME44_2012Metric", "C3", "GRM21BR61A226ME44", 70.9, 59.225, 180)
     # Keep the non-switching reverse-polarity gate divider out of both the
     # SW/L1 courtyard and the high-current power loop.
     r1 = add_footprint(board, "Resistor_0603_1608Metric", "R1", "100k 1%", 58.5, 67, 90)
-    r2 = add_footprint(board, "Resistor_0603_1608Metric", "R2", "1M 1%", 62.5, 67, 90)
+    r2 = add_footprint(board, "UniRoyal_0603W_Reflow", "R2", "1M 1%", 62.5, 67, 90)
+    r2.SetFPID(pcbnew.LIB_ID("Carrier", "UniRoyal_0603W_Reflow"))
     add_rect(board, 30, 68, 66, 81, pcbnew.Dwgs_User, 0.25)
     add_text(board, "INPUT PROTECTION: J4→F1→D3/Q1 — KEEP NEAR BATTERY CONNECTOR", 48, 82.5,
              pcbnew.Dwgs_User, 0.75)
@@ -206,8 +206,10 @@ def main() -> None:
     c6 = add_footprint(board, "Murata_GRM188_1608Metric", "C6", "GRM188R71C104KA01D", 21.305, 49.75)
     c5.Reference().SetLayer(pcbnew.F_Fab)
     c6.Reference().SetLayer(pcbnew.F_Fab)
-    r8 = add_footprint(board, "Resistor_0603_1608Metric", "R8", "10k 1%", 30, 58, 90)
-    r9 = add_footprint(board, "Resistor_0603_1608Metric", "R9", "10k 1%", 33, 58, 90)
+    r8 = add_footprint(board, "Vishay_CRCW0603_Reflow", "R8", "10k 1%", 30, 58, 90)
+    r8.SetFPID(pcbnew.LIB_ID("Carrier", "Vishay_CRCW0603_Reflow"))
+    r9 = add_footprint(board, "Vishay_CRCW0603_Reflow", "R9", "10k 1%", 33, 58, 90)
+    r9.SetFPID(pcbnew.LIB_ID("Carrier", "Vishay_CRCW0603_Reflow"))
     add_rect(board, 0, 47, 41, 89, pcbnew.Dwgs_User, 0.20)
     add_text(board, "E220 SMA / ANTENNA ACCESS TO BOTTOM EDGE — NO POWER CELL", 20, 45, pcbnew.Dwgs_User, 0.90)
 

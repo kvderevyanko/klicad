@@ -1,0 +1,19 @@
+{
+  "fresh_baseline_equals_fresh_implementation": true,
+  "saved_baseline_equals_saved_implementation": true,
+  "version_normalization": [
+    {
+      "zone": "dfb51e4c-e86d-4bc2-86a0-24b548017a74",
+      "polygon": 1,
+      "vertex": 22,
+      "from": [
+        "69.611721",
+        "58.447152"
+      ],
+      "to": [
+        "69.634004",
+        "58.460017"
+      ]
+    }
+  ]
+}
