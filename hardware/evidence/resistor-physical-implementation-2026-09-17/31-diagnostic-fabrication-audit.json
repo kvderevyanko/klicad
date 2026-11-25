@@ -1,0 +1,800 @@
+{
+  "failures": [],
+  "gerber": {
+    "F.Cu": {
+      "R1": {
+        "inner_gap_mm": 0.8,
+        "local_pad_size_mm": [
+          0.9,
+          0.8
+        ],
+        "pad_flashes": [
+          {
+            "absolute_size_mm": [
+              0.8,
+              0.8999999999999999
+            ],
+            "aperture": 22,
+            "centre_mm": [
+              58.5,
+              67.85
+            ],
+            "pad": "1"
+          },
+          {
+            "absolute_size_mm": [
+              0.8,
+              0.8999999999999999
+            ],
+            "aperture": 22,
+            "centre_mm": [
+              58.5,
+              66.15
+            ],
+            "pad": "2"
+          }
+        ],
+        "pitch_mm": 1.7,
+        "separate_apertures": true
+      },
+      "R2": {
+        "inner_gap_mm": 0.8,
+        "local_pad_size_mm": [
+          0.9,
+          0.8
+        ],
+        "pad_flashes": [
+          {
+            "absolute_size_mm": [
+              0.8,
+              0.8999999999999999
+            ],
+            "aperture": 22,
+            "centre_mm": [
+              62.5,
+              67.85
+            ],
+            "pad": "1"
+          },
+          {
+            "absolute_size_mm": [
+              0.8,
+              0.8999999999999999
+            ],
+            "aperture": 22,
+            "centre_mm": [
+              62.5,
+              66.15
+            ],
+            "pad": "2"
+          }
+        ],
+        "pitch_mm": 1.7,
+        "separate_apertures": true
+      },
+      "R3": {
+        "inner_gap_mm": 0.8,
+        "local_pad_size_mm": [
+          0.9,
+          0.8
+        ],
+        "pad_flashes": [
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 16,
+            "centre_mm": [
+              85.15,
+              66.0
+            ],
+            "pad": "1"
+          },
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 16,
+            "centre_mm": [
+              86.85,
+              66.0
+            ],
+            "pad": "2"
+          }
+        ],
+        "pitch_mm": 1.7,
+        "separate_apertures": true
+      },
+      "R4": {
+        "inner_gap_mm": 0.8,
+        "local_pad_size_mm": [
+          0.9,
+          0.8
+        ],
+        "pad_flashes": [
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 16,
+            "centre_mm": [
+              89.15,
+              66.0
+            ],
+            "pad": "1"
+          },
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 16,
+            "centre_mm": [
+              90.85,
+              66.0
+            ],
+            "pad": "2"
+          }
+        ],
+        "pitch_mm": 1.7,
+        "separate_apertures": true
+      },
+      "R8": {
+        "inner_gap_mm": 0.8,
+        "local_pad_size_mm": [
+          0.9,
+          0.8
+        ],
+        "pad_flashes": [
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 16,
+            "centre_mm": [
+              39.15,
+              35.0
+            ],
+            "pad": "1"
+          },
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 16,
+            "centre_mm": [
+              40.85,
+              35.0
+            ],
+            "pad": "2"
+          }
+        ],
+        "pitch_mm": 1.7,
+        "separate_apertures": true
+      },
+      "R9": {
+        "inner_gap_mm": 0.8,
+        "local_pad_size_mm": [
+          0.9,
+          0.8
+        ],
+        "pad_flashes": [
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 16,
+            "centre_mm": [
+              45.15,
+              35.0
+            ],
+            "pad": "1"
+          },
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 16,
+            "centre_mm": [
+              46.85,
+              35.0
+            ],
+            "pad": "2"
+          }
+        ],
+        "pitch_mm": 1.7,
+        "separate_apertures": true
+      }
+    },
+    "F.Mask": {
+      "R1": {
+        "inner_gap_mm": 0.8,
+        "local_pad_size_mm": [
+          0.9,
+          0.8
+        ],
+        "pad_flashes": [
+          {
+            "absolute_size_mm": [
+              0.8,
+              0.8999999999999999
+            ],
+            "aperture": 22,
+            "centre_mm": [
+              58.5,
+              67.85
+            ],
+            "pad": "1"
+          },
+          {
+            "absolute_size_mm": [
+              0.8,
+              0.8999999999999999
+            ],
+            "aperture": 22,
+            "centre_mm": [
+              58.5,
+              66.15
+            ],
+            "pad": "2"
+          }
+        ],
+        "pitch_mm": 1.7,
+        "separate_apertures": true
+      },
+      "R2": {
+        "inner_gap_mm": 0.8,
+        "local_pad_size_mm": [
+          0.9,
+          0.8
+        ],
+        "pad_flashes": [
+          {
+            "absolute_size_mm": [
+              0.8,
+              0.8999999999999999
+            ],
+            "aperture": 22,
+            "centre_mm": [
+              62.5,
+              67.85
+            ],
+            "pad": "1"
+          },
+          {
+            "absolute_size_mm": [
+              0.8,
+              0.8999999999999999
+            ],
+            "aperture": 22,
+            "centre_mm": [
+              62.5,
+              66.15
+            ],
+            "pad": "2"
+          }
+        ],
+        "pitch_mm": 1.7,
+        "separate_apertures": true
+      },
+      "R3": {
+        "inner_gap_mm": 0.8,
+        "local_pad_size_mm": [
+          0.9,
+          0.8
+        ],
+        "pad_flashes": [
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 16,
+            "centre_mm": [
+              85.15,
+              66.0
+            ],
+            "pad": "1"
+          },
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 16,
+            "centre_mm": [
+              86.85,
+              66.0
+            ],
+            "pad": "2"
+          }
+        ],
+        "pitch_mm": 1.7,
+        "separate_apertures": true
+      },
+      "R4": {
+        "inner_gap_mm": 0.8,
+        "local_pad_size_mm": [
+          0.9,
+          0.8
+        ],
+        "pad_flashes": [
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 16,
+            "centre_mm": [
+              89.15,
+              66.0
+            ],
+            "pad": "1"
+          },
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 16,
+            "centre_mm": [
+              90.85,
+              66.0
+            ],
+            "pad": "2"
+          }
+        ],
+        "pitch_mm": 1.7,
+        "separate_apertures": true
+      },
+      "R8": {
+        "inner_gap_mm": 0.8,
+        "local_pad_size_mm": [
+          0.9,
+          0.8
+        ],
+        "pad_flashes": [
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 16,
+            "centre_mm": [
+              39.15,
+              35.0
+            ],
+            "pad": "1"
+          },
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 16,
+            "centre_mm": [
+              40.85,
+              35.0
+            ],
+            "pad": "2"
+          }
+        ],
+        "pitch_mm": 1.7,
+        "separate_apertures": true
+      },
+      "R9": {
+        "inner_gap_mm": 0.8,
+        "local_pad_size_mm": [
+          0.9,
+          0.8
+        ],
+        "pad_flashes": [
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 16,
+            "centre_mm": [
+              45.15,
+              35.0
+            ],
+            "pad": "1"
+          },
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 16,
+            "centre_mm": [
+              46.85,
+              35.0
+            ],
+            "pad": "2"
+          }
+        ],
+        "pitch_mm": 1.7,
+        "separate_apertures": true
+      }
+    },
+    "F.Paste": {
+      "R1": {
+        "inner_gap_mm": 0.8,
+        "local_pad_size_mm": [
+          0.9,
+          0.8
+        ],
+        "pad_flashes": [
+          {
+            "absolute_size_mm": [
+              0.8,
+              0.8999999999999999
+            ],
+            "aperture": 17,
+            "centre_mm": [
+              58.5,
+              67.85
+            ],
+            "pad": "1"
+          },
+          {
+            "absolute_size_mm": [
+              0.8,
+              0.8999999999999999
+            ],
+            "aperture": 17,
+            "centre_mm": [
+              58.5,
+              66.15
+            ],
+            "pad": "2"
+          }
+        ],
+        "pitch_mm": 1.7,
+        "separate_apertures": true
+      },
+      "R2": {
+        "inner_gap_mm": 0.8,
+        "local_pad_size_mm": [
+          0.9,
+          0.8
+        ],
+        "pad_flashes": [
+          {
+            "absolute_size_mm": [
+              0.8,
+              0.8999999999999999
+            ],
+            "aperture": 17,
+            "centre_mm": [
+              62.5,
+              67.85
+            ],
+            "pad": "1"
+          },
+          {
+            "absolute_size_mm": [
+              0.8,
+              0.8999999999999999
+            ],
+            "aperture": 17,
+            "centre_mm": [
+              62.5,
+              66.15
+            ],
+            "pad": "2"
+          }
+        ],
+        "pitch_mm": 1.7,
+        "separate_apertures": true
+      },
+      "R3": {
+        "inner_gap_mm": 0.8,
+        "local_pad_size_mm": [
+          0.9,
+          0.8
+        ],
+        "pad_flashes": [
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 14,
+            "centre_mm": [
+              85.15,
+              66.0
+            ],
+            "pad": "1"
+          },
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 14,
+            "centre_mm": [
+              86.85,
+              66.0
+            ],
+            "pad": "2"
+          }
+        ],
+        "pitch_mm": 1.7,
+        "separate_apertures": true
+      },
+      "R4": {
+        "inner_gap_mm": 0.8,
+        "local_pad_size_mm": [
+          0.9,
+          0.8
+        ],
+        "pad_flashes": [
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 14,
+            "centre_mm": [
+              89.15,
+              66.0
+            ],
+            "pad": "1"
+          },
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 14,
+            "centre_mm": [
+              90.85,
+              66.0
+            ],
+            "pad": "2"
+          }
+        ],
+        "pitch_mm": 1.7,
+        "separate_apertures": true
+      },
+      "R8": {
+        "inner_gap_mm": 0.8,
+        "local_pad_size_mm": [
+          0.9,
+          0.8
+        ],
+        "pad_flashes": [
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 14,
+            "centre_mm": [
+              39.15,
+              35.0
+            ],
+            "pad": "1"
+          },
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 14,
+            "centre_mm": [
+              40.85,
+              35.0
+            ],
+            "pad": "2"
+          }
+        ],
+        "pitch_mm": 1.7,
+        "separate_apertures": true
+      },
+      "R9": {
+        "inner_gap_mm": 0.8,
+        "local_pad_size_mm": [
+          0.9,
+          0.8
+        ],
+        "pad_flashes": [
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 14,
+            "centre_mm": [
+              45.15,
+              35.0
+            ],
+            "pad": "1"
+          },
+          {
+            "absolute_size_mm": [
+              0.8999999999999999,
+              0.8
+            ],
+            "aperture": 14,
+            "centre_mm": [
+              46.85,
+              35.0
+            ],
+            "pad": "2"
+          }
+        ],
+        "pitch_mm": 1.7,
+        "separate_apertures": true
+      }
+    }
+  },
+  "ipc_d_356": {
+    "R1": {
+      "1": {
+        "centre_mm": [
+          58.4987,
+          67.851
+        ],
+        "net": "/Q1_GATE",
+        "rotation_code": 270,
+        "size_mm": [
+          0.8992,
+          0.8001
+        ]
+      },
+      "2": {
+        "centre_mm": [
+          58.4987,
+          66.1492
+        ],
+        "net": "/GND",
+        "rotation_code": 270,
+        "size_mm": [
+          0.8992,
+          0.8001
+        ]
+      }
+    },
+    "R2": {
+      "1": {
+        "centre_mm": [
+          62.4992,
+          67.851
+        ],
+        "net": "/BUCK_IN",
+        "rotation_code": 270,
+        "size_mm": [
+          0.8992,
+          0.8001
+        ]
+      },
+      "2": {
+        "centre_mm": [
+          62.4992,
+          66.1492
+        ],
+        "net": "/Q1_GATE",
+        "rotation_code": 270,
+        "size_mm": [
+          0.8992,
+          0.8001
+        ]
+      }
+    },
+    "R3": {
+      "1": {
+        "centre_mm": [
+          85.151,
+          65.9994
+        ],
+        "net": "/BUCK_IN",
+        "rotation_code": 0,
+        "size_mm": [
+          0.8992,
+          0.8001
+        ]
+      },
+      "2": {
+        "centre_mm": [
+          86.8502,
+          65.9994
+        ],
+        "net": "/BAT_SENSE",
+        "rotation_code": 0,
+        "size_mm": [
+          0.8992,
+          0.8001
+        ]
+      }
+    },
+    "R4": {
+      "1": {
+        "centre_mm": [
+          89.1489,
+          65.9994
+        ],
+        "net": "/BAT_SENSE",
+        "rotation_code": 0,
+        "size_mm": [
+          0.8992,
+          0.8001
+        ]
+      },
+      "2": {
+        "centre_mm": [
+          90.8507,
+          65.9994
+        ],
+        "net": "/GND",
+        "rotation_code": 0,
+        "size_mm": [
+          0.8992,
+          0.8001
+        ]
+      }
+    },
+    "R8": {
+      "1": {
+        "centre_mm": [
+          39.149,
+          35.0012
+        ],
+        "net": "/E220_M0",
+        "rotation_code": 0,
+        "size_mm": [
+          0.8992,
+          0.8001
+        ]
+      },
+      "2": {
+        "centre_mm": [
+          40.8508,
+          35.0012
+        ],
+        "net": "/GND",
+        "rotation_code": 0,
+        "size_mm": [
+          0.8992,
+          0.8001
+        ]
+      }
+    },
+    "R9": {
+      "1": {
+        "centre_mm": [
+          45.151,
+          35.0012
+        ],
+        "net": "/E220_M1",
+        "rotation_code": 0,
+        "size_mm": [
+          0.8992,
+          0.8001
+        ]
+      },
+      "2": {
+        "centre_mm": [
+          46.8503,
+          35.0012
+        ],
+        "net": "/GND",
+        "rotation_code": 0,
+        "size_mm": [
+          0.8992,
+          0.8001
+        ]
+      }
+    }
+  },
+  "status": "PASS"
+}

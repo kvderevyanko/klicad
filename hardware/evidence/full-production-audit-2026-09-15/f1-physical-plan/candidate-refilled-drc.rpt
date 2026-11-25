@@ -1,0 +1,24 @@
+** Drc report for esp32-e220-f1-proposed.kicad_pcb **
+** Created on 2026-09-16T00:24:32 **
+** Report includes: Errors, Warnings, Exclusions **
+
+** Found 2 DRC violations **
+[lib_footprint_mismatch]: Footprint 'PinHeader_1x02_P2.54mm_Vertical' does not match copy in library 'Connector_PinHeader_2.54mm'
+    Local override; warning
+    @(96.0000 mm, 14.0000 mm): Footprint JP1
+[lib_footprint_mismatch]: Footprint 'SOT-223-3_TabPin2' does not match copy in library 'Package_TO_SOT_SMD'
+    Local override; warning
+    @(20.6500 mm, 27.0000 mm): Footprint U4
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** Ignored checks **
+    - Footprint has no courtyard defined
+    - Track endpoint not centered on via
+    - Tuning profile track geometries
+    - Footprint doesn't match symbol's footprint filters
+    - Footprint component type doesn't match footprint pads
+
+** End of Report **

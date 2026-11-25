@@ -121,24 +121,25 @@ def main():
 
 - Board: 145 x 90 mm
 - Layers: 2
-- Fabrication set: F.Cu, B.Cu, F.Mask, B.Mask, F.SilkS, Edge.Cuts, and Excellon drills.
+- Fabrication set: F.Cu, B.Cu, F.Mask, B.Mask, F.SilkS, Edge.Cuts, and separate PTH/NPTH Excellon drills.
+- Stencil set: F.Paste. U1 exposed-pad aperture is 1.55 × 1.55 mm (85% of copper area). Confirm stencil thickness and paste release with PCBWAVE.
 
-## Recommended economical order parameters
+## PCBWAVE order 2608134199
 
+- Quantities: fabricate 5 PCB, assemble 4 PCBA
 - Material: FR-4
 - Nominal thickness: 1.6 mm
 - Outer copper: 1 oz (approximately 35 um)
-- Solder mask: green
+- Solder mask: black
 - Silkscreen: white
 - Finish: lead-free HASL
 
-These are order parameters, not encoded geometry. ENIG is acceptable if the
-selected assembler recommends it for QFN assembly and its price impact is
-acceptable. Rev.1 has no controlled-impedance requirement, castellations,
-edge plating, blind vias, or buried vias.
+Rev.1 has no controlled-impedance requirement, castellations, edge plating,
+blind vias, or buried vias.
 
 ## First-article notes
 
+- J4/J8 JST B2B-XH-A: finished plated holes Ø1.00 ±0.05 mm on 2.50 ±0.05 mm pitch. Confirm the finished-hole tolerance during CAM review.
 - Verify OLED mechanical/body fit on the actual module.
 - Rev.1 has three M3 mounting holes: H1/H2/H3, each 3.20-mm NPTH with an 8-mm copper-free screw-head region. Enclosure/standoffs must respect these mechanical clearances.
 - Battery strain relief is enclosure/harness responsibility.
@@ -161,7 +162,7 @@ pick-and-place footprint.
 ## Connector orientation
 
 - J4 BATTERY: pad 1 = BAT+, pad 2 = GND.
-- J8: external POWER SW connection.
+- J8 POWER SW: pad 1 = BAT_FUSED, pad 2 = BAT_SW.
 - J5: GND, AUX_3V3, SCL, SDA.
 - J6: GND, BTN1, BTN2, BTN3, BTN4, BTN5.
 - J9: 5V, WS2812 DATA, GND.
@@ -180,11 +181,11 @@ CPL_SMD_REV1.csv is KiCad's direct position export. Its X, Y, side, and
 rotation are authoritative board-export values; do not remap angles to an
 assembler convention without validating that assembler's import preview.
 
-Orientation-sensitive SMT items include U1 TPS62133, U3 SN74AHCT1G125,
-U4 TLV1117LV33, Q1 DMP3130LQ-7, and polarized/marked capacitors where the
-assembler's library requires orientation. D3 SMBJ10CA is bidirectional and
-F1 is non-polar. Use assembly-top.pdf and silkscreen-top.pdf to map any
-vendor-specific rotation convention.
+Check pin 1 for U1 TPS62133, U3 SN74AHCT1G125, U4 TLV1117LV33, and Q1
+DMP3130LQ-7 in PCBWAVE's import preview. Place L1 with the Coilcraft
+start-lead mark toward PCB pad 1 (BUCK_SW). D3 SMBJ10CA is bidirectional
+and F1 is non-polar. Use assembly-top.pdf and silkscreen-top.pdf to confirm
+the vendor's rotation convention.
 """)
 
 if __name__ == "__main__":

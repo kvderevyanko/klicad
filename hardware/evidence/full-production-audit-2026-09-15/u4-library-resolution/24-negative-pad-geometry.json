@@ -1,0 +1,95 @@
+{
+  "board": "hardware/evidence/full-production-audit-2026-09-15/u4-library-resolution/negative-u4-pad-geometry.kicad_pcb",
+  "expected_origin_rotation": [
+    20.65,
+    27.0,
+    0.0
+  ],
+  "expected_pad_numbers": [
+    "1",
+    "2",
+    "2",
+    "3"
+  ],
+  "expected_pads": [
+    {
+      "absolute_centre_mm": [
+        17.5,
+        24.7
+      ],
+      "local_centre_mm": [
+        -3.15,
+        -2.3
+      ],
+      "net": "/GND",
+      "number": "1",
+      "size_mm": [
+        2.0,
+        1.5
+      ]
+    },
+    {
+      "absolute_centre_mm": [
+        17.5,
+        27.0
+      ],
+      "local_centre_mm": [
+        -3.15,
+        0.0
+      ],
+      "net": "/AUX_3V3",
+      "number": "2",
+      "size_mm": [
+        2.0,
+        1.5
+      ]
+    },
+    {
+      "absolute_centre_mm": [
+        23.8,
+        27.0
+      ],
+      "local_centre_mm": [
+        3.15,
+        0.0
+      ],
+      "net": "/AUX_3V3",
+      "number": "2",
+      "size_mm": [
+        2.0,
+        3.8
+      ]
+    },
+    {
+      "absolute_centre_mm": [
+        17.5,
+        29.3
+      ],
+      "local_centre_mm": [
+        -3.15,
+        2.3
+      ],
+      "net": "/5V_SYS",
+      "number": "3",
+      "size_mm": [
+        2.0,
+        1.5
+      ]
+    }
+  ],
+  "failures": [
+    "U4 pad 1 size (2.1, 1.5), expected (2.0, 1.5)",
+    "active board changed outside allowlisted U4 identity/description/tags"
+  ],
+  "footprint": "Carrier:TI_TLV1117LV33DCYR_DCY_SOT223",
+  "footprint_uuid_preserved": true,
+  "land_pattern_basis": "frozen project IPC/KiCad; TI does not publish a recommended land pattern",
+  "manufacturer_part": "TLV1117LV33DCYR",
+  "outside_u4_metadata_delta": true,
+  "package": "TI DCY / SOT-223, MPDS094A/4202506/B",
+  "pad_uuids_preserved": true,
+  "physical_status": "UNVERIFIED manufacturer land pattern; package-drawing compatible",
+  "reference": "/home/kirill/codex/kicad/hardware/evidence/full-production-audit-2026-09-15/u4-library-resolution/10-esp32-e220.pre-u4-metadata.kicad_pcb",
+  "source_local_exact": true,
+  "status": "FAIL"
+}

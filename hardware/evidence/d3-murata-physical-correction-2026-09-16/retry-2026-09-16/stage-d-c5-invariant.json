@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "stage": "c5",
+  "completed_groups": [
+    "c5",
+    "d3",
+    "grm188",
+    "grm21"
+  ],
+  "placements_rotations_unchanged": true,
+  "tracks_vias_unchanged": true,
+  "zone_outlines_unchanged": true,
+  "failures": []
+}

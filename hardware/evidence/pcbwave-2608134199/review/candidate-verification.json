@@ -1,0 +1,26 @@
+{
+  "bom_placements": 30,
+  "smd_placements": 23,
+  "tht_placements": 7,
+  "dnp_manifest_rows": 16,
+  "status": "PASS",
+  "gerber_layers": [
+    "Copper,L1,Top",
+    "Copper,L2,Bot",
+    "Soldermask,Top",
+    "Soldermask,Bot",
+    "Legend,Top",
+    "Profile,NP",
+    "Paste,Top"
+  ],
+  "checked_pad_flashes": {
+    "gtl": 39,
+    "gtp": 39
+  },
+  "outline_mm": [
+    145,
+    90
+  ],
+  "pth_drill_hits": 119,
+  "npth_drill_hits": 3
+}

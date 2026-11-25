@@ -1,0 +1,12 @@
+ M hardware/.history
+ M hardware/esp32-e220.kicad_pcb
+ M hardware/esp32-e220.kicad_sch
+ M hardware/esp32-e220.pretty/Littelfuse_SMBJ10CA_DO214AA.kicad_mod
+ M hardware/esp32-e220.pretty/Murata_GRM188_1608Metric.kicad_mod
+ M hardware/esp32-e220.pretty/Murata_GRM21_2012Metric.kicad_mod
+ M hardware/generate_esp32_e220.py
+ M hardware/generate_stage7_footprints.py
+ M hardware/generate_stage8_placement.py
+?? hardware/check_d3_murata_footprints.py
+?? hardware/esp32-e220.pretty/Murata_GRM188R61A106MAAL_1608Metric.kicad_mod
+?? hardware/esp32-e220.pretty/Murata_GRM21BR61A226ME44_2012Metric.kicad_mod

@@ -1,0 +1,308 @@
+                                                            CHIP RESISTORS
+                                                 Mounting
+                                                                             DATA SHEET
+
+
+
+Product Specification – February 13, 2018 V.10
+                                                                                                                       Product specification   2
+                                                                                                                                               8
+                 Chip Resistor Surface Mount             Mounting
+                                                                                      The laws of heat conduction,
+                                                                                      convection and radiation determine the
+                                                                                      temperature rise in a resistor due to
+                                                                                      power dissipation.
+ MOUNTING
+ Due to their rectangular shape and small dimensional                 joints. Therefore a maximum solder joint
+ tolerances, Surface Mounted Resistors are suitable                   temperature of 110 °C is advised.
+ for handling by automatic placement systems. Chip
+                                                                      The ambient temperature on large or very dense
+ placement can be on ceramic substrates and printed-
+                                                                      printed-circuit boards (PCBs) is influenced by the
+ circuit boards (PCBs). Electrical connection to the
+                                                                      dissipated power. The ambient temperature will
+ circuit is by wave, vapour phase or infrared
+                                                                      again influence the hot-spot temperature. Therefore,
+ soldering. The end terminations guarantee a reliable
+                                                                      the packing density that is allowed on the PCB is
+ contact and the protective coating enables ‘face
+                                                                      influenced by the dissipated power.
+ down’ mounting.
+ The laws of heat conduction, convection and                          E X A MP L E O F M O U N T I N G E F F E C T S
+ radiation determine the temperature rise in a                        Assume that the maximum temperature of a PCB is
+ resistor owing to power dissipation. The maximum                     95 °C and the ambient temperature is 50 °C. In this
+ body temperature usually occurs in the middle of the                 case the maximum temperature rise that may be
+ resistor and is called the hot-spot temperature.                     allowed is 45 °C.
+ The hot-spot temperature depends on the ambient                      In the graph (see Fig.1), this point is found by
+ temperature and the dissipated power. This is                        drawing the line from point A (PCB = 95 °C) to
+ described in the data sheets under the chapter                       point B (T amb = 50 °C) and from here to the left axis.
+ heading “Functional description”.
+                                                                      To find the maximum packing density, this horizontal
+ The hot-spot temperature is important for mounting                   line is extended until it intersects with the curve,
+ because the connections to the chip resistors will                   0.125 W (point C). The maximum packing density, 19
+ reach a temperature close to the hot-spot                            units/50 × 50 mm2 (point D), is found on the
+ temperature. Heat conducted by the connections                       horizontal axis
+ must not reach the melting point of the solder at the
+
+
+
+
+    Fig. 1 PCB temperature as a function of applied power, mounting density and ambient temperature
+
+
+
+
+                                                                                                                                www.yageo.com
+
+Feb. 13, 2018 V.10
+                                                                                                              Product specification   3
+                                                                                                                                      8
+                 Chip Resistor Surface Mount       Mounting
+
+
+
+
+ THERMAL RESISTANCE (Rth)
+ Thermal resistance prohibits the
+ release of heat generated within
+ the resistor to the surrounding
+ environment. It is expressed in
+ K/W and defines the surface
+ temperature (T HS ) of the resistor
+ in relation to the ambient
+ temperature (T amb ) and the load
+ (P) of the resistor, as follows:
+   T HS = T amb + P × R th
+ Due to their direct contact with
+ the solder spot, chip resistors
+ dissipate over 85% of their heat
+ via conduction to the solder spot
+ and hence to the PCB. Thus the
+ PCB on which the chip resistor is
+ mounted functions as a heat sink.
+ Different PCBs have different             Fig. 2 Heat resistance for 1206 sized resistors as a function of distance and material
+ heat conductance. Figure 2 shows
+ the different values of heat
+ resistance per material type.
+ Substrates with a higher heat
+ conductance give lower thermal
+ resistance figures; substrates
+ with a lower heat conductance
+ give higher thermal resistance
+ figures. It should be noted that
+ the temperature of the
+ terminations of the chip resistor
+ is virtually the same as the hot-
+ spot temperature. Therefore the
+ power that may be dissipated by
+ the resistor is dependent on:
+   T amb (which is also dependent
+   on the packing density)
+                                         (1) For size 0402: Rth = 800 K/W; (2) For size 0603: Rth = 400 K/W
+   R th of the PCB                       (3) For size 0805: Rth = 250 K/W; (4) For size 1206: Rth = 200 K/W
+                                         (5) For size 1210: Rth = 125 K/W; (6) For size 1218: Rth = 100 K/W
+   maximum solder spot
+                                         (7) For size 2010: Rth = 80 K/W; (8) For size 2512: Rth = 100 K/W
+   temperature (generally 110
+   °C).
+
+                                           Fig. 3 Hot-spot temperature rise (T) as a function of dissipated power
+
+
+
+
+                                                                                                                       www.yageo.com
+
+Feb. 13, 2018 V.10
+                                                                                                             Product specification   4
+                                                                                                                                     8
+                 Chip Resistor Surface Mount               Mounting
+
+
+
+
+ FOOTPRINT DIMENSIONS
+ SINGLE RESISTOR CHIPS
+
+
+
+
+    Fig. 4 Single resistor chips recommended dimensions of footprints
+
+
+    Table 1 Reflow soldering footprint dimensions for relevant chip resistors size; see Fig. 4
+ PRODUCT SIZE        FOOTPRINT DIMENSIONS                                                                                  Unit: mm
+ CODE                A                        B                         C                        D           Placement accuracy
+ 0075                0.34                     0.14                      0.1                      0.15                                N/A
+ 0100                0.48                     0.12                      0.18                     0.18~0.23                           N/A
+ 0201                1.0                      0.3                       0.35                     0.4                                 N/A
+ 0402                1.5                      0.5                       0.5                      0.6                            ± 0.15
+ 0603                2.6                      0.8                       0.9                      0.8                            ± 0.25
+ 0805                3.0                      1.2                       0.9                      1.2                            ± 0.25
+ 1206                4.2                      2.2                       1.0                      1.5                            ± 0.25
+ 1210                4.2                      2.2                       1.0                      2.4                            ± 0.25
+ 1218                4.2                      2.2                       1.0                      4.8                            ± 0.25
+ 2010                6.1                      3.3                       1.4                      2.4                            ± 0.25
+ 2512                8.0                      4.4                       1.8                      4.0                            ± 0.25
+
+
+
+    Table 2 Wave soldering footprint dimensions for relevant chip resistors size; see Fig. 4
+ PRODUCT SIZE        FOOTPRINT DIMENSIONS                                                                                  Unit: mm
+ CODE                A                        B                         C                        D           Placement accuracy
+ 0603                2.70                     0.90                      0.90                     0.80                           ± 0.25
+ 0805                3.30                     1.30                      1.00                     1.30                           ± 0.25
+ 1206                4.70                     2.50                      1.10                     1.70                           ± 0.25
+ 1210                4.70                     2.50                      1.10                     2.50                           ± 0.25
+ 1218                4.70                     2.50                      1.10                     4.80                           ± 0.25
+ 2010                6.40                     4.20                      1.10                     2.50                           ± 0.25
+ 2512                8.20                     5.50                      1.35                     3.20                           ± 0.25
+
+
+
+
+                                                                                                                      www.yageo.com
+
+Feb. 13, 2018 V.10
+                                                                                                               Product specification   5
+                                                                                                                                       8
+                 Chip Resistor Surface Mount                  Mounting
+
+
+
+
+ RESISTOR ARRAYS, NETWORK AND RF ATTENUATORS
+
+
+
+
+    Fig. 5 Resistor arrays and network recommended dimensions of footprints
+
+
+    Table 3 Reflow soldering footprint dimensions for relevant chip resistors size; see Fig. 5
+ PRODUCT SIZE CODE           TYPE               FOOTPRINT DIMENSIONS                                                       Unit: mm
+                                                A                         B                      F                         P
+ 0404                        ATV321             0.50 ± 0.10               0.42 ± 0.05            1.80 ± 0.20                0.65 ± 0.05
+ 2 x 0201 (4P2R)             YC 102             0.30 ± 0.10               0.30 ± 0.05            0.90 ± 0.20                0.50 ± 0.05
+ 4 x 0201 (8P4R)             YC104              0.30 ± 0.10               0.20 ± 0.05            0.90 ± 0.20                0.40 ± 0.05
+ 2 × 0402 (4P2R)             YC/TC 122          0.50 ± 0.10               0.30 ± 0.05            1.80 ± 0.20                0.67 ± 0.05
+ 4 × 0402 (8P4R)             YC/TC 124          0.50 ± 0.10               0.30 ± 0.05            1.80 ± 0.20                0.50 ± 0.05
+ 2 × 0603 (4P2R)             YC 162             0.80 ± 0.10               0.45 ± 0.05            2.60 ± 0.20                0.80 ± 0.05
+ 4 × 0603 (8P4R)             YC/TC 164          0.80 ± 0.10               0.45 ± 0.05            2.60 ± 0.20                0.80 ± 0.05
+ 1220 (8P4R)                 YC324              2.20 ± 0.10               0.71 ± 0.05            3.90 ± 0.20                1.27 ± 0.05
+ 0616 (16P8R)                YC248              0.50 ± 0.10               0.30 ± 0.05            1.80 ± 0.20                0.50 ± 0.05
+ 0612 (10P8R)                YC158              0.80 ± 0.10               0.35 ± 0.05            2.60 ± 0.20                0.64 ± 0.05
+ 1225 (10P8R)                YC358              1.60 ± 0.10               0.90 ± 0.05            3.90 ± 0.20                1.27 ± 0.05
+
+
+
+
+                                                                                                                        www.yageo.com
+
+Feb. 13, 2018 V.10
+                                                                                                                        Product specification   6
+                                                                                                                                                8
+                         Chip Resistor Surface Mount            Mounting
+
+
+
+
+ SOLDERING CONDITIONS
+ The lead free Surface Mount                        accordance with the schedule of                   Surface Mount Resistors are
+ Resistors are able to stand the                    "MIL-STD-202G-method 210F", "The                  tested for solderability at 245 °C
+ reflow soldering conditions as                     robust construction of chip                       during 2 seconds. The test
+ below:                                             resistors allows them to be                       condition for no leaching is 260
+                                                    completely immersed in a solder                   °C for 30 seconds. Typical
+      Temperature: above 220 °C
+                                                    bath of 260 °C for 10 seconds".                   examples of soldering processes
+      Endurance: 95 to 120 seconds                 Therefore, it is possible to mount                that provide reliable joints
+                                                    Surface Mount Resistors on one                    without any damage, the
+      Cycles: 3 times
+                                                    side of a PCB and other discrete                  recommended soldering profiles
+ The test of "soldering heat                        components on the reverse (mixed                  referring to "IEC 61760-1" are
+ resistance" is carried out in                      PCBs).                                            given in Figs 6, 7 and 8.
+
+     Typical values (solid line)
+     Process limits (dotted lines)
+
+
+
+
+       Fig. 6 Infrared soldering, forced air convection reflow soldering-temperature/time profile for SnPb solders
+
+
+
+
+                                                                                                                                 www.yageo.com
+
+Feb. 13, 2018 V.10
+                                                                                                                    Product specification   7
+                                                                                                                                            8
+                      Chip Resistor Surface Mount                           Mounting
+
+
+
+
+  Typical values (solid line)
+  Process limits (dotted lines)
+
+
+
+
+    Fig. 7 Infrared soldering, forced air convection reflow soldering-temperature/time profile for SnAgCu solders
+
+
+  Typical values (solid line)
+  Process limits (dotted lines)
+  The resistors may be soldered twice in accordance with this method if desired
+
+
+
+
+    Fig. 8 Double wave soldering for SnPb and leadfree SnAgCu solder– temperature/time profile (terminal temperature)
+
+
+
+
+                                                                                                                             www.yageo.com
+
+Feb. 13, 2018 V.10
+                                                                                                       Product specification   8
+                                                                                                                               8
+                 Chip Resistor Surface Mount    Mounting
+
+
+
+
+ REVISION HISTORY
+ REVISION       DATE            CHANGE NOTIFICATION    DESCRIPTION
+ Version 10     Feb. 12, 2018   -                      - Update 2512 footprint dimensions
+
+ Version 9      Oct. 02, 2017   -                       - Correct the highest reflow soldering temperaure of SnAgCu solders
+                                                       to be 260oC
+ Version 8      June 15, 2017   -                      - Add 0075 footprint dimensions
+
+ Version 7      Jun. 02, 2015   -                      - add 0100
+
+ Version 6      Dec. 02, 2014   -                      - add YC104
+
+ Version 5      March 25, 2008 -                       - Footprint dimensions updated
+                                                       - Soldering conditions test method amended from "MIL-STD-202G" to
+                                                         "MIL-STD-202F"
+                                                       - Solder bath of soldering conditions upgrade to 270 °C
+                                                       - Profiles of infrared soldering amended
+ Version 4      Nov 26, 2004    -                      - Converted to Yageo / Phycomp brand
+                                                       - Expanded sizes from 0201 to 2512 on the profile of “Hot-spot
+                                                         temperature rise (T) as a function of dissipated power”
+                                                       - Footprint dimensions updated
+                                                       - Profiles of infrared and double wave soldering amended
+ Version 3      Jul 25, 2003    -                      - Updated company logo
+ Version 2      May 30, 2001    -                      - Converted to Phycomp brand
+
+
+
+
+                                                                                                                 www.yageo.com
+
+Feb. 13, 2018 V.10
+

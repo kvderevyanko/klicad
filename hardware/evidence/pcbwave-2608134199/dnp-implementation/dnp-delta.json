@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "native_parity_before": 20,
+  "native_parity_after": 16,
+  "removed": [
+    [
+      "footprint_symbol_field_mismatch",
+      "Footprint J6"
+    ],
+    [
+      "footprint_symbol_field_mismatch",
+      "Footprint J9"
+    ],
+    [
+      "footprint_symbol_mismatch",
+      "Footprint J6"
+    ],
+    [
+      "footprint_symbol_mismatch",
+      "Footprint J9"
+    ]
+  ],
+  "pin_net_pairs": 127,
+  "net_count": 40,
+  "schematic_generator_exact": true,
+  "electrical_connectivity_identical": true,
+  "board_delta": "two hidden F.Fab footprint properties DNP=YES",
+  "schematic_delta": "two assembly-only DNP flags, J6 and J9",
+  "board_sha256": "8d4e5c510a4cd3c405085ffde9e8c468fbac77ca9c06e21e70114ff444e9df21",
+  "schematic_sha256": "17dd4a964ddcc6af6e92b52e9b559da258fae14ec3c4d6f42b37452e9fbe49a8"
+}

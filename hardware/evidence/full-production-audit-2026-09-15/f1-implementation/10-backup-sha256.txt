@@ -1,0 +1,3 @@
+ef7cc377eb670115295f39cbd963e8910f2f4047cf5d740728abd09e1e4f25ea  hardware/evidence/full-production-audit-2026-09-15/f1-implementation/10-esp32-e220.pre-f1.kicad_pcb
+3b3ba925cd7556431e1be7194d7fa99cc01bb7132144a1efc42d8470a07fd395  hardware/evidence/full-production-audit-2026-09-15/f1-implementation/10-generate_stage7_footprints.pre-f1.py
+832f90eadf0a5e1d8fb629bfdad315e7bdee86c9bd43d146f668701a4581c2ab  hardware/evidence/full-production-audit-2026-09-15/f1-implementation/10-Littelfuse_1812L200_16_4532Metric.pre-f1.kicad_mod

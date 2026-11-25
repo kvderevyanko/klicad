@@ -1,15 +1,15 @@
 # CURRENT PROJECT STATE
 
-`STATE_SNAPSHOT_DATE`: 2026-08-21
+`STATE_SNAPSHOT_DATE`: 2026-11-25
 
-`ACTIVE_BOARD_STATUS`: controlled Rev.1 connectivity-complete pre-production candidate; it is not production-released.
+`ACTIVE_BOARD_STATUS`: finalized Rev.1. Manufacturing ZIP released for PCBWAVE order 2608134199 from `107f580a21e706104b6f51c86a391538afc77027`. Customer production authorization, receipt of additional payment, and factory scheduling are confirmed. Manufacturing start, completion, shipment, and first-article validation are pending.
 
-`ACTIVE_SCHEMATIC_STATUS`: approved Rev.1 source with clean ERC. `CURRENT_SCOPE`: documentation, assembly metadata, and silkscreen only. Connectivity, values, placement, tracks, vias, zones, antenna rule area, outline, and layer count are frozen.
+`ACTIVE_SCHEMATIC_STATUS`: approved Rev.1 source with clean ERC. `CURRENT_SCOPE`: release documentation and first-article planning. Controlled design sources and production files are frozen.
 
 ## Active design files
 
 * `hardware/esp32-e220.kicad_sch` — approved electrical schematic.
-* `hardware/esp32-e220.kicad_pcb` — controlled PCB record, 37 footprints, 200 tracks, 58 vias, four zones, one rule area.
+* `hardware/esp32-e220.kicad_pcb` — controlled PCB record, 40 footprints, 202 tracks, 58 vias, four zones, seven rule areas.
 * `hardware/generate_esp32_e220.py` and `hardware/esp32-e220.kicad_sym` — reproducible electrical sources.
 * `hardware/check_schematic_pcb_sync.py` — authoritative schematic/PCB parity gate.
 
@@ -35,8 +35,8 @@ Rev.1 is a two-layer, 145 x 90 mm board. Preserve the ESP32 antenna exclusion, E
 
 ## Current deferred validation
 
-OLED body fit is a first-article mechanical validation item; its electrical interface is complete. Mounting and battery strain relief are deferred to enclosure/harness work or Rev.2. Prototype validation remains required for input transient/inrush behaviour, U4 temperature under OLED load, external RGB loading, and the button panel.
+Verify OLED fit, enclosure compatibility at H1–H3, and battery cable strain relief. First-article testing covers input transient and inrush behaviour, U4 temperature under OLED load, external RGB loading, and the button panel. Factory checks remain open for J4/J8 finished hole diameter, R2 fit, U1 soldering, and other CAM/assembly checks.
 
 ## Evidence pointers
 
-Use actual KiCad files for current geometry and counts. Current routing and U3 evidence are under `hardware/evidence/rev1-final-5-airwire-2026-08-21/` and `hardware/evidence/rev1-u3-dbv-release-2026-08-21/`. Earlier evidence mentioning partial routing, the rejected board, J7, D2, TP6...TP10, or a 300-mA AUX allocation is historical only.
+Use actual KiCad files for current geometry and counts. The release record is [PCBWAVE 2608134199](pcbwave-2608134199.md). Independent source and export gates are under `hardware/evidence/pcbwave-2608134199/review/`. First-article procedures are in [docs/open-questions.md](open-questions.md).

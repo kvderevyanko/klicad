@@ -1,0 +1,191 @@
+diff --git a/hardware/esp32-e220.kicad_pcb b/hardware/esp32-e220.kicad_pcb
+index 8dd56c7..7a43d6c 100644
+--- a/hardware/esp32-e220.kicad_pcb
++++ b/hardware/esp32-e220.kicad_pcb
+@@ -1475,7 +1475,7 @@
+ 		(layer "F.Cu")
+~
+ 		(uuid "40b1d1b9-b718-4757-bce7-7453a3554f10")
+~
+ 		(at 40 35)
+~
+ 		(descr "0603 (1608 metric) resistor footprint 
+-for active unassigned resistor MPNs R1/R2/R8/R9/R10/R11; manufacturer MPN remains procurement DFM TBD.")
++used by R1/R2/R3/R4/R8/R9. Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm on 1.70-mm centres.")
+~
+ 		(property "Reference" "R8"
+~
+ 			(at 0 -1.4 0)
+~
+ 			(layer "F.SilkS")
+~
+@@ -3171,7 +3171,7 @@
+ 		(layer "F.Cu")
+~
+ 		(uuid "7c3042bd-6fa8-448f-ba3c-5b93dcc16fd5")
+~
+ 		(at 58.5 67 90)
+~
+ 		(descr "0603 (1608 metric) resistor footprint 
+-for active unassigned resistor MPNs R1/R2/R8/R9/R10/R11; manufacturer MPN remains procurement DFM TBD.")
++used by R1/R2/R3/R4/R8/R9. Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm on 1.70-mm centres.")
+~
+ 		(property "Reference" "R1"
+~
+ 			(at 0 -1.4 90)
+~
+ 			(layer "F.SilkS")
+~
+@@ -3404,7 +3404,7 @@
+ 		(layer "F.Cu")
+~
+ 		(uuid "84bbdb23-79be-4221-8051-9e72ec7601f6")
+~
+ 		(at 46 35)
+~
+ 		(descr "0603 (1608 metric) resistor footprint 
+-for active unassigned resistor MPNs R1/R2/R8/R9/R10/R11; manufacturer MPN remains procurement DFM TBD.")
++used by R1/R2/R3/R4/R8/R9. Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm on 1.70-mm centres.")
+~
+ 		(property "Reference" "R9"
+~
+ 			(at 0 -1.4 0)
+~
+ 			(layer "F.SilkS")
+~
+@@ -3702,7 +3702,7 @@
+ 		(layer "F.Cu")
+~
+ 		(uuid "8cee1831-f9d1-4e3e-9d9e-295bd7183f3b")
+~
+ 		(at 62.5 67 90)
+~
+ 		(descr "0603 (1608 metric) resistor footprint 
+-for active unassigned resistor MPNs R1/R2/R8/R9/R10/R11; manufacturer MPN remains procurement DFM TBD.")
++used by R1/R2/R3/R4/R8/R9. Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm on 1.70-mm centres.")
+~
+ 		(property "Reference" "R2"
+~
+ 			(at 0 -1.4 90)
+~
+ 			(layer "F.SilkS")
+~
+@@ -4748,7 +4748,7 @@
+ 		(layer "F.Cu")
+~
+ 		(uuid "c2290e18-690e-4a9b-82d8-939e2b5ae69e")
+~
+ 		(at 90 66)
+~
+ 		(descr "0603 (1608 metric) resistor footprint used by 
+-R1/R2/R3/R4/R8/R9/R10/R11; 0.95x1.00 lands
++R1/R2/R3/R4/R8/R9. Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm
+  on 
+-1.45-mm centres are project IPC nominal.")
++1.70-mm centres.")
+~
+ 		(property "Reference" "R4"
+~
+ 			(at 0 -1.4 0)
+~
+ 			(layer "F.SilkS")
+~
+@@ -5391,7 +5391,7 @@
+ 		(layer "F.Cu")
+~
+ 		(uuid "e243c146-e406-42f5-933d-442950fd309a")
+~
+ 		(at 86 66)
+~
+ 		(descr "0603 (1608 metric) resistor footprint used by 
+-R1/R2/R3/R4/R8/R9/R10/R11; 0.95x1.00 lands
++R1/R2/R3/R4/R8/R9. Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm
+  on 
+-1.45-mm centres are project IPC nominal.")
++1.70-mm centres.")
+~
+ 		(property "Reference" "R3"
+~
+ 			(at 0 -1.4 0)
+~
+ 			(layer "F.SilkS")
+~
+diff --git a/hardware/esp32-e220.pretty/Resistor_0603_1608Metric.kicad_mod b/hardware/esp32-e220.pretty/Resistor_0603_1608Metric.kicad_mod
+index 2abad87..2b3cbfe 100644
+--- a/hardware/esp32-e220.pretty/Resistor_0603_1608Metric.kicad_mod
++++ b/hardware/esp32-e220.pretty/Resistor_0603_1608Metric.kicad_mod
+@@ -1,6 +1,6 @@
+ (footprint "Resistor_0603_1608Metric" (version 20240108) (generator "stage7")
+~
+   (layer "F.Cu")
+~
+   (descr "0603 (1608 metric) resistor footprint used by 
+-R1/R2/R3/R4/R8/R9/R10/R11.
++R1/R2/R3/R4/R8/R9.
+  Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm on 1.70-mm centres.")
+~
+   (attr smd)
+~
+   (fp_text reference "REF**" (at 0.000 -1.400) (layer "F.SilkS")
+~
+     (effects (font (size 1.000 1.000) (thickness 0.15)))
+~
+diff --git a/hardware/generate_stage7_footprints.py b/hardware/generate_stage7_footprints.py
+index bd36a66..375aa68 100644
+--- a/hardware/generate_stage7_footprints.py
++++ b/hardware/generate_stage7_footprints.py
+@@ -125,7 +125,7 @@ def yageo_rc0603() -> str:
+     """Yageo RC 0603/1608 Mounting V10 Table 1 reflow lands."""
+~
+     return passive(
+~
+         "Resistor_0603_1608Metric",
+~
+         "0603 (1608 metric) resistor footprint used by 
+-R1/R2/R3/R4/R8/R9/R10/R11.
++R1/R2/R3/R4/R8/R9.
+  Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm on 1.70-mm centres.",
+~
+         1.60, 0.80, 0.90, 0.80, 1.70,
+~
+     )
+~
+ 
+~
+diff --git a/hardware/production-metadata.json b/hardware/production-metadata.json
+index d009311..cff8acf 100644
+--- a/hardware/production-metadata.json
++++ b/hardware/production-metadata.json
+@@ -23,12 +23,12 @@
+       "JP1": {"manufacturer": "Samtec", "mpn": "TSW-102-07-G-S", "description": "2-pin header only"},
+~
+       "L1": {"manufacturer": "Coilcraft", "mpn": "XFL4020-222MEB"},
+~
+       "Q1": {"manufacturer": "Diodes Incorporated", "mpn": "DMP3130LQ-7"},
+~
+       "R1": {"procurement_policy": "APPROVED_GENERIC", "package": "0603 / 1608Metric", "resistance": "100 kOhm", "tolerance": "1%", "minimum_rating": "0.1 W, 50 V, -55..125 C", "substitutions": 
+-"allowed"},
++"allowed only when physical_substitution_restriction is satisfied", "physical_substitution_restriction": "Standard two-terminal chip resistor, 0603 imperial / 1608 metric, conventional wraparound terminals; manufacturer package or mounting recommendation compatible with 0.900 x 0.800 mm lands on 1.700-mm pitch, 0.800-mm inner gap, and 2.600-mm span. Excludes 0402, 0805, special-terminal, reverse-geometry, and non-standard 0603 variants."},
+~
+       "R2": {"procurement_policy": "APPROVED_GENERIC", "package": "0603 / 1608Metric", "resistance": "1 MOhm", "tolerance": "1%", "minimum_rating": "0.1 W, 50 V, -55..125 C", "substitutions": 
+-"allowed"},
++"allowed only when physical_substitution_restriction is satisfied", "physical_substitution_restriction": "Standard two-terminal chip resistor, 0603 imperial / 1608 metric, conventional wraparound terminals; manufacturer package or mounting recommendation compatible with 0.900 x 0.800 mm lands on 1.700-mm pitch, 0.800-mm inner gap, and 2.600-mm span. Excludes 0402, 0805, special-terminal, reverse-geometry, and non-standard 0603 variants."},
+~
+       "R3": {"manufacturer": "Yageo", "mpn": "RC0603FR-0710KL"},
+~
+       "R4": {"manufacturer": "Yageo", "mpn": "RC0603FR-073K3L"},
+~
+       "R8": {"procurement_policy": "APPROVED_GENERIC", "package": "0603 / 1608Metric", "resistance": "10 kOhm", "tolerance": "1%", "minimum_rating": "0.1 W, 50 V, -55..125 C", "substitutions": 
+-"allowed"},
++"allowed only when physical_substitution_restriction is satisfied", "physical_substitution_restriction": "Standard two-terminal chip resistor, 0603 imperial / 1608 metric, conventional wraparound terminals; manufacturer package or mounting recommendation compatible with 0.900 x 0.800 mm lands on 1.700-mm pitch, 0.800-mm inner gap, and 2.600-mm span. Excludes 0402, 0805, special-terminal, reverse-geometry, and non-standard 0603 variants."},
+~
+       "R9": {"procurement_policy": "APPROVED_GENERIC", "package": "0603 / 1608Metric", "resistance": "10 kOhm", "tolerance": "1%", "minimum_rating": "0.1 W, 50 V, -55..125 C", "substitutions": 
+-"allowed"},
++"allowed only when physical_substitution_restriction is satisfied", "physical_substitution_restriction": "Standard two-terminal chip resistor, 0603 imperial / 1608 metric, conventional wraparound terminals; manufacturer package or mounting recommendation compatible with 0.900 x 0.800 mm lands on 1.700-mm pitch, 0.800-mm inner gap, and 2.600-mm span. Excludes 0402, 0805, special-terminal, reverse-geometry, and non-standard 0603 variants."},
+~
+       "U1": {"manufacturer": "Texas Instruments", "mpn": "TPS62133RGT"},
+~
+       "U3": {"manufacturer": "Texas Instruments", "mpn": "SN74AHCT1G125DBVR"},
+~
+       "U4": {"manufacturer": "Texas Instruments", "mpn": "TLV1117LV33DCYR"}
+~

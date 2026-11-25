@@ -1,0 +1,2158 @@
+    Chip Monolithic Ceramic Capacitor for General
+    GRM188R71C104KA01_ (0603, X7R:EIA, 0.1uF, DC16V)
+    _: packaging code                                                                                                                Reference Sheet
+1.Scope
+    This product specification is applied to Chip Monolithic Ceramic Capacitor used for General Electronic equipment.
+
+
+
+
+2.MURATA Part NO. System
+(Ex.)        GRM            18               8              R7                1C              104             K             A01            D
+                         (1)L/W       (2)T            (3)Temperature        (4)Rated       (5)Nominal (6)Capacitance      (7)Murata’s (8)Packaging
+                       Dimensions      Dimensions     Characteristics        Voltage       Capacitance   Tolerance       Control Code     Code
+
+
+
+
+3. Type & Dimensions
+
+
+
+
+                                                                                       (Unit:mm)
+        (1)-1 L         (1)-2 W               (2) T                 e                     g
+       1.6±0.1           0.8±0.1            0.8±0.1            0.2 to 0.5              0.5 min.
+
+
+
+4.Rated value
+         (3) Temperature Characteristics                                                                   Specifications and Test
+                                                                (4)                         (6)
+           (Public STD Code):X7R(EIA)                                       (5) Nominal                            Methods
+                                                               Rated                    Capacitance
+      Temp. coeff             Temp. Range                                   Capacitance                           (Operating
+                                                              Voltage                    Tolerance             Temp. Range)
+    or Cap. Change             (Ref.Temp.)
+                                    -55 to 125 °C
+         -15 to 15 %                                         DC 16 V           0.1 uF         ±10 %            -55 to 125 °C
+                                       (25 °C)
+
+5.Package
+ mark             (8) Packaging             Packaging Unit
+
+   D              f180mm Reel               4000 pcs./Reel
+                  PAPER W8P4
+   J              f330mm Reel
+                                            10000 pcs./Reel
+                  PAPER W8P4
+
+
+Product specifications in this catalog are as of Feb.27,2016,and are subject to change or obsolescence without notice.
+Please consult the approval sheet before ordering.
+Please read rating and !Cautions first.
+
+
+
+
+          GRM188R71C104KA01-01                                                         1
+■ Specifications and Test Methods
+                                                                     Specification
+                                                                                                                                             Test Method
+No                   Item                     Temperature                            High Dielectric                            (Ref. Standard:JIS C 5101, IEC60384）
+                                          Compensating Type                          Constant Type
+ 1   Rated Voltage                    Shown in Rated value.                                                   The rated voltage is defined as the maximum voltage
+                                                                                                              which may be applied continuously to the capacitor.
+                                                                                                              When AC voltage is superimposed on DC voltage,
+                                                                                                              VP-P or VO-P, whichever is larger, should be maintained
+                                                                                                              within the rated voltage range.
+ 2   Appearance                       No defects or abnormalities.                                            Visual inspection.
+ 3   Dimension                        Within the specified dimensions.                                        Using calipers. (GRM02 size is based on Microscope)
+ 4   Voltage proof                    No defects or abnormalities.                                            Measurement Point            : Between the terminations
+                                                                                                              Test Voltage                 : 300% of the rated voltage
+                                                                                                                                              (Temperature compensating type)
+                                                                                                                                              250% of the rated voltage
+                                                                                                                                              (High dielectric constant type)
+                                                                                                              Applied Time                 : 1s to 5 s
+                                                                                                              Charge/discharge current : 50mA max.
+ 5   Insulation Resistance(I.R.)      C≦0.047µF:More than 10000MΩ                                             Measurement Point            : Between the terminations
+                                      C＞0.047µF:More than 500Ω·F                                              Measurement Voltage :           DC Rated Voltage
+                                      C:Nominal Capacitance                                                   Charging Time                : 2 min
+                                                                                                              Charge/discharge current : 50mA max.
+                                                                                                              Measurement Temperature : Room Temperature
+ 6   Capacitance                      Shown in Rated value.                                                   Measurement Temperature : Room Temperature
+
+
+                                                                                                              (1)Temperature Compensating Type
+ 7   Q or Dissipation Factor (D.F.)   30pF and over:Q≧1000             W.V.:100Vdc :0.025max.(C<0.068µF)           Capacitance        Frequency            Voltage
+                                      30pF and below:Q≧400+20C                         :0.05max.(C≧0.068µF)        C≦1000pF          1.0+/-0.1MHz      0.5 to 5.0Vrms
+                                      C:Nominal Capacitance(pF)        W.V.:50/35/25Vdc :0.025max.                 C＞1000pF          1.0+/-0.1kHz      1.0+/-0.2Vrms
+                                                                       W.V.:16/10Vdc :0.035max.               (2)High Dielectric Constant Type
+                                                                       W.V.:6.3/4Vdc :0.05max.(C<3.3µF)            Capacitance        Frequency           Voltage
+                                                                                         :0.1max. (C≧3.3µF)         C≦10μF           1.0+/-0.1kHz      1.0+/-0.2Vrms
+                                                                                                                    C＞10μF           120+/-24Hz        0.5+/-0.1Vrms
+
+
+ 8   Temperature        No bias       Nominal values of the            B1,B3 : Within +/-10%                  The capacitance change should be measured after 5 min
+     Characteristics                  temperature coefficient is                (-25°C to +85°C)              at each specified temp. stage.
+     of Capacitance                   shown in Rated value.            R1,R7 : Within +/-15%                  In case of applying voltage, the capacitance change should be
+                                                                                (-55°C to +125°C)             measured after 1 min with applying voltage in equilibration of
+                                      But,the Capacitance Change       R6    : Within +/-15%                  each temp. stage.
+                                      under 20℃ is shown                      (-55°C to +85°C)                Capacitance value as a reference is the value in step 3.
+                                      in Table A.                      C7    : Within +/-22%
+                                                                              (-55°C to +125°C)               (1)Temperature Compensating Type
+                                                                       C8    : Within +/-22%                  The capacitance drift is calculated by dividing the differences
+                                      Capacitance Drift *                     (-55°C to +105°C)               between the maximum and minimum measured values in the
+                                      Within +/-0.2% or +/-0.05pF      L8   : Within +/-15%                   step 1,3 and 5 by the cap. value in step 3.
+                                      (Whichever is larger.)                  (-55°C to +125°C)                  Step             Temperature(C)
+                                      *Not apply to 1X/25V                  : Within +15/-40%                     1             Reference Temp.+/-2
+                                                                              (+125°C to +150°C)                  2           Min. Operating Temp.+/-3
+                                                                                                                  3             Reference Temp.+/-2
+                                                                                                                  4           Max. Operating Temp.+/-3
+                                                                                                                  5             Reference Temp.+/-2
+
+                        50% of                        -                B1 : Within +10/-30%                   (2)High Dielectric Constant Type
+                        the rated                                      R1 : Within +15/-40%                       Step         Temperature(C)              Applying Voltage(VDC)
+                        voltage                                                                                    1          Reference Temp.+/-2
+                                                                                                                   2         Min.Operating Temp.+/-3
+                                                                                                                                                                   No bias
+                                                                                                                   3          Reference Temp.+/-2
+                                                                                                                   4         Max.Operating Temp.+/-3
+                                                                                                                   5          Reference Temp.+/-2
+                                                                                                                   6         Min.Operating Temp.+/-3               50% of
+                                                                                                                                                              the rated voltage
+                                                                                                                   7          Reference Temp.+/-2                (For B1,R1)
+                                                                                                                   8         Max.Operating Temp.+/-3
+
+                                                                                                              · Initial measurement for high dielectric constant type
+                                                                                                              Perform a heat treatment at 150+0/-10°C for 1h and then
+                                                                                                              let sit for 24+/-2h at room temperature, then measure.
+
+
+ 9   Adhesive Strength                No removal of the terminations or other defect                          Solder the capacitor on the test substrate shown in Fig.3.
+     of Termination                   should occur.                                                                                 Type                      Applied Force(N)
+                                                                                                                 GRM02                                                  1
+                                                                                                                 GRM03                                                  2
+                                                                                                                 GRM15/GRM18                                            5
+                                                                                                                 GRM21/GRM31/GRM32                                      10
+
+                                                                                                              Holding Time                 : 10+/-1s
+                                                                                                              Applied Direction : In parallel with the test substrate and vertical with
+                                                                                                                                     the capacitor side.
+
+
+JEMCGS-0001U                                                                              2
+                                                                    Specification
+                                                                                                                                         Test Method
+No                  Item                     Temperature                            High Dielectric                         (Ref. Standard:JIS C 5101, IEC60384）
+                                         Compensating Type                          Constant Type
+10 Vibration           Appearance    No defects or abnormalities.                                         Solder the capacitor on the test substrate shown in Fig.3.
+                       Capacitance   Within the specified initial value.
+                       Q or D.F.     Within the specified initial value.                                  Kind of Vibration            : A simple harmonic motion
+                                                                                                                                          10Hz to 55Hz to 10Hz (1min)
+                                                                                                          Total amplitude              : 1.5mm
+                                                                                                          This motion should be applied for a period of 2h in each 3 mutually
+                                                                                                          perpendicular directions(total of 6h).
+
+
+
+11 Substrate           Appearance    No defects or abnormalities.                                         Solder the capacitor on the test substrate shown in Fig.1.
+     Bending test      Capacitance   Within +/-5% or +/-0.5pF          Within +/-10%
+                       Change        (Whichever is larger)                                                Pressurization method : Shown in Fig.2
+                                                                                                          Flexure                      : 1mm
+                                                                                                          Holding Time             :      5+/-1s
+                                                                                                          Soldering Method             : Reflow soldering
+
+
+12 Solderability                     95% of the terminations is to be soldered evenly and continuously.   Test Method                  : Solder bath method
+                                                                                                          Flux                            Solution of rojin ethanol 25(wt)%
+                                                                                                          Preheat                      : 80℃ to 120℃ for 10s to 30s
+                                                                                                          Solder                       : Sn-3.0Ag-0.5Cu
+                                                                                                          Solder Temp.                 : 245+/-5℃
+                                                                                                          Immersion time                : 2+/-0.5s
+
+
+13 Resistance to       Appearance    No defects or abnormalities.                                         <GRM03 size min.>
+     Soldering Heat    Capacitance   Within +/-2.5% or +/- 0.25pF      Within +/-7.5%                     Test Method                  : Solder bath method
+                       Change        (Whichever is larger)                                                Solder                       : Sn-3.0Ag-0.5Cu
+                                                                                                          Solder Temp.                 : 270+/-5℃
+                       Q or D.F.     Within the specified initial value.                                  Immersion time                : 10+/-0.5s
+                                                                                                          Exposure Time                : 24+/-2h
+                       I.R.          Within the specified initial value.                                  Preheat                      : GRM31 size max.: 120℃ to 150℃ for 1 min
+                                                                                                                                          GRM32 size        : 100℃ to 120℃ for 1 min
+                       Voltage proof No defects.                                                                                                        and 170℃ to 200℃ for 1 min
+                                                                                                          · Initial measurement for high dielectric constant type
+                                                                                                          Perform a heat treatment at 150+0/-10°C for 1h and then
+                                                                                                          let sit for 24+/-2h at room temperature, then measure.
+
+
+                                                                                                          <GRM02 size only>
+                                                                                                          Test Method                  : Reflow soldering (hot plate)
+                                                                                                          Solder                       : Sn-3.0Ag-0.5Cu
+                                                                                                          Solder Temp.                 : 270+/-5℃
+                                                                                                          Reflow Time                  : 10+/-0.5s
+                                                                                                          Test Substrate               : Glass epoxy PCB
+                                                                                                          Exposure Time                : 24+/-2h
+                                                                                                          Preheat                      : 120℃ to 150℃ for 1 min
+                                                                                                          · Initial measurement for high dielectric constant type
+                                                                                                          Perform a heat treatment at 150+0/-10°C for 1h and then
+                                                                                                          let sit for 24+/-2h at room temperature, then measure.
+
+
+14 Temperature         Appearance    No defects or abnormalities.                                         Solder the capacitor on the test substrate shown in Fig.3.
+     Sudden Change Capacitance       Within +/-2.5% or+/- 0.25pF       Within +/-7.5%
+                   Change            (Whichever is larger)                                                Perform the five cycles according to the four heat treatments
+                                                                                                          shown in the following table.
+                       Q or D.F.     Within the specified initial value.
+                                                                                                             Step             Temp.(C)                Time (min)
+
+                                                                                                                 1   Min.Operating Temp.+0/-3            30+/-3
+                       I.R.          Within the specified initial value.
+                                                                                                                 2          Room Temp.                   2 to 3
+
+                       Voltage proof No defects.                                                                 3   Max.Operating Temp.+3/-0            30+/-3
+
+                                                                                                                 4          Room Temp                    2 to 3
+
+
+
+
+                                                                                                          Exposure Time                : 24+/-2h
+                                                                                                          · Initial measurement for high dielectric constant type
+                                                                                                          Perform a heat treatment at 150+0/-10°C for 1h and then
+                                                                                                          let sit for 24+/-2h at room temperature, then measure.
+
+
+
+
+JEMCGS-0001U                                                                             3
+                                                                      Specification
+                                                                                                                                               Test Method
+No                  Item                       Temperature                            High Dielectric                             (Ref. Standard:JIS C 5101, IEC60384）
+                                           Compensating Type                          Constant Type
+15 High                 Appearance     No defects or abnormalities.                                             Solder the capacitor on the test substrate shown in Fig.3.
+      Temperature
+      High Humidity     Capacitance    Within +/-7.5% or +/-0.75pF      Within +/-12.5%                         Test Temperature          : 40+/-2℃
+      (Steady)          Change         (Whichever is larger)                                                    Test Humidity             : 90%RH to 95%RH
+                                                                                                                Test Time                 : 500+/-12h
+                        Q or D.F.      30pF and over:Q≧200              W.V.:100Vdc :0.05max.(C<0.068µF)        Applied Voltage          : DC Rated Voltage
+                                       30pF and below                                   :0.075max.(C≧0.068µF) Charge/discharge current : 50mA max.
+                                                   :Q≧100+10C/3         W.V.:50/35/25Vdc :0.05max.              Exposure Time             : 24+/-2h
+                                                                        W.V.:16/10Vdc :0.05max.
+                                       C:Nominal Capacitance(pF)        W.V.:6.3/4Vdc :0.075max.(C<3.3µF)
+                                                                                         :0.125max.(C≧3.3µF)
+
+
+                        I.R.           More than 500MΩ or 25Ω·F (Whichever is smaller)
+
+
+
+16 Durability           Appearance     No defects or abnormalities.                                             Solder the capacitor on the test substrate shown in Fig.3.
+
+
+                        Capacitance    Within +/-3% or +/-0.3pF         Within +/-12.5%                         Test Temperature         : Max. Operating Temp. +/-3℃
+                        Change         (Whichever is larger)                                                    Test Time                : 1000+/-12h
+                                                                                                                Applied Voltage          : 200% of the rated voltage
+                        Q or D.F.      30pF and over:Q≧350              W.V.:100Vdc :0.05max.(C<0.068µF)        Charge/discharge current : 50mA max.
+                                       10pF and over                                    :0.075max.(C≧0.068µF) Exposure Time              : 24+/-2h
+                                       30pF and below                   W.V.:50/35/25Vdc :0.05max.
+                                                    : Q≧275+5C/2        W.V.:16/10Vdc :0.05max.                 ･Initial measurement for high dielectric constant type
+                                       10pF and below                   W.V.:6.3/4Vdc :0.075max.(C<3.3µF)       Apply 200% of the rated DC voltage at the max. operating
+                                                    : Q≧200+10C                          :0.125max.(C≧3.3µF) temp. +/-3°C for 1h and then let sit for 24+/-2h at room temperature,
+                                                                                                                then measure.
+                                       C:Nominal Capacitance (pF)
+
+
+                        I.R.           More than 1,000MΩ or 50Ω·F (Whichever is smaller)
+
+
+
+
+Table A
+                                Capacitance Change from 20C (%)
+     Char.              -55℃                  -25℃                -10℃
+                 Max.           Min.     Max.       Min.     Max.       Min.
+  2C/0C          0.82          -0.45     0.49      -0.27     0.33      -0.18
+   3C            1.37          -0.90     0.82      -0.54     0.55      -0.36
+   4C            2.56          -1.88     1.54      -1.13     1.02      -0.75
+   2P              -             -       1.32       0.41     0.88       0.27
+   3P              -             -       1.65       0.14     1.10       0.09
+   4P              -             -       2.36      -0.45     1.57      -0.30
+   2R              -             -       1.70       0.72     1.13       0.48
+   3R              -             -       2.03       0.45     1.35       0.30
+   4R              -             -       2.74      -0.14     1.83      -0.09
+   2S              -             -       2.30       1.22     1.54       0.81
+   3S              -             -       2.63       0.95     1.76       0.63
+   4S              -             -       3.35       0.36     2.23       0.24
+   2T              -             -       3.07       1.85     2.05       1.23
+   3T              -             -       3.40       1.58     2.27       1.05
+   4T              -             -       4.12       0.99     2.74       0.66
+   3U              -             -       4.94       2.84     3.29       1.89
+   4U              -             -       5.65       2.25     3.77       1.50
+   1X              -             -         -         -         -         -
+
+
+
+
+JEMCGS-0001U                                                                               4
+            Substrate Bending test
+            ・Test substrate
+                Material      : Copper-clad laminated sheets for PCBs
+                                (Glass fabric base, epoxy resin)
+                Thickness : 1.6mm (GRM02/GRM03/GRM15: t:0.8mm)
+                Copper foil thickness : 0.035mm
+                              : Solder resist
+                           (Coat with heat resistant resin for solder)
+                                                  b
+
+
+
+
+                                                                                                                                                                     1.75±0.1
+                                      Land                                                                                    *1,2：2.0±0.05
+                                                                        f4.5                                              Dimension  (mm)             4.0±0.1
+                                                                                                            Type
+                                                                                                                     a           b     φ1.5 +0.1
+                                                                                                                                            -0     c ＊1 ＊2
+                                                                                                          GRM02     0.2         0.56             0.23
+                                                                                                          GRM03     0.3         0.9              0.3
+
+
+
+
+                                                                                                                                                                3.5±0.05
+                                                                                         40
+                                                                                                          GRM15     0.4         1.5              0.5
+                                                  c
+                                            c
+
+
+
+
+                                                                                                                                                                                8.0±0.3
+                                                                                                                             Ａ
+
+                                                  a                                                       GRM18     1.0         3.0              1.2
+
+
+
+
+                                                                                                                               Ｂ
+                                                                                                          GRM21     1.2         4.0              1.65
+                                                                                                          GRM31     2.2         5.0              2.0
+                                                                                                                                                  0.05以下
+                                                 100
+                                                                                                          GRM32     2.2         5.0              2.9
+                                                                                                                                                                                          t
+                                                Fig.1           (in mm)
+            ・Test
+             Kind substrate
+                  of Solder : Sn-3.0Ag-0.5Cu
+            ・Test
+             Pressurization
+                  substrate method                                                             Pressurization
+                                                                         50 min.               speed
+                                                                 20
+                                                                                               1.0mm/s
+                                                                           Pressurize
+tor
+                                                           R5
+
+
+
+                                                                                                Flexure
+      Support
+                                                     Capacitance meter
+                                                      45                   45
+
+
+                                                                Fig.2                                     (in mm)
+
+
+
+            Adhesive Strength of Termination, Vibration, Temperature Sudden Change, Resistance to Soldering Heat (Reflow method)
+            High Temperature High Humidity(Steady) , Durability
+            ・Test substrate
+                Material      : Copper-clad laminated sheets for PCBs
+                                 (Glass fabric base, epoxy resin)
+                Thickness : 1.6mm or 0.8mm
+                Copper foil thickness : 0.035mm
+
+
+            ・Test
+             Kind substrate
+                  of Solder : Sn-3.0Ag-0.5Cu
+            ・Test
+             Landsubstrate
+                   Dimensions
+                                                        Chip Capacitor
+                                                                                                                          Dimension (mm)
+                                                                                  Land                      Type
+                                                                                                                     a          b                c
+                                                                                                          GRM02     0.2        0.56            0.23
+                                                                                                          GRM03     0.3        0.9             0.3
+                      c
+
+
+
+
+                                                                                                          GRM15     0.4        1.5             0.5
+                                                                                                          GRM18     1.0        3.0             1.2
+                                                                                                          GRM21     1.2        4.0             1.65
+                                                 a                             Solder Resist              GRM31     2.2        5.0             2.0
+                                       b                                                                  GRM32     2.2        5.0             2.9
+
+                                                                                                  Fig.3
+
+
+
+
+                JEMCGS-0001U                                                                                        5
+                                                                                                                                           Package
+                                                                                                                                          GRM Type
+ 1.Tape Carrier Packaging(Packaging Code:D/E/W/L/J/F/K)
+ 1.1 Minimum Quantity(pcs./reel)
+                                                                        φ180mm reel                                               φ330mm reel
+                       Type                                       Paper Tape        Plastic Tape                            Paper Tape Plastic Tape
+                                                           Code:D/E                         Code:W               Code:L      Code:J/ F          Code:K
+ GRM01                                                                                                     50000(W4P1)
+ GRM02                                                                                                     40000(W4P1)
+           2                                          15000(W8P2)                                                           50000(W8P2)
+ GRM03     3                                          15000(W8P2) 30000(W8P1)                                               50000(W8P2)
+           5                                          10000(W8P2)                                                           50000(W8P2)
+           2                                          20000(W8P2)                                                           50000(W8P2)
+           3/X                                        10000(W8P2)                                                           50000(W8P2)
+
+           5(LWT Dimensions Tolerance:±0.05)          10000(W8P2) 20000(W8P1)                                               50000(W8P2)
+
+ GRM15     5(LWT Dimensions Tolerance:±0.1min.)       10000(W8P2)                                                           40000(W8P2)
+           5 (LW Dimensions Tolerance:±0.1min.
+                                                      10000(W8P2)                                                           50000(W8P2)
+             and T Dimensions Tolerance:±0.05)
+           5(LW Dimensions Tolerance:±0.2
+                                                      10000(W8P2)
+            and T Dimensions:0.5 +0/-0.1)
+ GRM18                                                      4000                                                              10000
+           6                                                4000                                                              10000
+ GRM21     9                                                4000                                                 3000         10000                 10000
+           A/B                                                                                                   3000                               10000
+           6/9                                              4000                                                              10000
+ GRM31     M/X                                                                                                   3000                               10000
+           C                                                                                                     2000                                6000
+           9                                                4000                                                              10000
+           A/M                                                                                                   3000                               10000
+ GRM32     N                                                                                                     2000                                8000
+           C                                                                                                     2000                                6000
+           R/D/E                                                                                                 1000                                4000
+           M                                                                                                     1000                                5000
+           N/R/D                                                                                                 1000                                4000
+ GRM43
+           E                                                                                                      500                                2000
+           S                                                                                                      500                                1500
+           M                                                                                                     1000                                5000
+           N/C/R/D                                                                                               1000                                4000
+ GRM55
+           E                                                                                                      500
+           F                                                                                                      300                               1500
+
+  1.2 Dimensions of Tape
+ (1)GRM01/02 (W4P1 CODE:L)                    2.0±0.04                                                                                        (in:mm)                2.0±
+                                                                                 0.9±0.05
+
+
+
+
+                   *1,2：1.0±0.02                                                                                                  ＊ 1,2：1.0± 0.02
+
+                                                                                                                                                                     ＊1
+                                              *1      *2                                                0.15～0.25                                    φ 0.8±0.04
+                              φ0.8±0.04
+                                                                      1.8±0.02
+
+
+                                                                                             4.0±0.05
+
+
+
+
+                                                                                                                                      Ａ
+                     Ａ
+                                                                                                                                          Ｂ
+                         Ｂ
+
+
+
+
+                                                                                                                                                                  0.05以下
+                                          0.05 max.
+
+
+
+                                                                                                             t
+
+                           Dimensions(Chip)
+    Type                                                                          A *3                               B *3                       t
+                      L          W             T
+  GRM01    1     0.25±0.013 0.125±0.013 0.125±0.013                  0.145                                           0.27                 0.4 max.
+                  0.4±0.02    0.2±0.02      0.2±0.02                  0.23                                           0.43
+  GRM02    2                                                                                                                              0.5 max.
+                  0.4±0.05    0.2±0.05      0.2±0.05                  0.26                                           0.46
+                                                               *3 Nominal value
+JEMCGP-01796E                                                 6
+                                                                                                                                   Package
+                                                                                                                                  GRM Type
+    (2)GRM03/15(W8P2 CODE:D/E/J/F)
+                           *1,2：2.0±0.05                    4.0±0.1                                                                      (in:mm)   *
+
+
+
+
+                                                                                                  1.75±0.1
+                                              +0.1
+                                         φ1.5 -0           *1       *2
+
+
+
+
+                                                                                             3.5±0.05
+
+
+                                                                                                             8.0±0.3
+                           Ａ                                                                                                                       Ａ
+                               Ｂ
+
+
+
+
+                                                       0.05 max.
+
+
+
+                                                                                                                              t
+
+                           Dimensions(Chip)
+     Type                                                                  A *3                                        B *3          t
+                   L             W               T
+            2                             0.2 +0.02/-0.04
+                0.6±0.03      0.3±0.03                                     0.37                                        0.67
+                                              0.3±0.03                                                                            0.5 max.
+   GRM03    3   0.6±0.05      0.3±0.05        0.3±0.05                     0.39                                        0.69
+                                              0.3±0.09                                                                            0.6 max.
+                0.6±0.09      0.3±0.09                                     0.44                                        0.74
+            5                                 0.5±0.05
+            2                             0.2 +0.02/-0.04
+            X   1.0±0.05      0.5±0.05       0.25±0.05                     0.65                                        1.15
+
+            3                                          0.3±0.03
+                 1.0±0.2            0.5±0.2                                0.78                                        1.29
+                1.0±0.05           0.5±0.05         0.5±0.05
+                                                                           0.65                                        1.15       0.8 max.
+   GRM15        1.0±0.07           0.5±0.07         0.5±0.07
+                 1.0±0.1            0.5±0.1          0.5±0.1               0.70                                        1.20
+            5   1.0±0.15           0.5±0.15         0.5±0.15               0.72                                        1.25
+                                                   0.5 +0/-0.1
+                1.0±0.2            0.5±0.2           0.5±0.2               0.78                                        1.29
+                                                    0.5±0.05
+                                                                     *3 Nominal value
+
+
+
+    (3)GRM033/155(W8P1 CODE:W)                                                                                                           (in:mm)
+
+                                                4.0±0.1
+                                                                                  1.75±0.1
+
+
+
+
+                   1.0±0.05                       +0.1
+                                             φ1.5 -0
+                                                                             3.5±0.05
+
+
+                                                                                                 8.0±0.3
+
+
+
+
+                   Ａ
+                       Ｂ
+
+
+
+
+                       1.0±0.05
+
+
+                                                                                                                        t
+                           Dimensions(Chip)
+     Type                                                                  A *3                                        B *3          t
+                    L            W                        T
+                0.6±0.03      0.3±0.03                 0.3±0.03            0.37                                        0.67
+                                                                                                                                  0.5 max.
+   GRM03    3   0.6±0.05      0.3±0.05                 0.3±0.05            0.39                                        0.69
+                0.6±0.09      0.3±0.09                 0.3±0.09            0.44                                        0.74       0.6 max.
+  GRM15     5   1.0±0.05      0.5±0.05                 0.5±0.05            0.65                                        1.15       0.8 max.
+                                                                     *3 Nominal value
+JEMCGP-01796E                                                   7
+                                                                                                                                                                 Package
+                                                                                                                                                                GRM Type
+    (4)GRM18/21/31/32                                                                                                                                               (in:mm)
+
+                <Paper Tape>                                                                      <Plastic Tape>
+                 4.0±0.1       4.0±0.1
+
+
+
+
+                                                        1.75±0.1
+                                                                                                 4.0±0.1          4.0±0.1
+
+
+
+
+                                                                                                                                           1.75±0.1
+                                2.0±0.1
+                       +0.1                                                                                                                                     0.25±0.1(T≦2.0mm)
+                φ1.5 -0                                                                                           2.0±0.1
+                                                                                                                                                                0.3±0.1(T：2.5mm)
+                                                                                                 φ1.5 +0.1
+                                                                                                      -0
+
+
+
+
+                                             3.5±0.05
+
+
+
+
+                                                                                                                                    3.5±0.05
+                   Ａ
+
+
+
+
+                                                                   8.0±0.3
+
+
+
+
+                                                                                                                                                      8.0±0.3
+                                                                                                    Ａ
+                          Ｂ
+
+
+
+
+                                                                                                         Ｂ
+                                                                                                                                                                      t
+                                                                             t
+
+
+
+
+                              Dimensions(Chip)
+                                                                                                                                                                Dimensions
+     Type                                                                               A                    B                  t
+                    L               W                                    T                                                                                        of Tape
+
+                 1.6±0.1         0.8±0.1                                             1.05±0.10        1.85±0.10
+                                                  0.5 +0/-0.1
+            5
+                                                                                                                            0.8 max.
+                                                           0.5±0.05
+                 1.6±0.2         0.8±0.2                                             1.10±0.10        2.00±0.10
+            6                                       0.6 +0/-0.1
+   GRM18
+            7                                                 0.7±0.1
+                 1.6±0.1         0.8±0.1                      0.8±0.1
+                                                                                     1.05±0.10        1.85±0.10
+            8    1.6±0.15        0.8±0.15                  0.8±0.15
+                 1.6±0.2         0.8±0.2                      0.8±0.2                1.10±0.10        2.00±0.10
+                                                                                                                                                                Paper Tape
+                                                              0.6±0.1
+            6
+                                               0.6 +0/-0.15
+                                                                                                                            1.15 max.
+                                                        0.85±0.05
+                 2.0±0.1         1.25±0.1
+                                                           0.85±0.1
+                                                                                     1.55±0.15        2.30±0.15
+                                            0.85 +0.15/-0.1
+            9                                    0.85 +0/-0.2
+                 2.0±0.15       1.25±0.15
+   GRM21                                                   0.85±0.1
+                 2.0±0.2         1.25±0.2
+                                            0.85 +0.15/-0.05                         1.50±0.20        2.30±0.20
+                 2.0±0.1         1.25±0.1         1.0 +0/-0.2                        1.45±0.20        2.25±0.20             1.7 max.
+            A
+                 2.0±0.2         1.25±0.2                     1.0±0.2                1.50±0.20        2.30±0.20
+                                                                                                                                                                Plastic Tape
+                 2.0±0.1         1.25±0.1                  1.25±0.1                  1.45±0.20        2.25±0.20
+            B    2.0±0.15       1.25±0.15               1.25±0.15                                                           2.0 max.
+                                                                                     1.50±0.20        2.30±0.20
+                 2.0±0.2         1.25±0.2                  1.25±0.2
+            6                                                 0.6±0.1
+                 3.2±0.15        1.6±0.15
+                                                                                     2.00±0.20        3.60±0.20             1.15 max.                           Paper Tape
+            9                                              0.85±0.1
+                 3.2±0.2         1.6±0.2
+            B                                              1.25±0.1
+                 3.2±0.15        1.6±0.15
+   GRM31                                                   1.15±0.1
+            M                                                                                                               1.7 max.
+                                                        1.15±0.15                    1.90±0.20        3.50±0.20
+                                                                                                                                                                Plastic Tape
+            X    3.2±0.2         1.6±0.2                      1.2±0.1
+                                                              1.6±0.2
+            C                                                                                                               2.5 max.
+                 3.2±0.3         1.6±0.3                      1.6±0.3                2.10±0.20        3.60±0.20
+            9                               0.85 +0.15/-0.05                         2.80±0.20        3.60±0.20             1.15 max.                           Paper Tape
+            A                                     1.0 +0/-0.2
+                                                                                                                            1.7 max.
+            M                                              1.15±0.1
+            N                                           1.35±0.15
+   GRM32         3.2±0.3         2.5±0.2                                                                                    2.5 max.
+            C                                                 1.6±0.2                2.80±0.20        3.50±0.20                                                 Plastic Tape
+            R                                                 1.8±0.2
+                                                                                                                            3.0 max.
+            D                                                 2.0±0.2
+            E                                                 2.5±0.2                                                       3.7 max.
+
+
+JEMCGP-01796E                                                                    8
+                                                                                                                         Package
+                                                                                                                        GRM Type
+
+    (5)GRM43/55                                                                                                     (in:mm)
+
+
+
+
+                                                                                    1.75±0.1
+                                      8.0±0.1      *   4.0±0.1
+                                                                       +0.1                               0.3±0.1
+                                                                  φ1.5 -0
+                                                                                                                    *：2.0±0.1
+
+
+
+
+                                                                              5.5±0.1
+                                Ａ
+
+
+
+
+                                                                                               12.0±0.3
+                                       Ｂ
+
+
+
+
+                           +0.2
+                      φ1.5 -0
+
+
+
+                                                                                                              t
+
+                          Dimensions(Chip)
+     Type                                                              A *1                                 B *1              t
+                  L             W                    T
+         M                                       1.15±0.1
+         N                                      1.35±0.15                                                                2.5 max.
+         R                                        1.8±0.2
+   GRM43        4.5±0.4             3.2±0.3                            3.6                                  4.9
+         D                                        2.0±0.2
+                                                                                                                         3.7 max.
+         E                                        2.5±0.2
+         S                                        2.8±0.2                                                                4.7 max.
+         M                                       1.15±0.1
+         N                                      1.35±0.15
+                                                                                                                         2.5 max.
+         C                                        1.6±0.2
+   GRM55 R      5.7±0.4             5.0±0.4       1.8±0.2              5.2                                  6.1
+         D                                        2.0±0.2
+                                                                                                                         3.7 max.
+         E                                        2.5±0.2
+         F                                        3.2±0.2                                                                4.7 max.
+                                                                *1 Nominal value
+
+
+
+
+JEMCGP-01796E                                               9
+め状態                                               (単位：mm)
+
+
+
+                                                                                                                          Package
+                                                                                                                         GRM Type
+
+         Fig.1   Package Chips                                                                          (in:mm)
+
+
+
+
+                                                                                           Chip
+
+         Fig.2   Dimensions of Reel
+
+
+
+                              2.0±0.5
+
+
+                                                φ21±0.8
+                                                                          φ180+0/-3.0
+                                                                           φ330±2.0
+
+                                                                                        φ50 min.
+
+
+
+
+                                                                                                          φ13±0.5
+                                                                                                                    ｗ1
+
+
+                                                                                                                     W
+
+
+
+                                                                                                         W                 w1
+         Fig.3   Taping Diagram                                 GRM01/02                              8.0 max.            5±1.5
+                                                                GRM03/15/18/21/31/32                 16.5 max.           10±1.5
+                                                                GRM43/55                             20.5 max.           14±1.5
+
+
+
+
+                                                                Top Tape : Thickness 0.06
+
+
+                                                                        Feeding Hole :As specified in 1.2.
+
+                                                                                          Hole for Chip : As specified in 1.2.
+
+
+
+
+                         Bottom Tape :Thickness 0.05
+                         (Only a bottom tape existence )
+                                                                          Base Tape : As specified in 1.2.
+
+
+
+
+      JEMCGP-01796E                                        10
+                                                                                                                     Package
+ﾁｯﾌﾟ詰め状態                                            (単位：mm)                                                         GRM Type
+
+             1.3 Tapes for capacitors are wound clockwise shown in Fig.3.
+                 (The sprocket holes are to the right as the tape is pulled toward the user.)
+
+             1.4 Part of the leader and part of the vacant section are attached as follows.
+
+                   Tail vacant Section   Chip-mounting Unit   Leader vacant Section                     (in:mm)
+
+                                                                                        Leader Unit
+                                                                                      (Top Tape only)
+
+
+
+
+                                                                                                        Direction
+                                                                                                        of Feed
+
+
+                       160 min.                                    190 min.             210 min.
+
+
+
+
+             1.5 Accumulate pitch : 10 of sprocket holes pitch = 20±0.3mm(GRM01/02)
+                                                               40±0.3mm(GRM03 min.)
+
+             1.6 Chip in the tape is enclosed by top tape and bottom tape as shown in Fig.1.
+
+             1.7 The top tape and base tape are not attached at the end of the tape for a minimum of 5 pitches.
+
+             1.8 There are no jointing for top tape and bottom tape.
+
+             1.9 There are no fuzz in the cavity.
+
+           1.10 Break down force of top tape : 5N min.
+                Break down force of bottom tape : 5N min. (Only a bottom tape existence )
+
+           1.11 Reel is made by resin and appeaser and dimension
+     図1 ﾁｯﾌﾟ詰め状態                                          (単位：mm)is shown in Fig 2.
+                There are possibly to change the material and dimension due to some impairment.
+
+           1.12 Peeling off force : 0.1N to 0.6N* in the direction as shown below.
+
+                           * GRM01/02/03:0.05N～0.5N
+
+
+                                           165～180°                              Top tape
+
+
+
+
+           1.13 Label that show the customer parts number, our parts number, our company name, inspection
+                number and quantity, will be put in outside of reel.
+
+
+
+
+       JEMCGP-01796E                                          11
+                                                                                                                                                                       !   Caution
+
+      ■Limitation of Applications
+                          Please contact us before using our products for the applications listed below which require especially high reliability
+                          for the prevention of defects which might directly cause damage to the third party's life, body or property.
+
+                            ①Aircraft equipment ②Aerospace equipment ③Undersea equipment ④Power plant control equipment
+                            ⑤Medical equipment ⑥Transportation equipment(vehicles,trains,ships,etc.) ⑦Traffic signal equipment
+                            ⑧Disaster prevention / crime prevention equipment         ⑨Data-processing equipment
+                            ⑩Application of similar complexity and/or reliability requirements to the applications listed in the above.
+
+
+      ■Storage and Operation condition
+
+     1. The performance of chip monolithic ceramic capacitors may be affected by the storage conditions.
+
+              1-1. Store the capacitors in the following conditions:
+                   Room Temperature of +5℃ to +40℃ and a Relative Humidity of 20% to 70%.
+
+                         (1) Sunlight, dust, rapid temperature changes, corrosive gas atmosphere, or high temperature and humidity
+                             conditions during storage may affect solderability and packaging performance.
+                             Therefore, please maintain the storage temperature and humidity. Use the product within six months,
+                             as prolonged storage may cause oxidation of the terminations (outer electrodes).
+                         (2) Please confirm solderability before using after six months.
+                             Store the capacitors without opening the original bag.
+                             Even if the storage period is short, do not exceed the specified atmospheric conditions.
+
+              1-2. Corrosive gas can react with the termination (external) electrodes or lead wires of capacitors, and result
+                    in poor solderability. Do not store the capacitors in an atmosphere consisting of corrosive gas (e.g.,hydrogen
+                   sulfide, sulfur dioxide, chlorine, ammonia gas etc.).
+
+              1-3. Due to moisture condensation caused by rapid humidity changes, or the photochemical change caused
+                   by direct sunlight on the terminal electrodes and/or the resin/epoxy coatings, the solderability and
+                   electrical performance may deteriorate. Do not store capacitors under direct sunlight or in high huimidity
+                   conditions
+
+
+      ■Rating
+
+     1.Temperature Dependent Characteristics
+
+     1. The electrical characteristics of the capacitor can change with temperature.
+
+              1-1. For capacitors having larger temperature dependency, the capacitance may change with temperature
+                    changes. The following actions are recommended in order to ensure suitable capacitance values.
+                (1) Select a suitable capacitance for the operating temperature range.
+                (2) The capacitance may change within the rated temperature.
+                     When you use a high dielectric constant type capacitor in a circuit that needs a tight (narrow) capacitance
+                     tolerance (e.g., a time-constant circuit), please carefully consider the temperature characteristics, and
+                     carefully confirm the various characteristics in actual use conditions and the actual system.
+
+                         [Example of Temperature Caracteristics X7R(R7)]                                        [Example of Temperature Characteristics X5R(R6)]
+                          Sample: 0.1μF, Rated Voltage 50VDC                                                        Sample: 22μF, Rated Voltage 4VDC
+                                                                                                                 20
+                         20
+                                                                                       Capacitance Change (%)
+
+
+
+
+                                                                                                                 15
+                         15
+Capacitance Change (%)
+
+
+
+
+                                                                                                                 10
+                         10
+                                                                                                                 5
+                          5
+                                                                                                                 0
+                          0
+                                                                                                                 -5
+                          -5
+
+                         -10                                                                                    -10
+
+                         -15                                                                                    -15
+
+                         -20                                                                                    -20
+                            -75   -50   -25   0      25   50    75   100   125   150                              -75   -50   -25     0      25        50   75   100
+                                                  Temperature ( C)                                                                  Temperature ( C)
+
+
+
+          JEMCGC-2701X                                                                                    12
+                                                                                                                                           !     Caution
+
+2.Measurement of Capacitance
+
+1. Measure capacitance with the voltage and frequency specified in the product specifications.
+
+1-1. The output voltage of the measuring equipment may decrease occasionally when capacitance is high.
+     Please confirm whether a prescribed measured voltage is impressed to the capacitor.
+1-2. The capacitance values of high dielectric constant type capacitors change depending on the AC voltage applied.
+     Please consider the AC voltage characteristics when selecting a capacitor to be used in a AC circuit.
+
+3.Applied Voltage
+
+1. Do not apply a voltage to the capacitor that exceeds the rated voltage as called out in the specifications.
+
+1-1. Applied voltage between the terminals of a capacitor shall be less than or equal to the rated voltage.
+  (1) When AC voltage is superimposed on DC voltage, the zero-to-peak voltage shall not exceed the rated DC voltage.
+      When AC voltage or pulse voltage is applied, the peak-to-peak voltage shall not exceed the rated DC voltage.
+  (2) Abnormal voltages (surge voltage, static electricity, pulse voltage, etc.) shall not exceed the rated DC voltage.
+
+             Typical Voltage Applied to the DC capacitor
+                  DC Voltage           DC Voltage+AC                                  AC Voltage                Pulse Voltage
+
+
+
+
+               E                      E                       E                                     0       E
+
+                                                                                                             0
+               0                       0
+             (E：Maximum possible applied voltage.)
+
+1-2. Influence of over voltage
+      Over voltage that is applied to the capacitor may result in an electrical short circuit caused by the breakdown
+      of the internal dielectric layers .
+      The time duration until breakdown depends on the applied voltage and the ambient temperature.
+
+
+4.Type of Applied Voltage and Self-heating Temperature
+
+1.Confirm the operating conditions to make sure that no large current is flowing into the capacitor due to the
+  continuous application of an AC voltage or pulse voltage.
+  When a DC rated voltage product is used in an AC voltage circuit or a pulse voltage circuit, the AC current
+  or pulse current will flow into the capacitor; therefore check the self-heating condition.
+  Please confirm the surface temperature of the capacitor so that the temperature remains within the upper limits
+  of the operating temperature, including the rise in temperature due to self-heating. When the capacitor is
+  used with a high-frequency voltage or pulse voltage, heat may be generated by dielectric loss.
+
+<Applicable to Rated Voltage of less than 100VDC>           [Example of Temperature Rise (Heat Generation) in Chip
+ 1-1. The load should be contained to the level             Monolithic Ceramic Capacitors in Contrast to Ripple Current]
+      such that when measuring at atmospheric               Sample: R(R1) characteristics 10μF, Rated voltage: DC10V
+      temperature of 25°C, the product's self-heating
+      remains below 20°C and the surface                                                                Ripple Current
+      temperature of the capacitor in the actual circuit
+                                                                                      100
+      remains within the maximum operating
+                                                              Temperature Rise ( C)
+
+
+
+
+      temperature.
+
+
+                                                                                      10
+
+                                                                                                                                        100kHz
+                                                                                                                                        500kHz
+                                                                                                                                        1MHz
+                                                                                       1
+                                                                                            0   1       2           3           4   5            6
+                                                                                                            Current (Ar.m.s.)
+
+
+
+JEMCGC-2701X                                                 13
+                                                                                                                                                                                          !   Caution
+
+5. DC Voltage and AC Voltage Characteristic
+
+1. The capacitance value of a high dielectric constant type
+   capacitor changes depending on the DC voltage applied.                                  [Example of DC Voltage Characteristics]
+   Please consider the DC voltage characteristics when a                                   Sample: X7R(R7) Characteristics 0.1μF, Rated Voltage 50VDC
+   capacitor is selected for use in a DC circuit.
+
+
+
+
+                                                                                                   Capacitance Change (%)
+                                                                                                                                 20
+
+                                                                                                                                  0
+1-1. The capacitance of ceramic capacitors may change
+                                                                                                                                 -20
+      sharply depending on the applied voltage. (See figure)
+      Please confirm the following in order to secure the                                                                        -40
+
+      capacitance.                                                                                                               -60
+ (1) Determine whether the capacitance change caused                                                                             -80
+      by the applied voltage is within the allowed range .
+                                                                                                                                -100
+ (2) In the DC voltage characteristics, the rate of                                                                                    0   10            20          30              40           50
+      capacitance change becomes larger as voltage                                                                                                       DC Voltage (V)
+      increases, even if the applied voltage is below
+      the rated voltage. When a high dielectric constant
+      type capacitor is used in a circuit that requires a
+                                                                                           [Example of AC Voltage Characteristics]
+      tight (narrow) capacitance tolerance (e.g., a time
+                                                                                           Sample: X7R(R7) Characteristics 10μF, Rated Voltage 6.3VDC
+     constant circuit), please carefully consider the
+                                                                                                                                 30
+                                                                                            Capacitance Change (%)
+     voltage characteristics, and confirm the various
+                                                                                                                                 20
+     characteristics in the actual operating conditions                                                                          10
+    of the system.                                                                                                                0
+                                                                                                                                -10
+2. The capacitance values of high dielectric                                                                                    -20
+                                                                                                                                -30
+   constant type capacitors changes depending
+                                                                                                                                -40
+   on the AC voltage applied.                                                                                                   -50
+   Please consider the AC voltage characteristics                                                                               -60
+                                                                                                                                      0         0.5              1             1.5                2
+   when selecting a capacitor to be used in a                                                                                                          AC Voltage (Vr.m.s.)
+   AC circuit.
+
+
+6. Capacitance Aging
+                                                               [ Example of Change Over Time (Aging characteristics) ]
+1. The high dielectric constant type capacitors                                                              20
+   have an Aging characteristic in which the capacitance
+                                                                                                             10
+   value decreases with the passage of time.
+                                                                   Capacitance Change(%)
+
+
+
+
+   When you use a high dielectric constant type                                                                             0
+   capacitors in a circuit that needs a tight (narrow)
+                                                                                                      -10
+   capacitance tolerance (e.g., a time-constant circuit),
+   please carefully consider the characteristics                                                      -20                                                                     C0G(5C)
+
+   of these capacitors, such as their aging, voltage,                                                                                                                         X7R(R7)
+                                                                                                      -30
+   and temperature characteristics. In addition,                                                                                                                              X5R(R6)
+
+   check capacitors using your actual appliances                                                      -40
+   at the intended environment and operating conditions.                                                                        10               100                 1000                 10000
+                                                                                                                                                           Time(h)
+
+
+7.Vibration and Shock
+
+1. Please confirm the kind of vibration and/or shock, its condition, and any generation of resonance.
+   Please mount the capacitor so as not to generate resonance, and do not allow any impact on the terminals.
+
+2. Mechanical shock due to being dropped may cause damage or
+   a crack in the dielectric material of the capacitor.
+                                                                                                                                                                            Crack
+   Do not use a dropped capacitor because the quality and reliability
+   may be deteriorated.
+                                                                                                                                                         Floor
+
+
+3. When printed circuit boards are piled up or handled, the corner
+   of another printed circuit board                                                                                                               Mounting printed circuit board
+   should not be allowed to hit the capacitor in order to avoid                                                                                                         Crack
+   a crack or other damage to the capacitor.
+
+
+
+
+JEMCGC-2701X                                                  14
+                                                                                                                 !   Caution
+
+■Soldering and Mounting
+
+1.Mounting Position
+
+1. Confirm the best mounting position and direction that minimizes the stress imposed on the capacitor during flexing
+   or bending the printed circuit board.
+
+1-1.Choose a mounting position that minimizes the stress imposed on the chip during flexing or bending of the board.
+   [Component Direction]
+                                                                                                     ①
+
+                                                                   Locate chip horizontal to the
+                                                                   direction in which stress acts.
+
+                                                                                                           1A
+     (Bad Example)                 (Good Example)
+
+   [Chip Mounting Close to Board Separation Point]
+    It is effective to implement the following measures, to reduce stress in separating the board.
+    It is best to implement all of the following three measures; however, implement as many measures as possible
+    to reduce stress.
+                                          Contents of Measures                                           Stress Level
+     (1) Turn the mounting direction of the component parallel to the board separation surface.           A > D *1
+     (2) Add slits in the board separation part.                                                           A > B
+     (3) Keep the mounting position of the component away from the board separation surface.               A > C
+                                                                                                                           ①
+                                        C
+            Perforation
+                             B
+
+
+                                        D
+                    A                                                                                                          1A
+                            Slit
+
+
+
+     *1 A > D is valid when stress is added vertically to the perforation as with Hand Separation.              ③②        1C 1B
+        If a Cutting Disc is used, stress will be diagonal to the PCB, therefore A > D is invalid.
+
+   [Mounting Capacitors Near Screw Holes]
+    When a capacitor is mounted near a screw hole, it may be affected by the board deflection that occurs during
+     the tightening of the screw. Mount the capacitor in a position as far away from the screw holes as possible.
+
+
+
+
+                                   Recommended
+           Screw Hole
+
+
+
+2.Information before Mounting
+
+1. Do not re-use capacitors that were removed from the equipment.
+
+2. Confirm capacitance characteristics under actual applied voltage.
+
+3. Confirm the mechanical stress under actual process and equipment use.
+
+4. Confirm the rated capacitance, rated voltage and other electrical characteristics before assembly.
+
+5. Prior to use, confirm the solderability of capacitors that were in long-term storage.
+
+6. Prior to measuring capacitance, carry out a heat treatment for capacitors that were in long-term storage.
+
+7.The use of Sn-Zn based solder will deteriorate the reliability of the MLCC.
+  Please contact our sales representative or product engineers on the use of Sn-Zn based solder in advance.
+JEMCGC-2701X                                                  15
+                                                                                                            !   Caution
+
+3.Maintenance of the Mounting (pick and place) Machine
+
+1. Make sure that the following excessive forces are not applied to the capacitors.
+
+ 1-1. In mounting the capacitors on the printed circuit board, any bending force against them shall be kept
+       to a minimum to prevent them from any damage or cracking. Please take into account the following precautions
+      and recommendations for use in your process.
+
+   (1) Adjust the lowest position of the pickup nozzle so as not to bend the printed circuit board.
+
+   (2) Adjust the nozzle pressure within a static load of 1N to 3N during mounting.
+
+  [Incorrect]    Suction Nozzle
+
+
+
+
+                                   Deflection
+                     Board
+                                                 Board Guide
+  [Correct]
+
+
+
+
+                           Support Pin
+
+2.Dirt particles and dust accumulated between the suction nozzle and the cylinder inner wall prevent
+  the nozzle from moving smoothly. This imposes greater force upon the chip during mounting,
+  causing cracked chips. Also, the locating claw, when worn out, imposes uneven forces on the chip
+  when positioning, causing cracked chips. The suction nozzle and the locating claw must be maintained,
+  checked and replaced periodically.
+
+
+
+
+JEMCGC-2701X                                                 16
+                                                                                                                                                     !   Caution
+
+4-1.Reflow Soldering
+
+1. When sudden heat is applied to the components, the                      [Standard Conditions for Reflow Soldering]
+  mechanical strength of the components will decrease
+  because a sudden temperature change causes
+  deformation inside the components. In order to prevent               Temperature(℃)
+  mechanical damage to the components, preheating is                 Peak Temperature
+                                                                                                                                      Soldering
+
+  required for both the components and the PCB.                                 220℃
+                                                                                                                                              Gradual
+                                                                                                                                              Cooling
+  Preheating conditions are shown in table 1. It is required to                                                 ΔT
+  keep the temperature differential between the solder and                                 190℃
+                                                                                           170℃
+  the components surface (ΔT) as small as possible.                                        150℃
+                                                                                                                        Preheating
+
+2. Solderability of tin plating termination chips might be
+  deteriorated when a low temperature soldering profile where                                                                                   Time
+  the peak solder temperature is below the melting point of                                                          60-120 seconds   30-60 seconds
+  tin is used. Please confirm the solderability of tin plated
+  termination chips before use.
+
+3. When components are immersed in solvent after mounting,
+  be sure to maintain the temperature difference (ΔT)
+  between the component and the solvent within the range               [Allowable Reflow Soldering Temperature and Time]
+  shown in the table 1.
+                                                                                                          280
+
+
+
+                                                                               Soldering Temperature(℃)
+Table 1                                                                                                   270
+   Series       Chip Dimension(L/W) Code        Temperature Differential
+                                                                                                          260
+
+                                                                                                          250
+    GRM            01/02/03/15/18/21/31               ΔT≦190℃
+                                                                                                          240
+                                                                                                          230
+
+    GRM                  32/43/55                     ΔT≦130℃                                             220
+                                                                                                                0        30           60          90          120
+                                                                                                                                             Soldering Time(s)
+
+
+
+                                                                        In the case of repeated soldering, the accumulated
+Recommended Conditions                                                  soldering time must be within the range shown above.
+                                     Lead Free Solder
+Peak Temperature                       240 to 260℃
+
+Atmosphere                                Air or N2
+Lead Free Solder: Sn-3.0Ag-0.5Cu
+
+
+
+4. Optimum Solder Amount for Reflow Soldering
+
+ 4-1. Overly thick application of solder paste results in a excessive solder fillet height.
+      This makes the chip more susceptible to mechanical and thermal stress on the board and may cause the chips to crack.
+
+ 4-2. Too little solder paste results in a lack of adhesive strength on the termination, which may result in chips breaking loose
+       from the PCB.
+
+ 4-3. Please confirm that solder has been applied smoothly to the termination.
+
+
+
+    Inverting the PCB
+  Make sure not to impose any abnormal mechanical shocks to the PCB.
+
+
+
+
+JEMCGC-2701X                                                17
+                                                                                                                                                    !     Caution
+
+4-2.Flow Soldering
+
+1. Do not apply flow soldering to chips not listed in Table 2.                                            [Standard Conditions for Flow Soldering]
+
+Table 2                                                                                                Temperature(℃)
+                                                                                                         Soldering                            Soldering
+    Series        Chip Dimension(L/W) Code       Temperature Differential                                Peak
+                                                                                                                                                          Gradual
+                                                                                                         Temperature
+                                                                                                                                  ΔT                      Cooling
+     GRM                    18/21/31                    ΔT≦150℃                                          Preheating
+                                                                                                         Peak
+                                                                                                         Temperature
+
+2. When sudden heat is applied to the components, the                                                                           Preheating
+  mechanical strength of the components will decrease
+  because a sudden temperature change causes                                                                                                              Time
+  deformation inside the components. In order to prevent                                                                    30-90 seconds    5 seconds max.
+  mechanical damage to the components, preheating is
+  required for both of the components and the PCB.
+  Preheating conditions are shown in table 2. It is required to             [Allowable Flow Soldering Temperature and Time]
+  keep the temperature differential between the solder and
+  the components surface (ΔT) as low as possible.                                                       280
+
+
+
+
+                                                                              Soldering mperature(℃)
+                                                                                                        270
+3. Excessively long soldering time or high soldering
+                                                                                                        260
+  temperature can result in leaching of the terminations,
+  causing poor adhesion or a reduction in capacitance value                                             250
+  due to loss of contact between the inner electrodes and terminations.                                 240
+                                                                                                        230
+4. When components are immersed in solvent after mounting,
+                                                                                                        220
+  be sure to maintain the temperature differential (ΔT)                                                       0           10            20         30           40
+  between the component and solvent within the range                                                                                           Soldering Time(s)
+  shown in the table 2.                                                     In the case of repeated soldering, the accumulated
+                                                                            soldering time must be within the range shown above.
+Recommended Conditions
+                                       Lead Free Solder
+Preheating Peak Temperature               100 to 120℃
+
+Soldering Peak Temperature                250 to 260℃
+
+Atmosphere                                  Air or N2
+Lead Free Solder: Sn-3.0Ag-0.5Cu
+
+
+5. Optimum Solder Amount for Flow Soldering                                                                       Up to Chip Thickness
+
+5-1. The top of the solder fillet should be lower than the
+      thickness of the components. If the solder amount is
+     excessive, the risk of cracking is higher during
+     board bending or any other stressful condition.                                                                           in section
+                                                                                                Adhesive
+
+
+
+
+JEMCGC-2701X                                                     18
+                                                                                                                !   Caution
+
+4-3.Correction of Soldered Portion
+
+  When sudden heat is applied to the capacitor, distortion caused by the large temperature difference occurs internally,
+  and can be the cause of cracks. Capacitors also tend to be affected by mechanical and thermal stress depending
+  on the board preheating temperature or the soldering fillet shape, and can be the cause of cracks.
+  Please refer to "1. PCB Design" or "3. Optimum solder amount" for the solder amount and the fillet shapes.
+
+1. Correction with a Soldering Iron
+ 1-1. In order to reduce damage to the capacitor, be sure to preheat the capacitor and the mounting board.
+       Preheat to the temperature range shown in Table 3. A hot plate, hot air type preheater, etc. can be used for preheating.
+ 1-2. After soldering, do not allow the component/PCB to cool down rapidly.
+ 1-3. Perform the corrections with a soldering iron as quickly as possible. If the soldering iron is applied too long,
+       there is a possibility of causing solder leaching on the terminal electrodes, which will cause deterioration of the
+       adhesive strength and other problems.
+Table 3
+                Chip Dimension             Temperature of            Preheating            Temperature
+   Series                                                                                                         Atmosphere
+                   (L/W) Code             Soldering Iron Tip        Temperature           Differential(ΔT)
+   GRM          03/15/18/21/31              350℃ max.               150℃ min.             ΔT≦190℃                   Air
+
+   GRM             32/43/55                 280℃ max.               150℃ min.             ΔT≦130℃                   Air
+Lead Free Solder: Sn-3.0Ag-0.5Cu
+* Please manage Δ T in the temperature of soldering iron and the preheating temperature.
+
+2. Correction with Spot Heater
+   Compared to local heating with a soldering iron, hot air heating by a spot heater heats the overall component
+   and board, therefore, it tends to lessen the thermal shock. In the case of a high density mounted board,
+   a spot heater can also prevent concerns of the soldering iron making direct contact with the component.
+2-1. If the distance from the hot air outlet of the spot heater to the component is too close, cracks may occur due to
+      thermal shock. To prevent this problem, follow the conditions shown in Table 4.
+2-2. In order to create an appropriate solder fillet shape, it is recommended that hot air be applied at the angle shown
+      in Figure 1.
+             Table 4
+             Distance                              5mm or more
+             Hot Air Application angle             45° *Figure 1
+             Hot Air Temperature Nozzle Outlet 400°C max.
+                                                   Less than 10 seconds
+             Application Time                      (3216M / 1206 size or smaller)
+                                                   Less than 30 seconds
+                                                   (3225M / 1210 size or larger)       (3216M , 3225M : Metric size code)
+
+             [Figure 1]
+
+
+
+
+                                        One-hole Nozzle
+
+                                 an Angle of 45
+
+
+
+3. Optimum solder amount when re-working with a soldering iron
+3-1. If the solder amount is excessive, the risk of cracking is higher
+                                                                                                        Solder Amount
+     during board bending or any other stressful condition.
+     Too little solder amount results in a lack of adhesive strength
+     on the termination, which may result in chips breaking
+     loose from the PCB.
+     Please confirm that solder has been applied smoothly is                                               in section
+     and rising to the end surface of the chip.
+3-2. A soldering iron with a tip of ø3mm or smaller should be used.
+      It is also necessary to keep the soldering iron from touching
+      the components during the re-work.
+3-3. Solder wire with ø0.5mm or smaller is required for soldering.
+
+
+
+JEMCGC-2701X                                                 19
+                                                                                                                            !   Caution
+
+5.Washing
+
+ Excessive ultrasonic oscillation during cleaning can cause the PCBs to resonate, resulting in cracked chips
+ or broken solder joints. Take note not to vibrate PCBs.
+
+
+6.Electrical Test on Printed Circuit Board
+
+1. Confirm position of the support pin or specific jig, when inspecting the electrical performance of a
+   capacitor after mounting on the printed circuit board.
+
+  1-1. Avoid bending the printed circuit board by the pressure of a test-probe, etc.
+      The thrusting force of the test probe can flex the PCB, resulting in cracked chips or open solder
+      joints. Provide support pins on the back side of the PCB to prevent warping or flexing.
+      Install support pins as close to the test-probe as possible.
+
+  1-2. Avoid vibration of the board by shock when a test -probe contacts a printed circuit board.
+
+            [Not Recommended]                                         [Recommended]
+
+                                                Peeling                              Support Pin
+
+
+
+
+                                           Test-probe
+                                                                                                   Test-probe
+
+
+
+
+7.Printed Circuit Board Cropping
+
+1. After mounting a capacitor on a printed circuit board, do not apply any stress to the capacitor that
+   caused bending or twisting the board.
+
+  1-1. In cropping the board, the stress as shown may cause the capacitor to crack.
+       Cracked capacitors may cause deterioration of the insulation resistance, and result in a short.
+       Avoid this type of stress to a capacitor.
+                                                                                      ①
+             [Bending]                                     [Twisting]
+
+
+                                                                                                           1A
+2. Check the cropping method for the printed circuit board in advance.
+
+
+  2-1. Printed circuit board cropping shall be carried out by using a jig or an apparatus (Disc separator, router
+       type separator, etc.) to prevent the mechanical stress that can occur to the board.
+
+                              Hand Separation                                                  Board Separation Apparatus
+Board Separation Method                                   (1) Board Separation Jig
+                              Nipper Separation                                        2) Disc Separator     3) Router Type Separator
+Level of stress on board            High                          Medium                    Medium                      Low
+    Recommended                       ×                            △*                         △*                         ◯
+
+                                                                                  · Board handling
+                           Hand and nipper
+                                                        · Board handling          · Layout of slits
+                           separation apply a high
+                                                        · Board bending direction · Design of V groove
+         Notes             level of stress.                                                                      Board handling
+                                                        · Layout of capacitors    · Arrangement of blades
+                           Use another method.
+                                                                                  · Controlling blade life
+
+
+
+* When a board separation jig or disc separator is used, if the following precautions are not observed,
+  a large board deflection stress will occur and the capacitors may crack.
+  Use router type separator if at all possible.
+
+
+
+
+JEMCGC-2701X                                                          20
+                                                                                                                                              !       Caution
+
+(1) Example of a suitable jig
+    [In the case of Single-side Mounting]
+      An outline of the board separation jig is shown as follows.
+      Recommended example: Stress on the component mounting position can be minimized by holding the
+      portion close to the jig, and bend in the direction towards the side where the capacitors are mounted.
+      Not recommended example: The risk of cracks occurring in the capacitors increases due to large stress
+      being applied to the component mounting position, if the portion away from the jig is held and bent in the
+      direction opposite the side where the capacitors are mounted.
+      [Outline of jig]                                    [Hand Separation]
+                                                                  Recommended                                            Not recommended
+                                                                                       Direction of load              Load point                  Direction of
+   Printed Circuit Board                                  Printed circuit                                                                         load
+                                       V-groove                                  Component
+                                                          board
+                                                                                 s
+
+                                                                                                              Printed circuit    Components
+                                                                                 Load point
+                                     Board Cropping Jig                                                       board
+
+
+
+   [In the case of Double-sided Mounting]
+    Since components are mounted on both sides of the board, the risk of cracks occurring can not be avoided with the
+    above method. Therefore, implement the following measures to prevent stress from being applied to the components.
+   (Measures)
+    (1) Consider introducing a router type separator.
+        If it is difficult to introduce a router type separator, implement the following measures.
+         (Refer to item 1. Mounting Position)
+    (2) Mount the components parallel to the board separation surface.
+    (3) When mounting components near the board separation point, add slits in the separation position
+         near the component.
+    (4) Keep the mounting position of the components away from the board separation point.
+
+(2) Example of a Disc Separator
+     An outline of a disc separator is shown as follows. As shown in the Principle of Operation, the top
+     blade and bottom blade are aligned with the V-grooves on the printed circuit board to separate the board.
+     In the following case, board deflection stress will be applied and cause cracks in the capacitors.
+     (1) When the adjustment of the top and bottom blades are misaligned, such as deviating in the top-bottom,
+          left-right or front-rear directions
+     (2) The angle of the V groove is too low, depth of the V groove is too shallow, or the V groove is misaligned
+          top-bottom
+     IF V groove is too deep, it is possible to brake when you handle and carry it. Carefully design depth of the
+     V groove with consideration about strength of material of the printed circuit board.
+
+                [ Outline of Machine ]                    [ Principle of Operation ]                       [ Cross-section Diagram ]
+                                                                                              Top Blade                         Printed Circuit Board
+                                   Top Blade
+
+                                                                                                                         V-groove
+                                                                                         Bottom Blade
+                             Printed Circuit Board            V-groove
+                [Disc Separator]
+                                                                               Not recommended
+                       Recommended
+                                           Top-bottom Misalignment           Left-right Misalignment          Front-rear Misalignment
+                            Top Blade                  Top Blade                          Top Blade                       Top Blade
+
+
+
+
+                            Bottom Blade                  Bottom Blade                         Bottom Blade                     Bottom Blade
+
+[V-groove Design]
+      Example of                                                          Not Recommended
+    Recommended              Left-right Misalignment                Low-Angle        Depth too Shallow                              Depth too Deep
+    V-groove Design
+
+
+
+
+JEMCGC-2701X                                                                21
+                                                                                                                      ! Caution
+
+(3) Example of Router Type Separator
+                                                                       [ Outline Drawing ]             Router
+    The router type separator performs cutting by a router
+    rotating at a high speed. Since the board does not
+    bend in the cutting process, stress on the board can
+    be suppressed during board separation.
+    When attaching or removing boards to/from the router type
+    separator, carefully handle the boards to prevent bending.
+
+8. Assembly
+
+1. Handling
+   If a board mounted with capacitors is held with one hand, the board may bend.
+   Firmly hold the edges of the board with both hands when handling.
+   If a board mounted with capacitors is dropped, cracks may occur in the capacitors.
+   Do not use dropped boards, as there is a possibility that the quality of the capacitors may be impaired.
+
+2. Attachment of Other Components
+2-1. Mounting of Other Components
+       Pay attention to the following items, when mounting other components on the back side of the board after
+       capacitors have been mounted on the opposite side.
+       When the bottom dead point of the suction nozzle is set too low, board deflection stress may be applied
+       to the capacitors on the back side (bottom side), and cracks may occur in the capacitors.
+      · After the board is straightened, set the bottom dead point of the nozzle on the upper surface of the board.
+      · Periodically check and adjust the bottom dead point.
+
+
+                                      Suction Nozzle
+
+
+
+
+2-2. Inserting Components with Leads into Boards
+      When inserting components (transformers, IC, etc.) into boards, bending the board may cause cracks in the
+      capacitors or cracks in the solder. Pay attention to the following.
+     · Increase the size of the holes to insert the leads, to reduce the stress on the board during insertion.
+     · Fix the board with support pins or a dedicated jig before insertion.
+     · Support below the board so that the board does not bend. When using multiple support pins on the board,
+        periodically confirm that there is no difference in the height of each support pin.
+                                             Component with Leads
+
+
+
+
+2-3. Attaching/Removing Sockets
+     When the board itself is a connector, the board may bend when a socket is attached or removed.
+     Plan the work so that the board does not bend when a socket is attached or removed.
+                                      Socket
+
+
+
+2-4. Tightening Screws
+      The board may be bent, when tightening screws, etc. during the attachment of the board to a shield or
+      chassis. Pay attention to the following items before performing the work.
+     · Plan the work to prevent the board from bending.
+     · Use a torque screwdriver, to prevent over-tightening of the screws.
+     · The board may bend after mounting by reflow soldering, etc. Please note, as stress may be applied
+       to the chips by forcibly flattening the board when tightening the screws.
+                                           Screwdriver
+
+
+
+
+JEMCGC-2701X                                                 22
+                                                                                                                 ! Caution
+
+■ Others
+
+1. Under Operation of Equipment
+
+1-1. Do not touch a capacitor directly with bare hands during operation in order to avoid the danger of an electric shock.
+
+1-2. Do not allow the terminals of a capacitor to come in contact with any conductive objects (short-circuit).
+     Do not expose a capacitor to a conductive liquid, inducing any acid or alkali solutions.
+
+1-3. Confirm the environment in which the equipment will operate is under the specified conditions.
+     Do not use the equipment under the following environments.
+     (1) Being spattered with water or oil.
+     (2) Being exposed to direct sunlight.
+     (3) Being exposed to ozone, ultraviolet rays, or radiation.
+     (4) Being exposed to toxic gas (e.g., hydrogen sulfide, sulfur dioxide, chlorine, ammonia gas etc.)
+     (5) Any vibrations or mechanical shocks exceeding the specified limits.
+     (6) Moisture condensing environments.
+
+1-4. Use damp proof countermeasures if using under any conditions that can cause condensation.
+
+
+2. Others
+
+2-1. In an Emergency
+ (1) If the equipment should generate smoke, fire, or smell, immediately turn off or unplug the equipment.
+      If the equipment is not turned off or unplugged, the hazards may be worsened by supplying continuous power.
+ (2) In this type of situation, do not allow face and hands to come in contact with the capacitor or burns may be caused
+      by the capacitor's high temperature.
+
+2-2. Disposal of waste
+  When capacitors are disposed of, they must be burned or buried by an industrial waste vendor with the appropriate
+  licenses.
+
+2-3. Circuit Design
+ (1) Addition of Fail Safe Function
+     Capacitors that are cracked by dropping or bending of the board may cause deterioration of the
+     insulation resistance, and result in a short. If the circuit being used may cause an electrical shock,
+     smoke or fire when a capacitor is shorted, be sure to install fail-safe functions, such as a fuse,
+     to prevent secondary accidents.
+ (2) This series are not safety standard certified products.
+
+2-4. Remarks
+  Failure to follow the cautions may result, worst case, in a short circuit and smoking when the product is used.
+  The above notices are for standard applications and conditions. Contact us when the products are used in special
+  mounting conditions.
+  Select optimum conditions for operation as they determine the reliability of the product after assembly.
+  The data herein are given in typical values, not guaranteed ratings.
+
+
+
+
+JEMCGC-2701X                                                 23
+                                                                                                                      Notice
+
+■ Rating
+
+1.Operating Temperature
+
+1. The operating temperature limit depends on the capacitor.
+
+1-1. Do not apply temperatures exceeding the maximum operating temperature.
+     It is necessary to select a capacitor with a suitable rated temperature that will cover the operating temperature range.
+     It is also necessary to consider the temperature distribution in equipment and the seasonal temperature variable
+     factor.
+
+1-2. Consider the self-heating factor of the capacitor
+     The surface temperature of the capacitor shall not exceed the maximum operating temperature including self-heating.
+
+
+
+2.Atmosphere Surroundings (gaseous and liquid)
+
+1. Restriction on the operating environment of capacitors.
+
+1-1. Capacitors, when used in the above, unsuitable, operating environments may deteriorate due to the corrosion
+     of the terminations and the penetration of moisture into the capacitor.
+
+1-2. The same phenomenon as the above may occur when the electrodes or terminals of the capacitor are subject
+     to moisture condensation.
+
+1-3. The deterioration of characteristics and insulation resistance due to the oxidization or corrosion of terminal
+     electrodes may result in breakdown when the capacitor is exposed to corrosive or volatile gases or solvents
+     for long periods of time.
+
+
+3.Piezo-electric Phenomenon
+
+1. When using high dielectric constant type capacitors in AC or pulse circuits, the capacitor itself vibrates
+   at specific frequencies and noise may be generated.
+   Moreover, when the mechanical vibration or shock is added to capacitor, noise may occur.
+
+
+
+
+JEMCGC-2701X                                                 24
+                                                                                                                    Notice
+
+■Soldering and Mounting
+
+1.PCB Design
+
+1. Notice for Pattern Forms
+
+1-1. Unlike leaded components, chip components are susceptible to flexing stresses since they are mounted
+     directly on the substrate.
+     They are also more sensitive to mechanical and thermal stresses than leaded components.
+     Excess solder fillet height can multiply these stresses and cause chip cracking.
+     When designing substrates, take land patterns and dimensions into consideration to eliminate the possibility
+     of excess solder fillet height.
+
+1-2. There is a possibility of chip cracking caused by PCB expansion/contraction with heat, because stress
+      on a chip is different depending on PCB material and structure.When the thermal expansion coefficient
+      greatly differs between the board used for mounting and the chip,it will cause cracking of the chip due to
+      the thermal expansion and contraction. When capacitors are mounted on a fluorine resin printed circuit
+     board or on a single-layered glass epoxy board, it may also cause cracking of the chip for the same reason.
+
+
+Pattern Forms
+                                            Prohibited                                    Correct
+
+                                 Chassis
+                                           Solder (ground)                      Solder Resist
+
+Placing Close to Chassis
+
+
+                                Electrode Pattern             in section                                  in section
+
+                                        Lead Wire                                      Solder Resist
+    Placing of Chip
+     Components
+     and Leaded
+     Components
+
+                                                              in section                                  in section
+
+                              Soldering Iron        Lead Wire
+   Placing of Leaded                                                               Solder Resist
+      Components
+ after Chip Component
+
+
+                                                              in section                                  in section
+
+                                                                                   Solder Resist
+                                                                  ｿﾙﾀﾞﾚｼﾞｽﾄ
+
+
+    Lateral Mounting
+
+
+
+
+JEMCGC-2701X                                                 25
+                                                                                                                           Notice
+
+2. Land Dimensions
+                                                                                                   Chip Capacitor
+
+2-1. Chip capacitors can be cracked due to the stress
+                                                                                                                           Land
+     of PCB bending , etc. if the land area is larger than
+     needed and has an excess amount of solder.
+     Please refer to the land dimensions in table 1
+
+
+
+
+                                                                     c
+     for flow soldering, table 2 for reflow soldering.
+
+    Please confirm the suitable land dimension by                                  b       a                    Solder Resist
+    evaluating of the actual SET / PCB.
+
+
+        Table 1 Flow Soldering Method
+                          Chip Dimension
+             Series                                  Chip(L×W)           a                     b                           c
+                             (L/W) Code
+               GRM                  18                 1.6×0.8       0.6 to 1.0         0.8 to 0.9                    0.6 to 0.8
+
+               GRM                  21                2.0×1.25       1.0 to 1.2         0.9 to 1.0                    0.8 to 1.1
+
+               GRM                  31                 3.2×1.6       2.2 to 2.6         1.0 to 1.1                    1.0 to 1.4
+        Flow soldering can only be used for products with a chip size of 1.6x0.8mm to 3.2x1.6mm.               (in mm)
+
+
+        Table 2 Reflow Soldering Method
+                                                     Chip(L×W)
+                            Chip Dimension
+              Series                                (Dimensions          a                     b                           c
+                             (L/W) Code
+                                                     Tolerance)
+               GRM                  01               0.25×0.125     0.10 to 0.11       0.07 to 0.12                 0.125 to 0.145
+
+               GRM                  02                0.4×0.2       0.16 to 0.2        0.12 to 0.18                  0.2 to 0.23
+
+               GRM                  03                 0.6×0.3       0.2 to 0.3        0.2 to 0.35                    0.2 to 0.4
+                                                       1.0×0.5
+                                                                     0.3 to 0.5        0.35 to 0.45                   0.4 to 0.6
+                                                   (within ±0.10)
+               GRM                  15
+                                                       1.0×0.5
+                                                                     0.4 to 0.6         0.4 to 0.5                    0.5 to 0.7
+                                                   （±0.15/±0.20）
+                                                       1.6×0.8
+                                                                     0.6 to 0.8         0.6 to 0.7                    0.6 to 0.8
+                                                   (within ±0.10)
+               GRM                  18
+                                                       1.6×0.8
+                                                                     0.7 to 0.9         0.7 to 0.8                    0.8 to 1.0
+                                                   (±0.15/±0.20)
+                                                      2.0×1.25
+                                                                         1.2               0.6                          1.25
+                                                   (within ±0.10)
+                                                      2.0×1.25
+               GRM                  21                                   1.2            0.6 to 0.8                    1.2 to 1.4
+                                                       (±0.15)
+                                                      2.0×1.25
+                                                                     1.0 to 1.4         0.6 to 0.8                    1.2 to 1.4
+                                                       (±0.20)
+                                                       3.2×1.6
+                                                                     1.8 to 2.0         0.9 to 1.2                    1.5 to 1.7
+                                                    (within±0.20)
+               GRM                  31
+                                                       3.2×1.6
+                                                                     1.9 to 2.1         1.0 to 1.3                    1.7 to 1.9
+                                                       (±0.30)
+               GRM                  32                 3.2×2.5       2.0 to 2.4         1.0 to 1.2                    1.8 to 2.3
+
+               GRM                  43                 4.5×3.2       3.0 to 3.5         1.2 to 1.4                    2.3 to 3.0
+
+               GRM                  55                 5.7×5.0       4.0 to 4.6         1.4 to 1.6                    3.5 to 4.8
+                                                                                                              (in mm)
+
+
+
+
+JEMCGC-2701X                                                 26
+                                                                                                                                                       Notice
+
+3. Board Design
+   When designing the board, keep in mind that the amount of strain which occurs will increase depending on the size
+   and material of the board.
+                              Relationship with amount of strain to the board thickness, length, width, etc.]
+
+                                         3PL
+                                ε=                    Relationship between load and strain
+                                       2Ewh2
+                                                                                                           ε：Strain on center of board (μst)
+                                                                                                           L：Distance between supporting points (mm)
+                                                                                                           w ：Board width (mm)
+                                                                                                           h ：Board thickness (mm)
+                                                                                                           E ：Elastic modulus of board (N/m2=Pa)
+                                                                                                           Y ：Deflection (mm)
+                                                                                                           P ：Load (N)
+
+
+
+
+                                When the load is constant, the following relationship can be established.
+                                · As the distance between the supporting points (L) increases,the amount of strain also increases.
+                                →Reduce the distance between the supporting points.
+                                · As the elastic modulus (E) decreases, the amount of strain increases.
+                                →Increase the elastic modulus.
+                                  · As the board width (w) decreases, the amount of strain increases.
+                                →Increase the width of the board.
+                                  · As the board thickness (h) decreases, the amount of strain increases.
+                                →Increase the thickness of the board.
+                                Since the board thickness is squared, the effect on the amount of strain becomes even greater.
+
+
+
+2.Adhesive Application
+
+1. Thin or insufficient adhesive can cause the chips to loosen or become disconnected during flow soldering.
+   The amount of adhesive must be more than dimension c, shown in the drawing at right, to obtain the correct bonding
+   strength. The chip's electrode thickness and land thickness must also be taken into consideration.
+
+                                    Chip Capacitor
+                                                                 a               a=20 to 70μm
+                                                                       c         b=30 to 35μm
+                                       Adhesive                  b               c=50 to 105μm
+                   Board             Land
+2. Low viscosity adhesive can cause chips to slip after mounting. The adhesive must have a viscosity of
+   5000Pa • s (500ps) min. (at 25℃)
+
+3. Adhesive Coverage
+             Size (L×W) (in mm)         Adhesive Coverage*
+                   1.6 × 0.8               0.05mg min.
+                  2.0 × 1.25                0.1mg min.
+                   3.2 × 1.6               0.15mg min.
+                                             *Nominal Value
+
+3.Adhesive Curing
+
+1. Insufficient curing of the adhesive can cause chips to disconnect during flow soldering and causes
+   deterioration in the insulation resistance between the terminations due to moisture absorption.
+   Control curing temperature and time in order to prevent insufficient hardening.
+
+
+4.Flux (for Flow soldering)
+
+1. An excessive amount of flux generates a large quantity of flux gas, which can cause a deterioration of solderability,
+   so apply flux thinly and evenly throughout. (A foaming system is generally used for flow solderring.)
+
+2. Flux containing too high a percentage of halide may cause corrosion of the terminations unless there is
+   sufficient cleaning. Use flux with a halide content of 0.1% max.
+
+3. Do not use strong acidic flux.
+
+4. Do not use water-soluble flux.*
+   (*Water-soluble flux can be defined as non-rosin type flux including wash-type flux and non-wash-type flux.)
+
+
+
+JEMCGC-2701X                                                               27
+                                                                                                                            Notice
+
+5.Flow Soldering                                                   ［As a Single Chip］
+ Set temperature and time to ensure that leaching of the                                                A
+ terminations does not exceed 25% of the chip end                                          B
+ area as a single chip (full length of the edge A-B-C-D                                                 D
+ shown at right) and 25% of the length A-B shown as                                                         Termination
+ mounted on substrate.                                                                          C
+                                                                                                            (Outer Electrode)
+                                                                   ［As Mounted on Substrate］
+                                                                                                    B
+
+                                                                                            A
+
+
+
+
+6.Reflow soldering
+
+ The halogen system substance and organic acid are included in solder paste, and a chip corrodes
+ by this kind of solder paste.
+ Do not use strong acid flux.
+ Do not use water-soluble flux.*
+ (*Water-soluble flux can be defined as non-rosin type flux including wash-type flux and non-wash-type flux.)
+
+7.Washing
+
+1. Please evaluate the capacitor using actual cleaning equipment and conditions to confirm the quality,
+   and select the solvent for cleaning.
+
+2. Unsuitable cleaning solvent may leave residual flux or other foreign substances, causing deterioration of
+   electrical characteristics and the reliability of the capacitors.
+
+3. Select the proper cleaning conditions.
+
+3-1. Improper cleaning conditions (excessive or insufficient) may result in the deterioration of the performance
+      of the capacitors.
+
+8.Coating
+
+1. A crack may be caused in the capacitor due to the stress of the thermal contraction of the resin during curing process.
+   The stress is affected by the amount of resin and curing contraction. Select a resin with low curing contraction.
+   The difference in the thermal expansion coefficient between a coating resin or a molding resin and the capacitor
+   may cause the destruction and deterioration of the capacitor such as a crack or peeling, and lead to the deterioration
+   of insulation resistance or dielectric breakdown.
+   Select a resin for which the thermal expansion coefficient is as close to that of the capacitor as possible.
+   A silicone resin can be used as an under-coating to buffer against the stress.
+
+2. Select a resin that is less hygroscopic.
+   Using hygroscopic resins under high humidity conditions may cause the deterioration of the insulation resistance
+   of a capacitor. An epoxy resin can be used as a less hygroscopic resin.
+
+3．The halogen system substance and organic acid are included in coating material, and a chip corrodes
+  by the kind of Coating material. Do not use strong acid type.
+
+
+
+
+JEMCGC-2701X                                                28
+                                                                                                                    Notice
+
+■ Others
+1.Transportation
+
+1. The performance of a capacitor may be affected by the conditions during transportation.
+
+1-1. The capacitors shall be protected against excessive temperature, humidity and mechanical force during transportation.
+
+      (1) Climatic condition
+          ･ low air temperature : -40℃
+           ･ change of temperature air/air : -25℃/+25℃
+           ･ low air pressure : 30 kPa
+           ･ change of air pressure : 6 kPa/min.
+
+     (2) Mechanical condition
+          Transportation shall be done in such a way that the boxes are not deformed and forces are not directly passed
+          on to the inner packaging.
+
+1-2. Do not apply excessive vibration, shock, or pressure to the capacitor.
+
+     (1) When excessive mechanical shock or pressure is applied to a capacitor, chipping or cracking may occur
+         in the ceramic body of the capacitor.
+
+     (2) When the sharp edge of an air driver, a soldering iron, tweezers, a chassis, etc. impacts strongly on the surface
+         of the capacitor, the capacitor may crack and short-circuit.
+
+1-3. Do not use a capacitor to which excessive shock was applied by dropping etc.
+     A capacitor dropped accidentally during processing may be damaged.
+2.Characteristics Evaluation in the Actual System
+
+1. Evaluate the capacitor in the actual system,to confirm that there is no problem with the performance and specification
+   values in a finished product before using.
+
+2. Since a voltage dependency and temperature dependency exists in the capacitance of high dielectric type ceramic
+   capacitors, the capacitance may change depending on the operating conditions in the actual system.
+   Therefore,be sure to evaluate the various characteristics, such as the leakage current and noise absorptivity,
+   which will affect the capacitance value of the capacitor.
+
+3. In addition,voltages exceeding the predetermined surge may be applied to the capacitor by the inductance in
+    the actual system. Evaluate the surge resistance in the actual system as required.
+
+
+
+
+JEMCGC-2701X                                                29
+                                                                                                             !   NOTE
+
+1.Please make sure that your product has been evaluated in view of your specifications with our
+  product being mounted to your product.
+
+2.Your are requested not to use our product deviating from this product specification.
+
+3.We consider it not appropriate to include any terms and conditions with regard to the business
+  transaction in the product specifications, drawings or other technical documents. Therefore,
+  if your technical documents as above include such terms and conditions such as warranty clause,
+  product liability clause, or intellectual property infringement liability clause, they will be deemed to
+  be invalid.
+
+
+
+
+JEMCGC-2701X                                             30
+

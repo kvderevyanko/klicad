@@ -1,0 +1,278 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-24T05:41:51",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.8",
+    "schematic_parity": [
+        {
+            "description": "Pad missing net given by schematic (unconnected-(J1-GPIO12-Pad4))",
+            "items": [
+                {
+                    "description": "PTH pad 4 [<no net>] of J1",
+                    "pos": {
+                        "x": 111.0,
+                        "y": 21.62
+                    },
+                    "uuid": "0b11698b-37ea-46d8-8470-9c0ecfb9dcf4"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad missing net given by schematic (unconnected-(J1-GPIO33-Pad9))",
+            "items": [
+                {
+                    "description": "PTH pad 9 [<no net>] of J1",
+                    "pos": {
+                        "x": 111.0,
+                        "y": 34.32
+                    },
+                    "uuid": "873df28b-abbd-4332-bbfe-f82501e5df19"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad missing net given by schematic (unconnected-(J1-GPIO35-Pad11))",
+            "items": [
+                {
+                    "description": "PTH pad 11 [<no net>] of J1",
+                    "pos": {
+                        "x": 111.0,
+                        "y": 39.4
+                    },
+                    "uuid": "9528de70-6a0d-4652-944e-08ace92f4542"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad missing net given by schematic (unconnected-(J1-GPIO34-Pad12))",
+            "items": [
+                {
+                    "description": "PTH pad 12 [<no net>] of J1",
+                    "pos": {
+                        "x": 111.0,
+                        "y": 41.94
+                    },
+                    "uuid": "6ca206c9-4c1c-40f8-9a2c-0c4060a4fb4c"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad missing net given by schematic (unconnected-(J1-GPIO39{slash}VN-Pad13))",
+            "items": [
+                {
+                    "description": "PTH pad 13 [<no net>] of J1",
+                    "pos": {
+                        "x": 111.0,
+                        "y": 44.48
+                    },
+                    "uuid": "fba00d90-1a66-46ef-9284-8338665125a2"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad missing net given by schematic (unconnected-(J1-GPIO36{slash}VP-Pad14))",
+            "items": [
+                {
+                    "description": "PTH pad 14 [<no net>] of J1",
+                    "pos": {
+                        "x": 111.0,
+                        "y": 47.02
+                    },
+                    "uuid": "1b8ee338-6702-455a-9e5b-a116d41a4f1f"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad missing net given by schematic (unconnected-(J1-EN-Pad15))",
+            "items": [
+                {
+                    "description": "PTH pad 15 [<no net>] of J1",
+                    "pos": {
+                        "x": 111.0,
+                        "y": 49.56
+                    },
+                    "uuid": "c14ca552-3ed4-48b9-8678-fb6428dad564"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad missing net given by schematic (unconnected-(J2-GPIO15-Pad3))",
+            "items": [
+                {
+                    "description": "PTH pad 3 [<no net>] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 19.08
+                    },
+                    "uuid": "bf5f8988-bf88-4f9f-99a1-953786f3e144"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad missing net given by schematic (unconnected-(J2-GPIO2-Pad4))",
+            "items": [
+                {
+                    "description": "PTH pad 4 [<no net>] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 21.62
+                    },
+                    "uuid": "129c4cf7-dc73-477a-90fd-ae5165716516"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad missing net given by schematic (unconnected-(J2-GPIO5-Pad8))",
+            "items": [
+                {
+                    "description": "PTH pad 8 [<no net>] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 31.78
+                    },
+                    "uuid": "80c96599-8a6b-42b1-a03b-28550468a414"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad missing net given by schematic (unconnected-(J2-GPIO3{slash}RX0-Pad12))",
+            "items": [
+                {
+                    "description": "PTH pad 12 [<no net>] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 41.94
+                    },
+                    "uuid": "0c5c1b84-137a-482c-a517-d280b4c29620"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad missing net given by schematic (unconnected-(J2-GPIO1{slash}TX0-Pad13))",
+            "items": [
+                {
+                    "description": "PTH pad 13 [<no net>] of J2",
+                    "pos": {
+                        "x": 136.4,
+                        "y": 44.48
+                    },
+                    "uuid": "901e2ea9-0eba-4dc0-b9ab-8164e8d4f2f1"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Pad missing net given by schematic (unconnected-(U1-PG-Pad4))",
+            "items": [
+                {
+                    "description": "Pad 4 [<no net>] of U1 on F.Cu",
+                    "pos": {
+                        "x": 71.4,
+                        "y": 55.25
+                    },
+                    "uuid": "9013e3c1-269d-401e-a3cc-855b4400da0e"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Extra footprint",
+            "items": [
+                {
+                    "description": "Footprint H3",
+                    "pos": {
+                        "x": 96.0,
+                        "y": 83.0
+                    },
+                    "uuid": "92866050-7b31-40c2-aaca-bf10681a1bd5"
+                }
+            ],
+            "severity": "warning",
+            "type": "extra_footprint"
+        },
+        {
+            "description": "Extra footprint",
+            "items": [
+                {
+                    "description": "Footprint H2",
+                    "pos": {
+                        "x": 80.0,
+                        "y": 7.0
+                    },
+                    "uuid": "d5a217bd-f0b8-4258-85ca-b1ae8c857061"
+                }
+            ],
+            "severity": "warning",
+            "type": "extra_footprint"
+        },
+        {
+            "description": "Extra footprint",
+            "items": [
+                {
+                    "description": "Footprint H1",
+                    "pos": {
+                        "x": 7.0,
+                        "y": 7.0
+                    },
+                    "uuid": "da1e6e7c-7875-4b34-b081-50aa2a7f772c"
+                }
+            ],
+            "severity": "warning",
+            "type": "extra_footprint"
+        }
+    ],
+    "source": "esp32-e220.kicad_pcb",
+    "unconnected_items": [],
+    "violations": []
+}

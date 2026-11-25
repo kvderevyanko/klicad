@@ -1,0 +1,56 @@
+{
+  "baseline": "ecfb03b79c6a41063ac21f1f7dc79750468a8b3a",
+  "changed_footprints": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R8",
+    "R9"
+  ],
+  "descriptions_exact": {
+    "R1": true,
+    "R2": true,
+    "R3": true,
+    "R4": true,
+    "R8": true,
+    "R9": true
+  },
+  "embedded_description_only": {
+    "R1": true,
+    "R2": true,
+    "R3": true,
+    "R4": true,
+    "R8": true,
+    "R9": true
+  },
+  "failures": [],
+  "footprint_identity_delta": "zero",
+  "generator_local_exact": true,
+  "generator_only_description_delta": true,
+  "l1_metadata_unchanged": true,
+  "local_only_description_delta": true,
+  "metadata_exact": {
+    "R1": true,
+    "R2": true,
+    "R8": true,
+    "R9": true
+  },
+  "metadata_only_target_refs": true,
+  "net_delta": "zero",
+  "pad_geometry_delta": "zero",
+  "placement_delta": "zero",
+  "schematic_byte_identical": true,
+  "status": "PASS",
+  "target_refs": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R8",
+    "R9"
+  ],
+  "track_delta": "zero",
+  "via_delta": "zero",
+  "zone_rule_area_delta": "zero"
+}

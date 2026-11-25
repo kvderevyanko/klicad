@@ -81,6 +81,80 @@ def passive(name: str, description: str, body_x: float, body_y: float,
     ))
 
 
+def murata_grm188_standard() -> str:
+    """GRM18 +/-0.10-mm group manufacturer Table 2 land geometry."""
+    return passive(
+        "Murata_GRM188_1608Metric",
+        "Murata GRM18 1608 metric C2/C4/C6/C7/C8. Manufacturer Table 2 reflow lands: a=0.75, b=0.70, c=0.70 mm on 1.45-mm centres.",
+        1.60, 0.80, 0.70, 0.70, 1.45,
+    )
+
+
+def murata_grm21_standard() -> str:
+    """GRM21 +/-0.15-mm group manufacturer Table 2 land geometry."""
+    name = "Murata_GRM21_2012Metric"
+    description = (
+        "Murata GRM21 2012 metric C1/C9/C10. Manufacturer Table 2 reflow lands: "
+        "a=0.80, b=1.20, c=1.30 mm on 2.00-mm centres."
+    )
+    return "".join((
+        f'(footprint "{name}" (version 20240108) (generator "stage7")\n',
+        '  (layer "F.Cu")\n',
+        f'  (descr "{description}")\n',
+        '  (attr smd)\n',
+        text("reference", "REF**", 0, -1.625, "F.SilkS"),
+        text("value", name, 0, 1.625, "F.Fab", 0.75),
+        rect(-1.000, -0.625, 1.000, 0.625, "F.Fab", 0.10),
+        rect(-1.650, -1.125, 1.650, 1.125, "F.CrtYd", 0.05),
+        smd_pad("1", -1.000, 0, 1.200, 1.300),
+        smd_pad("2", 1.000, 0, 1.200, 1.300),
+        ")\n",
+    ))
+
+
+def murata_grm188_c5() -> str:
+    """GRM188R61A106MAAL +/-0.15-mm manufacturer Table 2 lands."""
+    return passive(
+        "Murata_GRM188R61A106MAAL_1608Metric",
+        "Murata GRM188R61A106MAAL 1608 metric C5. Manufacturer Table 2 reflow lands: a=0.70, b=0.75, c=0.90 mm on 1.45-mm centres.",
+        1.60, 0.80, 0.75, 0.90, 1.45,
+    )
+
+
+def yageo_rc0603() -> str:
+    """Yageo RC 0603/1608 Mounting V10 Table 1 reflow lands."""
+    return passive(
+        "Resistor_0603_1608Metric",
+        "0603 (1608 metric) resistor footprint used by R1/R2/R3/R4/R8/R9. Yageo RC Mounting V10 Table 1 reflow lands: A=2.60, B=0.80, C=0.90, D=0.80 mm on 1.70-mm centres.",
+        1.60, 0.80, 0.90, 0.80, 1.70,
+    )
+
+
+def uni_royal_0603w() -> str:
+    return passive(
+        "UniRoyal_0603W_Reflow",
+        "UNI-ROYAL 0603W reflow lands, V.3 section 8. A=0.875, B=0.625, C=0.800, D=2.125 mm within the four published ranges.",
+        1.60, 0.80, 0.625, 0.80, 1.50,
+    )
+
+
+def vishay_crcw0603() -> str:
+    return passive(
+        "Vishay_CRCW0603_Reflow",
+        "Vishay D/CRCW e3 0603 reflow land pattern, document 20035. G 0.75, Y 0.75, X 1.00, Z 2.25 mm.",
+        1.60, 0.80, 0.750, 1.00, 1.50,
+    )
+
+
+def murata_grm21_c3() -> str:
+    """GRM21BR61A226ME44 +/-0.20-mm manufacturer Table 2 lands."""
+    return passive(
+        "Murata_GRM21BR61A226ME44_2012Metric",
+        "Murata GRM21BR61A226ME44 2012 metric C3. Manufacturer Table 2 reflow lands: a=1.30, b=0.70, c=1.30 mm on 2.00-mm centres.",
+        2.00, 1.25, 0.70, 1.30, 2.00,
+    )
+
+
 def tps62133() -> str:
     """TI RGT0016C example land pattern, not a copied generic VQFN."""
     items = [
@@ -116,15 +190,15 @@ def tps62133() -> str:
     return "".join(items)
 
 
-def xfl4020() -> str:
+def xgl4020() -> str:
     return "".join((
-        '(footprint "Coilcraft_XFL4020-222MEB" (version 20240108) (generator "stage7")\n',
+        '(footprint "Coilcraft_XGL4020-222MEC" (version 20240108) (generator "stage7")\n',
         '  (layer "F.Cu")\n',
-        '  (descr "Coilcraft XFL4020-222MEB. Manufacturer recommended land pattern: two 0.98x3.40 mm lands on 3.35-mm centres; dashed mark identifies pin 1/start lead.")\n',
-        '  (attr smd)\n', text("reference", "L", 0, -2.75, "F.SilkS"), text("value", "XFL4020-222MEB", 0, 2.75, "F.Fab"),
+        '  (descr "Coilcraft XGL4020-222MEC. Drawing 1529-3: two 0.98 x 3.40 mm lands on 2.37-mm centres. Silk marks the start lead at pad 1.")\n',
+        '  (attr smd)\n', text("reference", "L", 0, -2.75, "F.SilkS"), text("value", "XGL4020-222MEC", 0, 2.75, "F.Fab"),
         rect(-2.0, -2.0, 2.0, 2.0, "F.Fab", 0.10), rect(-2.55, -2.25, 2.55, 2.25, "F.CrtYd", 0.05),
         line(-2.0, -2.0, -1.25, -2.0, "F.SilkS", 0.30),
-        smd_pad("1", -1.675, 0, 0.980, 3.400, "rect"), smd_pad("2", 1.675, 0, 0.980, 3.400, "rect"), ")\n",
+        smd_pad("1", -1.185, 0, 0.980, 3.400, "rect"), smd_pad("2", 1.185, 0, 0.980, 3.400, "rect"), ")\n",
     ))
 
 
@@ -141,30 +215,71 @@ def dmp3130() -> str:
 
 
 def sn74ahct1g125() -> str:
-    """Released TI DBV0005A SOT-23-5 manufacturer land pattern.
+    """TI DBV0005A SOT-23-5 manufacturer land pattern.
 
     Source: TI SN74AHCT1G125 data sheet SCLS378P, Rev. P, and package drawing
-    DBV0005A 4214839/K, August 2024.  The 0.60 x 1.10-mm land pattern uses
-    TI's example 0.125-mm stencil apertures and an NSMD mask expansion that is
-    within the drawing's stated maximum surround.
+    DBV0005A 4214839/K, August 2024.  The drawing dimensions the opposing
+    pad-row centrelines at 2.60 mm and the three-lead-side centres at
+    2 x 0.95 mm.  Lands are 0.60 x 1.10 mm with R0.05 mm corners.
     """
     return "".join((
-        '(footprint "TI_SN74AHCT1G125DBVR_SOT23-5" (version 20240108) (generator "rev1-u3-dbv-release")\n',
+        '(footprint "TI_SN74AHCT1G125DBVR_SOT23-5" (version 20240108) (generator "u3-ti-dbv-correction")\n',
         '  (layer "F.Cu")\n',
         '  (descr "TI SN74AHCT1G125DBVR, DBV0005A SOT-23-5 released land pattern; TI drawing 4214839/K, 08/2024.")\n',
         '  (attr smd)\n', text("reference", "U", 0, -2.35, "F.SilkS"), text("value", "SN74AHCT1G125DBVR", 0, 2.35, "F.Fab", 0.75),
-        line(-1.500, -0.875, 1.500, -0.875, "F.Fab", 0.100),
-        line(1.500, -0.875, 1.500, 0.875, "F.Fab", 0.100),
-        line(1.500, 0.875, -1.000, 0.875, "F.Fab", 0.100),
-        line(-1.000, 0.875, -1.500, 0.375, "F.Fab", 0.100),
-        line(-1.500, 0.375, -1.500, -0.875, "F.Fab", 0.100),
-        rect(-1.750, -1.800, 1.750, 1.800, "F.CrtYd", 0.050),
-        '  (fp_circle (center -1.550 1.500) (end -1.400 1.500) (stroke (width 0.150) (type default)) (fill none) (layer "F.SilkS"))\n',
-        '  (pad "1" smd roundrect (at -0.950 0.750) (size 0.600 1.100) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.166667) (solder_mask_margin 0.050))\n',
-        '  (pad "2" smd roundrect (at 0.000 0.750) (size 0.600 1.100) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.166667) (solder_mask_margin 0.050))\n',
-        '  (pad "3" smd roundrect (at 0.950 0.750) (size 0.600 1.100) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.166667) (solder_mask_margin 0.050))\n',
-        '  (pad "4" smd roundrect (at 0.475 -0.750) (size 0.600 1.100) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.166667) (solder_mask_margin 0.050))\n',
-        '  (pad "5" smd roundrect (at -0.475 -0.750) (size 0.600 1.100) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.166667) (solder_mask_margin 0.050))\n',
+        line(-0.800, -1.450, 0.800, -1.450, "F.Fab", 0.100),
+        line(0.800, -1.450, 0.800, 1.450, "F.Fab", 0.100),
+        line(0.800, 1.450, -0.300, 1.450, "F.Fab", 0.100),
+        line(-0.300, 1.450, -0.800, 0.950, "F.Fab", 0.100),
+        line(-0.800, 0.950, -0.800, -1.450, "F.Fab", 0.100),
+        rect(-1.800, -2.100, 1.800, 2.100, "F.CrtYd", 0.050),
+        '  (fp_circle (center -1.550 1.750) (end -1.400 1.750) (stroke (width 0.150) (type default)) (fill none) (layer "F.SilkS"))\n',
+        '  (pad "1" smd roundrect (at -0.950 1.300) (size 0.600 1.100) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.083333) (solder_mask_margin 0.050))\n',
+        '  (pad "2" smd roundrect (at 0.000 1.300) (size 0.600 1.100) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.083333) (solder_mask_margin 0.050))\n',
+        '  (pad "3" smd roundrect (at 0.950 1.300) (size 0.600 1.100) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.083333) (solder_mask_margin 0.050))\n',
+        '  (pad "4" smd roundrect (at 0.950 -1.300) (size 0.600 1.100) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.083333) (solder_mask_margin 0.050))\n',
+        '  (pad "5" smd roundrect (at -0.950 -1.300) (size 0.600 1.100) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.083333) (solder_mask_margin 0.050))\n',
+        ')\n',
+    ))
+
+
+def tlv1117lv33_dcy_sot223() -> str:
+    """TI TLV1117LV DCY land pattern, drawing 4210278/C.
+
+    The drawing is included in the TLV1117LV Rev. C (SBVS160C) datasheet and
+    defines copper, preferred NSMD mask treatment, and the 0.125-mm stencil
+    example.  The footprint axes rotate the drawing 90 degrees.
+    """
+    return "".join((
+        '(footprint "TI_TLV1117LV33DCYR_DCY_SOT223" (version 20240108) (generator "stage7")\n',
+        '  (layer "F.Cu")\n',
+        '  (descr "TI TLV1117LV33DCYR DCY/SOT-223 manufacturer land pattern; TI TLV1117LV Rev. C drawing 4210278/C. Pin 2 includes lead and tab.")\n',
+        '  (tags "TI TLV1117LV33DCYR DCY SOT-223 4210278C")\n',
+        '  (attr smd)\n',
+        text("reference", "U", 0, -4.5, "F.SilkS"),
+        text("value", "TLV1117LV33DCYR", 0, 4.5, "F.Fab"),
+        line(-4.10, -3.41, 1.91, -3.41, "F.SilkS", 0.12),
+        line(-1.85, 3.41, 1.91, 3.41, "F.SilkS", 0.12),
+        line(1.91, -3.41, 1.91, -2.15, "F.SilkS", 0.12),
+        line(1.91, 3.41, 1.91, 2.15, "F.SilkS", 0.12),
+        rect(-4.40, -3.60, 4.40, 3.60, "F.CrtYd", 0.05),
+        line(-1.85, -2.35, -1.85, 3.35, "F.Fab", 0.10),
+        line(-1.85, -2.35, -0.85, -3.35, "F.Fab", 0.10),
+        line(-1.85, 3.35, 1.85, 3.35, "F.Fab", 0.10),
+        line(-0.85, -3.35, 1.85, -3.35, "F.Fab", 0.10),
+        line(1.85, -3.35, 1.85, 3.35, "F.Fab", 0.10),
+        '  (fp_text user "${REFERENCE}" (at 0 0 90) (layer "F.Fab")\n'
+        '    (effects (font (size 0.800 0.800) (thickness 0.120)))\n'
+        '  )\n',
+        '  (pad "1" smd rect (at -2.900 -2.300) (size 2.150 0.950) (layers "F.Cu" "F.Paste" "F.Mask") (solder_mask_margin 0.050))\n',
+        '  (pad "2" smd rect (at -2.900 0.000) (size 2.150 0.950) (layers "F.Cu" "F.Paste" "F.Mask") (solder_mask_margin 0.050))\n',
+        '  (pad "2" smd rect (at 2.900 0.000) (size 2.150 3.250) (layers "F.Cu" "F.Paste" "F.Mask") (solder_mask_margin 0.050))\n',
+        '  (pad "3" smd rect (at -2.900 2.300) (size 2.150 0.950) (layers "F.Cu" "F.Paste" "F.Mask") (solder_mask_margin 0.050))\n',
+        '  (model "${KICAD6_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-223.wrl"\n'
+        '    (offset (xyz 0 0 0))\n'
+        '    (scale (xyz 1 1 1))\n'
+        '    (rotate (xyz 0 0 0))\n'
+        '  )\n',
         ')\n',
     ))
 
@@ -200,13 +315,51 @@ def jst_xh_b2b_xh_a() -> str:
 
 
 def smbj10ca() -> str:
-    # Littelfuse specifies the DO-214AA envelope. The copper lands are the
-    # audited project/IPC pattern and must be validated by the assembler.
-    return passive("Littelfuse_SMBJ10CA_DO214AA", "Littelfuse SMBJ10CA in DO-214AA/SMB, 4.06..4.75 x 3.30..3.94 mm official package envelope; 2.50x2.30 mm lands are project IPC nominal.", 4.60, 4.00, 2.50, 2.30, 4.30)
+    """Littelfuse SMBJ/DO-214AA manufacturer-recommended land pattern.
+
+    Littelfuse SMBJ series drawing Rev. JC defines 2.160 x 2.260 mm lands,
+    a 2.740-mm inner gap, and therefore a 4.900-mm centre pitch.  The F.Fab
+    body uses the midpoint of the official package limits: 4.405 x 3.620 mm.
+    SMBJ10CA is bidirectional, so neither land carries a polarity constraint.
+    """
+    return "".join((
+        '(footprint "Littelfuse_SMBJ10CA_DO214AA" (version 20240108) (generator "stage7")\n',
+        '  (layer "F.Cu")\n',
+        '  (descr "Littelfuse SMBJ10CA bidirectional TVS in DO-214AA/SMB. Manufacturer recommended solder lands: 2.160x2.260 mm, 2.740-mm inner gap, 4.900-mm centre pitch.")\n',
+        '  (attr smd)\n',
+        text("reference", "REF**", 0, -2.810, "F.SilkS"),
+        text("value", "Littelfuse_SMBJ10CA_DO214AA", 0, 2.810, "F.Fab", 0.75),
+        rect(-2.2025, -1.810, 2.2025, 1.810, "F.Fab", 0.10),
+        rect(-3.800, -2.500, 3.800, 2.500, "F.CrtYd", 0.05),
+        smd_pad("1", -2.450, 0, 2.160, 2.260),
+        smd_pad("2", 2.450, 0, 2.160, 2.260),
+        ")\n",
+    ))
 
 
 def fuse_1812() -> str:
-    return passive("Littelfuse_1812L200_16_4532Metric", "Littelfuse 1812L200/16 PolySwitch, 1812 (4532 metric) body. 1.125x3.40 lands on 4.275-mm centres are project IPC nominal; official data confirms part family and ratings, not a release-specific PCB land pattern.", 4.50, 3.20, 1.125, 3.40, 4.275)
+    """Littelfuse 1812L manufacturer-recommended pad layout.
+
+    The official 1812L Series drawing (Rev. GD, 06/10/24) specifies each
+    land as F=1.78 mm by H=3.15 mm and G=3.45 mm between the inner land
+    edges.  The resulting land-centre pitch is F+G=5.23 mm.  The F.Fab body
+    uses the midpoint of the official A and B limits: 4.55 x 3.24 mm.
+    """
+    return "".join((
+        '(footprint "Littelfuse_1812L200_16_4532Metric" (version 20240108) (generator "stage7")\n',
+        '  (layer "F.Cu")\n',
+        '  (descr "Littelfuse 1812L200/16 PolySwitch. Official 1812L recommended pad layout: each land 1.78x3.15 mm, 3.45-mm inner gap, 5.23-mm centre pitch.")\n',
+        '  (attr smd)\n',
+        text("reference", "REF**", 0, -2.60, "F.SilkS"),
+        text("value", "Littelfuse_1812L200_16_4532Metric", 0, 2.60, "F.Fab", 0.75),
+        rect(-2.275, -1.620, 2.275, 1.620, "F.Fab", 0.10),
+        # The manufacturer lands extend to local X +/-3.505 mm.  Preserve
+        # the reviewed 0.045-mm copper containment and connector clearance.
+        rect(-3.550, -2.120, 3.550, 2.120, "F.CrtYd", 0.05),
+        smd_pad("1", -2.615, 0, 1.780, 3.150),
+        smd_pad("2", 2.615, 0, 1.780, 3.150),
+        ")\n",
+    ))
 
 
 def header(name: str, positions: int) -> str:
@@ -228,6 +381,38 @@ def header(name: str, positions: int) -> str:
     contents.extend(pad(str(index + 1), 0, index * 2.54, index == 0) for index in range(positions))
     contents.append(")\n")
     return "".join(contents)
+
+
+def samtec_tsw_102_07_g_s() -> str:
+    """Samtec TSW-102-07-G-S manufacturer-recommended PCB geometry.
+
+    Samtec drawing TSW-XXX-XX-X-X-XX-XXX defines the populated part as a
+    two-position, single-row, 2.54-mm-pitch strip with 0.635-mm square posts.
+    The official TSW recommended PCB layout specifies 1.02-mm finished holes.
+    The 1.70-mm copper diameter is the reviewed project annular-ring choice.
+    """
+    name = "Samtec_TSW-102-07-G-S_1x02_P2.54mm_THT"
+    return "".join((
+        f'(footprint "{name}" (version 20240108) (generator "stage7")\n',
+        '  (layer "F.Cu")\n',
+        '  (descr "Samtec TSW-102-07-G-S straight single-row header. Official TSW layout: 2.54-mm pitch, 1.02-mm finished holes for 0.635-mm square posts; 1.70-mm copper is the reviewed project annular-ring choice.")\n',
+        '  (tags "Samtec TSW-102-07-G-S 2.54mm THT")\n',
+        '  (attr through_hole)\n',
+        text("reference", "JP", 0, -2.50, "F.SilkS"),
+        text("value", name, 0, 5.04, "F.Fab", 0.75),
+        line(-1.270, -0.635, -0.635, -1.270, "F.Fab", 0.10),
+        line(-0.635, -1.270, 1.270, -1.270, "F.Fab", 0.10),
+        line(1.270, -1.270, 1.270, 3.810, "F.Fab", 0.10),
+        line(1.270, 3.810, -1.270, 3.810, "F.Fab", 0.10),
+        line(-1.270, 3.810, -1.270, -0.635, "F.Fab", 0.10),
+        rect(-1.350, -1.400, 1.350, 3.940, "F.SilkS", 0.12),
+        line(-1.350, -1.400, -0.350, -1.400, "F.SilkS", 0.35),
+        rect(-1.850, -1.900, 1.850, 4.440, "F.CrtYd", 0.05),
+        text("user", "${REFERENCE}", 0, 1.270, "F.Fab"),
+        '  (pad "1" thru_hole rect (at 0 0) (size 1.700 1.700) (drill 1.020) (layers "*.Cu" "*.Mask"))\n',
+        '  (pad "2" thru_hole oval (at 0 2.540) (size 1.700 1.700) (drill 1.020) (layers "*.Cu" "*.Mask"))\n',
+        ")\n",
+    ))
 
 
 def pin_header(name: str, positions: int) -> str:
@@ -399,10 +584,13 @@ def main() -> None:
     # This managed candidate belonged only to the removed onboard D2.  Delete
     # it reproducibly so an older generated library cannot silently retain it.
     (LIBRARY / "WorldSemi_WS2812B-V5_PLACEMENT_CANDIDATE_NOT_RELEASED.kicad_mod").unlink(missing_ok=True)
+    # Remove the obsolete land pattern with incorrectly spaced centres.
+    (LIBRARY / "Coilcraft_XFL4020-222MEB.kicad_mod").unlink(missing_ok=True)
     footprints = {
         "Samtec_SSW_1x15_P2.54mm_THT.kicad_mod": header("Samtec_SSW_1x15_P2.54mm_THT", 15),
         "Samtec_SSW_1x07_P2.54mm_THT.kicad_mod": header("Samtec_SSW_1x07_P2.54mm_THT", 7),
         "Samtec_SSW_1x04_P2.54mm_THT.kicad_mod": header("Samtec_SSW_1x04_P2.54mm_THT", 4),
+        "Samtec_TSW-102-07-G-S_1x02_P2.54mm_THT.kicad_mod": samtec_tsw_102_07_g_s(),
         "PinHeader_1x03_P2.54mm_Vertical.kicad_mod": pin_header("PinHeader_1x03_P2.54mm_Vertical", 3),
         "PinHeader_1x06_P2.54mm_Vertical.kicad_mod": pin_header("PinHeader_1x06_P2.54mm_Vertical", 6),
         "JST_B2B-XH-A_1x02_P2.50mm_THT.kicad_mod": jst_xh_b2b_xh_a(),
@@ -411,15 +599,20 @@ def main() -> None:
         "OLED_0p96_4pin_MechanicalTemplate_PENDING_DATUM.kicad_mod": oled_template(),
         "MountingHole_M3_NPTH_REV1.kicad_mod": mounting_hole_m3_npth(),
         "TI_TPS62133RGT_RGT0016C.kicad_mod": tps62133(),
-        "Coilcraft_XFL4020-222MEB.kicad_mod": xfl4020(),
+        "Coilcraft_XGL4020-222MEC.kicad_mod": xgl4020(),
         "Diodes_DMP3130LQ-7_SOT23.kicad_mod": dmp3130(),
         "TI_SN74AHCT1G125DBVR_SOT23-5.kicad_mod": sn74ahct1g125(),
+        "TI_TLV1117LV33DCYR_DCY_SOT223.kicad_mod": tlv1117lv33_dcy_sot223(),
         "TestPoint_THT_1p0mm_PROTOTYPE.kicad_mod": testpoint(),
         "Littelfuse_SMBJ10CA_DO214AA.kicad_mod": smbj10ca(),
         "Littelfuse_1812L200_16_4532Metric.kicad_mod": fuse_1812(),
-        "Murata_GRM21_2012Metric.kicad_mod": passive("Murata_GRM21_2012Metric", "Murata GRM21 2012 metric (0805) capacitor case used by C1/C3/C9/C10; 1.15x1.40 lands on 2.00-mm centres are project IPC nominal.", 2.00, 1.25, 1.15, 1.40, 2.00),
-        "Murata_GRM188_1608Metric.kicad_mod": passive("Murata_GRM188_1608Metric", "Murata GRM188 1608 metric (0603) capacitor case used by C2/C4/C5/C6/C7/C8; 0.95x1.00 lands on 1.45-mm centres are project IPC nominal.", 1.60, 0.80, 0.95, 1.00, 1.45),
-        "Resistor_0603_1608Metric.kicad_mod": passive("Resistor_0603_1608Metric", "0603 (1608 metric) resistor footprint used by R1/R2/R3/R4/R8/R9/R10/R11; 0.95x1.00 lands on 1.45-mm centres are project IPC nominal.", 1.60, 0.80, 0.95, 1.00, 1.45),
+        "Murata_GRM21_2012Metric.kicad_mod": murata_grm21_standard(),
+        "Murata_GRM21BR61A226ME44_2012Metric.kicad_mod": murata_grm21_c3(),
+        "Murata_GRM188_1608Metric.kicad_mod": murata_grm188_standard(),
+        "Murata_GRM188R61A106MAAL_1608Metric.kicad_mod": murata_grm188_c5(),
+        "Resistor_0603_1608Metric.kicad_mod": yageo_rc0603(),
+        "Vishay_CRCW0603_Reflow.kicad_mod": vishay_crcw0603(),
+        "UniRoyal_0603W_Reflow.kicad_mod": uni_royal_0603w(),
     }
     for filename, content in footprints.items():
         (LIBRARY / filename).write_text(content, encoding="utf-8")

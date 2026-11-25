@@ -1,0 +1,65 @@
+{
+  "schema": "rev1-production-metadata-v1",
+  "assembly_classes": {
+    "PCBA_POPULATE": {
+      "C1": {"manufacturer": "Murata", "mpn": "GRM21BR61E106KA73"},
+      "C2": {"manufacturer": "Murata", "mpn": "GRM188R71C104KA01D"},
+      "C3": {"manufacturer": "Murata", "mpn": "GRM21BR61A226ME44"},
+      "C4": {"manufacturer": "Murata", "mpn": "GRM1885C1H332JA01D"},
+      "C5": {"manufacturer": "Murata", "mpn": "GRM188R61A106MAAL"},
+      "C6": {"manufacturer": "Murata", "mpn": "GRM188R71C104KA01D"},
+      "C7": {"manufacturer": "Murata", "mpn": "GRM188R71C104KA01D"},
+      "C8": {"manufacturer": "Murata", "mpn": "GRM188R71C104KA01D"},
+      "C9": {"manufacturer": "Murata", "mpn": "GRM21BR61E106KA73"},
+      "C10": {"manufacturer": "Murata", "mpn": "GRM21BR61E106KA73"},
+      "D3": {"manufacturer": "Littelfuse", "mpn": "SMBJ10CA"},
+      "F1": {"manufacturer": "Littelfuse", "mpn": "1812L200/16"},
+      "J1": {"manufacturer": "Samtec", "mpn": "SSW-115-02-G-S", "description": "ESP32 carrier socket, not module"},
+      "J2": {"manufacturer": "Samtec", "mpn": "SSW-115-02-G-S", "description": "ESP32 carrier socket, not module"},
+      "J3": {"manufacturer": "Samtec", "mpn": "SSW-107-02-G-S", "description": "E220 carrier socket, not E220 module"},
+      "J4": {"manufacturer": "JST", "mpn": "B2B-XH-A"},
+      "J5": {"manufacturer": "Samtec", "mpn": "SSW-104-02-G-S", "description": "OLED carrier socket, not OLED module"},
+      "J8": {"manufacturer": "JST", "mpn": "B2B-XH-A"},
+      "JP1": {"manufacturer": "Samtec", "mpn": "TSW-102-07-G-S", "description": "2-pin header only"},
+      "L1": {"manufacturer": "Coilcraft", "mpn": "XFL4020-222MEB"},
+      "Q1": {"manufacturer": "Diodes Incorporated", "mpn": "DMP3130LQ-7"},
+      "R1": {"procurement_policy": "APPROVED_GENERIC", "package": "0603 / 1608Metric", "resistance": "100 kOhm", "tolerance": "1%", "minimum_rating": "0.1 W, 50 V, -55..125 C", "substitutions": "allowed"},
+      "R2": {"procurement_policy": "APPROVED_GENERIC", "package": "0603 / 1608Metric", "resistance": "1 MOhm", "tolerance": "1%", "minimum_rating": "0.1 W, 50 V, -55..125 C", "substitutions": "allowed"},
+      "R3": {"manufacturer": "Yageo", "mpn": "RC0603FR-0710KL"},
+      "R4": {"manufacturer": "Yageo", "mpn": "RC0603FR-073K3L"},
+      "R8": {"procurement_policy": "APPROVED_GENERIC", "package": "0603 / 1608Metric", "resistance": "10 kOhm", "tolerance": "1%", "minimum_rating": "0.1 W, 50 V, -55..125 C", "substitutions": "allowed"},
+      "R9": {"procurement_policy": "APPROVED_GENERIC", "package": "0603 / 1608Metric", "resistance": "10 kOhm", "tolerance": "1%", "minimum_rating": "0.1 W, 50 V, -55..125 C", "substitutions": "allowed"},
+      "U1": {"manufacturer": "Texas Instruments", "mpn": "TPS62133RGT"},
+      "U3": {"manufacturer": "Texas Instruments", "mpn": "SN74AHCT1G125DBVR"},
+      "U4": {"manufacturer": "Texas Instruments", "mpn": "TLV1117LV33DCYR"}
+    },
+    "MECHANICAL_NPTH": {
+      "H1": {"description": "M3 mounting hole, fabricate as 3.20-mm NPTH", "purchased_component": false},
+      "H2": {"description": "M3 mounting hole, fabricate as 3.20-mm NPTH", "purchased_component": false},
+      "H3": {"description": "M3 mounting hole, fabricate as 3.20-mm NPTH", "purchased_component": false}
+    },
+    "DNP_USER": {
+      "J6": {"description": "BUTTONS user-solder header/hole interface"},
+      "J9": {"description": "RGB OUT user-solder header/hole interface"}
+    },
+    "PLATED_TEST_HOLE": {
+      "TP1": {"net": "BAT_PLUS", "purchased_component": false},
+      "TP2": {"net": "GND", "purchased_component": false},
+      "TP3": {"net": "BUCK_IN", "purchased_component": false},
+      "TP4": {"net": "5V_SYS", "purchased_component": false},
+      "TP5": {"net": "5V_SYS", "purchased_component": false}
+    },
+    "NO_FOOTPRINT_DNP": {
+      "R10": {"description": "OLED SDA pull-up option"},
+      "R11": {"description": "OLED SCL pull-up option"}
+    },
+    "USER_INSTALLED_MODULE": {
+      "ESP32_DEVKIT": {"description": "Removable ESP32 DevKit; sockets J1/J2 are PCBA-populated"},
+      "E220_T22D": {"description": "Removable E220-400T22D or E220-900T22D; socket J3 is PCBA-populated"},
+      "OLED_0P96": {"description": "Removable OLED; socket J5 is PCBA-populated"}
+    },
+    "MANUAL_ACCESSORY": {
+      "JP1_SHUNT": {"manufacturer": "Samtec", "mpn": "SNT-100-BK-G", "description": "Separately supplied removable shunt; not a PCB footprint"}
+    }
+  }
+}

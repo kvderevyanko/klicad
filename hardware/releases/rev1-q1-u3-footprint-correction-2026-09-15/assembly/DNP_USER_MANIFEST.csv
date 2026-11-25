@@ -1,0 +1,17 @@
+Reference/Identifier,Class,Description,Factory action,User action
+J6,DNP_USER,BUTTONS user-solder header/hole interface,DO NOT POPULATE HEADER,User may solder header/wires or connect harness later
+J9,DNP_USER,RGB OUT user-solder header/hole interface,DO NOT POPULATE HEADER,User may solder header/wires or connect harness later
+TP1,PLATED_TEST_HOLE,BAT_PLUS,NO COMPONENT; retain plated probe hole,Probe only
+TP2,PLATED_TEST_HOLE,GND,NO COMPONENT; retain plated probe hole,Probe only
+TP3,PLATED_TEST_HOLE,BUCK_IN,NO COMPONENT; retain plated probe hole,Probe only
+TP4,PLATED_TEST_HOLE,5V_SYS,NO COMPONENT; retain plated probe hole,Probe only
+TP5,PLATED_TEST_HOLE,5V_SYS,NO COMPONENT; retain plated probe hole,Probe only
+R10,NO_FOOTPRINT_DNP,OLED SDA pull-up option,NO PCB FOOTPRINT,Optional pull-up remains unpopulated
+R11,NO_FOOTPRINT_DNP,OLED SCL pull-up option,NO PCB FOOTPRINT,Optional pull-up remains unpopulated
+E220_T22D,USER_INSTALLED_MODULE,Removable E220-400T22D or E220-900T22D; socket J3 is PCBA-populated,NOT SUPPLIED/PLACED BY PCBA FACTORY,User installs removable module
+ESP32_DEVKIT,USER_INSTALLED_MODULE,Removable ESP32 DevKit; sockets J1/J2 are PCBA-populated,NOT SUPPLIED/PLACED BY PCBA FACTORY,User installs removable module
+OLED_0P96,USER_INSTALLED_MODULE,Removable OLED; socket J5 is PCBA-populated,NOT SUPPLIED/PLACED BY PCBA FACTORY,User installs removable module
+JP1_SHUNT,MANUAL_ACCESSORY,Separately supplied removable shunt; not a PCB footprint,SUPPLY SEPARATELY; no PCB footprint,Manual installation/accessory
+H1,MECHANICAL_NPTH,"M3 mounting hole, fabricate as 3.20-mm NPTH",NO COMPONENT; fabricate NPTH hole,Enclosure mounting point
+H2,MECHANICAL_NPTH,"M3 mounting hole, fabricate as 3.20-mm NPTH",NO COMPONENT; fabricate NPTH hole,Enclosure mounting point
+H3,MECHANICAL_NPTH,"M3 mounting hole, fabricate as 3.20-mm NPTH",NO COMPONENT; fabricate NPTH hole,Enclosure mounting point

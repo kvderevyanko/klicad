@@ -1,0 +1,15 @@
+{
+  "scope": "L1",
+  "changed_footprints": [
+    "L1"
+  ],
+  "changed_zone_fills": [],
+  "changed_route_endpoints": 2,
+  "contract": "PASS",
+  "native_drc": 0,
+  "unconnected": 0,
+  "native_parity_baseline": 20,
+  "erc": 0,
+  "common_refill_normalization": "dfb51e4c-e86d-4bc2-86a0-24b548017a74",
+  "common_refill_normalization_handling": "Refilled baseline and candidate identical. Preserved the source fill cache."
+}

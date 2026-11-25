@@ -1,0 +1,115 @@
+{
+  "approved_u4_delta_only": true,
+  "board": "/home/kirill/codex/kicad/hardware/esp32-e220.kicad_pcb",
+  "courtyard_unchanged": true,
+  "expected_origin_rotation": [
+    20.65,
+    27.0,
+    0.0
+  ],
+  "expected_pad_numbers": [
+    "1",
+    "2",
+    "2",
+    "3"
+  ],
+  "expected_pads": [
+    {
+      "absolute_centre_mm": [
+        17.75,
+        24.7
+      ],
+      "copper_and_paste_mm": [
+        2.15,
+        0.95
+      ],
+      "local_centre_mm": [
+        -2.9,
+        -2.3
+      ],
+      "mask_opening_mm": [
+        2.25,
+        1.05
+      ],
+      "net": "/GND",
+      "number": "1"
+    },
+    {
+      "absolute_centre_mm": [
+        17.75,
+        27.0
+      ],
+      "copper_and_paste_mm": [
+        2.15,
+        0.95
+      ],
+      "local_centre_mm": [
+        -2.9,
+        0.0
+      ],
+      "mask_opening_mm": [
+        2.25,
+        1.05
+      ],
+      "net": "/AUX_3V3",
+      "number": "2"
+    },
+    {
+      "absolute_centre_mm": [
+        23.55,
+        27.0
+      ],
+      "copper_and_paste_mm": [
+        2.15,
+        3.25
+      ],
+      "local_centre_mm": [
+        2.9,
+        0.0
+      ],
+      "mask_opening_mm": [
+        2.25,
+        3.35
+      ],
+      "net": "/AUX_3V3",
+      "number": "2"
+    },
+    {
+      "absolute_centre_mm": [
+        17.75,
+        29.3
+      ],
+      "copper_and_paste_mm": [
+        2.15,
+        0.95
+      ],
+      "local_centre_mm": [
+        -2.9,
+        2.3
+      ],
+      "mask_opening_mm": [
+        2.25,
+        1.05
+      ],
+      "net": "/5V_SYS",
+      "number": "3"
+    }
+  ],
+  "fab_unchanged": true,
+  "failures": [],
+  "footprint": "Carrier:TI_TLV1117LV33DCYR_DCY_SOT223",
+  "land_pattern_basis": "TI TLV1117LV Rev. C drawing 4210278/C",
+  "manufacturer_part": "TLV1117LV33DCYR",
+  "outside_u4_pcb_delta_zero": true,
+  "package": "TI DCY / SOT-223",
+  "paste_scale": "1:1 with copper",
+  "physical_status": "MANUFACTURER LAND PATTERN PASS",
+  "reference": "/home/kirill/codex/kicad/hardware/evidence/residual-footprint-audit-2026-09-16/u4-implementation/named-backup/esp32-e220.kicad_pcb",
+  "route_delta_zero": true,
+  "schematic_connectivity_delta_zero": true,
+  "solder_mask_margin_mm": 0.05,
+  "source_local_exact": true,
+  "status": "PASS",
+  "via_delta_zero": true,
+  "zone_outline_and_config_delta_zero": true
+}

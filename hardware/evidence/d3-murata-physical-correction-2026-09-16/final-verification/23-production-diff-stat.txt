@@ -1,0 +1,10 @@
+ hardware/.history                                  |   0
+ hardware/esp32-e220.kicad_pcb                      | 288 ++++++++++-----------
+ hardware/esp32-e220.kicad_sch                      |   4 +-
+ .../Littelfuse_SMBJ10CA_DO214AA.kicad_mod          |  26 +-
+ .../Murata_GRM188_1608Metric.kicad_mod             |   6 +-
+ .../Murata_GRM21_2012Metric.kicad_mod              |  14 +-
+ hardware/generate_esp32_e220.py                    |   4 +-
+ hardware/generate_stage7_footprints.py             |  78 +++++-
+ hardware/generate_stage8_placement.py              |   4 +-
+ 9 files changed, 245 insertions(+), 179 deletions(-)

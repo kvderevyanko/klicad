@@ -1,0 +1,11 @@
+--- hardware/evidence/full-production-audit-2026-09-15/u4-library-resolution/10-esp32-e220.pre-u4-metadata.kicad_sch	2026-09-16 00:58:45.437269930 +0700
++++ hardware/esp32-e220.kicad_sch	2026-09-16 01:02:55.010476656 +0700
+@@ -858,7 +858,7 @@
+     (property "Value" "TLV1117LV33DCYR" (id 1) (at 270.51 256.54 0)
+       (effects (font (size 1.27 1.27)) hide)
+     )
+-    (property "Footprint" "Package_TO_SOT_SMD:SOT-223-3_TabPin2" (id 2) (at 265.43 255.27 0)
++    (property "Footprint" "Carrier:TI_TLV1117LV33DCYR_DCY_SOT223" (id 2) (at 265.43 255.27 0)
+       (effects (font (size 1.27 1.27)) hide)
+     )
+     (property "Datasheet" "" (id 3) (at 265.43 255.27 0)

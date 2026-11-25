@@ -1,0 +1,14 @@
+{
+  "active_pcb_sha256": "ef7cc377eb670115295f39cbd963e8910f2f4047cf5d740728abd09e1e4f25ea",
+  "archive": "hardware/releases/ESP32-E220-Carrier-Rev1-Q1-U3-Footprint-Correction-2026-09-15.zip",
+  "archive_bytes": 359365,
+  "archive_sha256": "99762aadfa42214133fe6e8995911aeda92dfc18e4e4f6dae829d83911f37ecb",
+  "checksummed_files": 31,
+  "errors": [],
+  "gate": "Q1-U3-CORRECTED RELEASE ARCHIVE INTEGRITY",
+  "legacy_release_unmodified_vs_head": true,
+  "package_self_audit": "PASS",
+  "payload_files": 32,
+  "physical_footprint_audit_disposition": "HOLD_UNVERIFIED",
+  "status": "PASS"
+}

@@ -1,0 +1,51 @@
+diff --git a/hardware/evidence/full-production-audit-2026-09-15/jp1-implementation/10-generate_stage7_footprints.pre-jp1.py b/hardware/generate_stage7_footprints.py
+index 426f8fa..6ffdc86 100644
+--- a/hardware/evidence/full-production-audit-2026-09-15/jp1-implementation/10-generate_stage7_footprints.pre-jp1.py
++++ b/hardware/generate_stage7_footprints.py
+@@ -251,6 +251,38 @@ def header(name: str, positions: int) -> str:
+     return "".join(contents)
+ 
+ 
++def samtec_tsw_102_07_g_s() -> str:
++    """Samtec TSW-102-07-G-S manufacturer-recommended PCB geometry.
++
++    Samtec drawing TSW-XXX-XX-X-X-XX-XXX defines the populated part as a
++    two-position, single-row, 2.54-mm-pitch strip with 0.635-mm square posts.
++    The official TSW recommended PCB layout specifies 1.02-mm finished holes.
++    The 1.70-mm copper diameter is the reviewed project annular-ring choice.
++    """
++    name = "Samtec_TSW-102-07-G-S_1x02_P2.54mm_THT"
++    return "".join((
++        f'(footprint "{name}" (version 20240108) (generator "stage7")\n',
++        '  (layer "F.Cu")\n',
++        '  (descr "Samtec TSW-102-07-G-S straight single-row header. Official TSW layout: 2.54-mm pitch, 1.02-mm finished holes for 0.635-mm square posts; 1.70-mm copper is the reviewed project annular-ring choice.")\n',
++        '  (tags "Samtec TSW-102-07-G-S 2.54mm THT")\n',
++        '  (attr through_hole)\n',
++        text("reference", "JP", 0, -2.50, "F.SilkS"),
++        text("value", name, 0, 5.04, "F.Fab", 0.75),
++        line(-1.270, -0.635, -0.635, -1.270, "F.Fab", 0.10),
++        line(-0.635, -1.270, 1.270, -1.270, "F.Fab", 0.10),
++        line(1.270, -1.270, 1.270, 3.810, "F.Fab", 0.10),
++        line(1.270, 3.810, -1.270, 3.810, "F.Fab", 0.10),
++        line(-1.270, 3.810, -1.270, -0.635, "F.Fab", 0.10),
++        rect(-1.350, -1.400, 1.350, 3.940, "F.SilkS", 0.12),
++        line(-1.350, -1.400, -0.350, -1.400, "F.SilkS", 0.35),
++        rect(-1.850, -1.900, 1.850, 4.440, "F.CrtYd", 0.05),
++        text("user", "${REFERENCE}", 0, 1.270, "F.Fab"),
++        '  (pad "1" thru_hole rect (at 0 0) (size 1.700 1.700) (drill 1.020) (layers "*.Cu" "*.Mask"))\n',
++        '  (pad "2" thru_hole oval (at 0 2.540) (size 1.700 1.700) (drill 1.020) (layers "*.Cu" "*.Mask"))\n',
++        ")\n",
++    ))
++
++
+ def pin_header(name: str, positions: int) -> str:
+     """Generic 2.54-mm PTH user header/solder-point footprint.
+ 
+@@ -424,6 +456,7 @@ def main() -> None:
+         "Samtec_SSW_1x15_P2.54mm_THT.kicad_mod": header("Samtec_SSW_1x15_P2.54mm_THT", 15),
+         "Samtec_SSW_1x07_P2.54mm_THT.kicad_mod": header("Samtec_SSW_1x07_P2.54mm_THT", 7),
+         "Samtec_SSW_1x04_P2.54mm_THT.kicad_mod": header("Samtec_SSW_1x04_P2.54mm_THT", 4),
++        "Samtec_TSW-102-07-G-S_1x02_P2.54mm_THT.kicad_mod": samtec_tsw_102_07_g_s(),
+         "PinHeader_1x03_P2.54mm_Vertical.kicad_mod": pin_header("PinHeader_1x03_P2.54mm_Vertical", 3),
+         "PinHeader_1x06_P2.54mm_Vertical.kicad_mod": pin_header("PinHeader_1x06_P2.54mm_Vertical", 6),
+         "JST_B2B-XH-A_1x02_P2.50mm_THT.kicad_mod": jst_xh_b2b_xh_a(),

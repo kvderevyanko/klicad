@@ -1,0 +1,5 @@
+M	hardware/.history
+M	hardware/esp32-e220.kicad_pcb
+M	hardware/esp32-e220.pretty/Resistor_0603_1608Metric.kicad_mod
+M	hardware/generate_stage7_footprints.py
+M	hardware/production-metadata.json

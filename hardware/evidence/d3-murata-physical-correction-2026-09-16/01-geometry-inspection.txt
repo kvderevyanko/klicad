@@ -1,0 +1,140 @@
+ACTIVE=/home/kirill/codex/kicad/hardware/esp32-e220.kicad_pcb
+OLD D3 footprint=Littelfuse_SMBJ10CA_DO214AA at=(41.9000,70.5000) rot=180.0
+  pad=1 net=/BAT_FUSED center=(44.0500,70.5000) size=(2.5000,2.3000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/BAT_FUSED layer=F.Cu start=(44.0500,72.5000) end=(44.0500,70.5000) width=1.0000
+  pad=2 net=/GND center=(39.7500,70.5000) size=(2.5000,2.3000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/GND layer=F.Cu start=(39.7500,70.5000) end=(38.0000,70.5000) width=1.0000
+    endpoint-in-pad: TRACK net=/GND layer=F.Cu start=(39.7500,70.5000) end=(42.2000,70.5000) width=0.5000
+  courtyard=(39.0550,67.9550)..(44.7450,73.0450)
+OLD C1 footprint=Murata_GRM21_2012Metric at=(67.7000,59.2250) rot=0.0
+  pad=1 net=/BUCK_IN center=(66.7000,59.2250) size=(1.1500,1.4000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/BUCK_IN layer=F.Cu start=(65.5000,61.0000) end=(66.7000,59.2250) width=1.0000
+    endpoint-in-pad: TRACK net=/BUCK_IN layer=F.Cu start=(66.7000,59.2250) end=(67.7000,58.3000) width=0.6000
+  pad=2 net=/GND center=(68.7000,59.2250) size=(1.1500,1.4000) local_mask_margin=inherited
+  courtyard=(66.1550,58.0550)..(69.2450,60.3950)
+OLD C2 footprint=Murata_GRM188_1608Metric at=(66.0000,56.0000) rot=180.0
+  pad=1 net=/BUCK_IN center=(66.7250,56.0000) size=(0.9500,1.0000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/BUCK_IN layer=F.Cu start=(66.7250,56.0000) end=(68.6000,55.7500) width=0.2000
+  pad=2 net=/GND center=(65.2750,56.0000) size=(0.9500,1.0000) local_mask_margin=inherited
+  courtyard=(64.6550,55.0550)..(67.3450,56.9450)
+OLD C3 footprint=Murata_GRM21_2012Metric at=(70.9000,59.2250) rot=180.0
+  pad=1 net=/5V_SYS center=(71.9000,59.2250) size=(1.1500,1.4000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/5V_SYS layer=F.Cu start=(71.5000,58.5250) end=(71.9000,59.2250) width=0.2000
+    endpoint-in-pad: TRACK net=/5V_SYS layer=F.Cu start=(73.1000,59.2250) end=(71.9000,59.2250) width=0.6000
+  pad=2 net=/GND center=(69.9000,59.2250) size=(1.1500,1.4000) local_mask_margin=inherited
+  courtyard=(69.3550,58.0550)..(72.4450,60.3950)
+OLD C4 footprint=Murata_GRM188_1608Metric at=(67.0000,53.5000) rot=-90.0
+  pad=1 net=/SS_TR center=(67.0000,52.7750) size=(0.9500,1.0000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/SS_TR layer=F.Cu start=(67.8500,52.7750) end=(67.0000,52.7750) width=0.2500
+  pad=2 net=/GND center=(67.0000,54.2250) size=(0.9500,1.0000) local_mask_margin=inherited
+  courtyard=(66.0550,52.1550)..(67.9450,54.8450)
+OLD C5 footprint=Murata_GRM188_1608Metric at=(24.0000,48.0000) rot=0.0
+  pad=1 net=/5V_SYS center=(23.2750,48.0000) size=(0.9500,1.0000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/5V_SYS layer=F.Cu start=(23.2750,43.5000) end=(23.2750,48.0000) width=0.8000
+  pad=2 net=/GND center=(24.7250,48.0000) size=(0.9500,1.0000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/GND layer=B.Cu start=(24.7250,51.0000) end=(24.7250,47.9000) width=0.2500
+    endpoint-in-pad: TRACK net=/GND layer=F.Cu start=(24.7250,48.0000) end=(24.7250,51.0000) width=0.5000
+  courtyard=(22.6550,47.0550)..(25.3450,48.9450)
+OLD C6 footprint=Murata_GRM188_1608Metric at=(21.3050,49.7500) rot=0.0
+  pad=1 net=/5V_SYS center=(20.5800,49.7500) size=(0.9500,1.0000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/5V_SYS layer=F.Cu start=(20.5800,43.5000) end=(20.5800,49.7500) width=0.8000
+    endpoint-in-pad: TRACK net=/5V_SYS layer=F.Cu start=(20.5800,49.7500) end=(20.5800,53.5000) width=0.8000
+  pad=2 net=/GND center=(22.0300,49.7500) size=(0.9500,1.0000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/GND layer=F.Cu start=(22.0300,49.7500) end=(22.0300,51.0000) width=0.5000
+  courtyard=(19.9600,48.8050)..(22.6500,50.6950)
+OLD C7 footprint=Murata_GRM188_1608Metric at=(85.5000,54.0000) rot=90.0
+  pad=1 net=/5V_SYS center=(85.5000,54.7250) size=(0.9500,1.0000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/5V_SYS layer=F.Cu start=(80.0000,54.7250) end=(85.5000,54.7250) width=0.8000
+    endpoint-in-pad: TRACK net=/5V_SYS layer=F.Cu start=(85.5000,54.7250) end=(87.0000,54.7250) width=0.5000
+  pad=2 net=/GND center=(85.5000,53.2750) size=(0.9500,1.0000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/GND layer=F.Cu start=(85.5000,53.2750) end=(85.5000,51.9000) width=0.5000
+  courtyard=(84.5550,52.6550)..(86.4450,55.3450)
+OLD C8 footprint=Murata_GRM188_1608Metric at=(88.0000,69.0000) rot=0.0
+  pad=1 net=/BAT_SENSE center=(87.2750,69.0000) size=(0.9500,1.0000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/BAT_SENSE layer=F.Cu start=(86.7250,66.0000) end=(87.2750,69.0000) width=0.2500
+  pad=2 net=/GND center=(88.7250,69.0000) size=(0.9500,1.0000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/GND layer=F.Cu start=(90.7250,69.0000) end=(88.7250,69.0000) width=0.2500
+  courtyard=(86.6550,68.0550)..(89.3450,69.9450)
+OLD C9 footprint=Murata_GRM21_2012Metric at=(17.5000,33.0000) rot=-90.0
+  pad=1 net=/5V_SYS center=(17.5000,32.0000) size=(1.1500,1.4000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/5V_SYS layer=F.Cu start=(12.0000,32.0000) end=(17.5000,32.0000) width=0.8000
+    endpoint-in-pad: TRACK net=/5V_SYS layer=F.Cu start=(17.5000,32.0000) end=(17.5000,29.3000) width=0.8000
+  pad=2 net=/GND center=(17.5000,34.0000) size=(1.1500,1.4000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/GND layer=F.Cu start=(17.5000,34.0000) end=(14.0000,34.0000) width=0.5000
+  courtyard=(16.3300,31.4550)..(18.6700,34.5450)
+OLD C10 footprint=Murata_GRM21_2012Metric at=(14.4000,27.0000) rot=180.0
+  pad=1 net=/AUX_3V3 center=(15.4000,27.0000) size=(1.1500,1.4000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/AUX_3V3 layer=F.Cu start=(15.4000,27.0000) end=(17.5000,27.0000) width=0.8000
+  pad=2 net=/GND center=(13.4000,27.0000) size=(1.1500,1.4000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/GND layer=F.Cu start=(13.4000,27.0000) end=(12.0000,27.0000) width=0.5000
+  courtyard=(12.8550,25.8300)..(15.9450,28.1700)
+CANDIDATE=/home/kirill/codex/kicad/hardware/evidence/d3-murata-physical-correction-2026-09-16/candidate-d3-murata.kicad_pcb
+NEW D3 footprint=Littelfuse_SMBJ10CA_DO214AA at=(41.9000,70.5000) rot=180.0
+  pad=1 net=/BAT_FUSED center=(44.3500,70.5000) size=(2.1600,2.2600) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/BAT_FUSED layer=F.Cu start=(44.0500,72.5000) end=(44.0500,70.5000) width=1.0000
+  pad=2 net=/GND center=(39.4500,70.5000) size=(2.1600,2.2600) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/GND layer=F.Cu start=(39.7500,70.5000) end=(38.0000,70.5000) width=1.0000
+    endpoint-in-pad: TRACK net=/GND layer=F.Cu start=(39.7500,70.5000) end=(42.2000,70.5000) width=0.5000
+  courtyard=(38.0550,67.9550)..(45.7450,73.0450)
+NEW C1 footprint=Murata_GRM21_2012Metric at=(67.7000,59.2250) rot=0.0
+  pad=1 net=/BUCK_IN center=(66.7000,59.2250) size=(1.2000,1.3000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/BUCK_IN layer=F.Cu start=(65.5000,61.0000) end=(66.7000,59.2250) width=1.0000
+    endpoint-in-pad: TRACK net=/BUCK_IN layer=F.Cu start=(66.7000,59.2250) end=(67.7000,58.3000) width=0.6000
+  pad=2 net=/GND center=(68.7000,59.2250) size=(1.2000,1.3000) local_mask_margin=inherited
+  courtyard=(66.0050,58.0550)..(69.3950,60.3950)
+NEW C2 footprint=Murata_GRM188_1608Metric at=(66.0000,56.0000) rot=180.0
+  pad=1 net=/BUCK_IN center=(66.7250,56.0000) size=(0.7000,0.7000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/BUCK_IN layer=F.Cu start=(66.7250,56.0000) end=(68.6000,55.7500) width=0.2000
+  pad=2 net=/GND center=(65.2750,56.0000) size=(0.7000,0.7000) local_mask_margin=inherited
+  courtyard=(64.6550,55.0550)..(67.3450,56.9450)
+NEW C3 footprint=Murata_GRM21_2012Metric at=(70.9000,59.2250) rot=180.0
+  pad=1 net=/5V_SYS center=(71.9000,59.2250) size=(0.7000,1.3000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/5V_SYS layer=F.Cu start=(71.5000,58.5250) end=(71.9000,59.2250) width=0.2000
+    endpoint-in-pad: TRACK net=/5V_SYS layer=F.Cu start=(73.1000,59.2250) end=(71.9000,59.2250) width=0.6000
+  pad=2 net=/GND center=(69.9000,59.2250) size=(0.7000,1.3000) local_mask_margin=inherited
+  courtyard=(69.3550,58.0550)..(72.4450,60.3950)
+NEW C4 footprint=Murata_GRM188_1608Metric at=(67.0000,53.5000) rot=-90.0
+  pad=1 net=/SS_TR center=(67.0000,52.7750) size=(0.7000,0.7000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/SS_TR layer=F.Cu start=(67.8500,52.7750) end=(67.0000,52.7750) width=0.2500
+  pad=2 net=/GND center=(67.0000,54.2250) size=(0.7000,0.7000) local_mask_margin=inherited
+  courtyard=(66.0550,52.1550)..(67.9450,54.8450)
+NEW C5 footprint=Murata_GRM188_1608Metric at=(24.0000,48.0000) rot=0.0
+  pad=1 net=/5V_SYS center=(23.2750,48.0000) size=(0.7500,0.9000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/5V_SYS layer=F.Cu start=(23.2750,43.5000) end=(23.2750,48.0000) width=0.8000
+  pad=2 net=/GND center=(24.7250,48.0000) size=(0.7500,0.9000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/GND layer=B.Cu start=(24.7250,51.0000) end=(24.7250,47.9000) width=0.2500
+    endpoint-in-pad: TRACK net=/GND layer=F.Cu start=(24.7250,48.0000) end=(24.7250,51.0000) width=0.5000
+  courtyard=(22.6550,47.0550)..(25.3450,48.9450)
+NEW C6 footprint=Murata_GRM188_1608Metric at=(21.3050,49.7500) rot=0.0
+  pad=1 net=/5V_SYS center=(20.5800,49.7500) size=(0.7000,0.7000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/5V_SYS layer=F.Cu start=(20.5800,43.5000) end=(20.5800,49.7500) width=0.8000
+    endpoint-in-pad: TRACK net=/5V_SYS layer=F.Cu start=(20.5800,49.7500) end=(20.5800,53.5000) width=0.8000
+  pad=2 net=/GND center=(22.0300,49.7500) size=(0.7000,0.7000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/GND layer=F.Cu start=(22.0300,49.7500) end=(22.0300,51.0000) width=0.5000
+  courtyard=(19.9600,48.8050)..(22.6500,50.6950)
+NEW C7 footprint=Murata_GRM188_1608Metric at=(85.5000,54.0000) rot=90.0
+  pad=1 net=/5V_SYS center=(85.5000,54.7250) size=(0.7000,0.7000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/5V_SYS layer=F.Cu start=(80.0000,54.7250) end=(85.5000,54.7250) width=0.8000
+    endpoint-in-pad: TRACK net=/5V_SYS layer=F.Cu start=(85.5000,54.7250) end=(87.0000,54.7250) width=0.5000
+  pad=2 net=/GND center=(85.5000,53.2750) size=(0.7000,0.7000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/GND layer=F.Cu start=(85.5000,53.2750) end=(85.5000,51.9000) width=0.5000
+  courtyard=(84.5550,52.6550)..(86.4450,55.3450)
+NEW C8 footprint=Murata_GRM188_1608Metric at=(88.0000,69.0000) rot=0.0
+  pad=1 net=/BAT_SENSE center=(87.2750,69.0000) size=(0.7000,0.7000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/BAT_SENSE layer=F.Cu start=(86.7250,66.0000) end=(87.2750,69.0000) width=0.2500
+  pad=2 net=/GND center=(88.7250,69.0000) size=(0.7000,0.7000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/GND layer=F.Cu start=(90.7250,69.0000) end=(88.7250,69.0000) width=0.2500
+  courtyard=(86.6550,68.0550)..(89.3450,69.9450)
+NEW C9 footprint=Murata_GRM21_2012Metric at=(17.5000,33.0000) rot=-90.0
+  pad=1 net=/5V_SYS center=(17.5000,32.0000) size=(1.2000,1.3000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/5V_SYS layer=F.Cu start=(12.0000,32.0000) end=(17.5000,32.0000) width=0.8000
+    endpoint-in-pad: TRACK net=/5V_SYS layer=F.Cu start=(17.5000,32.0000) end=(17.5000,29.3000) width=0.8000
+  pad=2 net=/GND center=(17.5000,34.0000) size=(1.2000,1.3000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/GND layer=F.Cu start=(17.5000,34.0000) end=(14.0000,34.0000) width=0.5000
+  courtyard=(16.3300,31.3050)..(18.6700,34.6950)
+NEW C10 footprint=Murata_GRM21_2012Metric at=(14.4000,27.0000) rot=180.0
+  pad=1 net=/AUX_3V3 center=(15.4000,27.0000) size=(1.2000,1.3000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/AUX_3V3 layer=F.Cu start=(15.4000,27.0000) end=(17.5000,27.0000) width=0.8000
+  pad=2 net=/GND center=(13.4000,27.0000) size=(1.2000,1.3000) local_mask_margin=inherited
+    endpoint-in-pad: TRACK net=/GND layer=F.Cu start=(13.4000,27.0000) end=(12.0000,27.0000) width=0.5000
+  courtyard=(12.7050,25.8300)..(16.0950,28.1700)

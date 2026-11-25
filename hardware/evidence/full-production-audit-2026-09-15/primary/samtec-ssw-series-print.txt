@@ -1,0 +1,250 @@
+REVISION CL                                                                                                                                         SSW-1XX-XX-XXX-X-XX-XXX-XX
+                                                                                                                                                                                                                                    OPTION
+                                                                                                                                 No OF POSITIONS                                                                                    -LL: LOCKING LEAD
+     DO NOT                                                                                                                      -01 THRU -50                                                                                           (SEE FIG 4, SHT 2)
+   SCALE FROM                                                                                                                    (-P OPTION: 36 POS MAX)                                                                                (N/A IN SINGLE ROW,
+    THIS PRINT                                                                                                                                                                                                                           1 & 2 POSITION)
+                                                                                                                                  LEAD STYLE
+                                                                                                                                  (SEE TABLE 1)                                                                          POLARIZING OPTION
+                                                                                                                                  -01 THRU -06 (STD. INS. FORCE)                                                         INDICATE POS, SEE FIG 3, SHT 3
+                                                                                                                                  -21 THRU -24 (LOW INS. FORCE)
+                                                                                                                                                                OPTION
+                                                                                                                                                                -RA: RIGHT ANGLE (SEE FIG 2, SHT 2)
+                                                                                                              PLATING SPECIFICATION                                   (STYLE -01 & -21 N/A)
+                                                                                                              -G: 20µ" GOLD IN CONTACT AREA,                    -N: NOTCH (SEE FIG 6, SHT 3)
+                                                                                                                    3µ" GOLD ON TAIL                                (ONLY AVAILABLE IN -D ROW)
+                                                                                                              -T: MATTE TIN CONTACT AND TAIL                        (ONLY AVAILABLE IN 5, 7, 8, 10, 12,
+                                                                                                                  (CONTACT -21 THRU -24 N/A)                          13, 15, 17, 20, 25, 32, 36 POSITIONS)
+                                                                                                              -S: 30µ" SELECTIVE GOLD IN CONTACT AREA,              (USE NSW-XX-D-N-XX BODY,
+                                                                                                                  MATTE TIN ON TAIL                                  SEE TABLE 6)
+                                                                                                              -H: 30µ" HEAVY GOLD IN CONTACT AREA,
+                                                                                                                   3µ" GOLD ON TAIL                                ROW     SPECIFICATION
+                                                                                                              -E: 50µ" EXTRA HEAVY GOLD IN CONTACT AREA,           -S: SINGLE
+                                                                                                                  3µ" GOLD ON TAIL                                 -D: DOUBLE
+                                                                                                                  (CONTACT -01 & -02 STRAIGHT ONLY)                -T: TRIPLE
+                                                                                                              -F: 3µ" FLASH SELECTIVE GOLD IN CONTACT AREA,        -P: SINGLE
+                                                                                                                  MATTE TIN ON TAIL                                -Q: TRIPLE WITH ONLY OUTER 2 ROWS
+                                                                                                              -STL: 30µ" SELECTIVE GOLD IN CONTACT AREA,                FILLED
+                                                                                                                    TIN/LEAD (90/10 ± 5%) TAIL
+                                                                                                              -TL: TIN/LEAD (90/10 ± 5%) CONTACT AND TAIL                   .295 7.493
+                                                                                                                   (AVAILABLE ONLY ON LEAD STYLES -01)                          REF
+                                                                                                              -TM: MATTE TIN CONTACT AND TAIL (CONTACT -21 THRU -24 N/A)
+                                                                                                              -SM: 30µ" SELECTIVE GOLD IN CONTACT AREA,
+                                                                                                                     MATTE TIN ON TAIL
+                                                                                                              -FM: 3µ" FLASH GOLD SELECTIVE IN CONTACT AREA,
+                                                                                                                     MATTE TIN ON TAIL
+                                                                                                              -L: 10µ" LIGHT SELECTIVE GOLD IN CONTACT AREA,
+                                                                                                                  MATTE TIN ON TAIL
+
+                                                                                                                                                                                                                               .200 5.08
+                                                                                                                                                                                                                    .050 1.27 REF                 -Q
+                                         ((No OF POS x .100[2.54])
+                                          + .020[0.51] .010[0.25])                                .095 2.41                                                                 .245 6.22
+                                                                                                      REF
+                                                                                                                                                                                                                                            .295 7.493
+                                                                                      .095 2.41                                            .195 4.95
+              SEE NOTE 10                                                                 REF                                                  REF                                                                                              REF
+ 60°
+
+              .0110 0.280                                                                                                             SEE NOTE 8
+                                                                          .335 8.51
+                   REF
+   DETAIL 'A'
+   SCALE 4 : 1
+                                                                              "B" C
+                                                                                                                                                                                                                           C
+                            'A'                                                                    -S                      -P
+                       2 MAX SWAY            .031 0.79 X .016[0.41]                                                                    .100 2.54              "G"                                           -D-N          .100 2.54 ±"G"
+                    (EITHER DIRECTION)              REF (TYP)                                                                           C                                     -D
+NOTES:
+   C
+                                                                                                                                                                                                                               .200 5.08
+ 1.     REPRESENTS A CRITICAL DIMENSION.                                                                                                                                             FIG 1                                                        -T
+ 2. MAXIMUM CUT FLASH: .015[0.38] WITH NO FLASH BELOW STANDOFFS OR IN CONTACT HOLES.
+ 3. MINIMUM CONTACT PUSHOUT FORCE: 1.5 LBS                                                         UNLESS OTHERWISE SPECIFIED,                  *           PROPRIETARY NOTE                    *
+ 4. MAXIMUM ALLOWABLE BOW: .003[0.08] INCH/INCH                                                    DIMENSIONS ARE IN INCHES.
+                                                                                                                                               THIS DOCUMENT CONTAINS CONFIDENTIAL AND
+                                                                                                                                               PROPRIETARY INFORMATION AND ALL DESIGN,
+ 5. NOTE DELETED.                                                                                  TOLERANCES ARE:                             MANUFACTURING, REPRODUCTION, USE, PATENT RIGHTS
+ 6. NOTE DELETED.                                                                                  DECIMALS                ANGLES
+                                                                                                                                               AND SALES RIGHTS ARE EXPRESSLY RESERVED BY SAMTEC,
+                                                                                                                                               INC. THIS DOCUMENT SHALL NOT BE DISCLOSED, IN WHOLE
+ 7. "END WALLS" AFTER CUTTING SHOULD BE .020±.003 [0.51±0.08].                                     .XX: .01 [0.3]                2             OR PART, TO ANY UNAUTHORIZED PERSON OR ENTITY NOR
+                                                                                                                                                                                                              520 PARK EAST BLVD, NEW ALBANY, IN 47150
+ 8. NOTCH ON -P-RA & -D-RA-N OPTIONS TO BE ORIENTED AS SHOWN.                                      .XXX: .005 [0.13]                           REPRODUCED, TRANSFERRED OR INCORPORATED IN ANY
+                                                                                                                                                                                                              PHONE: 812-944-6733    FAX: 812-948-5047
+ 9. SHEAR LOCATION TO BE WITHIN .001[0.03] OF THE BREAK OFF CENTER LOCATION.
+                                                                                                                                               OTHER PROJECT IN ANY MANNER WITHOUT THE EXPRESS
+                                                                                                                                               WRITTEN CONSENT OF SAMTEC, INC.                                e-Mail info@SAMTEC.com       code 55322
+10. SHEAR LOCATION TO BE WITHIN .001[0.03] OF THE BREAK OFF CENTER LOCATION                       MATERIAL:
+                                                                                                                                  DO NOT SCALE DRAWING                     SHEET SCALE: 2:1          DESCRIPTION:
+    FOR MACHINE FILL.                                                                               INSULATOR:
+
+11. LEAD STYLE X2 (SINGLE AND DOUBLE) -RA’S AND ALL -THROUGH HOLE LEAD STYLES
+                                                                                                      -S, -D, -D-N: VECTRA E130i, COLOR: BLACK UL94 V0
+                                                                                                      -P, -T: PCT, COLOR: BLACK UL94 V0                                                               ASSEMBLY, SOCKET STRIP .016 X .031 TAIL
+                                                                                                    CONTACT: PHOSPHOR BRONZE, SPRING TEMPER
+    TO BE LAYER PACKAGED. ALL OTHER -RA’S LEAD STYLES: (1 TO 4) POSITIONS TO                                     ALLOY 511 OR 510                                                                    DWG. NO.
+
+                                                                                                                                                                                                        SSW-1XX-XX-XXX-X-XX-XXX-XX
+                                                                                                                 (TENSILE STRENGTH 90-100 KSI)
+    BE LAYER PACKAGED, 5 AND UP TO BE PACKAGED IN TUBES.                                                         (YEILD STRENGTH @ 2% OFFSET 88-98 KSI)
+
+12. ORDERS WILL BE PACKAGED ACCORDING TO THE SAMTEC PACKAGING EFFICIENCY                                         PER MIL-B-13501
+                                                                                                                 THICKNESS: .0160±.001 [0.635±0.03]
+    STANDARDS (SPES) FOUND ON WWW.SAMTEC.COM                                                      c:\enterprisevault\DWG\MISC\MKTG\SSW-1XX-XX-XXX-X-XX-XXX-XX-MKT.SLDDRW
+                                                                                                                                                                                                     BY: PURVIS             06/12/1987       SHEET 1 OF 3
+REVISION CL
+
+
+                                                                                 SEE NOTE 8                                                    SEE NOTE 8
+
+                               C
+   C   90°                    .06 1.524
+
+
+
+                                                              -P-RA
+                                                                                                                                                                                                                                   C "D"
+                                "C"
+                                                                         C .100 2.54                      C .100 2.54                        C .200 5.08
+                       (SEE TABLE 2, SHEET 1)                                                                                                                                                                     C "E"
+          -S-RA
+                                                                                                                         -D-RA-N                                                                                                                             "F" C
+                                                                                            -D-RA                                                                -T-RA
+
+                                                                                                            FIG 2
+                                                                                                      RIGHT ANGLE OPTION
+                                                                                    ALL OPTIONS DIFFERENT AS SHOWN, OTHERWISE SAME AS -S-RA
+                                                                                                                                                                                                                                          IN-PROCESS
+
+
+                                                   CL                                  CL                      CL
+              CL                                                           01
+   01
+                                                                                                                                   .04 1.0
+
+
+                                                               01                    -D-N
+              -S                                  -D                                                                     01
+                                                               CRIMP LOCATIONS                                 -T
+                                                                                                                                                  -S-LL                  -D-LL                                         -T-LL
+                                                                     ODD POSITIONS                                                                                                                                                              R.0560 1.422 (TYP)
+                                                                    = CRIMP LOCATION
+
+                                                                                                                                                                                                                                                               R.0320 0.813
+                                                        CL                                  CL                      CL                                                                                                                                             (TYP)
+               CL                                                            01
+  01                                                                                                                                                                                                                                                    .008+-.005     +0.13
+                                                                                                                                    .04 1.0                                                                                                                   .000 0.20 0.00
+                                                                                                                                                                                                                                                           C (TYP)
+
+                                                                    01
+                                                         -D                            -D-N
+               -S                                                                                                             01                                                                                                             CRIMP DETAIL
+                                                                                                                    -T                           -S-RA-LL              -D-RA-LL                                                           ALL CONFIGURATIONS
+                                                                CRIMP LOCATIONS
+                                                                     EVEN POSITIONS                                                                                                                                 -T-RA-LL
+                                                                    = CRIMP LOCATION
+
+
+                                                                                            FIG 4
+                                                                             LOCKING LEAD OPTION                                                             *           PROPRIETARY NOTE                    *
+                                                                          ALL OPTIONS SAME AS -S-XX-LL                                                      THIS DOCUMENT CONTAINS CONFIDENTIAL AND
+                                                                                                                                                            PROPRIETARY INFORMATION AND ALL DESIGN,
+                                                                           UNLESS OTHERWISE SHOWN                                                           MANUFACTURING, REPRODUCTION, USE, PATENT RIGHTS
+                                                                                                                                                            AND SALES RIGHTS ARE EXPRESSLY RESERVED BY SAMTEC,
+                                                                                                                                                            INC. THIS DOCUMENT SHALL NOT BE DISCLOSED, IN WHOLE
+                                                                                                                                                            OR PART, TO ANY UNAUTHORIZED PERSON OR ENTITY NOR                  520 PARK EAST BLVD, NEW ALBANY, IN 47150
+                                                                                                                                                            REPRODUCED, TRANSFERRED OR INCORPORATED IN ANY
+                                                                                                                                                            OTHER PROJECT IN ANY MANNER WITHOUT THE EXPRESS
+                                                                                                                                                                                                                               PHONE: 812-944-6733    FAX: 812-948-5047
+                                                                                                                                                            WRITTEN CONSENT OF SAMTEC, INC.                                    e-Mail info@SAMTEC.com       code 55322
+                                                                                                                                                                                                                   DESCRIPTION:
+                                                                                                                                                                  DO NOT SCALE DRAWING
+                                                                                                                                                                                                                       ASSEMBLY, SOCKET STRIP .016 X .031 TAIL
+                                                                                                                                                                                                                   DWG. NO.
+
+                                                                                                                                                                                                                       SSW-1XX-XX-XXX-X-XX-XXX-XX
+                                                                                                                                                                          SHEET SCALE: 2:1
+
+
+
+        c:\enterprisevault\DWG\MISC\MKTG\SSW-1XX-XX-XXX-X-XX-XXX-XX-MKT.SLDDRW                                                                                                                                     BY: PURVIS              06/12/1987          SHEET 2 OF 3
+REVISION CL
+
+
+
+
+                                                      SSW-1XX-04-XXX-S-RA             SSW-1XX-03-XXX-D-RA
+  SSW-1XX-03-XXX-S-RA                                 SSW-1XX-24-XXX-S-RA             SSW-1XX-23-XXX-D-RA
+  SSW-1XX-23-XXX-S-RA
+                                                                                                                   SSW-1XX-03-XXX-D-RA-N
+                                                                                                                   SSW-1XX-23-XXX-D-RA-N
+
+
+
+
+                                                            SEE NOTE 8
+
+         01                                                     50
+
+
+
+
+                          -S, -P, -S-RA & -P-RA                                              SSW-1XX-XX-XXX-T-RA
+                                                                                             SSW-1XX-XX-XXX-Q-RA
+
+
+
+ 100                                                                      02
+                                                                                                     FIG 5
+  99                                                                      01                   PACKAGING VIEWS
+                                                                                                 (SEE NOTE 11)
+
+
+                                  -D, -D-RA
+                                                                                                                                                                                                                                     .050 1.27
+                                                                                                                                                                                                                                         REF
+
+                                                                                                                                .190 4.83                                                              .245 6.22
+   01                                                                     99                                                        REF                                                                    REF
+   02                                                                 100
+
+                                                                                                                                                                                               NSW-XX-D-N-XX
+                                 -D-N, -D-RA-N                                                                                                                                                  (SEE TABLE 6)
+
+
+       150                                                      03
+                                                                                                                                                                                                      FIG 6
+                                                                                                                                                                                 NOTCH OPTION
+                                                                                                                                                                  DIFFERENT AS SHOWN, OTHERWISE SAME AS FIG 1
+
+                                                                                                                                  *           PROPRIETARY NOTE                    *
+                                                                                                                                 THIS DOCUMENT CONTAINS CONFIDENTIAL AND
+                                                                                                                                 PROPRIETARY INFORMATION AND ALL DESIGN,
+
+   148                                                               01                                                          MANUFACTURING, REPRODUCTION, USE, PATENT RIGHTS
+                                                                                                                                 AND SALES RIGHTS ARE EXPRESSLY RESERVED BY SAMTEC,
+                                                                                                                                 INC. THIS DOCUMENT SHALL NOT BE DISCLOSED, IN WHOLE
+                                                                                                                                 OR PART, TO ANY UNAUTHORIZED PERSON OR ENTITY NOR                520 PARK EAST BLVD, NEW ALBANY, IN 47150
+                                                                                                                                 REPRODUCED, TRANSFERRED OR INCORPORATED IN ANY
+                           -T, -Q, -T-RA & -Q-RA                                                                                 OTHER PROJECT IN ANY MANNER WITHOUT THE EXPRESS
+                                                                                                                                                                                                  PHONE: 812-944-6733    FAX: 812-948-5047
+                                                                                                                                                                                                  e-Mail info@SAMTEC.com       code 55322
+                                     FIG 3                                                                                       WRITTEN CONSENT OF SAMTEC, INC.
+
+                                                                                                                                                                                       DESCRIPTION:
+                 POLARIZATION LOCATION
+(INSERT PK-15-N INTO SPECIFIED POSITION & BREAK OFF TAB)
+                                                                                                                                       DO NOT SCALE DRAWING
+                                                                                                                                                                                          ASSEMBLY, SOCKET STRIP .016 X .031 TAIL
+  (-RA OPTION SHOWN FOR ORIENTATION PURPOSE ONLY)                                                                                                                                      DWG. NO.
+
+                                                                                                                                                                                            SSW-1XX-XX-XXX-X-XX-XXX-XX
+                                                                                                                                              SHEET SCALE: 2:1
+
+
+
+             c:\enterprisevault\DWG\MISC\MKTG\SSW-1XX-XX-XXX-X-XX-XXX-XX-MKT.SLDDRW                                                                                                    BY: PURVIS             06/12/1987          SHEET 3 OF 3
+

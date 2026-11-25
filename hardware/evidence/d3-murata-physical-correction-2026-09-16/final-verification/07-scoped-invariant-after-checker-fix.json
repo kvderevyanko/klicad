@@ -1,0 +1,44 @@
+{
+  "bbox_tolerance_regression": {
+    "0.001_mm_boundary_passes": true,
+    "0.002_mm_delta_rejected": true,
+    "absolute_tolerance_mm": 0.001
+  },
+  "board": "/home/kirill/codex/kicad/hardware/esp32-e220.kicad_pcb",
+  "board_delta": {
+    "changed_footprints": [
+      "C1",
+      "C10",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7",
+      "C8",
+      "C9",
+      "D3"
+    ],
+    "changed_segments": [],
+    "changed_vias": [],
+    "zone_outlines_unchanged": true
+  },
+  "failures": [],
+  "mode": "full",
+  "reference": "/home/kirill/codex/kicad/hardware/evidence/d3-murata-physical-correction-2026-09-16/implementation-backup/esp32-e220.pre-d3-murata.kicad_pcb",
+  "source_local_exact": true,
+  "status": "PASS",
+  "target_references": [
+    "C1",
+    "C10",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8",
+    "C9",
+    "D3"
+  ]
+}

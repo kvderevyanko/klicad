@@ -1,0 +1,180 @@
+--- hardware/evidence/full-production-audit-2026-09-15/f1-implementation/10-esp32-e220.pre-f1.kicad_pcb	2026-09-16 00:31:19.002207348 +0700
++++ hardware/esp32-e220.kicad_pcb	2026-09-16 00:32:15.890584435 +0700
+@@ -1002,8 +1002,8 @@
+ 	(footprint "Littelfuse_1812L200_16_4532Metric"
+ 		(layer "F.Cu")
+ 		(uuid "23689b7e-153d-40eb-a2a6-56b69c8faae4")
+-		(at 45 76)
+-		(descr "Littelfuse 1812L200/16 PolySwitch, 1812 (4532 metric) body. 1.125x3.40 lands on 4.275-mm centres are project IPC nominal; official data confirms part family and ratings, not a release-specific PCB land pattern.")
++		(at 44.25 76)
++		(descr "Littelfuse 1812L200/16 PolySwitch. Official 1812L recommended pad layout: each land 1.78x3.15 mm, 3.45-mm inner gap, 5.23-mm centre pitch.")
+ 		(property "Reference" "F1"
+ 			(at 0 -2.6 0)
+ 			(layer "F.SilkS")
+@@ -1051,8 +1051,8 @@
+ 		(attr smd)
+ 		(duplicate_pad_numbers_are_jumpers no)
+ 		(fp_line
+-			(start -2.75 -2.1)
+-			(end 2.75 -2.1)
++			(start -3.55 -2.12)
++			(end 3.55 -2.12)
+ 			(stroke
+ 				(width 0.05)
+ 				(type default)
+@@ -1061,8 +1061,8 @@
+ 			(uuid "049e0476-97a7-4964-9ef4-b71930d3a81d")
+ 		)
+ 		(fp_line
+-			(start -2.75 2.1)
+-			(end -2.75 -2.1)
++			(start -3.55 2.12)
++			(end -3.55 -2.12)
+ 			(stroke
+ 				(width 0.05)
+ 				(type default)
+@@ -1071,8 +1071,8 @@
+ 			(uuid "9f1ca1af-bfa3-4f57-a2e7-db79675471b7")
+ 		)
+ 		(fp_line
+-			(start 2.75 -2.1)
+-			(end 2.75 2.1)
++			(start 3.55 -2.12)
++			(end 3.55 2.12)
+ 			(stroke
+ 				(width 0.05)
+ 				(type default)
+@@ -1081,8 +1081,8 @@
+ 			(uuid "ba072c15-df63-4b48-8e88-3e14d39a2ad6")
+ 		)
+ 		(fp_line
+-			(start 2.75 2.1)
+-			(end -2.75 2.1)
++			(start 3.55 2.12)
++			(end -3.55 2.12)
+ 			(stroke
+ 				(width 0.05)
+ 				(type default)
+@@ -1091,8 +1091,8 @@
+ 			(uuid "2b431cb0-0fca-4b88-bb0c-10d715ee4d90")
+ 		)
+ 		(fp_line
+-			(start -2.25 -1.6)
+-			(end 2.25 -1.6)
++			(start -2.275 -1.62)
++			(end 2.275 -1.62)
+ 			(stroke
+ 				(width 0.1)
+ 				(type default)
+@@ -1101,8 +1101,8 @@
+ 			(uuid "faec02db-85ec-4ac6-8761-8688a8089fc2")
+ 		)
+ 		(fp_line
+-			(start -2.25 1.6)
+-			(end -2.25 -1.6)
++			(start -2.275 1.62)
++			(end -2.275 -1.62)
+ 			(stroke
+ 				(width 0.1)
+ 				(type default)
+@@ -1111,8 +1111,8 @@
+ 			(uuid "20ca9792-6a9a-4736-9efd-d7e5311572f6")
+ 		)
+ 		(fp_line
+-			(start 2.25 -1.6)
+-			(end 2.25 1.6)
++			(start 2.275 -1.62)
++			(end 2.275 1.62)
+ 			(stroke
+ 				(width 0.1)
+ 				(type default)
+@@ -1121,8 +1121,8 @@
+ 			(uuid "079a69e9-6181-486a-a1f2-33de8d35e1d2")
+ 		)
+ 		(fp_line
+-			(start 2.25 1.6)
+-			(end -2.25 1.6)
++			(start 2.275 1.62)
++			(end -2.275 1.62)
+ 			(stroke
+ 				(width 0.1)
+ 				(type default)
+@@ -1131,16 +1131,16 @@
+ 			(uuid "bab71d82-c4c6-44ec-8684-522a53787d7e")
+ 		)
+ 		(pad "1" smd roundrect
+-			(at -2.138 0)
+-			(size 1.125 3.4)
++			(at -2.615 0)
++			(size 1.78 3.15)
+ 			(layers "F.Cu" "F.Mask" "F.Paste")
+ 			(roundrect_rratio 0.2)
+ 			(net "/BAT_PLUS")
+ 			(uuid "c287e064-0f7e-436a-84ff-836f222d8e20")
+ 		)
+ 		(pad "2" smd roundrect
+-			(at 2.138 0)
+-			(size 1.125 3.4)
++			(at 2.615 0)
++			(size 1.78 3.15)
+ 			(layers "F.Cu" "F.Mask" "F.Paste")
+ 			(roundrect_rratio 0.2)
+ 			(net "/BAT_FUSED")
+@@ -8884,7 +8884,7 @@
+ 		(uuid "d0cb865d-ad03-4285-bfa8-804fc1daa376")
+ 	)
+ 	(segment
+-		(start 42.862 78.5)
++		(start 41.635 78.5)
+ 		(end 48 87)
+ 		(width 1)
+ 		(layer "F.Cu")
+@@ -8900,8 +8900,8 @@
+ 		(uuid "01f4e9f5-c241-4a8d-a7e7-2ac28bbf52bb")
+ 	)
+ 	(segment
+-		(start 42.862 78.5)
+-		(end 42.862 76)
++		(start 41.635 78.5)
++		(end 41.635 76)
+ 		(width 1)
+ 		(layer "F.Cu")
+ 		(net "/BAT_PLUS")
+@@ -8909,7 +8909,7 @@
+ 	)
+ 	(segment
+ 		(start 35 78.5)
+-		(end 42.862 78.5)
++		(end 41.635 78.5)
+ 		(width 1)
+ 		(layer "F.Cu")
+ 		(net "/BAT_PLUS")
+@@ -8924,7 +8924,7 @@
+ 		(uuid "0bc6a8a1-7e58-4858-91c3-5db8a8656ad8")
+ 	)
+ 	(segment
+-		(start 47.138 72.5)
++		(start 46.865 72.5)
+ 		(end 44.05 72.5)
+ 		(width 1)
+ 		(layer "F.Cu")
+@@ -8932,7 +8932,7 @@
+ 		(uuid "9acd9b87-3c41-4f24-8cf8-e01baf241d9b")
+ 	)
+ 	(segment
+-		(start 47.138 76)
++		(start 46.865 76)
+ 		(end 51 76)
+ 		(width 1)
+ 		(layer "F.Cu")
+@@ -8940,8 +8940,8 @@
+ 		(uuid "e2f6e3bc-4117-4dd9-a338-e4bc7c5826a1")
+ 	)
+ 	(segment
+-		(start 47.138 76)
+-		(end 47.138 72.5)
++		(start 46.865 76)
++		(end 46.865 72.5)
+ 		(width 1)
+ 		(layer "F.Cu")
+ 		(net "/BAT_FUSED")

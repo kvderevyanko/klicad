@@ -1,0 +1,622 @@
+{
+  "references": {
+    "R1": {
+      "origin_mm": [
+        58.5,
+        67.0
+      ],
+      "rotation_deg": 90.0,
+      "identity_preserved": true,
+      "pads": {
+        "1": {
+          "old_center_mm": [
+            58.5,
+            67.725
+          ],
+          "new_center_mm": [
+            58.5,
+            67.85
+          ],
+          "new_local_center_mm": [
+            -0.85,
+            0.0
+          ],
+          "new_size_mm": [
+            0.9,
+            0.8
+          ],
+          "net_preserved": true,
+          "layer_set_preserved": true
+        },
+        "2": {
+          "old_center_mm": [
+            58.5,
+            66.275
+          ],
+          "new_center_mm": [
+            58.5,
+            66.15
+          ],
+          "new_local_center_mm": [
+            0.85,
+            0.0
+          ],
+          "new_size_mm": [
+            0.9,
+            0.8
+          ],
+          "net_preserved": true,
+          "layer_set_preserved": true
+        }
+      },
+      "attached_tracks": [
+        {
+          "pad": "1",
+          "endpoint_mm": [
+            58.5,
+            67.725
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_new_pad": true,
+          "whole_track_copper_overlaps_new_pad": true
+        },
+        {
+          "pad": "2",
+          "endpoint_mm": [
+            58.5,
+            66.275
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_new_pad": true,
+          "whole_track_copper_overlaps_new_pad": true
+        }
+      ],
+      "nearest_different_net_copper": [
+        0.800001,
+        "pad R1.1 /Q1_GATE"
+      ],
+      "nearest_different_net_fcu_zone": [
+        8.495327,
+        "/GND"
+      ],
+      "nearby_vias_within_3mm": [
+        {
+          "position_mm": [
+            59.5,
+            66.275
+          ],
+          "net": "/GND",
+          "edge_gap_mm": 0.300001
+        },
+        {
+          "position_mm": [
+            56.5,
+            69.0
+          ],
+          "net": "/Q1_GATE",
+          "edge_gap_mm": 1.498878
+        }
+      ],
+      "nearest_courtyard": [
+        2.210001,
+        "R2"
+      ]
+    },
+    "R2": {
+      "origin_mm": [
+        62.5,
+        67.0
+      ],
+      "rotation_deg": 90.0,
+      "identity_preserved": true,
+      "pads": {
+        "1": {
+          "old_center_mm": [
+            62.5,
+            67.725
+          ],
+          "new_center_mm": [
+            62.5,
+            67.85
+          ],
+          "new_local_center_mm": [
+            -0.85,
+            0.0
+          ],
+          "new_size_mm": [
+            0.9,
+            0.8
+          ],
+          "net_preserved": true,
+          "layer_set_preserved": true
+        },
+        "2": {
+          "old_center_mm": [
+            62.5,
+            66.275
+          ],
+          "new_center_mm": [
+            62.5,
+            66.15
+          ],
+          "new_local_center_mm": [
+            0.85,
+            0.0
+          ],
+          "new_size_mm": [
+            0.9,
+            0.8
+          ],
+          "net_preserved": true,
+          "layer_set_preserved": true
+        }
+      },
+      "attached_tracks": [
+        {
+          "pad": "1",
+          "endpoint_mm": [
+            62.5,
+            67.725
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_new_pad": true,
+          "whole_track_copper_overlaps_new_pad": true
+        },
+        {
+          "pad": "2",
+          "endpoint_mm": [
+            62.5,
+            66.275
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_new_pad": true,
+          "whole_track_copper_overlaps_new_pad": true
+        }
+      ],
+      "nearest_different_net_copper": [
+        0.800001,
+        "pad R2.1 /BUCK_IN"
+      ],
+      "nearest_different_net_fcu_zone": [
+        5.134106,
+        "/GND"
+      ],
+      "nearby_vias_within_3mm": [
+        {
+          "position_mm": [
+            59.5,
+            66.275
+          ],
+          "net": "/GND",
+          "edge_gap_mm": 2.300001
+        }
+      ],
+      "nearest_courtyard": [
+        2.210001,
+        "R1"
+      ]
+    },
+    "R3": {
+      "origin_mm": [
+        86.0,
+        66.0
+      ],
+      "rotation_deg": 0.0,
+      "identity_preserved": true,
+      "pads": {
+        "1": {
+          "old_center_mm": [
+            85.275,
+            66.0
+          ],
+          "new_center_mm": [
+            85.15,
+            66.0
+          ],
+          "new_local_center_mm": [
+            -0.85,
+            0.0
+          ],
+          "new_size_mm": [
+            0.9,
+            0.8
+          ],
+          "net_preserved": true,
+          "layer_set_preserved": true
+        },
+        "2": {
+          "old_center_mm": [
+            86.725,
+            66.0
+          ],
+          "new_center_mm": [
+            86.85,
+            66.0
+          ],
+          "new_local_center_mm": [
+            0.85,
+            0.0
+          ],
+          "new_size_mm": [
+            0.9,
+            0.8
+          ],
+          "net_preserved": true,
+          "layer_set_preserved": true
+        }
+      },
+      "attached_tracks": [
+        {
+          "pad": "1",
+          "endpoint_mm": [
+            85.275,
+            66.0
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_new_pad": true,
+          "whole_track_copper_overlaps_new_pad": true
+        },
+        {
+          "pad": "2",
+          "endpoint_mm": [
+            86.725,
+            66.0
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_new_pad": true,
+          "whole_track_copper_overlaps_new_pad": true
+        },
+        {
+          "pad": "2",
+          "endpoint_mm": [
+            86.725,
+            66.0
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_new_pad": true,
+          "whole_track_copper_overlaps_new_pad": true
+        },
+        {
+          "pad": "2",
+          "endpoint_mm": [
+            86.725,
+            66.0
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_new_pad": true,
+          "whole_track_copper_overlaps_new_pad": true
+        }
+      ],
+      "nearest_different_net_copper": [
+        0.800001,
+        "pad R3.1 /BUCK_IN"
+      ],
+      "nearest_different_net_fcu_zone": [
+        14.662626,
+        "/GND"
+      ],
+      "nearby_vias_within_3mm": [
+        {
+          "position_mm": [
+            86.725,
+            63.0
+          ],
+          "net": "/BAT_SENSE",
+          "edge_gap_mm": 2.300001
+        }
+      ],
+      "nearest_courtyard": [
+        1.210001,
+        "C8"
+      ]
+    },
+    "R4": {
+      "origin_mm": [
+        90.0,
+        66.0
+      ],
+      "rotation_deg": 0.0,
+      "identity_preserved": true,
+      "pads": {
+        "1": {
+          "old_center_mm": [
+            89.275,
+            66.0
+          ],
+          "new_center_mm": [
+            89.15,
+            66.0
+          ],
+          "new_local_center_mm": [
+            -0.85,
+            0.0
+          ],
+          "new_size_mm": [
+            0.9,
+            0.8
+          ],
+          "net_preserved": true,
+          "layer_set_preserved": true
+        },
+        "2": {
+          "old_center_mm": [
+            90.725,
+            66.0
+          ],
+          "new_center_mm": [
+            90.85,
+            66.0
+          ],
+          "new_local_center_mm": [
+            0.85,
+            0.0
+          ],
+          "new_size_mm": [
+            0.9,
+            0.8
+          ],
+          "net_preserved": true,
+          "layer_set_preserved": true
+        }
+      },
+      "attached_tracks": [
+        {
+          "pad": "1",
+          "endpoint_mm": [
+            89.275,
+            66.0
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_new_pad": true,
+          "whole_track_copper_overlaps_new_pad": true
+        },
+        {
+          "pad": "2",
+          "endpoint_mm": [
+            90.725,
+            66.0
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_new_pad": true,
+          "whole_track_copper_overlaps_new_pad": true
+        }
+      ],
+      "nearest_different_net_copper": [
+        0.800001,
+        "pad R4.1 /BAT_SENSE"
+      ],
+      "nearest_different_net_fcu_zone": [
+        18.47132,
+        "/GND"
+      ],
+      "nearby_vias_within_3mm": [
+        {
+          "position_mm": [
+            90.725,
+            69.0
+          ],
+          "net": "/GND",
+          "edge_gap_mm": 2.300001
+        }
+      ],
+      "nearest_courtyard": [
+        1.210001,
+        "C8"
+      ]
+    },
+    "R8": {
+      "origin_mm": [
+        40.0,
+        35.0
+      ],
+      "rotation_deg": 0.0,
+      "identity_preserved": true,
+      "pads": {
+        "1": {
+          "old_center_mm": [
+            39.275,
+            35.0
+          ],
+          "new_center_mm": [
+            39.15,
+            35.0
+          ],
+          "new_local_center_mm": [
+            -0.85,
+            0.0
+          ],
+          "new_size_mm": [
+            0.9,
+            0.8
+          ],
+          "net_preserved": true,
+          "layer_set_preserved": true
+        },
+        "2": {
+          "old_center_mm": [
+            40.725,
+            35.0
+          ],
+          "new_center_mm": [
+            40.85,
+            35.0
+          ],
+          "new_local_center_mm": [
+            0.85,
+            0.0
+          ],
+          "new_size_mm": [
+            0.9,
+            0.8
+          ],
+          "net_preserved": true,
+          "layer_set_preserved": true
+        }
+      },
+      "attached_tracks": [
+        {
+          "pad": "1",
+          "endpoint_mm": [
+            39.275,
+            35.0
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_new_pad": true,
+          "whole_track_copper_overlaps_new_pad": true
+        },
+        {
+          "pad": "2",
+          "endpoint_mm": [
+            40.725,
+            35.0
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_new_pad": true,
+          "whole_track_copper_overlaps_new_pad": true
+        }
+      ],
+      "nearest_different_net_copper": [
+        0.800001,
+        "pad R8.1 /E220_M0"
+      ],
+      "nearest_different_net_fcu_zone": [
+        9.155798,
+        "/AUX_3V3"
+      ],
+      "nearby_vias_within_3mm": [
+        {
+          "position_mm": [
+            41.5,
+            35.0
+          ],
+          "net": "/GND",
+          "edge_gap_mm": 0.0
+        },
+        {
+          "position_mm": [
+            44.0,
+            35.0
+          ],
+          "net": "/E220_M1",
+          "edge_gap_mm": 2.400001
+        }
+      ],
+      "nearest_courtyard": [
+        3.410001,
+        "R9"
+      ]
+    },
+    "R9": {
+      "origin_mm": [
+        46.0,
+        35.0
+      ],
+      "rotation_deg": 0.0,
+      "identity_preserved": true,
+      "pads": {
+        "1": {
+          "old_center_mm": [
+            45.275,
+            35.0
+          ],
+          "new_center_mm": [
+            45.15,
+            35.0
+          ],
+          "new_local_center_mm": [
+            -0.85,
+            0.0
+          ],
+          "new_size_mm": [
+            0.9,
+            0.8
+          ],
+          "net_preserved": true,
+          "layer_set_preserved": true
+        },
+        "2": {
+          "old_center_mm": [
+            46.725,
+            35.0
+          ],
+          "new_center_mm": [
+            46.85,
+            35.0
+          ],
+          "new_local_center_mm": [
+            0.85,
+            0.0
+          ],
+          "new_size_mm": [
+            0.9,
+            0.8
+          ],
+          "net_preserved": true,
+          "layer_set_preserved": true
+        }
+      },
+      "attached_tracks": [
+        {
+          "pad": "1",
+          "endpoint_mm": [
+            45.275,
+            35.0
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_new_pad": true,
+          "whole_track_copper_overlaps_new_pad": true
+        },
+        {
+          "pad": "2",
+          "endpoint_mm": [
+            46.725,
+            35.0
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_new_pad": true,
+          "whole_track_copper_overlaps_new_pad": true
+        }
+      ],
+      "nearest_different_net_copper": [
+        0.800001,
+        "pad R9.1 /E220_M1"
+      ],
+      "nearest_different_net_fcu_zone": [
+        14.977274,
+        "/AUX_3V3"
+      ],
+      "nearby_vias_within_3mm": [
+        {
+          "position_mm": [
+            47.5,
+            35.0
+          ],
+          "net": "/GND",
+          "edge_gap_mm": 0.0
+        },
+        {
+          "position_mm": [
+            44.0,
+            35.0
+          ],
+          "net": "/E220_M1",
+          "edge_gap_mm": 0.400001
+        },
+        {
+          "position_mm": [
+            41.5,
+            35.0
+          ],
+          "net": "/GND",
+          "edge_gap_mm": 2.900001
+        }
+      ],
+      "nearest_courtyard": [
+        3.410001,
+        "R8"
+      ]
+    }
+  },
+  "failures": [],
+  "pass": true
+}

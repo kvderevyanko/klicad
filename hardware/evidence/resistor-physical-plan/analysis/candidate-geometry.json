@@ -1,0 +1,736 @@
+{
+  "old_board": "hardware/esp32-e220.kicad_pcb",
+  "candidate_board": "hardware/evidence/resistor-physical-plan/analysis/diagnostic/esp32-e220.kicad_pcb",
+  "design_settings": {
+    "solder_mask_expansion_mm": 0.0,
+    "solder_mask_min_width_mm": 0.0,
+    "solder_paste_margin_mm": 0.0,
+    "solder_paste_margin_ratio": 0.0
+  },
+  "references": {
+    "R1": {
+      "origin": [
+        58.5,
+        67.0
+      ],
+      "rotation_deg": 90.0,
+      "pads": {
+        "1": {
+          "net": "/Q1_GATE",
+          "old_center": [
+            58.5,
+            67.725
+          ],
+          "new_center": [
+            58.5,
+            67.85
+          ],
+          "old_size": [
+            0.95,
+            1.0
+          ],
+          "new_size": [
+            0.9,
+            0.8
+          ]
+        },
+        "2": {
+          "net": "/GND",
+          "old_center": [
+            58.5,
+            66.275
+          ],
+          "new_center": [
+            58.5,
+            66.15
+          ],
+          "old_size": [
+            0.95,
+            1.0
+          ],
+          "new_size": [
+            0.9,
+            0.8
+          ]
+        }
+      },
+      "attached_tracks": [
+        {
+          "pad": "1",
+          "net": "/Q1_GATE",
+          "track_start": [
+            58.5,
+            68.75
+          ],
+          "track_end": [
+            58.5,
+            67.725
+          ],
+          "attached_endpoint": [
+            58.5,
+            67.725
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_proposed": true,
+          "full_track_shape_overlaps_proposed": true,
+          "uuid": "927d26b7-173d-4a74-b469-823b9a2fa77b"
+        },
+        {
+          "pad": "2",
+          "net": "/GND",
+          "track_start": [
+            58.5,
+            66.275
+          ],
+          "track_end": [
+            59.5,
+            66.275
+          ],
+          "attached_endpoint": [
+            58.5,
+            66.275
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_proposed": true,
+          "full_track_shape_overlaps_proposed": true,
+          "uuid": "24c73cad-6e9a-40c4-b69d-4475f23b20df"
+        }
+      ],
+      "nearest_different_net_copper": {
+        "edge_gap_mm": 0.800001,
+        "item": "pad R1.1 net=/Q1_GATE"
+      },
+      "nearby_vias_within_3mm": [
+        {
+          "position": [
+            59.5,
+            66.275
+          ],
+          "net": "/GND",
+          "diameter_mm": 0.6,
+          "edge_gap_mm": 0.300001
+        },
+        {
+          "position": [
+            56.5,
+            69.0
+          ],
+          "net": "/Q1_GATE",
+          "diameter_mm": 0.6,
+          "edge_gap_mm": 1.498878
+        }
+      ],
+      "nearest_courtyard": {
+        "edge_gap_mm": 2.210001,
+        "reference": "R2"
+      }
+    },
+    "R2": {
+      "origin": [
+        62.5,
+        67.0
+      ],
+      "rotation_deg": 90.0,
+      "pads": {
+        "1": {
+          "net": "/BUCK_IN",
+          "old_center": [
+            62.5,
+            67.725
+          ],
+          "new_center": [
+            62.5,
+            67.85
+          ],
+          "old_size": [
+            0.95,
+            1.0
+          ],
+          "new_size": [
+            0.9,
+            0.8
+          ]
+        },
+        "2": {
+          "net": "/Q1_GATE",
+          "old_center": [
+            62.5,
+            66.275
+          ],
+          "new_center": [
+            62.5,
+            66.15
+          ],
+          "old_size": [
+            0.95,
+            1.0
+          ],
+          "new_size": [
+            0.9,
+            0.8
+          ]
+        }
+      },
+      "attached_tracks": [
+        {
+          "pad": "1",
+          "net": "/BUCK_IN",
+          "track_start": [
+            62.5,
+            67.725
+          ],
+          "track_end": [
+            65.5,
+            70.0
+          ],
+          "attached_endpoint": [
+            62.5,
+            67.725
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_proposed": true,
+          "full_track_shape_overlaps_proposed": true,
+          "uuid": "b831a5e6-0b6b-455b-9ee1-944bdbe0aa88"
+        },
+        {
+          "pad": "2",
+          "net": "/Q1_GATE",
+          "track_start": [
+            62.5,
+            64.5
+          ],
+          "track_end": [
+            62.5,
+            66.275
+          ],
+          "attached_endpoint": [
+            62.5,
+            66.275
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_proposed": true,
+          "full_track_shape_overlaps_proposed": true,
+          "uuid": "4574d178-7c7b-48f8-83e8-c324bc406e84"
+        }
+      ],
+      "nearest_different_net_copper": {
+        "edge_gap_mm": 0.800001,
+        "item": "pad R2.1 net=/BUCK_IN"
+      },
+      "nearby_vias_within_3mm": [
+        {
+          "position": [
+            59.5,
+            66.275
+          ],
+          "net": "/GND",
+          "diameter_mm": 0.6,
+          "edge_gap_mm": 2.300001
+        }
+      ],
+      "nearest_courtyard": {
+        "edge_gap_mm": 2.210001,
+        "reference": "R1"
+      }
+    },
+    "R3": {
+      "origin": [
+        86.0,
+        66.0
+      ],
+      "rotation_deg": 0.0,
+      "pads": {
+        "1": {
+          "net": "/BUCK_IN",
+          "old_center": [
+            85.275,
+            66.0
+          ],
+          "new_center": [
+            85.15,
+            66.0
+          ],
+          "old_size": [
+            0.95,
+            1.0
+          ],
+          "new_size": [
+            0.9,
+            0.8
+          ]
+        },
+        "2": {
+          "net": "/BAT_SENSE",
+          "old_center": [
+            86.725,
+            66.0
+          ],
+          "new_center": [
+            86.85,
+            66.0
+          ],
+          "old_size": [
+            0.95,
+            1.0
+          ],
+          "new_size": [
+            0.9,
+            0.8
+          ]
+        }
+      },
+      "attached_tracks": [
+        {
+          "pad": "1",
+          "net": "/BUCK_IN",
+          "track_start": [
+            82.0,
+            66.0
+          ],
+          "track_end": [
+            85.275,
+            66.0
+          ],
+          "attached_endpoint": [
+            85.275,
+            66.0
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_proposed": true,
+          "full_track_shape_overlaps_proposed": true,
+          "uuid": "e38efd76-fbfd-4600-ac63-3a68fcfc7756"
+        },
+        {
+          "pad": "2",
+          "net": "/BAT_SENSE",
+          "track_start": [
+            86.725,
+            66.0
+          ],
+          "track_end": [
+            89.275,
+            66.0
+          ],
+          "attached_endpoint": [
+            86.725,
+            66.0
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_proposed": true,
+          "full_track_shape_overlaps_proposed": true,
+          "uuid": "0f0e1479-4c8d-4647-813f-5a100bec7b2e"
+        },
+        {
+          "pad": "2",
+          "net": "/BAT_SENSE",
+          "track_start": [
+            86.725,
+            66.0
+          ],
+          "track_end": [
+            86.725,
+            63.0
+          ],
+          "attached_endpoint": [
+            86.725,
+            66.0
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_proposed": true,
+          "full_track_shape_overlaps_proposed": true,
+          "uuid": "79460cc3-c12b-4f2a-a375-5865084a3631"
+        },
+        {
+          "pad": "2",
+          "net": "/BAT_SENSE",
+          "track_start": [
+            86.725,
+            66.0
+          ],
+          "track_end": [
+            87.275,
+            69.0
+          ],
+          "attached_endpoint": [
+            86.725,
+            66.0
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_proposed": true,
+          "full_track_shape_overlaps_proposed": true,
+          "uuid": "a22ab897-a3e8-44bb-a17e-cd763ec37296"
+        }
+      ],
+      "nearest_different_net_copper": {
+        "edge_gap_mm": 0.800001,
+        "item": "pad R3.1 net=/BUCK_IN"
+      },
+      "nearby_vias_within_3mm": [
+        {
+          "position": [
+            86.725,
+            63.0
+          ],
+          "net": "/BAT_SENSE",
+          "diameter_mm": 0.6,
+          "edge_gap_mm": 2.300001
+        }
+      ],
+      "nearest_courtyard": {
+        "edge_gap_mm": 1.210001,
+        "reference": "C8"
+      }
+    },
+    "R4": {
+      "origin": [
+        90.0,
+        66.0
+      ],
+      "rotation_deg": 0.0,
+      "pads": {
+        "1": {
+          "net": "/BAT_SENSE",
+          "old_center": [
+            89.275,
+            66.0
+          ],
+          "new_center": [
+            89.15,
+            66.0
+          ],
+          "old_size": [
+            0.95,
+            1.0
+          ],
+          "new_size": [
+            0.9,
+            0.8
+          ]
+        },
+        "2": {
+          "net": "/GND",
+          "old_center": [
+            90.725,
+            66.0
+          ],
+          "new_center": [
+            90.85,
+            66.0
+          ],
+          "old_size": [
+            0.95,
+            1.0
+          ],
+          "new_size": [
+            0.9,
+            0.8
+          ]
+        }
+      },
+      "attached_tracks": [
+        {
+          "pad": "1",
+          "net": "/BAT_SENSE",
+          "track_start": [
+            86.725,
+            66.0
+          ],
+          "track_end": [
+            89.275,
+            66.0
+          ],
+          "attached_endpoint": [
+            89.275,
+            66.0
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_proposed": true,
+          "full_track_shape_overlaps_proposed": true,
+          "uuid": "0f0e1479-4c8d-4647-813f-5a100bec7b2e"
+        },
+        {
+          "pad": "2",
+          "net": "/GND",
+          "track_start": [
+            90.725,
+            66.0
+          ],
+          "track_end": [
+            90.725,
+            69.0
+          ],
+          "attached_endpoint": [
+            90.725,
+            66.0
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_proposed": true,
+          "full_track_shape_overlaps_proposed": true,
+          "uuid": "68bc3bbd-21d5-4bc6-a2e8-56380b6e6cd6"
+        }
+      ],
+      "nearest_different_net_copper": {
+        "edge_gap_mm": 0.800001,
+        "item": "pad R4.1 net=/BAT_SENSE"
+      },
+      "nearby_vias_within_3mm": [
+        {
+          "position": [
+            90.725,
+            69.0
+          ],
+          "net": "/GND",
+          "diameter_mm": 0.6,
+          "edge_gap_mm": 2.300001
+        }
+      ],
+      "nearest_courtyard": {
+        "edge_gap_mm": 1.210001,
+        "reference": "C8"
+      }
+    },
+    "R8": {
+      "origin": [
+        40.0,
+        35.0
+      ],
+      "rotation_deg": 0.0,
+      "pads": {
+        "1": {
+          "net": "/E220_M0",
+          "old_center": [
+            39.275,
+            35.0
+          ],
+          "new_center": [
+            39.15,
+            35.0
+          ],
+          "old_size": [
+            0.95,
+            1.0
+          ],
+          "new_size": [
+            0.9,
+            0.8
+          ]
+        },
+        "2": {
+          "net": "/GND",
+          "old_center": [
+            40.725,
+            35.0
+          ],
+          "new_center": [
+            40.85,
+            35.0
+          ],
+          "old_size": [
+            0.95,
+            1.0
+          ],
+          "new_size": [
+            0.9,
+            0.8
+          ]
+        }
+      },
+      "attached_tracks": [
+        {
+          "pad": "1",
+          "net": "/E220_M0",
+          "track_start": [
+            39.275,
+            35.0
+          ],
+          "track_end": [
+            39.275,
+            39.2
+          ],
+          "attached_endpoint": [
+            39.275,
+            35.0
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_proposed": true,
+          "full_track_shape_overlaps_proposed": true,
+          "uuid": "e06bae2d-60e5-4646-8319-a13ca9bce0a2"
+        },
+        {
+          "pad": "2",
+          "net": "/GND",
+          "track_start": [
+            40.725,
+            35.0
+          ],
+          "track_end": [
+            41.5,
+            35.0
+          ],
+          "attached_endpoint": [
+            40.725,
+            35.0
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_proposed": true,
+          "full_track_shape_overlaps_proposed": true,
+          "uuid": "c4bb0692-eced-4348-a9b1-6391d736bdd3"
+        }
+      ],
+      "nearest_different_net_copper": {
+        "edge_gap_mm": 0.800001,
+        "item": "pad R8.1 net=/E220_M0"
+      },
+      "nearby_vias_within_3mm": [
+        {
+          "position": [
+            41.5,
+            35.0
+          ],
+          "net": "/GND",
+          "diameter_mm": 0.6,
+          "edge_gap_mm": 0.0
+        },
+        {
+          "position": [
+            44.0,
+            35.0
+          ],
+          "net": "/E220_M1",
+          "diameter_mm": 0.6,
+          "edge_gap_mm": 2.400001
+        }
+      ],
+      "nearest_courtyard": {
+        "edge_gap_mm": 3.410001,
+        "reference": "R9"
+      }
+    },
+    "R9": {
+      "origin": [
+        46.0,
+        35.0
+      ],
+      "rotation_deg": 0.0,
+      "pads": {
+        "1": {
+          "net": "/E220_M1",
+          "old_center": [
+            45.275,
+            35.0
+          ],
+          "new_center": [
+            45.15,
+            35.0
+          ],
+          "old_size": [
+            0.95,
+            1.0
+          ],
+          "new_size": [
+            0.9,
+            0.8
+          ]
+        },
+        "2": {
+          "net": "/GND",
+          "old_center": [
+            46.725,
+            35.0
+          ],
+          "new_center": [
+            46.85,
+            35.0
+          ],
+          "old_size": [
+            0.95,
+            1.0
+          ],
+          "new_size": [
+            0.9,
+            0.8
+          ]
+        }
+      },
+      "attached_tracks": [
+        {
+          "pad": "1",
+          "net": "/E220_M1",
+          "track_start": [
+            45.275,
+            35.0
+          ],
+          "track_end": [
+            44.0,
+            35.0
+          ],
+          "attached_endpoint": [
+            45.275,
+            35.0
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_proposed": true,
+          "full_track_shape_overlaps_proposed": true,
+          "uuid": "2987d134-92ab-4709-ab45-4a78e1774409"
+        },
+        {
+          "pad": "2",
+          "net": "/GND",
+          "track_start": [
+            46.725,
+            35.0
+          ],
+          "track_end": [
+            47.5,
+            35.0
+          ],
+          "attached_endpoint": [
+            46.725,
+            35.0
+          ],
+          "width_mm": 0.25,
+          "endpoint_inside_proposed": true,
+          "full_track_shape_overlaps_proposed": true,
+          "uuid": "31365bbd-b65a-49f6-90bc-dcd2e0aa5de5"
+        }
+      ],
+      "nearest_different_net_copper": {
+        "edge_gap_mm": 0.800001,
+        "item": "pad R9.1 net=/E220_M1"
+      },
+      "nearby_vias_within_3mm": [
+        {
+          "position": [
+            47.5,
+            35.0
+          ],
+          "net": "/GND",
+          "diameter_mm": 0.6,
+          "edge_gap_mm": 0.0
+        },
+        {
+          "position": [
+            44.0,
+            35.0
+          ],
+          "net": "/E220_M1",
+          "diameter_mm": 0.6,
+          "edge_gap_mm": 0.400001
+        },
+        {
+          "position": [
+            41.5,
+            35.0
+          ],
+          "net": "/GND",
+          "diameter_mm": 0.6,
+          "edge_gap_mm": 2.900001
+        }
+      ],
+      "nearest_courtyard": {
+        "edge_gap_mm": 3.410001,
+        "reference": "R8"
+      }
+    }
+  }
+}

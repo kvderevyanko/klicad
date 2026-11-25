@@ -1,0 +1,5 @@
+30803f660fedcb24185733a3a989e3add943fdbd4be729913ef83e3d0796d823  hardware/evidence/full-production-audit-2026-09-15/f1-final-gerber-audit/diagnostic-fabrication/esp32-e220-F_Cu.gtl
+ea93c601c9ea5c98632119de3b31b6353505ed1fea71393aa9a4f18eb66bcff1  hardware/evidence/full-production-audit-2026-09-15/f1-final-gerber-audit/diagnostic-fabrication/esp32-e220-F_Mask.gts
+eb00c739c0095ac16874ad5ed939c98206e8ec5dbf3a14c8a2fe0a8bc3989a86  hardware/evidence/full-production-audit-2026-09-15/f1-final-gerber-audit/diagnostic-fabrication/esp32-e220-F_Paste.gtp
+4cbeb3933571eb9c359a407ab0703a22a9981ff13c60e20113b2484ec9d3573d  hardware/evidence/full-production-audit-2026-09-15/f1-final-gerber-audit/diagnostic-fabrication/esp32-e220-f1-final.d356
+2fffbc625c81af9d72e7152f220d5268199ed69811f36d4aaf3bec8cfa5fb099  hardware/evidence/full-production-audit-2026-09-15/f1-final-gerber-audit/diagnostic-fabrication/esp32-e220-job.gbrjob

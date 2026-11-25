@@ -1,0 +1,13 @@
+diff --git a/hardware/evidence/full-production-audit-2026-09-15/jp1-implementation/10-esp32-e220.pre-jp1.kicad_sch b/hardware/esp32-e220.kicad_sch
+index 0d1daec..62335ee 100644
+--- a/hardware/evidence/full-production-audit-2026-09-15/jp1-implementation/10-esp32-e220.pre-jp1.kicad_sch
++++ b/hardware/esp32-e220.kicad_sch
+@@ -768,7 +768,7 @@
+     (property "Value" "TSW-102-07-G-S + SNT-100-BK-G" (id 1) (at 90.17 71.11999999999999 0)
+       (effects (font (size 1.27 1.27)) hide)
+     )
+-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" (id 2) (at 85.09 69.85 0)
++    (property "Footprint" "Carrier:Samtec_TSW-102-07-G-S_1x02_P2.54mm_THT" (id 2) (at 85.09 69.85 0)
+       (effects (font (size 1.27 1.27)) hide)
+     )
+     (property "Datasheet" "" (id 3) (at 85.09 69.85 0)

@@ -1,0 +1,5 @@
+e7dff36293f2aa2ffcb3c84f98e5849f0aba9062e69265fe04782fd44375f1cd  hardware/evidence/residual-footprint-audit-2026-09-16/u4-implementation/named-backup/TI_TLV1117LV33DCYR_DCY_SOT223.kicad_mod
+ca4b6399ad12cb1050ee0512eff90524ec476484047963ebc8c47f07aac6b9a3  hardware/evidence/residual-footprint-audit-2026-09-16/u4-implementation/named-backup/check_u4_dcy_footprint.py
+afa48ae26b394d7dc4ab6a20216004e33c63ef9fd07b197ebdddf7b7a9b8929b  hardware/evidence/residual-footprint-audit-2026-09-16/u4-implementation/named-backup/esp32-e220.kicad_pcb
+b6c08f97f610f334f0018b23ec2a72dbacfde0a7695ef4afdfa56923edad02f6  hardware/evidence/residual-footprint-audit-2026-09-16/u4-implementation/named-backup/esp32-e220.kicad_sch
+ea25c3a45c19026163dc3f687df98d6e5e5b1314925e7d2e5c0a91decf4f6a58  hardware/evidence/residual-footprint-audit-2026-09-16/u4-implementation/named-backup/generate_stage7_footprints.py

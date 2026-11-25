@@ -1,0 +1,32 @@
+--- hardware/evidence/full-production-audit-2026-09-15/f1-implementation/10-generate_stage7_footprints.pre-f1.py	2026-09-16 00:31:19.004207397 +0700
++++ hardware/generate_stage7_footprints.py	2026-09-16 00:32:15.759581262 +0700
+@@ -206,7 +206,28 @@
+ 
+ 
+ def fuse_1812() -> str:
+-    return passive("Littelfuse_1812L200_16_4532Metric", "Littelfuse 1812L200/16 PolySwitch, 1812 (4532 metric) body. 1.125x3.40 lands on 4.275-mm centres are project IPC nominal; official data confirms part family and ratings, not a release-specific PCB land pattern.", 4.50, 3.20, 1.125, 3.40, 4.275)
++    """Littelfuse 1812L manufacturer-recommended pad layout.
++
++    The official 1812L Series drawing (Rev. GD, 06/10/24) specifies each
++    land as F=1.78 mm by H=3.15 mm and G=3.45 mm between the inner land
++    edges.  The resulting land-centre pitch is F+G=5.23 mm.  The F.Fab body
++    uses the midpoint of the official A and B limits: 4.55 x 3.24 mm.
++    """
++    return "".join((
++        '(footprint "Littelfuse_1812L200_16_4532Metric" (version 20240108) (generator "stage7")\n',
++        '  (layer "F.Cu")\n',
++        '  (descr "Littelfuse 1812L200/16 PolySwitch. Official 1812L recommended pad layout: each land 1.78x3.15 mm, 3.45-mm inner gap, 5.23-mm centre pitch.")\n',
++        '  (attr smd)\n',
++        text("reference", "REF**", 0, -2.60, "F.SilkS"),
++        text("value", "Littelfuse_1812L200_16_4532Metric", 0, 2.60, "F.Fab", 0.75),
++        rect(-2.275, -1.620, 2.275, 1.620, "F.Fab", 0.10),
++        # The manufacturer lands extend to local X +/-3.505 mm.  Preserve
++        # the reviewed 0.045-mm copper containment and connector clearance.
++        rect(-3.550, -2.120, 3.550, 2.120, "F.CrtYd", 0.05),
++        smd_pad("1", -2.615, 0, 1.780, 3.150),
++        smd_pad("2", 2.615, 0, 1.780, 3.150),
++        ")\n",
++    ))
+ 
+ 
+ def header(name: str, positions: int) -> str:

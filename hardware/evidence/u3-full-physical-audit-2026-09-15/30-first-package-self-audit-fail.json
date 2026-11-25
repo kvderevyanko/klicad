@@ -1,0 +1,127 @@
+{
+  "bom_rows": 25,
+  "cpl_rows": 23,
+  "drills": {
+    "npth_excellon_hits": 3,
+    "pth_excellon_hits": 119
+  },
+  "errors": [
+    "IPC-D-356 missing U3 pad 2 / WS2812_DATA_3V3 / 0.60x1.10mm",
+    "IPC-D-356 missing U3 pad 4 / WS2812_DATA_5V / 0.60x1.10mm"
+  ],
+  "gate": "Q1-U3-CORRECTED GENERATED PACKAGE INTEGRITY SELF-AUDIT",
+  "kicad_cli": "10.0.6",
+  "legacy_release_unmodified_vs_head": true,
+  "physical_footprint_audit_disposition": "HOLD_UNVERIFIED",
+  "q1_f_cu_direct": {
+    "1": {
+      "aperture": "30",
+      "aperture_mm": [
+        0.8,
+        0.9
+      ],
+      "net": "Q1_GATE",
+      "pcb_mm": [
+        62.05,
+        77.0
+      ],
+      "x_gerber": 62050000,
+      "y_gerber": -77000000
+    },
+    "2": {
+      "aperture": "30",
+      "aperture_mm": [
+        0.8,
+        0.9
+      ],
+      "net": "BUCK_IN",
+      "pcb_mm": [
+        63.95,
+        77.0
+      ],
+      "x_gerber": 63950000,
+      "y_gerber": -77000000
+    },
+    "3": {
+      "aperture": "30",
+      "aperture_mm": [
+        0.8,
+        0.9
+      ],
+      "net": "BAT_SW",
+      "pcb_mm": [
+        63.0,
+        75.0
+      ],
+      "x_gerber": 63000000,
+      "y_gerber": -75000000
+    }
+  },
+  "release": "rev1-q1-u3-footprint-correction-2026-09-15",
+  "source": {
+    "metadata_sha256": "806393fc7e9b32da32d34c3adb6357ec87d1d0236a449df42e610f37361dd639",
+    "pcb_sha256": "ef7cc377eb670115295f39cbd963e8910f2f4047cf5d740728abd09e1e4f25ea",
+    "q1_footprint_sha256": "a964b65e180fd9867d69eab31656367a13d0e120a503b78c8982a64b08626ebc",
+    "schematic_sha256": "8ade3ec2f6a90f39763b8dd5570fcfe1709e34482d2f83a886886c73e5a4dacc",
+    "u3_footprint_sha256": "2f63828381821ca805033f3636ae06bafa95a82920a5340e76069a7b5233bad3"
+  },
+  "status": "FAIL",
+  "timestamp_utc": "2026-09-15T09:09:56+00:00",
+  "u3_f_cu_direct": {
+    "1": {
+      "aperture": "11",
+      "aperture_mm": [],
+      "net": "GND",
+      "pcb_mm": [
+        88.05,
+        55.3
+      ],
+      "x_gerber": 88050000,
+      "y_gerber": -55300000
+    },
+    "2": {
+      "aperture": "11",
+      "aperture_mm": [],
+      "net": "WS2812_DATA_3V3",
+      "pcb_mm": [
+        89.0,
+        55.3
+      ],
+      "x_gerber": 89000000,
+      "y_gerber": -55300000
+    },
+    "3": {
+      "aperture": "11",
+      "aperture_mm": [],
+      "net": "GND",
+      "pcb_mm": [
+        89.95,
+        55.3
+      ],
+      "x_gerber": 89950000,
+      "y_gerber": -55300000
+    },
+    "4": {
+      "aperture": "11",
+      "aperture_mm": [],
+      "net": "WS2812_DATA_5V",
+      "pcb_mm": [
+        89.95,
+        52.7
+      ],
+      "x_gerber": 89950000,
+      "y_gerber": -52700000
+    },
+    "5": {
+      "aperture": "11",
+      "aperture_mm": [],
+      "net": "5V_SYS",
+      "pcb_mm": [
+        88.05,
+        52.7
+      ],
+      "x_gerber": 88050000,
+      "y_gerber": -52700000
+    }
+  }
+}

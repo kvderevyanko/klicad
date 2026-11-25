@@ -1,0 +1,200 @@
+{
+  "board": {
+    "origin_mm": [
+      44.25,
+      76.0,
+      0.0
+    ],
+    "pads": {
+      "1": {
+        "absolute_centre_mm": [
+          41.635,
+          76.0
+        ],
+        "local_centre_mm": [
+          -2.615,
+          0.0
+        ],
+        "net": "/BAT_PLUS",
+        "size_mm": [
+          1.78,
+          3.15
+        ]
+      },
+      "2": {
+        "absolute_centre_mm": [
+          46.865,
+          76.0
+        ],
+        "local_centre_mm": [
+          2.615,
+          0.0
+        ],
+        "net": "/BAT_FUSED",
+        "size_mm": [
+          1.78,
+          3.15
+        ]
+      }
+    },
+    "pitch_mm": 5.23
+  },
+  "expected": {
+    "absolute_centres_mm": {
+      "1": [
+        41.635,
+        76.0
+      ],
+      "2": [
+        46.865,
+        76.0
+      ]
+    },
+    "pad_nets": {
+      "1": "/BAT_PLUS",
+      "2": "/BAT_FUSED"
+    },
+    "pad_numbers": [
+      "1",
+      "2"
+    ],
+    "pitch_mm": 5.23,
+    "size_mm": [
+      1.78,
+      3.15
+    ]
+  },
+  "failures": [],
+  "gerber": {
+    "F.Cu": {
+      "aperture": "D14",
+      "aperture_definition": "RoundRect,0.356000X-0.534000X-1.219000X0.534000X-1.219000X0.534000X1.219000X-0.534000X1.219000X0",
+      "board_centres_mm": [
+        [
+          41.635,
+          76.0
+        ],
+        [
+          46.865,
+          76.0
+        ]
+      ],
+      "derived_size_mm": [
+        1.78,
+        3.15
+      ],
+      "file_centres_mm": [
+        [
+          41.635,
+          -76.0
+        ],
+        [
+          46.865,
+          -76.0
+        ]
+      ],
+      "matched": true,
+      "pitch_mm": 5.23
+    },
+    "F.Mask": {
+      "aperture": "D14",
+      "aperture_definition": "RoundRect,0.356000X-0.534000X-1.219000X0.534000X-1.219000X0.534000X1.219000X-0.534000X1.219000X0",
+      "board_centres_mm": [
+        [
+          41.635,
+          76.0
+        ],
+        [
+          46.865,
+          76.0
+        ]
+      ],
+      "derived_size_mm": [
+        1.78,
+        3.15
+      ],
+      "file_centres_mm": [
+        [
+          41.635,
+          -76.0
+        ],
+        [
+          46.865,
+          -76.0
+        ]
+      ],
+      "matched": true,
+      "pitch_mm": 5.23
+    },
+    "F.Paste": {
+      "aperture": "D12",
+      "aperture_definition": "RoundRect,0.356000X-0.534000X-1.219000X0.534000X-1.219000X0.534000X1.219000X-0.534000X1.219000X0",
+      "board_centres_mm": [
+        [
+          41.635,
+          76.0
+        ],
+        [
+          46.865,
+          76.0
+        ]
+      ],
+      "derived_size_mm": [
+        1.78,
+        3.15
+      ],
+      "file_centres_mm": [
+        [
+          41.635,
+          -76.0
+        ],
+        [
+          46.865,
+          -76.0
+        ]
+      ],
+      "matched": true,
+      "pitch_mm": 5.23
+    }
+  },
+  "ipc_d356": {
+    "1": {
+      "converted_centre_mm": [
+        41.63568,
+        75.99934
+      ],
+      "converted_size_mm": [
+        1.78054,
+        3.1496
+      ],
+      "net": "/BAT_PLUS",
+      "raw_inch_1e4": {
+        "sx": "0701",
+        "sy": "1240",
+        "x": "+016392",
+        "y": "-029921"
+      }
+    },
+    "2": {
+      "converted_centre_mm": [
+        46.86554,
+        75.99934
+      ],
+      "converted_size_mm": [
+        1.78054,
+        3.1496
+      ],
+      "net": "/BAT_FUSED",
+      "raw_inch_1e4": {
+        "sx": "0701",
+        "sy": "1240",
+        "x": "+018451",
+        "y": "-029921"
+      }
+    },
+    "converted_pitch_mm": 5.22986
+  },
+  "physical_part": "Littelfuse 1812L200/16, non-polarized",
+  "scope": "diagnostic non-release F1 board/Gerber/IPC-D-356 audit",
+  "status": "PASS"
+}

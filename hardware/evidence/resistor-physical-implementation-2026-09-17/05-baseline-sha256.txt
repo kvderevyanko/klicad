@@ -1,0 +1,5 @@
+f930a29d948107fa695980e6419edc532cdf9e42c3d4d6b3ae3864a84e1a5580  hardware/evidence/resistor-physical-implementation-2026-09-17/named-backup/esp32-e220.pre-resistor.kicad_pcb
+b6c08f97f610f334f0018b23ec2a72dbacfde0a7695ef4afdfa56923edad02f6  hardware/evidence/resistor-physical-implementation-2026-09-17/named-backup/esp32-e220.pre-resistor.kicad_sch
+ee4deeba84dbabdadaf8fedd658277f8551cf983af584cce310ab55c167b0326  hardware/evidence/resistor-physical-implementation-2026-09-17/named-backup/generate_stage7_footprints.pre-resistor.py
+30d424131b88799bbdde3a54087b93303dcafa21e67187e665861b764d11ece6  hardware/evidence/resistor-physical-implementation-2026-09-17/named-backup/Resistor_0603_1608Metric.pre-resistor.kicad_mod
+806393fc7e9b32da32d34c3adb6357ec87d1d0236a449df42e610f37361dd639  hardware/evidence/resistor-physical-implementation-2026-09-17/named-backup/production-metadata.pre-resistor.json

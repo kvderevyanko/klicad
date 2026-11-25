@@ -1,0 +1,55 @@
+{
+  "board": "hardware/evidence/full-production-audit-2026-09-15/f1-implementation/10-esp32-e220.pre-f1.kicad_pcb",
+  "changed_footprints": [],
+  "changed_segments": [],
+  "expected_origin_mm": [
+    44.25,
+    76.0,
+    0.0
+  ],
+  "expected_pad_centres_local_mm": {
+    "1": [
+      -2.615,
+      0.0
+    ],
+    "2": [
+      2.615,
+      0.0
+    ]
+  },
+  "expected_pad_nets": {
+    "1": "/BAT_PLUS",
+    "2": "/BAT_FUSED"
+  },
+  "expected_pad_size_mm": [
+    1.78,
+    3.15
+  ],
+  "failures": [
+    "project-local footprint differs from fuse_1812() output",
+    "pad 1 local centre (-2.138, 0.0), expected (-2.615, 0.0)",
+    "pad 1 size (1.125, 3.4), expected (1.78, 3.15)",
+    "pad 2 local centre (2.138, 0.0), expected (2.615, 0.0)",
+    "pad 2 size (1.125, 3.4), expected (1.78, 3.15)",
+    "F.Fab bbox (-2.25, -1.6, 2.25, 1.6)",
+    "F.CrtYd bbox (-2.75, -2.1, 2.75, 2.1)",
+    "embedded F1 origin/rotation (45.0, 76.0, 0.0)",
+    "pad 1 local centre (-2.138, 0.0), expected (-2.615, 0.0)",
+    "pad 1 size (1.125, 3.4), expected (1.78, 3.15)",
+    "pad 2 local centre (2.138, 0.0), expected (2.615, 0.0)",
+    "pad 2 size (1.125, 3.4), expected (1.78, 3.15)",
+    "F.Fab bbox (-2.25, -1.6, 2.25, 1.6)",
+    "F.CrtYd bbox (-2.75, -2.1, 2.75, 2.1)",
+    "footprint allowlist delta [], expected ['F1']",
+    "segment allowlist delta []",
+    "segment 01cb0d3e-c640-4898-bd6d-c3c98dd2c2f1 is not /BAT_PLUS (41.635, 78.5)->(48.0, 87.0), 1.00 mm F.Cu",
+    "segment 5bd83154-5890-4fb2-9b14-a90d9902d6de is not /BAT_PLUS (41.635, 78.5)->(41.635, 76.0), 1.00 mm F.Cu",
+    "segment d6f11b0f-dde0-46c7-a409-4dbaaff09603 is not /BAT_PLUS (35.0, 78.5)->(41.635, 78.5), 1.00 mm F.Cu",
+    "segment 9acd9b87-3c41-4f24-8cf8-e01baf241d9b is not /BAT_FUSED (46.865, 72.5)->(44.05, 72.5), 1.00 mm F.Cu",
+    "segment e2f6e3bc-4117-4dd9-a338-e4bc7c5826a1 is not /BAT_FUSED (46.865, 76.0)->(51.0, 76.0), 1.00 mm F.Cu",
+    "segment f617d508-72c6-4f5a-96ac-fdaf00b28a39 is not /BAT_FUSED (46.865, 76.0)->(46.865, 72.5), 1.00 mm F.Cu"
+  ],
+  "reference": "hardware/evidence/full-production-audit-2026-09-15/f1-implementation/10-esp32-e220.pre-f1.kicad_pcb",
+  "source_local_exact": false,
+  "status": "FAIL"
+}

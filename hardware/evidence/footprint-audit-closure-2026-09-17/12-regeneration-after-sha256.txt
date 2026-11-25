@@ -1,0 +1,1 @@
+952ee5746dd9284df84cbeb1fc9c1cb799130c65dec2f76e22986883e1f28e01  hardware/esp32-e220.pretty/Resistor_0603_1608Metric.kicad_mod
