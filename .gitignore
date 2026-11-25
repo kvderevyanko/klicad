@@ -1,1 +1,16 @@
 **/chrome-profile/
+
+# KiCad local settings and temporary files
+*.kicad_prl
+*.lck
+~*.lck
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*-backups/
+
+# Python generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
